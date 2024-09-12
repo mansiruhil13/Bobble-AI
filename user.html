@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Hospitals List</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nearby Hospitals</h1>
+        <div id="hospitalList">
+            <!-- Hospital list will be populated by JavaScript -->
+        </div>
+        <button id="viewMapBtn">View on Map</button>
+    </div>
+
+    <script>
+        function fetchHospitalList() {
+            // Default location for the example
+            const defaultLocation = { lat: 28.7041, lng: 77.1025 }; // Example location
+
+            // Create a Google Maps PlacesService object
+            const service = new google.maps.places.PlacesService(document.createElement('div'));
+
+            // Define the request object
+            const request = {
+                location: defaultLocation,
+                radius: '5000', // Radius in meters
+                type: ['hospital'] // Search for hospitals
+            };
+
+            // Perform the search
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    const hospitalList = document.getElementById('hospitalList');
+                    results.forEach(place => {
+                        const hospitalItem = document.createElement('div');
+                        hospitalItem.className = 'hospital-item';
+                        hospitalItem.innerHTML = `
+                            <h3>${place.name}</h3>
+                            <p><strong>Address:</strong> ${place.vicinity}</p>
+                            <p><strong>Rating:</strong> ${place.rating ? place.rating : 'No rating'}</p>
+                        `;
+                        hospitalList.appendChild(hospitalItem);
+                    });
+                } else {
+                    console.error('Places request failed due to: ' + status);
+                }
+            });
+        }
+
+        // Initialize the hospital list when the page loads
+        window.onload = fetchHospitalList;
+
+        // Redirect to map page
+        document.getElementById('viewMapBtn').addEventListener('click', () => {
+            window.location.href = 'user-map.html';
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"></script>
+</body>
+</html>

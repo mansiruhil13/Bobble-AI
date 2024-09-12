@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Locations on Map</title>
+    <link rel="stylesheet" href="user-map.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hospitals on Map</h1>
+        <div id="map" style="height: 500px; width: 100%;"></div>
+        <button id="viewListBtn">Back to List</button>
+    </div>
+
+    <script>
+        function initMap() {
+            const defaultLocation = { lat: 28.7041, lng: 77.1025 }; // Example location
+
+            // Create a map centered on the default location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: defaultLocation,
+                zoom: 14
+            });
+
+            const service = new google.maps.places.PlacesService(map);
+
+            // Define the request object
+            const request = {
+                location: defaultLocation,
+                radius: '5000', // Radius in meters
+                type: ['hospital'] // Search for hospitals
+            };
+
+            // Perform the search
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        const marker = new google.maps.Marker({
+                            map: map,
+                            position: place.geometry.location,
+                            title: place.name
+                        });
+
+                        const infoWindow = new google.maps.InfoWindow();
+                        google.maps.event.addListener(marker, 'click', () => {
+                            infoWindow.setContent(`
+                                <div>
+                                    <h3>${place.name}</h3>
+                                    <p><strong>Address:</strong> ${place.vicinity}</p>
+                                    <p><strong>Rating:</strong> ${place.rating ? place.rating : 'No rating'}</p>
+                                </div>
+                            `);
+                            infoWindow.open(map, marker);
+                        });
+                    });
+                } else {
+                    console.error('Places request failed due to: ' + status);
+                }
+            });
+        }
+
+        // Initialize the map when the page loads
+        window.onload = initMap;
+
+        // Redirect to list page
+        document.getElementById('viewListBtn').addEventListener('click', () => {
+            window.location.href = 'user.html';
+        });
+    </script>
+</body>
+</html>

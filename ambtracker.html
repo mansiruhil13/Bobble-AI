@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance GPS Tracking System</title>
+    <style>
+        /* Full page styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Map container */
+        #map {
+            height: 90%;
+            width: 100%;
+        }
+
+        /* Header styles */
+        h1 {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+    </style>
+    <!-- Include the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <h1>Ambulance GPS Tracking System</h1>
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Script to load the map and track ambulance -->
+    <script>
+        let map, marker;
+
+        // Initial position of the ambulance (example coordinates)
+        const ambulancePosition = { lat: 37.7749, lng: -122.4194 }; // San Francisco
+
+        // Function to initialize the map
+        function initMap() {
+            // Create the map centered at the ambulance's initial position
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: ambulancePosition,
+                zoom: 15
+            });
+
+            // Add a marker for the ambulance on the map
+            marker = new google.maps.Marker({
+                position: ambulancePosition,
+                map: map,
+                title: 'Ambulance Location'
+            });
+
+            // Update the ambulance's position every 5 seconds
+            setInterval(updateAmbulancePosition, 5000);
+        }
+
+        // Function to simulate the update of the ambulance's GPS position
+        function updateAmbulancePosition() {
+            // For demonstration, we'll move the ambulance slightly north
+            const newLat = ambulancePosition.lat + (Math.random() * 0.001 - 0.0005);
+            const newLng = ambulancePosition.lng + (Math.random() * 0.001 - 0.0005);
+
+            const newPosition = { lat: newLat, lng: newLng };
+
+            // Update the marker's position
+            marker.setPosition(newPosition);
+
+            // Re-center the map to the new position
+            map.setCenter(newPosition);
+        }
+
+        // Initialize the map when the window loads
+        window.onload = initMap;
+    </script>
+</body>
+</html>
