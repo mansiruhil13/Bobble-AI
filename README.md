@@ -60,6 +60,7 @@ Google Api Keys
 ![Screenshot 2024-09-12 093126](https://github.com/user-attachments/assets/25e576a3-6a21-40cc-9ab4-51a23c240cb5)
 ![Screenshot 2024-09-12 094532](https://github.com/user-attachments/assets/438cc785-ed34-4e57-9efb-ec1cf8f9bd8b)
 ![Screenshot 2024-09-12 094551](https://github.com/user-attachments/assets/f1adbbb7-fab0-406e-b483-6287fbfbd700)
-![Screenshot 2024-09-12 095153](https://github.com/user-attachments/assets/cb8286fc-3aa6-469f-9816-0adef8079b04)
+![Screenshot 2024-09-12 105505](https://github.com/user-attachments/assets/6426e355-1195-4f42-bcd2-e4cebc07758b)
+
 
 
