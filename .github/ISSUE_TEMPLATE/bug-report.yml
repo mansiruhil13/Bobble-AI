@@ -1,7 +1,6 @@
 ---
 name: Bug report 🐞
 description: File a bug report
-about: Please provide detailed information about the bug you encountered.
 title: "[Bug]: "
 labels: 
   - bug
@@ -62,3 +61,4 @@ body:
           required: false
 
 ---
+
