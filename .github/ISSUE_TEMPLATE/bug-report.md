@@ -1,7 +1,11 @@
 ---
 name: Bug report 🐞
-description: File a bug report
+description: Use this template to file a bug report.
 title: "[Bug]: "
+labels: ["bug", "triage"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
 body:
   - type: checkboxes
     id: existing-issue
@@ -11,6 +15,7 @@ body:
       options:
         - label: I have searched the existing issues
           required: true
+          
   - type: textarea
     id: what-happened
     attributes:
@@ -19,11 +24,13 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
+      
   - type: textarea
     id: screenshots
     attributes:
-      label: Add ScreenShots
-      description: Add sufficient ScreenShots to explain your issue.
+      label: Add Screenshots
+      description: Add sufficient screenshots to explain your issue.
+      
   - type: dropdown
     id: browsers
     attributes:
@@ -34,6 +41,7 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+        
   - type: checkboxes
     id: terms
     attributes:
@@ -42,9 +50,10 @@ body:
         - label: "I agree to follow this project's Code of Conduct"
           required: true
         - label: "I'm a GSSOC contributor"
-          required: False
+          required: false
         - label: "I want to work on this issue"
-          required: False
+          required: false
         - label: "I'm willing to provide further clarification or assistance if needed."
-          required: False
+          required: false
+
 ---
