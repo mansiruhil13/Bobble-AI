@@ -1,6 +1,7 @@
 ---
 name: Bug report 🐞
-description: Use this template to file a bug report.
+description: File a bug report
+about: Please provide detailed information about the bug you encountered.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 projects: ["octo-org/1", "octo-org/44"]
