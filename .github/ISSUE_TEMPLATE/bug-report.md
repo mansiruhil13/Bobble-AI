@@ -6,6 +6,8 @@ labels: ["bug", "triage"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
   - octocat
+about: |
+  Please provide as much detail as possible to help us understand the issue.
 body:
   - type: markdown
     attributes:
