@@ -1,19 +1,4 @@
----
-name: BUG REPORT
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
----
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
+name: Bug Report
 description: File a bug report.
 title: "[Bug]: "
 labels: ["bug", "triage"]
@@ -24,30 +9,22 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible to help us understand the issue.
-  - type: textarea
-    id: bug-description
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: contact
     attributes:
-      label: Briefly describe the bug
-      description: What bug are you experiencing?
-      placeholder: Describe the bug...
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
       value: "A bug happened!"
-    validations:
-      required: true
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: What is the expected behavior?
-      description: How should the application behave?
-      placeholder: Expected behavior...
-    validations:
-      required: true
-  - type: textarea
-    id: reproduction-steps
-    attributes:
-      label: Step-by-step instructions to reproduce the bug
-      description: Please provide the steps to reproduce the issue.
-      placeholder: Steps to reproduce...
     validations:
       required: true
   - type: dropdown
@@ -75,7 +52,7 @@ body:
     id: logs
     attributes:
       label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code.
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
   - type: checkboxes
     id: terms
