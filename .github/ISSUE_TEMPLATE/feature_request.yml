@@ -1,42 +1,61 @@
 ---
-name: Feature Request ✨
-description: Use this template to request a new feature for the project.
-title: "[Feature]: "
-labels: []  # Set to an array
-assignees: []  # Set to an array
----
-
+name: ✨ Feature Request
+description: Suggest a feature
+title: "[Feature Request]: "
 body:
+  - type: checkboxes
+    id: existing-issue
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for this feature.
+      options:
+        - label: I have searched the existing issues
+          required: true
   - type: textarea
     id: feature-description
     attributes:
-      label: Briefly describe your feature request
-      description: What new feature are you requesting?
-      placeholder: Describe the feature...
+      label: Feature Description
+      description: Please provide a detailed description of the feature you are requesting.
+      placeholder: Describe the new feature or enhancement you'd like to see.
     validations:
       required: true
   - type: textarea
-    id: problem-solution
+    id: use-case
     attributes:
-      label: What problem is this feature trying to solve?
-      description: Explain the problem that this feature addresses.
-      placeholder: Problem explanation...
+      label: Use Case
+      description: How would this feature enhance your use of the project?
+      placeholder: Describe a specific use case or scenario where this feature would be beneficial.
     validations:
       required: true
   - type: textarea
-    id: completion-criteria
+    id: benefits
     attributes:
-      label: How do we know when the feature is complete?
-      description: Describe what success looks like for this feature.
-      placeholder: Criteria for completion...
+      label: Benefits
+      description: What benefits would this feature bring to the project or community?
+      placeholder: Explain the advantages of implementing this feature.
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - High
+        - Medium
+        - Low
+      default: 0
     validations:
       required: true
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our Code of Conduct.
+      label: Record
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: "I agree to follow this project's Code of Conduct"
           required: true
+        - label: "I'm a GSSOC contributor"
+          required: False
+        - label: "I want to work on this issue"
+          required: False
+        - label: "I'm willing to provide further clarification or assistance if needed."
+          required: False
 ---
