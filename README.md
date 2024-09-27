@@ -16,6 +16,7 @@ A mobile application built using HTML, CSS, JavaScript, and Google API that noti
 
 
 ## 🛠 Problem Statement
+Knowing the name and address of a hospital is helpful, but seeing it on a map with directions can be even better. This app aims to bridge that gap by providing real-time location data and navigation assistance, ensuring users can find the nearest hospital quickly and efficiently.
 
 ### Quick Access to Hospitals
 When someone is in an emergency or needs medical help, finding the nearest hospital quickly can be crucial.
