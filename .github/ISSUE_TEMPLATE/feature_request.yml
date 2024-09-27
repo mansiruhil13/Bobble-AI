@@ -1,15 +1,11 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
-
----
-
 name: Feature Request ✨
 description: Use this template to request a new feature for the project.
 title: "[Feature]: "
+labels: []  # Set to an array
+assignees: []  # Set to an array
+---
+
 body:
   - type: textarea
     id: feature-description
