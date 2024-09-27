@@ -1,0 +1,45 @@
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+name: Feature Request ✨
+description: Use this template to request a new feature for the project.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Briefly describe your feature request
+      description: What new feature are you requesting?
+      placeholder: Describe the feature...
+    validations:
+      required: true
+  - type: textarea
+    id: problem-solution
+    attributes:
+      label: What problem is this feature trying to solve?
+      description: Explain the problem that this feature addresses.
+      placeholder: Problem explanation...
+    validations:
+      required: true
+  - type: textarea
+    id: completion-criteria
+    attributes:
+      label: How do we know when the feature is complete?
+      description: Describe what success looks like for this feature.
+      placeholder: Criteria for completion...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
