@@ -1,5 +1,5 @@
 name: Bug Report
-description: File an bug report.
+description: File a bug report.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 projects: ["octo-org/1", "octo-org/44"]
@@ -9,24 +9,35 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible to help us understand the issue.
+
   - type: textarea
-    id: what-happened
+    id: bug-description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Briefly describe the bug
+      description: What bug are you experiencing?
+      placeholder: Describe the bug...
     validations:
       required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What is the expected behavior?
+      description: How should the application behave?
+      placeholder: Expected behavior...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Step-by-step instructions to reproduce the bug
+      description: Please provide the steps to reproduce the issue.
+      placeholder: Steps to reproduce...
+    validations:
+      required: true
+
   - type: dropdown
     id: version
     attributes:
@@ -38,6 +49,7 @@ body:
       default: 0
     validations:
       required: true
+
   - type: dropdown
     id: browsers
     attributes:
@@ -48,17 +60,19 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code.
       render: shell
+
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+      description: By submitting this issue, you agree to follow our Code of Conduct.
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
