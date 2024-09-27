@@ -3,8 +3,12 @@ name: Bug report 🐞
 description: File a bug report
 about: Please provide detailed information about the bug you encountered.
 title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
+labels: 
+  - bug
+  - triage
+projects: 
+  - octo-org/1
+  - octo-org/44
 assignees: []
 
 body:
