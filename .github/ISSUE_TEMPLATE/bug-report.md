@@ -5,7 +5,7 @@ about: Please provide detailed information about the bug you encountered.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 projects: ["octo-org/1", "octo-org/44"]
-assignees:
+assignees: []
 
 body:
   - type: checkboxes
@@ -17,7 +17,7 @@ body:
         - label: I have searched the existing issues
           required: true
           
-- type: textarea
+  - type: textarea
     id: what-happened
     attributes:
       label: What happened?
@@ -26,13 +26,13 @@ body:
     validations:
       required: true
       
-- type: textarea
+  - type: textarea
     id: screenshots
     attributes:
       label: Add Screenshots
       description: Add sufficient screenshots to explain your issue.
       
-- type: dropdown
+  - type: dropdown
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
@@ -43,7 +43,7 @@ body:
         - Safari
         - Microsoft Edge
 
-- type: checkboxes
+  - type: checkboxes
     id: terms
     attributes:
       label: Record
