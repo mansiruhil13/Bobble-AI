@@ -54,8 +54,6 @@ The app includes a map view, showing where each hospital is located. Users can s
 4. **Efficient Driver Management**: This feature simplifies the management of ambulance drivers, making it easier to coordinate their activities and schedules.
 ### Following are the steps to contribute:
 
-###TO RUN THE SYSTEM LOCALLY
-
 1. **Fork the repo:**
    Click on the "Fork" button on the repository's GitHub page to create a copy of the repository in your GitHub account.
 
