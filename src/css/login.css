@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -23,6 +24,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    height: 530px;
 }
 
 /* Heading styles */
@@ -59,7 +61,9 @@ input:focus {
 
 /* Button styles */
 button {
-    width: 100%;
+    width: 200px;
+    bottom:120px;
+    position: absolute;
     padding: 12px;
     background-color: #007bff;
     border: none;
@@ -67,6 +71,9 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    top:80px;
+
 }
 
 button:hover {
@@ -77,6 +84,10 @@ button:hover {
 p {
     margin-top: 15px;
     font-size: 14px;
+    left:665px;
+    position: absolute;
+    bottom:125px;
+
 }
 
 a {
@@ -86,4 +97,21 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+#checks {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    gap: 8px; 
+    margin-top: 10px;
+}
+#check0, #check1, #check2, #check3, #check4 {
+    font-size: smaller;
+    color: red;
+}
+#checkTitle{
+    font-size: small;
 }
