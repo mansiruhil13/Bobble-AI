@@ -2,7 +2,7 @@
     <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/Ambulance Tracker.png ">
 </div>
 
-# 🚑 Bobble-AI: Ambulance Tracking System
+# 🚑 Ambulance Tracking System
 
 A mobile application built using HTML, CSS, JavaScript, and Google API that notifies patients of nearby hospitals and the estimated time of arrival of the ambulance. It provides hospitals and ambulance drivers with critical information such as the patient’s location and enables effective GPS route management via real-time traffic information on scheduled routes.
 
