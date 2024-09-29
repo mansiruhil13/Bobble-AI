@@ -1,5 +1,5 @@
 <div align="center">
-    <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/bobble_ai_logo.jpg">
+    <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/Ambulance Tracker.png ">
 </div>
 
 # 🚑 Bobble-AI: Ambulance Tracking System
