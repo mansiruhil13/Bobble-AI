@@ -107,11 +107,11 @@ input:checked + .slider:before {
 }
 
 .toggle-container {
-    margin-top: 20px; /* Adds space between the toggle and other elements */
+    margin-top: 20px;
     display: flex;
-    align-items: center; /* Vertically aligns the elements */
+    align-items: center;
 }
 
 .toggle-container p {
-    margin-left: 10px; /* Adds space between the toggle slider and "Toggle Availability" text */
+    margin-left: 10px;
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Dashboard</title>
     <link rel="stylesheet" href="src/css/hospital.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -54,25 +54,24 @@
                     <tr>
                         <td>Ambulance 1</td>
                         <td>Location XYZ</td>
-                        <td><a href="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" class="manage-ambulance" data-ambulance="Ambulance 1">Manage</a></td>
+                        <td><a href="#" class="manage-ambulance" data-ambulance="Ambulance 1">Manage</a></td>
                     </tr>
                     <tr>
                         <td>Ambulance 2</td>
                         <td>Location ABC</td>
-                        <td><a href="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" class="manage-ambulance" data-ambulance="Ambulance 2">Manage</a></td>
+                        <td><a href="#" class="manage-ambulance" data-ambulance="Ambulance 2">Manage</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Modal for managing ambulance with Google Map -->
     <div id="manageAmbulanceModal" class="modal hidden">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 id="ambulanceModalTitle"></h2>
             <p>Current location of the ambulance:</p>
-            <div id="maps" style="height: 400px; width: 100%;"></div>
+            <div id="map" style="height: 400px; width: 100%;"></div>
         </div>
     </div>
 
@@ -85,8 +84,8 @@
         const ambulanceModal = document.getElementById('manageAmbulanceModal');
         const ambulanceModalTitle = document.getElementById('ambulanceModalTitle');
         const closeModalBtn = document.querySelector('.close-btn');
+        let map, marker;
 
-        // Toggle between driver and ambulance status
         manageDriversBtn.addEventListener('click', () => {
             driverStatus.classList.remove('hidden');
             ambulanceStatus.classList.add('hidden');
@@ -97,38 +96,34 @@
             driverStatus.classList.add('hidden');
         });
 
-        // Function to initialize the map
         function initMap(location) {
-            const map = new google.maps.Map(document.getElementById("map"), {
+            map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 12,
                 center: location,
             });
 
-            new google.maps.Marker({
+            marker = new google.maps.Marker({
                 position: location,
                 map: map,
             });
         }
 
-        // Manage ambulance actions
         manageAmbulanceLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const ambulanceId = e.target.getAttribute('data-ambulance');
-                const location = { lat: 28.7041, lng: 77.1025 }; // Replace with real ambulance location
+                const location = { lat: 28.7041, lng: 77.1025 };
 
                 ambulanceModalTitle.textContent = `Manage ${ambulanceId}`;
                 ambulanceModal.classList.remove('hidden');
-                initMap(location); // Initialize the map with the ambulance location
+                initMap(location);
             });
         });
 
-        // Close modal
         closeModalBtn.addEventListener('click', () => {
             ambulanceModal.classList.add('hidden');
         });
 
-        // Close modal when clicking outside modal content
         window.addEventListener('click', (e) => {
             if (e.target === ambulanceModal) {
                 ambulanceModal.classList.add('hidden');
