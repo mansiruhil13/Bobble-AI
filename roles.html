@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Your Role</title>
     <link rel="stylesheet" href="src/css/roles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="role-selection">
         <h1>Select Your Role</h1>
         <div class="role-buttons">
-            <a href="user.html" class="role-btn user-btn">User</a>
-            <a href="hospital.html" class="role-btn hospital-btn">Hospital</a>
-            <a href="driver.html" class="role-btn driver-btn">Driver</a>
+            <div class="role">
+                <i class="fa-solid fa-user"></i>
+                <a href="user.html" class="role-btn user-btn">User</a>
+                <p class="role-description">Track ambulances and get updates.</p>
+            </div>
+            <div class="role">
+                <i class="fa-solid fa-hospital"></i>
+                <a href="hospital.html" class="role-btn hospital-btn">Hospital</a>
+                <p class="role-description">Manage patient notifications.</p>
+            </div>
+            <div class="role">
+                <i class="fa-solid fa-car"></i>
+                <a href="driver.html" class="role-btn driver-btn">Driver</a>
+                <p class="role-description">Optimize routes with real-time data.</p>
+            </div>
+
         </div>
     </div>
 </body>
+
 </html>
