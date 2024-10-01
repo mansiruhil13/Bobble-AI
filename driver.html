@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Dashboard</title>
     <link rel="stylesheet" href="src/css/driver.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
     <style>
         #map {
             width: 100%;
             height: 320px;
             display: none;
-            margin-bottom: 20px; /* Hidden initially */
+            margin-bottom: 20px;
         }
 
         #driverImage {
             width: 100%;
             height: 320px;
             margin-bottom: 20px;
+        }
+
+        /* Add a loading spinner for the map */
+        #loadingSpinner {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
         }
     </style>
 </head>
@@ -32,6 +42,9 @@
         <!-- Google Map -->
         <div id="map"></div>
         
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner">Loading...</div>
+        
         
         <div class="toggle-container">
             <label class="switch">
@@ -43,20 +56,29 @@
     </div>
 
     <script>
+        let map, driverMarker;
         const availabilityToggle = document.getElementById('availabilityToggle');
         const availabilityText = document.getElementById('availability');
         const statusText = document.getElementById('status');
         const driverName = document.getElementById('driverName');
         const driverImage = document.getElementById('driverImage');
         const mapElement = document.getElementById('map');
+        const loadingSpinner = document.getElementById('loadingSpinner');
 
         // Initialize the map
         function initMap() {
+            loadingSpinner.style.display = "block"; // Show spinner
             const mapOptions = {
                 zoom: 14,
                 center: { lat: 37.7749, lng: -122.4194 } // Example location: San Francisco
             };
-            const map = new google.maps.Map(mapElement, mapOptions);
+            map = new google.maps.Map(mapElement, mapOptions);
+            driverMarker = new google.maps.Marker({
+                position: mapOptions.center,
+                map: map,
+                title: 'Driver Location'
+            });
+            loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
         }
 
         // Set initial values (can be set dynamically later)
@@ -80,6 +102,21 @@
                 driverImage.style.display = "block"; // Show the image
             }
         });
+
+        // Function to update driver's location in real-time
+        function updateDriverLocation() {
+            // Simulate real-time location update
+            const newLat = 37.7749 + (Math.random() * 0.001 - 0.0005);
+            const newLng = -122.4194 + (Math.random() * 0.001 - 0.0005);
+            const newPosition = { lat: newLat, lng: newLng };
+            // Update the driver's marker position on the map
+            // Assuming you have a marker for the driver
+            driverMarker.setPosition(newPosition);
+            map.setCenter(newPosition);
+        }
+
+        // Call updateDriverLocation every 5 seconds
+        setInterval(updateDriverLocation, 5000);
     </script>
 </body>
 </html>
