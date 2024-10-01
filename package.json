@@ -1,0 +1,11 @@
+{
+  "name": "bobble-ai",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">     <img style=\"display: block; margin-left: auto; margin-right: auto; width: 50%;\" src=\"images/Ambulance Tracker.png\"> </div>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
