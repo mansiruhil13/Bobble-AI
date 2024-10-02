@@ -46,16 +46,19 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .action-btn:hover {
     background-color: #2e59d9;
+    transform: scale(1.05);
 }
 
 .hidden {
     display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Table Styling */
@@ -185,4 +188,65 @@ tr:hover {
     .modal-content {
         width: 90%;
     }
+}
+
+/* Enhanced visibility transitions for status sections */
+#driverStatus, #ambulanceStatus {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Styles for Nearby Hospital Facilities */
+.nearby-facilities {
+    margin-top: 20px;
+}
+
+.nearby-facilities h3 {
+    color: #4e73df;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nearby-facilities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nearby-facilities li {
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+/* Styles for Contact Details */
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-details h3 {
+    color: #4e73df;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Improved Button Styles for Better UI/UX */
+.action-btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #2e59d9;
+    transform: scale(1.05);
 }

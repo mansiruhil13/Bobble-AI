@@ -38,6 +38,23 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- {{ New Section: Nearby Hospital Facilities for Drivers }} -->
+            <div class="nearby-facilities">
+                <h3>Nearby Hospital Facilities</h3>
+                <ul>
+                    <li>Bed Availability: 20</li>
+                    <li>Oxygen Supply: Sufficient</li>
+                    <li>Blood Units: 15</li>
+                </ul>
+            </div>
+
+            <!-- {{ New Section: Contact Details for Drivers }} -->
+            <div class="contact-details">
+                <h3>Contact Details</h3>
+                <p>Driver XYZ: (123) 456-7890</p>
+                <p>Driver ABC: (098) 765-4321</p>
+            </div>
         </div>
 
         <div id="ambulanceStatus" class="hidden">
@@ -63,6 +80,23 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- {{ New Section: Nearby Hospital Facilities for Ambulances }} -->
+            <div class="nearby-facilities">
+                <h3>Nearby Hospital Facilities</h3>
+                <ul>
+                    <li>Bed Availability: 15</li>
+                    <li>Oxygen Supply: Limited</li>
+                    <li>Blood Units: 10</li>
+                </ul>
+            </div>
+
+            <!-- {{ New Section: Contact Details for Ambulances }} -->
+            <div class="contact-details">
+                <h3>Contact Details</h3>
+                <p>Ambulance 1: (321) 654-0987</p>
+                <p>Ambulance 2: (789) 012-3456</p>
+            </div>
         </div>
     </div>
 
@@ -72,6 +106,30 @@
             <h2 id="ambulanceModalTitle"></h2>
             <p>Current location of the ambulance:</p>
             <div id="map" style="height: 400px; width: 100%;"></div>
+            
+            <!-- {{ New Section: Contact Details in Modal }} -->
+            <div class="contact-details">
+                <h3>Contact Information</h3>
+                <p>Driver Name: <span id="modalDriverName">Driver XYZ</span></p>
+                <p>Phone: <span id="modalDriverContact">(123) 456-7890</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- {{ New Section: Driver Management Modal }} -->
+    <div id="manageDriverModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="driverModalTitle"></h2>
+            <p>Real-time status of the driver:</p>
+            <div id="driverMap" style="height: 400px; width: 100%;"></div>
+            
+            <!-- Contact Details in Modal -->
+            <div class="contact-details">
+                <h3>Contact Information</h3>
+                <p>Driver Name: <span id="modalDriverName">Driver XYZ</span></p>
+                <p>Phone: <span id="modalDriverContact">(123) 456-7890</span></p>
+            </div>
         </div>
     </div>
 
@@ -127,6 +185,64 @@
         window.addEventListener('click', (e) => {
             if (e.target === ambulanceModal) {
                 ambulanceModal.classList.add('hidden');
+            }
+        });
+
+        // Elements for Driver Management
+        const manageDriverLinks = document.querySelectorAll('.manage-link');
+        const manageDriverModal = document.getElementById('manageDriverModal');
+        const driverModalTitle = document.getElementById('driverModalTitle');
+        const driverMapElement = document.getElementById('driverMap');
+        const modalCloseBtns = document.querySelectorAll('.close-btn');
+
+        let driverMap, driverMarker;
+
+        // Initialize Driver Map (Assuming similar to initMap for Ambulances)
+        function initDriverMap(location) {
+            driverMap = new google.maps.Map(driverMapElement, {
+                zoom: 12,
+                center: location,
+            });
+
+            driverMarker = new google.maps.Marker({
+                position: location,
+                map: driverMap,
+            });
+        }
+
+        // Event Listener for Manage Driver Links
+        manageDriverLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const driverName = e.target.getAttribute('data-driver');
+                // Example location; replace with real data as needed
+                const location = { lat: 28.7041, lng: 77.1025 };
+
+                driverModalTitle.textContent = `Manage ${driverName}`;
+                // Update contact details dynamically if needed
+                document.getElementById('modalDriverName').textContent = driverName;
+                document.getElementById('modalDriverContact').textContent = driverName === 'Driver XYZ' ? '(123) 456-7890' : '(098) 765-4321';
+
+                manageDriverModal.classList.remove('hidden');
+                initDriverMap(location);
+            });
+        });
+
+        // Close Modals
+        modalCloseBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                manageAmbulanceModal.classList.add('hidden');
+                manageDriverModal.classList.add('hidden');
+            });
+        });
+
+        // Close modal when clicking outside the content
+        window.addEventListener('click', (e) => {
+            if (e.target === manageAmbulanceModal) {
+                manageAmbulanceModal.classList.add('hidden');
+            }
+            if (e.target === manageDriverModal) {
+                manageDriverModal.classList.add('hidden');
             }
         });
     </script>
