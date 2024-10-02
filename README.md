@@ -2,9 +2,15 @@
     <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/Ambulance Tracker.png">
 </div>
 
+
+
 # 🚑 Ambulance Tracking System
 
 A mobile application built using HTML, CSS, JavaScript, and Google API that notifies patients of nearby hospitals and the estimated time of arrival of the ambulance. It provides hospitals and ambulance drivers with critical information such as the patient’s location and enables effective GPS route management via real-time traffic information on scheduled routes.
+
+
+## DESCRIPTION 📑
+A mobile app that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
 
 ## 🌟 Why We Need This Application
 
