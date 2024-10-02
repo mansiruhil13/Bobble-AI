@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="src/css/up.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
     <div class="signup-container">
@@ -20,9 +22,21 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required style="padding-right: 40px; padding-top: 10px;">
+                <span class="material-symbols-outlined" id="toggle-password" style="
+                position: relative;
+                font-size: 25px;
+                bottom: 33px;
+                left: 280px;
+                cursor: pointer;
+                ">
+                    visibility_off
+                    </span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="
+            position: relative;
+            bottom: 20px;
+            ">
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
             </div>
@@ -32,6 +46,18 @@
     </div>
 
     <script>
+
+document.getElementById('toggle-password').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        this.textContent = 'visibility';
+    } else {
+        passwordInput.type = 'password';
+        this.textContent = 'visibility_off';
+    }
+});
+
         document.getElementById('signupForm').addEventListener('submit', function(event) {
             event.preventDefault();
 

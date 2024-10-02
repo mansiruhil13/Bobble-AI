@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="src\css\login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -17,9 +19,21 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required oninput="check()">
-                </div>
-                <div id="checks">
+                <input type="password" id="password" name="password" required style="padding-right: 40px; padding-top: 10px;">
+                <span class="material-symbols-outlined" id="toggle-password" style="
+                position: relative;
+                font-size: 25px;
+                bottom: 33px;
+                left: 280px;
+                cursor: pointer;
+                ">
+                    visibility_off
+                    </span>
+            </div>
+                <div id="checks" style="
+                position: relative;
+                bottom: 20px;
+                ">
                     <div id="checkTitle">The password must:</div>
                     <div id="check0">
                         <i class="far fa-check-circle"></i><span> be atleast 8 characters long.</span></div>
@@ -37,12 +51,30 @@
 
             </div>
             
-            <button id="loginButton" type="submit" disabled>Login</button>
+            <button id="loginButton" type="submit" disabled style="
+                position: relative;
+                top: 40px;">Login</button>
         </form>
-        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p style="
+        position: relative;
+        top:40px;
+        left:0px;
+        ">Don't have an account? <a href="signup.html">Sign Up</a></p>
     </div>
 
     <script>
+
+document.getElementById('toggle-password').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        this.textContent = 'visibility';
+    } else {
+        passwordInput.type = 'password';
+        this.textContent = 'visibility_off';
+    }
+});
+
         function check(){
             let passed=0;
             let password=document.getElementById('password').value;
