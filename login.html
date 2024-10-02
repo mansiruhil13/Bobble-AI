@@ -18,6 +18,7 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required oninput="check()">
+                <i class="fas fa-eye toggle-password" id="togglePassword" onclick="togglePassword()"></i>
                 </div>
                 <div id="checks">
                     <div id="checkTitle">The password must:</div>
@@ -43,6 +44,21 @@
     </div>
 
     <script>
+        const togglePassword = () => {
+            const password = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+
+            if (password.type === 'password') {
+                password.type = 'text';
+                togglePassword.classList.add('fa-eye-slash');
+                togglePassword.classList.remove('fa-eye');
+            } else {
+                password.type = 'password';
+                togglePassword.classList.add('fa-eye');
+                togglePassword.classList.remove('fa-eye-slash');
+            }
+        }
+
         function check(){
             let passed=0;
             let password=document.getElementById('password').value;
