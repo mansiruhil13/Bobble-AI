@@ -1,13 +1,13 @@
 ---
 name: ✨ Feature Request
-description: Suggest a feature
+description: Briefly describe your feature request
 title: "[Feature Request]: "
 body:
   - type: checkboxes
     id: existing-issue
     attributes:
       label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for this feature.
+      description: What problem is this feature trying to solve?
       options:
         - label: I have searched the existing issues
           required: true
@@ -37,7 +37,7 @@ body:
     id: priority
     attributes:
       label: Priority
-      description: How important is this feature to you?
+      description: How do we know when the feature is complete?
       options:
         - High
         - Medium
