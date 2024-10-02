@@ -8,242 +8,176 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <h1>Hospital Dashboard</h1>
-        <div class="action-buttons">
-            <button class="action-btn" id="manageDriversBtn">Manage Drivers</button>
-            <button class="action-btn" id="manageAmbulancesBtn">Manage Ambulances</button>
-        </div>
-
-        <div id="driverStatus" class="hidden">
-            <h2>Driver Status</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Driver Name</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Driver XYZ</td>
-                        <td><span class="status available">Available</span></td>
-                        <td><a href="#" class="manage-link" data-driver="Driver XYZ">Manage</a></td>
-                    </tr>
-                    <tr>
-                        <td>Driver ABC</td>
-                        <td><span class="status offline">Offline</span></td>
-                        <td><a href="#" class="manage-link" data-driver="Driver ABC">Manage</a></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- {{ New Section: Nearby Hospital Facilities for Drivers }} -->
-            <div class="nearby-facilities">
-                <h3>Nearby Hospital Facilities</h3>
-                <ul>
-                    <li>Bed Availability: 20</li>
-                    <li>Oxygen Supply: Sufficient</li>
-                    <li>Blood Units: 15</li>
-                </ul>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <h2>Hospital Management System</h2>
             </div>
+            <ul class="navbar-links">
+                <li><a href="hospital.html">Dashboard</a></li>
+                <li><a href="manage.html">Manage Status</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- {{ New Section: Contact Details for Drivers }} -->
-            <div class="contact-details">
-                <h3>Contact Details</h3>
-                <p>Driver XYZ: (123) 456-7890</p>
-                <p>Driver ABC: (098) 765-4321</p>
-            </div>
-        </div>
+    <main>
+        <div class="dashboard-container">
 
-        <div id="ambulanceStatus" class="hidden">
-            <h2>Ambulance Status</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ambulance ID</th>
-                        <th>Location</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ambulance 1</td>
-                        <td>Location XYZ</td>
-                        <td><a href="#" class="manage-ambulance" data-ambulance="Ambulance 1">Manage</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ambulance 2</td>
-                        <td>Location ABC</td>
-                        <td><a href="#" class="manage-ambulance" data-ambulance="Ambulance 2">Manage</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Driver and Ambulance Status Section -->
+            <div class="status-container">
+                <!-- Driver Status Section -->
+                <div id="driverStatus" class="status-section active">
+                    <h2>Driver Status</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Driver Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="driversTableBody">
+                            <!-- Dynamic Driver Rows Will Be Injected Here -->
+                        </tbody>
+                    </table>
 
-            <!-- {{ New Section: Nearby Hospital Facilities for Ambulances }} -->
-            <div class="nearby-facilities">
-                <h3>Nearby Hospital Facilities</h3>
-                <ul>
-                    <li>Bed Availability: 15</li>
-                    <li>Oxygen Supply: Limited</li>
-                    <li>Blood Units: 10</li>
-                </ul>
-            </div>
+                    <!-- Nearby Hospital Facilities for Drivers -->
+                    <div class="nearby-facilities">
+                        <h3>Nearby Hospital Facilities</h3>
+                        <ul>
+                            <li>Bed Availability: <span id="bedAvailabilityDriver">Loading...</span></li>
+                            <li>Oxygen Supply: <span id="oxygenSupplyDriver">Loading...</span></li>
+                            <li>Blood Units: <span id="bloodUnitsDriver">Loading...</span></li>
+                        </ul>
+                    </div>
 
-            <!-- {{ New Section: Contact Details for Ambulances }} -->
-            <div class="contact-details">
-                <h3>Contact Details</h3>
-                <p>Ambulance 1: (321) 654-0987</p>
-                <p>Ambulance 2: (789) 012-3456</p>
+                    <!-- Contact Details for Drivers -->
+                    <div class="contact-details">
+                        <h3>Contact Details</h3>
+                        <p>Driver XYZ: (123) 456-7890</p>
+                        <p>Driver ABC: (098) 765-4321</p>
+                    </div>
+                </div>
+
+                <!-- Ambulance Status Section -->
+                <div id="ambulanceStatus" class="status-section active">
+                    <h2>Ambulance Status</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ambulance ID</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ambulancesTableBody">
+                            <!-- Dynamic Ambulance Rows Will Be Injected Here -->
+                        </tbody>
+                    </table>
+
+                    <!-- Nearby Hospital Facilities for Ambulances -->
+                    <div class="nearby-facilities">
+                        <h3>Nearby Hospital Facilities</h3>
+                        <ul>
+                            <li>Bed Availability: <span id="bedAvailabilityAmbulance">Loading...</span></li>
+                            <li>Oxygen Supply: <span id="oxygenSupplyAmbulance">Loading...</span></li>
+                            <li>Blood Units: <span id="bloodUnitsAmbulance">Loading...</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Details for Ambulances -->
+                    <div class="contact-details">
+                        <h3>Contact Details</h3>
+                        <p>Ambulance 1: (321) 654-0987</p>
+                        <p>Ambulance 2: (789) 012-3456</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="manageAmbulanceModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 id="ambulanceModalTitle"></h2>
-            <p>Current location of the ambulance:</p>
-            <div id="map" style="height: 400px; width: 100%;"></div>
-            
-            <!-- {{ New Section: Contact Details in Modal }} -->
-            <div class="contact-details">
-                <h3>Contact Information</h3>
-                <p>Driver Name: <span id="modalDriverName">Driver XYZ</span></p>
-                <p>Phone: <span id="modalDriverContact">(123) 456-7890</span></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- {{ New Section: Driver Management Modal }} -->
-    <div id="manageDriverModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 id="driverModalTitle"></h2>
-            <p>Real-time status of the driver:</p>
-            <div id="driverMap" style="height: 400px; width: 100%;"></div>
-            
-            <!-- Contact Details in Modal -->
-            <div class="contact-details">
-                <h3>Contact Information</h3>
-                <p>Driver Name: <span id="modalDriverName">Driver XYZ</span></p>
-                <p>Phone: <span id="modalDriverContact">(123) 456-7890</span></p>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <script>
-        const manageDriversBtn = document.getElementById('manageDriversBtn');
-        const manageAmbulancesBtn = document.getElementById('manageAmbulancesBtn');
-        const driverStatus = document.getElementById('driverStatus');
-        const ambulanceStatus = document.getElementById('ambulanceStatus');
-        const manageAmbulanceLinks = document.querySelectorAll('.manage-ambulance');
-        const ambulanceModal = document.getElementById('manageAmbulanceModal');
-        const ambulanceModalTitle = document.getElementById('ambulanceModalTitle');
-        const closeModalBtn = document.querySelector('.close-btn');
-        let map, marker;
+        // Elements
+        const manageBtn = document.getElementById('manageBtn');
+        const driversTableBody = document.getElementById('driversTableBody');
+        const ambulancesTableBody = document.getElementById('ambulancesTableBody');
 
-        manageDriversBtn.addEventListener('click', () => {
-            driverStatus.classList.remove('hidden');
-            ambulanceStatus.classList.add('hidden');
-        });
+        // Mock Data for Nearby Facilities (Replace with dynamic data if available)
+        document.getElementById('bedAvailabilityDriver').textContent = "20";
+        document.getElementById('oxygenSupplyDriver').textContent = "Sufficient";
+        document.getElementById('bloodUnitsDriver').textContent = "15";
 
-        manageAmbulancesBtn.addEventListener('click', () => {
-            ambulanceStatus.classList.remove('hidden');
-            driverStatus.classList.add('hidden');
-        });
+        document.getElementById('bedAvailabilityAmbulance').textContent = "15";
+        document.getElementById('oxygenSupplyAmbulance').textContent = "Limited";
+        document.getElementById('bloodUnitsAmbulance').textContent = "10";
 
-        function initMap(location) {
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 12,
-                center: location,
-            });
+        // Function to Load Drivers from localStorage
+        function loadDrivers() {
+            const drivers = JSON.parse(localStorage.getItem('drivers')) || [];
+            driversTableBody.innerHTML = ''; // Clear existing rows
 
-            marker = new google.maps.Marker({
-                position: location,
-                map: map,
-            });
-        }
+            drivers.forEach((driver, index) => {
+                const tr = document.createElement('tr');
 
-        manageAmbulanceLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const ambulanceId = e.target.getAttribute('data-ambulance');
-                const location = { lat: 28.7041, lng: 77.1025 };
+                const nameTd = document.createElement('td');
+                nameTd.textContent = driver.name;
+                tr.appendChild(nameTd);
 
-                ambulanceModalTitle.textContent = `Manage ${ambulanceId}`;
-                ambulanceModal.classList.remove('hidden');
-                initMap(location);
-            });
-        });
+                const statusTd = document.createElement('td');
+                const statusSpan = document.createElement('span');
+                statusSpan.classList.add('status', driver.status.toLowerCase());
+                statusSpan.textContent = driver.status;
+                statusTd.appendChild(statusSpan);
+                tr.appendChild(statusTd);
 
-        closeModalBtn.addEventListener('click', () => {
-            ambulanceModal.classList.add('hidden');
-        });
+                const actionTd = document.createElement('td');
+                const manageLink = document.createElement('a');
+                manageLink.href = `manage.html?type=driver&index=${index}`;
+                manageLink.classList.add('manage-link');
+                manageLink.textContent = 'Manage';
+                actionTd.appendChild(manageLink);
+                tr.appendChild(actionTd);
 
-        window.addEventListener('click', (e) => {
-            if (e.target === ambulanceModal) {
-                ambulanceModal.classList.add('hidden');
-            }
-        });
-
-        // Elements for Driver Management
-        const manageDriverLinks = document.querySelectorAll('.manage-link');
-        const manageDriverModal = document.getElementById('manageDriverModal');
-        const driverModalTitle = document.getElementById('driverModalTitle');
-        const driverMapElement = document.getElementById('driverMap');
-        const modalCloseBtns = document.querySelectorAll('.close-btn');
-
-        let driverMap, driverMarker;
-
-        // Initialize Driver Map (Assuming similar to initMap for Ambulances)
-        function initDriverMap(location) {
-            driverMap = new google.maps.Map(driverMapElement, {
-                zoom: 12,
-                center: location,
-            });
-
-            driverMarker = new google.maps.Marker({
-                position: location,
-                map: driverMap,
+                driversTableBody.appendChild(tr);
             });
         }
 
-        // Event Listener for Manage Driver Links
-        manageDriverLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const driverName = e.target.getAttribute('data-driver');
-                // Example location; replace with real data as needed
-                const location = { lat: 28.7041, lng: 77.1025 };
+        // Function to Load Ambulances from localStorage
+        function loadAmbulances() {
+            const ambulances = JSON.parse(localStorage.getItem('ambulances')) || [];
+            ambulancesTableBody.innerHTML = ''; // Clear existing rows
 
-                driverModalTitle.textContent = `Manage ${driverName}`;
-                // Update contact details dynamically if needed
-                document.getElementById('modalDriverName').textContent = driverName;
-                document.getElementById('modalDriverContact').textContent = driverName === 'Driver XYZ' ? '(123) 456-7890' : '(098) 765-4321';
+            ambulances.forEach((ambulance, index) => {
+                const tr = document.createElement('tr');
 
-                manageDriverModal.classList.remove('hidden');
-                initDriverMap(location);
+                const idTd = document.createElement('td');
+                idTd.textContent = ambulance.id;
+                tr.appendChild(idTd);
+
+                const locationTd = document.createElement('td');
+                locationTd.textContent = ambulance.location;
+                tr.appendChild(locationTd);
+
+                const actionTd = document.createElement('td');
+                const manageLink = document.createElement('a');
+                manageLink.href = `manage.html?type=ambulance&index=${index}`;
+                manageLink.classList.add('manage-ambulance');
+                manageLink.textContent = 'Manage';
+                actionTd.appendChild(manageLink);
+                tr.appendChild(actionTd);
+
+                ambulancesTableBody.appendChild(tr);
             });
-        });
+        }
 
-        // Close Modals
-        modalCloseBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                manageAmbulanceModal.classList.add('hidden');
-                manageDriverModal.classList.add('hidden');
-            });
-        });
+        // Initial Load
+        loadDrivers();
+        loadAmbulances();
 
-        // Close modal when clicking outside the content
-        window.addEventListener('click', (e) => {
-            if (e.target === manageAmbulanceModal) {
-                manageAmbulanceModal.classList.add('hidden');
-            }
-            if (e.target === manageDriverModal) {
-                manageDriverModal.classList.add('hidden');
-            }
+        // Event Listener for Manage Button
+        manageBtn.addEventListener('click', () => {
+            window.location.href = 'manage.html';
         });
     </script>
 </body>
