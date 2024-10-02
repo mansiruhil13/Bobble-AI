@@ -1,0 +1,214 @@
+/* Manage Container */
+.manage-container {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    width: 95%;
+    margin: 50px auto;
+    flex: 1;
+}
+
+/* Manage Options Buttons */
+.manage-options {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased gap for better spacing */
+    margin-bottom: 50px;
+}
+
+.manage-btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 20px 35px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.manage-btn:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Manage Sections Enhancements */
+.manage-section {
+    display: none;
+    background-color: #ecf0f1;
+    padding: 35px;
+    border-radius: 20px;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(-15px);
+}
+
+.manage-section.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Forms Styling Improvements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #e67e22;
+    outline: none;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+/* Enhanced Submit Button */
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .manage-container {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    .manage-options {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .manage-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* space between the buttons */
+    margin-top: 20px;
+  }
+
+  .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn.save {
+    background-color: #3498db; /* primary color */
+  }
+
+  .submit-btn.save:hover {
+    background-color: #2980b9; /* darker on hover */
+  }
+
+  .submit-btn.cancel {
+    background-color: #e74c3c; /* cancel color */
+  }
+
+  .submit-btn.cancel:hover {
+    background-color: #c0392b; /* darker on hover */
+  }
+
+/* Navbar Enhancements */
+.navbar {
+    background-color: #34495e;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo h2 {
+    color: #ecf0f1;
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #e67e22;
+}
+
+/* Enhance Dashboard Layout */
+/* Adjusting body to accommodate dashboard layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Update manage-container to take remaining space */
+.manage-container {
+    flex: 1;
+}
