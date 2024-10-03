@@ -5,75 +5,128 @@
     box-sizing: border-box;
 }
 
+/* Enhance Typography */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #74ebd5;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Softer background for better contrast */
+    color: #333333;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Navbar Styles */
+.navbar {
+    background-color: #34495e;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo h2 {
+    color: #ecf0f1;
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #e67e22;
+}
+
+/* Dashboard Container */
 .dashboard-container {
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    width: 95%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center align items */
 }
 
-h1 {
-    text-align: center;
-    color: #4e73df;
-    margin-bottom: 20px;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
+/* Action Buttons */
 .action-buttons {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center;     /* Centers buttons vertically */
+    gap: 20px;               /* Adds space between buttons */
+    margin-bottom: 40px;
 }
 
 .action-btn {
-    background-color: #4e73df;
+    min-width: 180px;        /* Sets a minimum width for uniformity */
+    padding: 15px 25px;      /* Adjusts padding for better balance */
+    font-size: 18px;         /* Increases font size for readability */
+    text-align: center;      /* Centers text within buttons */
+    background-color: #1abc9c;
     color: white;
-    padding: 12px 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .action-btn:hover {
-    background-color: #2e59d9;
+    background-color: #16a085;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.hidden {
-    display: none;
+/* Status Sections */
+.status-container {
+    display: flex; /* Use flexbox to align sections side by side */
+    justify-content: space-between; /* Space between sections */
+    width: 100%; /* Full width for the container */
 }
 
-/* Table Styling */
+.status-section {
+    flex: 1; /* Allow sections to grow equally */
+    margin: 0 10px; /* Margin between sections */
+    background-color: #f9f9f9; /* Light background for sections */
+    padding: 20px; /* Padding for content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Table Styling Enhancements */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    text-align: left;
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+    text-align: center; /* Centered text for better readability */
+    padding: 15px 20px;
+    border-bottom: 1px solid #ecf0f1;
 }
 
 th {
-    background-color: #4e73df;
+    background-color: #34495e;
     color: white;
     font-size: 18px;
 }
@@ -83,98 +136,55 @@ td {
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ecf0f1;
 }
 
+/* Status Badges */
 .status {
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
     color: white;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .available {
-    background-color: #28a745;
+    background-color: #27ae60;
 }
 
 .offline {
-    background-color: #dc3545;
+    background-color: #c0392b;
 }
 
-.manage-link, .manage-ambulance {
-    color: #4e73df;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.manage-link:hover, .manage-ambulance:hover {
-    color: #2e59d9;
-}
-
-/* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    width: 600px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.close-btn {
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
-    float: right;
-    margin-bottom: 20px;
-}
-
-.close-btn:hover {
-    color: #dc3545;
-}
-
-#map {
-    height: 300px;
-    width: 100%;
+/* Nearby Facilities & Contact Details */
+.nearby-facilities, .contact-details {
+    background-color: #bdc3c7;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+    width: 100%; /* Full width for these sections */
+}
+
+.nearby-facilities h3, .contact-details h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.nearby-facilities ul, .contact-details p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .dashboard-container {
-        padding: 20px;
+        padding: 25px;
         max-width: 100%;
     }
 
     .action-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .action-btn {
@@ -183,6 +193,19 @@ tr:hover {
     }
 
     .modal-content {
-        width: 90%;
+        width: 95%;
+    }
+
+    .close-btn {
+        top: 15px;
+        right: 20px;
+    }
+
+    .status-container {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+
+    .status-section {
+        margin: 10px 0; /* Margin between stacked sections */
     }
 }
