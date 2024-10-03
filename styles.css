@@ -15,6 +15,29 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+}
+.header-container .logo {
+    width: 150px; /* Adjust size as needed */
+}
+.header-container nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.header-container nav ul li {
+    margin: 0 15px;
+}
+
+.header-container nav ul li a {
+    text-decoration: none;
+    color: #ecf1f6; /* Link color */
+    font-weight: bold;
+}
+
+.header-container nav ul li a:hover {
+    text-decoration: underline;
 }
 
 nav ul {
