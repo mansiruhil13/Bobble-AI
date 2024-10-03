@@ -17,6 +17,31 @@
         .form-group {
             position: relative;
         }
+
+        .password-strength {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .password-strength span {
+            display: inline-block;
+            width: 100px;
+            height: 10px;
+            background-color: #ddd;
+            margin-right: 5px;
+        }
+
+        .password-strength .weak {
+            background-color: red;
+        }
+
+        .password-strength .medium {
+            background-color: orange;
+        }
+
+        .password-strength .strong {
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -33,8 +58,13 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
                 <i class="fas fa-eye toggle-password" id="togglePassword" onclick="togglePassword('password', this)"></i>
+                <div class="password-strength" id="password-strength">
+                    <span id="strength-weak"></span>
+                    <span id="strength-medium"></span>
+                    <span id="strength-strong"></span>
+                </div>
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password</label>
@@ -75,6 +105,29 @@
             // Change the icon class between eye and eye-slash
             icon.classList.toggle('fa-eye-slash', isPassword);
             icon.classList.toggle('fa-eye', !isPassword);
+        }
+
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthWeak = document.getElementById('strength-weak');
+            const strengthMedium = document.getElementById('strength-medium');
+            const strengthStrong = document.getElementById('strength-strong');
+
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[a-z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+
+            strengthWeak.className = '';
+            strengthMedium.className = '';
+            strengthStrong.className = '';
+
+            if (strength >= 1) strengthWeak.className = 'weak';
+            if (strength >= 3) strengthMedium.className = 'medium';
+            if (strength >= 5) strengthStrong.className = 'strong';
         }
     </script>
 </body>
