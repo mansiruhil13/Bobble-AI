@@ -239,7 +239,9 @@ input[type="password"]:focus {
 p {
     font-size: 14px;
     color: #555;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 a {
