@@ -134,7 +134,8 @@ body {
 
 .user-btn:hover {
     background-color: #45a049;
-    border: 3px solid black;
+    color: #000;
+    box-shadow: inset 0 0 0 3px
 }
 
 .hospital-btn {
@@ -143,7 +144,8 @@ body {
 
 .hospital-btn:hover {
     background-color: #1e87e5;
-    border: 3px solid black;
+    color: #000;
+    box-shadow: inset 0 0 0 3px
 }
 
 .driver-btn {
@@ -152,7 +154,8 @@ body {
 
 .driver-btn:hover {
     background-color: #fb8c00;
-    border: 3px solid black;
+    color: #000;
+    box-shadow: inset 0 0 0 3px
 }
 
 /* Background animation keyframes */
