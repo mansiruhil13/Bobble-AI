@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Align items to the edges */
+    align-items: center;
+    padding: 10px 20px; /* Add padding to the container */
+    background-color: #f8f9fa; /* Light background for the header */
+}
+
+.logo {
+    flex: 0 0 auto; /* Prevent the logo from growing */
+}
+
+.logo-image {
+    height: 50px; /* Adjust logo height */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+.menu {
+    flex: 1; /* Allow the menu to grow and fill space */
+    text-align: right; /* Align menu items to the right */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.menu ul li {
+    margin: 0 30px; /* Space between menu items */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333; /* Text color */
+    font-weight: 900;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.buttons .login,
+.buttons .get-started {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons .login {
+    background-color: #007bff; /* Blue background for login */
+    color: white; /* White text */
+}
+
+.buttons .get-started {
+    background-color: #28a745; /* Green background for get started */
+    color: white; /* White text */
+}
