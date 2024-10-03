@@ -48,6 +48,11 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 0 2px rgb(174, 174, 174);
+    border-radius: 25px;
+    padding: 1rem 0.3rem;
 }
 
 .role i {
@@ -148,6 +153,10 @@ body {
     padding-bottom: 2rem;
     margin-bottom: 3rem;
     border-radius: 30px;
+
+    padding-top: 0.2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.5rem;
 }
 
 .accordion__header {
@@ -159,12 +168,12 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-.accordion__header:hover {
-    background-color: #f1f1f1;
-}
+/* .accordion__header:hover {
+    background-color: #f1f1f1;  #ugly hover effect
+} */
 
 .accordion__icon {
-    background-color: aqua;
+    background-color: rgb(0, 216, 216);
     width: 2.2rem;
     height: 2.2rem;
     display: flex;
@@ -192,6 +201,7 @@ body {
     transition: height 0.4s ease-in-out;
     color: #333333;
     font-size: 18px;
+    padding-top: 1.2rem;
 }
 
 footer p {
