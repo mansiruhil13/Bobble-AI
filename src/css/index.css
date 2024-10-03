@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-left: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #1d4ed8;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login {
+  color: #4b5563;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.login:hover {
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+}
+
+.get-started {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.get-started:hover {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .menu ul {
+      flex-direction: column;
+      background-color: #f9fafb;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      display: none;
+  }
+
+  .menu ul.show {
+      display: flex;
+  }
+
+  .menu-toggle {
+      display: block;
+      cursor: pointer;
+  }
+
+  .menu ul li {
+      margin: 10px 0;
+  }
+
+  .menu ul li a {
+      padding: 10px 20px;
+  }
+}
+
+.subtext{
+  font-size: 1.2rem;
+  color: #1d4ed8;
+  margin-top: 20px;
+}
