@@ -43,9 +43,10 @@ body {
 
 .navbar a {
     text-decoration: none;
-    color: #333; /* Dark gray text color */
+    color: #333;
     font-weight: bold;
-    font-size:18px ;
+    font-family: "Nunito" , sans-serif;
+    font-size: 20px;
 }
 
 .cta-button .btn {
@@ -61,7 +62,8 @@ body {
     background-color: #0056b3; /* Darker shade for hover effect */
 }
 .navbar a:hover{
-    border-bottom:2px solid #0F2027;
+    color:#2196F3; 
+    border-bottom: 4px solid #2196F3;;
 }
 .logo{
     font-size: 30px;

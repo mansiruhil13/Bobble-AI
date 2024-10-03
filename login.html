@@ -1,112 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm" onsubmit="return loginUser(event)">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required oninput="check()">
-                </div>
-                <div id="checks">
-                    <div id="checkTitle">The password must:</div>
-                    <div id="check0">
-                        <i class="far fa-check-circle"></i><span> be atleast 8 characters long.</span></div>
-                    <div id="check1">
-                        <i class="far fa-check-circle"></i><span> contain atleast one lowercase letter.</span></div>
-              
-                    <div id="check2">
-                        <i class="far fa-check-circle"></i><span> contain atleast one uppercase letter.</span></div>
-           
-                    <div id="check3">
-                        <i class="far fa-check-circle"></i><span> contain atleast one number.</span></div>
-         
-                    <div id="check4">
-                        <i class="far fa-check-circle"></i><span> contain atleast one special character.</span></div>
+    <title>Register</title>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="src\css\login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+    </script>
+   
 
-            </div>
-            
-            <button id="loginButton" type="submit" disabled>Login</button>
-        </form>
-        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  
+
+</head>
+
+<body>
+     
+   <!-- Navbar Start -->
+   <div class="fixed-navbar">
+    <nav class="navbar">
+       
+        <a href="index.html" class="logo"> <i class="fa-solid fa-truck-medical"></i>Ambulance Tracking System </a>
+        <div class="navbar-nav">
+            <a href="roles.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href="login.html" class="nav-link">Login</a>
+           
+
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+    <div class="wrapper" >
+        
+        <span class="rotate-bg"></span>
+        <span class="rotate-bg2"></span>
+
+        <div class="form-box login" style="padding-top: 60px;">
+            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+            <form id="loginForm">
+                <div class="input-box animation" style="--i:1; --j:22">
+                    <input type="text" id="loginUsername" required>
+                    <label for="">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23">
+                    <input type="password" id="loginPassword" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                <div class="linkTxt animation" style="--i:5; --j:25">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome</h2>
+            <p class="animation" style="--i:1; --j:21">Your lifeline for real-time ambulance updates and nearby hospital locations, ensuring timely care when it matters most.</p>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-box register" style="padding-top: 70px ;">
+            <h2 class="title animation" style="--i:17; --j:0; ;">Sign Up</h2>
+            <form id="registerForm">
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <input type="text" id="registerUsername" required>
+                    <label for="">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <input type="email" id="registerEmail" required>
+                    <label for="">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+    
+                <!-- OTP Section (initially hidden) -->
+                <div class="input-box animation" id="otpSection" style="display: none; --i:20; --j:3">
+                    <input type="text" id="otpInput">
+                    <label for="">OTP</label>
+                    <i class='bx bxs-key'></i>
+                </div>
+    
+                <!-- Password section (initially hidden) -->
+                <div class="input-box animation" id="passwordSection" style="display: none; --i:21; --j:4">
+                    <input type="password" id="registerPassword" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box animation" id="confirmPasswordSection" style="display: none; --i:22; --j:5">
+                    <input type="password" id="confirmPassword" required>
+                    <label for="">Confirm Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <!-- Button to request OTP -->
+                <button type="button" class="btn animation" id="otpBtn" style="--i:23; --j:6">Continue</button>
+    
+                <!-- Submit button (initially hidden) -->
+                <button type="submit" class="btn animation" id="submitBtn" style="display: none; --i:24;--j:7">Sign Up</button>
+    
+                <div class="linkTxt animation" style="--i:25; --j:8">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">Welcome!</h2>
+            <p class="animation" style="--i:18; --j:1;">Your lifeline for real-time ambulance updates and nearby hospital locations, ensuring timely care when it matters most.</p>
+        </div>
+
     </div>
 
-    <script>
-        function check(){
-            let passed=0;
-            let password=document.getElementById('password').value;
-            password=password.trim()
-            document.getElementById('password').value=password;
-            if(password.length>=8){
-                document.getElementById('check0').style.color="green";
-                passed++;
-            }else{
-                document.getElementById('check0').style.color="red";
-            }
-            if(/\d/.test(password)){
-                document.getElementById('check3').style.color="green";
-                passed++;
-            }else{
-                document.getElementById('check3').style.color="red";
-            }
-            if(/(?=.*?[A-Z]).*/.test(password)){
-                document.getElementById('check2').style.color="green";
-                passed++;
-            }else{
-                document.getElementById('check2').style.color="red";
-            }
-            if(/(?=.*?[a-z]).*/.test(password)){
-                document.getElementById('check1').style.color="green";
-                passed++;
-            }else{
-                document.getElementById('check1').style.color="red";
-            }
-            if(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)){
-                document.getElementById('check4').style.color="green";
-                passed++;
-            }else{
-                document.getElementById('check4').style.color="red";
-            }
-            const loginButton = document.getElementById('loginButton');
-                if (passed === 5) {
-                    loginButton.disabled = false;
-                } else {
-                    loginButton.disabled = true;
-    }
+  
+    <script >const wrapper = document.querySelector('.wrapper')
+        const registerLink = document.querySelector('.register-link')
+        const loginLink = document.querySelector('.login-link')
+        
+        registerLink.onclick = () => {
+            wrapper.classList.add('active')
         }
-        function loginUser(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            
-
-            // Get registered credentials from localStorage (for demo purposes only)
-            const registeredUsername = localStorage.getItem('registeredUsername');
-            const registeredPassword = localStorage.getItem('registeredPassword');
-
+        
+        loginLink.onclick = () => {
+            wrapper.classList.remove('active')
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("oInlsyImVTDKcEumx"); 
+        
+            let generatedOtp; 
+        
+            // Switch to registration form
+            document.querySelectorAll('.register-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelector('.form-box.login').style.display = 'none';
+                    document.querySelector('.form-box.register').style.display = 'block';
+                });
+            });
+        
+            // Switch to login form
+            document.querySelectorAll('.login-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelector('.form-box.register').style.display = 'none';
+                    document.querySelector('.form-box.login').style.display = 'block';
+                });
+            });
+        
+        });
+        
+        
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const registerForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
+        
+            // Handle user registration
+            registerForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+        
+                const username = document.getElementById('registerUsername').value;
+                const email = document.getElementById('registerEmail').value;
+                const password = document.getElementById('registerPassword').value;
+                const confirmPassword=document.getElementById('confirmPassword').value;
+        
+            });
+        
+           // Handle user login
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+            const loginUsername = document.getElementById('loginUsername').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+        
+            // Retrieve stored user data
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+        
             // Check if credentials match
-            if (username === registeredUsername && password === registeredPassword) {
-                // Set login status
-                localStorage.setItem('isLoggedIn', 'true');
-                alert('Login successful!');
-                window.location.href = 'ambtracker.html'; // Redirect to tracker page
+            if (storedUser && loginUsername === storedUser.username && loginPassword === storedUser.password) {
+                alert('Login successful! Redirecting to home page...'); // Notify user
+                localStorage.setItem('currentUser', loginUsername); // Store the current user's username
+                window.location.href = "../index.html"; // Redirect to home page
             } else {
-                alert('Invalid login details');
+                alert('Invalid username or password.'); // Notify user of failure
             }
-        }
-    </script>
+        });
+        });</script>
 </body>
+
 </html>
