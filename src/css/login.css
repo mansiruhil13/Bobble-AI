@@ -10,14 +10,6 @@ body, html {
     background-color: #f0f4f8;
     overflow-x: hidden;
 }
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-}
 
 .fixed-navbar {
     background-color: #fff;
