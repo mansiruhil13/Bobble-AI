@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="src/css/manage.css">
     <link rel="stylesheet" href="src/css/hospital.css"> <!-- Ensures consistent styling -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -24,8 +16,7 @@
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
-                <li><a href="manage.html">Manage Driver</a></li>
-                <li><a href="manage.html">Manage Ambulance</a></li>
+                <li><a href="manage.html">Manage Status</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
         </nav>
@@ -139,7 +130,7 @@
             document.getElementById('driverIndex').value = '';
             driverFormTitle.textContent = 'Add Driver';
             showSection(manageDriverSection);
-            hideSection(manageAmbulanceSection);
+            hideSection(manageAmbulanceSection); // Hide ambulance section
         });
 
         addAmbulanceBtn.addEventListener('click', () => {
@@ -147,7 +138,7 @@
             document.getElementById('ambulanceIndex').value = '';
             ambulanceFormTitle.textContent = 'Add Ambulance';
             showSection(manageAmbulanceSection);
-            hideSection(manageDriverSection);
+            hideSection(manageDriverSection); // Hide driver section
         });
 
         // Event Listeners for Cancel Buttons
@@ -160,65 +151,68 @@
         });
 
         // Handle Driver Form Submission
-        driverForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const driverName = document.getElementById('driverName').value.trim();
-            const driverStatus = document.getElementById('driverStatusSelect').value;
-            const driverContact = document.getElementById('driverContact').value;
-            const driverLocation = document.getElementById('driverLocation').value.trim();
-            const driverIndex = document.getElementById('driverIndex').value;
+      // Handle Driver Form Submission
+driverForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const driverName = document.getElementById('driverName').value.trim();
+    const driverStatus = document.getElementById('driverStatusSelect').value;
+    const driverContact = document.getElementById('driverContact').value;
+    const driverLocation = document.getElementById('driverLocation').value.trim();
+    const driverIndex = document.getElementById('driverIndex').value;
 
-            let drivers = JSON.parse(localStorage.getItem('drivers')) || [];
+    let drivers = JSON.parse(localStorage.getItem('drivers')) || [];
 
-            // Function to check if driver already exists
-            const driverExists = (name, contact, location) => {
-                return drivers.some(driver => 
-                    driver.name.toLowerCase() === name.toLowerCase() &&
-                    driver.contact === contact &&
-                    driver.location.toLowerCase() === location.toLowerCase()
-                );
-            };
+    // Function to check if driver already exists
+    const driverExists = (name, contact, location) => {
+        return drivers.some(driver => 
+            driver.name.toLowerCase() === name.toLowerCase() &&
+            driver.contact === contact &&
+            driver.location.toLowerCase() === location.toLowerCase()
+        );
+    };
 
-            if (driverIndex === '') {
-                // Check for duplicate when adding a new driver
-                if (driverExists(driverName, driverContact, driverLocation)) {
-                    alert(`A driver with the name "${driverName}", contact "${driverContact}", and location "${driverLocation}" already exists.`);
-                    return; // Exit the function without adding the driver
-                }
-                // Add New Driver
-                drivers.push({
-                    name: driverName,
-                    status: driverStatus,
-                    contact: driverContact,
-                    location: driverLocation
-                });
-                alert(`Driver ${driverName} has been added.`);
-            } else {
-                // Edit Existing Driver
-                const originalDriver = drivers[driverIndex];
-                if (
-                    originalDriver.name !== driverName ||
-                    originalDriver.contact !== driverContact ||
-                    originalDriver.location !== driverLocation
-                ) {
-                    // Check for duplicate only if name, contact, or location has changed
-                    if (driverExists(driverName, driverContact, driverLocation)) {
-                        alert(`A driver with the name "${driverName}", contact "${driverContact}", and location "${driverLocation}" already exists.`);
-                        return; // Exit the function without updating the driver
-                    }
-                }
-                drivers[driverIndex] = {
-                    name: driverName,
-                    status: driverStatus,
-                    contact: driverContact,
-                    location: driverLocation
-                };
-                alert(`Driver ${driverName} has been updated.`);
-            }
-
-            localStorage.setItem('drivers', JSON.stringify(drivers));
-            hideSection(manageDriverSection);
+    if (driverIndex === '') {
+        // Check for duplicate when adding a new driver
+        if (driverExists(driverName, driverContact, driverLocation)) {
+            alert(`A driver with the name "${driverName}", contact "${driverContact}", and location "${driverLocation}" already exists.`);
+            return; // Exit the function without adding the driver
+        }
+        // Add New Driver
+        drivers.push({
+            name: driverName,
+            status: driverStatus,
+            contact: driverContact,
+            location: driverLocation
         });
+        alert(`Driver ${driverName} has been added.`);
+    } else {
+        // Edit Existing Driver
+        const originalDriver = drivers[driverIndex];
+        if (
+            originalDriver.name !== driverName ||
+            originalDriver.contact !== driverContact ||
+            originalDriver.location !== driverLocation
+        ) {
+            // Check for duplicate only if name, contact, or location has changed
+            if (driverExists(driverName, driverContact, driverLocation)) {
+                alert(`A driver with the name "${driverName}", contact "${driverContact}", and location "${driverLocation}" already exists.`);
+                return; // Exit the function without updating the driver
+            }
+        }
+        drivers[driverIndex] = {
+            name: driverName,
+            status: driverStatus,
+            contact: driverContact,
+            location: driverLocation
+        };
+        alert(`Driver ${driverName} has been updated.`);
+    }
+
+    localStorage.setItem('drivers', JSON.stringify(drivers));
+    hideSection(manageDriverSection);
+});
+
+      
 
         // Handle Ambulance Form Submission
         ambulanceForm.addEventListener('submit', (e) => {
