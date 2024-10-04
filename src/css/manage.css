@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Manage Container */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
 .manage-container {
     background-color: #ffffff;
     padding: 50px;
@@ -8,6 +19,7 @@
     width: 95%;
     margin: 50px auto;
     flex: 1;
+    color: #1a2938;
 }
 
 /* Manage Options Buttons */
@@ -19,8 +31,10 @@
 }
 
 .manage-btn {
-    background-color: #e67e22;
-    color: white;
+    background-color: #1a2938;
+    color: #3DBDEC;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     padding: 20px 35px;
     border: none;
     border-radius: 15px;
@@ -31,9 +45,10 @@
 }
 
 .manage-btn:hover {
-    background-color: #d35400;
+    background-color: #92c4d6;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    color: #1a2938;
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Manage Sections Enhancements */
@@ -73,25 +88,32 @@ label {
 input[type="text"],
 input[type="tel"],
 select {
-    padding: 15px 20px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 5px;
     border: 1px solid #bdc3c7;
-    border-radius: 10px;
-    font-size: 18px;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    border: 1px solid transparent;
+    margin-left: 10px;
 }
 
 input[type="text"]:focus,
 input[type="tel"]:focus,
 select:focus {
-    border-color: #e67e22;
+    border-color: #1a2938;
     outline: none;
-    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px rgba(52, 73, 94, 0.5);
 }
+
 
 /* Enhanced Submit Button */
 .submit-btn {
-    background-color: #3498db;
+    background-color: #374249;
+    font-family: 'Poppins', sans-serif;
     color: white;
     padding: 18px 35px;
     border: none;
@@ -173,8 +195,18 @@ select:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 20px 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar img{
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-logo h2 {
@@ -187,17 +219,26 @@ select:focus {
     list-style: none;
     display: flex;
     gap: 25px;
+    font-weight: 400;
+}
+
+.navbar-links li{
+    font-weight: 400;
 }
 
 .navbar-links a {
     color: #ecf0f1;
     text-decoration: none;
+    font-weight: 600;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-    color: #e67e22;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: #3DBDEC;
+    text-decoration-thickness: 3px;
 }
 
 /* Enhance Dashboard Layout */
