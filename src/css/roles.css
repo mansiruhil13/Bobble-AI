@@ -29,10 +29,12 @@ body {
     top: 0;
     left: 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
 }
 
 .logo img {
-    height: 50px; /* Adjust height as needed */
+    height: 110px; /* Adjust height as needed */
 }
 
 .navbar ul {
@@ -47,6 +49,7 @@ body {
     font-weight: bold;
     font-family: "Nunito" , sans-serif;
     font-size: 20px;
+
 }
 
 .cta-button .btn {
