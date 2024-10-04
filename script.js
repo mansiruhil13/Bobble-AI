@@ -16,6 +16,10 @@ accordions.forEach((accordion, index) => {
                 c.style.height = isOpen ? "0px" : `${c.scrollHeight}px`;
                 ic.classList.toggle("ri-add-line", isOpen);
                 ic.classList.toggle("ri-subtract-fill", !isOpen);
+                
+                // Update ARIA attributes
+                header.setAttribute("aria-expanded", !isOpen);
+                c.setAttribute("aria-hidden", isOpen);
             } else {
                 c.style.height = "0px";
                 ic.classList.add("ri-add-line");
