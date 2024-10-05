@@ -78,6 +78,8 @@ header {
 .menu ul li a {
   text-decoration: none;
   color: #4b5563;
+  border-radius: 10px;
+
   font-weight: 500;
   padding: 8px 12px;
   transition: background-color 0.3s;
@@ -150,6 +152,7 @@ header {
 
   .menu ul li a {
       padding: 10px 20px;
+      
   }
 }
 
