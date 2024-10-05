@@ -10,7 +10,7 @@ A mobile application built using HTML, CSS, JavaScript, and Google API that noti
 
 
 ## DESCRIPTION 📑
-A mobile app that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
+A mobile app using HTML, CSS, JavaScript, and Google API that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
 
 ## 🌟 Why We Need This Application
 
