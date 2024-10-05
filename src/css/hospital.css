@@ -14,6 +14,25 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+html {
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    width: 9px;
+    transition: width 0.3s ease;
+    margin: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(216, 216, 216, 0.74);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb:window-inactive {
+    background: rgb(156, 156, 156);
+}
 
 /* Navbar Styles */
 .navbar {
