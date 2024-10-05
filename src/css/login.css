@@ -9,17 +9,25 @@ body, html {
     font-family: 'Nunito', sans-serif;
     background-color: #f0f4f8;
     overflow-x: hidden;
-}
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    overflow-y: hidden;
 }
 
 
+html::-webkit-scrollbar {
+    width: 9px;
+    transition: width 0.3s ease;
+    margin: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(216, 216, 216, 0.74);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb:window-inactive {
+    background: rgb(156, 156, 156);
+}
 .fixed-navbar {
     background-color: #fff;
     width: 100%;
