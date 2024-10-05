@@ -75,7 +75,6 @@ html::-webkit-scrollbar-thumb:window-inactive {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding-top: 100px;
 }
 
 .form-box {
@@ -197,6 +196,10 @@ html::-webkit-scrollbar-thumb:window-inactive {
 .info-text {
     margin-top: 20px;
     text-align: center;
+}
+
+.wrapper{
+    margin-top: -40px;
 }
 
 .info-text h2 {

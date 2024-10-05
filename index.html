@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambulance Monitoring System</title>
+    <title>AmbuFlow</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -32,6 +32,7 @@
             padding: 10px 15px;
             color: black;
             text-decoration: none;
+            border-radius: 10px;
         }
         .menu ul li a.active {
             color: white;
@@ -82,6 +83,30 @@
         .feature p {
             color: #555;
         }
+        .team-feature, .contact-feature {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+        .team-feature {
+            background-color: #e7ffe7;
+        }
+        .contact-feature {
+            background-color: #f2e4aa;
+        }
+        .team-feature img, .contact-feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+      }
+        .feature p {
+            color: #555;
+        }
 
         .team-feature {
             background-color: #e7ffe7;
@@ -122,8 +147,6 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: relative;
-            bottom: 0;
             width: 100%;
         }
 
@@ -141,14 +164,9 @@
 
 <header>
     <div class="container">
-        
-
         <div class="logo">
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width:50px; height:auto;">
-           
         </div>
-
-        
         <nav class="menu">
             <ul>
                 <li><a href="home.html" id="home-link" onclick="changeContent('home')">Home</a></li>
@@ -216,6 +234,7 @@
 </div>
 
 <footer>
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
 
     <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
   
