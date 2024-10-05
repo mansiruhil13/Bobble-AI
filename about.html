@@ -7,58 +7,128 @@
     <title>About Us - AmbuFlow</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0b0e11;
+            color: #d1d1d1;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(90deg, #0d47a1, #1e88e5, #42a5f5);
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            margin: 0;
-            font-size: 3rem;
+            color: #fff;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         main {
-            padding: 20px;
+            padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: #10141b;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
         }
         h2 {
-            color: #2c3e50;
-            margin-top: 30px;
-            font-size: 2rem;
+            color: #1e88e5;
+            font-size: 2.5rem;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
         p {
-            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .highlight {
+            color: #f50057;
+            font-weight: bold;
+        }
+        ul {
+            margin-left: 40px;
+            list-style: none;
+        }
+        ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1rem;
+        }
+        ul li::before {
+            content: '✔';
+            color: #1e88e5;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         footer {
-            background-color: #2c3e50;
+            background-color: #0d47a1;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
+            padding: 20px 0;
+            position: relative;
             bottom: 0;
+            width: 100%;
         }
         footer p {
             margin: 0;
         }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
         }
-        ul {
-            padding-left: 20px;
+        .btn:hover {
+            background-color: #42a5f5;
+            transform: scale(1.05);
         }
-        ul li {
-            margin-bottom: 10px;
+
+        /* Hover effect */
+        main:hover {
+            transition: 0.5s;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Futuristic glow effect for text */
+        h1, h2 {
+            text-shadow: 0 0 10px rgba(30, 136, 229, 0.8), 0 0 20px rgba(66, 165, 245, 0.5);
+        }
+
+        /* Futuristic neon glow for sections */
+        main {
+            border: 2px solid rgba(66, 165, 245, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -82,7 +152,7 @@
         <h2>Our Vision</h2>
         <p>
             We envision a world where emergency medical services are swift, reliable, and accessible to all. By improving communication and resource management,
-            we aim to reduce emergency response times, ensuring better healthcare outcomes for all.
+            we aim to reduce emergency response times, ensuring better healthcare outcomes for everyone.
         </p>
 
         <h2>Why AmbuFlow?</h2>
@@ -106,9 +176,8 @@
         <p>
             If you find <strong>AmbuFlow</strong> helpful, please consider supporting us by contributing on GitHub or giving our project a star.
             Together, we can improve emergency medical services for everyone!
-
-            
         </p>
+        <a href="https://github.com/mansiruhil13/Bobble-AI" class="btn">Contribute on GitHub</a>
     </main>
 
     <footer>
