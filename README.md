@@ -212,7 +212,7 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 ---
 
 
-## Our Valuable Contributors ❤️✨
+## Our Valuable Contributors:
 
 [![Contributors](https://contrib.rocks/image?repo=mansiruhil13/Bobble-AI)](https://github.com/mansiruhil13/Bobble-AI/graphs/contributors)
 
