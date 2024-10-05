@@ -1,12 +1,12 @@
 name: Bug report 🐞
-description: Briefly describe the bug
+description: File a bug report
 title: "[Bug]: "
 body:
   - type: checkboxes
     id: existing-issue
     attributes:
-      label: What is the expected behavior?
-      description: Please provide step by step instructions on how to reproduce the bug
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
       options:
         - label: I have searched the existing issues
           required: true
