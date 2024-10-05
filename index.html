@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Arial', sans-serif;
+        } */
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -92,7 +103,45 @@
             height: auto;
             margin-right: 20px;
             border-radius: 10px;
+      }
+        .feature p {
+            color: #555;
         }
+
+        .team-feature {
+            background-color: #e7ffe7;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+        .team-feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-feature {
+            background-color: #f2e4aa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+        .contact-feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
         footer {
             background-color: #000;
             color: white;
@@ -100,6 +149,7 @@
             padding: 10px 0;
             width: 100%;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -185,6 +235,58 @@
 
 <footer>
     <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+
+    <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+  
+    <div style="background-color: #333; color: white; padding: 20px;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <!-- Quick Links Section -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
+                    <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                    <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Contact Info</h3>
+                <p>Ambulance Monitoring System
+                White road St, Newyork City, USA</p>
+                <p>Email:ambulancemonitor@gmail.com</p>
+                <p>Phone: 9633700598</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Follow Us</h3>
+                <a href="#" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                <a href="#" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-twitter"></i> Twitter</a><br>
+                <a href="#" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
+                <a href="#" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
+                    <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div style="text-align: center; margin-top: 20px; border-top: 1px solid white; padding-top: 10px;">
+            <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+        </div>
+    </div>
+    <p>&copy; 2024 Ambulance Tracking System. All rights reserved.</p>
+
 </footer>
 
 <script>
