@@ -6,38 +6,13 @@
     <title>Contact</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .logo span {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            font-family: 'Arial', sans-serif;
-        }
-
+      <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .menu ul li a {
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-        }
-
-        .menu ul li a.active {
-            color: white;
-            background-color: #000;
         }
 
         .content {
@@ -48,84 +23,151 @@
             flex-grow: 1;
         }
 
-        h1 {
-            color: #2c3e50;
-            text-align: center;
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 27px;
+            margin-bottom: 34px;
+        }
+
+        .contact-details {
+            width: 41%;
+            padding-left: 12px;
+        }
+
+        /* Contact Us and Get In Touch Styling */
+        .contact-details h6 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            
+            margin-left: 5px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: #555;
+            text-align: left; /* Left-align Contact Us */
+        }
+
+        .contact-details h1 {
+            font-size: 36px;
+            margin-top: -4px;
+            /*margin-bottom: 5px;*/
             margin-bottom: 20px;
+            color: #2c3e50;
         }
 
+        /* Contact Info with background */
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeIn 1s ease-in-out;
+            background-color: #ffffff;
+            padding: 5px;
+            width: 95%;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 13px;
+            border-bottom: 1px solid #007BFF; 
+            transition: all 0.3s ease-in-out; 
+        }
+           .contact-info a {
+            text-decoration: none; /* Remove underline from clickable links */
+            color: inherit; /* Inherit text color from parent (no blue link color) */
         }
 
-        .contact-item {
-            background-color: #e7f3fe;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 250px; /* Adjusted width for a better fit in a row */
-            transition: transform 0.3s, box-shadow 0.3s;
+        .contact-info:hover {
+            opacity: 0.8; /* Slight dulling effect on hover */
+            cursor: pointer; /* Shows pointer to indicate clickable items */
         }
 
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-item img {
-            width: 80px;
-            height: 80px;
+        .contact-info p {
             margin-bottom: 10px;
+            font-size: 15px;
+            padding-left: 15px;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 20px;
+        /* Form Section */
+     .contact-form {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 21px 33px;  /* Same padding on all sides */
+    margin: 0 auto; /* Centers the form horizontally */
+}
+
+
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        .social-icon {
-            font-size: 24px;
-            color: #2980b9;
-            transition: color 0.3s;
-        }
-
-        .social-icon:hover {
-            color: #ff5733;
-        }
-
-        footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
+        .contact-form input, .contact-form textarea {
             width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .contact-form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+          .list_container{
+              padding-left: 15px;
+              
+          }
+          .map {
+        display: flex;
+        justify-content: center; /* Centers the iframe horizontally */
+        align-items: center; /* Ensures vertical alignment in case parent has more height */
+        margin: 20px 0; /* Adds some space above and below the map */
+    }
+
+    .map iframe {
+        width: 95%; /* Ensures the iframe takes up 95% of the available width */
+        max-width: 1000px; /* Optional: Set a max-width to prevent it from being too large */
+        height: 440px;
+        border: 0;
+        border-radius: 10px; /* Optional: Adds a border radius to make it visually appealing */
+    }
+
+        /* Flex layout for Name and Phone Number on the same row */
+        .row {
+            display: flex;
+            gap: 40px; /* Spacing between input fields */
+        }
+
+        .row .column {
+            flex: 1; /* Ensure fields take equal space */
+        }
+
+        /* Styling for Textarea (Message Box) */
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: none;
         }
     </style>
 </head>
 <body>
 
+
+
 <header>
     <div class="container">
         <div class="logo">
-            <span>Ambulance Monitoring System</span>
+            <span>Ambulance Tracking System</span>
         </div>
         <nav class="menu">
             <ul>
@@ -143,32 +185,84 @@
 </header>
 
 <div class="content" id="main-content">
-    <h1>Contact Us</h1>
-    <div class="contact-info">
-        <div class="contact-item">
-            <img src="images/call1-w.avif" alt="Call Us">
-            <h2>Call Us</h2>
-            <p>For immediate assistance, call our emergency line at <strong>123-456-7890</strong>.</p>
+    <div class="contact-container">
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <!-- Contact Us Title -->
+            <h6>Contact Us</h6>
+            <!-- Get in Touch Main Heading -->
+            <h1>Get In Touch</h1>
+            <p>Need assistance or have inquiries about our services? Whether it's an emergency or you have questions regarding our ambulance monitoring system, we are here to help. Our team is available around the clock to ensure your concerns are addressed swiftly. <p>
+ <ul class="list_container">
+    <li><strong>Phone:</strong> Available 24/7 for emergency support and inquiries.</li>
+    <li><strong>Email:</strong> Reach out for detailed questions or non-urgent assistance.</li>
+    <li><strong>Address:</strong> Visit us at our office or call for remote support.</li>
+</ul>
+            <!-- Contact Info Section with Background -->
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i>  +123-456-7890</p>
+               </div>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>  info@example.com</p>
+                </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i>  123 Anywhere St, Any City, ST 12345</p>
+            </div>
         </div>
-        <div class="contact-item">
-            <img src="images/help-w.png" alt="Help">
-            <h2>Need Help?</h2>
-            <p>Our team is available 24/7 to help you with any inquiries.</p>
-        </div>
-        <div class="contact-item">
-            <img src="images/caremeregency-w.png" alt="Emergency Care">
-            <h2>Emergency Care</h2>
-            <p>In case of an emergency, please do not hesitate to reach out to us immediately.</p>
-        </div>
+
+        <!-- Contact Form Section -->
+        <div class="content" >
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+        <form>
+            <!-- First Row (Full Name and Phone Number) -->
+            <div class="row">
+                <div class="column">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="column">
+                    <label for="number">Number *</label>
+                    <input type="text" id="number" name="number" placeholder="Your phone number" required>
+                </div>
+            </div>
+
+            <!-- Second Row (Email and Subject) -->
+            <div class="row">
+                <div class="column">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+                </div>
+                <div class="column">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Your subject" required>
+                </div>
+            </div>
+
+            <!-- Third Row (Message) -->
+            <div>
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" placeholder="Your message"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
     </div>
 
-    <!-- Social Media Section -->
-    <div class="social-media">
-        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-    </div>
+
+    <!-- Map Section -->
+   <div class="map">
+                        
+                            <iframe id="if"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.5834653201455!2d88.40974607348684!3d22.482281936278092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0273c5411d60d7%3A0x5d6e57763593194b!2sSouthern%20Cleve%20Housing%2C%2012%2C%20Bhagat%20Singh%20Nagar%2C%20Nayabad%2C%20Kolkata%2C%20West%20Bengal%20700150!5e0!3m2!1sen!2sin!4v1716043813992!5m2!1sen!2sin"
+                                style="border:0; width: 98%; height: 408px;" allowfullscreen="" loading="lazy" title="Map image"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
+                        
+                    </div>
 </div>
 
 <footer>
@@ -221,6 +315,8 @@
     </div>
     
     </footer>
+    <p>&copy; 2024 . All rights reserved.</p>
+</footer>
 
 <script>
     function changeContent(page) {
