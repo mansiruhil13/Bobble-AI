@@ -142,6 +142,19 @@ header {
   background-color: #2563eb;
 }
 
+.quick-ft{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
+  align-items: start;
+
+  margin-left: 3rem;
+
+}
+.social-ft{
+
+}
+
 @media (max-width: 768px) {
   .menu ul {
       flex-direction: column;
