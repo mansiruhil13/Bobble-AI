@@ -26,6 +26,17 @@
         color: white;
         padding: 15px;
         margin: 0;
+        .logo {
+    position: absolute;
+    width: 150px; 
+    height: 150px; 
+    left: -10px;
+    top: -30px;
+  }
+  
+  .logo:hover {
+    opacity: 0.8; 
+  }
       }
 
       /* Add a loading spinner for the map */
@@ -47,7 +58,12 @@
   </head>
   <body>
     <!-- Header -->
-    <h1>Ambulance GPS Tracking System</h1>
+    <h1>Ambulance GPS Tracking System
+  <!--logo-->
+  <a href="/">
+    <img src="logo.png" class="logo" >
+  </a>
+    </h1>
 
     <!-- Map container -->
     <div id="map"></div>
