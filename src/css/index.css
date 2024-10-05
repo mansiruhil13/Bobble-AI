@@ -161,3 +161,19 @@ header {
   color: #1d4ed8;
   margin-top: 20px;
 }
+
+.feature{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  width: 250px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 45px;
+  margin-top: 20px;
+}
