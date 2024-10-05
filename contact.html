@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 27px;
+            margin-bottom: 34px;
+        }
+
+        .contact-details {
+            width: 41%;
+            padding-left: 12px;
+        }
+
+        /* Contact Us and Get In Touch Styling */
+        .contact-details h6 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            
+            margin-left: 5px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: #555;
+            text-align: left; /* Left-align Contact Us */
+        }
+
+        .contact-details h1 {
+            font-size: 36px;
+            margin-top: -4px;
+            /*margin-bottom: 5px;*/
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Contact Info with background */
+        .contact-info {
+            background-color: #ffffff;
+            padding: 5px;
+            width: 95%;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 13px;
+            border-bottom: 1px solid #007BFF; 
+            transition: all 0.3s ease-in-out; 
+        }
+           .contact-info a {
+            text-decoration: none; /* Remove underline from clickable links */
+            color: inherit; /* Inherit text color from parent (no blue link color) */
+        }
+
+        .contact-info:hover {
+            opacity: 0.8; /* Slight dulling effect on hover */
+            cursor: pointer; /* Shows pointer to indicate clickable items */
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            padding-left: 15px;
+        }
+
+        /* Form Section */
+     .contact-form {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 21px 33px;  /* Same padding on all sides */
+    margin: 0 auto; /* Centers the form horizontally */
+}
+
+
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+          .list_container{
+              padding-left: 15px;
+              
+          }
+          .map {
+        display: flex;
+        justify-content: center; /* Centers the iframe horizontally */
+        align-items: center; /* Ensures vertical alignment in case parent has more height */
+        margin: 20px 0; /* Adds some space above and below the map */
+    }
+
+    .map iframe {
+        width: 95%; /* Ensures the iframe takes up 95% of the available width */
+        max-width: 1000px; /* Optional: Set a max-width to prevent it from being too large */
+        height: 440px;
+        border: 0;
+        border-radius: 10px; /* Optional: Adds a border radius to make it visually appealing */
+    }
+
+        /* Flex layout for Name and Phone Number on the same row */
+        .row {
+            display: flex;
+            gap: 40px; /* Spacing between input fields */
+        }
+
+        .row .column {
+            flex: 1; /* Ensure fields take equal space */
+        }
+
+        /* Styling for Textarea (Message Box) */
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <span>Ambulance Tracking System</span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="home.html" id="home-link" onclick="changeContent('home')">Home</a></li>
+                <li><a href="features.html" id="features-link" onclick="changeContent('features')">Features</a></li>
+                <li><a href="team.html" id="team-link" onclick="changeContent('team')">Team</a></li>
+                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <a href="login.html" class="login">Log in</a>
+            <a href="up.html" class="get-started">Get started</a>
+        </div>
+    </div>
+</header>
+
+<div class="content" id="main-content">
+    <div class="contact-container">
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <!-- Contact Us Title -->
+            <h6>Contact Us</h6>
+            <!-- Get in Touch Main Heading -->
+            <h1>Get In Touch</h1>
+            <p>Need assistance or have inquiries about our services? Whether it's an emergency or you have questions regarding our ambulance monitoring system, we are here to help. Our team is available around the clock to ensure your concerns are addressed swiftly. <p>
+ <ul class="list_container">
+    <li><strong>Phone:</strong> Available 24/7 for emergency support and inquiries.</li>
+    <li><strong>Email:</strong> Reach out for detailed questions or non-urgent assistance.</li>
+    <li><strong>Address:</strong> Visit us at our office or call for remote support.</li>
+</ul>
+            <!-- Contact Info Section with Background -->
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i>  +123-456-7890</p>
+               </div>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>  info@example.com</p>
+                </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i>  123 Anywhere St, Any City, ST 12345</p>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="content" >
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+        <form>
+            <!-- First Row (Full Name and Phone Number) -->
+            <div class="row">
+                <div class="column">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="column">
+                    <label for="number">Number *</label>
+                    <input type="text" id="number" name="number" placeholder="Your phone number" required>
+                </div>
+            </div>
+
+            <!-- Second Row (Email and Subject) -->
+            <div class="row">
+                <div class="column">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+                </div>
+                <div class="column">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Your subject" required>
+                </div>
+            </div>
+
+            <!-- Third Row (Message) -->
+            <div>
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" placeholder="Your message"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+    </div>
+
+
+    <!-- Map Section -->
+   <div class="map">
+                        
+                            <iframe id="if"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.5834653201455!2d88.40974607348684!3d22.482281936278092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0273c5411d60d7%3A0x5d6e57763593194b!2sSouthern%20Cleve%20Housing%2C%2012%2C%20Bhagat%20Singh%20Nagar%2C%20Nayabad%2C%20Kolkata%2C%20West%20Bengal%20700150!5e0!3m2!1sen!2sin!4v1716043813992!5m2!1sen!2sin"
+                                style="border:0; width: 98%; height: 408px;" allowfullscreen="" loading="lazy" title="Map image"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
+                        
+                    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 . All rights reserved.</p>
+</footer>
+
+<script>
+    function changeContent(page) {
+        var links = document.querySelectorAll('.menu ul li a');
+        links.forEach(link => link.classList.remove('active'));
+        document.getElementById(page + '-link').classList.add('active');
+    }
+
+    window.onload = function() {
+        document.getElementById('contact-link').classList.add('active');
+    };
+</script>
+
+</body>
+</html>
