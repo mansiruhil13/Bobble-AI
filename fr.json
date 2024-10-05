@@ -1,0 +1,27 @@
+{
+    "pageTitle": "Ambu Flow - Accueil",
+    "homeTitle": "Accueil",
+    "welcomeTitle": "Bienvenue à Ambu Flow",
+    "welcomeDescription": "Ambu Flow est un service révolutionnaire conçu pour rationaliser le processus de suivi et de répartition des ambulances lors des urgences. Notre plateforme intègre le suivi en temps réel, l'optimisation des itinéraires et la communication fluide pour assurer des temps de réponse plus rapides dans les situations critiques.",
+    "aboutTitle": "À propos de Ambu Flow",
+    "aboutDescription": "Ambu Flow propose :",
+    "feature1": "Suivi des ambulances en temps réel",
+    "feature2": "Optimisation des itinéraires pour des arrivées plus rapides",
+    "feature3": "Interface de communication entre les hôpitaux, les patients et le personnel des ambulances",
+    "feature4": "Notifications et alertes d'urgence",
+    "feature5": "Intégration fluide avec les systèmes d'urgence des hôpitaux",
+    "featuresTitle": "Principales Caractéristiques",
+    "featuresDescription": "La plateforme Ambu Flow est conçue avec des fonctionnalités qui améliorent les services médicaux d'urgence :",
+    "keyFeature1": "Suivi en temps réel : Surveillez les emplacements des ambulances à tout moment.",
+    "keyFeature2": "Itinéraires intelligents : Itinéraires optimisés en fonction du trafic et de la distance.",
+    "keyFeature3": "Gestion des patients : Communication en temps réel avec les services d'urgence des hôpitaux.",
+    "keyFeature4": "Alertes d'urgence : Recevez des alertes instantanées pour les situations d'urgence.",
+    "mainfeature1": "Dispatch rapide d'ambulances.",
+    "mainfeature2": "Notre système garantit un dispatch rapide pour obtenir de l'aide le plus tôt possible.",
+    "mainfeature3": "Suivi en temps réel des ambulances.",
+    "mainfeature4": "Suivez les emplacements des ambulances en temps réel pour une meilleure coordination.",
+    "mainfeature5": "Intégration transparente avec l'hôpital.",
+    "mainfeature6": "Connecte les ambulances aux hôpitaux voisins pour des traitements rapides."
+}
+
+

@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
+  box-sizing: border-box;
+  /* Added to ensure padding and margin are included in total width/height */
   font-family: 'Poppins', sans-serif;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  padding: 0;
-  height: 100vh;
-  background-image: url('Ambulamce Tracker.jpg');
+  background-image: url('../../images/Ambulance Tracker.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  align-items: center;
+  height: 100vh;
 }
 
 header {
@@ -112,34 +114,34 @@ header {
 
 @media (max-width: 768px) {
   .menu ul {
-      flex-direction: column;
-      background-color: #f9fafb;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      display: none;
+    flex-direction: column;
+    background-color: #f9fafb;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
   }
 
   .menu ul.show {
-      display: flex;
+    display: flex;
   }
 
   .menu-toggle {
-      display: block;
-      cursor: pointer;
+    display: block;
+    cursor: pointer;
   }
 
   .menu ul li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .menu ul li a {
-      padding: 10px 20px;
+    padding: 10px 20px;
   }
 }
 
-.subtext{
+.subtext {
   font-size: 1.2rem;
   color: #1d4ed8;
   margin-top: 20px;
