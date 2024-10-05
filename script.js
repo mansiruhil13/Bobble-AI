@@ -24,3 +24,37 @@ accordions.forEach((accordion, index) => {
         });
     });
 });
+// Get modal element
+var modal = document.getElementById("faqModal");
+
+// Get open modal button
+var faqBtn = document.getElementById("faqBtn");
+
+// Get close button
+var closeBtn = document.querySelector(".close");
+
+// Listen for open click
+faqBtn.addEventListener("click", openModal);
+
+// Listen for close click
+closeBtn.addEventListener("click", closeModal);
+
+// Listen for outside click
+window.addEventListener("click", outsideClick);
+
+// Open modal
+function openModal() {
+  modal.style.display = "flex";
+}
+
+// Close modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Close modal if outside click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
