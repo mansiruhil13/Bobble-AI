@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Ambu Flow - Home</title>
+    <link rel="stylesheet" href="src/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="home-container">
+            <h1 id="homeTitle">Home</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section>
+            <h1 id="welcomeTitle">Welcome to Ambu Flow</h1>
+            <p id="welcomeDescription">Ambu Flow is a revolutionary service designed to streamline the process of
+                tracking and dispatching ambulances during emergencies. Our platform integrates real-time location
+                tracking, route optimization, and seamless communication to ensure faster response times in critical
+                situations.</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="details">
+            <h2 id="aboutTitle">About Ambu Flow</h2>
+            <p id="aboutDescription">Ambu Flow offers:</p>
+            <ul>
+                <li id="feature1">Real-time ambulance tracking</li>
+                <li id="feature2">Automated route optimization for faster arrivals</li>
+                <li id="feature3">Communication interface between hospitals, patients, and ambulance staff</li>
+                <li id="feature4">Emergency notifications and alerts</li>
+                <li id="feature5">Seamless integration with hospital ER systems</li>
+            </ul>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 id="featuresTitle">Key Features</h2>
+            <p id="featuresDescription">Ambu Flow's platform is designed with features that enhance emergency medical
+                services:</p>
+            <ul>
+                <li id="keyFeature1"><strong>Real-time Tracking:</strong> Monitor ambulance locations at all times.</li>
+                <li id="keyFeature2"><strong>Smart Routing:</strong> Optimized routes based on traffic and distance.
+                </li>
+                <li id="keyFeature3"><strong>Patient Management:</strong> Real-time communication with hospital
+                    emergency departments.</li>
+                <li id="keyFeature4"><strong>Emergency Alerts:</strong> Get instant alerts for emergency situations.
+                </li>
+            </ul>
+        </section>
+
+        <!-- New Feature Section with Images -->
+        <section class="features">
+            <div class="feature-item">
+                <h3 id="mainfeature1">Fast Ambulance Dispatch</h3>
+                <p id="mainfeature2">Our system ensures rapid dispatch to get help as soon as possible.</p>
+            </div>
+            <div class="feature-item">
+                <h3 id="mainfeature3">Real-Time Ambulance Tracking</h3>
+                <p id="mainfeature4">Track ambulance locations in real-time for better coordination.</p>
+            </div>
+            <div class="feature-item">
+                <h3 id="mainfeature5">Seamless Hospital Integration</h3>
+                <p id="mainfeature6">Connects ambulances to nearby hospitals for quick treatments.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Language Switcher -->
+    <select id="languageSwitcher">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+    </select>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Ambu Flow - All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Language Switcher -->
+    <script>
+        let currentLanguage = 'en';
+
+        const updateText = (language) => {
+            fetch(`${language}.json`)
+                .then(response => response.json())
+                .then(translations => {
+                    // Update each text element on the page
+                    document.getElementById('pageTitle').innerText = translations.pageTitle;
+                    document.getElementById('homeTitle').innerText = translations.homeTitle;
+                    document.getElementById('welcomeTitle').innerText = translations.welcomeTitle;
+                    document.getElementById('welcomeDescription').innerText = translations.welcomeDescription;
+                    document.getElementById('aboutTitle').innerText = translations.aboutTitle;
+                    document.getElementById('aboutDescription').innerText = translations.aboutDescription;
+                    document.getElementById('feature1').innerText = translations.feature1;
+                    document.getElementById('feature2').innerText = translations.feature2;
+                    document.getElementById('feature3').innerText = translations.feature3;
+                    document.getElementById('feature4').innerText = translations.feature4;
+                    document.getElementById('feature5').innerText = translations.feature5;
+                    document.getElementById('featuresTitle').innerText = translations.featuresTitle;
+                    document.getElementById('featuresDescription').innerText = translations.featuresDescription;
+                    document.getElementById('keyFeature1').innerText = translations.keyFeature1;
+                    document.getElementById('keyFeature2').innerText = translations.keyFeature2;
+                    document.getElementById('keyFeature3').innerText = translations.keyFeature3;
+                    document.getElementById('keyFeature4').innerText = translations.keyFeature4;
+                    document.getElementById('mainfeature1').innerText = translations.mainfeature1;
+                    document.getElementById('mainfeature2').innerText = translations.mainfeature2;
+                    document.getElementById('mainfeature3').innerText = translations.mainfeature3;
+                    document.getElementById('mainfeature4').innerText = translations.mainfeature4;
+                    document.getElementById('mainfeature5').innerText = translations.mainfeature5;
+                    document.getElementById('mainfeature6').innerText = translations.mainfeature6;
+                });
+        };
+
+        document.getElementById('languageSwitcher').addEventListener('change', (event) => {
+            currentLanguage = event.target.value;
+            updateText(currentLanguage);
+            localStorage.setItem('selectedLanguage', currentLanguage); // Store language in local storage
+        });
+
+        // Load selected language from local storage if available
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            document.getElementById('languageSwitcher').value = currentLanguage;
+        }
+
+        // Load default or saved language
+        updateText(currentLanguage);
+    </script>
+</body>
+
+</html>
