@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
   <title>AmbuFlow</title>
+
+
+=======
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|
+  Bree+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/index.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!--Updated to latest version-->
@@ -11,6 +18,21 @@
   <link rel="stylesheet" href="src/css/index.css" />
  
   <style>
+
+    /* .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Arial', sans-serif;
+        } */
+        *{
+  font-family: 'Baloo Bhai', cursive;
+}
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -31,7 +53,7 @@
 
     .menu ul li a.active {
       color: white;
-      background-color: #000;
+      background-color:#1d4ed8; 
     }
 
     .content {
@@ -87,11 +109,11 @@
       color: #555;
     }
 
-<<<<<<< HEAD
+
     /* .team-feature,
 =======
     .team-feature,
->>>>>>> 9bed50576d4a2a36127d862c2de2d25b31d94876
+
     .contact-feature {
       padding: 20px;
       display: flex;
@@ -108,11 +130,11 @@
 
     .contact-feature {
       background-color: #f2e4aa;
-<<<<<<< HEAD
+
     } */
 =======
     }
->>>>>>> 9bed50576d4a2a36127d862c2de2d25b31d94876
+
 
     .team-feature img,
     .contact-feature img {
@@ -193,9 +215,22 @@
       color: red; /* Change the color of letters in this class to red */
     }
   </style>
+   <link rel="icon" href="./ambulance.png" type="image/png">
+   <!--<a href="https://www.flaticon.com/free-icons/ambulance" title="ambulance icons">Ambulance icons created by Freepik - Flaticon</a>-->
 </head>
 
 <body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<script>document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+      document.querySelector("body").classList.add("loaded");
+  }, 500)
+});</script>
+
   <header>
     <div class="container">
       <div class="logo">
@@ -214,7 +249,7 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
           </li>
           <li>
             <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
@@ -277,7 +312,7 @@
           critical information and analytics.
         </p>
       </div>
-<<<<<<< HEAD
+
     </div>
 </div>
       <!-- Team Section in Full Row -->
@@ -352,7 +387,7 @@
       </div>
     </div>
   </div>
->>>>>>> 9bed50576d4a2a36127d862c2de2d25b31d94876
+
   <footer>
     <div class="contact-ft" style="flex: 1;">
       <h3>Contact Info</h3>
@@ -397,6 +432,95 @@ Email : emergency@ambulanceservice.in</pre>
     </div>
   </footer>
 
+=======
+
+
+  
+
+    <!--Updated footer-->
+<footer>
+
+  
+<!-- Contact Information Section -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+
+  <!-- Contact Info -->
+  <div class="contact-ft" style="flex: 1; min-width: 250px;">
+    <h3>Contact Info</h3>
+    <pre style="white-space: pre-wrap; font-family: inherit;">123 Emergency Lane, Mumbai, India
+Phone: +91-911-1234567
+
+Email: emergency@ambulanceservice.in</pre>
+  </div>
+
+  <!-- Newsletter Subscription -->
+  <div style="
+        flex: 1;
+        min-width: 250px;
+        max-width: 400px; 
+        margin-top: -10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background-color: #000000;
+      ">
+    <h3 style="color: #ffffff;">Subscribe to Our Newsletter</h3>
+    <form action="#">
+      <input
+        type="email"
+        placeholder="Your Email"
+        style="
+          padding: 10px;
+          width: 100%;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        "
+        required
+      />
+      <br /><br />
+      <button
+        type="submit"
+        style="
+          background-color: #ff5733;
+          color: white;
+          padding: 15px 20px;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 10px;
+          /* font-size: 1.2rem; */
+        "
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+
+  <!-- Social Media Links -->
+  <div class="social-ft" style="flex: 1; min-width: 250px; display: flex; flex-direction: column; align-items: center;">
+    <h3 style="color: #ffffff;">Follow Us</h3>
+    <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; flex-wrap: wrap;" class="links">
+      <a href="https://www.facebook.com" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" style="color: white; text-decoration: none;"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com" style="color: white; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com" style="color: white; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Copyright Section -->
+<div style="
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid white;
+  padding-top: 10px;
+">
+<p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+</div>
+</div>
+
+</footer>
+
   <script>
     // Function to handle the active state of navbar items
     function changeContent(page) {
@@ -420,6 +544,26 @@ Email : emergency@ambulanceservice.in</pre>
         letter.style.animationDelay = `${index * 0.1}s`;
       });
     };
+
+     // Add this new code for handling the newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.querySelector('input[type="email"]').value;
+      var messageElement = document.getElementById('subscription-message');
+      
+      // Here you would typically send the email to your server
+      // For this example, we'll just show a success message
+      messageElement.textContent = 'Thank you for subscribing!';
+      messageElement.style.display = 'block';
+      
+      // Clear the form
+      this.reset();
+      
+      // Hide the message after 5 seconds
+      setTimeout(function() {
+        messageElement.style.display = 'none';
+      }, 5000);
+    });
   </script>
 </body>
 </html>
