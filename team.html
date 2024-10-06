@@ -7,22 +7,7 @@
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|
-    Bree+Serif&display=swap" rel="stylesheet">
     <style>
-        /* .logo span {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            font-family: 'Arial', sans-serif;
-        } */
-        *{
-  font-family: 'Baloo Bhai', cursive;
-}
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -41,8 +26,8 @@
         }
         
         .menu ul li a.active {
-            background-color:#1d4ed8;
             color: white;
+            background-color: #000;
         }
 
         .content {
@@ -141,6 +126,59 @@
                 opacity: 1;
             }
         }
+        /* Logo Animation */
+        @keyframes logoAnimation {
+            0% {
+            opacity: 0;
+            transform: translateX(-100px); /* Start from the left */
+            }
+            50% {
+            transform: translateX(10px); /* Move slightly to the right */
+            }
+            100% {
+            opacity: 1;
+            transform: translateX(0); /* End at original position */
+            }
+        }
+    
+        /* Letter Drop Animation */
+        @keyframes letterDrop {
+            0% {
+            transform: translateY(-100%);
+            opacity: 0;
+            }
+            50% {
+            transform: translateY(10px); /* Slight bounce */
+            opacity: 1;
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: logoAnimation 1s ease forwards;
+        }
+    
+        .brand-name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 10px; /* Space between the text and the logo image */
+        }
+    
+        .letter {
+            display: inline-block;
+            font-size: 2rem;
+            animation: letterDrop 0.5s ease forwards;
+            animation-delay: calc(var(--letter-index) * 0.1s);
+        }
+    
+        .red {
+            color: red; 
+        }
     </style>
 </head>
 <body>
@@ -150,11 +188,17 @@
 
         <div class="logo">
             <div class="brand-name">
-                <span class="ambu">Ambu</span>Flow
-              </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width:50px; height:auto;">
-           
-        </div>
+                <span class="letter red" style="--letter-index: 1;">A</span>
+                <span class="letter red" style="--letter-index: 2;">m</span>
+                <span class="letter red" style="--letter-index: 3;">b</span>
+                <span class="letter red" style="--letter-index: 4;">u</span>
+                <span class="letter" style="--letter-index: 5;">F</span>
+                <span class="letter" style="--letter-index: 6;">l</span>
+                <span class="letter" style="--letter-index: 7;">o</span>
+                <span class="letter" style="--letter-index: 8;">w</span>
+            </div>
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+          </div>
 
         <nav class="menu">
             <ul>
@@ -209,6 +253,9 @@
 
 
 <footer>
+
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+
     <div style="background-color: #333; color: white; padding: 20px;">
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
             <!-- Quick Links Section -->
@@ -257,6 +304,7 @@
     </div>
     
     </footer>
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
 
 </footer>
 
