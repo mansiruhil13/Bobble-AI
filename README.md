@@ -151,6 +151,13 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 [![Contributors](https://contrib.rocks/image?repo=mansiruhil13/Bobble-AI)](https://github.com/mansiruhil13/Bobble-AI/graphs/contributors)
 
 
-## 📧 Contact
+## 👥 Team
 
-For any inquiries or feedback, please contact Mansi Ruhil at [LinkedIN](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/).
+| ![Mansi Ruhil](https://avatars.githubusercontent.com/u/157950124?v=4&s=80) |
+|:--:|
+| **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
+| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |
+
+For any inquiries or feedback, please contact. Happy Contributing ⭐
+
+
