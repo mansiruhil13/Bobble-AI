@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Ambu Flow - Home</title>
+    <link rel="stylesheet" href="src/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="home-container">
+            <h1 id="homeTitle">Home</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section>
+            <h1 id="welcomeTitle">Welcome to Ambu Flow</h1>
+            <p id="welcomeDescription">Ambu Flow is a revolutionary service designed to streamline the process of
+                tracking and dispatching ambulances during emergencies. Our platform integrates real-time location
+                tracking, route optimization, and seamless communication to ensure faster response times in critical
+                situations.</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="details">
+            <h2 id="aboutTitle">About Ambu Flow</h2>
+            <p id="aboutDescription">Ambu Flow offers:</p>
+            <ul>
+                <li id="feature1">Real-time ambulance tracking</li>
+                <li id="feature2">Automated route optimization for faster arrivals</li>
+                <li id="feature3">Communication interface between hospitals, patients, and ambulance staff</li>
+                <li id="feature4">Emergency notifications and alerts</li>
+                <li id="feature5">Seamless integration with hospital ER systems</li>
+            </ul>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 id="featuresTitle">Key Features</h2>
+            <p id="featuresDescription">Ambu Flow's platform is designed with features that enhance emergency medical
+                services:</p>
+            <ul>
+                <li id="keyFeature1"><strong>Real-time Tracking:</strong> Monitor ambulance locations at all times.</li>
+                <li id="keyFeature2"><strong>Smart Routing:</strong> Optimized routes based on traffic and distance.
+                </li>
+                <li id="keyFeature3"><strong>Patient Management:</strong> Real-time communication with hospital
+                    emergency departments.</li>
+                <li id="keyFeature4"><strong>Emergency Alerts:</strong> Get instant alerts for emergency situations.
+                </li>
+            </ul>
+        </section>
+
+        <!-- New Feature Section with Images -->
+        <section class="features">
+            <div class="feature-item">
+                <h3 id="mainfeature1">Fast Ambulance Dispatch</h3>
+                <p id="mainfeature2">Our system ensures rapid dispatch to get help as soon as possible.</p>
+            </div>
+            <div class="feature-item">
+                <h3 id="mainfeature3">Real-Time Ambulance Tracking</h3>
+                <p id="mainfeature4">Track ambulance locations in real-time for better coordination.</p>
+            </div>
+            <div class="feature-item">
+                <h3 id="mainfeature5">Seamless Hospital Integration</h3>
+                <p id="mainfeature6">Connects ambulances to nearby hospitals for quick treatments.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Language Switcher -->
+    <select id="languageSwitcher">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+    </select>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Ambu Flow - All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Language Switcher -->
+    <script>
+        let currentLanguage = 'en';
+
+        const updateText = (language) => {
+            fetch(`${language}.json`)
+                .then(response => response.json())
+                .then(translations => {
+                    // Update each text element on the page
+                    document.getElementById('pageTitle').innerText = translations.pageTitle;
+                    document.getElementById('homeTitle').innerText = translations.homeTitle;
+                    document.getElementById('welcomeTitle').innerText = translations.welcomeTitle;
+                    document.getElementById('welcomeDescription').innerText = translations.welcomeDescription;
+                    document.getElementById('aboutTitle').innerText = translations.aboutTitle;
+                    document.getElementById('aboutDescription').innerText = translations.aboutDescription;
+                    document.getElementById('feature1').innerText = translations.feature1;
+                    document.getElementById('feature2').innerText = translations.feature2;
+                    document.getElementById('feature3').innerText = translations.feature3;
+                    document.getElementById('feature4').innerText = translations.feature4;
+                    document.getElementById('feature5').innerText = translations.feature5;
+                    document.getElementById('featuresTitle').innerText = translations.featuresTitle;
+                    document.getElementById('featuresDescription').innerText = translations.featuresDescription;
+                    document.getElementById('keyFeature1').innerText = translations.keyFeature1;
+                    document.getElementById('keyFeature2').innerText = translations.keyFeature2;
+                    document.getElementById('keyFeature3').innerText = translations.keyFeature3;
+                    document.getElementById('keyFeature4').innerText = translations.keyFeature4;
+                    document.getElementById('mainfeature1').innerText = translations.mainfeature1;
+                    document.getElementById('mainfeature2').innerText = translations.mainfeature2;
+                    document.getElementById('mainfeature3').innerText = translations.mainfeature3;
+                    document.getElementById('mainfeature4').innerText = translations.mainfeature4;
+                    document.getElementById('mainfeature5').innerText = translations.mainfeature5;
+                    document.getElementById('mainfeature6').innerText = translations.mainfeature6;
+                });
+        };
+
+        document.getElementById('languageSwitcher').addEventListener('change', (event) => {
+            currentLanguage = event.target.value;
+            updateText(currentLanguage);
+            localStorage.setItem('selectedLanguage', currentLanguage); // Store language in local storage
+        });
+
+        // Load selected language from local storage if available
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            document.getElementById('languageSwitcher').value = currentLanguage;
+        }
+
+        // Load default or saved language
+        updateText(currentLanguage);
+    </script>
+</body>
+
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Tracking System</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .menu ul li a {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+        .menu ul li a.active {
+            color: white;
+            background-color: #000;
+        }
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-rows: auto auto;
+            gap: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .feature {
+            background-color: #e7f3fe;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 50%;
+        }
+        .feature h2 {
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            color: #555;
+        }
+
+        .team-feature {
+            background-color: #e7ffe7;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+        .team-feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-feature {
+            background-color: #f2e4aa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+        .contact-feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <span>Ambulance Tracking System</span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="home.html" id="home-link" onclick="changeContent('home')">Home</a></li>
+                <li><a href="features.html" id="features-link" onclick="changeContent('features')">Features</a></li>
+                <li><a href="team.html" id="team-link" onclick="changeContent('team')">Team</a></li>
+                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <a href="login.html" class="login">Log in</a>
+            <a href="up.html" class="get-started">Get started</a>
+        </div>
+    </div>
+</header>
+
+<div class="content" id="main-content">
+    <h1>Welcome to the Ambulance Tracking System</h1>
+    <div class="grid">
+        <div class="feature">
+            <img src="images/emergency-w.jpg" alt="Emergency Response">
+            <h2>Quick Emergency Response</h2>
+            <p>Ensures patients receive timely medical assistance by locating the nearest hospitals and ambulances.</p>
+        </div>
+        <div class="feature">
+            <img src="images/ambulance-w.jpg" alt="Real-Time Tracking">
+            <h2>Real-Time Tracking</h2>
+            <p>Provides real-time updates on ambulance locations and traffic conditions, optimizing route management.</p>
+        </div>
+        <div class="feature">
+            <img src="images/24-w.jpg" alt="24/7 Availability">
+            <h2>24/7 Availability</h2>
+            <p>Ensures round-the-clock service, making sure that help is just a call away, anytime, anywhere.</p>
+        </div>
+        <div class="feature">
+            <img src="images/doctor-w.jpg" alt="Enhanced Communication">
+            <h2>Enhanced Communication</h2>
+            <p>Facilitates seamless communication between patients, hospitals, and ambulance drivers.</p>
+        </div>
+        <div class="feature">
+            <img src="images/hospital-w.jpg" alt="Resource Management">
+            <h2>Resource Management</h2>
+            <p>Helps hospitals manage their resources efficiently by providing critical information and analytics.</p>
+        </div>
+
+        <!-- Team Section in Full Row -->
+        <div class="team-feature">
+            <img src="images/team-w.png" alt="Meet the Team">
+            <div>
+                <h2>Meet the Team</h2>
+                <p>Learn more about our dedicated team working tirelessly to ensure efficient ambulance monitoring and resource management.</p>
+                <a href="team.html" class="button">Go to Team</a>
+            </div>
+        </div>
+
+        <!-- Contact Section in Full Row -->
+        <div class="contact-feature">
+            <img src="images/contact-w.avif" alt="Contact Us">
+            <div>
+                <h2>Contact Us</h2>
+                <p>Reach out to us for any inquiries or assistance. We're here to help you 24/7 with our emergency services.</p>
+                <a href="contact.html" class="button">Go to Contact</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Ambulance Tracking System. All rights reserved.</p>
+</footer>
+
+<script>
+    // Function to handle the active state of navbar items
+    function changeContent(page) {
+        // Get all navigation links
+        var links = document.querySelectorAll('.menu ul li a');
+        
+        // Remove the active class from all links
+        links.forEach(link => link.classList.remove('active'));
+        
+        // Add the active class to the clicked link
+        document.getElementById(page + '-link').classList.add('active');
+    }
+
+    // Make "Home" the default active page on load
+    window.onload = function() {
+        document.getElementById('home-link').classList.add('active');
+    };
+</script>
+
+</body>
+</html>
+
