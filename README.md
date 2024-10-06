@@ -1,12 +1,22 @@
 <div align="center">
     <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/Ambulance Tracker.png">
 </div>
-
-
+<br>
 
 # 🚑 AmbuFlow
 
 A mobile application built using HTML, CSS, JavaScript, and Google API that notifies patients of nearby hospitals and the estimated time of arrival of the ambulance. It provides hospitals and ambulance drivers with critical information such as the patient’s location and enables effective GPS route management via real-time traffic information on scheduled routes.
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+### This project is now OFFICIALLY accepted for
+
+<div align="center">
+  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+</div>
+
+<br>
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
