@@ -25,4 +25,39 @@ accordions.forEach((accordion, index) => {
     });
 });
 
+// Function to handle the active state of navbar items
+function changeContent(page) {
+    // Get all navigation links
+    var links = document.querySelectorAll(".menu ul li a");
+
+    // Remove the active class from all links
+    links.forEach((link) => link.classList.remove("active"));
+
+    // Add the active class to the clicked link
+    document.getElementById(page + "-link").classList.add("active");
+}
+
+// Make "Home" the default active page on load
+window.onload = function () {
+    document.getElementById("home-link").classList.add("active");
+};
+
+//JS for dark mode fuctionality
+// Select the dark mode button
+// Get the dark mode button element
+const darkModeButton = document.getElementById('dark-mode-button');
+
+// Add event listener for toggle functionality
+darkModeButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // Toggle icon between moon and sun
+  const icon = darkModeButton.querySelector('i');
+  icon.classList.toggle('fa-moon');
+  icon.classList.toggle('fa-sun');
+
+  // Log the current classes for debugging
+  console.log(icon.classList); // Check the classes being applied to the icon
+});
+
  
