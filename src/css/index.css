@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 3px;
 }
 
 .brand-name{
@@ -159,7 +159,6 @@ header {
 .social-ft{
 
 }
-
 
 @media (max-width: 768px) {
   .menu ul {
@@ -346,7 +345,7 @@ header {
     border-radius: 50%; /* Ensure round shape */
   }
 }
-=======
+
 #loader-wrapper {
   position: fixed;
   top: 0;
