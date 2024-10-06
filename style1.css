@@ -60,11 +60,20 @@ body.dark-mode .menu ul li a {
   color: #fff; /* White links in dark mode */
 }
 
-/* Dark mode toggle button styles */
-body.dark-mode .dark-mode-toggle i {
-  color: #ffd333; /* Toggle button icon color in dark mode */
-}
-
+.dark-mode-toggle {
+    background-color: transparent; /* No background color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor for better UX */
+  }
+  
+  body.dark-mode .dark-mode-toggle i {
+    color: #ffd333; /* Icon color in dark mode */
+  }
+  
+  /* Optional: Add a hover effect for better feedback */
+  .dark-mode-toggle:hover {
+    opacity: 0.8;
+  }
 /* Headings and text in dark mode */
 body.dark-mode .content h1 {
   color: #ff5733; /* H1 color in dark mode */
