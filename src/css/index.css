@@ -199,30 +199,33 @@ header {
   margin: 70px auto 70px auto; 
   max-width: 800px;
   width: 100%;
-  gap:40px;
+  gap:80px;
   
 }
 
-.team-feature, .contact-feature {
+.team-features, .contact-features{
   background-color:  #C4D7FF ; /* Initial background color */
   padding: 15px;
   text-align: center;
-  transition: transform 0.6s, background-color 0.6s; /* Add transition for background color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
   flex: 1;
   max-width: 300px;
   height: 300px; /* Set the same height and width for round shape */
   border-radius: 50%; /* Make the card round */
-  border: 1px solid #ddd; 
+  border: 1px solid gold; 
   position: relative;
    perspective: 1000px;
+   scroll-behavior: smooth;
+   transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for transform */
 }
 
-.team-feature:hover, .contact-feature:hover {
-  background-color:#FFE1FF; /* Background color on hover */
+.team-features:hover, .contact-features:hover {
+  background-color:#CDC1FF; /* Background color on hover */
+  transform: translateY(-10px);
 }
 
-.team-feature .inner, .contact-feature .inner {
+.team-features .inner, .contact-features .inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -230,12 +233,12 @@ header {
   transform-style: preserve-3d;
 }
 
-.team-feature:hover .inner, .contact-feature:hover .inner {
+.team-features:hover .inner, .contact-features:hover .inner {
   transform: rotateY(180deg);
 }
 
-.team-feature .front, .contact-feature .front,
-.team-feature .back, .contact-feature .back {
+.team-features .front, .contact-features .front,
+.team-features .back, .contact-features .back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -246,23 +249,23 @@ header {
   align-items: center;
 }
 
-.team-feature .back, .contact-feature .back {
+.team-features .back, .contact-features .back {
   transform: rotateY(180deg);
 }
 
-.team-feature img, .contact-feature img {
+.team-features img, .contact-features img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.team-feature h2, .contact-feature h2 {
+.team-features h2, .contact-features h2 {
   color: #2980b9;
   margin: 10px 0;
 }
 
-.team-feature p, .contact-feature p {
+.team-features p, .contact-features p {
   color: #555;
   padding: 15px;
 }
@@ -274,20 +277,37 @@ header {
     gap: 20px;
   }
 
-  .team-feature, .contact-feature {
+  .team-features, .contact-features {
     max-width: 100%;
     margin: 0 auto;
     height: auto; /* Adjust height for mobile view */
   }
 }
+.button {
+  display: inline-block;
+  padding: 8px 16px; /* Reduce padding for a smaller button */
+  background-color: #28a745; /* Keep background color green */
+  color: #fff;
+  text-align: center;
+  border: 2px solid #218838; /* Add a border with a darker green color */
+  border-radius: 4px; /* Reduce border radius for a less rounded button */
+  text-decoration: none;
+  font-weight: bold; /* Keep the text bold */
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
 
+.button:hover {
+  background-color: #218838; /* Darker green on hover */
+  border-color: #1e7e34; /* Change border color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
 /* Tablet view styles */
 @media only screen and (max-width: 1024px) {
   .features-container {
     max-width: 600px;
   }
 
-  .team-feature, .contact-feature {
+  .team-features, .contact-features {
     max-width: 250px;
     height: 250px; /* Adjust height for tablet view */
     border-radius: 50%; /* Ensure round shape */
@@ -300,7 +320,7 @@ header {
     max-width: 900px;
   }
 
-  .team-feature, .contact-feature {
+  .team-features, .contact-features {
     max-width: 300px;
     height: 300px; /* Set a fixed height for laptop view */
     border-radius: 50%; /* Ensure round shape */
@@ -313,7 +333,7 @@ header {
     max-width: 1200px;
   }
 
-  .team-feature, .contact-feature {
+  .team-features, .contact-features {
     max-width: 300px;
     height: 300px; /* Set a fixed height for desktop view */
     border-radius: 50%; /* Ensure round shape */
