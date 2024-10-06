@@ -57,7 +57,7 @@ git push origin <your-branch-name>
 9. **Create a PR:**
     Go to the GitHub page of your forked repository. You should see a prompt to create a pull request (PR). Click on it, compare the changes, and create the PR.
 
-### Alternatively contribute using GitHub Desktop
+## Contribute using GitHub Desktop(Alternative)
 
 1. **Open GitHub Desktop:**
    Launch GitHub Desktop and log in to your GitHub account if you haven't already.
@@ -90,8 +90,6 @@ git push origin <your-branch-name>
 
 9. **Wait for Review:**
     Your pull request will now be available for review by the project maintainers. They may provide feedback or ask for changes before merging your pull request into the main branch of the Stackoverflow-Analysis repository.
-
----
 
 ## 🎉 Additional Notes
 
