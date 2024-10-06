@@ -304,8 +304,45 @@
         <h3>Contact Info</h3>
         <pre>123 Emergency Lane, Mumbai, India
 Phone : +91-911-1234567
+
+          Email : emergency@ambulanceservice.in</pre>
+              </div>
+  
+              <!-- Social Media Links -->
+              <div class="social-ft" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3>Follow Us</h3>
+                  <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; flex-wrap: wrap;" class="links">
+                    <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a><br>
+                    <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i></a><br> <!--upadted-->
+                  
+                    <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i></a><br>
+                    <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+  
+              <!-- Newsletter Subscription -->
+              <div style="flex: 1; min-width: 200px">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="newsletter-form">
+                  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+                  <button type="submit" style="
+                        background-color: #ff5733;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                      ">
+                    Subscribe
+                  </button>
+                </form>
+                <p id="subscription-message" style="display: none; margin-top: 10px; color: #4CAF50;"></p>
+              </div>
+      </div>
+      </div>
+
 Email : emergency@ambulanceservice.in</pre>
     </div>
+
 
     <!-- Social Media Links -->
     <div class="social-ft" style="flex: 1; display: flex; flex-direction: column;">
@@ -365,6 +402,26 @@ Email : emergency@ambulanceservice.in</pre>
         letter.style.animationDelay = `${index * 0.1}s`;
       });
     };
+
+     // Add this new code for handling the newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.querySelector('input[type="email"]').value;
+      var messageElement = document.getElementById('subscription-message');
+      
+      // Here you would typically send the email to your server
+      // For this example, we'll just show a success message
+      messageElement.textContent = 'Thank you for subscribing!';
+      messageElement.style.display = 'block';
+      
+      // Clear the form
+      this.reset();
+      
+      // Hide the message after 5 seconds
+      setTimeout(function() {
+        messageElement.style.display = 'none';
+      }, 5000);
+    });
   </script>
 </body>
 </html>
