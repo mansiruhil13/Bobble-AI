@@ -88,17 +88,14 @@
             font-size: 0.9em;
         }
 
-        .contact-feature {
-            background-color: #f2e4aa;
-            padding: 20px;
-            display: flex;
+        /* .contact-feature {
+             display: flex;
+            justify-content: center; 
             align-items: center;
-            text-align: left;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 30px;
-            margin-bottom: 5px;
-            padding-bottom: 5px;
+            margin: 70px auto 70px auto; 
+             max-width: 800px;
+             width: 100%;  
+            gap:40px;
         }
 
         .contact-feature img {
@@ -106,7 +103,7 @@
             height: auto;
             margin-right: 20px;
             border-radius: 10px;
-        }
+        }  */
 
         footer {
             background-color: #000;
@@ -242,13 +239,22 @@
 </div>
 
 <!-- Contact Section in Full Row -->
-<div class="contact-feature">
-    <img src="images/contact-w.avif" alt="Contact Us">
-    <div>
-        <h2>Contact Us</h2>
-        <p>Reach out to us for any inquiries or assistance. We're here to help you 24/7 with our emergency services.</p>
-        <a href="contact.html" class="button">Go to Contact</a>
-    </div>
+<div class="features-container">
+    <div class="contact-features">
+        <div class="inner">
+          <div class="front">
+            <img src="images/contact-w.avif" alt="Contact Us" />
+            <h2>Contact Us</h2>
+          </div>
+          <div class="back">
+            <p>
+              Reach out to us for any inquiries or assistance. We're here to
+              help you 24/7 with our emergency services.
+            </p>
+            <a href="contact.html" class="button">Go to Contact</a>
+          </div>
+        </div>
+      </div>
 </div>
 
 

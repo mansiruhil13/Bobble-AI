@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
   <title>AmbuFlow</title>
+
+
+=======
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|
   Bree+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/css/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <!-- Updated to latest version -->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!--Updated to latest version-->
+  
+  <link rel="stylesheet" href="src/css/index.css" />
+ 
   <style>
 
     /* .logo span {
@@ -103,7 +109,11 @@
       color: #555;
     }
 
+
+    /* .team-feature,
+=======
     .team-feature,
+
     .contact-feature {
       padding: 20px;
       display: flex;
@@ -120,7 +130,11 @@
 
     .contact-feature {
       background-color: #f2e4aa;
+
+    } */
+=======
     }
+
 
     .team-feature img,
     .contact-feature img {
@@ -142,6 +156,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -298,33 +313,126 @@
         </p>
       </div>
 
+    </div>
+</div>
       <!-- Team Section in Full Row -->
-      <div class="team-feature">
-        <img src="images/team-w.png" alt="Meet the Team" />
-        <div>
-          <h2>Meet the Team</h2>
-          <p>
-            Learn more about our dedicated team working tirelessly to ensure
-            efficient ambulance monitoring and resource management.
-          </p>
-          <a href="team.html" class="button">Go to Team</a>
+      <div class="features-container">
+        <div class="team-features">
+          <div class="inner">
+            <div class="front">
+              <img src="images/team-w.png" alt="Meet the Team">
+              <h2>Meet the Team</h2>
+            </div>
+            <div class="back">
+              <p>
+                Learn more about our dedicated team working tirelessly to ensure
+                efficient ambulance monitoring and resource management.
+              </p>
+              <a href="team.html" class="button">Go to Team</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Contact Section in Full Row -->
+        <div class="contact-features">
+          <div class="inner">
+            <div class="front">
+              <img src="images/contact-w.avif" alt="Contact Us">
+              <h2>Contact Us</h2>
+            </div>
+            <div class="back">
+              <p>
+                Reach out to us for any inquiries or assistance. We're here to
+                help you 24/7 with our emergency services.
+              </p>
+              <a href="contact.html" class="button">Go to Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+=======
+
+      <!-- Team Section in Full Row -->
+      <div class="team-feature feature">
+        <div class="inner">
+          <div class="front">
+            <img src="images/team-w.png" alt="Meet the Team">
+            <h2>Meet the Team</h2>
+          </div>
+          <div class="back">
+            <p>
+              Learn more about our dedicated team working tirelessly to ensure
+              efficient ambulance monitoring and resource management.
+            </p>
+            <a href="team.html" class="button">Go to Team</a>
+          </div>
         </div>
       </div>
 
       <!-- Contact Section in Full Row -->
-      <div class="contact-feature">
-        <img src="images/contact-w.avif" alt="Contact Us" />
-        <div>
-          <h2>Contact Us</h2>
-          <p>
-            Have questions or feedback? Reach out to us through our contact
-            page.
-          </p>
-          <a href="contact.html" class="button">Go to Contact</a>
+      <div class="contact-feature feature">
+        <div class="inner">
+          <div class="front">
+            <img src="images/contact-w.avif" alt="Contact Us">
+            <h2>Contact Us</h2>
+          </div>
+          <div class="back">
+            <p>
+              Reach out to us for any inquiries or assistance. We're here to
+              help you 24/7 with our emergency services.
+            </p>
+            <a href="contact.html" class="button">Go to Contact</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <footer>
+    <div class="contact-ft" style="flex: 1;">
+      <h3>Contact Info</h3>
+      <pre>123 Emergency Lane, Mumbai, India
+Phone : +91-911-1234567
+Email : emergency@ambulanceservice.in</pre>
+    </div>
+
+    <div class="social-ft" style="flex: 1; display: flex; flex-direction: column;">
+      <h3>Follow Us</h3>
+      <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; flex-wrap: wrap;" class="links">
+        <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a><br>
+        <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i></a><br> <!--updated-->
+        <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i></a><br>
+        <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div style="flex: 1; min-width: 200px">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form action="#">
+        <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+        <button type="submit" style="
+          background-color: #ff5733;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+        ">
+          Subscribe
+        </button>
+      </form>
+    </div>
+
+    <div style="
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid white;
+      padding-top: 10px;
+    ">
+      <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+    </div>
+  </footer>
+
+=======
 
 
   
@@ -412,13 +520,21 @@ Email: emergency@ambulanceservice.in</pre>
 </div>
 
 </footer>
+
   <script>
+    // Function to handle the active state of navbar items
     function changeContent(page) {
+      // Get all navigation links
       var links = document.querySelectorAll(".menu ul li a");
+
+      // Remove the active class from all links
       links.forEach((link) => link.classList.remove("active"));
+
+      // Add the active class to the clicked link
       document.getElementById(page + "-link").classList.add("active");
     }
 
+    // Make "Home" the default active page on load
     window.onload = function () {
       document.getElementById("home-link").classList.add("active");
 
