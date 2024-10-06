@@ -100,7 +100,7 @@ input[type="tel"],
 select {
   padding: 15px 20px;
   margin-bottom: 10px;
-  border: 1px solid #bdc3c7;
+  border: 1px solid #92c4d6;
   border-radius: 10px;
   font-size: 18px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -252,7 +252,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
 
 /* Update manage-container to take remaining space */
 .manage-container {

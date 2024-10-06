@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/css/driver.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #map {
             width: 100%;
@@ -33,6 +34,21 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./images/manageLogo.png"></img>
+                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="hospital.html">Dashboard</a></li>
+                <li><a href="manage.html">Manage Status</a></li>
+                <li><a href="driver.html">Manage Driver</a></li>
+                <li><a href="ambtracker.html">Manage Ambulance</a></li>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="dashboard-container">
         <h1>Welcome, <span id="driverName">Driver ___</span></h1>
         <p id="status">You are currently: <strong id="availability">OFF DUTY</strong></p>
@@ -118,6 +134,14 @@
 
         // Call updateDriverLocation every 5 seconds
         setInterval(updateDriverLocation, 5000);
+
+        function logout() {
+            const confirmLogout = confirm('Are you sure you want to logout?');
+            if (confirmLogout) {
+                window.location.href = 'index.html';
+                alert("Logged out successfully!");
+            }
+        }  
     </script>
 </body>
 </html>
