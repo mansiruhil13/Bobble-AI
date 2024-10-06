@@ -319,21 +319,22 @@ Phone : +91-911-1234567
               </div>
   
               <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px">
-          <h3>Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
-            <button type="submit" style="
-                  background-color: #ff5733;
-                  color: white;
-                  padding: 10px 20px;
-                  border: none;
-                  cursor: pointer;
-                ">
-              Subscribe
-            </button>
-          </form>
-        </div>
+              <div style="flex: 1; min-width: 200px">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="newsletter-form">
+                  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+                  <button type="submit" style="
+                        background-color: #ff5733;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                      ">
+                    Subscribe
+                  </button>
+                </form>
+                <p id="subscription-message" style="display: none; margin-top: 10px; color: #4CAF50;"></p>
+              </div>
       </div>
       </div>
 
@@ -366,6 +367,26 @@ Phone : +91-911-1234567
     window.onload = function () {
       document.getElementById("home-link").classList.add("active");
     };
+
+     // Add this new code for handling the newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.querySelector('input[type="email"]').value;
+      var messageElement = document.getElementById('subscription-message');
+      
+      // Here you would typically send the email to your server
+      // For this example, we'll just show a success message
+      messageElement.textContent = 'Thank you for subscribing!';
+      messageElement.style.display = 'block';
+      
+      // Clear the form
+      this.reset();
+      
+      // Hide the message after 5 seconds
+      setTimeout(function() {
+        messageElement.style.display = 'none';
+      }, 5000);
+    });
   </script>
 </body>
 
