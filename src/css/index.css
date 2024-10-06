@@ -185,8 +185,137 @@ header {
   }
 }
 
-.subtext{
+.subtext {
   font-size: 1.2rem;
   color: #1d4ed8;
   margin-top: 20px;
+}
+
+.features-container {
+  display: flex;
+  border-radius: 50%;
+  justify-content: center; /* Center the cards horizontally */
+  align-items: center;
+  margin: 70px auto 70px auto; 
+  max-width: 800px;
+  width: 100%;
+  gap:40px;
+  
+}
+
+.team-feature, .contact-feature {
+  background-color:  #C4D7FF ; /* Initial background color */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.6s, background-color 0.6s; /* Add transition for background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 300px;
+  height: 300px; /* Set the same height and width for round shape */
+  border-radius: 50%; /* Make the card round */
+  border: 1px solid #ddd; 
+  position: relative;
+   perspective: 1000px;
+}
+
+.team-feature:hover, .contact-feature:hover {
+  background-color:#FFE1FF; /* Background color on hover */
+}
+
+.team-feature .inner, .contact-feature .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.team-feature:hover .inner, .contact-feature:hover .inner {
+  transform: rotateY(180deg);
+}
+
+.team-feature .front, .contact-feature .front,
+.team-feature .back, .contact-feature .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-feature .back, .contact-feature .back {
+  transform: rotateY(180deg);
+}
+
+.team-feature img, .contact-feature img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-feature h2, .contact-feature h2 {
+  color: #2980b9;
+  margin: 10px 0;
+}
+
+.team-feature p, .contact-feature p {
+  color: #555;
+  padding: 15px;
+}
+
+/* Mobile view styles */
+@media only screen and (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-feature, .contact-feature {
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto; /* Adjust height for mobile view */
+  }
+}
+
+/* Tablet view styles */
+@media only screen and (max-width: 1024px) {
+  .features-container {
+    max-width: 600px;
+  }
+
+  .team-feature, .contact-feature {
+    max-width: 250px;
+    height: 250px; /* Adjust height for tablet view */
+    border-radius: 50%; /* Ensure round shape */
+  }
+}
+
+/* Laptop view styles */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .features-container {
+    max-width: 900px;
+  }
+
+  .team-feature, .contact-feature {
+    max-width: 300px;
+    height: 300px; /* Set a fixed height for laptop view */
+    border-radius: 50%; /* Ensure round shape */
+  }
+}
+
+/* Desktop view styles */
+@media only screen and (min-width: 1281px) {
+  .features-container {
+    max-width: 1200px;
+  }
+
+  .team-feature, .contact-feature {
+    max-width: 300px;
+    height: 300px; /* Set a fixed height for desktop view */
+    border-radius: 50%; /* Ensure round shape */
+  }
 }
