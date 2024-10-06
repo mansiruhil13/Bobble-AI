@@ -6,7 +6,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Poppins", sans-serif;
     background: linear-gradient(135deg, #2C3E50, #74ebd5, #ACB6E5, #FFDEE9, #0F2027);
     height: 100vh;
     display: flex;

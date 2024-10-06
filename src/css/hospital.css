@@ -7,7 +7,7 @@
 
 /* Enhance Typography */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f0f4f8; /* Softer background for better contrast */
     color: #333333;
     display: flex;
