@@ -37,6 +37,11 @@ document.querySelector(".sign-up-form").addEventListener('submit', function(even
   const email = document.querySelector(".sign-up-form input[type='email']").value;
   const password = document.querySelector(".sign-up-form input[type='password']").value;
 
+  if (username === '' || email === '' || password === '') {
+    alert('Please fill in all fields');
+    return;
+  }
+
   // Dummy signup logic for demo purposes
   localStorage.setItem('username', username);
   localStorage.setItem('email', email);
