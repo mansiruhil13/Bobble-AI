@@ -5,19 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team</title>
     <link rel="stylesheet" href="src/css/index.css">
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
     <style>
-        /* .logo span {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            font-family: 'Arial', sans-serif;
-        } */
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -98,17 +88,14 @@
             font-size: 0.9em;
         }
 
-        .contact-feature {
-            background-color: #f2e4aa;
-            padding: 20px;
-            display: flex;
+        /* .contact-feature {
+             display: flex;
+            justify-content: center; 
             align-items: center;
-            text-align: left;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 30px;
-            margin-bottom: 5px;
-            padding-bottom: 5px;
+            margin: 70px auto 70px auto; 
+             max-width: 800px;
+             width: 100%;  
+            gap:40px;
         }
 
         .contact-feature img {
@@ -116,7 +103,7 @@
             height: auto;
             margin-right: 20px;
             border-radius: 10px;
-        }
+        }  */
 
         footer {
             background-color: #000;
@@ -136,6 +123,59 @@
                 opacity: 1;
             }
         }
+        /* Logo Animation */
+        @keyframes logoAnimation {
+            0% {
+            opacity: 0;
+            transform: translateX(-100px); /* Start from the left */
+            }
+            50% {
+            transform: translateX(10px); /* Move slightly to the right */
+            }
+            100% {
+            opacity: 1;
+            transform: translateX(0); /* End at original position */
+            }
+        }
+    
+        /* Letter Drop Animation */
+        @keyframes letterDrop {
+            0% {
+            transform: translateY(-100%);
+            opacity: 0;
+            }
+            50% {
+            transform: translateY(10px); /* Slight bounce */
+            opacity: 1;
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: logoAnimation 1s ease forwards;
+        }
+    
+        .brand-name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 10px; /* Space between the text and the logo image */
+        }
+    
+        .letter {
+            display: inline-block;
+            font-size: 2rem;
+            animation: letterDrop 0.5s ease forwards;
+            animation-delay: calc(var(--letter-index) * 0.1s);
+        }
+    
+        .red {
+            color: red; 
+        }
     </style>
 </head>
 <body>
@@ -144,9 +184,18 @@
     <div class="container">
 
         <div class="logo">
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width:50px; height:auto;">
-           
-        </div>
+            <div class="brand-name">
+                <span class="letter red" style="--letter-index: 1;">A</span>
+                <span class="letter red" style="--letter-index: 2;">m</span>
+                <span class="letter red" style="--letter-index: 3;">b</span>
+                <span class="letter red" style="--letter-index: 4;">u</span>
+                <span class="letter" style="--letter-index: 5;">F</span>
+                <span class="letter" style="--letter-index: 6;">l</span>
+                <span class="letter" style="--letter-index: 7;">o</span>
+                <span class="letter" style="--letter-index: 8;">w</span>
+            </div>
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+          </div>
 
         <nav class="menu">
             <ul>
@@ -190,13 +239,22 @@
 </div>
 
 <!-- Contact Section in Full Row -->
-<div class="contact-feature">
-    <img src="images/contact-w.avif" alt="Contact Us">
-    <div>
-        <h2>Contact Us</h2>
-        <p>Reach out to us for any inquiries or assistance. We're here to help you 24/7 with our emergency services.</p>
-        <a href="contact.html" class="button">Go to Contact</a>
-    </div>
+<div class="features-container">
+    <div class="contact-features">
+        <div class="inner">
+          <div class="front">
+            <img src="images/contact-w.avif" alt="Contact Us" />
+            <h2>Contact Us</h2>
+          </div>
+          <div class="back">
+            <p>
+              Reach out to us for any inquiries or assistance. We're here to
+              help you 24/7 with our emergency services.
+            </p>
+            <a href="contact.html" class="button">Go to Contact</a>
+          </div>
+        </div>
+      </div>
 </div>
 
 
