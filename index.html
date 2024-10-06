@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
   <title>AmbuFlow</title>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|
   Bree+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <!--Updated to latest version-->
-
-  <link rel="stylesheet" href="src/css/index.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Updated to latest version -->
 
   <style>
+
     /* .logo span {
             font-size: 28px;
             font-weight: bold;
@@ -27,6 +26,7 @@
         *{
   font-family: 'Baloo Bhai', cursive;
 }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -130,46 +130,6 @@
       border-radius: 10px;
     }
 
-    .feature p {
-      color: #555;
-    }
-
-    .team-feature {
-      background-color: #e7ffe7;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
-
-    .team-feature img {
-      width: 150px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-    }
-
-    .contact-feature {
-      background-color: #f2e4aa;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
-
-    .contact-feature img {
-      width: 150px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-    }
-
     footer {
       background-color: #000;
       color: white;
@@ -182,11 +142,62 @@
       from {
         opacity: 0;
       }
-
       to {
         opacity: 1;
       }
+    }
 
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start from the left */
+      }
+      50% {
+        transform: translateX(10px); /* Move slightly to the right */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+      }
+    }
+
+    /* Letter Drop Animation */
+    @keyframes letterDrop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(10px); /* Slight bounce */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      animation: logoAnimation 1s ease forwards;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 10px; /* Space between the text and the logo image */
+    }
+
+    .letter {
+      display: inline-block;
+      font-size: 2rem;
+      animation: letterDrop 0.5s ease forwards;
+    }
+
+    .red {
+      color: red; /* Change the color of letters in this class to red */
     }
   </style>
 </head>
@@ -194,14 +205,18 @@
 <body>
   <header>
     <div class="container">
-      
       <div class="logo">
-
         <div class="brand-name">
-          <span class="ambu">Ambu</span>Flow
+          <span class="letter red">A</span>
+          <span class="letter red">m</span>
+          <span class="letter red">b</span>
+          <span class="letter red">u</span>
+          <span class="letter">F</span>
+          <span class="letter">l</span>
+          <span class="letter">o</span>
+          <span class="letter">w</span>
         </div>
         <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-
       </div>
       <nav class="menu">
         <ul>
@@ -280,7 +295,6 @@
             efficient ambulance monitoring and resource management.
           </p>
           <a href="team.html" class="button">Go to Team</a>
-
         </div>
       </div>
 
@@ -290,23 +304,23 @@
         <div>
           <h2>Contact Us</h2>
           <p>
-            Reach out to us for any inquiries or assistance. We're here to
-            help you 24/7 with our emergency services.
+            Have questions or feedback? Reach out to us through our contact
+            page.
           </p>
           <a href="contact.html" class="button">Go to Contact</a>
         </div>
       </div>
     </div>
   </div>
-  
-    <footer>
+  <footer>
 
   
-              <!-- Contact Information Section -->
-              <div class="contact-ft" style="flex: 1; ">
-                  <h3>Contact Info</h3>
-                  <pre>123 Emergency Lane, Mumbai, India
+    <!-- Contact Information Section -->
+    <div class="contact-ft" style="flex: 1; ">
+        <h3>Contact Info</h3>
+        <pre>123 Emergency Lane, Mumbai, India
 Phone : +91-911-1234567
+
           Email : emergency@ambulanceservice.in</pre>
               </div>
   
@@ -323,54 +337,107 @@ Phone : +91-911-1234567
               </div>
   
               <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px">
-          <h3>Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
-            <button type="submit" style="
-                  background-color: #ff5733;
-                  color: white;
-                  padding: 10px 20px;
-                  border: none;
-                  cursor: pointer;
-                ">
-              Subscribe
-            </button>
-          </form>
-        </div>
+              <div style="flex: 1; min-width: 200px">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="newsletter-form">
+                  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+                  <button type="submit" style="
+                        background-color: #ff5733;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                      ">
+                    Subscribe
+                  </button>
+                </form>
+                <p id="subscription-message" style="display: none; margin-top: 10px; color: #4CAF50;"></p>
+              </div>
       </div>
       </div>
 
-      <!-- Copyright Section -->
-      <div style="
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-          ">
-        <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
-      </div>
+Email : emergency@ambulanceservice.in</pre>
     </div>
-  </footer>
 
+
+    <!-- Social Media Links -->
+    <div class="social-ft" style="flex: 1; display: flex; flex-direction: column;">
+        <h3>Follow Us</h3>
+        <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; flex-wrap: wrap;" class="links">
+          <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a><br>
+          <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i></a><br> <!--upadted-->
+        
+          <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i></a><br>
+          <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <!-- Newsletter Subscription -->
+<div style="flex: 1; min-width: 200px">
+<h3>Subscribe to Our Newsletter</h3>
+<form action="#">
+  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+  <button type="submit" style="
+        background-color: #ff5733;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      ">
+    Subscribe
+  </button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Copyright Section -->
+<div style="
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid white;
+  padding-top: 10px;
+">
+<p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+</div>
+</div>
+</footer>
   <script>
-    // Function to handle the active state of navbar items
     function changeContent(page) {
-      // Get all navigation links
       var links = document.querySelectorAll(".menu ul li a");
-
-      // Remove the active class from all links
       links.forEach((link) => link.classList.remove("active"));
-
-      // Add the active class to the clicked link
       document.getElementById(page + "-link").classList.add("active");
     }
 
-    // Make "Home" the default active page on load
     window.onload = function () {
       document.getElementById("home-link").classList.add("active");
+
+      // Add delay to each letter drop
+      const letters = document.querySelectorAll('.letter');
+      letters.forEach((letter, index) => {
+        letter.style.animationDelay = `${index * 0.1}s`;
+      });
     };
+
+     // Add this new code for handling the newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.querySelector('input[type="email"]').value;
+      var messageElement = document.getElementById('subscription-message');
+      
+      // Here you would typically send the email to your server
+      // For this example, we'll just show a success message
+      messageElement.textContent = 'Thank you for subscribing!';
+      messageElement.style.display = 'block';
+      
+      // Clear the form
+      this.reset();
+      
+      // Hide the message after 5 seconds
+      setTimeout(function() {
+        messageElement.style.display = 'none';
+      }, 5000);
+    });
   </script>
 </body>
-
 </html>
