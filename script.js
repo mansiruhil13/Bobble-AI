@@ -59,3 +59,5 @@ darkModeButton.addEventListener('click', () => {
   // Log the current classes for debugging
   console.log(icon.classList); // Check the classes being applied to the icon
 });
+
+  
