@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Status</title>
     <link rel="stylesheet" href="src/css/manage.css">
-    <link rel="stylesheet" href="src/css/hospital.css"> 
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon"><!-- Ensures consistent styling -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <h2>Hospital Management System</h2>
+                <img src="./images/manageLogo.png"></img>
+                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
                 <li><a href="manage.html">Manage Status</a></li>
-                <li><a href="#">Logout</a></li>
+                <li id="logout"><a><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -32,10 +33,10 @@
             </div>
 
             <!-- Manage Driver Section -->
-            <section id="manageDriverSection" class="manage-section hidden">
-                <h2 id="driverFormTitle">Add Driver</h2>
+            <section id="manageDriverSection" class="manage-section">
+                <h2 id="driverFormTitle" style="margin-bottom: 20px;">Add Driver</h2>
                 <form id="driverForm">
-                    <input type="hidden" id="driverIndex" name="driverIndex">
+                    <input type="text" id="driverIndex" name="driverIndex" hidden>
                     
                     <div class="form-group">
                         <label for="driverName">Driver Name:</label>
@@ -61,15 +62,15 @@
                         <input type="text" id="driverLocation" name="driverLocation" placeholder="e.g., Location XYZ" required>
                     </div>
                     <p class="button-container">
-                        <button type="submit" class="submit-btn save">Save Driver</button>
-                        <button type="button" class="submit-btn cancel" id="cancelDriverBtn">Cancel</button>
+                        <button type="submit" class="submit-btn save" style="padding: 20px; font-weight: 600;">Save Driver</button>
+                        <button type="button" class="submit-btn cancel" id="cancelDriverBtn" style="padding: 20px; font-weight: 600;">Cancel</button>
                     </p>
                 </form>
             </section>
 
             <!-- Manage Ambulance Section -->
             <section id="manageAmbulanceSection" class="manage-section hidden">
-                <h2 id="ambulanceFormTitle">Add Ambulance</h2>
+                <h2 id="ambulanceFormTitle" style="margin-bottom: 20px;">Add Ambulance</h2>
                 <form id="ambulanceForm">
                     <input type="hidden" id="ambulanceIndex" name="ambulanceIndex">
                     
@@ -92,8 +93,8 @@
                         <input type="text" id="ambulanceLocation" name="ambulanceLocation" placeholder="e.g., Location ABC" required>
                     </div>
                     <p class="button-container">
-                        <button type="submit" class="submit-btn save">Save Ambulance</button>
-                        <button type="button" class="submit-btn cancel" id="cancelAmbulanceBtn">Cancel</button>
+                        <button type="submit" class="submit-btn save" style="padding: 20px; font-weight: 600;">Save Ambulance</button>
+                        <button type="button" class="submit-btn cancel" id="cancelAmbulanceBtn" style="padding: 20px; font-weight: 600;">Cancel</button>
                     </p>
                 </form>
             </section>
@@ -290,6 +291,15 @@ driverForm.addEventListener('submit', (e) => {
                 }
             }
         };
+
+        document.getElementById('logout').addEventListener('click', () => {
+            cf = confirm('Are you sure you want to logout?');
+            if (cf) {
+                window.location.href = 'index.html';
+                alert("Logged out successfully!");
+            } else return
+        });
+
     </script>
 </body>
 </html>
