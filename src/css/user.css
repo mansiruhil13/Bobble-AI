@@ -27,17 +27,18 @@ html::-webkit-scrollbar-thumb:window-inactive {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto; 
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; 
+    border: 2px solid #74b9f8; 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #hospitalList {
@@ -45,26 +46,32 @@ h1 {
 }
 
 .hospital-item {
-    background-color: #fff;
+    background-color: #f9f9f9; 
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 10px;
+    border: 1px solid #d1d1d1; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    margin-bottom: 15px; 
+    transition: transform 0.2s;
+}
+
+.hospital-item:hover {
+    transform: translateY(-2px); 
 }
 
 button {
     display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 20px auto; 
+    padding: 12px 24px; 
+    font-size: 18px;
     color: #fff;
     background-color: #007BFF;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-1px);
 }
