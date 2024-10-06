@@ -95,7 +95,7 @@ We welcome all the contributions from the open-source community! If you'd like t
 4. Push to the branch
 5. Open a Pull Request.
 
-We welcome all contributions to improve **AmbuFlow**! If you'd like to contribute, please follow the [Contributing.md](./Contributing.md) to get details on how to get started.
+We welcome all contributions to improve **AmbuFlow**! If you would like to contribute, please follow the [Contributing.md](./Contributing.md) to know how to get started.
    
 To maintain quality and consistency, please adhere to the following guidelines:
 1. Code Style: Follow the coding style used throughout the project. Clean, readable code with comments is always appreciated.
