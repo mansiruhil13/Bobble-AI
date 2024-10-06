@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     /* .logo span {
             font-size: 28px;
             font-weight: bold;
@@ -24,7 +25,9 @@
             font-family: 'Arial', sans-serif;
         } */
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", system-ui;
+  font-weight: 400;
+  font-style: normal;
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
@@ -33,6 +36,91 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
+
+    /* start   */
+    /* Landing Page Styles */
+.landing-page {
+  font-family: "Poppins", system-ui;
+  font-weight: 400;
+  font-style: normal;
+    background-image: url('https://img.freepik.com/premium-photo/portrait-happy-young-nurse-uniform-with-healthcare-team-background-successful-team-doctor-nurses-smiling-beautiful-satisfied-healthcare-worker-private-clinic-looking-camera_776674-858233.jpg'); /* Replace with healthcare-themed image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Semi-transparent overlay for better contrast */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay to enhance text visibility */
+    z-index: 0;
+}
+
+/* Content Styling */
+.landing-page .content {
+    position: relative;
+    color: #ffffff; /* White text for high contrast */
+    text-align: center;
+    z-index: 1; /* Keeps content above the overlay */
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.landing-page  h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: pulse 2s infinite alternate;
+    color: #ffffff; /* White for visibility */
+}
+
+/* Centered Paragraph with Better Color */
+.landing-page  p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.7;
+    text-align: center; /* Centering text inside the paragraph */
+    color: #b0e0e6; /* A soft light blue (PowderBlue) for a modern, clean look */
+    animation: fadeInUp 2.5s ease-in-out;
+}
+
+/* Button Styling */
+.landing-page  .btn {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00d4ff; /* Light blue border for contrast */
+    color: #00d4ff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-page .btn:hover {
+    background-color: #00d4ff;
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+    /* end   */
 
     .menu ul li a {
       padding: 10px 15px;
@@ -46,7 +134,7 @@
       background-color: #000;
     }
 
-    .content {
+    .content-2 {
       margin: 20px;
       padding: 20px;
       background-color: #fff;
@@ -108,6 +196,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       grid-column: 1 / -1;
+      margin-top: 1rem;
     }
 
     .team-feature {
@@ -184,13 +273,15 @@
       }
 
     }
+
+
+    
   </style>
 </head>
 
 <body>
   <header>
     <div class="container">
-      
       <div class="logo">
 
         <div class="brand-name">
@@ -221,8 +312,16 @@
       </div>
     </div>
   </header>
+  <div class="landing-page">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Welcome to Healthcare Solutions</h1>
+        <p>Your health, our priority. Experience comprehensive healthcare services with a team you can trust.</p>
+        <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+</div>
 
-  <div class="content" id="main-content">
+  <div class="content-2" id="main-content">
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
       <div class="feature">
@@ -265,7 +364,8 @@
           critical information and analytics.
         </p>
       </div>
-
+</div>
+<div> 
       <!-- Team Section in Full Row -->
       <div class="team-feature">
         <img src="images/team-w.png" alt="Meet the Team" />
