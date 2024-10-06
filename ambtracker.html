@@ -1,96 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ambulance GPS Tracking System</title>
-    <style>
-      /* Full page styles */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
 
-      /* Map container */
-      #map {
-        height: 90%;
-        width: 100%;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambulance GPS Tracking System</title>
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+  <style>
+    /* Full page styles */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-      /* Header styles */
-      h1 {
-        text-align: center;
-        background-color: #4caf50;
-        color: white;
-        padding: 15px;
-        margin: 0;
-      }
+    html {
+      overflow-y: scroll;
+    }
 
-      /* Add a loading spinner for the map */
-      #loadingSpinner {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-      }
-    </style>
-    <!-- Include the Google Maps JavaScript API -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4"
-      async
-      defer
-    ></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <h1>Ambulance GPS Tracking System</h1>
+    html::-webkit-scrollbar {
+      width: 9px;
+      transition: width 0.3s ease;
+      margin: 10px;
+    }
 
-    <!-- Map container -->
-    <div id="map"></div>
+    html::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(216, 216, 216, 0.74);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
 
-    <!-- Loading Spinner -->
-    <div id="loadingSpinner">Loading...</div>
+    html::-webkit-scrollbar-thumb:window-inactive {
+      background: rgb(156, 156, 156);
+    }
 
-    <!-- Script to load the map and track ambulance -->
-    <script>
-      let map, marker;
 
-      // Initial position of the ambulance (example coordinates)
-      const ambulancePosition = { lat: 28.7, lng: 77.1 }; // San Francisco
+    /* Map container */
+    #map {
+      height: 90%;
+      width: 100%;
+    }
 
-      // Function to initialize the map
-      function initMap() {
-        loadingSpinner.style.display = "block"; // Show spinner
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: ambulancePosition,
-          zoom: 15,
-        });
-        loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
-        marker = new google.maps.Marker({
-          position: ambulancePosition,
-          map: map,
-          title: "Ambulance Location",
-          draggable: false,
-          animation: google.maps.Animation.DROP,
-        });
-        setInterval(updateAmbulancePosition, 5000);
-      }
+    /* Header styles */
+    h1 {
+      text-align: center;
+      background-color: #4caf50;
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
 
-      // Function to simulate the update of the ambulance's GPS position
-      function updateAmbulancePosition() {
-        const newLat = ambulancePosition.lat + (Math.random() * 0.001 - 0.0005);
-        const newLng = ambulancePosition.lng + (Math.random() * 0.001 - 0.0005);
-        const newPosition = { lat: newLat, lng: newLng };
-        marker.setPosition(newPosition);
-        map.setCenter(newPosition);
-      }
+    /* Add a loading spinner for the map */
+    #loadingSpinner {
+      display: none;
+      /* Hidden by default */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+  </style>
+  <!-- Include the Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async
+    defer></script>
+</head>
 
-      // Initialize the map when the window loads
-      window.onload = initMap;
-    </script>
-  </body>
+<body>
+  <!-- Header -->
+  <h1>Ambulance GPS Tracking System</h1>
+
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner">Loading...</div>
+
+  <!-- Script to load the map and track ambulance -->
+  <script>
+    let map, marker;
+
+    // Initial position of the ambulance (example coordinates)
+    const ambulancePosition = { lat: 28.7, lng: 77.1 }; // San Francisco
+
+    // Function to initialize the map
+    function initMap() {
+      loadingSpinner.style.display = "block"; // Show spinner
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: ambulancePosition,
+        zoom: 15,
+      });
+      loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
+      marker = new google.maps.Marker({
+        position: ambulancePosition,
+        map: map,
+        title: "Ambulance Location",
+        draggable: false,
+        animation: google.maps.Animation.DROP,
+      });
+      setInterval(updateAmbulancePosition, 5000);
+    }
+
+    // Function to simulate the update of the ambulance's GPS position
+    function updateAmbulancePosition() {
+      const newLat = ambulancePosition.lat + (Math.random() * 0.001 - 0.0005);
+      const newLng = ambulancePosition.lng + (Math.random() * 0.001 - 0.0005);
+      const newPosition = { lat: newLat, lng: newLng };
+      marker.setPosition(newPosition);
+      map.setCenter(newPosition);
+    }
+
+    // Initialize the map when the window loads
+    window.onload = initMap;
+  </script>
+</body>
+
 </html>

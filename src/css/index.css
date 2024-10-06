@@ -1,7 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+@import url('<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">');
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo Bhai', cursive;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+  width: 9px;
+  transition: width 0.3s ease;
+  margin: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(216, 216, 216, 0.74);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(156, 156, 156);
 }
 
 body {
@@ -15,12 +36,27 @@ header {
 }
 
 .container {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+}
+
+.brand-name{
+  font-family: 'poppins', sans-serif;
+  font-weight: bold; 
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: #2980B9;
+}
+
+.ambu{
+  font-family: 'poppins', sans-serif;
+  font-weight: bold; 
+  font-size: 1.5rem;
+  color: #e81a1a;
 }
 
 .logo {
@@ -61,12 +97,16 @@ header {
   font-weight: 500;
   padding: 8px 12px;
   transition: background-color 0.3s;
+  border: 2px solid #1d4ed8;
+  border-radius: 15px;
 }
 
 .menu ul li a:hover {
-  color: #1d4ed8;
+  /* color: #1d4ed8;
   background-color: #f3f4f6;
-  border-radius: 5px;
+  border-radius: 5px; */
+  color: white;
+  background-color:#1d4ed8;
 }
 
 .buttons {
@@ -82,6 +122,7 @@ header {
   font-size: 0.9rem;
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #1d4ed8;
 }
 
 .login {
@@ -91,8 +132,10 @@ header {
 }
 
 .login:hover {
-  background-color: #f3f4f6;
-  color: #1d4ed8;
+  /* background-color: #f3f4f6;
+  color: #1d4ed8; */
+  background-color: #1d4ed8;;
+  color: white;
 }
 
 .get-started {
@@ -102,6 +145,19 @@ header {
 
 .get-started:hover {
   background-color: #2563eb;
+}
+
+.quick-ft{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
+  align-items: start;
+
+  margin-left: 3rem;
+
+}
+.social-ft{
+
 }
 
 @media (max-width: 768px) {
@@ -130,6 +186,7 @@ header {
 
   .menu ul li a {
       padding: 10px 20px;
+      
   }
 }
 

@@ -4,13 +4,13 @@
 
 
 
-# 🚑 Ambulance Tracking System
+# 🚑 AmbuFlow
 
 A mobile application built using HTML, CSS, JavaScript, and Google API that notifies patients of nearby hospitals and the estimated time of arrival of the ambulance. It provides hospitals and ambulance drivers with critical information such as the patient’s location and enables effective GPS route management via real-time traffic information on scheduled routes.
 
 
 ## DESCRIPTION 📑
-A mobile app that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
+A mobile app using HTML, CSS, JavaScript, and Google API that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
 
 ## 🌟 Why We Need This Application
 
@@ -210,6 +210,11 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 - **Advanced Analytics** for hospitals to manage resources efficiently.
 
 ---
+
+
+## Our Valuable Contributors:
+
+[![Contributors](https://contrib.rocks/image?repo=mansiruhil13/Bobble-AI)](https://github.com/mansiruhil13/Bobble-AI/graphs/contributors)
 
 ## 🤝 Contributing
 

@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team</title>
     <link rel="stylesheet" href="src/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|
+    Bree+Serif&display=swap" rel="stylesheet">
     <style>
-        .logo span {
+        /* .logo span {
             font-size: 28px;
             font-weight: bold;
             background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
@@ -16,8 +19,10 @@
             letter-spacing: 2px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
             font-family: 'Arial', sans-serif;
-        }
-
+        } */
+        *{
+  font-family: 'Baloo Bhai', cursive;
+}
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -36,8 +41,8 @@
         }
         
         .menu ul li a.active {
+            background-color:#1d4ed8;
             color: white;
-            background-color: #000;
         }
 
         .content {
@@ -142,15 +147,21 @@
 
 <header>
     <div class="container">
+
         <div class="logo">
-            <span>Ambulance Monitoring System</span>
+            <div class="brand-name">
+                <span class="ambu">Ambu</span>Flow
+              </div>
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width:50px; height:auto;">
+           
         </div>
+
         <nav class="menu">
             <ul>
-                <li><a href="home.html" id="home-link" onclick="changeContent('home')">Home</a></li>
-                <li><a href="features.html" id="features-link" onclick="changeContent('features')">Features</a></li>
-                <li><a href="team.html" id="team-link" onclick="changeContent('team')">Team</a></li>
-                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
+                <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
+                <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
+                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
             </ul>
         </nav>
         <div class="buttons">
@@ -196,8 +207,57 @@
     </div>
 </div>
 
+
 <footer>
-    <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
+    <div style="background-color: #333; color: white; padding: 20px;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <!-- Quick Links Section -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
+                    <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                    <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Contact Info</h3>
+                <p>123 Emergency Lane, Mumbai, India</p>
+                <p>Email:emergency@ambulanceservice.in</p>
+                <p>Phone: +91-911-1234567</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
+                <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
+                <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
+                    <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div style="text-align: center; margin-top: 20px; border-top: 1px solid white; padding-top: 10px;">
+            <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+        </div>
+    </div>
+    
+    </footer>
+
 </footer>
 
 <script>
