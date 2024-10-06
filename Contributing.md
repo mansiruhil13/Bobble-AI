@@ -6,47 +6,90 @@ Thank you for your interest in contributing to **AmbuFlow**! We’re excited to 
 
 ## 🚀 Getting Started
 
-1. **Fork the Repository**  
-   Click the "Fork" button at the top-right corner to create your own copy of the repo.
+1. **Fork the repo:**
+   Click on the "Fork" button on the repository's GitHub page to create a copy of the repository in your GitHub account.
 
-2. **Clone Your Fork**  
-   Clone your forked repository to your local machine:
-   ```bash
+2. **Clone the repo:**
+   Clone the forked repository to your local machine using the following command in your terminal:
+
+```bash
    git clone https://github.com/<your-github-username>/Bobble-AI.git
-   ```
+```
 
-3. **Create a New Branch**  
-   Create a new branch for your changes:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+3. **Add a remote upstream:**
+   Add a remote upstream to the original repository to sync changes from the original repository. Run the following command in your terminal:
 
----
+```bash
+git remote add upstream https://github.com/<your-github-username>/Bobble-AI.git
+```
 
-## 🖌️ Making Changes
+4. **Create a new branch:**
+   Create a new branch for your changes. Run the following command in your terminal:
 
-1. **Code Changes**  
-   Make your modifications, ensuring they align with the project’s coding standards and code of conduct. Add exciting features, enriching documentation or squash bugs!  
+```bash
+git checkout -b <your-branch-name>
+```
 
-2. **Commit Your Changes**  
-   Write meaningful commit messages:
-   ```bash
-   git commit -m "Add: New navigation bar feature"
-   ```
+5. **Make changes:**
+   Make the desired changes to the source code.
 
-3. **Push Your Changes**  
-   Push your changes to your forked repository:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+6. **Add your changes:**
+   Add your changes to the staging area. Run the following command in your terminal:
 
----
+```bash
+git add <File1 changed> <File2 changed> ...
+```
 
-## 🛠️ Creating a Pull Request
+7. **Commit your changes:**
+   Commit your changes with a meaningful commit message. Run the following command in your terminal:
 
-1. Once your changes are pushed, create a pull request (PR) on the original repository.
-2. Provide a detailed description of your changes and link any relevant issues. Provide relevant images/videos, if any.
-3. Wait for reviews and engage with feedback!
+```bash
+git commit -m "files have been changed[specify those here]"
+```
+
+8. **Push your changes:**
+   Push your changes to your forked repository. Run the following command in your terminal:
+
+```bash
+git push origin <your-branch-name>
+```
+
+9. **Create a PR:**
+    Go to the GitHub page of your forked repository. You should see a prompt to create a pull request (PR). Click on it, compare the changes, and create the PR.
+
+### Alternatively contribute using GitHub Desktop
+
+1. **Open GitHub Desktop:**
+   Launch GitHub Desktop and log in to your GitHub account if you haven't already.
+
+2. **Clone the Repository:**
+   - If you haven't cloned the Stackoverflow-Analysis repository yet, you can do so by clicking on the "File" menu and selecting "Clone Repository."
+   - Choose the Stackoverflow-Analysis repository from the list of repositories on GitHub and clone it to your local machine.
+
+3. **Switch to the Correct Branch:**
+   - Ensure you are on the branch that you want to submit a pull request for.
+   - If you need to switch branches, you can do so by clicking on the "Current Branch" dropdown menu and selecting the desired branch.
+
+4. **Make Changes:**
+   Make your changes to the code or files in the repository using your preferred code editor.
+
+5. **Commit Changes:**
+   - In GitHub Desktop, you'll see a list of the files you've changed. Check the box next to each file you want to include in the commit.
+   - Enter a summary and description for your changes in the "Summary" and "Description" fields, respectively. Click the "Commit to <branch-name>" button to commit your changes to the local branch.
+
+6. **Push Changes to GitHub:**
+   After committing your changes, click the "Push origin" button in the top right corner of GitHub Desktop to push your changes to your forked repository on GitHub.
+
+7. **Create a Pull Request:**
+  - Go to the GitHub website and navigate to your fork of the Stackoverflow-Analysis repository.
+  - You should see a button to "Compare & pull request" between your fork and the original repository. Click on it.
+
+8. **Review and Submit:**
+   - On the pull request page, review your changes and add any additional information, such as a title and description, that you want to include with your pull request.
+   - Once you're satisfied, click the "Create pull request" button to submit your pull request.
+
+9. **Wait for Review:**
+    Your pull request will now be available for review by the project maintainers. They may provide feedback or ask for changes before merging your pull request into the main branch of the Stackoverflow-Analysis repository.
 
 ---
 
