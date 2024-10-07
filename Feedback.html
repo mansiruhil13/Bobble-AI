@@ -196,6 +196,24 @@
   .feed-msg:focus{
     outline: none;
   }
+
+  #thank-you-message{
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #939aa1;
+    width: 40%;
+    min-width: 400px;
+    min-height: 350px;
+    border-radius: 15px;
+    background-color: #edf6ff;
+
+    font-size: 2rem; 
+    font-weight: 500;
+    color: green;
+  }
   </style>
 </head>
 
@@ -260,7 +278,7 @@
         <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
     </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
+    <div id="thank-you-message" class="thank-feed">
       Thank you for your response!
     </div>
   </div>
@@ -337,14 +355,18 @@
     });
 
     // Handle form submission
-    const form = document.getElementById('feedback-form');
+    const form = document.getElementById('feedback-box');
+    const feedbackBox = document.querySelector('.feedback-box');
     const thankYouMessage = document.getElementById('thank-you-message');
 
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the default form submission
 
+      // Hide the feedback-box div
+     feedbackBox.style.display = 'none';
+
       // Show the thank-you message
-      thankYouMessage.style.display = 'block';
+      thankYouMessage.style.display = 'flex';
 
       // Hide the form to avoid further submissions
       form.style.display = 'none';
@@ -352,7 +374,7 @@
       // Redirect to the home page after 2 seconds
       setTimeout(function () {
         window.location.href = 'index.html';
-      }, 2000); // Adjust the delay as needed
+      }, 5000); // Adjust the delay as needed
     });
   </script>
 
