@@ -105,6 +105,36 @@
             border-radius: 10px;
         } 
 
+        .social-icon {
+      transition: transform 0.3s ease;
+      /* Smooth transition effect */
+    }
+
+    .social-icon:hover {
+      transform: scale(1.3);
+      /* Scale the element to 1.2 times its size */
+    }
+
+    .fa-facebook:hover {
+      color: blue;
+      /* Scale the element to 1.2 times its size */
+    }
+
+    .fa-x-twitter:hover {
+      color: black;
+      /* Scale the element to 1.2 times its size */
+    }
+
+    .fa-instagram:hover {
+      color: orangered;
+      /* Scale the element to 1.2 times its size */
+    }
+
+    .fa-linkedin-in:hover {
+      color: rgb(16, 13, 195);
+      /* Scale the element to 1.2 times its size */
+    }
+
         footer {
             background-color: #000;
             color: white;
@@ -283,14 +313,21 @@
                 <p>Phone: +91-911-1234567</p>
             </div>
 
-            <!-- Social Media Links -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-                <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br> <!--upadted-->
-                <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
-                <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <!-- Modified the looks of the social icons -->
+        <!-- Social Media Links -->
+        <div style="text-align: center; min-width: 200px; color: white;">
+            <h3>Follow Us</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+              <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
+                style="color: white; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
+                style="color: white; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
+                style="color: white; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
+                style="color: white; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
             </div>
+          </div>
 
             <!-- Newsletter Subscription -->
             <div style="flex: 1; min-width: 200px;">
