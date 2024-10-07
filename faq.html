@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ-Know More!</title>
+    <link rel="stylesheet" href="src/css/faq.css" />
+  </head>
+  <body>
+    <div class="header-buttons">
+      <button id="back-button"><a href="index.html">Home</a></button>
+      <button id="theme-toggle-button">Theme</button>
+    </div>
+    <section class="process">
+      <div class="process__container">
+        <div class="process__intro intro">
+          <h2 class="process__title title">Our Working Process</h2>
+          <div class="process__text text">How we work! Know more about us!</div>
+        </div>
+        <div class="process__accordions">
+          <ul class="accordions__list">
+            <li class="accordions__item">
+              <button class="accordions__control" aria-expanded="false">
+                <span class="accordions__number">01</span>
+                <span class="accordions__title">Consultation</span>
+                <span class="accordions__icon"></span>
+              </button>
+              <div class="accordions__content text" aria-hidden="true">
+                <p>
+                  During the initial consultation, we will explore your specific
+                  needs and challenges. Our team will gather detailed
+                  information about your objectives, target audience, and
+                  current strategies. This comprehensive understanding will
+                  enable us to provide customized solutions that align with your
+                  goals and drive success.
+                </p>
+              </div>
+            </li>
+            <li class="accordions__item">
+              <button class="accordions__control" aria-expanded="false">
+                <span class="accordions__number">02</span>
+                <span class="accordions__title">How we help people</span>
+                <span class="accordions__icon"></span>
+              </button>
+              <div class="accordions__content text" aria-hidden="true">
+                <p>
+                  Our medical team is dedicated to providing personalized care
+                  to each patient. We utilize the latest medical research and
+                  technology to ensure the best outcomes. From initial diagnosis
+                  to treatment and follow-up, we are committed to supporting
+                  your health and well-being every step of the way.
+                </p>
+              </div>
+            </li>
+            <li class="accordions__item">
+              <button class="accordions__control" aria-expanded="false">
+                <span class="accordions__number">03</span>
+                <span class="accordions__title">How we work</span>
+                <span class="accordions__icon"></span>
+              </button>
+              <div class="accordions__content text" aria-hidden="true">
+                <p>
+                  Our team collaborates closely with clients to ensure seamless
+                  execution of strategies. We prioritize clear communication,
+                  regular updates, and flexibility to adapt to any changes or
+                  challenges that arise. By working together, we ensure that
+                  every step is aligned with your goals and delivers the desired
+                  outcomes.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const accordions = document.querySelectorAll(".accordions__item");
+
+        accordions.forEach((el) => {
+          el.addEventListener("click", (e) => {
+            const self = e.currentTarget;
+            const control = self.querySelector(".accordions__control");
+            const content = self.querySelector(".accordions__content");
+
+            self.classList.toggle("open");
+
+            if (self.classList.contains("open")) {
+              control.setAttribute("aria-expanded", true);
+              content.setAttribute("aria-hidden", false);
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              control.setAttribute("aria-expanded", false);
+              content.setAttribute("aria-hidden", true);
+              content.style.maxHeight = null;
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      document
+        .getElementById("back-button")
+        .addEventListener("click", function () {
+          window.history.back();
+        });
+
+      document
+        .getElementById("theme-toggle-button")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark-theme");
+          const isDarkTheme = document.body.classList.contains("dark-theme");
+          const accordionsItems =
+            document.querySelectorAll(".accordions__item");
+          accordionsItems.forEach((item) => {
+            const icon = item.querySelector(".accordions__icon");
+            const accordionsTitle = item.querySelector(".accordions__title");
+            const accordionsNumber = item.querySelector(".accordions__number");
+            const paragraph = item.querySelector("p");
+            if (isDarkTheme) {
+              icon.style.color = "black";
+              if (accordionsTitle) {
+                accordionsTitle.style.color = "black";
+              }
+              if (accordionsNumber) {
+                accordionsNumber.style.color = "black";
+              }
+              if (paragraph) {
+                paragraph.style.color = "white";
+              }
+            } else {
+              icon.style.color = "";
+              if (accordionsTitle) {
+                accordionsTitle.style.color = "black";
+              }
+              if (accordionsNumber) {
+                accordionsNumber.style.color = "";
+              }
+              if (paragraph) {
+                paragraph.style.color = "";
+              }
+            }
+          });
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const accordionsItems = document.querySelectorAll(".accordions__item");
+    accordionsItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        const icon = item.querySelector(".accordions__icon");
+        const accordionsTitle = item.querySelector(".accordions__title");
+        const accordionsNumber = item.querySelector(".accordions__number");
+        const paragraph = item.querySelector("p");
+        const isDarkTheme = document.body.classList.contains("dark-theme");
+
+        if (item.classList.contains("open")) {
+          icon.style.color = isDarkTheme ? "white" : "white";
+          if (accordionsTitle) {
+            accordionsTitle.style.color = isDarkTheme ? "white" : "white";
+          }
+          if (accordionsNumber) {
+            accordionsNumber.style.color = isDarkTheme ? "white" : "white";
+          }
+          if (paragraph) {
+            paragraph.style.color = isDarkTheme ? "white" : "white";
+          }
+        } else {
+          icon.style.color = isDarkTheme ? "black" : "";
+          if (accordionsTitle) {
+            accordionsTitle.style.color = isDarkTheme ? "black" : "black";
+          }
+          if (accordionsNumber) {
+            accordionsNumber.style.color = isDarkTheme ? "black" : "";
+          }
+          if (paragraph) {
+            paragraph.style.color = isDarkTheme ? "black" : "";
+          }
+        }
+      });
+    });
+  });
+    </script>
+  </body>
+</html>
