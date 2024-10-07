@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
-
+@import url('<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">');
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 3px;
 }
 
 .brand-name{
@@ -94,17 +94,19 @@ header {
 .menu ul li a {
   text-decoration: none;
   color: #4b5563;
-  border-radius: 10px;
-
   font-weight: 500;
   padding: 8px 12px;
   transition: background-color 0.3s;
+  border: 2px solid #1d4ed8;
+  border-radius: 15px;
 }
 
 .menu ul li a:hover {
-  color: #1d4ed8;
+  /* color: #1d4ed8;
   background-color: #f3f4f6;
-  border-radius: 5px;
+  border-radius: 5px; */
+  color: white;
+  background-color:#1d4ed8;
 }
 
 .buttons {
@@ -120,6 +122,7 @@ header {
   font-size: 0.9rem;
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #1d4ed8;
 }
 
 .login {
@@ -129,8 +132,10 @@ header {
 }
 
 .login:hover {
-  background-color: #f3f4f6;
-  color: #1d4ed8;
+  /* background-color: #f3f4f6;
+  color: #1d4ed8; */
+  background-color: #1d4ed8;;
+  color: white;
 }
 
 .get-started {
@@ -185,8 +190,288 @@ header {
   }
 }
 
-.subtext{
+.subtext {
   font-size: 1.2rem;
   color: #1d4ed8;
   margin-top: 20px;
 }
+
+
+.features-container {
+  display: flex;
+  border-radius: 50%;
+  justify-content: center; /* Center the cards horizontally */
+  align-items: center;
+  margin: 70px auto 70px auto; 
+  max-width: 800px;
+  width: 100%;
+  gap:80px;
+  
+}
+
+.team-features, .contact-features{
+  background-color:  #C4D7FF ; /* Initial background color */
+  padding: 15px;
+  text-align: center;
+
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 300px;
+  height: 300px; /* Set the same height and width for round shape */
+  border-radius: 50%; /* Make the card round */
+  border: 1px solid gold; 
+  position: relative;
+   perspective: 1000px;
+   scroll-behavior: smooth;
+   transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for transform */
+}
+
+.team-features:hover, .contact-features:hover {
+  background-color:#CDC1FF; /* Background color on hover */
+  transform: translateY(-10px);
+}
+
+.team-features .inner, .contact-features .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.team-features:hover .inner, .contact-features:hover .inner {
+  transform: rotateY(180deg);
+}
+
+.team-features .front, .contact-features .front,
+.team-features .back, .contact-features .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-features .back, .contact-features .back {
+  transform: rotateY(180deg);
+}
+
+.team-features img, .contact-features img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-features h2, .contact-features h2 {
+  color: #2980b9;
+  margin: 10px 0;
+}
+
+.team-features p, .contact-features p {
+  color: #555;
+  padding: 15px;
+}
+
+/* Mobile view styles */
+@media only screen and (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-features, .contact-features {
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto; /* Adjust height for mobile view */
+  }
+}
+.button {
+  display: inline-block;
+  padding: 8px 16px; /* Reduce padding for a smaller button */
+  background-color: #28a745; /* Keep background color green */
+  color: #fff;
+  text-align: center;
+  border: 2px solid #218838; /* Add a border with a darker green color */
+  border-radius: 4px; /* Reduce border radius for a less rounded button */
+  text-decoration: none;
+  font-weight: bold; /* Keep the text bold */
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #218838; /* Darker green on hover */
+  border-color: #1e7e34; /* Change border color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+/* Tablet view styles */
+@media only screen and (max-width: 1024px) {
+  .features-container {
+    max-width: 600px;
+  }
+
+  .team-features, .contact-features {
+    max-width: 250px;
+    height: 250px; /* Adjust height for tablet view */
+    border-radius: 50%; /* Ensure round shape */
+  }
+}
+
+/* Laptop view styles */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .features-container {
+    max-width: 900px;
+  }
+
+  .team-features, .contact-features {
+    max-width: 300px;
+    height: 300px; /* Set a fixed height for laptop view */
+    border-radius: 50%; /* Ensure round shape */
+  }
+}
+
+/* Desktop view styles */
+@media only screen and (min-width: 1281px) {
+  .features-container {
+    max-width: 1200px;
+  }
+
+  .team-features, .contact-features {
+    max-width: 300px;
+    height: 300px; /* Set a fixed height for desktop view */
+    border-radius: 50%; /* Ensure round shape */
+  }
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background:#EEEEEE;
+  z-index: 1000;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color:#DC5F00;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 99999;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color:#373A40;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #686D76;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+@-webkit-keyframes spin {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+/* Preloader Css Ends */
+
+/* faq section */
+
+

@@ -5,49 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Dashboard</title>
     <link rel="stylesheet" href="src/css/hospital.css">
+    <link rel="stylesheet" href="src/css/manage.css">
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./images/manageLogo.png"></img>
+                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="hospital.html">Dashboard</a></li>
+                <li><a href="manage.html">Manage Status</a></li>
+                <li><a href="driver.html">Manage Driver</a></li>
+                <li><a href="ambtracker.html">Manage Ambulance</a></li>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="dashboard-container">
         <img src="images/Ambulance Tracker.png" alt="Bobble-AI Logo" style="width: 250px; height: auto; margin-bottom: 10px; margin-left: 30px;";>
     
-        <h1>Hospital Dashboard</h1>        
-        <h2 style="font-family: 'Arial', sans-serif; font-size: 24px; color: #666; margin: 10px 0; text-align: center;">
+        <h1 style="color: #1a2938;">Hospital Dashboard</h1>        
+        <h2 style="font-family: 'Arial', sans-serif; font-size: 17px; color: #666; margin: 10px 0; text-align: center;">
             Your personalized AI experience
-        </h2>      
-        <div class="action-buttons" id="actionButtons" style="display: flex; justify-content: center; margin-top: 20px;">
-            <button class="action-btn" id="manageDriversBtn" style="margin-right: 10px; padding: 10px 20px; font-size: 16px;" onclick="showDriversDashboard()">Manage Drivers</button>
-            <button class="action-btn" id="manageAmbulancesBtn" style="padding: 10px 20px; font-size: 16px;" onclick="showAmbulancesDashboard()">Manage Ambulances</button>
-        </div>
-        
-        <!-- Hidden dashboards initially -->
-        <div id="driversDashboard" style="display:none; padding: 20px; border: 1px solid #ccc; margin-top: 20px;">
-            <h2>Drivers Dashboard</h2>
-            <a href="driver.html">you can manage drivers</a>
-            <!-- Add your dashboard content here -->
-        </div>
-        
-        <div id="ambulancesDashboard" style="display:none; padding: 20px; border: 1px solid #ccc; margin-top: 20px;">
-            <h2>Ambulances Dashboard</h2>
-            <!-- Add your dashboard content here -->
-             <a href="ambtracker.html">you can manage ambulances</a>
-        </div>
-        
-        <script>
-            function showDriversDashboard() {
-                // Hide the buttons and show the drivers dashboard
-                document.getElementById("actionButtons").style.display = "none";
-                document.getElementById("driversDashboard").style.display = "block";
-            }
-        
-            function showAmbulancesDashboard() {
-                // Hide the buttons and show the ambulances dashboard
-                document.getElementById("actionButtons").style.display = "none";
-                document.getElementById("ambulancesDashboard").style.display = "block";
-            }
-        </script>
-        
-        
+        </h2>              
         <script>
             function manageDrivers() {
                 // Action to manage drivers, such as opening a page or modal
@@ -71,9 +56,9 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Driver Name</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th style="color: #92c4d6;">Driver Name</th>
+                                <th style="color: #92c4d6;">Status</th>
+                                <th style="color: #92c4d6;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="driversTableBody">
@@ -84,18 +69,18 @@
                     <!-- Nearby Hospital Facilities for Drivers -->
                     <div class="nearby-facilities">
                         <h3>Nearby Hospital Facilities</h3>
-                        <ul>
-                            <li>Bed Availability: <span id="bedAvailabilityDriver">Loading...</span></li>
-                            <li>Oxygen Supply: <span id="oxygenSupplyDriver">Loading...</span></li>
-                            <li>Blood Units: <span id="bloodUnitsDriver">Loading...</span></li>
+                        <ul style="font-weight: 500;">
+                            <li style="list-style: none;">Bed Availability: <span id="bedAvailabilityDriver">Loading...</span></li>
+                            <li style="list-style: none;">Oxygen Supply: <span id="oxygenSupplyDriver">Loading...</span></li>
+                            <li style="list-style: none;">Blood Units: <span id="bloodUnitsDriver">Loading...</span></li>
                         </ul>
                     </div>
 
                     <!-- Contact Details for Drivers -->
                     <div class="contact-details">
                         <h3>Contact Details</h3>
-                        <p>Driver XYZ: (123) 456-7890</p>
-                        <p>Driver ABC: (098) 765-4321</p>
+                        <p style="font-weight: 500;">Driver XYZ: (123) 456-7890</p>
+                        <p style="font-weight: 500;">Driver ABC: (098) 765-4321</p>
                     </div>
                 </div>
 
@@ -105,9 +90,9 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Ambulance ID</th>
-                                <th>Location</th>
-                                <th>Action</th>
+                                <th style="color: #92c4d6;">Ambulance ID</th>
+                                <th style="color: #92c4d6;">Location</th>
+                                <th style="color: #92c4d6;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="ambulancesTableBody">
@@ -118,18 +103,18 @@
                     <!-- Nearby Hospital Facilities for Ambulances -->
                     <div class="nearby-facilities">
                         <h3>Nearby Hospital Facilities</h3>
-                        <ul>
-                            <li>Bed Availability: <span id="bedAvailabilityAmbulance">Loading...</span></li>
-                            <li>Oxygen Supply: <span id="oxygenSupplyAmbulance">Loading...</span></li>
-                            <li>Blood Units: <span id="bloodUnitsAmbulance">Loading...</span></li>
+                        <ul style="font-weight: 500;">
+                            <li style="list-style: none;">Bed Availability: <span id="bedAvailabilityAmbulance">Loading...</span></li>
+                            <li style="list-style: none;">Oxygen Supply: <span id="oxygenSupplyAmbulance">Loading...</span></li>
+                            <li style="list-style: none;">Blood Units: <span id="bloodUnitsAmbulance">Loading...</span></li>
                         </ul>
                     </div>
 
                     <!-- Contact Details for Ambulances -->
                     <div class="contact-details">
                         <h3>Contact Details</h3>
-                        <p>Ambulance 1: (321) 654-0987</p>
-                        <p>Ambulance 2: (789) 012-3456</p>
+                        <p style="font-weight: 500;">Ambulance 1: (321) 654-0987</p>
+                        <p style="font-weight: 500;">Ambulance 2: (789) 012-3456</p>
                     </div>
                 </div>
             </div>
@@ -218,6 +203,15 @@
         manageBtn.addEventListener('click', () => {
             window.location.href = 'manage.html';
         });
+
+        function logout() {
+            const confirmLogout = confirm('Are you sure you want to logout?');
+            if (confirmLogout) {
+                window.location.href = 'index.html';
+                alert("Logged out successfully!");
+            }
+        }   
+
     </script>
 </body>
 </html>

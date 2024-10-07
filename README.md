@@ -1,16 +1,33 @@
 <div align="center">
     <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/Ambulance Tracker.png">
 </div>
-
-
+<br>
 
 # 🚑 AmbuFlow
 
 A mobile application built using HTML, CSS, JavaScript, and Google API that notifies patients of nearby hospitals and the estimated time of arrival of the ambulance. It provides hospitals and ambulance drivers with critical information such as the patient’s location and enables effective GPS route management via real-time traffic information on scheduled routes.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+### This project is now OFFICIALLY accepted for
+
+<div align="center">
+  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+</div>
+
+<br>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## DESCRIPTION 📑
 A mobile app using HTML, CSS, JavaScript, and Google API that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
+
+Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the description of the project.
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🌟 Why We Need This Application
 
@@ -20,6 +37,8 @@ A mobile app using HTML, CSS, JavaScript, and Google API that helps users find n
 4. **Resource Management**: Helps hospitals manage their resources efficiently by providing critical information and analytics.
 5. **User-Friendly Interface**: Designed for ease of use, ensuring that even in high-stress situations, users can navigate the app effortlessly.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠 Problem Statement
 Knowing the name and address of a hospital is helpful, but seeing it on a map with directions can be even better. This app aims to bridge that gap by providing real-time location data and navigation assistance, ensuring users can find the nearest hospital quickly and efficiently.
@@ -30,6 +49,8 @@ When someone is in an emergency or needs medical help, finding the nearest hospi
 ### Locate Hospitals on a Map
 Knowing the name and address of a hospital is helpful, but seeing it on a map with directions can be even better.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 💡 Solution
 
@@ -39,6 +60,8 @@ This app helps users find nearby hospitals easily. It shows a list of hospitals 
 ### Locate Hospitals on a Map
 The app includes a map view, showing where each hospital is located. Users can see exactly where hospitals are and get directions to them, which is especially useful in unfamiliar areas. The map also highlights important landmarks and real-time traffic conditions, helping users choose the fastest route to the hospital.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 Features
 
@@ -58,95 +81,32 @@ The app includes a map view, showing where each hospital is located. Users can s
 2. **Hospital Notifications**: Patients receive notifications about nearby hospitals, helping them quickly find medical assistance when needed.
 3. **Distance and Traffic Assessment**: The system evaluates the distance and current traffic conditions to determine the fastest route for ambulances, ensuring timely arrival.
 4. **Efficient Driver Management**: This feature simplifies the management of ambulance drivers, making it easier to coordinate their activities and schedules.
-### Following are the steps to contribute:
 
-1. **Fork the repo:**
-   Click on the "Fork" button on the repository's GitHub page to create a copy of the repository in your GitHub account.
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-2. **Clone the repo:**
-   Clone the forked repository to your local machine using the following command in your terminal:
+## ✨Contributing:
 
-```bash
-git clone https://github.com/mansiruhil13/Bobble-AI[add your forked repo link]
-```
+We welcome all the contributions from the open-source community! If you'd like to contribute follow these steps:
 
-3. **Add a remote upstream:**
-   Add a remote upstream to the original repository to sync changes from the original repository. Run the following command in your terminal:
+1. Fork the repository.
+2. Create a new feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request.
 
-```bash
-git remote add upstream https://github.com/mansiruhil13/Bobble-AI[add your forked repo link]
-```
+We welcome all contributions to improve **AmbuFlow**! If you would like to contribute, please follow the [Contributing.md](./Contributing.md) to know how to get started.
+   
+To maintain quality and consistency, please adhere to the following guidelines:
+1. Code Style: Follow the coding style used throughout the project. Clean, readable code with comments is always appreciated.
+2. Commits: Write meaningful commit messages.
+3. Pull Requests: Make sure PRs are focused, well-explained, and reference any issues they address.
+4. Testing: Ensure that your changes are well-tested locally and don’t break existing functionality.
 
-4. **Create a new branch:**
-   Create a new branch for your changes. Run the following command in your terminal:
+Please read the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
 
-```bash
-git checkout -b <your-branch-name>
-```
-
-5. **Make changes:**
-   Make the desired changes to the source code.
-
-6. **Add your changes:**
-   Add your changes to the staging area. Run the following command in your terminal:
-
-```bash
-git add <File1 changed> <File2 changed> ...
-```
-
-7. **Commit your changes:**
-   Commit your changes with a meaningful commit message. Run the following command in your terminal:
-
-```bash
-git commit -m "files have been changed[specify those here]"
-```
-
-8. **Push your changes:**
-   Push your changes to your forked repository. Run the following command in your terminal:
-
-```bash
-git push origin <your-branch-name>
-```
-
-9. **Create a PR:**
-    Go to the GitHub page of your forked repository. You should see a prompt to create a pull request (PR). Click on it, compare the changes, and create the PR.
-
-### Alternatively contribute using GitHub Desktop
-
-1. **Open GitHub Desktop:**
-   Launch GitHub Desktop and log in to your GitHub account if you haven't already.
-
-2. **Clone the Repository:**
-   - If you haven't cloned the Stackoverflow-Analysis repository yet, you can do so by clicking on the "File" menu and selecting "Clone Repository."
-   - Choose the Stackoverflow-Analysis repository from the list of repositories on GitHub and clone it to your local machine.
-
-3. **Switch to the Correct Branch:**
-   - Ensure you are on the branch that you want to submit a pull request for.
-   - If you need to switch branches, you can do so by clicking on the "Current Branch" dropdown menu and selecting the desired branch.
-
-4. **Make Changes:**
-   Make your changes to the code or files in the repository using your preferred code editor.
-
-5. **Commit Changes:**
-   - In GitHub Desktop, you'll see a list of the files you've changed. Check the box next to each file you want to include in the commit.
-   - Enter a summary and description for your changes in the "Summary" and "Description" fields, respectively. Click the "Commit to <branch-name>" button to commit your changes to the local branch.
-
-6. **Push Changes to GitHub:**
-   After committing your changes, click the "Push origin" button in the top right corner of GitHub Desktop to push your changes to your forked repository on GitHub.
-
-7. **Create a Pull Request:**
-  - Go to the GitHub website and navigate to your fork of the Stackoverflow-Analysis repository.
-  - You should see a button to "Compare & pull request" between your fork and the original repository. Click on it.
-
-8. **Review and Submit:**
-   - On the pull request page, review your changes and add any additional information, such as a title and description, that you want to include with your pull request.
-   - Once you're satisfied, click the "Create pull request" button to submit your pull request.
-
-9. **Wait for Review:**
-    Your pull request will now be available for review by the project maintainers. They may provide feedback or ask for changes before merging your pull request into the main branch of the Stackoverflow-Analysis repository.
-
-⭐️ Support the Project
-If you find this project helpful, please consider giving it a star on GitHub! Your support helps to grow the project and reach more contributors.
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠 Tech Stack
 
@@ -155,53 +115,15 @@ If you find this project helpful, please consider giving it a star on GitHub! Yo
 - **JavaScript** 💻: A programming language that allows you to implement complex features on web pages, such as interactive content.
 - **Google API Keys** 🔑: These are used to access various Google services programmatically, such as Google Maps, Google Drive, etc.
 
-
-## 📸 Screenshots
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/b8a9cd47-6700-4ff3-8232-a01ab50cd752" alt="Screenshot 1" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/01683018-4d75-4186-b8ac-c6fe64b70f0b" alt="Screenshot 2" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/5329989a-48bc-47d5-b87b-4203decfb8d9" alt="Screenshot 3" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/42e3d9c7-ff0b-40a1-80d3-197782ee2ad1" alt="Screenshot 4" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/f1adbbb7-fab0-406e-b483-6287fbfbd700" alt="Screenshot 11" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/438cc785-ed34-4e57-9efb-ec1cf8f9bd8b" alt="Screenshot 10" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/25e576a3-6a21-40cc-9ab4-51a23c240cb5" alt="Screenshot 9" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/ca008703-2981-4104-bbc9-78e1e9614271" alt="Screenshot 8" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/6d2663db-d42b-4f34-a780-a22eb394a419" alt="Screenshot 7" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/7c77cd05-c512-46a6-b296-554f5a9a6230" alt="Screenshot 6" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/3578d330-2797-4bb2-83dd-cf23ab2b6839" alt="Screenshot 5" style="width: 100%; height: auto;">
-    </div>
-    <div style="flex: 1 1 30%; max-width: 30%;">
-        <img src="https://github.com/user-attachments/assets/6426e355-1195-4f42-bcd2-e4cebc07758b" alt="Screenshot 12" style="width: 100%; height: auto;">
-    </div>
-</div>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 📱 User-Friendly Experience
 
 This app is designed to be user-friendly, ensuring a seamless experience for both patients and ambulance drivers. The intuitive interface and real-time updates make it easy to navigate and use, even in high-stress situations.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 📈 Future Enhancements
 
@@ -209,17 +131,28 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 - **Real-Time Communication** between patients and ambulance drivers.
 - **Advanced Analytics** for hospitals to manage resources efficiently.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 
 ## Our Valuable Contributors:
 
 [![Contributors](https://contrib.rocks/image?repo=mansiruhil13/Bobble-AI)](https://github.com/mansiruhil13/Bobble-AI/graphs/contributors)
 
-## 🤝 Contributing
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-Contributions are welcome! Please read the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+## 👥 Team
 
-## 📧 Contact
+| ![Mansi Ruhil](https://avatars.githubusercontent.com/u/157950124?v=4&s=80) |
+|:--:|
+| **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
+| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |
 
-For any inquiries or feedback, please contact Mansi Ruhil at [LinkedIN](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/).
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+## ⭐️ Support the Project
+If you find this project helpful, please consider giving it a star on GitHub! Your support helps to grow the project and reach more contributors.
+
+

@@ -1,3 +1,25 @@
+// Newsletter form submission handler
+document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    const emailInput = document.getElementById('email');
+    const confirmationMessage = document.getElementById('confirmation-message');
+
+    // Optionally send the email to your backend
+    const email = emailInput.value;
+
+    // Simulate a successful submission (you could replace this with an actual API call)
+    console.log(`Email submitted: ${email}`); // For debugging
+
+    // Display the confirmation message
+    confirmationMessage.textContent = 'Thank you for subscribing! Please check your email for further instructions.';
+    confirmationMessage.classList.remove('hidden');
+
+    // Clear the form
+    emailInput.value = '';
+});
+
+// Accordion functionality
 const accordions = document.querySelectorAll(".accordion");
 
 accordions.forEach((accordion, index) => {
