@@ -212,7 +212,9 @@ select:focus {
   justify-content: center;
   align-items: center;
 }
-
+.navbar-logo a {
+  text-decoration: none;
+}
 .navbar-logo h2 {
   color: #ecf0f1;
   margin: 0;
