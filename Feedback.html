@@ -20,7 +20,7 @@
       min-height: 100vh;
     }
     footer {
-            background-color: #000;
+            background-color: #C4D7FF;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -196,6 +196,7 @@
   .feed-msg:focus{
     outline: none;
   }
+
   .circle {
                 height: 35px;
                 width: 35px;
@@ -208,6 +209,26 @@
                 z-index: 99999999;
                 /* Stays on top of all elements */
             }
+
+
+  #thank-you-message{
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #939aa1;
+    width: 40%;
+    min-width: 400px;
+    min-height: 350px;
+    border-radius: 15px;
+    background-color: #edf6ff;
+
+    font-size: 2rem; 
+    font-weight: 500;
+    color: green;
+  }
+
   </style>
 </head>
 
@@ -293,61 +314,62 @@
         <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
     </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
+    <div id="thank-you-message" class="thank-feed">
       Thank you for your response!
     </div>
   </div>
   
 
  
-<footer>
-  <div style="background-color: #333; color: white; padding: 20px;">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-          <!-- Quick Links Section -->
-          <div style="flex: 1; min-width: 200px;">
-              <h3>Quick Links</h3>
-              <ul style="list-style-type: none; padding: 0;">
-                  <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                  <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
-                  <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                  <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
-                  <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
-              </ul>
-          </div>
-
-          <!-- Contact Information Section -->
-          <div style="flex: 1; min-width: 200px;">
-              <h3>Contact Info</h3>
-              <p>123 Emergency Lane, Mumbai, India</p>
-              <p>Email:emergency@ambulanceservice.in</p>
-              <p>Phone: +91-911-1234567</p>
-          </div>
-
-          <!-- Social Media Links -->
-          <div style="flex: 1; min-width: 200px;">
-              <h3>Follow Us</h3>
-              <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-              <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br> <!--upadted-->
-              <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
-              <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          </div>
-
-          <!-- Newsletter Subscription -->
-          <div style="flex: 1; min-width: 200px;">
-              <h3>Subscribe to Our Newsletter</h3>
-              <form action="#">
-                  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
-                  <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
-              </form>
-          </div>
-      </div>
-
-      
-
-  </div>
-  <!-- Copyright Section -->
-  <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+  <footer style= " color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Quick Links Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
+          </ul>
+        </div>
   
+        <!-- Contact Information Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a></p>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+          <a href="https://www.facebook.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+          <a href="https://www.twitter.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
+          <a href="https://www.instagram.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
+          <a href="https://www.linkedin.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+  
+        <!-- Newsletter Subscription -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+      
+    </div>
+    <hr>
+    <!-- Copyright Section -->
+    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+    
 </footer>
   <script>
     // Add event listeners to each star label for toggling the selection
@@ -370,14 +392,18 @@
     });
 
     // Handle form submission
-    const form = document.getElementById('feedback-form');
+    const form = document.getElementById('feedback-box');
+    const feedbackBox = document.querySelector('.feedback-box');
     const thankYouMessage = document.getElementById('thank-you-message');
 
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the default form submission
 
+      // Hide the feedback-box div
+     feedbackBox.style.display = 'none';
+
       // Show the thank-you message
-      thankYouMessage.style.display = 'block';
+      thankYouMessage.style.display = 'flex';
 
       // Hide the form to avoid further submissions
       form.style.display = 'none';
@@ -385,7 +411,7 @@
       // Redirect to the home page after 2 seconds
       setTimeout(function () {
         window.location.href = 'index.html';
-      }, 2000); // Adjust the delay as needed
+      }, 5000); // Adjust the delay as needed
     });
   </script>
  <script>    const coords = { x: 0, y: 0 };
