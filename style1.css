@@ -241,6 +241,48 @@ footer {
     width: 100%;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-ft {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-ft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px; /* Adjust this value for right padding */
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+.contact-ft {
+  flex: 1;
+  min-width: 200px;
+  padding-left: 20px; /* Add left padding for alignment */
+}
+
+pre {
+  margin: 0; /* Remove default margin from pre element */
+  white-space: pre-wrap; /* Ensure the content wraps as needed */
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
