@@ -21,11 +21,17 @@
     }
 
     .content {
-      margin: 20px;
-      padding: 20px;
+      margin: 15px;
+      padding: 15px;
       background-color: #fff;
       border-radius: 5px;
       flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
     }
 
     h1 {
@@ -33,17 +39,17 @@
       color: #2c3e50;
     }
 
-    .feedback-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      
+    h2 {
+    
+      text-align: center;
+      color: #2c3e50;
     }
+
 
     .star-rating {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     .star-rating input {
@@ -51,7 +57,7 @@
     }
 
     .star-rating label {
-      font-size: 40px; /* Increased size for better visibility */
+      font-size: 3.5rem; /* Increased size for better visibility */
       color: #ddd;
       cursor: pointer;
       transition: color 0.2s;
@@ -144,6 +150,44 @@
   .red {
       color: red; 
   }
+
+
+  /* feedback form  */
+  .feedback-box{
+    border: 1px solid #939aa1;
+    width: 40%;
+    min-width: 400px;
+    min-height: 350px;
+    border-radius: 15px;
+    background-color: #edf6ff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feed-btn{
+    text-align: center; 
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    font-weight: 600;
+  
+  }
+
+  .feed-btn:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+  }
+
+  .feed-msg{
+    border: none;
+    
+  }
+  .feed-msg:focus{
+    outline: none;
+  }
   </style>
 </head>
 
@@ -183,15 +227,15 @@
 
 <body>
   <header>
-    <a href="index.html">
-      <h1>AmbuFlow Feedback</h1>
-    </a>
+    
+    <h1>AmbuFlow Feedback</h1>
+
   </header>
 
   <div class="content">
-    <h1>We Value Your Feedback</h1>
-    <div class="feedback-form">
-      <form id="feedback-form" action="#" method="post">
+    <h3>We Value Your Feedback</h3>
+    <div class="feedback-box">
+      <form id="feedback-box" action="#" method="post">
         <div class="star-rating" aria-label="Rating" role="radiogroup">
           <input type="radio" id="star1" name="rating" value="1" />
           <label for="star1" title="1 star">★</label>
@@ -204,8 +248,8 @@
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">★</label>
         </div>
-        <textarea rows="4" placeholder="Your comments..." required></textarea><br />
-        <div style="text-align: center; margin-top: 20px;"><button type="submit">Submit Feedback</button></div>
+        <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required></textarea><br />
+        <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
     </div>
     <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
