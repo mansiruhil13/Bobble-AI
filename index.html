@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AmbuFlow</title>
-
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="src/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Updated to latest version -->
@@ -20,19 +20,44 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
-    .menu ul li a {
-      padding: 10px 15px;
-      color: black;
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
       text-decoration: none;
-      border-radius: 10px;
+      border: 2px solid #000;
+      border-radius: 12px;
+      color: black;
+      font-weight: bold;
+      background-color: white;
+      text-transform: uppercase;
+      margin-right: 10px;
     }
 
-    .menu ul li a.active {
-      color: white;
+    nav ul li a:hover {
+      background-color: #f0f0f0;
+    }
+    nav ul li a:active {
       background-color: #000;
+      color: white;
     }
-
+    nav ul li a i {
+      margin-right: 8px;
+    }
+    a.active,a:hover{
+      background: #1b9bff ;
+      transition: .5s;
+    }
+    #home-link:active {
+      background-color: black;
+      color: white;
+    }
     .content {
       margin: 20px;
       padding: 20px;
@@ -120,7 +145,57 @@
       padding: 10px 0;
       width: 100%;
     }
+    .checkbtn{
+      font-size: 30px;
+      color: #333;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display:none;
 
+    }
+    #check{
+      display: none;
+    }
+@media (max-width:966px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+}
+@media (max-width:858px){
+
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100% ;
+    height: 100vh;
+    background: #77a1cc;
+    top: 85px;
+    left:-200%;
+    text-align: center;
+    transition:all .5s ;
+    height: 80px;
+  }
+  nav ul li{
+    display: block;
+  }
+  nav ul li a {
+    display: block;
+    font-size: 10px;
+  }
+  a:hover,a.active{
+    background: none;
+    color:#000000 ;
+  }
+  #check:checked ~ ul{
+    left:0;
+  }
+}
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -203,19 +278,23 @@
       </a>
         <a href="index.html"><img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" /></a>
       </div>
-      <nav class="menu">
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
         <ul>
           <li>
-            <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a class="active"href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
           </li>
           <li>
-            <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
+            <a  class="active"href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
           </li>
           <li>
-            <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
+            <a  class="active"href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
           </li>
           <li>
-            <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
+            <a  class="active"href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
           </li>
         </ul>
       </nav>
