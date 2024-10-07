@@ -19,13 +19,27 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
+    footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     .content {
-      margin: 20px;
-      padding: 20px;
+      margin: 15px;
+      padding: 15px;
       background-color: #fff;
       border-radius: 5px;
       flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
     }
 
     h1 {
@@ -33,17 +47,17 @@
       color: #2c3e50;
     }
 
-    .feedback-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      
+    h2 {
+    
+      text-align: center;
+      color: #2c3e50;
     }
+
 
     .star-rating {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     .star-rating input {
@@ -51,7 +65,7 @@
     }
 
     .star-rating label {
-      font-size: 40px; /* Increased size for better visibility */
+      font-size: 3.5rem; /* Increased size for better visibility */
       color: #ddd;
       cursor: pointer;
       transition: color 0.2s;
@@ -144,6 +158,44 @@
   .red {
       color: red; 
   }
+
+
+  /* feedback form  */
+  .feedback-box{
+    border: 1px solid #939aa1;
+    width: 40%;
+    min-width: 400px;
+    min-height: 350px;
+    border-radius: 15px;
+    background-color: #edf6ff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feed-btn{
+    text-align: center; 
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    font-weight: 600;
+  
+  }
+
+  .feed-btn:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+  }
+
+  .feed-msg{
+    border: none;
+    
+  }
+  .feed-msg:focus{
+    outline: none;
+  }
   </style>
 </head>
 
@@ -183,15 +235,15 @@
 
 <body>
   <header>
-    <a href="index.html">
-      <h1>AmbuFlow Feedback</h1>
-    </a>
+    
+    <h1>AmbuFlow Feedback</h1>
+
   </header>
 
   <div class="content">
-    <h1>We Value Your Feedback</h1>
-    <div class="feedback-form">
-      <form id="feedback-form" action="#" method="post">
+    <h3>We Value Your Feedback</h3>
+    <div class="feedback-box">
+      <form id="feedback-box" action="#" method="post">
         <div class="star-rating" aria-label="Rating" role="radiogroup">
           <input type="radio" id="star1" name="rating" value="1" />
           <label for="star1" title="1 star">★</label>
@@ -204,8 +256,8 @@
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">★</label>
         </div>
-        <textarea rows="4" placeholder="Your comments..." required></textarea><br />
-        <div style="text-align: center; margin-top: 20px;"><button type="submit">Submit Feedback</button></div>
+        <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required></textarea><br />
+        <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
     </div>
     <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
@@ -214,12 +266,56 @@
   </div>
   
 
-  <footer>
-    <div style="text-align: center; margin-top: 20px;">
-      <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-    </div>
-  </footer>
+ 
+<footer>
+  <div style="background-color: #333; color: white; padding: 20px;">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+          <!-- Quick Links Section -->
+          <div style="flex: 1; min-width: 200px;">
+              <h3>Quick Links</h3>
+              <ul style="list-style-type: none; padding: 0;">
+                  <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                  <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
+                  <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                  <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                  <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
+              </ul>
+          </div>
 
+          <!-- Contact Information Section -->
+          <div style="flex: 1; min-width: 200px;">
+              <h3>Contact Info</h3>
+              <p>123 Emergency Lane, Mumbai, India</p>
+              <p>Email:emergency@ambulanceservice.in</p>
+              <p>Phone: +91-911-1234567</p>
+          </div>
+
+          <!-- Social Media Links -->
+          <div style="flex: 1; min-width: 200px;">
+              <h3>Follow Us</h3>
+              <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+              <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br> <!--upadted-->
+              <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
+              <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div style="flex: 1; min-width: 200px;">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form action="#">
+                  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
+                  <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
+              </form>
+          </div>
+      </div>
+
+      
+
+  </div>
+  <!-- Copyright Section -->
+  <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+  
+</footer>
   <script>
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
