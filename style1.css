@@ -34,6 +34,29 @@ header {
   border-radius: 10px;
 }
 
+/* scroll to top */
+#back-to-top {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fix the button to the bottom right */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  padding: 10px; /* Padding around the icon */
+  background-color: #3341ff; /* Button background color */
+  color: white; /* Icon color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+#back-to-top:hover {
+  background-color: #2739bb; /* Darker shade on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+
 /* Dark mode styles */
 body.dark-mode {
   background-color: #333;
