@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -350,6 +351,358 @@
   <body>
     <header>
       <div class="container">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AmbuFlow</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Updated to latest version -->
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: 2px solid #000;
+      border-radius: 12px;
+      color: black;
+      font-weight: bold;
+      background-color: white;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+
+    nav ul li a:hover {
+      background-color: #f0f0f0;
+    }
+    nav ul li a:active {
+      background-color: #000;
+      color: white;
+    }
+    nav ul li a i {
+      margin-right: 8px;
+    }
+    a.active,a:hover{
+      background: #1b9bff ;
+      transition: .5s;
+    }
+    #home-link:active {
+      background-color: black;
+      color: white;
+    }
+    .content {
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: auto auto;
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .feature {
+      background-color: #e7f3fe;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+
+    .feature h2 {
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #555;
+    }
+
+    .team-feature,
+    .contact-feature {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      grid-column: 1 / -1;
+    }
+
+    .team-feature {
+      background-color: #e7ffe7;
+    }
+
+    .contact-feature {
+      background-color: #f2e4aa;
+    }
+
+    .team-feature img,
+    .contact-feature img {
+      width: 150px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: #333;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display:none;
+
+    }
+    #check{
+      display: none;
+    }
+@media (max-width:966px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+}
+@media (max-width:858px){
+
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100% ;
+    height: 100vh;
+    background: #77a1cc;
+    top: 85px;
+    left:-200%;
+    text-align: center;
+    transition:all .5s ;
+    height: 80px;
+  }
+  nav ul li{
+    display: block;
+  }
+  nav ul li a {
+    display: block;
+    font-size: 10px;
+  }
+  a:hover,a.active{
+    background: none;
+    color:#000000 ;
+  }
+  #check:checked ~ ul{
+    left:0;
+  }
+}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start from the left */
+      }
+      50% {
+        transform: translateX(10px); /* Move slightly to the right */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+      }
+    }
+
+    /* Letter Drop Animation */
+    @keyframes letterDrop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(10px); /* Slight bounce */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      animation: logoAnimation 1s ease forwards;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 10px; /* Space between the text and the logo image */
+    }
+
+    .letter {
+      display: inline-block;
+      font-size: 2rem;
+      animation: letterDrop 0.5s ease forwards;
+    }
+
+    .red {
+      color: red; /* Change the color of letters in this class to red */
+    }
+
+
+    /* faq section styles */
+    .faq-section{
+      background-color: #e7f3fe;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    
+
+    .faq-h2{
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .faqs{
+      width: 100%;
+    }
+
+    .faq {
+    margin-bottom: 15px;
+    width: 100%; /* Full width by default */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+
+   .faq-question {
+    background-color: #e7ffe7;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .faq-question::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #333; /* Downward pointing wide "V" */
+    transition: transform 0.3s ease;
+
+    margin-right: 10px;
+    }
+
+    .faq.active .faq-question::after {
+    border-top: none;
+    border-bottom: 8px solid #333; /* Upward pointing wide "V" */
+    }
+
+    .faq-answer {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide content when not visible */
+    padding: 0 10px;
+    background-color: #fff;
+    transition: max-height 0.3s ease; /* Smooth transition */
+    border-top: 1px solid #ccc;
+    }
+
+    .faq-answer p {
+    margin-bottom: 10px;
+    }
+
+   .faq.active .faq-answer {
+    max-height: 200px; /* Set to a sufficient height to display content */
+    padding: 10px; /* Adds padding when expanded */
+   }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+
         <div class="logo">
           <div class="brand-name">
             <span class="letter red" style="--letter-index: 1">A</span>
