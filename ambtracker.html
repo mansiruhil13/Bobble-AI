@@ -84,8 +84,22 @@
             <li><a href="ambtracker.html">Manage Ambulance</a></li>
             <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
+        <div class="resp">
+            <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+        </div>
     </nav>
 </header>
+
+<!-- Dropdown -->
+<div class="dropdown-menu">
+    <ul class="navbar-links2">
+        <li><a href="hospital.html">Dashboard</a></li>
+        <li><a href="manage.html">Manage Status</a></li>
+        <li><a href="driver.html">Manage Driver</a></li>
+        <li><a href="ambtracker.html">Manage Ambulance</a></li>
+    </ul>
+ </div>
 
   <!-- Map container -->
   <div id="map"></div>
@@ -129,6 +143,19 @@
 
     // Initialize the map when the window loads
     window.onload = initMap;
+
+    // Dropdown
+    let flag = false
+    document.getElementById('dropdown').addEventListener('click', () => {
+      const dropdown = document.querySelector('.dropdown-menu');
+      if (flag) {
+        dropdown.style.display = 'none';
+        flag = false;
+      } else {
+          dropdown.style.display = 'block';
+          flag = true;
+      }
+    });
 
     function logout() {
       const confirmLogout = confirm('Are you sure you want to logout?');
