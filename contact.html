@@ -71,6 +71,8 @@
             width: 80px;
             height: 80px;
             margin-bottom: 10px;
+            border-radius: 50%;
+            border: 3px solid #2980b9;
         }
 
         .social-media {
@@ -82,13 +84,33 @@
 
         .social-icon {
             font-size: 24px;
-            color: #2980b9;
-            transition: color 0.3s;
+            color: #000000;
+            transition: transform 0.9s ease, color 0.9s ease;
+            /* Smooth transition */
         }
 
-        .social-icon:hover {
-            color: #ff5733;
+        #facebook:hover {
+            color: #1877F2;
+            transform: scale(1.5);
         }
+
+        #twitter:hover {
+            color: #1da1f2;
+            transform: scale(1.5);
+        }
+
+        #instagram:hover {
+            background: linear-gradient(45deg, #FF0080, #FF8C00, #FFD700);
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1.5);
+        }
+        #linkedin:hover {
+            color: #0077B5;
+            transform: scale(1.5);
+        }
+
 
         footer {
             background-color: #C4D7FF;
@@ -228,10 +250,10 @@
 
     <!-- Social Media Section -->
     <div class="social-media">
-        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>  <!--Updated icon-->
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook" id="facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter" id="twitter"></i></a>  <!--Updated icon-->
+        <a href="#" class="social-icon"><i class="fab fa-instagram" id="instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin" id="linkedin"></i></a>
     </div>
 </div>
 
