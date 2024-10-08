@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #d9534f; /* Matching the red in AmbuFlow logo */
+        }
+        p {
+            font-size: 1.5em;
+            color: #5bc0de; /* Matching the blue in AmbuFlow logo */
+        }
+        .ambulance-gif {
+            margin: 20px auto;
+            width: 300px; /* Adjust size of the GIF container */
+        }
+        .ambulance-gif img {
+            width: 100%; /* Responsive size */
+        }
+        button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #5cb85c;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you are looking for isn't here.</p>
+        <div class="ambulance-gif">
+            <!-- Add your ambulance GIF URL in the src attribute below -->
+            <img src="https://i.ibb.co/wYtwW5T/ambulance.gif" alt="Running ambulance GIF">
+        </div>
+        <button onclick="goBack()">Go back to Home page</button>
+    </div>
+
+    <script>
+         function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/'; // Redirect to the homepage
+            }
+        }
+    </script>
+</body>
+</html>
