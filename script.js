@@ -23,6 +23,7 @@ accordions.forEach((accordion, index) => {
             }
         });
     });
+
 });
 
 // Function to handle the active state of navbar items
@@ -76,4 +77,5 @@ window.onscroll = function () {
 // Scroll to top when the button is clicked
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
 });
