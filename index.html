@@ -542,61 +542,7 @@
   </header>
 
 
-      <div class="logo">
-        <div class="brand-name">
-          <span class="letter red" style="--letter-index: 1">A</span>
-          <span class="letter red" style="--letter-index: 2">m</span>
-          <span class="letter red" style="--letter-index: 3">b</span>
-          <span class="letter red" style="--letter-index: 4">u</span>
-          <span class="letter" style="--letter-index: 5">F</span>
-          <span class="letter" style="--letter-index: 6">l</span>
-          <span class="letter" style="--letter-index: 7">o</span>
-          <span class="letter" style="--letter-index: 8">w</span>
-        </div>
-        <a href="./index.html"
-          ><img
-            src="images/logo2-w.webp"
-            alt="Ambulance Monitoring System Logo"
-            style="width: 50px; height: auto"
-        /></a>
-      </div>
 
-
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"
-              ><i class="fa-solid fa-file"></i> Features</a
-            >
-          </li>
-          <li>
-            <a href="team.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"
-              ><i class="fa-solid fa-clipboard"></i> Contact</a
-            >
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Feedback</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
-    </div>
-  </header>
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
@@ -668,20 +614,6 @@
       </div>
     </div>
   </div>
-
-</div>
-
-  <footer>
-    
-    </div>
-
-    
-
-    
-        </div>
-      </div>
-    </div>
-
  
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
@@ -843,47 +775,22 @@
   </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
 
-    circles.forEach(function (circle) {
-      circle.x = 0;
-      circle.y = 0;
-    });
-
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.pageX;
-      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-    });
-
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
-
-      circles.forEach(function (circle, index) {
-        circle.style.left = `${x - 12}px`;
-        circle.style.top = `${y - 12}px`;
-        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        circle.x = x;
-        circle.y = y;
-
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
-
-      requestAnimationFrame(animateCircles);
-    }
-
-    animateCircles();
+    });
   });
 
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      thankYouMessage.style.display = 'block';
+      document.getElementById("emailInput").value = '';
+    });
+  });
 </script>
-
-
-</body>
-
-
-</html>
