@@ -371,12 +371,61 @@
    #contact-hvr:hover{
     background: none;
    }
-
+   .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
 
 </head>
 
 <body>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
   <header class="sticky">
     <div class="container">
 
@@ -572,11 +621,6 @@
       });
     });
   });
-
-  // Newsletter subscription functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById("subscribeForm");
-    const thankYouMessage = document.getElementById("thankYouMessage");
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
