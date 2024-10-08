@@ -138,7 +138,11 @@
       margin-right: 20px;
       border-radius: 10px;
     }
-
+    .sticky{
+      position: fixed;
+      z-index: 10;
+      max-height: 63px;
+    }
     footer {
       background-color: #C4D7FF;
       color: #f3f4f6;
@@ -344,11 +348,18 @@
     max-height: 200px; /* Set to a sufficient height to display content */
     padding: 10px; /* Adds padding when expanded */
    }
+    .logo a{
+      text-decoration: none;
+   }
+   .logo img:hover{
+    background-color: white;
+   }
+
   </style>
 </head>
 
 <body>
-  <header>
+  <header class="sticky">
     <div class="container">
         <div class="logo">
             <div class="brand-name">
@@ -361,7 +372,9 @@
                 <span class="letter" style="--letter-index: 7;">o</span>
                 <span class="letter" style="--letter-index: 8;">w</span>
             </div>
+            <a href="index.html">
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+          </a>
           </div>
         <nav class="menu">
             <ul>
@@ -379,7 +392,7 @@
     </div>
 </header>
 
-  <div class="content" id="main-content">
+  <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
       <div class="feature">
