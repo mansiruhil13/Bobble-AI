@@ -747,11 +747,6 @@
     });
 
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
-
-
     <!-- Copyright Section -->
     <div style="
             text-align: center;
@@ -776,21 +771,22 @@
 
 <script>
   // Back to Top Button functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+    document.addEventListener('DOMContentLoaded', function() {
+      var backToTopBtn = document.getElementById("backToTopBtn");
 
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
-  });
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-  });
 </script>
+</body>
+</html>
