@@ -14,8 +14,8 @@
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <img src="./images/manageLogo.png"></img>
-                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+                <a href="./index.html"><img src="./images/manageLogo.png"></img></a>
+                <a href="./index.html"><h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2></a>
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
@@ -24,8 +24,23 @@
                 <li><a href="ambtracker.html">Manage Ambulance</a></li>
                 <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
+            <div class="resp">
+                <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+            </div>
         </nav>
     </header>
+
+    <!-- Dropdown -->
+     <div class="dropdown-menu">
+        <ul class="navbar-links2">
+            <li><a href="hospital.html">Dashboard</a></li>
+            <li><a href="manage.html">Manage Status</a></li>
+            <li><a href="driver.html">Manage Driver</a></li>
+            <li><a href="ambtracker.html">Manage Ambulance</a></li>
+        </ul>
+     </div>
+
     <div class="dashboard-container">
         <img src="images/Ambulance Tracker.png" alt="Bobble-AI Logo" style="width: 250px; height: auto; margin-bottom: 10px; margin-left: 30px;";>
     
@@ -39,6 +54,18 @@
                 alert('Manage Drivers button clicked!');
                 // Example: window.location.href = 'manage-drivers.html';
             }
+
+            let flag = false
+            document.getElementById('dropdown').addEventListener('click', () => {
+                const dropdown = document.querySelector('.dropdown-menu');
+                if (flag) {
+                    dropdown.style.display = 'none';
+                    flag = false;
+                } else {
+                    dropdown.style.display = 'block';
+                    flag = true;
+                }
+            });
         
             function manageAmbulances() {
                 // Action to manage ambulances, such as opening a page or modal
