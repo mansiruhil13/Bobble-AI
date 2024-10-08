@@ -22,7 +22,7 @@ document.querySelector(".sign-in-form").addEventListener('submit', function(even
   if (username === 'admin' && password === 'password') {
     alert('Login successful!');
     // Redirect to dashboard page
-    window.location.href = 'index.html';
+    window.location.href = 'hospital.html';
   } else {
     alert('Invalid username or password');
   }
