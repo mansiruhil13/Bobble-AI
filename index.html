@@ -156,13 +156,12 @@
       margin-right: 20px;
       border-radius: 10px;
     }
-
-    .sticky {
-      position: fixed;
-      z-index: 10;
-      max-height: 63px;
-    }
-
+    header.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
     footer {
       background-color: #C4D7FF;
       color: #f3f4f6;
@@ -423,12 +422,19 @@
       margin-bottom: 10px;
     }
 
-    .faq.active .faq-answer {
-      max-height: 200px;
-      /* Set to a sufficient height to display content */
-      padding: 10px;
-      /* Adds padding when expanded */
-    }
+   .faq.active .faq-answer {
+    max-height: 200px; /* Set to a sufficient height to display content */
+    padding: 10px; /* Adds padding when expanded */
+   }
+    .logo a{
+      text-decoration: none;
+   }
+   .logo img:hover{
+    background-color: white;
+   }
+   .container{
+    width: 98vw;
+   }
 
     .logo a {
       text-decoration: none;
@@ -443,33 +449,53 @@
 <body>
   <header class="sticky">
     <div class="container">
+
       <div class="logo">
         <div class="brand-name">
-          <span class="letter red" style="--letter-index: 1;">A</span>
-          <span class="letter red" style="--letter-index: 2;">m</span>
-          <span class="letter red" style="--letter-index: 3;">b</span>
-          <span class="letter red" style="--letter-index: 4;">u</span>
-          <span class="letter" style="--letter-index: 5;">F</span>
-          <span class="letter" style="--letter-index: 6;">l</span>
-          <span class="letter" style="--letter-index: 7;">o</span>
-          <span class="letter" style="--letter-index: 8;">w</span>
+          <span class="letter red" style="--letter-index: 1">A</span>
+          <span class="letter red" style="--letter-index: 2">m</span>
+          <span class="letter red" style="--letter-index: 3">b</span>
+          <span class="letter red" style="--letter-index: 4">u</span>
+          <span class="letter" style="--letter-index: 5">F</span>
+          <span class="letter" style="--letter-index: 6">l</span>
+          <span class="letter" style="--letter-index: 7">o</span>
+          <span class="letter" style="--letter-index: 8">w</span>
         </div>
-        <a href="index.html">
-          <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-        </a>
+        <a href="./index.html"
+          ><img
+            src="images/logo2-w.webp"
+            alt="Ambulance Monitoring System Logo"
+            style="width: 50px; height: auto"
+        /></a>
       </div>
+
       <nav class="menu">
         <ul>
-          <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i>
-              Home</a></li>
-          <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
-                class="fa-solid fa-file"></i> Features</a></li>
-          <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
-              Team</a></li>
-          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
-                class="fa-solid fa-phone"></i> Contact</a></li>
-          <li><a href="Feedback.html" id="Feedback-link" onclick="changeContent('Feedback')"><i
-                class="fa-solid fa-clipboard"></i> Feedback</a></li>
+          <li>
+            <a href="index.html" id="home-link"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="features.html" id="features-link" class="active"
+              ><i class="fa-solid fa-file"></i> Features</a
+            >
+          </li>
+          <li>
+            <a href="team.html" id="team-link"
+              ><i class="fa-solid fa-user-group"></i> Team</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" id="contact-link"
+              ><i class="fa-solid fa-clipboard"></i> Contact</a
+            >
+          </li>
+          <li>
+            <a href="Feedback.html" id="team-link"
+              ><i class="fa-solid fa-user-group"></i> Feedback</a
+            >
+          </li>
         </ul>
       </nav>
       <div class="buttons">
@@ -478,8 +504,7 @@
       </div>
     </div>
   </header>
-
-  <div class="content" id="main-content">
+  <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
       <div class="feature">
@@ -648,7 +673,6 @@
           <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
           </p>
         </div>
-
 
         <!-- Modified the looks of the social icons -->
         <!-- Social Media Links -->
