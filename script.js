@@ -1,3 +1,5 @@
+
+
 // Newsletter form submission handler
 document
   .getElementById("newsletter-form")
@@ -23,6 +25,7 @@ document
   });
 
 // Accordion functionality
+
 const accordions = document.querySelectorAll(".accordion");
 
 accordions.forEach((accordion, index) => {
@@ -47,3 +50,60 @@ accordions.forEach((accordion, index) => {
         ic.classList.remove("ri-subtract-fill");
       }
     });
+
+
+});
+
+// Function to handle the active state of navbar items
+function changeContent(page) {
+    // Get all navigation links
+    var links = document.querySelectorAll(".menu ul li a");
+
+    // Remove the active class from all links
+    links.forEach((link) => link.classList.remove("active"));
+
+    // Add the active class to the clicked link
+    document.getElementById(page + "-link").classList.add("active");
+}
+
+// Make "Home" the default active page on load
+window.onload = function () {
+    document.getElementById("home-link").classList.add("active");
+};
+
+//JS for dark mode fuctionality
+// Select the dark mode button
+// Get the dark mode button element
+const darkModeButton = document.getElementById('dark-mode-button');
+
+// Add event listener for toggle functionality
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Toggle icon between moon and sun
+    const icon = darkModeButton.querySelector('i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+
+    // Log the current classes for debugging
+    console.log(icon.classList); // Check the classes being applied to the icon
+});
+
+
+// Back to top button functionality
+const backToTopButton = document.getElementById('back-to-top');
+
+// Show the button when scrolled down 100px from the top
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// Scroll to top when the button is clicked
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+});
