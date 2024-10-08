@@ -319,21 +319,21 @@ Phone : +91-911-1234567
               </div>
   
               <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px">
-          <h3>Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
-            <button type="submit" style="
-                  background-color: #ff5733;
-                  color: white;
-                  padding: 10px 20px;
-                  border: none;
-                  cursor: pointer;
-                ">
-              Subscribe
-            </button>
-          </form>
-        </div>
+              <div style="flex: 1; min-width: 200px">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="subscribeForm"> <!-- Added ID subscribeForm -->
+                  <input type="email" id="emailInput" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+                  <button type="submit" style="
+                        background-color: #ff5733;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;">
+                    Subscribe
+                  </button>
+                </form>
+                <p id="thankYouMessage" style="display:none; color: white;">Thank you for subscribing!</p> <!-- Added ID thankYouMessage -->
+              </div>
       </div>
       </div>
 
@@ -366,6 +366,20 @@ Phone : +91-911-1234567
     window.onload = function () {
       document.getElementById("home-link").classList.add("active");
     };
+
+    const thankYouMessage = document.getElementById("thankYouMessage");
+  const form = document.getElementById("subscribeForm");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+
+    // Show Thank You Message after subscribing
+    thankYouMessage.style.display = 'block';
+
+    // Optionally clear the input field after subscribing
+    document.getElementById("emailInput").value = '';
+  });
+
   </script>
 </body>
 
