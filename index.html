@@ -541,8 +541,6 @@
     </div>
   </header>
 
-
-
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
@@ -702,7 +700,7 @@
       ">↑</button>
     </div>
   </footer>
-
+   
   <script>
     // Back to Top Button functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -794,3 +792,19 @@
     });
   });
 </script>
+
+<script>
+ // Dark Mode Funcationality
+ const darkModeButton = document.getElementById('dark-mode-button');
+
+// Add event listener for toggle functionality
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode'); // Toggle dark mode
+
+    // Toggle icon between moon and sun
+    const icon = darkModeButton.querySelector('i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+});
+</script>
+
