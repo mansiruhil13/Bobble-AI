@@ -461,11 +461,21 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <strong>
-      <p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p>
-    </strong>
-
-  </footer>
+    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+      
+      <!-- Back to Top Button -->
+      <button id="backToTopBtn" style="
+        background-color: #e81a1a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+      ">↑</button>
+    </div>
+</footer>
   <script>
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
@@ -542,34 +552,24 @@
       circle.y = 0;
       circle.style.backgroundColor = colors[index % colors.length];
     });
+  
+    requestAnimationFrame(animateCircles);
+  }
+  
+  animateCircles();</script>
+  <script>
+    // Back to Top Button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopBtn = document.getElementById("backToTopBtn");
 
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.clientX;
-      coords.y = e.clientY;
-    });
-
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
-
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
-
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
-
-      requestAnimationFrame(animateCircles);
-    }
-
-    animateCircles();</script>
+    });
+  </script>
 </body>
 
 </html>
