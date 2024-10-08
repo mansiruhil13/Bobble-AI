@@ -561,7 +561,7 @@
     </div>
   </div>
  
-  <footer style= " color: #f3f4f6; text-align: center; width: 100%;">
+  <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
         
@@ -609,10 +609,35 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-    
+    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+      
+      <!-- Back to Top Button -->
+      <button id="backToTopBtn" style="
+        background-color: #e81a1a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+      ">↑</button>
+    </div>
   </footer>
   
+  <script>
+    // Back to Top Button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      var backToTopBtn = document.getElementById("backToTopBtn");
+
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
   <script>
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
