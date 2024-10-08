@@ -4,6 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team</title>
+
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu ul li a:hover {
+            background-color: #1c598a;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            flex-grow: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2980b9;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
     <link rel="stylesheet" href="src/css/index.css" />
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
     <link
@@ -42,11 +110,52 @@
         flex-grow: 1;
       }
 
+
       h1 {
         color: #2c3e50;
         text-align: center;
         margin-bottom: 20px;
       }
+
+
+        .team-member {
+            background-color: #e7f3fe;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            border: 3px solid #2980b9;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member h2 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-family: 'Montserrat', sans-serif;
+        }
 
       .team-section {
         display: flex;
@@ -81,11 +190,25 @@
         border: 3px solid #2980b9;
       }
 
+
       .team-member h2 {
         color: #2980b9;
         margin-bottom: 10px;
         font-size: 1.2em;
       }
+
+
+        .contact-feature {
+            background-color: #f2e4aa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 30px auto;
+            max-width: 900px;
+        }
 
       .team-member p {
         color: #555;
@@ -103,6 +226,7 @@
       }
 
 
+
       footer {
           background-color: #C4D7FF;
           color: white;
@@ -112,6 +236,17 @@
           bottom: 0;
           width: 100%;
       }
+
+
+        footer {
+            background-color: #C4D7FF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            position: relative;
+        }
+
 
       .contact-feature img {
         width: 150px;
@@ -164,6 +299,55 @@
           opacity: 1;
         }
 
+
+        .circle {
+                height: 35px;
+                width: 35px;
+                border-radius: 24px;
+                background-color: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                z-index: 99999999;
+                /* Stays on top of all elements */
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+<header>
+    <div class="container">
+
+        <div class="logo">
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo">
+
+
+        100% {
+          transform: translateY(0);
+        }
+
       }
 
       .logo {
@@ -212,8 +396,8 @@
               alt="Ambulance Monitoring System Logo"
               style="width: 50px; height: auto"
           /></a>
-        </div>
 
+        </div>
         <nav class="menu">
           <ul>
             <li>
@@ -255,9 +439,15 @@
             </li>
           </ul>
         </nav>
+
+        <div class="buttons" style="text-align: center; margin-top: 10px;">
+            <a href="login.html" class="login" style="background-color: #2980b9; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-right: 10px;">Log in</a>
+            <a href="up.html" class="get-started" style="background-color: #e81a1a; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Get started</a>
+
         <div class="buttons">
           <a href="login.html" class="login">Log in</a>
           <a href="up.html" class="get-started">Get started</a>
+
         </div>
       </div>
     </header>
@@ -299,6 +489,25 @@
         </div>
       </div>
     </div>
+
+</div>
+
+<!-- Contact Section in Full Row -->
+<div class="contact-feature">
+    <img src="images/contact-w.avif" alt="Contact Us">
+    <div>
+        <h2>Contact Us</h2>
+        <p>Reach out to us for any inquiries or assistance. We're here to help you 24/7 with our emergency services.</p>
+        <a href="contact.html" class="button" style="background-color: #2980b9; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Go to Contact</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+</footer>
+
+<script src="src/js/index.js"></script>
+
 
     <!-- Contact Section in Full Row -->
     <div class="features-container">
@@ -444,6 +653,7 @@
     }
     
     animateCircles();</script>
+
 </body>
 
 
