@@ -177,6 +177,7 @@ h1 {
     grid-column: 1 / -1;
 }
 
+
 .team-feature {
     background-color: #e7ffe7;
 }
@@ -232,6 +233,21 @@ h1 {
     margin-right: 20px;
     border-radius: 10px;
 }
+
+.subscribe{
+  font-size:14px;
+  font-weight:bolder;
+  border-radius: 0.25rem;
+  background-color: #ec3a12;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.subscribe:hover{
+  background-color: #f75d3b;
+}
+
 
 footer {
     background-color: #000;
