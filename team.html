@@ -88,7 +88,7 @@
             font-size: 0.9em;
         }
 
-        .contact-feature {
+        /* .contact-feature {
              display: flex;
             justify-content: center; 
             align-items: center;
@@ -103,7 +103,7 @@
             height: auto;
             margin-right: 20px;
             border-radius: 10px;
-        } 
+        }  */
 
         footer {
             background-color: #000;
@@ -176,7 +176,6 @@
         .red {
             color: red; 
         }
-        
     </style>
 </head>
 <body>
@@ -260,66 +259,95 @@
 </div>
 
 
-<footer>
-    <div style="background-color: #333; color: white; padding: 20px;">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Quick Links Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Quick Links</h3>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
-                    <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                    <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
-                    <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Information Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Contact Info</h3>
-                <p>123 Emergency Lane, Mumbai, India</p>
-                <p>Email:emergency@ambulanceservice.in</p>
-                <p>Phone: +91-911-1234567</p>
-            </div>
-
-            <!-- Social Media Links -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-                <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br> <!--upadted-->
-                <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
-                <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            </div>
-
-            <!-- Newsletter Subscription -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form action="#">
-                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
-                    <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-        
-
-    </div>
-    <!-- Copyright Section -->
-    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+<footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
     
+    <!-- Quick Links Section -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="about.html" class="footer-link">About Us</a></li>
+        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+        <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+      <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+      <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
+      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+      <a href="https://www.facebook.com" class="hover-link"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+      <a href="https://www.twitter.com" class="hover-link"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
+      <a href="https://www.instagram.com" class="hover-link"><i class="fab fa-instagram"></i> Instagram</a><br>
+      <a href="https://www.linkedin.com" class="hover-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+      <form action="#">
+        <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+        <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
+    <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" style="
+      background-color: #e81a1a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    ">↑</button>
+  </div>
 </footer>
 
-<script>
-    function changeContent(page) {
-        var links = document.querySelectorAll('.menu ul li a');
-        links.forEach(link => link.classList.remove('active'));
-        document.getElementById(page + '-link').classList.add('active');
-    }
+<!-- Add this style block in the <head> section or in your CSS file -->
+<style>
+  .hover-link {
+    color: #000000;
+    text-decoration: none;
+    margin-right: 10px;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
 
-    window.onload = function() {
-        document.getElementById('team-link').classList.add('active');
-    };
+  .hover-link:hover {
+    color: blue;
+    background: none;
+  }
+</style>
+
+<!-- Add this script block just before the closing </body> tag -->
+<script>
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 </script>
 
 </body>

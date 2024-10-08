@@ -47,5 +47,3 @@ accordions.forEach((accordion, index) => {
         ic.classList.remove("ri-subtract-fill");
       }
     });
-  });
-});
