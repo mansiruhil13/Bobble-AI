@@ -7,7 +7,7 @@
 
 /* Enhance Typography */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f0f4f8; /* Softer background for better contrast */
     color: #333333;
     display: flex;
@@ -35,16 +35,6 @@ html::-webkit-scrollbar-thumb:window-inactive {
 }
 
 /* Navbar Styles */
-.navbar {
-    background-color: #34495e;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
 .navbar-logo h2 {
     color: #ecf0f1;
     margin: 0;
@@ -91,25 +81,28 @@ html::-webkit-scrollbar-thumb:window-inactive {
     margin-bottom: 40px;
 }
 
+
 .action-btn {
-    min-width: 180px;        /* Sets a minimum width for uniformity */
-    padding: 15px 25px;      /* Adjusts padding for better balance */
-    font-size: 18px;         /* Increases font size for readability */
-    text-align: center;      /* Centers text within buttons */
-    background-color: #1abc9c;
-    color: white;
+    background-color: #1a2938;
+    color: #3dbdec;
+    font-weight: 600;
+    padding: 20px 35px;
     border: none;
-    border-radius: 12px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease,
+      box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+.action-btn:hover {
+    background-color: #92c4d6;
+    color: #1a2938;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.action-btn:hover {
-    background-color: #16a085;
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
 
 /* Status Sections */
 .status-container {
@@ -124,7 +117,7 @@ html::-webkit-scrollbar-thumb:window-inactive {
     background-color: #f9f9f9; /* Light background for sections */
     padding: 20px; /* Padding for content */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Table Styling Enhancements */
@@ -177,7 +170,7 @@ tr:hover {
 
 /* Nearby Facilities & Contact Details */
 .nearby-facilities, .contact-details {
-    background-color: #bdc3c7;
+    background-color: #92c4d6;
     padding: 20px;
     border-radius: 10px;
     margin-top: 25px;

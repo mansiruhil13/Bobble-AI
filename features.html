@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Features</title>
-    <link rel="stylesheet" href="src/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!--Updated to latest version-->
     <style>
-         /* .logo span {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff5733, #33ff57, #3357ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            font-family: 'Arial', sans-serif;
-        } */
-        
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            min-height: 100vh; 
         }
         .menu ul {
             list-style-type: none;
@@ -34,7 +27,7 @@
         }
         .menu ul li {
             display: inline;
-            margin-right: 10px; /* Space between menu items */
+            margin-right: 10px; 
         }
         .menu ul li a {
             padding: 10px 15px;
@@ -55,7 +48,7 @@
             padding: 20px;
             background-color: #e6eef3;
             border-radius: 5px;
-            flex-grow: 1; /* Allows content area to expand */
+            flex-grow: 1; 
         }
         h1 {
             color: #2c3e50;
@@ -66,40 +59,116 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            animation: fadeIn 1s ease-in-out; /* Animation for the grid */
+            animation: fadeIn 1s ease-in-out; 
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .menu ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .menu ul li {
+        display: inline;
+        margin-right: 10px;
+      }
+      .menu ul li a {
+        padding: 10px 15px;
+        color: black;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .menu ul li a:hover {
+        background-color: #000;
+        color: white;
+      }
+      .menu ul li a.active {
+        color: white;
+        background-color: #000;
+      }
+      .content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #e6eef3;
+        border-radius: 5px;
+        flex-grow: 1;
+      }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      .feature-card {
+        background: #abd4fc;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        transition: transform 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+      .feature-icon {
+        font-size: 40px;
+        color: #0560c2; /* Bootstrap primary color */
+        margin-bottom: 10px;
+      }
+     
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        .feature-card {
-            background: #abd4fc;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
+      }
+      /* Logo Animation */
+      @keyframes logoAnimation {
+        0% {
+          opacity: 0;
+          transform: translateX(-100px); /* Start from the left */
         }
-        .feature-icon {
-            font-size: 40px;
-            color: #0560c2; /* Bootstrap primary color */
-            margin-bottom: 10px;
+        50% {
+          transform: translateX(10px); /* Move slightly to the right */
         }
         footer {
-            background-color: #000;
+            background-color: #C4D7FF;
             color: white;
             text-align: center;
             padding: 10px 0; /* Padding for the footer */
+
+        100% {
+          opacity: 1;
+          transform: translateX(0); /* End at original position */
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+      }
+
+      /* Letter Drop Animation */
+      @keyframes letterDrop {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
         }
+        50% {
+          transform: translateY(10px); /* Slight bounce */
+          opacity: 1;
+        }
+
         #thankYouMessage {
     margin-top: 20px;
     font-size: 18px;
@@ -107,87 +176,195 @@
     display: none; /* Initially hidden */
     }
 
+
+        100% {
+          transform: translateY(0);
+        }
+
+        .circle {
+                height: 35px;
+                width: 35px;
+                border-radius: 24px;
+                background-color: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                z-index: 99999999;
+                /* Stays on top of all elements */
+            }
+
     </style>
 </head>
 <body>
 
+    <div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
 <header>
     <div class="container">
+
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        animation: logoAnimation 1s ease forwards;
+      }
+
+      .brand-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 10px; /* Space between the text and the logo image */
+      }
+
+      .letter {
+        display: inline-block;
+        font-size: 2rem;
+        animation: letterDrop 0.5s ease forwards;
+        animation-delay: calc(var(--letter-index) * 0.1s);
+      }
+
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+
         <div class="logo">
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width:50px; height:auto;">
-           
+          <div class="brand-name">
+            <span class="letter red" style="--letter-index: 1">A</span>
+            <span class="letter red" style="--letter-index: 2">m</span>
+            <span class="letter red" style="--letter-index: 3">b</span>
+            <span class="letter red" style="--letter-index: 4">u</span>
+            <span class="letter" style="--letter-index: 5">F</span>
+            <span class="letter" style="--letter-index: 6">l</span>
+            <span class="letter" style="--letter-index: 7">o</span>
+            <span class="letter" style="--letter-index: 8">w</span>
+          </div>
+          <a href="./index.html"
+            ><img
+              src="images/logo2-w.webp"
+              alt="Ambulance Monitoring System Logo"
+              style="width: 50px; height: auto"
+          /></a>
         </div>
 
         <nav class="menu">
-            <ul>
-                <li><a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a></li>
-                <li><a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a></li>
-                <li><a href="contact.html" id="contact-link"><i class="fa-solid fa-phone"></i> Contact</a></li>
-            </ul>
+          <ul>
+            <li>
+              <a href="index.html" id="home-link"
+                ><i class="fa-solid fa-house"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="features.html" id="features-link" class="active"
+                ><i class="fa-solid fa-file"></i> Features</a
+              >
+            </li>
+            <li>
+              <a href="team.html" id="team-link"
+                ><i class="fa-solid fa-user-group"></i> Team</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" id="contact-link"
+                ><i class="fa-solid fa-clipboard"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="Feedback.html" id="team-link"
+                ><i class="fa-solid fa-user-group"></i> Feedback</a
+              >
+            </li>
+          </ul>
         </nav>
         <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="content" id="main-content">
-    <h1>Features</h1>
-    <p>Here are the features of AmbuFlow:</p>
-    <div class="features-grid">
+    <div class="content" id="main-content">
+      <h1>Features</h1>
+      <p>Here are the features of AmbuFlow:</p>
+      <div class="features-grid">
         <div class="feature-card">
-            <i class="fas fa-ambulance feature-icon"></i>
-            <h2>Quick Emergency Response</h2>
-            <p>Immediate notifications to the nearest ambulance service.</p>
+          <i class="fas fa-ambulance feature-icon"></i>
+          <h2>Quick Emergency Response</h2>
+          <p>Immediate notifications to the nearest ambulance service.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-map-marked-alt feature-icon"></i>
-            <h2>Real-Time Tracking</h2>
-            <p>Track ambulances in real-time for better coordination.</p>
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h2>Real-Time Tracking</h2>
+          <p>Track ambulances in real-time for better coordination.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-comments feature-icon"></i>
-            <h2>Enhanced Communication</h2>
-            <p>Instant communication between dispatch and ambulances.</p>
+          <i class="fas fa-comments feature-icon"></i>
+          <h2>Enhanced Communication</h2>
+          <p>Instant communication between dispatch and ambulances.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-cogs feature-icon"></i>
-            <h2>Resource Management</h2>
-            <p>Efficient allocation of resources for emergencies.</p>
+          <i class="fas fa-cogs feature-icon"></i>
+          <h2>Resource Management</h2>
+          <p>Efficient allocation of resources for emergencies.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-user-friends feature-icon"></i>
-            <h2>User-Friendly Interface</h2>
-            <p>Easy-to-navigate system for users and providers.</p>
+          <i class="fas fa-user-friends feature-icon"></i>
+          <h2>User-Friendly Interface</h2>
+          <p>Easy-to-navigate system for users and providers.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-clock feature-icon"></i>
-            <h2>24/7 Availability</h2>
-            <p>Always available support and monitoring services.</p>
+          <i class="fas fa-clock feature-icon"></i>
+          <h2>24/7 Availability</h2>
+          <p>Always available support and monitoring services.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-heartbeat feature-icon"></i>
-            <h2>Patient Health Monitoring</h2>
-            <p>Real-time monitoring of patient vitals during transport.</p>
+          <i class="fas fa-heartbeat feature-icon"></i>
+          <h2>Patient Health Monitoring</h2>
+          <p>Real-time monitoring of patient vitals during transport.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-lock feature-icon"></i>
-            <h2>Data Security</h2>
-            <p>Ensuring the security of patient and operational data.</p>
+          <i class="fas fa-lock feature-icon"></i>
+          <h2>Data Security</h2>
+          <p>Ensuring the security of patient and operational data.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-phone-alt feature-icon"></i>
-            <h2>Emergency Contact Integration</h2>
-            <p>Seamless integration with emergency contact services.</p>
+          <i class="fas fa-phone-alt feature-icon"></i>
+          <h2>Emergency Contact Integration</h2>
+          <p>Seamless integration with emergency contact services.</p>
         </div>
         <div class="feature-card">
-            <i class="fas fa-comments-dollar feature-icon"></i>
-            <h2>Feedback System</h2>
-            <p>Collecting feedback to improve service quality.</p>
+          <i class="fas fa-comments-dollar feature-icon"></i>
+          <h2>Feedback System</h2>
+          <p>Collecting feedback to improve service quality.</p>
         </div>
+      </div>
     </div>
+
 </div>
 
 <!-- Footer -->
@@ -242,13 +419,123 @@
             </div>
         </div>
 
-        
+    <!-- Footer -->
 
+<footer style= " color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Quick Links Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Information Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a></p>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+          <a href="https://www.facebook.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+          <a href="https://www.twitter.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
+          <a href="https://www.instagram.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
+          <a href="https://www.linkedin.com" style="color: #000000; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+  
+        <!-- Newsletter Subscription -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+      
     </div>
+    <hr>
     <!-- Copyright Section -->
-    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
     
+
 </footer>
+<script>    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+    
+    const colors = [
+      "#ffb56b",
+  "#fdaf69",
+  "#f89d63",
+  "#f59761",
+  "#ef865e",
+  "#ec805d",
+  "#e36e5c",
+  "#df685c",
+  "#d5585c",
+  "#d1525c",
+  "#c5415d",
+  "#c03b5d",
+  "#b22c5e",
+  "#ac265e",
+  "#9c155f",
+  "#950f5f",
+  "#830060",
+  "#7c0060",
+  "#680060",
+  "#60005f",
+  "#48005f",
+  "#3d005e"
+    ];
+    
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+    
+    window.addEventListener("mousemove", function(e){
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+    
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+    
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+    
+        circle.style.scale = (circles.length - index) / circles.length;
+    
+        circle.x = x;
+        circle.y = y;
+    
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+    
+      requestAnimationFrame(animateCircles);
+    }
+    
+    animateCircles();</script>
+
+  </footer>
+
 
 <script>
     // Accordion Functionality

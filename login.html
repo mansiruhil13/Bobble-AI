@@ -4,132 +4,293 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register & Login</title>
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Boxicons -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="src/css/login.css" />
-
-    <!-- EmailJS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-      type="text/javascript"
-    ></script>
+    <link rel="stylesheet" href="src\css/login.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
-
   <body>
-    <!-- Login Form -->
-    <div class="wrapper">
-      <div class="form-box login" style="padding-top: 50px">
-        <h2 class="title animation" style="margin-bottom: 30px">Login</h2>
-        <form id="loginForm">
-          <div class="input-box animation" style="--i: 1; --j: 22">
-            <input type="text" id="loginUsername" required />
-            <label>Username</label>
-            <i class="bx bxs-user"></i>
-          </div>
-          <div class="input-box animation" style="--i: 2; --j: 23">
-            <input type="password" id="loginPassword" required />
-            <label>Password</label>
-            <i class="bx bxs-lock-alt"></i>
-            <i
-              class="fas fa-eye toggle-password"
-              id="togglePassword"
-              onclick="togglePassword()"
-            ></i>
-          </div>
-          <button type="submit" class="btn animation" style="--i: 3; --j: 24">
-            Login
-          </button>
-          <div class="linkTxt animation" style="--i: 5; --j: 25">
-            <p>
-              Don't have an account?
-              <a href="#" class="register-link">Sign Up</a>
-            </p>
-          </div>
-        </form>
+    <div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock" id="toggle-password"></i>
+              <input type="password" placeholder="Password" id="password-input" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+                <a href="https://www.google.com" target="_blank" class="social-icon">
+                    <i class="fab fa-google" style="font-size: 24px; color: #4285F4;"></i>
+                  </a>
+                <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                  <i class="fab fa-facebook-f" style="font-size: 24px; color: #4267B2;"></i>
+                </a>
+                <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                  <i class="fab fa-github" style="font-size: 24px; color: #333;"></i>
+                </a>
+              </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock" id="toggle-password-signup"></i>
+              <input type="password" placeholder="Password" id="password-input-signup" />
+            </div>
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+                <a href="https://www.google.com" target="_blank" class="social-icon">
+                    <i class="fab fa-google" style="font-size: 24px; color: #4285F4;"></i>
+                  </a>
+                <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                  <i class="fab fa-facebook-f" style="font-size: 24px; color: #4267B2;"></i>
+                </a>
+                <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                  <i class="fab fa-github" style="font-size: 24px; color: #333;"></i> </a>
+              </div>
+          </form>
+        </div>
       </div>
-      <span class="rotate-bg"></span>
-      <span class="rotate-bg2"></span>
+
+      <div class="panels-container">
+        <a href="index.html" class="homeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" width="30" height="30">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+        </a>
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+                Discover new experiences with AmbuFlow! <br>Get access to exclusive content and features. <br> Create your account.
+            </p>
+            <a href="index.html" class="homeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 24 20" width="30" height="30">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+            </a>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          
+          <div class="content">
+            
+            <h3>One of us ?</h3>
+            <p>
+                Welcome to our community
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+            
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+        
+      </div>
+      
     </div>
-
     <script>
-      // Toggle password visibility
-      function togglePassword() {
-        const password = document.getElementById("loginPassword");
-        const togglePassword = document.getElementById("togglePassword");
-
-        if (password.type === "password") {
-          password.type = "text";
-          togglePassword.classList.add("fa-eye-slash");
-          togglePassword.classList.remove("fa-eye");
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const container = document.querySelector(".container");
+    
+      sign_up_btn.addEventListener("click", () => {
+        container.classList.add("sign-up-mode");
+      });
+    
+      sign_in_btn.addEventListener("click", () => {
+        container.classList.remove("sign-up-mode");
+      });
+    
+      // Sign in form submission
+      document.querySelector(".sign-in-form").addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        // Get the input values
+        const username = document.querySelector(".sign-in-form input[type='text']").value;
+        const password = document.querySelector(".sign-in-form input[type='password']").value;
+    
+        // Dummy login logic for demo purposes
+        if (username === 'admin' && password === 'password') {
+          alert('Login successful!');
+          // Redirect to dashboard page
+          window.location.href = 'index.html';
         } else {
-          password.type = "password";
-          togglePassword.classList.add("fa-eye");
-          togglePassword.classList.remove("fa-eye-slash");
+          alert('Invalid username or password');
         }
+      });
+    
+      // Sign up form submission
+      document.querySelector(".sign-up-form").addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        // Get the input values
+        const username = document.querySelector(".sign-up-form input[type='text']").value;
+        const email = document.querySelector(".sign-up-form input[type='email']").value;
+        const password = document.querySelector(".sign-up-form input[type='password']").value;
+    
+        if (username === '' || email === '' || password === '') {
+          alert('Please fill in all fields');
+          return;
+        }
+    
+        // Dummy signup logic for demo purposes
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        localStorage.setItem('isLoggedIn', 'true');
+    
+        alert('Signup successful!'); // Redirect to dashboard page
+        window.location.href = 'index.html';
+      });
+    
+      // Toggle password visibility
+      function togglePassword(fieldId, icon) {
+        const field = document.getElementById(fieldId);
+        const isPassword = field.type === 'password';
+    
+        // Toggle between 'password' and 'text'
+        field.type = isPassword ? 'text' : 'password';
+    
+        // Change the icon class between eye and eye-slash
+        icon.classList.toggle('fa-lock-open', isPassword);
+        icon.classList.toggle('fa-lock', !isPassword);
       }
-
-      // Handle form submission
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
-
-          const loginUsername = document.getElementById("loginUsername").value;
-          const loginPassword = document.getElementById("loginPassword").value;
-
-          // Retrieve stored user data (mocked with localStorage for demonstration)
-          const storedUser = JSON.parse(localStorage.getItem("user"));
-
-          // Validate credentials
-          if (
-            storedUser &&
-            loginUsername === storedUser.username &&
-            loginPassword === storedUser.password
-          ) {
-            alert("Login successful! Redirecting to home page...");
-            localStorage.setItem("currentUser", loginUsername);
-            window.location.href = "index.html"; // Redirect to home page
-          } else {
-            alert("Invalid username or password.");
-          }
-        });
-
-      // Handle registration link click
-      document
-        .querySelector(".register-link")
-        .addEventListener("click", function () {
-          document.querySelector(".form-box.login").style.display = "none";
-          document.querySelector(".form-box.register").style.display = "block";
-        });
-
-      // Handle login link click
-      document
-        .querySelector(".login-link")
-        .addEventListener("click", function () {
-          document.querySelector(".form-box.register").style.display = "none";
-          document.querySelector(".form-box.login").style.display = "block";
-        });
+    
+      document.getElementById("toggle-password").addEventListener("click", function() {
+        togglePassword("password-input", this);
+      });
+    
+      document.getElementById("toggle-password-signup").addEventListener("click", function() {
+        togglePassword("password-input-signup", this);
+      });
+    
+      // Check password strength
+      function checkPasswordStrength() {
+        const password = document.querySelector(".sign-up-form input[type='password']").value;
+        const strengthWeak = document.getElementById('strength-weak');
+        const strengthMedium = document.getElementById('strength-medium');
+        const strengthStrong = document.getElementById('strength-strong');
+    
+        let strength = 0;
+    
+        if (password.length >= 8) strength++;
+        if (password.match(/[A-Z]/)) strength++;
+        if (password.match(/[a-z]/)) strength++;
+        if (password.match(/[0-9]/)) strength++;
+        if (password.match(/[^a-zA-Z0-9]/)) strength++;
+    
+        strengthWeak.className = '';
+        strengthMedium.className = '';
+        strengthStrong.className = '';
+    
+        if (strength >= 1) strengthWeak.className = 'weak';
+        if (strength >= 3) strengthMedium.className = 'medium';
+        if (strength >= 5) strengthStrong.className = 'strong';
+      }
+    
+      document.querySelector(".sign-up-form input[type='password']").addEventListener('input', checkPasswordStrength);
     </script>
+     <script>    const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+      
+      const colors = [
+        "#ffb56b",
+    "#fdaf69",
+    "#f89d63",
+    "#f59761",
+    "#ef865e",
+    "#ec805d",
+    "#e36e5c",
+    "#df685c",
+    "#d5585c",
+    "#d1525c",
+    "#c5415d",
+    "#c03b5d",
+    "#b22c5e",
+    "#ac265e",
+    "#9c155f",
+    "#950f5f",
+    "#830060",
+    "#7c0060",
+    "#680060",
+    "#60005f",
+    "#48005f",
+    "#3d005e"
+      ];
+      
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+      
+      window.addEventListener("mousemove", function(e){
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+      
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+      
+        circles.forEach(function (circle, index) {
+          circle.style.left = x - 12 + "px";
+          circle.style.top = y - 12 + "px";
+      
+          circle.style.scale = (circles.length - index) / circles.length;
+      
+          circle.x = x;
+          circle.y = y;
+      
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+      
+        requestAnimationFrame(animateCircles);
+      }
+      
+      animateCircles();</script>
   </body>
 </html>
