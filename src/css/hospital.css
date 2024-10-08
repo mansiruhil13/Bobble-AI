@@ -41,12 +41,6 @@ html::-webkit-scrollbar-thumb:window-inactive {
     font-size: 24px;
 }
 
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
 .navbar-links a {
     color: #ecf0f1;
     text-decoration: none;
