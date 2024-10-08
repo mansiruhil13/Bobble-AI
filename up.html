@@ -206,12 +206,11 @@
 
           const username = document.querySelector(".sign-in-form input[type='text']").value;
           const password = document.querySelector(".sign-in-form input[type='password']").value;
-
           // Remove the below block of code when the server is ready (Written just for testing)
           if (username === "username" && password === "123456") {
               console.log("Login successful!");
-              localStorage.setItem("userID", "7887892rdwed3")
               localStorage.setItem("JWTtoken", "dummyToken123"); // Example token
+              localStorage.setItem('userID', "test387398393")
               localStorage.setItem("login", "success");
               window.location.href = "hospital.html";
           }
@@ -239,7 +238,6 @@
               console.log("Server response:", result);
 
               localStorage.setItem("token", result.token);
-              localStorage.setItem("userID", result.id);
               console.log('Login successful!');
               window.location.href = "hospital.html";
           } catch (error) {
