@@ -33,7 +33,7 @@ body {
 
 header {
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: px solid #e5e7eb;
 }
 
 .container {
@@ -42,7 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3px;
+  padding: 15px;
 }
 
 .brand-name {
@@ -199,14 +199,14 @@ header {
 
 .features-container {
   display: flex;
-  border-radius: 50%;
   justify-content: center;
   /* Center the cards horizontally */
   align-items: center;
-  margin: 70px auto 70px auto;
+  margin: 70px auto ;
   max-width: 800px;
   width: 100%;
   gap: 80px;
+  flex-wrap: wrap;
 
 }
 
@@ -529,5 +529,17 @@ header {
   .buttons a {
     margin-left: 0px;
     padding: 5px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column; /* Stacks items on smaller screens */
+    gap: 20px;              /* Smaller gap for mobile */
+    align-items: center;     /* Center items in the column */
+  }
+
+  .quick-ft {
+    align-items: center;    /* Center quick-ft section */
   }
 }
