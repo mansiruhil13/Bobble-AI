@@ -174,57 +174,86 @@
         background-color: #C4D7FF;
         color: white;
         text-align: center;
-        padding: 10px 0;
-        /* Padding for the footer */
-
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-          /* End at original position */
-        }
+        margin-bottom: 20px;
       }
-
-      /* Letter Drop Animation */
-      @keyframes letterDrop {
-        0% {
-          transform: translateY(-100%);
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      .feature-card {
+        background: #abd4fc;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        transition: transform 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+      .feature-icon {
+        font-size: 40px;
+        color: #0560c2; /* Bootstrap primary color */
+        margin-bottom: 10px;
+      }
+    
+      @keyframes fadeIn {
+        from {
           opacity: 0;
+          transform: translateY(20px);
         }
-
-        50% {
-          transform: translateY(10px);
-          /* Slight bounce */
+        to {
           opacity: 1;
-        }
-
-        #thankYouMessage {
-          margin-top: 20px;
-          font-size: 18px;
-          color: green;
-          display: none;
-          /* Initially hidden */
-        }
-
-
-        100% {
           transform: translateY(0);
         }
-
-        .circle {
-          height: 35px;
-          width: 35px;
-          border-radius: 24px;
-          background-color: black;
-          position: fixed;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-          z-index: 99999999;
-          /* Stays on top of all elements */
-        }
-
       }
-  </style>
+      /* Logo Animation */
+      @keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+  }
+  50% {
+    transform: translateX(10px); /* Move slightly to the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+footer {
+  background-color: #C4D7FF;
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Padding for the footer */
+}
+
+/* Letter Drop Animation */
+@keyframes letterDrop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px); /* Slight bounce */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#thankYouMessage {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+  display: none; /* Initially hidden */
+}
+
+    </style>
 </head>
 
 <body>
@@ -417,68 +446,6 @@
     });
   });
 </script>
-
-<script>    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    const colors = [
-      "#ffb56b",
-      "#fdaf69",
-      "#f89d63",
-      "#f59761",
-      "#ef865e",
-      "#ec805d",
-      "#e36e5c",
-      "#df685c",
-      "#d5585c",
-      "#d1525c",
-      "#c5415d",
-      "#c03b5d",
-      "#b22c5e",
-      "#ac265e",
-      "#9c155f",
-      "#950f5f",
-      "#830060",
-      "#7c0060",
-      "#680060",
-      "#60005f",
-      "#48005f",
-      "#3d005e"
-    ];
-
-    circles.forEach(function (circle, index) {
-      circle.x = 0;
-      circle.y = 0;
-      circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.clientX;
-      coords.y = e.clientY;
-    });
-
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
-
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
-
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-      });
-
-      requestAnimationFrame(animateCircles);
-    }
-
-    animateCircles();</script>
 
   </footer>
 
