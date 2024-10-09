@@ -10,62 +10,6 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
-// Sign in form submission
-document
-  .querySelector(".sign-in-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    // Get the input values
-    const username = document.querySelector(
-      ".sign-in-form input[type='text']"
-    ).value;
-    const password = document.querySelector(
-      ".sign-in-form input[type='password']"
-    ).value;
-
-    // Dummy login logic for demo purposes
-    if (username === "admin" && password === "password") {
-      alert("Login successful!");
-      // Redirect to dashboard page
-      window.location.href = "index.html";
-    } else {
-      alert("Invalid username or password");
-    }
-  });
-
-// Sign up form submission
-document
-  .querySelector(".sign-up-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    // Get the input values
-    const username = document.querySelector(
-      ".sign-up-form input[type='text']"
-    ).value;
-    const email = document.querySelector(
-      ".sign-up-form input[type='email']"
-    ).value;
-    const password = document.querySelector(
-      ".sign-up-form input[type='password']"
-    ).value;
-
-    if (username === "" || email === "" || password === "") {
-      alert("Please fill in all fields");
-      return;
-    }
-
-    // Dummy signup logic for demo purposes
-    localStorage.setItem("username", username);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    localStorage.setItem("isLoggedIn", "true");
-
-    alert("Signup successful!");
-    // Redirect to dashboard page
-    window.location.href = "index.html";
-  });
-
 // Toggle password visibility
 function togglePassword(fieldId, icon) {
   const field = document.getElementById(fieldId);

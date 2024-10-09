@@ -709,25 +709,73 @@
     });
 
   </script>
-
 <script>
   // Back to Top Button functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+    document.addEventListener('DOMContentLoaded', function() {
+      var backToTopBtn = document.getElementById("backToTopBtn");
 
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
-  });
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
+</script>
+
+<!-- FAQ Popup Button -->
+<button id="faqButton" style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">FAQ</button>
+
+<!-- FAQ Popup -->
+<div id="faqPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-content">
+    <div class="faq-item">
+      <h3>What is AmbuFlow?</h3>
+      <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve patient care.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does real-time tracking work?</h3>
+      <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route optimization.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the service available 24/7?</h3>
+      <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How can hospitals benefit from AmbuFlow?</h3>
+      <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through our integrated system.</p>
+    </div>
+  </div>
+  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
+</div>
+
+<script>
+  // FAQ Popup functionality
+  const faqButton = document.getElementById('faqButton');
+  const faqPopup = document.getElementById('faqPopup');
+  const closeFaqPopup = document.getElementById('closeFaqPopup');
+
+  faqButton.addEventListener('click', () => {
+    faqPopup.style.display = 'block';
+  });
+
+  closeFaqPopup.addEventListener('click', () => {
+    faqPopup.style.display = 'none';
+  });
+
+  // Close popup when clicking outside
+  window.addEventListener('click', (event) => {
+    if (event.target === faqPopup) {
+      faqPopup.style.display = 'none';
+    }
+  });
 </script>
 
 </body>
