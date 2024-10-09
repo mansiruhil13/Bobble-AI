@@ -61,6 +61,7 @@
       display: flex;
       justify-content: center;
       margin-top: 10px;
+      flex-direction: row-reverse;
     }
 
     .star-rating input {
@@ -361,17 +362,18 @@
     <div class="feedback-box">
       <form id="feedback-box" action="#" method="post">
         <div class="star-rating" aria-label="Rating" role="radiogroup">
-          <input type="radio" id="star1" name="rating" value="1" />
-          <label for="star1" title="1 star">★</label>
-          <input type="radio" id="star2" name="rating" value="2" />
-          <label for="star2" title="2 stars">★</label>
-          <input type="radio" id="star3" name="rating" value="3" />
-          <label for="star3" title="3 stars">★</label>
-          <input type="radio" id="star4" name="rating" value="4" />
-          <label for="star4" title="4 stars">★</label>
           <input type="radio" id="star5" name="rating" value="5" />
           <label for="star5" title="5 stars">★</label>
-        </div>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4" title="4 stars">★</label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3" title="3 stars">★</label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2" title="2 stars">★</label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1" title="1 star">★</label>
+      </div>
+      
         <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required></textarea><br />
         <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
