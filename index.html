@@ -466,6 +466,56 @@
       pointer-events: none;
       z-index: 9999;
     }
+    /* Basic styles for the navbar */
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #007bff; /* Change this color as needed */
+}
+
+/* Mobile menu styles */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+    }
+    .menu.active {
+        display: flex; /* Show the menu when active */
+    }
+    .mobile-menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
   </style>
 
 </head>
@@ -505,41 +555,41 @@
   </div>
   <header class="sticky">
     <div class="container">
-
-      <div class="logo">
-        <div class="brand-name">
-          <span class="ambu">Ambu</span>Flow
+        <div class="logo">
+            <div class="brand-name">
+                <span class="ambu">Ambu</span>Flow
+            </div>
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
         </div>
-        <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-      </div>
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a href="features.html" id="features-link" onclick="changeContent('features')"><i
-                class="fa-solid fa-file"></i> Features</a>
-          </li>
-          <li>
-            <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
-              Team</a>
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
-                class="fa-solid fa-phone"></i> Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <button class="dark-mode-toggle" id="dark-mode-button">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="/" id="home-link" onclick="changeContent('home')" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li>
+                    <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
+                </li>
+                <li>
+                    <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
+                </li>
+                <li>
+                    <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button class="dark-mode-toggle" id="dark-mode-button">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <a href="login.html" class="login">Log in</a>
+            <a href="up.html" class="get-started">Get started</a>
+        </div>
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </div>
-  </header>
+</header>
+er>
 
 
 
