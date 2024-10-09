@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="preloaderStyle.css">
   <!--Updated to latest version-->
   <style>
     body {
@@ -169,6 +170,7 @@
         transform: translateX(10px);
         /* Move slightly to the right */
       }
+    }
 
       footer {
         background-color: #C4D7FF;
@@ -258,6 +260,19 @@ footer {
 
 <body>
   <header>
+    <!-- preloader -->
+    <div id="preloader">
+      <div class="wrapper">
+          <div class="box-wrap">
+              <div class="box one"></div>
+              <div class="box two"></div>
+              <div class="box three"></div>
+              <div class="box four"></div>
+              <div class="box five"></div>
+              <div class="box six"></div>
+          </div>
+      </div>
+  </div>
     <div class="container">
 
       <div class="logo">
@@ -496,6 +511,7 @@ footer {
       ">↑</button>
     </div>
 </footer>
+<script src="preloader.js"></script>
 
 <script>
   // Back to Top Button functionality
