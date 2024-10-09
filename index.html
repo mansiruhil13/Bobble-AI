@@ -23,7 +23,7 @@
       font-family: "Poppins", sans-serif;
       background-color: #f4f4f4;
       margin: 0;
-      padding: 0;
+      padding: 50px;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -49,6 +49,7 @@
       background-color: white;
       text-transform: uppercase;
       margin-right: 10px;
+      
     }
 
     nav ul li a:hover {
@@ -165,10 +166,12 @@
       margin-right: 20px;
       border-radius: 10px;
     }
-    header.sticky {
-    position: -webkit-sticky;
-    position: sticky;
+    .sticky {
+    display: flex;
+    position: fixed;
+    background-color: #C4D7FF;
     top: 0;
+    left: 0;
     z-index: 1000;
   }
     footer {
@@ -443,6 +446,7 @@
    }
    .container{
     width: 98vw;
+  
    }
 
    #contact-hvr:hover{
@@ -466,12 +470,80 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    /* FAQ Popup Styles */
+    #faqPopup {
+      font-family: Arial, sans-serif;
+    }
+
+    #faqPopup h2 {
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+      color: #34495e;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #7f8c8d;
+    }
+
+    #faqButton:hover {
+      background-color: #2c3e50;
+    }
+
+    /* FAQ Button Styles */
+    #faqButton {
+      position: fixed;
+      bottom: 20px;
+      right: 80px; /* Moved further to the left */
+      z-index: 1000;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #faqButton:hover {
+      background-color: #3498db;
+    }
+
+    /* Back to Top Button Styles */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #e81a1a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #c91515;
+    }
   </style>
 
 </head>
 
 <body>
   <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -627,7 +699,9 @@
             <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
             <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
             <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
+            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+            <!-- Add FAQ link here -->
+            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
           </ul>
         </div>
 
@@ -664,8 +738,7 @@
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
-        </div>
-        
+        </div>        
         <style>
           .hover-link {
             color: #000000;
@@ -708,7 +781,18 @@
     document.addEventListener('DOMContentLoaded', function() {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
-      backToTopBtn.addEventListener('click', function() {
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+
+      // Smooth scroll to top when button is clicked
+      backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -788,5 +872,52 @@
       document.getElementById("emailInput").value = '';
     });
 </script>
-</body>
-</html>
+
+<!-- FAQ Popup Button -->
+<button id="faqButton" style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">FAQ</button>
+
+<!-- FAQ Popup -->
+<div id="faqPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-content">
+    <div class="faq-item">
+      <h3>What is AmbuFlow?</h3>
+      <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve patient care.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does real-time tracking work?</h3>
+      <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route optimization.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the service available 24/7?</h3>
+      <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How can hospitals benefit from AmbuFlow?</h3>
+      <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through our integrated system.</p>
+    </div>
+  </div>
+  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
+</div>
+
+<script>
+  // FAQ Popup functionality
+  const faqButton = document.getElementById('faqButton');
+  const faqPopup = document.getElementById('faqPopup');
+  const closeFaqPopup = document.getElementById('closeFaqPopup');
+
+  faqButton.addEventListener('click', () => {
+    faqPopup.style.display = 'block';
+  });
+
+  closeFaqPopup.addEventListener('click', () => {
+    faqPopup.style.display = 'none';
+  });
+
+  // Close popup when clicking outside
+  window.addEventListener('click', (event) => {
+    if (event.target === faqPopup) {
+      faqPopup.style.display = 'none';
+    }
+  });
+</script>
