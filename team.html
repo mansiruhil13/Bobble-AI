@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--Updated to latest version-->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +26,7 @@
             color: black;
             text-decoration: none;
         }
-        
+
         .menu ul li a.active {
             color: white;
             background-color: #000;
@@ -115,87 +117,134 @@
             width: 100%;
         }
 
+        /* Added the hover animation on the footer social icons */
+        .social-icon {
+            transition: transform 0.3s ease;
+            /* Smooth transition effect */
+        }
+
+        .social-icon:hover {
+            transform: scale(1.3);
+            /* Scale the element to 1.3 times its size */
+        }
+
+        .fa-facebook:hover {
+            color: blue;
+            /* Icon color change to blue on hover */
+        }
+
+        a .social-icon .twitter:hover{
+            color: white;
+        }
+        .fa-x-twitter:hover {
+            color: black;
+            /* Icon color change to black on hover */
+        }
+
+        .fa-instagram:hover {
+            color: orangered;
+            /* Icon color change to orangered on hover */
+        }
+
+        .fa-linkedin-in:hover {
+            color: rgb(16, 13, 195);
+            /* Icon color change to rgb(16, 13, 195) on hover */
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         /* Logo Animation */
         @keyframes logoAnimation {
             0% {
-            opacity: 0;
-            transform: translateX(-100px); /* Start from the left */
+                opacity: 0;
+                transform: translateX(-100px);
+                /* Start from the left */
             }
+
             50% {
-            transform: translateX(10px); /* Move slightly to the right */
+                transform: translateX(10px);
+                /* Move slightly to the right */
             }
+
             100% {
-            opacity: 1;
-            transform: translateX(0); /* End at original position */
+                opacity: 1;
+                transform: translateX(0);
+                /* End at original position */
             }
         }
-    
+
         /* Letter Drop Animation */
         @keyframes letterDrop {
             0% {
-            transform: translateY(-100%);
-            opacity: 0;
+                transform: translateY(-100%);
+                opacity: 0;
             }
+
             50% {
-            transform: translateY(10px); /* Slight bounce */
-            opacity: 1;
+                transform: translateY(10px);
+                /* Slight bounce */
+                opacity: 1;
             }
+
             100% {
-            transform: translateY(0);
+                transform: translateY(0);
             }
         }
-    
+
         .logo {
             display: flex;
             align-items: center;
             animation: logoAnimation 1s ease forwards;
         }
-    
+
         .brand-name {
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-right: 10px; /* Space between the text and the logo image */
+            margin-right: 10px;
+            /* Space between the text and the logo image */
         }
-    
+
         .letter {
             display: inline-block;
             font-size: 2rem;
             animation: letterDrop 0.5s ease forwards;
             animation-delay: calc(var(--letter-index) * 0.1s);
         }
-    
+
         .red {
-            color: red; 
+            color: red;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="container">
+    <header>
+        <div class="container">
 
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
+            <div class="logo">
+                <div class="brand-name">
+                    <span class="letter red" style="--letter-index: 1;">A</span>
+                    <span class="letter red" style="--letter-index: 2;">m</span>
+                    <span class="letter red" style="--letter-index: 3;">b</span>
+                    <span class="letter red" style="--letter-index: 4;">u</span>
+                    <span class="letter" style="--letter-index: 5;">F</span>
+                    <span class="letter" style="--letter-index: 6;">l</span>
+                    <span class="letter" style="--letter-index: 7;">o</span>
+                    <span class="letter" style="--letter-index: 8;">w</span>
+                </div>
+                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                    style="width: 50px; height: auto" />
             </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-          </div>
 
         <nav class="menu">
             <ul>
@@ -259,73 +308,104 @@
 </div>
 
 
-<footer>
-
-
-
-    <div style="color: white; padding: 20px;">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Quick Links Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Quick Links</h3>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
-                    <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                    <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
-                    <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Information Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Contact Info</h3>
-                <p>123 Emergency Lane, Mumbai, India</p>
-                <p>Email:emergency@ambulanceservice.in</p>
-                <p>Phone: +91-911-1234567</p>
-            </div>
-
-            <!-- Social Media Links -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-                <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
-                <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
-                <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            </div>
-
-            <!-- Newsletter Subscription -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form action="#">
-                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
-                    <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div style="text-align: center; margin-top: 20px; border-top: 1px solid white; padding-top: 10px;">
-            <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-        </div>
+<footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
+    
+    <!-- Quick Links Section -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="about.html" class="footer-link">About Us</a></li>
+        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+        <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
+      </ul>
     </div>
-    
-    </footer>
-    
 
+    <!-- Contact Information Section -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+      <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+      <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
+      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
+    </div>
+
+    <!-- Modified the looks of the social icons -->
+        <!-- Social Media Links -->
+        <div style="text-align: center; min-width: 200px; color: black;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+              <a href="https://www.facebook.com" class="social-icon facebook"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.twitter.com" class="social-icon twitter"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com" class="social-icon instagram"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com" class="social-icon linkedin"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+    <!-- Newsletter Subscription -->
+    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+      <form action="#">
+        <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+        <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
+    <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" style="
+      background-color: #e81a1a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    ">↑</button>
+  </div>
 </footer>
 
-<script>
-    function changeContent(page) {
-        var links = document.querySelectorAll('.menu ul li a');
-        links.forEach(link => link.classList.remove('active'));
-        document.getElementById(page + '-link').classList.add('active');
-    }
+<!-- Add this style block in the <head> section or in your CSS file -->
+<style>
+  .hover-link {
+    color: #000000;
+    text-decoration: none;
+    margin-right: 10px;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
 
-    window.onload = function() {
-        document.getElementById('team-link').classList.add('active');
-    };
+  .hover-link:hover {
+    color: blue;
+    background: none;
+  }
+</style>
+
+<!-- Add this script block just before the closing </body> tag -->
+<script>
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 </script>
 
 </body>
+
 </html>
