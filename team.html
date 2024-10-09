@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--Updated to latest version-->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +26,7 @@
             color: black;
             text-decoration: none;
         }
-        
+
         .menu ul li a.active {
             color: white;
             background-color: #000;
@@ -115,87 +117,134 @@
             width: 100%;
         }
 
+        /* Added the hover animation on the footer social icons */
+        .social-icon {
+            transition: transform 0.3s ease;
+            /* Smooth transition effect */
+        }
+
+        .social-icon:hover {
+            transform: scale(1.3);
+            /* Scale the element to 1.3 times its size */
+        }
+
+        .fa-facebook:hover {
+            color: blue;
+            /* Icon color change to blue on hover */
+        }
+
+        a .social-icon .twitter:hover{
+            color: white;
+        }
+        .fa-x-twitter:hover {
+            color: black;
+            /* Icon color change to black on hover */
+        }
+
+        .fa-instagram:hover {
+            color: orangered;
+            /* Icon color change to orangered on hover */
+        }
+
+        .fa-linkedin-in:hover {
+            color: rgb(16, 13, 195);
+            /* Icon color change to rgb(16, 13, 195) on hover */
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         /* Logo Animation */
         @keyframes logoAnimation {
             0% {
-            opacity: 0;
-            transform: translateX(-100px); /* Start from the left */
+                opacity: 0;
+                transform: translateX(-100px);
+                /* Start from the left */
             }
+
             50% {
-            transform: translateX(10px); /* Move slightly to the right */
+                transform: translateX(10px);
+                /* Move slightly to the right */
             }
+
             100% {
-            opacity: 1;
-            transform: translateX(0); /* End at original position */
+                opacity: 1;
+                transform: translateX(0);
+                /* End at original position */
             }
         }
-    
+
         /* Letter Drop Animation */
         @keyframes letterDrop {
             0% {
-            transform: translateY(-100%);
-            opacity: 0;
+                transform: translateY(-100%);
+                opacity: 0;
             }
+
             50% {
-            transform: translateY(10px); /* Slight bounce */
-            opacity: 1;
+                transform: translateY(10px);
+                /* Slight bounce */
+                opacity: 1;
             }
+
             100% {
-            transform: translateY(0);
+                transform: translateY(0);
             }
         }
-    
+
         .logo {
             display: flex;
             align-items: center;
             animation: logoAnimation 1s ease forwards;
         }
-    
+
         .brand-name {
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-right: 10px; /* Space between the text and the logo image */
+            margin-right: 10px;
+            /* Space between the text and the logo image */
         }
-    
+
         .letter {
             display: inline-block;
             font-size: 2rem;
             animation: letterDrop 0.5s ease forwards;
             animation-delay: calc(var(--letter-index) * 0.1s);
         }
-    
+
         .red {
-            color: red; 
+            color: red;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="container">
+    <header>
+        <div class="container">
 
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
+            <div class="logo">
+                <div class="brand-name">
+                    <span class="letter red" style="--letter-index: 1;">A</span>
+                    <span class="letter red" style="--letter-index: 2;">m</span>
+                    <span class="letter red" style="--letter-index: 3;">b</span>
+                    <span class="letter red" style="--letter-index: 4;">u</span>
+                    <span class="letter" style="--letter-index: 5;">F</span>
+                    <span class="letter" style="--letter-index: 6;">l</span>
+                    <span class="letter" style="--letter-index: 7;">o</span>
+                    <span class="letter" style="--letter-index: 8;">w</span>
+                </div>
+                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                    style="width: 50px; height: auto" />
             </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-          </div>
 
         <nav class="menu">
             <ul>
@@ -282,14 +331,21 @@
       <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
     </div>
 
-    <!-- Social Media Links -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-      <a href="https://www.facebook.com" class="hover-link"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-      <a href="https://www.twitter.com" class="hover-link"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br>
-      <a href="https://www.instagram.com" class="hover-link"><i class="fab fa-instagram"></i> Instagram</a><br>
-      <a href="https://www.linkedin.com" class="hover-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
+    <!-- Modified the looks of the social icons -->
+        <!-- Social Media Links -->
+        <div style="text-align: center; min-width: 200px; color: black;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+              <a href="https://www.facebook.com" class="social-icon facebook"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.twitter.com" class="social-icon twitter"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com" class="social-icon instagram"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com" class="social-icon linkedin"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
 
     <!-- Newsletter Subscription -->
     <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
@@ -351,4 +407,5 @@
 </script>
 
 </body>
+
 </html>

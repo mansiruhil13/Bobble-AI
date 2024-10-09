@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AmbuFlow</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: 2px solid #000;
+      border-radius: 12px;
+      color: black;
+      font-weight: bold;
+      background-color: white;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+
+    nav ul li a:hover {
+      background-color: #f0f0f0;
+    }
+    nav ul li a:active {
+      background-color: #000;
+      color: white;
+    }
+    nav ul li a i {
+      margin-right: 8px;
+    }
+    a.active,a:hover{
+      background: #1b9bff ;
+      transition: .5s;
+    }
+    #home-link:active {
+      background-color: black;
+      color: white;
+    }
+    .content {
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: auto auto;
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .feature {
+      background-color: #e7f3fe;
+      align-items: center;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+
+    .feature h2 {
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #555;
+    }
+
+    .team-feature,
+    .contact-feature {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      grid-column: 1 / -1;
+    }
+
+    .team-feature {
+      background-color: #e7ffe7;
+    }
+
+    .contact-feature {
+      background-color: #f2e4aa;
+    }
+
+    .team-feature img,
+    .contact-feature img {
+      width: 150px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+    header.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+    footer {
+      background-color: #C4D7FF;
+      color: #f3f4f6;
+      text-align: center;
+      padding: 15px 0;
+      width: 100%;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: #333;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display:none;
+
+    }
+    #check{
+      display: none;
+    }
+@media (max-width:966px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+}
+@media (max-width:858px){
+
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100% ;
+    height: 100vh;
+    background: #77a1cc;
+    top: 85px;
+    left:-200%;
+    text-align: center;
+    transition:all .5s ;
+    height: 80px;
+  }
+  nav ul li{
+    display: block;
+  }
+  nav ul li a {
+    display: block;
+    font-size: 10px;
+  }
+  a:hover,a.active{
+    background: none;
+    color:#000000 ;
+  }
+  #check:checked ~ ul{
+    left:0;
+  }
+}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start from the left */
+      }
+      50% {
+        transform: translateX(10px); /* Move slightly to the right */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+      }
+    }
+
+    /* Letter Drop Animation */
+    @keyframes letterDrop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(10px); /* Slight bounce */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      animation: logoAnimation 1s ease forwards;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 10px; /* Space between the text and the logo image */
+    }
+
+    .letter {
+      display: inline-block;
+      font-size: 2rem;
+      animation: letterDrop 0.5s ease forwards;
+    }
+
+    .red {
+      color: red; /* Change the color of letters in this class to red */
+    }
+
+
+    /* faq section styles */
+    .faq-section{
+      background-color: #e7f3fe;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    
+
+    .faq-h2{
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .faqs{
+      width: 100%;
+    }
+
+    .faq {
+    margin-bottom: 15px;
+    width: 100%; /* Full width by default */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+
+   .faq-question {
+    background-color: #e7ffe7;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .faq-question::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #333; /* Downward pointing wide "V" */
+    transition: transform 0.3s ease;
+
+    margin-right: 10px;
+    }
+
+    .faq.active .faq-question::after {
+    border-top: none;
+    border-bottom: 8px solid #333; /* Upward pointing wide "V" */
+    }
+
+    .faq-answer {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide content when not visible */
+    padding: 0 10px;
+    background-color: #fff;
+    transition: max-height 0.3s ease; /* Smooth transition */
+    border-top: 1px solid #ccc;
+    }
+
+    .faq-answer p {
+    margin-bottom: 10px;
+    }
+
+   .faq.active .faq-answer {
+    max-height: 200px; /* Set to a sufficient height to display content */
+    padding: 10px; /* Adds padding when expanded */
+   }
+    .logo a{
+      text-decoration: none;
+   }
+   .logo img:hover{
+    background-color: white;
+   }
+   .container{
+    width: 98vw;
+   }
+
+   #contact-hvr:hover{
+    background: none;
+   }
+
+  </style>
+</head>
+
+<body>
+  <header class="sticky">
+    <div class="container">
+
+      <div class="logo">
+        <div class="brand-name">
+          <span class="letter red" style="--letter-index: 1">A</span>
+          <span class="letter red" style="--letter-index: 2">m</span>
+          <span class="letter red" style="--letter-index: 3">b</span>
+          <span class="letter red" style="--letter-index: 4">u</span>
+          <span class="letter" style="--letter-index: 5">F</span>
+          <span class="letter" style="--letter-index: 6">l</span>
+          <span class="letter" style="--letter-index: 7">o</span>
+          <span class="letter" style="--letter-index: 8">w</span>
+        </div>
+        <a href="./index.html"
+          ><img
+            src="images/logo2-w.webp"
+            alt="Ambulance Monitoring System Logo"
+            style="width: 50px; height: auto"
+        /></a>
+      </div>
+
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="index.html" id="home-link"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="features.html" id="features-link" class="active"
+              ><i class="fa-solid fa-file"></i> Features</a
+            >
+          </li>
+          <li>
+            <a href="team.html" id="team-link"
+              ><i class="fa-solid fa-user-group"></i> Team</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" id="contact-link"
+              ><i class="fa-solid fa-clipboard"></i> Contact</a
+            >
+          </li>
+          <li>
+            <a href="Feedback.html" id="team-link"
+              ><i class="fa-solid fa-user-group"></i> Feedback</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="buttons">
+        <a href="login.html" class="login">Log in</a>
+        <a href="up.html" class="get-started">Get started</a>
+      </div>
+    </div>
+  </header>
+  <div class="content" id="main-content" >
+    <h1>SOS/ Quick Emergency Response</h1>
+    <!-- <div class="grid">
+      <div class="feature">
+        <img src="images/emergency-w.jpg" alt="Emergency Response" />
+        <h2>Quick Emergency Response</h2>
+        <p>
+          Ensures patients receive timely medical assistance by locating the
+          nearest hospitals and ambulances.
+        </p>
+      </div>
+    </div> -->
+
+<!--Location -->
+
+    <h1>Fetch Location</h1>
+    <div style="padding-left: 550px;">
+      <button onclick="getLocation()"><h1>locate me<h1></button>
+    </div>
+    <p id="location"></p>
+    <p id="address"></p>
+    <h1>Call for help</h1>
+    <div style="display: flex; gap: 150px; padding-left: 350px;">
+      <a href="tel:100"><img src="police.svg" alt="" style="height: 100px;"><p style="color: #000;">Police<p></p></a>
+      <a href="tel:101"><img src="ambulance.svg" alt="" style="height: 100px;"><p style="color: #000;">Ambulance<p></p></a>
+      <a href="tel:101"><img src="hospital.svg" alt="" style="height: 100px;"><p style="color: #000;">Nearest Hospital<p></p></a>
+    </div>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            document.getElementById("location").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
+                .then(response => response.json())
+                .then(data => {
+                    var locationName = data.display_name;
+                    document.getElementById("address").innerHTML = "Location Name: " + locationName;
+                })
+                .catch(error => {
+                    document.getElementById("address").innerHTML = "Unable to retrieve location name.";
+                });
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("location").innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("location").innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("location").innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+  </div>
+
+ <!--Location-->
+
+
+
+  <footer style= " color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Quick Links Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
+          </ul>
+        </div>
+  
+        <!-- Contact Information Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+        
+          <a href="https://www.facebook.com" class="hover-link">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a><br>
+        
+          <a href="https://www.twitter.com" class="hover-link">
+            <i class="fa-brands fa-x-twitter"></i> Twitter
+          </a><br>
+        
+          <a href="https://www.instagram.com" class="hover-link">
+            <i class="fab fa-instagram"></i> Instagram
+          </a><br>
+        
+          <a href="https://www.linkedin.com" class="hover-link">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+        
+        <style>
+          .hover-link {
+            color: #000000;
+            text-decoration: none;
+            margin-right: 10px;
+            background:none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+          }
+        
+          .hover-link:hover {
+            color: blue;
+            background:none;
+          }
+        </style>
+        
+        
+
+        <!-- Newsletter Subscription -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
+        </div>
+        
+
+      </div>
+      
+    </div>
+    <hr>
+    <!-- Copyright Section -->
+    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+    
+  </footer>
+  
+  <script>
+    function changeContent(page) {
+      var links = document.querySelectorAll(".menu ul li a");
+      links.forEach((link) => link.classList.remove("active"));
+      document.getElementById(page + "-link").classList.add("active");
+    }
+
+    window.onload = function () {
+      document.getElementById("home-link").classList.add("active");
+
+      // Add delay to each letter drop
+      const letters = document.querySelectorAll('.letter');
+      letters.forEach((letter, index) => {
+        letter.style.animationDelay = `${index * 0.1}s`;
+      });
+    };
+
+    const thankYouMessage = document.getElementById("thankYouMessage");
+  const form = document.getElementById("subscribeForm");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+
+    // Show Thank You Message after subscribing
+    thankYouMessage.style.display = 'block';
+
+    // Optionally clear the input field after subscribing
+    document.getElementById("emailInput").value = '';
+  });
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const faqButtons = document.querySelectorAll('.faq-question');
+
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const faq = button.parentElement;
+            const answer = faq.querySelector('.faq-answer');
+
+            // Toggle active class
+            faq.classList.toggle('active');
+
+            // Control the max-height for slide effect
+            if (faq.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
+            } else {
+                answer.style.maxHeight = null; // Remove max-height to hide
+            }
+        });
+    });
+    });
+
+
+  </script>
+</body>
+</html>
