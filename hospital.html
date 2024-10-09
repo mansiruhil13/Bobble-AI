@@ -10,12 +10,68 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+    /* Add this to your CSS file */
+
+    .toaster {
+        position: fixed;
+        top: 20px; /* Position it from the top */
+        right: 20px; /* Position it from the right */
+        background-color: #4caf50; /* Green background for success */
+        color: white; /* Text color */
+        padding: 16px;
+        border-radius: 5px;
+        z-index: 1000;
+        opacity: 0; /* Start with opacity 0 */
+        transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    }
+
+    .show {
+        animation: bounceIn 0.5s forwards; /* Bounce in animation */
+        opacity: 1; /* Make it visible */
+    }
+
+    .hidden {
+        animation: bounceOut 0.5s forwards; /* Bounce out animation */
+        opacity: 0; /* Fade out */
+    }
+
+    @keyframes bounceIn {
+        0% {
+            transform: translate(0, -100%); /* Start from above */
+            opacity: 0; /* Fully transparent */
+        }
+        60% {
+            transform: translate(0, 10%); /* Bounce down */
+        }
+        100% {
+            transform: translate(0, 0); /* Final position */
+            opacity: 1; /* Fully visible */
+        }
+    }
+
+    @keyframes bounceOut {
+        0% {
+            transform: translate(0, 0); /* Current position */
+            opacity: 1; /* Fully visible */
+        }
+        60% {
+            transform: translate(0, -10%); /* Bounce up slightly */
+        }
+        100% {
+            transform: translate(0, -100%); /* Move up out of view */
+            opacity: 0; /* Fully transparent */
+        }
+    }
+
+  </style>
 <body>
+    <div id="toaster" class="toaster hidden"></div>
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <a href="./index.html"><img src="./images/manageLogo.png"></img></a>
-                <a href="./index.html"><h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2></a>
+                <a href="./hospital.html"><img src="./images/manageLogo.png"></img></a>
+                <a href="./hospital.html"><h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2></a>
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
@@ -53,6 +109,28 @@
                 // Action to manage drivers, such as opening a page or modal
                 alert('Manage Drivers button clicked!');
                 // Example: window.location.href = 'manage-drivers.html';
+            }
+
+            // Function to show toaster notification
+            function showToaster(message) {
+                    const toaster = document.getElementById("toaster");
+                    toaster.textContent = message;
+                    toaster.classList.remove("hidden");
+                    toaster.classList.add("show");
+
+                    if(!localStorage.getItem('login')) {
+                        toaster.classList.add("hidden");
+                    }
+                    // Hide the toaster after 3 seconds
+                    setTimeout(() => {
+                    toaster.classList.remove("show");
+                    toaster.classList.add("hidden");
+                }, 3000);
+            }
+
+            if (localStorage.getItem('login') == 'success'){
+                showToaster('Login Successfull');
+                localStorage.removeItem('login');
             }
 
             let flag = false
@@ -234,6 +312,8 @@
         function logout() {
             const confirmLogout = confirm('Are you sure you want to logout?');
             if (confirmLogout) {
+                localStorage.removeItem('userID');
+                localStorage.removeItem('JWTtoken');
                 window.location.href = 'index.html';
                 alert("Logged out successfully!");
             }
