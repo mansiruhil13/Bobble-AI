@@ -347,97 +347,6 @@
       /* Change the color of letters in this class to red */
     }
 
-
-    /* faq section styles */
-    .faq-section {
-      background-color: #e7f3fe;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-
-
-    .faq-h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .faqs {
-      width: 100%;
-    }
-
-    .faq {
-      margin-bottom: 15px;
-      width: 100%;
-      /* Full width by default */
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
-      padding: 10px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #333;
-      /* Downward pointing wide "V" */
-      transition: transform 0.3s ease;
-
-      margin-right: 10px;
-    }
-
-    .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
-    }
-
-    .faq-answer {
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
-      padding: 0 10px;
-      background-color: #fff;
-      transition: max-height 0.3s ease;
-      /* Smooth transition */
-      border-top: 1px solid #ccc;
-    }
-
-    .faq-answer p {
-      margin-bottom: 10px;
-    }
-
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
     .logo a{
       text-decoration: none;
    }
@@ -541,40 +450,7 @@
 </head>
 
 <body>
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+
   <header class="sticky">
     <div class="container">
 
@@ -686,6 +562,8 @@
       </div>
     </div>
   </div>
+
+
  
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
@@ -831,28 +709,6 @@
     });
 
   </script>
-    <!-- Copyright Section -->
-    <div style="
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-          ">
-      <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
-    </div>
-  </footer>
-
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top">
-    <i class="fas fa-chevron-up" style="font-size: 30px;"></i>
-  </button>
-
-  <script src="script.js"></script>
-
-
-  </script>
-
 <script>
   // Back to Top Button functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -921,3 +777,6 @@
     }
   });
 </script>
+
+</body>
+</html>
