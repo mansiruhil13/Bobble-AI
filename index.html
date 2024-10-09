@@ -347,97 +347,6 @@
       /* Change the color of letters in this class to red */
     }
 
-
-    /* faq section styles */
-    .faq-section {
-      background-color: #e7f3fe;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-
-
-    .faq-h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .faqs {
-      width: 100%;
-    }
-
-    .faq {
-      margin-bottom: 15px;
-      width: 100%;
-      /* Full width by default */
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
-      padding: 10px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #333;
-      /* Downward pointing wide "V" */
-      transition: transform 0.3s ease;
-
-      margin-right: 10px;
-    }
-
-    .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
-    }
-
-    .faq-answer {
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
-      padding: 0 10px;
-      background-color: #fff;
-      transition: max-height 0.3s ease;
-      /* Smooth transition */
-      border-top: 1px solid #ccc;
-    }
-
-    .faq-answer p {
-      margin-bottom: 10px;
-    }
-
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
     .logo a{
       text-decoration: none;
    }
@@ -536,6 +445,24 @@
     #backToTopBtn:hover {
       background-color: #c91515;
     }
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(71, 252, 255, 0.3), rgba(0, 157, 255, 0.3));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
 
 </head>
@@ -613,8 +540,6 @@
     </div>
   </header>
 
-
-
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
@@ -686,7 +611,7 @@
       </div>
     </div>
   </div>
- 
+
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
@@ -831,52 +756,24 @@
     });
 
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
-
-
-    <!-- Copyright Section -->
-    <div style="
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-          ">
-      <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
-    </div>
-  </footer>
-
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top">
-    <i class="fas fa-chevron-up" style="font-size: 30px;"></i>
-  </button>
-
-  <script src="script.js"></script>
-
-
-  </script>
-
 <script>
   // Back to Top Button functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+    document.addEventListener('DOMContentLoaded', function() {
+      var backToTopBtn = document.getElementById("backToTopBtn");
 
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
-  });
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-  });
 </script>
 
 <!-- FAQ Popup Button -->
@@ -928,3 +825,43 @@
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    circles.forEach(function (circle) {
+      circle.x = 0;
+      circle.y = 0;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.pageX;
+      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = `${x - 12}px`;
+        circle.style.top = `${y - 12}px`;
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        circle.x = x;
+        circle.y = y;
+
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  });
+</script>
+</body>
+</html>
