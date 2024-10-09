@@ -216,15 +216,14 @@ header {
   /* Initial background color */
   padding: 15px;
   text-align: center;
-
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.2);
   flex: 1;
   max-width: 300px;
   height: 300px;
   /* Set the same height and width for round shape */
   border-radius: 50%;
   /* Make the card round */
-  border: 1px solid gold;
+  border: 1px solid rgb(234, 232, 232);
   position: relative;
   perspective: 1000px;
   scroll-behavior: smooth;
@@ -234,7 +233,7 @@ header {
 
 .team-features:hover,
 .contact-features:hover {
-  background-color: #CDC1FF;
+  background-color:#d5e8fa;
   /* Background color on hover */
   transform: translateY(-10px);
 }
@@ -312,11 +311,11 @@ header {
   display: inline-block;
   padding: 8px 16px;
   /* Reduce padding for a smaller button */
-  background-color: #28a745;
+  background-color: #2980b9;
   /* Keep background color green */
   color: #fff;
   text-align: center;
-  border: 2px solid #218838;
+  border: 2px solid #226c9d;
   /* Add a border with a darker green color */
   border-radius: 4px;
   /* Reduce border radius for a less rounded button */
@@ -327,9 +326,9 @@ header {
 }
 
 .button:hover {
-  background-color: #218838;
+  background-color: #2980b9;
   /* Darker green on hover */
-  border-color: #1e7e34;
+  border-color: #226c9d;
   /* Change border color on hover */
   transform: scale(1.05);
   /* Slightly enlarge on hover */
