@@ -23,7 +23,7 @@
       font-family: "Poppins", sans-serif;
       background-color: #f4f4f4;
       margin: 0;
-      padding: 0;
+      padding: 50px;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -49,6 +49,7 @@
       background-color: white;
       text-transform: uppercase;
       margin-right: 10px;
+      
     }
 
     nav ul li a:hover {
@@ -165,10 +166,12 @@
       margin-right: 20px;
       border-radius: 10px;
     }
-    header.sticky {
-    position: -webkit-sticky;
-    position: sticky;
+    .sticky {
+    display: flex;
+    position: fixed;
+    background-color: #C4D7FF;
     top: 0;
+    left: 0;
     z-index: 1000;
   }
     footer {
@@ -344,97 +347,6 @@
       /* Change the color of letters in this class to red */
     }
 
-
-    /* faq section styles */
-    .faq-section {
-      background-color: #e7f3fe;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-
-
-    .faq-h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .faqs {
-      width: 100%;
-    }
-
-    .faq {
-      margin-bottom: 15px;
-      width: 100%;
-      /* Full width by default */
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
-      padding: 10px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #333;
-      /* Downward pointing wide "V" */
-      transition: transform 0.3s ease;
-
-      margin-right: 10px;
-    }
-
-    .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
-    }
-
-    .faq-answer {
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
-      padding: 0 10px;
-      background-color: #fff;
-      transition: max-height 0.3s ease;
-      /* Smooth transition */
-      border-top: 1px solid #ccc;
-    }
-
-    .faq-answer p {
-      margin-bottom: 10px;
-    }
-
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
     .logo a{
       text-decoration: none;
    }
@@ -443,6 +355,7 @@
    }
    .container{
     width: 98vw;
+  
    }
 
    #contact-hvr:hover{
@@ -466,43 +379,78 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    /* FAQ Popup Styles */
+    #faqPopup {
+      font-family: Arial, sans-serif;
+    }
+
+    #faqPopup h2 {
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+      color: #34495e;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #7f8c8d;
+    }
+
+    #faqButton:hover {
+      background-color: #2c3e50;
+    }
+
+    /* FAQ Button Styles */
+    #faqButton {
+      position: fixed;
+      bottom: 20px;
+      right: 80px; /* Moved further to the left */
+      z-index: 1000;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #faqButton:hover {
+      background-color: #3498db;
+    }
+
+    /* Back to Top Button Styles */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #e81a1a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #c91515;
+    }
   </style>
 
 </head>
 
 <body>
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+
   <header class="sticky">
     <div class="container">
 
@@ -612,6 +560,8 @@
       </div>
     </div>
   </div>
+
+
  
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
@@ -625,7 +575,9 @@
             <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
             <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
             <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
+            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+            <!-- Add FAQ link here -->
+            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
           </ul>
         </div>
 
@@ -662,8 +614,7 @@
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
-        </div>
-        
+        </div>        
         <style>
           .hover-link {
             color: #000000;
@@ -706,7 +657,18 @@
     document.addEventListener('DOMContentLoaded', function() {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
-      backToTopBtn.addEventListener('click', function() {
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+
+      // Smooth scroll to top when button is clicked
+      backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -745,32 +707,6 @@
     });
 
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
-
-
-    <!-- Copyright Section -->
-    <div style="
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-          ">
-      <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
-    </div>
-  </footer>
-
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top">
-    <i class="fas fa-chevron-up" style="font-size: 30px;"></i>
-  </button>
-
-  <script src="script.js"></script>
-
-
-  </script>
 
 <script>
   // Back to Top Button functionality
@@ -790,9 +726,7 @@
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-  });
 </script>
-
 <script>
  // Dark Mode Funcationality
  const darkModeButton = document.getElementById('dark-mode-button');
@@ -807,4 +741,5 @@ darkModeButton.addEventListener('click', () => {
     icon.classList.toggle('fa-sun');
 });
 </script>
-
+</body>
+</html>
