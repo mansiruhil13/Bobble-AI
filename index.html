@@ -1,650 +1,785 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AmbuFlow</title>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="src/css/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-  <!-- Updated to latest version -->
 
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-    nav ul li a {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      text-decoration: none;
-      border: 2px solid #000;
-      border-radius: 12px;
-      color: black;
-      font-weight: bold;
-      background-color: white;
-      text-transform: uppercase;
-      margin-right: 10px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AmbuFlow</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+    <!-- Updated to latest version -->
 
-    nav ul li a:hover {
-      background-color: #f0f0f0;
-    }
-    nav ul li a:active {
-      background-color: #000;
-      color: white;
-    }
-    nav ul li a i {
-      margin-right: 8px;
-    }
-    a.active,a:hover{
-      background: #1b9bff ;
-      transition: .5s;
-    }
-    #home-link:active {
-      background-color: black;
-      color: white;
-    }
-    .content {
-      margin: 20px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      flex-grow: 1;
-    }
-
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows: auto auto;
-      gap: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .feature {
-      background-color: #e7f3fe;
-      align-items: center;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .feature img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border-radius: 50%;
-    }
-
-    .feature h2 {
-      color: #2980b9;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #555;
-    }
-
-    .team-feature,
-    .contact-feature {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
-
-    .team-feature {
-      background-color: #e7ffe7;
-    }
-
-    .contact-feature {
-      background-color: #f2e4aa;
-    }
-
-    .team-feature img,
-    .contact-feature img {
-      width: 150px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-    }
-    header.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-    footer {
-      background-color: #C4D7FF;
-      color: #f3f4f6;
-      text-align: center;
-      padding: 15px 0;
-      width: 100%;
-    }
-    .checkbtn{
-      font-size: 30px;
-      color: #333;
-      float: right;
-      line-height: 80px;
-      margin-right: 40px;
-      cursor: pointer;
-      display:none;
-
-    }
-    #check{
-      display: none;
-    }
-@media (max-width:966px){
-  label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-  }
-
-}
-@media (max-width:858px){
-
-  .checkbtn{
-    display: block;
-  }
-  ul{
-    position: fixed;
-    width: 100% ;
-    height: 100vh;
-    background: #77a1cc;
-    top: 85px;
-    left:-200%;
-    text-align: center;
-    transition:all .5s ;
-    height: 80px;
-  }
-  nav ul li{
-    display: block;
-  }
-  nav ul li a {
-    display: block;
-    font-size: 10px;
-  }
-  a:hover,a.active{
-    background: none;
-    color:#000000 ;
-  }
-  #check:checked ~ ul{
-    left:0;
-  }
-}
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
-      to {
-        opacity: 1;
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
       }
-    }
 
-    /* Logo Animation */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px); /* Start from the left */
+      nav ul li a {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 2px solid #000;
+        border-radius: 12px;
+        color: black;
+        font-weight: bold;
+        background-color: white;
+        text-transform: uppercase;
+        margin-right: 10px;
       }
-      50% {
-        transform: translateX(10px); /* Move slightly to the right */
+
+      nav ul li a:hover {
+        background-color: #f0f0f0;
       }
-      100% {
-        opacity: 1;
-        transform: translateX(0); /* End at original position */
+
+      nav ul li a:active {
+        background-color: #000;
+        color: white;
       }
-    }
 
-    /* Letter Drop Animation */
-    @keyframes letterDrop {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
+      nav ul li a i {
+        margin-right: 8px;
       }
-      50% {
-        transform: translateY(10px); /* Slight bounce */
-        opacity: 1;
+
+      a.active,
+      a:hover {
+        background: #1b9bff;
+        transition: .5s;
       }
-      100% {
-        transform: translateY(0);
+
+      #home-link:active {
+        background-color: black;
+        color: white;
       }
-    }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      animation: logoAnimation 1s ease forwards;
-    }
+      .content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        flex-grow: 1;
+      }
 
-    .brand-name {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 10px; /* Space between the text and the logo image */
-    }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-    .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-    }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-rows: auto auto;
+        gap: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
 
-    .red {
-      color: red; /* Change the color of letters in this class to red */
-    }
+      .feature {
+        background-color: #e7f3fe;
+        align-items: center;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .feature img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 50%;
+      }
+
+      .feature h2 {
+        color: #2980b9;
+        margin-bottom: 10px;
+      }
+
+      .feature p {
+        color: #555;
+      }
+
+      .team-feature,
+      .contact-feature {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        grid-column: 1 / -1;
+      }
+
+      .team-feature {
+        background-color: #e7ffe7;
+      }
+
+      .contact-feature {
+        background-color: #f2e4aa;
+      }
+
+      .team-feature img,
+      .contact-feature img {
+        width: 150px;
+        height: auto;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      header.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      footer {
+        background-color: #C4D7FF;
+        color: #f3f4f6;
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+      }
+
+      .checkbtn {
+        font-size: 30px;
+        color: #333;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+
+      }
+
+      #check {
+        display: none;
+      }
+
+      @media (max-width:966px) {
+        label.logo {
+          font-size: 30px;
+          padding-left: 50px;
+        }
+
+      }
+
+      @media (max-width:858px) {
+
+        .checkbtn {
+          display: block;
+        }
+
+        ul {
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background: #77a1cc;
+          top: 85px;
+          left: -200%;
+          text-align: center;
+          transition: all .5s;
+          height: 80px;
+        }
+
+        nav ul li {
+          display: block;
+        }
+
+        nav ul li a {
+          display: block;
+          font-size: 10px;
+        }
+
+        a:hover,
+        a.active {
+          background: none;
+          color: #000000;
+        }
+
+        #check:checked~ul {
+          left: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Logo Animation */
+      @keyframes logoAnimation {
+        0% {
+          opacity: 0;
+          transform: translateX(-100px);
+          /* Start from the left */
+        }
+
+        50% {
+          transform: translateX(10px);
+          /* Move slightly to the right */
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+          /* End at original position */
+        }
+      }
+
+      /* Letter Drop Animation */
+      @keyframes letterDrop {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+
+        50% {
+          transform: translateY(10px);
+          /* Slight bounce */
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        animation: logoAnimation 1s ease forwards;
+      }
+
+      .brand-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 10px;
+        /* Space between the text and the logo image */
+      }
+
+      .letter {
+        display: inline-block;
+        font-size: 2rem;
+        animation: letterDrop 0.5s ease forwards;
+      }
+
+      .red {
+        color: red;
+        /* Change the color of letters in this class to red */
+      }
 
 
-    /* faq section styles */
-    .faq-section{
-      background-color: #e7f3fe;
+      /* faq section styles */
+      .faq-section {
+        background-color: #e7f3fe;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-    
+      }
 
-    .faq-h2{
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
 
-    .faqs{
-      width: 100%;
-    }
 
-    .faq {
-    margin-bottom: 15px;
-    width: 100%; /* Full width by default */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    }
+      .faq-h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
 
-   .faq-question {
-    background-color: #e7ffe7;
-    color: #333;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+      .faqs {
+        width: 100%;
+      }
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+      .faq {
+        margin-bottom: 15px;
+        width: 100%;
+        /* Full width by default */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+      }
 
-    .faq-question::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #333; /* Downward pointing wide "V" */
-    transition: transform 0.3s ease;
+      .faq-question {
+        background-color: #e7ffe7;
+        color: #333;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
 
-    margin-right: 10px;
-    }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    .faq.active .faq-question::after {
-    border-top: none;
-    border-bottom: 8px solid #333; /* Upward pointing wide "V" */
-    }
+      .faq-question::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #333;
+        /* Downward pointing wide "V" */
+        transition: transform 0.3s ease;
 
-    .faq-answer {
-    max-height: 0; /* Initially hidden */
-    overflow: hidden; /* Hide content when not visible */
-    padding: 0 10px;
-    background-color: #fff;
-    transition: max-height 0.3s ease; /* Smooth transition */
-    border-top: 1px solid #ccc;
-    }
+        margin-right: 10px;
+      }
 
-    .faq-answer p {
-    margin-bottom: 10px;
-    }
+      .faq.active .faq-question::after {
+        border-top: none;
+        border-bottom: 8px solid #333;
+        /* Upward pointing wide "V" */
+      }
 
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
-    .logo a{
-      text-decoration: none;
-   }
-   .logo img:hover{
-    background-color: white;
-   }
-   .container{
-    width: 98vw;
-   }
+      .faq-answer {
+        max-height: 0;
+        /* Initially hidden */
+        overflow: hidden;
+        /* Hide content when not visible */
+        padding: 0 10px;
+        background-color: #fff;
+        transition: max-height 0.3s ease;
+        /* Smooth transition */
+        border-top: 1px solid #ccc;
+      }
 
-   #contact-hvr:hover{
-    background: none;
-   }
+      .faq-answer p {
+        margin-bottom: 10px;
+      }
 
-  </style>
-</head>
+      .faq.active .faq-answer {
+        max-height: 200px;
+        /* Set to a sufficient height to display content */
+        padding: 10px;
+        /* Adds padding when expanded */
+      }
 
-<body>
-  <header class="sticky">
-    <div class="container">
+      .logo a {
+        text-decoration: none;
+      }
 
-      <div class="logo">
-        <div class="brand-name">
-          <span class="letter red" style="--letter-index: 1">A</span>
-          <span class="letter red" style="--letter-index: 2">m</span>
-          <span class="letter red" style="--letter-index: 3">b</span>
-          <span class="letter red" style="--letter-index: 4">u</span>
-          <span class="letter" style="--letter-index: 5">F</span>
-          <span class="letter" style="--letter-index: 6">l</span>
-          <span class="letter" style="--letter-index: 7">o</span>
-          <span class="letter" style="--letter-index: 8">w</span>
+      .logo img:hover {
+        background-color: white;
+      }
+
+      .container {
+        width: 98vw;
+      }
+
+      #contact-hvr:hover {
+        background: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="sticky">
+      <div class="container">
+
+        <div class="logo">
+          <div class="brand-name">
+            <span class="letter red" style="--letter-index: 1">A</span>
+            <span class="letter red" style="--letter-index: 2">m</span>
+            <span class="letter red" style="--letter-index: 3">b</span>
+            <span class="letter red" style="--letter-index: 4">u</span>
+            <span class="letter" style="--letter-index: 5">F</span>
+            <span class="letter" style="--letter-index: 6">l</span>
+            <span class="letter" style="--letter-index: 7">o</span>
+            <span class="letter" style="--letter-index: 8">w</span>
+          </div>
+          <a href="./index.html"><img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+              style="width: 50px; height: auto" /></a>
         </div>
-        <a href="./index.html"
-          ><img
-            src="images/logo2-w.webp"
-            alt="Ambulance Monitoring System Logo"
-            style="width: 50px; height: auto"
-        /></a>
-      </div>
 
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"
-              ><i class="fa-solid fa-file"></i> Features</a
-            >
-          </li>
-          <li>
-            <a href="team.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"
-              ><i class="fa-solid fa-clipboard"></i> Contact</a
-            >
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Feedback</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
-    </div>
-  </header>
-  <div class="content" id="main-content" >
-    <h1>Welcome to the Ambulance Monitoring System</h1>
-    <div class="grid">
-      <div class="feature">
-        <img src="images/emergency-w.jpg" alt="Emergency Response" />
-        <h2>Quick Emergency Response</h2>
-        <p>
-          Ensures patients receive timely medical assistance by locating the
-          nearest hospitals and ambulances.
-        </p>
-      </div>
-      <div class="feature">
-        <img src="images/ambulance-w.jpg" alt="Real-Time Tracking" />
-        <h2>Real-Time Tracking</h2>
-        <p>
-          Provides real-time updates on ambulance locations and traffic
-          conditions, optimizing route management.
-        </p>
-      </div>
-      <div class="feature">
-        <img src="images/24-w.jpg" alt="24/7 Availability" />
-        <h2>24/7 Availability</h2>
-        <p>
-          Ensures round-the-clock service, making sure that help is just a
-          call away, anytime, anywhere.
-        </p>
-      </div>
-      <div class="feature">
-        <img src="images/doctor-w.jpg" alt="Enhanced Communication" />
-        <h2>Enhanced Communication</h2>
-        <p>
-          Facilitates seamless communication between patients, hospitals, and
-          ambulance drivers.
-        </p>
-      </div>
-      <div class="feature">
-        <img src="images/hospital-w.jpg" alt="Resource Management" />
-        <h2>Resource Management</h2>
-        <p>
-          Helps hospitals manage their resources efficiently by providing
-          critical information and analytics.
-        </p>
-      </div>
-
-      <!-- Team Section in Full Row -->
-      <div class="team-feature">
-        <img src="images/team-w.png" alt="Meet the Team" />
-        <div>
-          <h2>Meet the Team</h2>
-          <p>
-            Learn more about our dedicated team working tirelessly to ensure
-            efficient ambulance monitoring and resource management.
-          </p>
-          <a href="team.html" class="button">Go to Team</a>
-        </div>
-      </div>
-
-      <!-- Contact Section in Full Row -->
-      <div class="contact-feature">
-        <img src="images/contact-w.avif" alt="Contact Us" />
-        <div>
-          <h2>Contact Us</h2>
-          <p>
-            Have questions or feedback? Reach out to us through our contact
-            page.
-          </p>
-          <a href="contact.html" class="button">Go to Contact</a>
-        </div>
-      </div>
-
-      <!-- FAQ Section in Full Row -->
-
-      <div class="contact-feature faq-section">
-        <div class="faq-hd">
-          <div class="faq-h2">Frequently Asked Questions [ FAQs ]</div>
-          <!-- <div>Frequently Asked Questions</div> -->
-        </div>
-        <div class="faqs">
-
-          <div class="faq">
-            <button class="faq-question">What should I do while waiting for the ambulance?</button>
-            <div class="faq-answer">
-                <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">How do I track an ambulance in real-time?</button>
-            <div class="faq-answer">
-                <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the live map feature.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
-            <div class="faq-answer">
-                <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay, please contact emergency services for further instructions.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">Can I provide medical information for the patient in advance?</button>
-            <div class="faq-answer">
-                <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for the situation.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
-            <div class="faq-answer">
-                <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending on the provider.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">How can I request special medical equipment or personnel on the ambulance?</button>
-            <div class="faq-answer">
-                <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such as a ventilator or a specialized doctor.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
-            <div class="faq-answer">
-                <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a technical issue through the system or contact support.</p>
-            </div>
-         </div>
-          <div class="faq">
-            <button class="faq-question">Can I schedule an ambulance in advance?</button>
-            <div class="faq-answer">
-                <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
-            </div>
-         </div>
-         
-
-        </div>
-      </div>
-
-      <!-- FAQ section ends here -->
-
-    </div>
-  </div>
- 
-  <footer style="color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-        
-        <!-- Quick Links Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-          <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a>
+            </li>
+            <li>
+              <a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a>
+            </li>
+            <li>
+              <a href="contact.html" id="contact-link"><i class="fa-solid fa-clipboard"></i> Contact</a>
+            </li>
+            <li>
+              <a href="Feedback.html" id="team-link"><i class="fa-solid fa-user-group"></i> Feedback</a>
+            </li>
           </ul>
+        </nav>
+        <div class="buttons">
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
         </div>
-  
-        <!-- Contact Information Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+      </div>
+    </header>
+    <div class="content" id="main-content">
+      <h1>Welcome to the Ambulance Monitoring System</h1>
+      <div class="grid">
+        <div class="feature">
+          <img src="images/emergency-w.jpg" alt="Emergency Response" />
+          <h2>Quick Emergency Response</h2>
+          <p>
+            Ensures patients receive timely medical assistance by locating the
+            nearest hospitals and ambulances.
+          </p>
         </div>
-  
-        <!-- Social Media Links -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-        
-          <a href="https://www.facebook.com" class="hover-link">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a><br>
-        
-          <a href="https://www.twitter.com" class="hover-link">
-            <i class="fa-brands fa-x-twitter"></i> Twitter
-          </a><br>
-        
-          <a href="https://www.instagram.com" class="hover-link">
-            <i class="fab fa-instagram"></i> Instagram
-          </a><br>
-        
-          <a href="https://www.linkedin.com" class="hover-link">
-            <i class="fab fa-linkedin-in"></i> LinkedIn
-          </a>
+        <div class="feature">
+          <img src="images/ambulance-w.jpg" alt="Real-Time Tracking" />
+          <h2>Real-Time Tracking</h2>
+          <p>
+            Provides real-time updates on ambulance locations and traffic
+            conditions, optimizing route management.
+          </p>
         </div>
-        
-        <style>
-          .hover-link {
-            color: #000000;
-            text-decoration: none;
-            margin-right: 10px;
-            background:none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-          }
-        
-          .hover-link:hover {
-            color: blue;
-            background:none;
-          }
-        </style>
-        
-        
+        <div class="feature">
+          <img src="images/24-w.jpg" alt="24/7 Availability" />
+          <h2>24/7 Availability</h2>
+          <p>
+            Ensures round-the-clock service, making sure that help is just a
+            call away, anytime, anywhere.
+          </p>
+        </div>
+        <div class="feature">
+          <img src="images/doctor-w.jpg" alt="Enhanced Communication" />
+          <h2>Enhanced Communication</h2>
+          <p>
+            Facilitates seamless communication between patients, hospitals, and
+            ambulance drivers.
+          </p>
+        </div>
+        <div class="feature">
+          <img src="images/hospital-w.jpg" alt="Resource Management" />
+          <h2>Resource Management</h2>
+          <p>
+            Helps hospitals manage their resources efficiently by providing
+            critical information and analytics.
+          </p>
+        </div>
 
-        <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-          </form>
+        <!-- Team Section in Full Row -->
+        <div class="team-feature">
+          <img src="images/team-w.png" alt="Meet the Team" />
+          <div>
+            <h2>Meet the Team</h2>
+            <p>
+              Learn more about our dedicated team working tirelessly to ensure
+              efficient ambulance monitoring and resource management.
+            </p>
+            <a href="team.html" class="button">Go to Team</a>
+          </div>
         </div>
-        
+
+        <!-- Contact Section in Full Row -->
+        <div class="contact-feature">
+          <img src="images/contact-w.avif" alt="Contact Us" />
+          <div>
+            <h2>Contact Us</h2>
+            <p>
+              Have questions or feedback? Reach out to us through our contact
+              page.
+            </p>
+            <a href="contact.html" class="button">Go to Contact</a>
+          </div>
+        </div>
+
+        <!-- FAQ Section in Full Row -->
+
+        <div class="contact-feature faq-section">
+          <div class="faq-hd">
+            <div class="faq-h2">Frequently Asked Questions [ FAQs ]</div>
+            <!-- <div>Frequently Asked Questions</div> -->
+          </div>
+          <div class="faqs">
+
+            <div class="faq">
+              <button class="faq-question">What should I do while waiting for the ambulance?</button>
+              <div class="faq-answer">
+                <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information.
+                  If possible, clear a path for the ambulance and stay on the line with emergency services if needed.
+                </p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">How do I track an ambulance in real-time?</button>
+              <div class="faq-answer">
+                <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing
+                  the live map feature.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
+              <div class="faq-answer">
+                <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant
+                  delay, please contact emergency services for further instructions.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">Can I provide medical information for the patient in advance?</button>
+              <div class="faq-answer">
+                <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better
+                  for the situation.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
+              <div class="faq-answer">
+                <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply
+                  depending on the provider.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">How can I request special medical equipment or personnel on the
+                ambulance?</button>
+              <div class="faq-answer">
+                <p>During your request, you can specify if the patient needs specific medical equipment or personnel,
+                  such as a ventilator or a specialized doctor.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
+              <div class="faq-answer">
+                <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+                  technical issue through the system or contact support.</p>
+              </div>
+            </div>
+            <div class="faq">
+              <button class="faq-question">Can I schedule an ambulance in advance?</button>
+              <div class="faq-answer">
+                <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- FAQ section ends here -->
 
       </div>
-      
     </div>
-    <hr>
-    <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-      
-      <!-- Back to Top Button -->
-      <button id="backToTopBtn" style="
+
+    <!-- contact section -->
+    <section class="contact_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 px-0">
+            <div class="map_container">
+              <h2 class="map-header">Our Service is Available in Mumbai Only</h2> <!-- Added header -->
+              <div class="map">
+                <iframe class="rounded w-100 h-100"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d315147.8980591625!2d72.74289633459473!3d19.07609071905182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c080cbe6f1%3A0x59a9c028f9a7ec2f!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1603794290143!5m2!1sen!2sin"
+                  frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .map-header {
+        text-align: center;
+        /* Centers the header text */
+        font-size: 24px;
+        /* Font size for the header */
+        margin: 20px 0;
+        /* Margin around the header */
+        color: #333;
+        /* Text color */
+        font-weight: bold;
+        /* Makes the text bold */
+      }
+
+      .contact_section {
+        padding: 60px 0;
+        /* Adds padding above and below the section */
+        background-color: #f8f9fa;
+        /* Light background color for contrast */
+      }
+
+      .map_container {
+        position: relative;
+        overflow: hidden;
+        /* Prevents overflow from the map */
+      }
+
+      .map {
+        width: 100%;
+        height: 500px;
+        /* Increased height for the map */
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        /* Removes the border around the iframe */
+        border-radius: 8px;
+        /* Rounds the corners of the map */
+      }
+
+      .container-fluid {
+        max-width: 1200px;
+        /* Maximum width of the container */
+        margin: 0 auto;
+        /* Centers the container */
+      }
+
+      @media (max-width: 768px) {
+        .contact_section {
+          padding: 30px 0;
+          /* Reduces padding on smaller screens */
+        }
+
+        .map {
+          height: 300px;
+          /* Sets a fixed height for the map on mobile */
+        }
+      }
+    </style>
+    </section>
+    <!-- end contact section -->
+
+    <footer style="color: #f3f4f6; text-align: center; width: 100%;">
+      <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+
+          <!-- Quick Links Section -->
+          <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+              <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                  onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+              <li><a href="contact.html"
+                  style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                  onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+              <li><a href="privacy.html"
+                  style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                  onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+              <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                  onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+              <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;"
+                  onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information Section -->
+          <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+            <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+            <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+            <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;"
+              onmouseover="this.style.color='blue'"
+              onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+            <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+          </div>
+
+          <!-- Social Media Links -->
+          <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+
+            <a href="https://www.facebook.com" class="hover-link">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a><br>
+
+            <a href="https://www.twitter.com" class="hover-link">
+              <i class="fa-brands fa-x-twitter"></i> Twitter
+            </a><br>
+
+            <a href="https://www.instagram.com" class="hover-link">
+              <i class="fab fa-instagram"></i> Instagram
+            </a><br>
+
+            <a href="https://www.linkedin.com" class="hover-link">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+
+          <style>
+            .hover-link {
+              color: #000000;
+              text-decoration: none;
+              margin-right: 10px;
+              background: none;
+              cursor: pointer;
+              transition: color 0.3s ease;
+            }
+
+            .hover-link:hover {
+              color: blue;
+              background: none;
+            }
+          </style>
+
+
+
+          <!-- Newsletter Subscription -->
+          <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+            <form action="#">
+              <input type="email" placeholder="Your Email"
+                style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+              <button type="submit"
+                style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+            </form>
+          </div>
+
+
+        </div>
+
+      </div>
+      <hr>
+      <!-- Copyright Section -->
+      <div
+        style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <strong>
+          <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+        </strong>
+
+        <!-- Back to Top Button -->
+        <button id="backToTopBtn" style="
         background-color: #e81a1a;
         color: white;
         border: none;
@@ -653,59 +788,59 @@
         font-size: 16px;
         cursor: pointer;
       ">↑</button>
-    </div>
-  </footer>
-  
-  <script>
-    // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      var backToTopBtn = document.getElementById("backToTopBtn");
+      </div>
+    </footer>
 
-      backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+    <script>
+      // Back to Top Button functionality
+      document.addEventListener('DOMContentLoaded', function () {
+        var backToTopBtn = document.getElementById("backToTopBtn");
+
+        backToTopBtn.addEventListener('click', function () {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
       });
-    });
-  </script>
-  <script>
-    function changeContent(page) {
-      var links = document.querySelectorAll(".menu ul li a");
-      links.forEach((link) => link.classList.remove("active"));
-      document.getElementById(page + "-link").classList.add("active");
-    }
+    </script>
+    <script>
+      function changeContent(page) {
+        var links = document.querySelectorAll(".menu ul li a");
+        links.forEach((link) => link.classList.remove("active"));
+        document.getElementById(page + "-link").classList.add("active");
+      }
 
-    window.onload = function () {
-      document.getElementById("home-link").classList.add("active");
+      window.onload = function () {
+        document.getElementById("home-link").classList.add("active");
 
-      // Add delay to each letter drop
-      const letters = document.querySelectorAll('.letter');
-      letters.forEach((letter, index) => {
-        letter.style.animationDelay = `${index * 0.1}s`;
+        // Add delay to each letter drop
+        const letters = document.querySelectorAll('.letter');
+        letters.forEach((letter, index) => {
+          letter.style.animationDelay = `${index * 0.1}s`;
+        });
+      };
+
+      const thankYouMessage = document.getElementById("thankYouMessage");
+      const form = document.getElementById("subscribeForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Show Thank You Message after subscribing
+        thankYouMessage.style.display = 'block';
+
+        // Optionally clear the input field after subscribing
+        document.getElementById("emailInput").value = '';
       });
-    };
 
-    const thankYouMessage = document.getElementById("thankYouMessage");
-  const form = document.getElementById("subscribeForm");
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const faqButtons = document.querySelectorAll('.faq-question');
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-
-    // Show Thank You Message after subscribing
-    thankYouMessage.style.display = 'block';
-
-    // Optionally clear the input field after subscribing
-    document.getElementById("emailInput").value = '';
-  });
-
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const faqButtons = document.querySelectorAll('.faq-question');
-
-    faqButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        faqButtons.forEach(button => {
+          button.addEventListener('click', function () {
             const faq = button.parentElement;
             const answer = faq.querySelector('.faq-answer');
 
@@ -714,15 +849,16 @@
 
             // Control the max-height for slide effect
             if (faq.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
+              answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
             } else {
-                answer.style.maxHeight = null; // Remove max-height to hide
+              answer.style.maxHeight = null; // Remove max-height to hide
             }
+          });
         });
-    });
-    });
+      });
 
 
-  </script>
-</body>
+    </script>
+  </body>
+
 </html>
