@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,12 +29,14 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     nav ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
       display: flex;
     }
+
     nav ul li a {
       display: flex;
       align-items: center;
@@ -51,21 +54,36 @@
     nav ul li a:hover {
       background-color: #f0f0f0;
     }
+
     nav ul li a:active {
       background-color: #000;
       color: white;
     }
+
     nav ul li a i {
       margin-right: 8px;
     }
-    a.active,a:hover{
-      background: #1b9bff ;
+
+    a.active,
+    a:hover {
+      background: #1b9bff;
       transition: .5s;
     }
+
+    /* Remove hover and active styles for specific links */
+    a.no-hover-effect.active,
+    a.no-hover-effect:hover {
+      background: inherit;
+      /* Retains the original background */
+      transition: none;
+      /* No transition effect */
+    }
+
     #home-link:active {
       background-color: black;
       color: white;
     }
+
     .content {
       margin: 20px;
       padding: 20px;
@@ -109,6 +127,7 @@
       object-fit: cover;
       margin-bottom: 10px;
       border-radius: 50%;
+      border: 3px solid #2980b9;
     }
 
     .feature h2 {
@@ -159,61 +178,104 @@
       padding: 15px 0;
       width: 100%;
     }
-    .checkbtn{
+
+    .checkbtn {
       font-size: 30px;
       color: #333;
       float: right;
       line-height: 80px;
       margin-right: 40px;
       cursor: pointer;
-      display:none;
+      display: none;
 
     }
-    #check{
+
+    #check {
       display: none;
     }
-@media (max-width:966px){
-  label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-  }
 
-}
-@media (max-width:858px){
+    /* Added the hover animation on the footer social icons */
+    .social-icon {
+      transition: transform 0.3s ease;
+      /* Smooth transition effect */
+    }
 
-  .checkbtn{
-    display: block;
-  }
-  ul{
-    position: fixed;
-    width: 100% ;
-    height: 100vh;
-    background: #77a1cc;
-    top: 85px;
-    left:-200%;
-    text-align: center;
-    transition:all .5s ;
-    height: 80px;
-  }
-  nav ul li{
-    display: block;
-  }
-  nav ul li a {
-    display: block;
-    font-size: 10px;
-  }
-  a:hover,a.active{
-    background: none;
-    color:#000000 ;
-  }
-  #check:checked ~ ul{
-    left:0;
-  }
-}
+    .social-icon:hover {
+      transform: scale(1.3);
+      /* Scale the element to 1.3 times its size */
+    }
+
+    .fa-facebook:hover {
+      color: blue;
+      /* Icon color change to blue on hover */
+    }
+
+    .fa-x-twitter:hover {
+      color: black;
+      /* Icon color change to black on hover */
+    }
+
+    .fa-instagram:hover {
+      color: orangered;
+      /* Icon color change to orangered on hover */
+    }
+
+    .fa-linkedin-in:hover {
+      color: rgb(16, 13, 195);
+      /* Icon color change to rgb(16, 13, 195) on hover */
+    }
+
+    @media (max-width:966px) {
+      label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+      }
+
+    }
+
+    @media (max-width:858px) {
+
+      .checkbtn {
+        display: block;
+      }
+
+      ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #77a1cc;
+        top: 85px;
+        left: -200%;
+        text-align: center;
+        transition: all .5s;
+        height: 80px;
+      }
+
+      nav ul li {
+        display: block;
+      }
+
+      nav ul li a {
+        display: block;
+        font-size: 10px;
+      }
+
+      a:hover,
+      a.active {
+        background: none;
+        color: #000000;
+      }
+
+      #check:checked~ul {
+        left: 0;
+      }
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -223,14 +285,19 @@
     @keyframes logoAnimation {
       0% {
         opacity: 0;
-        transform: translateX(-100px); /* Start from the left */
+        transform: translateX(-100px);
+        /* Start from the left */
       }
+
       50% {
-        transform: translateX(10px); /* Move slightly to the right */
+        transform: translateX(10px);
+        /* Move slightly to the right */
       }
+
       100% {
         opacity: 1;
-        transform: translateX(0); /* End at original position */
+        transform: translateX(0);
+        /* End at original position */
       }
     }
 
@@ -240,10 +307,13 @@
         transform: translateY(-100%);
         opacity: 0;
       }
+
       50% {
-        transform: translateY(10px); /* Slight bounce */
+        transform: translateY(10px);
+        /* Slight bounce */
         opacity: 1;
       }
+
       100% {
         transform: translateY(0);
       }
@@ -259,7 +329,8 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-right: 10px; /* Space between the text and the logo image */
+      margin-right: 10px;
+      /* Space between the text and the logo image */
     }
 
     .letter {
@@ -269,88 +340,95 @@
     }
 
     .red {
-      color: red; /* Change the color of letters in this class to red */
+      color: red;
+      /* Change the color of letters in this class to red */
     }
 
 
     /* faq section styles */
-    .faq-section{
+    .faq-section {
       background-color: #e7f3fe;
 
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      
+
     }
 
-    
 
-    .faq-h2{
+
+    .faq-h2 {
       margin-bottom: 1.5rem;
       font-size: 2.5rem;
       font-weight: 600;
     }
 
-    .faqs{
+    .faqs {
       width: 100%;
     }
 
     .faq {
-    margin-bottom: 15px;
-    width: 100%; /* Full width by default */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
+      margin-bottom: 15px;
+      width: 100%;
+      /* Full width by default */
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-   .faq-question {
-    background-color: #e7ffe7;
-    color: #333;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+    .faq-question {
+      background-color: #e7ffe7;
+      color: #333;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .faq-question::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #333; /* Downward pointing wide "V" */
-    transition: transform 0.3s ease;
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #333;
+      /* Downward pointing wide "V" */
+      transition: transform 0.3s ease;
 
-    margin-right: 10px;
+      margin-right: 10px;
     }
 
     .faq.active .faq-question::after {
-    border-top: none;
-    border-bottom: 8px solid #333; /* Upward pointing wide "V" */
+      border-top: none;
+      border-bottom: 8px solid #333;
+      /* Upward pointing wide "V" */
     }
 
     .faq-answer {
-    max-height: 0; /* Initially hidden */
-    overflow: hidden; /* Hide content when not visible */
-    padding: 0 10px;
-    background-color: #fff;
-    transition: max-height 0.3s ease; /* Smooth transition */
-    border-top: 1px solid #ccc;
+      max-height: 0;
+      /* Initially hidden */
+      overflow: hidden;
+      /* Hide content when not visible */
+      padding: 0 10px;
+      background-color: #fff;
+      transition: max-height 0.3s ease;
+      /* Smooth transition */
+      border-top: 1px solid #ccc;
     }
 
     .faq-answer p {
-    margin-bottom: 10px;
+      margin-bottom: 10px;
     }
 
    .faq.active .faq-answer {
@@ -370,12 +448,61 @@
    #contact-hvr:hover{
     background: none;
    }
-
+   .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
   </style>
 
 </head>
 
 <body>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
   <header class="sticky">
     <div class="container">
 
@@ -415,61 +542,7 @@
   </header>
 
 
-      <div class="logo">
-        <div class="brand-name">
-          <span class="letter red" style="--letter-index: 1">A</span>
-          <span class="letter red" style="--letter-index: 2">m</span>
-          <span class="letter red" style="--letter-index: 3">b</span>
-          <span class="letter red" style="--letter-index: 4">u</span>
-          <span class="letter" style="--letter-index: 5">F</span>
-          <span class="letter" style="--letter-index: 6">l</span>
-          <span class="letter" style="--letter-index: 7">o</span>
-          <span class="letter" style="--letter-index: 8">w</span>
-        </div>
-        <a href="./index.html"
-          ><img
-            src="images/logo2-w.webp"
-            alt="Ambulance Monitoring System Logo"
-            style="width: 50px; height: auto"
-        /></a>
-      </div>
 
-
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"
-              ><i class="fa-solid fa-file"></i> Features</a
-            >
-          </li>
-          <li>
-            <a href="team.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"
-              ><i class="fa-solid fa-clipboard"></i> Contact</a
-            >
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Feedback</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
-    </div>
-  </header>
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
@@ -541,58 +614,11 @@
       </div>
     </div>
   </div>
-
-  <footer>
-    <!-- Newsletter Subscription -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3>Subscribe to Our Newsletter</h3>
-      <form action="#">
-        <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required /><br /><br />
-        <button type="submit" style="
-                      background-color: #ff5733;
-                      color: white;
-                      padding: 10px 20px;
-                      border: none;
-                      cursor: pointer;
-                    ">
-          Subscribe
-        </button>
-      </form>
-    </div>
-
-    <!-- Footer Container -->
-    <div class="footer-container" style="display: flex; justify-content: space-between; align-items: flex-start;">
-      <!-- Contact Information Section -->
-      <div class="contact-ft" style="flex: 1; min-width: 200px;">
-        <h3>Contact Info</h3>
-        <pre>123 Emergency Lane, Mumbai, India
-          Phone : +91-911-1234567
-          Email : emergency@ambulanceservice.in</pre>
-      </div>
-
-      <!-- Social Media Links -->
-      <div class="social-ft"
-        style="flex: 1; display: flex; flex-direction: column; align-items: flex-end; padding-right: 220px;">
-        <h3>Get in Touch</h3>
-        <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.9rem; flex-wrap: wrap; "
-          class="links">
-          <a href="https://www.facebook.com" style="color: white; text-decoration: none;"><i
-              class="fab fa-facebook-f"></i></a>
-          <a href="https://www.twitter.com" style="color: white; text-decoration: none;"><i
-              class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com" style="color: white; text-decoration: none;"><i
-              class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com" style="color: white; text-decoration: none;"><i
-              class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-
  
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-        
+
         <!-- Quick Links Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
@@ -604,7 +630,7 @@
             <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
           </ul>
         </div>
-  
+
         <!-- Contact Information Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
           <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
@@ -612,26 +638,32 @@
           <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
           <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
         </div>
-  
+
+        <!-- Modified the looks of the social icons -->
         <!-- Social Media Links -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+        <div style="text-align: center; min-width: 200px; color: black;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-        
-          <a href="https://www.facebook.com" class="hover-link">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a><br>
-        
-          <a href="https://www.twitter.com" class="hover-link">
-            <i class="fa-brands fa-x-twitter"></i> Twitter
-          </a><br>
-        
-          <a href="https://www.instagram.com" class="hover-link">
-            <i class="fab fa-instagram"></i> Instagram
-          </a><br>
-        
-          <a href="https://www.linkedin.com" class="hover-link">
-            <i class="fab fa-linkedin-in"></i> LinkedIn
-          </a>
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+            <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
+              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
+              style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
+              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
+              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email"
+              style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit"
+              style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
         </div>
         
         <style>
@@ -649,21 +681,9 @@
             background:none;
           }
         </style>
-        
-        
-
-        <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-          </form>
-        </div>
-        
 
       </div>
-      
+
     </div>
     <hr>
     <!-- Copyright Section -->
@@ -682,7 +702,7 @@
       ">↑</button>
     </div>
   </footer>
-  
+
   <script>
     // Back to Top Button functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -714,22 +734,22 @@
     };
 
     const thankYouMessage = document.getElementById("thankYouMessage");
-  const form = document.getElementById("subscribeForm");
+    const form = document.getElementById("subscribeForm");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from refreshing the page
 
-    // Show Thank You Message after subscribing
-    thankYouMessage.style.display = 'block';
+      // Show Thank You Message after subscribing
+      thankYouMessage.style.display = 'block';
 
-    // Optionally clear the input field after subscribing
-    document.getElementById("emailInput").value = '';
-  });
+      // Optionally clear the input field after subscribing
+      document.getElementById("emailInput").value = '';
+    });
 
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const faqButtons = document.querySelectorAll('.faq-question');
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqButtons = document.querySelectorAll('.faq-question');
 
 
     <!-- Copyright Section -->
@@ -751,9 +771,26 @@
 
   <script src="script.js"></script>
 
-</body>
 
+  </script>
 
-</html>
+<script>
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
 
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      thankYouMessage.style.display = 'block';
+      document.getElementById("emailInput").value = '';
+    });
+  });
+</script>
