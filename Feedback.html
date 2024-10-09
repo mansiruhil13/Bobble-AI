@@ -83,11 +83,24 @@
     }
 
     /* Color on hover */
-    .star-rating label:hover,
-    .star-rating label:hover~label {
-      color: #ffdd00;
-      /* Color on hover */
-    }
+    .star-rating {
+  direction: rtl; /* Reverse the display order of the stars */
+}
+
+.star-rating label {
+  font-size: 2rem; /* Size of stars */
+  color: #ddd;     /* Default color of unselected stars */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffdd00; /* Highlight stars on hover */
+}
+
+.star-rating input {
+  display: none; /* Hide the radio buttons */
+}
 
     button {
       padding: 10px 20px;
@@ -456,6 +469,7 @@
     </div>
 </footer>
   <script>
+ 
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
     stars.forEach(star => {
@@ -468,6 +482,7 @@
         // Highlight the selected star and all previous stars
         this.checked = true;
         const currentStarValue = this.value;
+        
         for (let i = 1; i <= currentStarValue; i++) {
           const label = document.querySelector(`label[for="star${i}"]`);
           label.style.color = '#ffdd00'; // Highlight selected stars
