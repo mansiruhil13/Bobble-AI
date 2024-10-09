@@ -347,97 +347,6 @@
       /* Change the color of letters in this class to red */
     }
 
-
-    /* faq section styles */
-    .faq-section {
-      background-color: #e7f3fe;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-
-
-    .faq-h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .faqs {
-      width: 100%;
-    }
-
-    .faq {
-      margin-bottom: 15px;
-      width: 100%;
-      /* Full width by default */
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
-      padding: 10px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #333;
-      /* Downward pointing wide "V" */
-      transition: transform 0.3s ease;
-
-      margin-right: 10px;
-    }
-
-    .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
-    }
-
-    .faq-answer {
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
-      padding: 0 10px;
-      background-color: #fff;
-      transition: max-height 0.3s ease;
-      /* Smooth transition */
-      border-top: 1px solid #ccc;
-    }
-
-    .faq-answer p {
-      margin-bottom: 10px;
-    }
-
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
     .logo a{
       text-decoration: none;
    }
@@ -541,40 +450,7 @@
 </head>
 
 <body>
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+
   <header class="sticky">
     <div class="container">
 
@@ -686,6 +562,8 @@
       </div>
     </div>
   </div>
+
+
  
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
@@ -831,32 +709,6 @@
     });
 
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
-
-
-    <!-- Copyright Section -->
-    <div style="
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-          ">
-      <p>&copy; 2024 Ambulance Monitoring System. All rights reserved.</p>
-    </div>
-  </footer>
-
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top">
-    <i class="fas fa-chevron-up" style="font-size: 30px;"></i>
-  </button>
-
-  <script src="script.js"></script>
-
-
-  </script>
 
 <script>
   // Back to Top Button functionality
@@ -876,55 +728,7 @@
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-  });
 </script>
 
-<!-- FAQ Popup Button -->
-<button id="faqButton" style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">FAQ</button>
-
-<!-- FAQ Popup -->
-<div id="faqPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-content">
-    <div class="faq-item">
-      <h3>What is AmbuFlow?</h3>
-      <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve patient care.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How does real-time tracking work?</h3>
-      <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route optimization.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is the service available 24/7?</h3>
-      <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How can hospitals benefit from AmbuFlow?</h3>
-      <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through our integrated system.</p>
-    </div>
-  </div>
-  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-</div>
-
-<script>
-  // FAQ Popup functionality
-  const faqButton = document.getElementById('faqButton');
-  const faqPopup = document.getElementById('faqPopup');
-  const closeFaqPopup = document.getElementById('closeFaqPopup');
-
-  faqButton.addEventListener('click', () => {
-    faqPopup.style.display = 'block';
-  });
-
-  closeFaqPopup.addEventListener('click', () => {
-    faqPopup.style.display = 'none';
-  });
-
-  // Close popup when clicking outside
-  window.addEventListener('click', (event) => {
-    if (event.target === faqPopup) {
-      faqPopup.style.display = 'none';
-    }
-  });
-</script>
-
+</body>
+</html>
