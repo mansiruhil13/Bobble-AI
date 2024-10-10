@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbuFlow Voice Command</title>
+</head>
+<body>
+    <h1>AmbuFlow Voice Command</h1>
+    <button id="start-record-btn">Start Voice Command</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('start-record-btn').addEventListener('click', function() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+            recognition.lang = 'en-US'; // Set the language
+            recognition.interimResults = false; // Final results only
+
+            recognition.onstart = function() {
+                console.log('Voice recognition started. Speak into the microphone.');
+                document.getElementById('result').innerText = 'Listening...';
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase();
+                document.getElementById('result').innerText = `You said: "${transcript}"`;
+
+                if (transcript.includes('help me find an ambulance')) {
+                    alert('Requesting ambulance...');
+                    // Call your function here, e.g., requestAmbulance();
+                } else if (transcript.includes('locate the nearest hospital')) {
+                    alert('Finding nearest hospital...');
+                    // Call your function here, e.g., findNearestHospital();
+                } else {
+                    alert('Command not recognized. Please try again.');
+                }
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error detected: ' + event.error);
+                document.getElementById('result').innerText = 'Error occurred in recognition: ' + event.error;
+            };
+
+            recognition.onend = function() {
+                console.log('Voice recognition ended.');
+                document.getElementById('result').innerText += ' (Stopped listening)';
+            };
+
+            recognition.start();
+        });
+    </script>
+</body>
+</html>
