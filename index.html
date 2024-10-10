@@ -445,6 +445,23 @@
     #backToTopBtn:hover {
       background-color: #c91515;
     }
+
+    .light-dark-btn{
+      /* border: 1px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:10px 13px;
+      border-radius: 50%;
+      margin-left: 5px;
+
+      box-shadow: 0 0 5px rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+
+    #logo img:hover{
+      background-color: #c4d7ff;
+    }
   </style>
 
 </head>
@@ -454,7 +471,7 @@
   <header class="sticky">
     <div class="container">
 
-      <div class="logo">
+      <div id="logo" class="logo">
         <div class="brand-name">
           <span class="ambu">Ambu</span>Flow
         </div>
@@ -463,7 +480,7 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="/index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
           </li>
           <li>
             <a href="features.html" id="features-link" onclick="changeContent('features')"><i
@@ -484,7 +501,7 @@
         </ul>
       </nav>
       <div class="buttons">
-        <button class="dark-mode-toggle" id="dark-mode-button">
+        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
           <i class="fa-solid fa-moon"></i>
         </button>
         <a href="login.html" class="login">Log in</a>
@@ -572,7 +589,13 @@
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
 
         <!-- Quick Links Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+        <div 
+        style="flex: 1; 
+        display: flex;
+        flex-direction: column; 
+        align-items: start; 
+        min-width: 200px; 
+        margin-bottom: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
           <ul style="list-style-type: none; padding: 0;">
             <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
@@ -586,7 +609,10 @@
         </div>
 
         <!-- Contact Information Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+        <div 
+        style="flex: 1; 
+        min-width: 200px; 
+        margin-bottom: 10px;">
           <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
           <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
           <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
