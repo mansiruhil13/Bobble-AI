@@ -21,6 +21,10 @@
       min-height: 100vh;
     }
 
+    i {
+      overflow: hidden;
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -54,6 +58,7 @@
     .menu ul li {
       display: inline;
       margin-right: 10px;
+      overflow: hidden;
     }
 
     .menu ul li a {
@@ -169,91 +174,109 @@
         transform: translateX(10px);
         /* Move slightly to the right */
       }
+    }
 
-      footer {
-        background-color: #C4D7FF;
-        color: white;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        animation: fadeIn 1s ease-in-out;
-      }
-      .feature-card {
-        background: #abd4fc;
-        padding: 15px;
-        border-radius: 5px;
-        text-align: center;
-        transition: transform 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .feature-card:hover {
-        transform: translateY(-5px);
-      }
-      .feature-icon {
-        font-size: 40px;
-        color: #0560c2; /* Bootstrap primary color */
-        margin-bottom: 10px;
-      }
-    
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      /* Logo Animation */
-      @keyframes logoAnimation {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); /* Start from the left */
-  }
-  50% {
-    transform: translateX(10px); /* Move slightly to the right */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at original position */
-  }
-}
+    footer {
+      background-color: #C4D7FF;
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-footer {
-  background-color: #C4D7FF;
-  color: white;
-  text-align: center;
-  padding: 10px 0; /* Padding for the footer */
-}
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+      padding: 5px 0;
+    }
 
-/* Letter Drop Animation */
-@keyframes letterDrop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(10px); /* Slight bounce */
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+    .feature-card {
+      background: #abd4fc;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-#thankYouMessage {
-  margin-top: 20px;
-  font-size: 18px;
-  color: green;
-  display: none; /* Initially hidden */
-}
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
 
-    </style>
+    .feature-icon {
+      font-size: 40px;
+      color: #0560c2;
+      /* Bootstrap primary color */
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+        /* Start from the left */
+      }
+
+      50% {
+        transform: translateX(10px);
+        /* Move slightly to the right */
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* End at original position */
+      }
+    }
+
+    footer {
+      background-color: #C4D7FF;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      /* Padding for the footer */
+    }
+
+    /* Letter Drop Animation */
+    @keyframes letterDrop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      50% {
+        transform: translateY(10px);
+        /* Slight bounce */
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    #thankYouMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      display: none;
+      /* Initially hidden */
+    }
+  </style>
 </head>
 
 <body>
@@ -275,96 +298,33 @@ footer {
             style="width: 50px; height: auto" /></a>
       </div>
 
-    </header>
-
-    <div class="content" id="main-content">
-      <h1>Features</h1>
-      <p>Here are the features of AmbuFlow:</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <i class="fas fa-ambulance feature-icon"></i>
-          <h2>Quick Emergency Response</h2>
-          <p>Immediate notifications to the nearest ambulance service.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-map-marked-alt feature-icon"></i>
-          <h2>Real-Time Tracking</h2>
-          <p>Track ambulances in real-time for better coordination.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-comments feature-icon"></i>
-          <h2>Enhanced Communication</h2>
-          <p>Instant communication between dispatch and ambulances.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-cogs feature-icon"></i>
-          <h2>Resource Management</h2>
-          <p>Efficient allocation of resources for emergencies.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-user-friends feature-icon"></i>
-          <h2>User-Friendly Interface</h2>
-          <p>Easy-to-navigate system for users and providers.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-clock feature-icon"></i>
-          <h2>24/7 Availability</h2>
-          <p>Always available support and monitoring services.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-heartbeat feature-icon"></i>
-          <h2>Patient Health Monitoring</h2>
-          <p>Real-time monitoring of patient vitals during transport.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-lock feature-icon"></i>
-          <h2>Data Security</h2>
-          <p>Ensuring the security of patient and operational data.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-phone-alt feature-icon"></i>
-          <h2>Emergency Contact Integration</h2>
-          <p>Seamless integration with emergency contact services.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-tachometer-alt feature-icon"></i>
-          <h2>Driver Performance Monitoring</h2>
-          <p>Real-time tracking of driver behavior and performance on the road.</p>
-        </div>  
-        <div class="feature-card">
-          <i class="fas fa-comments-dollar feature-icon"></i>
-          <h2>Feedback System</h2>
-          <p>Collecting feedback to improve service quality.</p>
-        </div>
-
-
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a>
-          </li>
-          <li>
-            <a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a>
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"><i class="fa-solid fa-clipboard"></i> Contact</a>
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"><i class="fa-solid fa-user-group"></i> Feedback</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
-    </div>
   </header>
 
   <div class="content" id="main-content">
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li>
+          <a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a>
+        </li>
+        <li>
+          <a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a>
+        </li>
+        <li>
+          <a href="contact.html" id="contact-link"><i class="fa-solid fa-clipboard"></i> Contact</a>
+        </li>
+        <li>
+          <a href="Feedback.html" id="team-link"><i class="fa-solid fa-user-group"></i> Feedback</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="buttons">
+      <a href="login.html" class="login">Log in</a>
+      <a href="up.html" class="get-started">Get started</a>
+    </div>
+
     <h1>Features</h1>
     <p>Here are the features of AmbuFlow:</p>
     <div class="features-grid">
@@ -414,10 +374,14 @@ footer {
         <p>Seamless integration with emergency contact services.</p>
       </div>
       <div class="feature-card">
+        <i class="fas fa-tachometer-alt feature-icon"></i>
+        <h2>Driver Performance Monitoring</h2>
+        <p>Real-time tracking of driver behavior and performance on the road.</p>
+      </div>
+      <div class="feature-card">
         <i class="fas fa-comments-dollar feature-icon"></i>
         <h2>Feedback System</h2>
         <p>Collecting feedback to improve service quality.</p>
-
       </div>
     </div>
   </div>
@@ -481,9 +445,12 @@ footer {
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-      
+    <div
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong>
+        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+      </strong>
+
       <!-- Back to Top Button -->
       <button id="backToTopBtn" style="
         background-color: #e81a1a;
@@ -495,21 +462,21 @@ footer {
         cursor: pointer;
       ">↑</button>
     </div>
-</footer>
+  </footer>
 
-<script>
-  // Back to Top Button functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+  <script>
+    // Back to Top Button functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      var backToTopBtn = document.getElementById("backToTopBtn");
 
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
-  });
-</script>
+  </script>
 
   </footer>
 
