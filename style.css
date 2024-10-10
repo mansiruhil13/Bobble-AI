@@ -81,6 +81,7 @@ nav {
     margin: 3px 0; /* Spacing between bars */
 }
 
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .menu {

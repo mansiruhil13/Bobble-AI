@@ -217,6 +217,10 @@ form.sign-in-form {
   font-weight: 600;
   font-size: 0.8rem;
 }
+.btn.transparent:hover
+{
+  background-color:#5995fd;
+}
 
 .right-panel .image,
 .right-panel .content {
@@ -405,7 +409,7 @@ form.sign-in-form {
 }
 
 .homeBtn:hover {
-  background: #fff; 
+  background: #5995fd; 
   color: #4d84e2; 
   border: 1px solid #4d84e2; 
   transform: none; 
