@@ -39,6 +39,7 @@
             border-radius: 5px;
             flex-grow: 1;
         }
+        
 
         h1 {
             color: #2c3e50;
@@ -77,14 +78,61 @@
             border-radius: 50%;
             border: 3px solid #2980b9;
         }
-
+       
         .social-media {
             display: flex;
             justify-content: center;
             margin-top: 30px;
             gap: 20px;
         }
-
+        .feedback-form {
+            background-color:#e7f3fe;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 50px; 
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
         /* Added the hover animation on the footer social icons */
         .social-icon {
             transition: transform 0.3s ease;
@@ -266,6 +314,51 @@
                 <p>In case of an emergency, please do not hesitate to reach out to us immediately.</p>
             </div>
         </div>
+        <div class="feedback-form">
+            <h2>Feedback Form</h2>
+            <form action="/submit-feedback" method="post">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+    
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email address">
+                </div>
+    
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
+                </div>
+    
+                <!-- Feedback Type -->
+                <div class="form-group">
+                    <label for="feedback-type">Feedback Type</label>
+                    <select id="feedback-type" name="feedback_type" required>
+                        <option value="general_inquiry">General Inquiry</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                    </select>
+                </div>
+    
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Please write your message here..."></textarea>
+                </div>
+    
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    
+
 
         <!-- Added responsiveness: Link redirect to respective sites -->
         <!-- Social Media Section -->
@@ -418,7 +511,7 @@
                 behavior: 'smooth'
             });
         });
-    });
+
 </script>
 </body>
 
