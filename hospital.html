@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
     <link rel="stylesheet" href="src/css/hospital.css">
     <link rel="stylesheet" href="src/css/manage.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
@@ -66,6 +67,19 @@
 
   </style>
 <body>
+    <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
     <div id="toaster" class="toaster hidden"></div>
     <header>
         <nav class="navbar">
@@ -225,6 +239,7 @@
             </div>
         </div>
     </main>
+    <script src="preloader.js"></script>
 
     <script>
         // Elements

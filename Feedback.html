@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback - AmbuFlow</title>
+  <link rel="stylesheet" href="preloaderStyle.css">
 
   <link rel="stylesheet" href="src/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -334,6 +335,19 @@
 
 
 <header>
+  <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
   <div class="container">
     <div class="logo">
       <div class="brand-name">
@@ -477,6 +491,7 @@
       ">↑</button>
     </div>
 </footer>
+<script src="preloader.js"></script>
   <script>
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
