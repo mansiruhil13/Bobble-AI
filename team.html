@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -47,11 +48,13 @@
         }
 
         .team-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeIn 1s ease-in-out;
+
+            display:  flex;
+            flex-wrap:  wrap;
+            justify-content:  center;
+            gap:  22px;
+            animation:  fadeIn 1s ease-in-out;
+
         }
 
         .team-member {
@@ -227,6 +230,19 @@
 </head>
 
 <body>
+    <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
 
     <header>
         <div class="container">
@@ -290,6 +306,7 @@
 
 <!-- Contact Section in Full Row -->
 <div class="features-container">
+<
     <div class="contact-features">
         <!-- Wrap the entire .inner div in an anchor tag to make it clickable -->
         <a href="contact.html" class="contact-feature-link">
@@ -308,6 +325,25 @@
             </div>
         </a>
     </div>
+
+  <div class="contact-features">
+      <div class="inner">
+          <div class="front">
+              <a href="Contactus.html">
+                  <img src="images/contact-w.avif" alt="Contact Us" />
+                  <h2>Contact Us</h2>
+              </a>
+          </div>
+          <div class="back">
+              <p>
+                  Reach out to us for any inquiries or assistance. We're here to
+                  help you 24/7 with our emergency services.
+              </p>
+              <a href="contact.html" class="button">Go to Contact</a>
+          </div>
+      </div>
+  </div>
+
 </div>
 
 
@@ -339,15 +375,15 @@
         <!-- Social Media Links -->
         <div style="text-align: center; min-width: 200px; color: black;">
             <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
               <a href="https://www.facebook.com" class="social-icon facebook"
-                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
               <a href="https://www.twitter.com" class="social-icon twitter"
-                style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="https://www.instagram.com" class="social-icon instagram"
-                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
               <a href="https://www.linkedin.com" class="social-icon linkedin"
-                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
 
@@ -377,6 +413,7 @@
     ">↑</button>
   </div>
 </footer>
+<script src="preloader.js"></script>
 
 <!-- Add this style block in the <head> section or in your CSS file -->
 <style>

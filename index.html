@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AmbuFlow</title>
-
+  <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="src/css/index.css" />
@@ -40,7 +40,7 @@
     nav ul li a {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      padding:px 10px;
       text-decoration: none;
       border: 2px solid #000;
       border-radius: 12px;
@@ -65,25 +65,7 @@
       margin-right: 8px;
     }
 
-    a.active,
-    a:hover {
-      background: #1b9bff;
-      transition: .5s;
-    }
 
-    /* Remove hover and active styles for specific links */
-    a.no-hover-effect.active,
-    a.no-hover-effect:hover {
-      background: inherit;
-      /* Retains the original background */
-      transition: none;
-      /* No transition effect */
-    }
-
-    #home-link:active {
-      background-color: black;
-      color: white;
-    }
 
     .content {
       margin: 20px;
@@ -100,11 +82,17 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows: auto auto;
-      gap: 20px;
-      animation: fadeIn 1s ease-in-out;
+
+      display:  grid;
+      grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows:  auto auto;
+      gap:  22px;
+      animation:  fadeIn 1s ease-in-out;
+      align-content: center;
+      justify-items: stretch;
+      justify-content: center;
+      align-items: stretch;
+
     }
 
     .feature {
@@ -447,16 +435,14 @@
     }
 
     .light-dark-btn{
-      /* border: 1px solid black; */
       display: flex;
       justify-content: center;
       align-items: center;
-      padding:10px 13px;
+      padding:10px 12px;
       border-radius: 50%;
       margin-left: 5px;
-
       box-shadow: 0 0 5px rgb(0, 0, 0);
-      font-size: 1.1rem;
+      font-size: 15px;
     }
 
     #logo img:hover{
@@ -469,6 +455,19 @@
 <body>
 
   <header class="sticky">
+    <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
     <div class="container">
 
       <div id="logo" class="logo">
@@ -480,19 +479,23 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="/index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="/index.html" id="home-link" onclick="changeContent('home')"> Home</a>
           </li>
           <li>
-            <a href="features.html" id="features-link" onclick="changeContent('features')"><i
-                class="fa-solid fa-file"></i> Features</a>
+            <a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a>
           </li>
           <li>
-            <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
-              Team</a>
+            <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
           </li>
           <li>
-            <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
-                class="fa-solid fa-phone"></i> Contact</a>
+            <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
+          </li>
+          <li>
+            <a href="nearby.html" id="team-link" onclick="changeContent('team')">NearBy</a>
+          </li>
+          <li>
+            <a href="Feedback.html" id="contact-link" onclick="changeContent('contact')"><i
+              class="fa-solid fa-clipboard"></i> Feedback</a>
           </li>
         </ul>
       </nav>
@@ -505,8 +508,6 @@
       </div>
     </div>
   </header>
-
-
 
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
@@ -621,15 +622,15 @@
         <!-- Social Media Links -->
         <div style="text-align: center; min-width: 200px; color: black;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
             <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
             <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
 
@@ -676,9 +677,15 @@
         padding: 10px 15px;
         font-size: 16px;
         cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+
       ">↑</button>
     </div>
   </footer>
+  <script src="preloader.js"></script>
 
   <script>
     // Back to Top Button functionality

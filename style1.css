@@ -166,6 +166,7 @@ h1 {
     color: #555;
 }
 
+
 .team-feature,
 .contact-feature {
     padding: 20px;
@@ -235,11 +236,18 @@ h1 {
 }
 
 footer {
-    background-color: #000;
-    color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
+    width: 100%; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space items evenly */
+    padding: 20px; /* Add padding around the footer */
+    background-color: #fff5f5; /* Background color */
+    box-sizing: border-box; /* Include padding in width */
+    width: 100%; /* Full width of the viewport */
+    position: relative; /* Make it relative to the viewport */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
 }
 
 .footer-container {
@@ -283,6 +291,39 @@ footer {
 pre {
   margin: 0; /* Remove default margin from pre element */
   white-space: pre-wrap; /* Ensure the content wraps as needed */
+}
+.quick-links {
+  flex: 1 1 200px; /* Allows the section to grow and shrink */
+  min-width: 200px; /* Minimum width */
+  margin-bottom: 20px; /* Spacing below */
+}
+
+.quick-links-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.quick-links-list li {
+  margin-bottom: 10px; /* Space between items */
+}
+
+.quick-links-list a {
+  color: #000000; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.quick-links-list a:hover {
+  color: #2980b9; /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .quick-links {
+      text-align: center; /* Center text on small screens */
+  }
 }
 
 @keyframes fadeIn {
