@@ -3,8 +3,10 @@
 @import url('<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">');
 
 * {
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+
+  font-family:  "Poppins", sans-serif;
+  overflow-x:  none;
+
 }
 
 html {
