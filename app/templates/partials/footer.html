@@ -1,0 +1,42 @@
+<footer style="color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+            <!-- Quick Links Section -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="{{ url_for('about') }}" style="color: #000000;">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}" style="color: #000000;">Contact Us</a></li>
+                    <li><a href="{{ url_for('privacy') }}" style="color: #000000;">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('terms') }}" style="color: #000000;">Terms of Service</a></li>
+                    <li><a href="{{ url_for('faq') }}" style="color: #000000;">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info Section -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+                <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+                <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+                <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a>
+                <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a></p>
+            </div>
+            <!-- Social Media Links -->
+            <div style="text-align: center; min-width: 200px; color: black;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+                    <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <!-- Newsletter -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 1.5rem; color: #2980b9;">Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
+                    <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>

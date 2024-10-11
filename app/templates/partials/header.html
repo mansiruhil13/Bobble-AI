@@ -1,0 +1,25 @@
+<header class="sticky">
+    <div class="container">
+        <div class="logo">
+            <div class="brand-name">
+                <span class="ambu">Ambu</span>Flow
+            </div>
+            <img src="{{ url_for('static', filename='images/logo2-w.webp') }}" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="{{ url_for('index') }}" id="home-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="{{ url_for('features') }}" id="features-link"><i class="fa-solid fa-file"></i> Features</a></li>
+                <li><a href="{{ url_for('team') }}" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a></li>
+                <li><a href="{{ url_for('contact') }}" id="contact-link"><i class="fa-solid fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button class="dark-mode-toggle" id="dark-mode-button">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <a href="{{ url_for('login') }}" class="login">Log in</a>
+            <a href="{{ url_for('signup') }}" class="get-started">Get started</a>
+        </div>
+    </div>
+</header>

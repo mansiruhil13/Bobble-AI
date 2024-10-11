@@ -1,0 +1,17 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<script>
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+      var backToTopBtn = document.getElementById("backToTopBtn");
+      window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) { backToTopBtn.style.display = "block"; } 
+          else { backToTopBtn.style.display = "none"; }
+      });
+      backToTopBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  });
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AmbuFlow{% endblock %}</title>
+
+    <!-- Common CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/ambulance.png') }}" type="image/x-icon">
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <!-- Header -->
+    {% include 'partials/header.html' %}
+    
+    <!-- Main content area -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    {% include 'partials/footer.html' %}
+
+    <!-- Common scripts -->
+    {% include 'partials/scripts.html' %}
+    
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
