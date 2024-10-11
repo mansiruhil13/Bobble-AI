@@ -124,10 +124,11 @@
         #instagram:hover {
             background: linear-gradient(45deg, #FF0080, #FF8C00, #FFD700);
             color: transparent;
-            -webkit-background-clip: text;
+            -webkit-background: text;
             -webkit-text-fill-color: transparent;
             transform: scale(1.5);
         }
+
         #linkedin:hover {
             color: #0077B5;
             transform: scale(1.5);
@@ -216,35 +217,24 @@
         .red {
             color: red;
         }
-
-        .circle {
-            height: 35px;
-            width: 35px;
-            border-radius: 24px;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            /* Stays on top of all elements */
-        }
     </style>
 </head>
-<header>
-    <div class="container">
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="brand-name">
+                    <span class="letter red" style="--letter-index: 1;">A</span>
+                    <span class="letter red" style="--letter-index: 2;">m</span>
+                    <span class="letter red" style="--letter-index: 3;">b</span>
+                    <span class="letter red" style="--letter-index: 4;">u</span>
+                    <span class="letter" style="--letter-index: 5;">F</span>
+                    <span class="letter" style="--letter-index: 6;">l</span>
+                    <span class="letter" style="--letter-index: 7;">o</span>
+                    <span class="letter" style="--letter-index: 8;">w</span>
+                </div>
             </div>
-        </div>
     </header>
 
     <div class="content" id="main-content">
@@ -312,7 +302,8 @@
                             <!-- Social Media Links -->
                             <div style="text-align: center; min-width: 200px; color: black;">
                                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-                                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+                                <div
+                                    style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
                                     <a href="https://www.facebook.com" class="social-icon facebook"
                                         style="color: black; text-decoration: none; font-size: 1.5rem;"><i
                                             class="fab fa-facebook"></i></a>
@@ -365,50 +356,15 @@
                     </div>
                 </footer>
 
-                
-                </script>
-                <script>    const coords = { x: 0, y: 0 };
-                    const circles = document.querySelectorAll(".circle");
+                <img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img>
+                <script>
+                    const cursor = document.getElementById('cursor');
 
-                    const colors = [
-                        "#ffb56b",
-                        "#fdaf69",
-                        "#f89d63",
-                        "#f59761",
-                        "#ef865e",
-                        "#ec805d",
-                        "#e36e5c",
-                        "#df685c",
-                        "#d5585c",
-                        "#d1525c",
-                        "#c5415d",
-                        "#c03b5d",
-                        "#b22c5e",
-                        "#ac265e",
-                        "#9c155f",
-                        "#950f5f",
-                        "#830060",
-                        "#7c0060",
-                        "#680060",
-                        "#60005f",
-                        "#48005f",
-                        "#3d005e"
-                    ];
-
-                    circles.forEach(function (circle, index) {
-                        circle.x = 0;
-                        circle.y = 0;
-                        circle.style.backgroundColor = colors[index % colors.length];
+                    document.addEventListener('mousemove', (e) => {
+                        cursor.style.left = `${e.pageX}px`;
+                        cursor.style.top = `${e.pageY}px`;
                     });
-
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
+                </script>
 </body>
 
 </html>

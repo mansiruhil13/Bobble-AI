@@ -391,7 +391,16 @@
   }
 </style>
 
-<!-- Add this script block just before the closing </body> tag -->
+<!-- Add this script block just before the closing <img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img> 
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
+</body> tag -->
 <script>
   // Back to Top Button functionality
   document.addEventListener('DOMContentLoaded', function() {
@@ -406,6 +415,15 @@
   });
 </script>
 
+<img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img> 
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
 </body>
 
 </html>

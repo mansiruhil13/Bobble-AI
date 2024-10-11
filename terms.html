@@ -251,5 +251,14 @@
     <footer>
         <p>© 2024 AmbuFlow - All Rights Reserved</p>
       </footer>
-  </body>
+  <img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img> 
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
+</body>
 </html>

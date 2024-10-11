@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>AmbuFlow</title>
   </head>
   <body>
@@ -67,5 +67,15 @@
       <div id="content"><!-- Content will change dynamically here --></div>
     </main>
     <script src="script.js"></script>
-  </body>
+    
+    <img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img> 
+    <script>
+        const cursor = document.getElementById('cursor');
+    
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    </script>
+    </body>
 </html>

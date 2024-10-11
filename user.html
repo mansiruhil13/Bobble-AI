@@ -70,5 +70,14 @@
         });
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4&libraries=places"></script>
+<img src="images/hospital-logo.png" alt="Cursor" class="custom-cursor" id="cursor"></img> 
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
 </body>
 </html>

@@ -343,3 +343,12 @@ body {
     font-size: 20px;
   }
 }
+
+
+.custom-cursor {
+  position: absolute;
+  width: 42px; /* Adjust size */
+  height: 42px; /* Adjust size */
+  pointer-events: none; /* Allow clicking through the cursor */
+  transition: transform 0.1s; /* Animation effect */
+}

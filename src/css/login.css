@@ -422,3 +422,11 @@ form.sign-in-form {
   z-index: 99999999;
   /* Stays on top of all elements */
 }
+
+.custom-cursor {
+  position: absolute;
+  width: 42px; /* Adjust size */
+  height: 42px; /* Adjust size */
+  pointer-events: none; /* Allow clicking through the cursor */
+  transition: transform 0.1s; /* Animation effect */
+}
