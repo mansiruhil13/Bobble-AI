@@ -446,19 +446,35 @@
     #backToTopBtn:hover {
       background-color: #c91515;
     }
+    .light-dark-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; 
+  height: 40px; 
+  padding: 0; 
+  border-radius: 50%;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; 
 
-    .light-dark-btn{
-      /* border: 1px solid black; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding:10px 13px;
-      border-radius: 50%;
-      margin-left: 5px;
+  background-color: var(--btn-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+  font-size: 1.2rem; 
+}
 
-      box-shadow: 0 0 5px rgb(0, 0, 0);
-      font-size: 1.1rem;
-    }
+.light-dark-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+  transform: scale(1.05); 
+}
+
+.light-dark-btn:active {
+  transform: scale(0.95);
+}
+
+.navbar { 
+  overflow: hidden; 
+}
 
     #logo img:hover{
       background-color: #c4d7ff;
