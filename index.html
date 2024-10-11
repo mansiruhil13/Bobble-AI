@@ -49,7 +49,7 @@
       background-color: white;
       text-transform: uppercase;
       margin-right: 10px;
-      
+
     }
 
     nav ul li a:hover {
@@ -166,14 +166,16 @@
       margin-right: 20px;
       border-radius: 10px;
     }
+
     .sticky {
-    display: flex;
-    position: fixed;
-    background-color: #C4D7FF;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+      display: flex;
+      position: fixed;
+      background-color: #C4D7FF;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
     footer {
       background-color: #C4D7FF;
       color: #f3f4f6;
@@ -347,21 +349,24 @@
       /* Change the color of letters in this class to red */
     }
 
-    .logo a{
+    .logo a {
       text-decoration: none;
-   }
-   .logo img:hover{
-    background-color: white;
-   }
-   .container{
-    width: 98vw;
-  
-   }
+    }
 
-   #contact-hvr:hover{
-    background: none;
-   }
-   .circle {
+    .logo img:hover {
+      background-color: white;
+    }
+
+    .container {
+      width: 98vw;
+
+    }
+
+    #contact-hvr:hover {
+      background: none;
+    }
+
+    .circle {
       position: absolute;
       width: 25px;
       height: 25px;
@@ -370,6 +375,7 @@
       background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
+
     .circle-container {
       position: fixed;
       top: 0;
@@ -411,7 +417,8 @@
     #faqButton {
       position: fixed;
       bottom: 20px;
-      right: 80px; /* Moved further to the left */
+      right: 80px;
+      /* Moved further to the left */
       z-index: 1000;
       background-color: #2980b9;
       color: white;
@@ -438,7 +445,8 @@
       padding: 10px 15px;
       font-size: 16px;
       cursor: pointer;
-      display: none; /* Hidden by default */
+      display: none;
+      /* Hidden by default */
       transition: opacity 0.3s, visibility 0.3s;
     }
 
@@ -446,12 +454,12 @@
       background-color: #c91515;
     }
 
-    .light-dark-btn{
+    .light-dark-btn {
       /* border: 1px solid black; */
       display: flex;
       justify-content: center;
       align-items: center;
-      padding:10px 13px;
+      padding: 10px 13px;
       border-radius: 50%;
       margin-left: 5px;
 
@@ -459,7 +467,7 @@
       font-size: 1.1rem;
     }
 
-    #logo img:hover{
+    #logo img:hover {
       background-color: #c4d7ff;
     }
   </style>
@@ -472,15 +480,16 @@
     <div class="container">
 
       <div id="logo" class="logo">
-        <div class="brand-name">
+        <a href="index.html" class="brand-name">
           <span class="ambu">Ambu</span>Flow
-        </div>
+        </a>
         <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
       </div>
       <nav class="menu">
         <ul>
           <li>
-            <a href="/index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="/index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i>
+              Home</a>
           </li>
           <li>
             <a href="features.html" id="features-link" onclick="changeContent('features')"><i
@@ -508,7 +517,7 @@
 
 
 
-  <div class="content" id="main-content" >
+  <div class="content" id="main-content">
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
       <div class="feature">
@@ -581,14 +590,13 @@
   </div>
 
 
- 
+
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
 
         <!-- Quick Links Section -->
-        <div 
-        style="flex: 1; 
+        <div style="flex: 1; 
         display: flex;
         flex-direction: column; 
         align-items: start; 
@@ -596,25 +604,33 @@
         margin-bottom: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
           <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
             <!-- Add FAQ link here -->
-            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
+            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
           </ul>
         </div>
 
         <!-- Contact Information Section -->
-        <div 
-        style="flex: 1; 
+        <div style="flex: 1; 
         min-width: 200px; 
         margin-bottom: 10px;">
           <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
           <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;"
+            onmouseover="this.style.color='blue'"
+            onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;"
+              onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
         </div>
 
         <!-- Modified the looks of the social icons -->
@@ -642,20 +658,20 @@
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
-        </div>        
+        </div>
         <style>
           .hover-link {
             color: #000000;
             text-decoration: none;
             margin-right: 10px;
-            background:none;
+            background: none;
             cursor: pointer;
             transition: color 0.3s ease;
           }
-        
+
           .hover-link:hover {
             color: blue;
-            background:none;
+            background: none;
           }
         </style>
 
@@ -664,9 +680,12 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-      
+    <div
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong>
+        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+      </strong>
+
       <!-- Back to Top Button -->
       <button id="backToTopBtn" style="
         background-color: #e81a1a;
@@ -682,11 +701,11 @@
 
   <script>
     // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
       // Show/hide button based on scroll position
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) { // Show button after scrolling down 300px
           backToTopBtn.style.display = "block";
         } else {
@@ -695,7 +714,7 @@
       });
 
       // Smooth scroll to top when button is clicked
-      backToTopBtn.addEventListener('click', function(e) {
+      backToTopBtn.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({
           top: 0,
@@ -735,12 +754,12 @@
     });
 
   </script>
-<script>
-  // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function() {
+  <script>
+    // Back to Top Button functionality
+    document.addEventListener('DOMContentLoaded', function () {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
-      backToTopBtn.addEventListener('click', function() {
+      backToTopBtn.addEventListener('click', function () {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -748,61 +767,68 @@
       });
     });
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-</script>
+  </script>
 
-<!-- FAQ Popup Button -->
-<button id="faqButton" style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">FAQ</button>
+  <!-- FAQ Popup Button -->
+  <button id="faqButton"
+    style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">FAQ</button>
 
-<!-- FAQ Popup -->
-<div id="faqPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-content">
-    <div class="faq-item">
-      <h3>What is AmbuFlow?</h3>
-      <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve patient care.</p>
+  <!-- FAQ Popup -->
+  <div id="faqPopup"
+    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-content">
+      <div class="faq-item">
+        <h3>What is AmbuFlow?</h3>
+        <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve
+          patient care.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does real-time tracking work?</h3>
+        <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route
+          optimization.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is the service available 24/7?</h3>
+        <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can hospitals benefit from AmbuFlow?</h3>
+        <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through
+          our integrated system.</p>
+      </div>
     </div>
-    <div class="faq-item">
-      <h3>How does real-time tracking work?</h3>
-      <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route optimization.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is the service available 24/7?</h3>
-      <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How can hospitals benefit from AmbuFlow?</h3>
-      <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through our integrated system.</p>
-    </div>
+    <button id="closeFaqPopup"
+      style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
   </div>
-  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-</div>
 
-<script>
-  // FAQ Popup functionality
-  const faqButton = document.getElementById('faqButton');
-  const faqPopup = document.getElementById('faqPopup');
-  const closeFaqPopup = document.getElementById('closeFaqPopup');
+  <script>
+    // FAQ Popup functionality
+    const faqButton = document.getElementById('faqButton');
+    const faqPopup = document.getElementById('faqPopup');
+    const closeFaqPopup = document.getElementById('closeFaqPopup');
 
-  faqButton.addEventListener('click', () => {
-    faqPopup.style.display = 'block';
-  });
+    faqButton.addEventListener('click', () => {
+      faqPopup.style.display = 'block';
+    });
 
-  closeFaqPopup.addEventListener('click', () => {
-    faqPopup.style.display = 'none';
-  });
-
-  // Close popup when clicking outside
-  window.addEventListener('click', (event) => {
-    if (event.target === faqPopup) {
+    closeFaqPopup.addEventListener('click', () => {
       faqPopup.style.display = 'none';
-    }
-  });
-</script>
+    });
+
+    // Close popup when clicking outside
+    window.addEventListener('click', (event) => {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
+
 </html>
