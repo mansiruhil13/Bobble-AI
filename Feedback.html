@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback - AmbuFlow</title>
+  <link rel="stylesheet" href="preloaderStyle.css">
 
   <link rel="stylesheet" href="src/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -334,6 +335,19 @@
 
 
 <header>
+  <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
   <div class="container">
     <div class="logo">
       <div class="brand-name">
@@ -434,15 +448,15 @@
         <!-- Social Media Links -->
         <div style="text-align: center; min-width: 200px; color: black;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
             <a href="https://www.facebook.com" class="social-icon facebook"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
             <a href="https://www.twitter.com" class="social-icon twitter"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.instagram.com" class="social-icon instagram"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com" class="social-icon linkedin"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
 
@@ -477,6 +491,7 @@
       ">↑</button>
     </div>
 </footer>
+<script src="preloader.js"></script>
   <script>
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');

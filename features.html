@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Features</title>
+  <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -108,7 +109,7 @@
     }
 
     .feature-icon {
-      font-size: 40px;
+      font-size: 1.8rem;
       color: #0560c2;
       /* Bootstrap primary color */
       margin-bottom: 10px;
@@ -169,46 +170,7 @@
         transform: translateX(10px);
         /* Move slightly to the right */
       }
-
-      footer {
-        background-color: #C4D7FF;
-        color: white;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        animation: fadeIn 1s ease-in-out;
-      }
-      .feature-card {
-        background: #abd4fc;
-        padding: 15px;
-        border-radius: 5px;
-        text-align: center;
-        transition: transform 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .feature-card:hover {
-        transform: translateY(-5px);
-      }
-      .feature-icon {
-        font-size: 40px;
-        color: #0560c2; /* Bootstrap primary color */
-        margin-bottom: 10px;
-      }
-    
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    }
       /* Logo Animation */
       @keyframes logoAnimation {
   0% {
@@ -229,6 +191,7 @@ footer {
   color: white;
   text-align: center;
   padding: 10px 0; /* Padding for the footer */
+  
 }
 
 /* Letter Drop Animation */
@@ -257,6 +220,19 @@ footer {
 </head>
 
 <body>
+  <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
   <header>
     <div class="container">
 
@@ -316,11 +292,11 @@ footer {
           <h2>Patient Health Monitoring</h2>
           <p>Real-time monitoring of patient vitals during transport.</p>
         </div>
-        <div class="feature-card">
+        <!-- <div class="feature-card">
           <i class="fas fa-lock feature-icon"></i>
           <h2>Data Security</h2>
           <p>Ensuring the security of patient and operational data.</p>
-        </div>
+        </div> -->
         <div class="feature-card">
           <i class="fas fa-phone-alt feature-icon"></i>
           <h2>Emergency Contact Integration</h2>
@@ -336,91 +312,8 @@ footer {
           <h2>Feedback System</h2>
           <p>Collecting feedback to improve service quality.</p>
         </div>
-
-
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a>
-          </li>
-          <li>
-            <a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a>
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"><i class="fa-solid fa-clipboard"></i> Contact</a>
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"><i class="fa-solid fa-user-group"></i> Feedback</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
       </div>
     </div>
-  </header>
-
-  <div class="content" id="main-content">
-    <h1>Features</h1>
-    <p>Here are the features of AmbuFlow:</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <i class="fas fa-ambulance feature-icon"></i>
-        <h2>Quick Emergency Response</h2>
-        <p>Immediate notifications to the nearest ambulance service.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-map-marked-alt feature-icon"></i>
-        <h2>Real-Time Tracking</h2>
-        <p>Track ambulances in real-time for better coordination.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-comments feature-icon"></i>
-        <h2>Enhanced Communication</h2>
-        <p>Instant communication between dispatch and ambulances.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-cogs feature-icon"></i>
-        <h2>Resource Management</h2>
-        <p>Efficient allocation of resources for emergencies.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-user-friends feature-icon"></i>
-        <h2>User-Friendly Interface</h2>
-        <p>Easy-to-navigate system for users and providers.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-clock feature-icon"></i>
-        <h2>24/7 Availability</h2>
-        <p>Always available support and monitoring services.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-heartbeat feature-icon"></i>
-        <h2>Patient Health Monitoring</h2>
-        <p>Real-time monitoring of patient vitals during transport.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-lock feature-icon"></i>
-        <h2>Data Security</h2>
-        <p>Ensuring the security of patient and operational data.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-phone-alt feature-icon"></i>
-        <h2>Emergency Contact Integration</h2>
-        <p>Seamless integration with emergency contact services.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-comments-dollar feature-icon"></i>
-        <h2>Feedback System</h2>
-        <p>Collecting feedback to improve service quality.</p>
-
-      </div>
-    </div>
-  </div>
 
   </div>
 
@@ -453,15 +346,15 @@ footer {
         <!-- Social Media Links -->
         <div style="text-align: center; min-width: 200px; color: black;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
             <a href="https://www.facebook.com" class="social-icon facebook"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
             <a href="https://www.twitter.com" class="social-icon twitter"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.instagram.com" class="social-icon instagram"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com" class="social-icon linkedin"
-              style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
 
@@ -496,6 +389,7 @@ footer {
       ">↑</button>
     </div>
 </footer>
+<script src="preloader.js"></script>
 
 <script>
   // Back to Top Button functionality
