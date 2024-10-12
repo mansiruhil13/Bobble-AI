@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>AmbuFlow</title>
   <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -19,17 +19,6 @@
   <!-- Updated to latest version -->
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 50px;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
     nav ul {
       list-style-type: none;
       padding: 0;
@@ -162,14 +151,6 @@
     left: 0;
     z-index: 1000;
   }
-    footer {
-      background-color: #C4D7FF;
-      color: #f3f4f6;
-      text-align: center;
-      padding: 15px 0;
-      width: 100%;
-    }
-
     .checkbtn {
       font-size: 30px;
       color: #333;
@@ -572,7 +553,7 @@
       <!-- Team Section in Full Row -->
       <div class="team-feature">
         <img src="images/team-w.png" alt="Meet the Team" />
-        <div>
+        <div class="team-feature-details">
           <h2>Meet the Team</h2>
           <p>
             Learn more about our dedicated team working tirelessly to ensure
@@ -585,7 +566,7 @@
       <!-- Contact Section in Full Row -->
       <div class="contact-feature">
         <img src="images/contact-w.avif" alt="Contact Us" />
-        <div>
+        <div class="contact-feature-details">
           <h2>Contact Us</h2>
           <p>
             Reach out to us for any inquiries or assistance. We're here to
@@ -596,12 +577,11 @@
       </div>
     </div>
   </div>
-  <footer style="color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contents" style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
         <!-- Quick Links Section -->
-        <div 
+        <div class="quick-links"
         style="flex: 1; 
         display: flex;
         flex-direction: column; 
@@ -679,7 +659,7 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
+    <div class="footer-copyright">
       <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
       
       <!-- Back to Top Button -->
