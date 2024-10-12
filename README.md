@@ -105,6 +105,10 @@ To maintain quality and consistency, please adhere to the following guidelines:
 
 Please read the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
 
+## Setup
+
+To get started, please follow the [changes.md](./changes.md) to know how to install the project.
+
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
