@@ -90,12 +90,20 @@ body.dark-mode .menu ul li a {
 body.dark-mode .content h1 {
   color: #ff5733; /* H1 color in dark mode */
 }
+body.dark-mode .menu .xyz {
+  color: blue; /* H1 color in dark mode */
+  background-color: aquamarine;
+}
 
 body.dark-mode .feature p,
 body.dark-mode .team-feature p,
 body.dark-mode .contact-feature p,
 body.dark-mode .content h2 {
   color: #fff; /* White text for elements in dark mode */
+}
+
+#darkModeToggle{
+  border-radius: 50%;
 }
 
 /* Content area styles */

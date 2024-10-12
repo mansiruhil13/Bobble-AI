@@ -67,22 +67,7 @@ window.onload = function () {
   document.getElementById("home-link").classList.add("active");
 };
 
-// JS for dark mode functionality
-// Get the dark mode button element
-const darkModeButton = document.getElementById('dark-mode-button');
 
-// Add event listener for toggle functionality
-darkModeButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  // Toggle icon between moon and sun
-  const icon = darkModeButton.querySelector('i');
-  icon.classList.toggle('fa-moon');
-  icon.classList.toggle('fa-sun');
-
-  // Log the current classes for debugging
-  console.log(icon.classList); // Check the classes being applied to the icon
-});
 
 // Back to top button functionality
 const backToTopButton = document.getElementById('back-to-top');
@@ -100,3 +85,12 @@ window.onscroll = function () {
 backToTopButton.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+
+
+
+
+
+
+

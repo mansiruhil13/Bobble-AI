@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="src/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+  <script src="script.js"></script>
   <!-- Updated to latest version -->
 
   <style>
@@ -479,35 +480,49 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="/index.html" id="home-link" onclick="changeContent('home')"> Home</a>
+            <a href="/index.html" id="home-link" class="xyz" onclick="changeContent('home')"> Home</a>
           </li>
           <li>
-            <a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a>
+            <a href="features.html" id="features-link" class="xyz"   onclick="changeContent('features')"> Features</a>
           </li>
           <li>
-            <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
+            <a href="team.html" id="team-link" class="xyz"  onclick="changeContent('team')">Team</a>
           </li>
           <li>
-            <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
+            <a href="contact.html" id="contact-link" class="xyz"  onclick="changeContent('contact')">Contact</a>
           </li>
           <li>
-            <a href="nearby.html" id="team-link" onclick="changeContent('team')">NearBy</a>
+            <a href="nearby.html" id="team-link" class="xyz"   onclick="changeContent('team')">NearBy</a>
           </li>
           <li>
-            <a href="Feedback.html" id="contact-link" onclick="changeContent('contact')"><i
+            <a href="Feedback.html" id="contact-link" class="xyz"  onclick="changeContent('contact')"><i
               class="fa-solid fa-clipboard"></i> Feedback</a>
           </li>
         </ul>
       </nav>
       <div class="buttons">
-        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
-          <i class="fa-solid fa-moon"></i>
-        </button>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
         <a href="login.html" class="login">Log in</a>
         <a href="up.html" class="get-started">Get started</a>
       </div>
     </div>
   </header>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.querySelector('body');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.innerHTML = "🔆";
+                }
+                else {
+                    darkModeToggle.innerHTML = "🌙";
+                }
+            });
+        }
+  </script>
 
   <div class="content" id="main-content" >
     <h1>Welcome to the Ambulance Monitoring System</h1>
