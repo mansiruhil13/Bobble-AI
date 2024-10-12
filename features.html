@@ -1,291 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features</title>
-    <link rel="stylesheet" href="src/css/index.css">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; 
-        }
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .menu ul li {
-            display: inline;
-            margin-right: 10px; 
-        }
-        .menu ul li a {
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .menu ul li a:hover {
-            background-color: #000;
-            color: white;
-        }
-        .menu ul li a.active {
-            color: white;
-            background-color: #000;
-        }
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: #e6eef3;
-            border-radius: 5px;
-            flex-grow: 1; 
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            animation: fadeIn 1s ease-in-out; 
-        }
-        .feature-card {
-            background: #abd4fc;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .feature-icon {
-            font-size: 40px;
-            color: #0560c2; /* Bootstrap primary color */
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 10px 0; /* Padding for the footer */
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Logo Animation */
-        @keyframes logoAnimation {
-            0% {
-            opacity: 0;
-            transform: translateX(-100px); /* Start from the left */
-            }
-            50% {
-            transform: translateX(10px); /* Move slightly to the right */
-            }
-            100% {
-            opacity: 1;
-            transform: translateX(0); /* End at original position */
-            }
-        }
-    
-        /* Letter Drop Animation */
-        @keyframes letterDrop {
-            0% {
-            transform: translateY(-100%);
-            opacity: 0;
-            }
-            50% {
-            transform: translateY(10px); /* Slight bounce */
-            opacity: 1;
-            }
-            100% {
-            transform: translateY(0);
-            }
-        }
-    
-        .logo {
-            display: flex;
-            align-items: center;
-            animation: logoAnimation 1s ease forwards;
-        }
-    
-        .brand-name {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-right: 10px; /* Space between the text and the logo image */
-        }
-    
-        .letter {
-            display: inline-block;
-            font-size: 2rem;
-            animation: letterDrop 0.5s ease forwards;
-            animation-delay: calc(var(--letter-index) * 0.1s);
-        }
-    
-        .red {
-            color: red; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features</title>
+  <link rel="stylesheet" href="preloaderStyle.css">
+  <link rel="stylesheet" href="src/css/index.css" />
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!--Updated to latest version-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      animation: logoAnimation 1s ease forwards;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 10px;
+      /* Space between the text and the logo image */
+    }
+
+    .letter {
+      display: inline-block;
+      font-size: 2rem;
+      animation: letterDrop 0.5s ease forwards;
+    }
+
+    .red {
+      color: red;
+      /* Change the color of letters in this class to red */
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .menu ul li a {
+      padding: 10px 15px;
+      color: black;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu ul li a:hover {
+      background-color: #000;
+      color: white;
+    }
+
+    .menu ul li a.active {
+      color: white;
+      background-color: #000;
+    }
+
+    .content {
+      margin: 20px;
+      padding: 20px;
+      background-color: #e6eef3;
+      border-radius: 5px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .feature-card {
+      background: #abd4fc;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      color: #0560c2;
+      /* Bootstrap primary color */
+      margin-bottom: 10px;
+    }
+
+    /* Added the hover animation on the footer social icons */
+    .social-icon {
+      transition: transform 0.3s ease;
+      /* Smooth transition effect */
+    }
+
+    .social-icon:hover {
+      transform: scale(1.3);
+      /* Scale the element to 1.3 times its size */
+    }
+
+    .fa-facebook:hover {
+      color: blue;
+      /* Icon color change to blue on hover */
+    }
+
+    .fa-x-twitter:hover {
+      color: black;
+      /* Icon color change to black on hover */
+    }
+
+    .fa-instagram:hover {
+      color: orangered;
+      /* Icon color change to orangered on hover */
+    }
+
+    .fa-linkedin-in:hover {
+      color: rgb(16, 13, 195);
+      /* Icon color change to rgb(16, 13, 195) on hover */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+        /* Start from the left */
+      }
+
+      50% {
+        transform: translateX(10px);
+        /* Move slightly to the right */
+      }
+    }
+      /* Logo Animation */
+      @keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+  }
+  50% {
+    transform: translateX(10px); /* Move slightly to the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+footer {
+  background-color: #C4D7FF;
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Padding for the footer */
+  
+}
+
+/* Letter Drop Animation */
+@keyframes letterDrop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px); /* Slight bounce */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#thankYouMessage {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+  display: none; /* Initially hidden */
+}
+
     </style>
 </head>
+
 <body>
-
-<header>
-    <div class="container">
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
-            </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-          </div>
-
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html" id="home-link"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="features.html" id="features-link" class="active"><i class="fa-solid fa-file"></i> Features</a></li>
-                <li><a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a></li>
-                <li><a href="contact.html" id="contact-link"><i class="fa-solid fa-phone"></i> Contact</a></li>
-            </ul>
-        </nav>
-        <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
-        </div>
-    </div>
-</header>
-
-<div class="content" id="main-content">
-    <h1>Features</h1>
-    <p>Here are the features of AmbuFlow:</p>
-    <div class="features-grid">
-        <div class="feature-card">
-            <i class="fas fa-ambulance feature-icon"></i>
-            <h2>Quick Emergency Response</h2>
-            <p>Immediate notifications to the nearest ambulance service.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-map-marked-alt feature-icon"></i>
-            <h2>Real-Time Tracking</h2>
-            <p>Track ambulances in real-time for better coordination.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-comments feature-icon"></i>
-            <h2>Enhanced Communication</h2>
-            <p>Instant communication between dispatch and ambulances.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-cogs feature-icon"></i>
-            <h2>Resource Management</h2>
-            <p>Efficient allocation of resources for emergencies.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-user-friends feature-icon"></i>
-            <h2>User-Friendly Interface</h2>
-            <p>Easy-to-navigate system for users and providers.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-clock feature-icon"></i>
-            <h2>24/7 Availability</h2>
-            <p>Always available support and monitoring services.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-heartbeat feature-icon"></i>
-            <h2>Patient Health Monitoring</h2>
-            <p>Real-time monitoring of patient vitals during transport.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-lock feature-icon"></i>
-            <h2>Data Security</h2>
-            <p>Ensuring the security of patient and operational data.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-phone-alt feature-icon"></i>
-            <h2>Emergency Contact Integration</h2>
-            <p>Seamless integration with emergency contact services.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-comments-dollar feature-icon"></i>
-            <h2>Feedback System</h2>
-            <p>Collecting feedback to improve service quality.</p>
+  <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
         </div>
     </div>
 </div>
+  <header>
+    <div class="container">
 
-<!-- Footer -->
+      <div class="logo">
+        <div class="brand-name">
+          <span class="letter red" style="--letter-index: 1">A</span>
+          <span class="letter red" style="--letter-index: 2">m</span>
+          <span class="letter red" style="--letter-index: 3">b</span>
+          <span class="letter red" style="--letter-index: 4">u</span>
+          <span class="letter" style="--letter-index: 5">F</span>
+          <span class="letter" style="--letter-index: 6">l</span>
+          <span class="letter" style="--letter-index: 7">o</span>
+          <span class="letter" style="--letter-index: 8">w</span>
+        </div>
+        <a href="./index.html"><img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+            style="width: 50px; height: auto" /></a>
+      </div>
 
-<footer>
-    <div style="background-color: #333; color: white; padding: 20px;">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Quick Links Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Quick Links</h3>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
-                    <li><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                    <li><a href="terms.html" style="color: white; text-decoration: none;">Terms of Service</a></li>
-                    <li><a href="sitemap.html" style="color: white; text-decoration: none;">Site Map</a></li>
-                </ul>
-            </div>
+    </header>
 
-            <!-- Contact Information Section -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Contact Info</h3>
-                <p>123 Emergency Lane, Mumbai, India</p>
-                <p>Email:emergency@ambulanceservice.in</p>
-                <p>Phone: +91-911-1234567</p>
-            </div>
+    <div class="content" id="main-content">
+      <h1>Features</h1>
+      <p>Here are the features of AmbuFlow:</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-ambulance feature-icon"></i>
+          <h2>Quick Emergency Response</h2>
+          <p>Immediate notifications to the nearest ambulance service.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h2>Real-Time Tracking</h2>
+          <p>Track ambulances in real-time for better coordination.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-comments feature-icon"></i>
+          <h2>Enhanced Communication</h2>
+          <p>Instant communication between dispatch and ambulances.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cogs feature-icon"></i>
+          <h2>Resource Management</h2>
+          <p>Efficient allocation of resources for emergencies.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-user-friends feature-icon"></i>
+          <h2>User-Friendly Interface</h2>
+          <p>Easy-to-navigate system for users and providers.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-clock feature-icon"></i>
+          <h2>24/7 Availability</h2>
+          <p>Always available support and monitoring services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-heartbeat feature-icon"></i>
+          <h2>Patient Health Monitoring</h2>
+          <p>Real-time monitoring of patient vitals during transport.</p>
+        </div>
+        <!-- <div class="feature-card">
+          <i class="fas fa-lock feature-icon"></i>
+          <h2>Data Security</h2>
+          <p>Ensuring the security of patient and operational data.</p>
+        </div> -->
+        <div class="feature-card">
+          <i class="fas fa-phone-alt feature-icon"></i>
+          <h2>Emergency Contact Integration</h2>
+          <p>Seamless integration with emergency contact services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tachometer-alt feature-icon"></i>
+          <h2>Driver Performance Monitoring</h2>
+          <p>Real-time tracking of driver behavior and performance on the road.</p>
+        </div>  
+        <div class="feature-card">
+          <i class="fas fa-comments-dollar feature-icon"></i>
+          <h2>Feedback System</h2>
+          <p>Collecting feedback to improve service quality.</p>
+        </div>
+      </div>
+    </div>
 
-            <!-- Social Media Links -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-                <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i> Twitter</a><br> <!--upadted-->
-                <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i> Instagram</a><br>
-                <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            </div>
+  </div>
 
-            <!-- Newsletter Subscription -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form action="#">
-                    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%;" required><br><br>
-                    <button type="submit" style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
+  <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+
+        <!-- Quick Links Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
+          </ul>
         </div>
 
-        
+        <!-- Contact Information Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
+          </p>
+        </div>
+
+        <!-- Modified the looks of the social icons -->
+        <!-- Social Media Links -->
+        <div style="text-align: center; min-width: 200px; color: black;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+            <a href="https://www.facebook.com" class="social-icon facebook"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" class="social-icon twitter"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com" class="social-icon instagram"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" class="social-icon linkedin"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email"
+              style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit"
+              style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
 
     </div>
+    <hr>
     <!-- Copyright Section -->
-    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-    
+    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+      
+      <!-- Back to Top Button -->
+      <button id="backToTopBtn" style="
+        background-color: #e81a1a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+      ">↑</button>
+    </div>
 </footer>
+<script src="preloader.js"></script>
+
+<script>
+  // Back to Top Button functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+  </footer>
+
+
+  <script>
+    // Accordion Functionality
+    const accordionHeader = document.querySelector('.accordion__header');
+    const accordionContent = document.querySelector('.accordion__content');
+
+    accordionHeader.addEventListener('click', function () {
+      if (accordionContent.style.display === 'block') {
+        accordionContent.style.display = 'none';
+      } else {
+        accordionContent.style.display = 'block';
+      }
+    });
+
+    // Form Submission Functionality
+    const form = document.getElementById('subscribeForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Show the thank you message
+      thankYouMessage.style.display = 'block';
+
+      // Hide the accordion content after submission
+      accordionContent.style.display = 'none';
+
+      // Clear the input field
+      document.getElementById('emailInput').value = '';
+    });
+  </script>
+
 
 </body>
+
 </html>

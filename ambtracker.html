@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ambulance GPS Tracking System</title>
+  <link rel="stylesheet" href="src/css/manage.css" /> <!-- For Header -->
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Full page styles */
     html,
@@ -69,7 +71,35 @@
 
 <body>
   <!-- Header -->
-  <h1>Ambulance GPS Tracking System</h1>
+  <header>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="./images/manageLogo.png"></img>
+            <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="hospital.html">Dashboard</a></li>
+            <li><a href="manage.html">Manage Status</a></li>
+            <li><a href="driver.html">Manage Driver</a></li>
+            <li><a href="ambtracker.html">Manage Ambulance</a></li>
+            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+        </ul>
+        <div class="resp">
+            <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+        </div>
+    </nav>
+</header>
+
+<!-- Dropdown -->
+<div class="dropdown-menu">
+    <ul class="navbar-links2">
+        <li><a href="hospital.html">Dashboard</a></li>
+        <li><a href="manage.html">Manage Status</a></li>
+        <li><a href="driver.html">Manage Driver</a></li>
+        <li><a href="ambtracker.html">Manage Ambulance</a></li>
+    </ul>
+ </div>
 
   <!-- Map container -->
   <div id="map"></div>
@@ -113,7 +143,29 @@
 
     // Initialize the map when the window loads
     window.onload = initMap;
+
+    // Dropdown
+    let flag = false
+    document.getElementById('dropdown').addEventListener('click', () => {
+      const dropdown = document.querySelector('.dropdown-menu');
+      if (flag) {
+        dropdown.style.display = 'none';
+        flag = false;
+      } else {
+          dropdown.style.display = 'block';
+          flag = true;
+      }
+    });
+
+    function logout() {
+      const confirmLogout = confirm('Are you sure you want to logout?');
+        if (confirmLogout) {
+          localStorage.removeItem('userID');
+          localStorage.removeItem('JWTtoken');
+          window.location.href = 'index.html';
+          alert("Logged out successfully!");
+      }
+    }  
   </script>
 </body>
-
 </html>
