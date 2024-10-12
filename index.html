@@ -6,183 +6,10 @@
   <title>AmbuFlow</title>
 
   <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="style1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Updated to latest version -->
 
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .menu ul li a {
-      padding: 10px 15px;
-      color: black;
-      text-decoration: none;
-      border-radius: 10px;
-    }
-
-    .menu ul li a.active {
-      color: white;
-      background-color: #000;
-    }
-
-    .content {
-      margin: 20px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      flex-grow: 1;
-    }
-
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows: auto auto;
-      gap: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .feature {
-      background-color: #e7f3fe;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .feature img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border-radius: 50%;
-    }
-
-    .feature h2 {
-      color: #2980b9;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #555;
-    }
-
-    .team-feature,
-    .contact-feature {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
-
-    .team-feature {
-      background-color: #e7ffe7;
-    }
-
-    .contact-feature {
-      background-color: #f2e4aa;
-    }
-
-    .team-feature img,
-    .contact-feature img {
-      width: 150px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Logo Animation */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px); /* Start from the left */
-      }
-      50% {
-        transform: translateX(10px); /* Move slightly to the right */
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0); /* End at original position */
-      }
-    }
-
-    /* Letter Drop Animation */
-    @keyframes letterDrop {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      50% {
-        transform: translateY(10px); /* Slight bounce */
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      animation: logoAnimation 1s ease forwards;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 10px; /* Space between the text and the logo image */
-    }
-
-    .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-    }
-
-    .red {
-      color: red; /* Change the color of letters in this class to red */
-    }
-  </style>
 </head>
 
 <body>
@@ -201,7 +28,7 @@
           <span class="letter">w</span>
         </div>
       </a>
-        <a href="index.html"><img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" /></a>
+        <a href="index.html"><img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto;"/></a>
       </div>
       <nav class="menu">
         <ul>
@@ -233,8 +60,7 @@
         <img src="images/emergency-w.jpg" alt="Emergency Response" />
         <h2>Quick Emergency Response</h2>
         <p>
-          Ensures patients receive timely medical assistance by locating the
-          nearest hospitals and ambulances.
+          Ensures patients receive timely medical assistance by locating the nearest hospitals and ambulances.
         </p>
       </div>
       <div class="feature">
@@ -246,23 +72,21 @@
         </p>
       </div>
       <div class="feature">
-        <img src="images/24-w.jpg" alt="24/7 Availability" />
+        <img src="images/24-w.jpg" alt="24/7 Availability"/>
         <h2>24/7 Availability</h2>
         <p>
-          Ensures round-the-clock service, making sure that help is just a
-          call away, anytime, anywhere.
+          Ensures round-the-clock service, making sure that help is just a call away, anytime, anywhere.
         </p>
       </div>
       <div class="feature">
-        <img src="images/doctor-w.jpg" alt="Enhanced Communication" />
+        <img src="images/doctor-w.jpg" alt="Enhanced Communication"/>
         <h2>Enhanced Communication</h2>
         <p>
-          Facilitates seamless communication between patients, hospitals, and
-          ambulance drivers.
+          Facilitates seamless communication between patients, hospitals, and ambulance drivers.
         </p>
       </div>
       <div class="feature">
-        <img src="images/hospital-w.jpg" alt="Resource Management" />
+        <img src="images/hospital-w.jpg" alt="Resource Management"/>
         <h2>Resource Management</h2>
         <p>
           Helps hospitals manage their resources efficiently by providing
@@ -272,12 +96,11 @@
 
       <!-- Team Section in Full Row -->
       <div class="team-feature">
-        <img src="images/team-w.png" alt="Meet the Team" />
+        <img src="images/team-w.png" alt="Meet the Team"/>
         <div>
           <h2>Meet the Team</h2>
           <p>
-            Learn more about our dedicated team working tirelessly to ensure
-            efficient ambulance monitoring and resource management.
+            Learn more about our dedicated team working tirelessly to ensure efficient ambulance monitoring and resource management.
           </p>
           <a href="team.html" class="button">Go to Team</a>
         </div>
@@ -289,8 +112,7 @@
         <div>
           <h2>Contact Us</h2>
           <p>
-            Have questions or feedback? Reach out to us through our contact
-            page.
+            Have questions or feedback? Reach out to us through our contact page.
           </p>
           <a href="contact.html" class="button">Go to Contact</a>
         </div>
@@ -299,57 +121,45 @@
   </div>
   <footer>
 
-  
     <!-- Contact Information Section -->
     <div class="contact-ft" style="flex: 1; ">
-        <h3>Contact Info</h3>
-        <pre>123 Emergency Lane, Mumbai, India
-Phone : +91-911-1234567
-Email : emergency@ambulanceservice.in</pre>
+      <h3>Contact Info</h3>
+      <pre>123 Emergency Lane, Mumbai, India 
+        Phone : +91-911-1234567
+        Email : emergency@ambulanceservice.in
+      </pre>
     </div>
 
     <!-- Social Media Links -->
-    <div class="social-ft" style="flex: 1; display: flex; flex-direction: column;">
-        <h3>Follow Us</h3>
-        <div style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; flex-wrap: wrap;" class="links">
-          <a href="https://www.facebook.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a><br>
-          <a href="https://www.twitter.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fa-brands fa-x-twitter"></i></a><br> <!--upadted-->
-        
-          <a href="https://www.instagram.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-instagram"></i></a><br>
-          <a href="https://www.linkedin.com" style="color: white; text-decoration: none; margin-right: 10px;"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+    <div class="social-ft">
+      <h3>Follow Us</h3>
+      <div class="links">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a><br>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a><br> <!--updated-->        
+        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a><br>
+        <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
 
     <!-- Newsletter Subscription -->
-<div style="flex: 1; min-width: 200px">
-<h3>Subscribe to Our Newsletter</h3>
-<form action="#">
-  <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
-  <button type="submit" style="
-        background-color: #ff5733;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
+    <div style="flex: 1; min-width: 200px">
+    <h3>Subscribe to Our Newsletter</h3>
+    <form action="#">
+    <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%" required /><br /><br />
+    <button type="submit" id="subscribe-btn">Subscribe</button>
+    </form>
+  
+    <!-- Copyright Section -->
+    <div style="
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid white;
+      padding-top: 10px;
       ">
-    Subscribe
-  </button>
-</form>
-</div>
-</div>
-</div>
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+    </div>
 
-<!-- Copyright Section -->
-<div style="
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid white;
-  padding-top: 10px;
-">
-<p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-</div>
-</div>
-</footer>
+  </footer>
   <script>
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
