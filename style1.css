@@ -166,6 +166,7 @@ h1 {
     color: #555;
 }
 
+
 .team-feature,
 .contact-feature {
     padding: 20px;
@@ -216,29 +217,37 @@ h1 {
 }
 
 .contact-feature {
-    background-color: #f2e4aa;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    grid-column: 1 / -1;
+  background-color: #f2e4aa;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  grid-column: 1 / -1;
 }
 
+
 .contact-feature img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 10px;
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
 footer {
-    background-color: #000;
-    color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
+    width: 100%; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space items evenly */
+    padding: 20px; /* Add padding around the footer */
+    background-color: #fff5f5; /* Background color */
+    box-sizing: border-box; /* Include padding in width */
+    width: 100%; /* Full width of the viewport */
+    position: relative; /* Make it relative to the viewport */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
 }
 
 .footer-container {
@@ -259,6 +268,7 @@ footer {
   align-items: flex-end;
   padding-right: 20px; /* Adjust this value for right padding */
 }
+
 
 .links {
   display: flex;
@@ -281,6 +291,39 @@ footer {
 pre {
   margin: 0; /* Remove default margin from pre element */
   white-space: pre-wrap; /* Ensure the content wraps as needed */
+}
+.quick-links {
+  flex: 1 1 200px; /* Allows the section to grow and shrink */
+  min-width: 200px; /* Minimum width */
+  margin-bottom: 20px; /* Spacing below */
+}
+
+.quick-links-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.quick-links-list li {
+  margin-bottom: 10px; /* Space between items */
+}
+
+.quick-links-list a {
+  color: #000000; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.quick-links-list a:hover {
+  color: #2980b9; /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .quick-links {
+      text-align: center; /* Center text on small screens */
+  }
 }
 
 @keyframes fadeIn {
