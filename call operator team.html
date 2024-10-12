@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Manager Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.team-details-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f5;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-info {
+    margin-left: 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+strong {
+    color: #333;
+}
+
+/* Circular image styling */
+.member-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .team-details-container {
+        padding: 20px;
+    }
+    
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .member-info {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="team-details-container">
+        <h1>Call Operator Team</h1>
+
+        <div class="team-member">
+            <img src="Team images/image1.png" alt="John Doe" class="member-image">
+            <div class="member-info">
+                <h2>John Doe</h2>
+                <p><strong>Position:</strong> Senior Manager</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="Team images/image2.png" alt="Jane Smith" class="member-image">
+            <div class="member-info">
+                <h2>Jane Smith</h2>
+                <p><strong>Position:</strong> Assistant Manager</p>
+                <p><strong>Email:</strong> jane.smith@example.com</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="Team images/image3.png" alt="Michael Lee" class="member-image">
+            <div class="member-info">
+                <h2>Michael Lee</h2>
+                <p><strong>Position:</strong> Team Lead</p>
+                <p><strong>Email:</strong> michael.lee@example.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -448,6 +448,63 @@
     #logo img:hover{
       background-color: #c4d7ff;
     }
+
+    /*team*/
+    .team-feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+        }
+        
+        .card {
+            background-color: #e0f7fa; /* Light teal */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            width: 80%;
+            max-width: 2000px;
+            overflow: hidden;
+        }
+        
+        .card-content {
+            padding: 20px;
+            flex: 1;
+        }
+        
+        .card-image {
+            flex-basis: 40%;
+        }
+        
+        .card-image img {
+          
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background-color: #4caf50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #45a049; /* Darker green */
+        }
   </style>
 
 </head>
@@ -553,7 +610,22 @@
         </p>
       </div>
 
-      <!-- Team Section in Full Row -->
+         <!-- Team Section -->
+
+         <div class="team-feature">
+          <div class="card">
+              <div class="card-content">
+                  <h2>Meet the Team</h2>
+                  <p>Learn more about our dedicated team working tirelessly to ensure efficient ambulance monitoring and resource management.</p>
+                  <a href="team.html" class="button">Meet the team</a>
+              </div>
+            <!--  <div class="card-image">
+                  <img src="Team images/team.png" alt="Team Illustration">
+              </div>
+            -->
+          </div>
+      </div>
+      <!-- Team Section in Full Row 
       <div class="team-feature">
         <img src="images/team-w.png" alt="Meet the Team" />
         <div>
@@ -565,7 +637,7 @@
           <a href="team.html" class="button">Go to Team</a>
         </div>
       </div>
-
+    -->
       <!-- Contact Section in Full Row -->
       <div class="contact-feature">
         <img src="images/contact-w.avif" alt="Contact Us" />
@@ -809,6 +881,12 @@
       faqPopup.style.display = 'none';
     }
   });
+</script>
+
+<script>
+     function goToTeam() {
+    // Replace with your team page URL
+    window.location.href = 'team.html';
 </script>
 
 </body>
