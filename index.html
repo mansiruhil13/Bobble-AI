@@ -19,6 +19,46 @@
   <!-- Updated to latest version -->
 
   <style>
+      .chatbot-container {
+        position: fixed;
+        transition: right 0.3s ease;
+        bottom: 20px; /* Adjust as needed */
+        left: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      .chatbot-button {
+        background-color: #007bff;
+        border: none;
+        border-radius: 50%;
+        padding: 10px; /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px; /* Adjusted size */
+        height: 50px; /* Adjusted size */
+      }
+
+      .chatbot-button img {
+        width: 30px; /* Adjusted image size */
+        height: 30px; /* Adjusted image size */
+      }
+
+      .tooltip-text {
+            display: none; /* Hide by default */
+            position: absolute;
+            bottom: 100%; /* Position above the button */
+            right: 50%;
+            transform: translateX(50%);
+            background-color: #333; /* Background color for tooltip */
+            color: #fff; /* Tooltip text color */
+            padding: 5px;
+            border-radius: 5px;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+      .chatbot-button:hover .tooltip-text {
+        display: block; /* Show on hover */
+      }
     body {
       font-family: "Poppins", sans-serif;
       background-color: #f4f4f4;
@@ -78,7 +118,7 @@
     h1 {
       color: #2c3e50;
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     .grid {
@@ -433,7 +473,23 @@
     #backToTopBtn:hover {
       background-color: #c91515;
     }
-
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(71, 252, 255, 0.3), rgba(0, 157, 255, 0.3));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
     .light-dark-btn{
       display: flex;
       justify-content: center;
@@ -580,9 +636,6 @@
       </div>
     </div>
   </div>
-
-
- 
   <footer style="color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
@@ -594,7 +647,8 @@
         flex-direction: column; 
         align-items: start; 
         min-width: 200px; 
-        margin-bottom: 20px;">
+        margin-bottom: 20px;
+        padding-left: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
           <ul style="list-style-type: none; padding: 0;">
             <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
@@ -665,7 +719,7 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
       <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
       
       <!-- Back to Top Button -->
@@ -810,6 +864,54 @@
     }
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
+    circles.forEach(function (circle) {
+      circle.x = 0;
+      circle.y = 0;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.pageX;
+      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = `${x - 12}px`;
+        circle.style.top = `${y - 12}px`;
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        circle.x = x;
+        circle.y = y;
+
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  });
+</script>
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
 </body>
 </html>
