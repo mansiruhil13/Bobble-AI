@@ -1,4 +1,3 @@
-// Newsletter form submission handler
 document
   .getElementById("newsletter-form")
   .addEventListener("submit", function (event) {
@@ -22,34 +21,6 @@ document
     emailInput.value = "";
   });
 
-// Accordion functionality
-const accordions = document.querySelectorAll(".accordion");
-
-accordions.forEach((accordion, index) => {
-  const header = accordion.querySelector(".accordion__header");
-  const content = accordion.querySelector(".accordion__content");
-  const icon = accordion.querySelector(".accordion__icon i");
-
-  header.addEventListener("click", () => {
-    const isOpen = content.style.height === `${content.scrollHeight}px`;
-
-    accordions.forEach((a, i) => {
-      const c = a.querySelector(".accordion__content");
-      const ic = a.querySelector(".accordion__icon i");
-
-      if (i === index) {
-        c.style.height = isOpen ? "0px" : `${c.scrollHeight}px`;
-        ic.classList.toggle("ri-add-line", isOpen);
-        ic.classList.toggle("ri-subtract-fill", !isOpen);
-      } else {
-        c.style.height = "0px";
-        ic.classList.add("ri-add-line");
-        ic.classList.remove("ri-subtract-fill");
-      }
-    });
-  });
-});
-
 // Function to handle the active state of navbar items
 function changeContent(page) {
   // Get all navigation links
@@ -66,6 +37,7 @@ function changeContent(page) {
 window.onload = function () {
   document.getElementById("home-link").classList.add("active");
 };
+
 
 // JS for dark mode functionality
 // Get the dark mode button element
@@ -84,19 +56,3 @@ darkModeButton.addEventListener('click', () => {
   console.log(icon.classList); // Check the classes being applied to the icon
 });
 
-// Back to top button functionality
-const backToTopButton = document.getElementById('back-to-top');
-
-// Show the button when scrolled down 100px from the top
-window.onscroll = function () {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    backToTopButton.style.display = "block";
-  } else {
-    backToTopButton.style.display = "none";
-  }
-};
-
-// Scroll to top when the button is clicked
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
