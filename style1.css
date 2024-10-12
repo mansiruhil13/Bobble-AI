@@ -240,14 +240,16 @@ h1 {
   font-size:14px;
   font-weight:bolder;
   border-radius: 0.25rem;
-  background-color: #ec3a12;
+  background-color: #f45b39;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
 }
 .subscribe:hover{
-  background-color: #f75d3b;
+  background-color:#f33308;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
 
 

@@ -142,6 +142,8 @@ form.sign-in-form {
 
 .btn:hover {
   background-color: #4d84e2;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
 .panels-container {
   position: absolute;
@@ -412,7 +414,8 @@ form.sign-in-form {
   background: #5995fd; 
   color: #4d84e2; 
   border: 1px solid #4d84e2; 
-  transform: none; 
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
 .circle {
   height: 35px;
