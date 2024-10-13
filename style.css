@@ -60,6 +60,10 @@ nav {
     transition: background-color 0.3s; /* Transition effect */
 }
 
+.buttons .get-started {
+    margin-right: 100px;
+}
+
 .buttons .login:hover,
 .buttons .get-started:hover {
     background-color: #0056b3; /* Darker blue on hover */
