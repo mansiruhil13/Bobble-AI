@@ -385,6 +385,47 @@
         }
 
         .map {
+
+      width: 860px;
+      height: 400px;
+      border: 3px 3px 3px 3px solid #090202;
+      border-radius: 5px;
+      margin: 20px auto;
+      object-fit: cover;
+    }
+
+    .translate-btn {
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .translate-btn:hover {
+        background-color: #3498db;
+    }
+
+    .g-translate-popup {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
             width: 860px;
             height: 400px;
             border: 3px 3px 3px 3px solid #090202;
@@ -392,6 +433,7 @@
             margin: 20px auto;
             object-fit: cover;
         }
+
     </style>
 </head>
 
@@ -444,12 +486,15 @@
                 </ul>
             </nav>
             <div class="buttons">
+
+                <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+
                 <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
                     <i class="fa-solid fa-moon"></i>
                 </button>
+
                 <a href="login.html" class="login">Log in</a>
                 <a href="up.html" class="get-started">Get started</a>
-
             </div>
         </div>
     </header>
@@ -653,6 +698,41 @@
 
                     //end 
                 </script>
+
+    <!-- Add this div for the translator popup -->
+    <div id="gTranslate" class="g-translate-popup" style="display:none;">
+        <div class="gtranslate_wrapper"></div>
+    </div>
+
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": {"en": "usa"}
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script>
+        const translateBtn = document.getElementById('translateBtn');
+        const gTranslate = document.getElementById('gTranslate');
+
+        translateBtn.addEventListener('click', function() {
+            if (gTranslate.style.display === 'none') {
+                gTranslate.style.display = 'block';
+            } else {
+                gTranslate.style.display = 'none';
+            }
+        });
+
+        // Close the translator popup when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+                gTranslate.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 
