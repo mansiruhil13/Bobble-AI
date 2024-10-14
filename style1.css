@@ -232,6 +232,10 @@ h1 {
 
 .team-feature {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/ui-fix
   background-color: #e7ffe7;
   padding: 20px;
   display: flex;
@@ -240,6 +244,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   grid-column: 1 / -1;
+<<<<<<< HEAD
 =======
     background-color: #e7ffe7;
     padding: 40px 20px;
@@ -250,6 +255,8 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     grid-column: 1 / -1;
 >>>>>>> origin/main
+=======
+>>>>>>> origin/ui-fix
 }
 
 .team-feature img {
