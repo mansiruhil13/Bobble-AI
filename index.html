@@ -19,46 +19,61 @@
   <!-- Updated to latest version -->
 
   <style>
-      .chatbot-container {
-        position: fixed;
-        transition: right 0.3s ease;
-        bottom: 20px; /* Adjust as needed */
-        left: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
-      }
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      /* Adjust as needed */
+      left: 90px;
+      /* Adjust as needed */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-      .chatbot-button {
-        background-color: #007bff;
-        border: none;
-        border-radius: 50%;
-        padding: 10px; /* Smaller padding */
-        cursor: pointer;
-        position: relative;
-        width: 50px; /* Adjusted size */
-        height: 50px; /* Adjusted size */
-      }
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+    }
 
-      .chatbot-button img {
-        width: 30px; /* Adjusted image size */
-        height: 30px; /* Adjusted image size */
-      }
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
 
-      .tooltip-text {
-            display: none; /* Hide by default */
-            position: absolute;
-            bottom: 100%; /* Position above the button */
-            right: 50%;
-            transform: translateX(50%);
-            background-color: #333; /* Background color for tooltip */
-            color: #fff; /* Tooltip text color */
-            padding: 5px;
-            border-radius: 5px;
-            white-space: nowrap; /* Prevent text from wrapping */
-        }
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
 
-      .chatbot-button:hover .tooltip-text {
-        display: block; /* Show on hover */
-      }
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
+
     body {
       font-family: "Poppins", sans-serif;
       background-color: #f4f4f4;
@@ -70,6 +85,116 @@
       min-height: 100vh;
     }
 
+    /* adding css for dark mode toggle button */
+    /* Existing styles remain the same */
+
+    .menu ul li a {
+      color: black;
+      /* Default text color for light mode */
+      transition: color 0.3s;
+      /* Smooth transition for color change */
+    }
+
+    body.dark-mode .menu ul li a {
+      color: blue;
+      /* Text color for dark mode */
+    }
+
+    /* Dark mode hover effect */
+    body.dark-mode .menu ul li a:hover {
+      background-color: #444;
+      /* Lighter color in dark mode on hover */
+      color: #fff;
+      /* Keep text color white on hover */
+    }
+
+    /* more addition for dark mode theme */
+
+    /* Logo styles */
+    #logo img {
+      width: 50px;
+      height: auto;
+      transition: filter 0.3s;
+      /* Smooth transition for color change */
+    }
+
+    /* Dark mode logo */
+    body.dark-mode #logo img {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+    }
+
+    /* dark mode hove effect on logo */
+    body.dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    /* Button styles */
+    .light-dark-btn,
+    .login,
+    .get-started {
+      font-size: 20px;
+      /* Adjust the size as needed */
+      padding: 10px 15px;
+      /* Adjust padding for button size */
+      border: 2px solid transparent;
+      /* Transparent border initially */
+      border-radius: 5px;
+      /* Rounded corners */
+      background-color: transparent;
+      /* Initial background */
+      color: black;
+      /* Default text color for light mode */
+      cursor: pointer;
+      /* Pointer cursor on hover */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      /* Smooth transition */
+    }
+
+    /* Light mode button styles */
+    .light-dark-btn {
+      border-color: lightblue;
+      /* Light mode border color */
+    }
+
+    /* Dark mode button styles */
+    body.dark-mode .light-dark-btn,
+    body.dark-mode .login,
+    body.dark-mode .get-started {
+      font-size: 20px;
+      /* Adjust the size as needed */
+      color: white;
+      /* Text color for dark mode */
+      border-color: #444;
+      /* Dark mode border color */
+    }
+
+    /* Light mode hover effect for buttons */
+    .light-dark-btn:hover,
+    .login:hover,
+    .get-started:hover {
+      border-color: #444;
+      color: white;
+      background-color: blue;
+      /* Background color on hover in light mode */
+    }
+
+    /* Dark mode hover effect for buttons */
+    body.dark-mode .light-dark-btn:hover,
+    body.dark-mode .login:hover,
+    body.dark-mode .get-started:hover {
+      background-color: #555;
+      /* Darker background color on hover in dark mode */
+    }
+
+
+    /* more edition ended */
+
+    /* end */
+
     nav ul {
       list-style-type: none;
       padding: 0;
@@ -80,7 +205,7 @@
     nav ul li a {
       display: flex;
       align-items: center;
-      padding:px 10px;
+      padding: px 10px;
       text-decoration: none;
       border: 2px solid #000;
       border-radius: 12px;
@@ -89,7 +214,7 @@
       background-color: white;
       text-transform: uppercase;
       margin-right: 10px;
-      
+
     }
 
     nav ul li a:hover {
@@ -123,11 +248,11 @@
 
     .grid {
 
-      display:  grid;
-      grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows:  auto auto;
-      gap:  22px;
-      animation:  fadeIn 1s ease-in-out;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: auto auto;
+      gap: 22px;
+      animation: fadeIn 1s ease-in-out;
       align-content: center;
       justify-items: stretch;
       justify-content: center;
@@ -194,14 +319,16 @@
       margin-right: 20px;
       border-radius: 10px;
     }
+
     .sticky {
-    display: flex;
-    position: fixed;
-    background-color: #C4D7FF;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+      display: flex;
+      position: fixed;
+      background-color: #C4D7FF;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
     footer {
       background-color: #C4D7FF;
       color: #f3f4f6;
@@ -375,21 +502,24 @@
       /* Change the color of letters in this class to red */
     }
 
-    .logo a{
+    .logo a {
       text-decoration: none;
-   }
-   .logo img:hover{
-    background-color: white;
-   }
-   .container{
-    width: 98vw;
-  
-   }
+    }
 
-   #contact-hvr:hover{
-    background: none;
-   }
-   .circle {
+    .logo img:hover {
+      background-color: white;
+    }
+
+    .container {
+      width: 98vw;
+
+    }
+
+    #contact-hvr:hover {
+      background: none;
+    }
+
+    .circle {
       position: absolute;
       width: 25px;
       height: 25px;
@@ -398,6 +528,7 @@
       background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
+
     .circle-container {
       position: fixed;
       top: 0;
@@ -409,7 +540,7 @@
     }
 
     /* faq section styles */
-    .faq-section{
+    .faq-section {
       background-color: #e7f3fe;
 
       display: flex;
@@ -419,77 +550,85 @@
 
     }
 
-    .faq-h2{
+    .faq-h2 {
       margin-bottom: 1.5rem;
       font-size: 2.5rem;
       font-weight: 600;
     }
 
-    .faqs{
+    .faqs {
       width: 100%;
     }
 
     .faq {
-    margin-bottom: 15px;
-    width: 100%; /* Full width by default */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
+      margin-bottom: 15px;
+      width: 100%;
+      /* Full width by default */
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-   .faq-question {
-    background-color: #e7ffe7;
-    color: #333;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+    .faq-question {
+      background-color: #e7ffe7;
+      color: #333;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .faq-question::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #333; /* Downward pointing wide "V" */
-    transition: transform 0.3s ease;
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #333;
+      /* Downward pointing wide "V" */
+      transition: transform 0.3s ease;
 
-    margin-right: 10px;
+      margin-right: 10px;
     }
 
     .faq.active .faq-question::after {
-    border-top: none;
-    border-bottom: 8px solid #333; /* Upward pointing wide "V" */
+      border-top: none;
+      border-bottom: 8px solid #333;
+      /* Upward pointing wide "V" */
     }
 
     .faq-answer {
-    max-height: 0; /* Initially hidden */
-    overflow: hidden; /* Hide content when not visible */
-    padding: 0 10px;
-    background-color: #fff;
-    transition: max-height 0.3s ease; /* Smooth transition */
-    border-top: 1px solid #ccc;
+      max-height: 0;
+      /* Initially hidden */
+      overflow: hidden;
+      /* Hide content when not visible */
+      padding: 0 10px;
+      background-color: #fff;
+      transition: max-height 0.3s ease;
+      /* Smooth transition */
+      border-top: 1px solid #ccc;
     }
 
     .faq-answer p {
-    margin-bottom: 10px;
+      margin-bottom: 10px;
     }
 
-   .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
+    .faq.active .faq-answer {
+      max-height: 200px;
+      /* Set to a sufficient height to display content */
+      padding: 10px;
+      /* Adds padding when expanded */
+    }
 
     /* Back to Top Button Styles */
     #backToTopBtn {
@@ -504,13 +643,15 @@
       padding: 10px 15px;
       font-size: 16px;
       cursor: pointer;
-      display: none; /* Hidden by default */
+      display: none;
+      /* Hidden by default */
       transition: opacity 0.3s, visibility 0.3s;
     }
 
     #backToTopBtn:hover {
       background-color: #c91515;
     }
+
     .circle {
       position: absolute;
       width: 25px;
@@ -520,6 +661,7 @@
       background: radial-gradient(circle, rgba(71, 252, 255, 0.3), rgba(0, 157, 255, 0.3));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
+
     .circle-container {
       position: fixed;
       top: 0;
@@ -528,61 +670,77 @@
       height: 100%;
       pointer-events: none;
       z-index: 9999;
-    .light-dark-btn{
+    }
+
+    .light-dark-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding:10px 12px;
+      padding: 10px 12px;
       border-radius: 50%;
       margin-left: 5px;
       box-shadow: 0 0 5px rgb(0, 0, 0);
       font-size: 15px;
     }
 
-    #logo img:hover{
+    #logo img:hover {
       background-color: #c4d7ff;
     }
 
     .chatbot-container {
-        position: fixed;
-        transition: right 0.3s ease;
-        bottom: 20px; /* Adjust as needed */
-        left: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
-      }
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      /* Adjust as needed */
+      left: 90px;
+      /* Adjust as needed */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-      .chatbot-button {
-        background-color: #007bff;
-        border: none;
-        border-radius: 50%;
-        padding: 10px; /* Smaller padding */
-        cursor: pointer;
-        position: relative;
-        width: 50px; /* Adjusted size */
-        height: 50px; /* Adjusted size */
-      }
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+    }
 
-      .chatbot-button img {
-        width: 30px; /* Adjusted image size */
-        height: 30px; /* Adjusted image size */
-      }
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
 
-      .tooltip-text {
-            display: none; /* Hide by default */
-            position: absolute;
-            bottom: 100%; /* Position above the button */
-            right: 50%;
-            transform: translateX(50%);
-            background-color: #333; /* Background color for tooltip */
-            color: #fff; /* Tooltip text color */
-            padding: 5px;
-            border-radius: 5px;
-            white-space: nowrap; /* Prevent text from wrapping */
-        }
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
 
-      .chatbot-button:hover .tooltip-text {
-        display: block; /* Show on hover */
-      }
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
   </style>
 
 </head>
@@ -591,18 +749,18 @@
 
   <header class="sticky">
     <!-- preloader -->
-  <div id="preloader">
-    <div class="wrapper">
+    <div id="preloader">
+      <div class="wrapper">
         <div class="box-wrap">
-            <div class="box one"></div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five"></div>
-            <div class="box six"></div>
+          <div class="box one"></div>
+          <div class="box two"></div>
+          <div class="box three"></div>
+          <div class="box four"></div>
+          <div class="box five"></div>
+          <div class="box six"></div>
         </div>
+      </div>
     </div>
-</div>
     <div class="container">
 
       <div id="logo" class="logo">
@@ -630,7 +788,7 @@
           </li>
           <li>
             <a href="Feedback.html" id="contact-link" onclick="changeContent('contact')"><i
-              class="fa-solid fa-clipboard"></i> Feedback</a>
+                class="fa-solid fa-clipboard"></i> Feedback</a>
           </li>
           <li>
             <div class="gtranslate_wrapper"></div>
@@ -645,6 +803,11 @@
           </li>
         </ul>
       </nav>
+      <!-- <div class="buttons">
+        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
+          <i class="fa-solid fa-moon"></i>
+        </button> -->
+      <!-- dark mode toggle button -->
       <div class="buttons">
         <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
           <i class="fa-solid fa-moon"></i>
@@ -655,7 +818,7 @@
     </div>
   </header>
 
-  <div class="content" id="main-content" >
+  <div class="content" id="main-content">
     <h1 style="padding-top: 2rem; padding-bottom: 1rem;">Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
       <div class="feature">
@@ -740,51 +903,58 @@
       <div class="faq">
         <button class="faq-question">What should I do while waiting for the ambulance?</button>
         <div class="faq-answer">
-            <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
+          <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If
+            possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">How do I track an ambulance in real-time?</button>
         <div class="faq-answer">
-            <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the live map feature.</p>
+          <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+            live map feature.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
         <div class="faq-answer">
-            <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay, please contact emergency services for further instructions.</p>
+          <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+            please contact emergency services for further instructions.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">Can I provide medical information for the patient in advance?</button>
         <div class="faq-answer">
-            <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for the situation.</p>
+          <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+            the situation.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
         <div class="faq-answer">
-            <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending on the provider.</p>
+          <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending on
+            the provider.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">How can I request special medical equipment or personnel on the ambulance?</button>
         <div class="faq-answer">
-            <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such as a ventilator or a specialized doctor.</p>
+          <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such as
+            a ventilator or a specialized doctor.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
         <div class="faq-answer">
-            <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a technical issue through the system or contact support.</p>
+          <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+            technical issue through the system or contact support.</p>
         </div>
-     </div>
+      </div>
       <div class="faq">
         <button class="faq-question">Can I schedule an ambulance in advance?</button>
         <div class="faq-answer">
-            <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+          <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
         </div>
-     </div>
+      </div>
 
 
     </div>
@@ -793,14 +963,13 @@
   <!-- FAQ section ends here -->
 
 
- 
+
   <footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
 
         <!-- Quick Links Section -->
-        <div 
-        style="flex: 1; 
+        <div style="flex: 1; 
         display: flex;
         flex-direction: column; 
         align-items: start; 
@@ -809,25 +978,33 @@
         padding-left: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
           <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
             <!-- Add FAQ link here -->
-            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
+            <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;"
+                onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
           </ul>
         </div>
 
         <!-- Contact Information Section -->
-        <div 
-        style="flex: 1; 
+        <div style="flex: 1; 
         min-width: 200px; 
         margin-bottom: 10px;">
           <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
           <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;"
+            onmouseover="this.style.color='blue'"
+            onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;"
+              onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
         </div>
 
         <!-- Modified the looks of the social icons -->
@@ -855,20 +1032,20 @@
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
-        </div>        
+        </div>
         <style>
           .hover-link {
             color: #000000;
             text-decoration: none;
             margin-right: 10px;
-            background:none;
+            background: none;
             cursor: pointer;
             transition: color 0.3s ease;
           }
-        
+
           .hover-link:hover {
             color: blue;
-            background:none;
+            background: none;
           }
         </style>
 
@@ -877,9 +1054,12 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
-      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-      
+    <div
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
+      <strong>
+        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+      </strong>
+
       <!-- Back to Top Button -->
       <button id="backToTopBtn" style="
         background-color: #e81a1a;
@@ -901,11 +1081,11 @@
 
   <script>
     // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
       // Show/hide button based on scroll position
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) { // Show button after scrolling down 300px
           backToTopBtn.style.display = "block";
         } else {
@@ -914,7 +1094,7 @@
       });
 
       // Smooth scroll to top when button is clicked
-      backToTopBtn.addEventListener('click', function(e) {
+      backToTopBtn.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({
           top: 0,
@@ -954,12 +1134,12 @@
     });
 
   </script>
-<script>
-  // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function() {
+  <script>
+    // Back to Top Button functionality
+    document.addEventListener('DOMContentLoaded', function () {
       var backToTopBtn = document.getElementById("backToTopBtn");
 
-      backToTopBtn.addEventListener('click', function() {
+      backToTopBtn.addEventListener('click', function () {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -967,20 +1147,20 @@
       });
     });
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
-</script>
+  </script>
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const faqButtons = document.querySelectorAll('.faq-question');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqButtons = document.querySelectorAll('.faq-question');
 
-  faqButtons.forEach(button => {
-      button.addEventListener('click', function() {
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function () {
           const faq = button.parentElement;
           const answer = faq.querySelector('.faq-answer');
 
@@ -989,67 +1169,106 @@
 
           // Control the max-height for slide effect
           if (faq.classList.contains('active')) {
-              answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
+            answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
           } else {
-              answer.style.maxHeight = null; // Remove max-height to hide
+            answer.style.maxHeight = null; // Remove max-height to hide
           }
+        });
       });
-  });
-  });
-
-
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    circles.forEach(function (circle) {
-      circle.x = 0;
-      circle.y = 0;
     });
 
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.pageX;
-      coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+
+  </script>
+
+  <script>
+    //enabling the Dark mode toggle button added
+    document.addEventListener("DOMContentLoaded", () => {
+      const darkModeButton = document.getElementById("dark-mode-button");
+
+      // Check sessionStorage for dark mode preference
+      const currentTheme = sessionStorage.getItem("theme");
+      if (currentTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        document.body.classList.remove("light-mode");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+      } else {
+        document.body.classList.add("light-mode");
+        document.body.classList.remove("dark-mode");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+      }
+
+      darkModeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("light-mode");
+
+        // Save preference to sessionStorage
+        if (document.body.classList.contains("dark-mode")) {
+          sessionStorage.setItem("theme", "dark");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+        } else {
+          sessionStorage.setItem("theme", "light");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+        }
+      });
     });
 
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
+    // end
 
-      circles.forEach(function (circle, index) {
-        circle.style.left = `${x - 12}px`;
-        circle.style.top = `${y - 12}px`;
-        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-        const nextCircle = circles[index + 1] || circles[0];
-        circle.x = x;
-        circle.y = y;
 
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+    document.addEventListener("DOMContentLoaded", function () {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
       });
 
-      requestAnimationFrame(animateCircles);
-    }
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+      });
 
-    animateCircles();
-  });
-</script>
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
 
-<a href="chatbot.html">
-  <div class="fixed bottom-0 right-2 chatbot-container">
-    <button class="chatbot-button group">
-      <img class="h-20" src="chatbot.gif" alt="chatbot" />
-      <span class="tooltip-text">
-        Welcome to AmbuFlow!<br />
-        How can I help You?
-      </span>
-    </button>
-  </div>
-</a>
+        circles.forEach(function (circle, index) {
+          circle.style.left = `${x - 12}px`;
+          circle.style.top = `${y - 12}px`;
+          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+          const nextCircle = circles[index + 1] || circles[0];
+          circle.x = x;
+          circle.y = y;
+
+          x += (nextCircle.x - x) * 0.3;
+          y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+    });
+  </script>
+
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="chatbot.gif" alt="chatbot" />
+        <span class="tooltip-text">
+          Welcome to AmbuFlow!<br />
+          How can I help You?
+        </span>
+      </button>
+    </div>
+  </a>
 
 </body>
+
 </html>
+
+
+
