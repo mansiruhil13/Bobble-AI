@@ -100,7 +100,7 @@ input[type="tel"],
 select {
   padding: 15px 20px;
   margin-bottom: 10px;
-  border: 1px solid #bdc3c7;
+  border: 1px solid #92c4d6;
   border-radius: 10px;
   font-size: 18px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -212,7 +212,9 @@ select:focus {
   justify-content: center;
   align-items: center;
 }
-
+.navbar-logo a {
+  text-decoration: none;
+}
 .navbar-logo h2 {
   color: #ecf0f1;
   margin: 0;
@@ -245,6 +247,35 @@ select:focus {
   text-decoration-thickness: 3px;
 }
 
+/* Dropdown Menu */
+.navbar-links2 {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.navbar-links2 li {
+  font-weight: 400;
+}
+
+.navbar-links2 a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links2 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #3dbdec;
+  text-decoration-thickness: 3px;
+}
+
 /* Enhance Dashboard Layout */
 /* Adjusting body to accommodate dashboard layout */
 body {
@@ -253,8 +284,62 @@ body {
   min-height: 100vh;
 }
 
-
 /* Update manage-container to take remaining space */
 .manage-container {
   flex: 1;
+}
+
+.resp {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: white;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #34495ee7;
+  padding: 10px;
+  color: black;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999; /* Ensure it shows above */
+  width: 100%;
+  text-align: center;
+  height: 100%; /* Adjust height automatically */
+  overflow: visible;
+}
+
+/* Responsive Header */
+@media (max-width: 968px) {
+  .navbar-links {
+    display: none;
+  }
+  .resp {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+  }
+  #dropdown {
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 20px;
+    color: white;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .navbar-logo h2 {
+    font-size: 20px;
+  }
 }
