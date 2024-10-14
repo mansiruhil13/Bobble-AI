@@ -22,6 +22,154 @@
       min-height: 100vh;
     }
 
+
+    /* font size of button */
+    .buttons .login,
+    .buttons .get-started,
+    .dark-mode-toggle {
+      font-size: 18px;
+      /* Increase font size */
+      padding: 10px 15px;
+      /* Adjust padding for better appearance */
+    }
+
+    /* dark mode toggle button styling */
+    body {
+      background-color: white;
+      /* Light mode background */
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: lightblue;
+      /* Light mode navbar */
+      color: black;
+      padding: 10px;
+    }
+
+    .navbar.dark-mode {
+      background-color: black;
+      /* Dark mode navbar */
+      color: white;
+    }
+
+    /* more addition for dark mode theme */
+
+    .dark-mode .logo img {
+      filter: brightness(0) invert(1);
+      /* Inverts the color to make it white */
+    }
+
+    /* dark mode hove effect on logo */
+    body.dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    .navbar.dark-mode .logo-img {
+      filter: brightness(0) invert(1);
+      /* Change logo color in dark mode */
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu li {
+      margin-right: 20px;
+    }
+
+    .menu a {
+      color: black;
+      /* Light mode link color */
+      border: 1px solid black;
+      /* Black border */
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: blue;
+      /* Blue background on hover */
+      color: white;
+      /* White text on hover */
+    }
+
+    .dark-mode .menu a {
+      color: white;
+      /* Dark mode link color */
+      border: 1px solid lightgrey;
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+    .dark-mode .menu a:hover {
+      background-color: white;
+      /* White background on hover in dark mode */
+      color: black;
+      /* Black text on hover in dark mode */
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      border: 1px solid lightgrey;
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      background-color: white;
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
+
+    /* end */
+    /* adding dark mode for contact info */
+    .content {
+      transition: background-color 0.3s, color 0.3s;
+      /* Smooth transitions */
+    }
+
+    .dark-mode .content {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Match body background opacity */
+      padding: 20px;
+      /* Optional: add padding for better spacing */
+    }
+
+    /* end */
+
     footer {
       background-color: #C4D7FF;
       color: white;
@@ -48,7 +196,7 @@
 
     h1 {
       text-align: center;
-      color: #2c3e50;
+      color: blue;
     }
 
     h2 {
@@ -331,7 +479,8 @@
     }
 
     #backToTopBtn {
-      display: none; /* Hidden by default */
+      display: none;
+      /* Hidden by default */
       position: fixed;
       bottom: 20px;
       right: 30px;
@@ -354,20 +503,20 @@
 
 
 
-<header>
+<header class="navbar">
   <!-- preloader -->
   <div id="preloader">
     <div class="wrapper">
-        <div class="box-wrap">
-            <div class="box one"></div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five"></div>
-            <div class="box six"></div>
-        </div>
+      <div class="box-wrap">
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+        <div class="box four"></div>
+        <div class="box five"></div>
+        <div class="box six"></div>
+      </div>
     </div>
-</div>
+  </div>
   <div class="container">
     <div class="logo">
       <div class="brand-name">
@@ -397,6 +546,9 @@
       </ul>
     </nav>
     <div class="buttons">
+      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
       <a href="login.html" class="login">Log in</a>
       <a href="up.html" class="get-started">Get started</a>
     </div>
@@ -426,8 +578,8 @@
           <label for="star2" title="2 stars">★</label>
           <input type="radio" id="star1" name="rating" value="1" />
           <label for="star1" title="1 star">★</label>
-      </div>
-      
+        </div>
+
         <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required></textarea><br />
         <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
       </form>
@@ -496,9 +648,12 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-      
+    <div
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong>
+        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+      </strong>
+
       <!-- Back to Top Button -->
       <button id="backToTopBtn" style="
         background-color: #e81a1a;
@@ -510,184 +665,226 @@
         cursor: pointer;
       ">↑</button>
     </div>
-</footer>
+  </footer>
 
-<!-- FAQ Popup Button -->
-<button id="faqButton" style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">FAQ</button>
+  <!-- FAQ Popup Button -->
+  <button id="faqButton"
+    style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">FAQ</button>
 
-<!-- FAQ Popup -->
-<div id="faqPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-content">
-    <div class="faq-item">
-      <h3>What is AmbuFlow?</h3>
-      <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve patient care.</p>
+  <!-- FAQ Popup -->
+  <div id="faqPopup"
+    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-content">
+      <div class="faq-item">
+        <h3>What is AmbuFlow?</h3>
+        <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve
+          patient care.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does real-time tracking work?</h3>
+        <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route
+          optimization.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is the service available 24/7?</h3>
+        <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can hospitals benefit from AmbuFlow?</h3>
+        <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through
+          our integrated system.</p>
+      </div>
     </div>
-    <div class="faq-item">
-      <h3>How does real-time tracking work?</h3>
-      <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route optimization.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is the service available 24/7?</h3>
-      <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How can hospitals benefit from AmbuFlow?</h3>
-      <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through our integrated system.</p>
-    </div>
+    <button id="closeFaqPopup"
+      style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
   </div>
-  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-</div>
 
-<script src="preloader.js"></script>
-<script>
-  // Add event listeners to each star label for toggling the selection
-  const stars = document.querySelectorAll('.star-rating input');
-  stars.forEach(star => {
-    star.addEventListener('change', function () {
-      // Remove the checked state from all stars
-      stars.forEach(s => {
-        const label = document.querySelector(`label[for="${s.id}"]`);
-        label.style.color = '#ddd'; // Reset color for unselected stars
+  <script src="preloader.js"></script>
+
+  <script>
+    // adding code for dark mode
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('dark-mode-toggle');
+      const darkModeButton = document.querySelector('.dark-mode-toggle');
+      const logoImage = document.querySelector('.logo img'); // Select the logo image
+      const navbar = document.querySelector('.navbar'); // Select the navbar
+
+      // Reset to light mode for the Contact page
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+      // Clear the sessionStorage for theme on this page
+      sessionStorage.removeItem("theme");
+
+      toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+        // Update sessionStorage based on current mode
+        if (document.body.classList.contains('dark-mode')) {
+          sessionStorage.setItem("theme", "dark");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+        } else {
+          sessionStorage.setItem("theme", "light");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+        }
       });
-      // Highlight the selected star and all previous stars
-      this.checked = true;
-      const currentStarValue = this.value;
-      for (let i = 1; i <= currentStarValue; i++) {
-        const label = document.querySelector(`label[for="star${i}"]`);
-        label.style.color = '#ffdd00'; // Highlight selected stars
-      }
     });
-  });
 
-  // Handle form submission
-  const form = document.getElementById('feedback-box');
-  const feedbackBox = document.querySelector('.feedback-box');
-  const thankYouMessage = document.getElementById('thank-you-message');
+    // end
+  </script>
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+  <script>
+    // Add event listeners to each star label for toggling the selection
+    const stars = document.querySelectorAll('.star-rating input');
+    stars.forEach(star => {
+      star.addEventListener('change', function () {
+        // Remove the checked state from all stars
+        stars.forEach(s => {
+          const label = document.querySelector(`label[for="${s.id}"]`);
+          label.style.color = '#ddd'; // Reset color for unselected stars
+        });
+        // Highlight the selected star and all previous stars
+        this.checked = true;
+        const currentStarValue = this.value;
+        for (let i = 1; i <= currentStarValue; i++) {
+          const label = document.querySelector(`label[for="star${i}"]`);
+          label.style.color = '#ffdd00'; // Highlight selected stars
+        }
+      });
+    });
 
-    // Hide the feedback-box div
-    feedbackBox.style.display = 'none';
+    // Handle form submission
+    const form = document.getElementById('feedback-box');
+    const feedbackBox = document.querySelector('.feedback-box');
+    const thankYouMessage = document.getElementById('thank-you-message');
 
-    // Show the thank-you message
-    thankYouMessage.style.display = 'flex';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
 
-    // Hide the form to avoid further submissions
-    form.style.display = 'none';
+      // Hide the feedback-box div
+      feedbackBox.style.display = 'none';
 
-    // Redirect to the home page after 2 seconds
-    setTimeout(function () {
-      window.location.href = 'index.html';
-    }, 5000); // Adjust the delay as needed
-  });
+      // Show the thank-you message
+      thankYouMessage.style.display = 'flex';
 
-  // Update or add this JavaScript for the cursor effect
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
+      // Hide the form to avoid further submissions
+      form.style.display = 'none';
 
-  const colors = [
-    "#ffb56b",
-    "#fdaf69",
-    "#f89d63",
-    "#f59761",
-    "#ef865e",
-    "#ec805d",
-    "#e36e5c",
-    "#df685c",
-    "#d5585c",
-    "#d1525c",
-    "#c5415d",
-    "#c03b5d",
-    "#b22c5e",
-    "#ac265e",
-    "#9c155f",
-    "#950f5f",
-    "#830060",
-    "#7c0060",
-    "#680060",
-    "#60005f",
-    "#48005f",
-    "#3d005e"
-  ];
+      // Redirect to the home page after 2 seconds
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 5000); // Adjust the delay as needed
+    });
 
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
+    // Update or add this JavaScript for the cursor effect
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
-  window.addEventListener("mousemove", function(e){
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
-
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+    const colors = [
+      "#ffb56b",
+      "#fdaf69",
+      "#f89d63",
+      "#f59761",
+      "#ef865e",
+      "#ec805d",
+      "#e36e5c",
+      "#df685c",
+      "#d5585c",
+      "#d1525c",
+      "#c5415d",
+      "#c03b5d",
+      "#b22c5e",
+      "#ac265e",
+      "#9c155f",
+      "#950f5f",
+      "#830060",
+      "#7c0060",
+      "#680060",
+      "#60005f",
+      "#48005f",
+      "#3d005e"
+    ];
 
     circles.forEach(function (circle, index) {
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-
-      circle.style.scale = (circles.length - index) / circles.length;
-
-      circle.x = x;
-      circle.y = y;
-
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.3;
-      y += (nextCircle.y - y) * 0.3;
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
     });
 
-    requestAnimationFrame(animateCircles);
-  }
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
 
-  animateCircles();
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
 
-  // Add this new code for the Back to Top functionality
-  const backToTopBtn = document.getElementById('backToTopBtn');
-  const faqButton = document.getElementById('faqButton');
-  const faqPopup = document.getElementById('faqPopup');
-  const closeFaqPopup = document.getElementById('closeFaqPopup');
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
 
-  // Show/hide buttons when user scrolls
-  window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      backToTopBtn.style.display = "block";
-      faqButton.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-      faqButton.style.display = "none";
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
     }
-  };
 
-  // Scroll to top when button is clicked
-  backToTopBtn.addEventListener('click', function() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  });
+    animateCircles();
 
-  // FAQ Popup functionality
-  faqButton.addEventListener('click', () => {
-    faqPopup.style.display = 'block';
-  });
+    // Add this new code for the Back to Top functionality
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    const faqButton = document.getElementById('faqButton');
+    const faqPopup = document.getElementById('faqPopup');
+    const closeFaqPopup = document.getElementById('closeFaqPopup');
 
-  closeFaqPopup.addEventListener('click', () => {
-    faqPopup.style.display = 'none';
-  });
+    // Show/hide buttons when user scrolls
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = "block";
+        faqButton.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+        faqButton.style.display = "none";
+      }
+    };
 
-  // Close popup when clicking outside
-  window.addEventListener('click', (event) => {
-    if (event.target === faqPopup) {
+    // Scroll to top when button is clicked
+    backToTopBtn.addEventListener('click', function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
+    // FAQ Popup functionality
+    faqButton.addEventListener('click', () => {
+      faqPopup.style.display = 'block';
+    });
+
+    closeFaqPopup.addEventListener('click', () => {
       faqPopup.style.display = 'none';
-    }
-  });
-</script>
+    });
 
-<!-- Add this if it's not already present -->
-<div class="circle"></div>
+    // Close popup when clicking outside
+    window.addEventListener('click', (event) => {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Add this if it's not already present -->
+  <div class="circle"></div>
 </body>
 
 </html>
