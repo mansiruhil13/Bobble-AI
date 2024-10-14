@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>AmbuFlow</title>
 
   <link rel="stylesheet" href="src/css/indexmain.css">
@@ -27,21 +28,6 @@
 
     .chatbot-button {
       background-color: #007bff;
-    }
-
-    .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      /* Adjust as needed */
-      left: 90px;
-      /* Adjust as needed */
-      z-index: 1000;
-      /* Ensure it appears above other elements */
-    }
-
-    .chatbot-button {
-      background-color: #6207ca;
       border: none;
       border-radius: 50%;
       padding: 10px;
@@ -60,6 +46,31 @@
       /* Adjusted image size */
       height: 30px;
       /* Adjusted image size */
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
     }
 
     .tooltip-text {
@@ -123,6 +134,7 @@
     .feature:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 10px rgba(42, 40, 40, 0.3);
+      box-shadow: 0 4px 10px rgba(42, 40, 40, 0.3);
     }
 
     .feature img {
@@ -152,6 +164,14 @@
       left: 0;
       z-index: 1000;
     }
+
+    /* display: flex;
+      position: fixed;
+      background-color: #C4D7FF;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    } */
 
     footer {
       background-color: #C4D7FF;
@@ -318,6 +338,7 @@
       background: none;
     }
 
+
     .circle {
       position: absolute;
       width: 25px;
@@ -327,6 +348,7 @@
       background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
       transition: transform 0.1s, left 0.1s, top 0.1s;
     }
+
 
     .circle-container {
       position: fixed;
@@ -355,6 +377,7 @@
       font-size: 2.5rem;
       font-weight: 600;
       color: #000;
+      color: #000;
     }
 
     .faqs {
@@ -364,11 +387,13 @@
     .faq {
       margin-bottom: 15px;
       width: 100%;
+
       /* Full width by default */
-      background-color: #fff;
+      background-color: #000000;
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
+      transition: background-color 0.3s ease;
     }
 
 
@@ -399,6 +424,11 @@
       /* Lighter green on hover */
     }
 
+    .faq-question:hover {
+      background-color: #d5f0d5;
+      /* Lighter green on hover */
+    }
+
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -409,7 +439,6 @@
       border-top: 8px solid #333;
       /* Downward pointing wide "V" */
       transition: transform 0.3s ease;
-
       margin-right: 10px;
     }
 
@@ -462,6 +491,20 @@
       /* Adjusted size */
     }
 
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+    }
+
     .chatbot-button img {
       width: 30px;
       /* Adjusted image size */
@@ -474,11 +517,99 @@
       display: block;
       /* Show on hover */
     }
+
+    .dark-mode-toggle {
+      font-size: 18px;
+      /* Increase font size */
+      padding: 10px 15px;
+      /* Adjust padding for better appearance */
+    }
+
+    .dark-mode {
+      background-color: black;
+      /* Dark mode navbar */
+      color: white;
+    }
+
+    /* more addition for dark mode theme */
+
+    .dark-mode .logo img {
+      filter: brightness(0) invert(1);
+      /* Inverts the color to make it white */
+    }
+
+    /* dark mode hove effect on logo */
+    .dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    .navbar.dark-mode .logo-img {
+      filter: brightness(0) invert(1);
+      /* Change logo color in dark mode */
+    }
+
+    .dark-mode .content {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Match body background opacity */
+      padding: 20px;
+      /* Optional: add padding for better spacing */
+    }
+
+    .dark-mode .menu a {
+      color: white;
+      /* Dark mode link color */
+      border: 1px solid lightgrey;
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+    .dark-mode .menu a:hover {
+      background-color: white;
+      /* White background on hover in dark mode */
+      color: black;
+      /* Black text on hover in dark mode */
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      border: 1px solid lightgrey;
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      background-color: white;
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
   </style>
 </head>
 
 <body>
-  <!-- preloader -->
+
+
   <!-- preloader -->
   <div id="preloader">
     <div class="wrapper">
@@ -597,20 +728,20 @@
         </p>
       </div>
 
-    </div>
-    <!-- Team Section in Full Row -->
-    <div class="team-feature">
-      <img src="images/team-w.png" alt="Meet the Team" />
-      <div>
-        <h2>Meet the Team</h2>
-        <p>
-          Learn more about our dedicated team working tirelessly to ensure
-          efficient ambulance monitoring and resource management.
-        </p>
-        <a href="team.html" class="button">Go to Team</a>
-
+      <!-- Team Section in Full Row -->
+      <div class="team-feature">
+        <img src="images/team-w.png" alt="Meet the Team" />
+        <div class="team-feature-details">
+          <h2>Meet the Team</h2>
+          <p>
+            Learn more about our dedicated team working tirelessly to ensure
+            efficient ambulance monitoring and resource management.
+          </p>
+          <a href="team.html" class="button">Go to Team</a>
+        </div>
       </div>
     </div>
+
 
     <!-- Contact Section in Full Row -->
     <div class="contact-feature">
@@ -642,66 +773,72 @@
         <div class="faq-answer">
           <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If
             possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
+          <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If
+            possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
       </div>
-      <div class="faq">
-        <button class="faq-question">How do I track an ambulance in real-time?</button>
-        <div class="faq-answer">
-          <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
-            live map feature.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">How do I track an ambulance in real-time?</button>
+      <div class="faq-answer">
+        <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+          live map feature.</p>
+        <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+          live map feature.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
-        <div class="faq-answer">
-          <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
-            please contact emergency services for further instructions.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
+      <div class="faq-answer">
+        <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+          please contact emergency services for further instructions.</p>
+        <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+          please contact emergency services for further instructions.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">Can I provide medical information for the patient in advance?</button>
-        <div class="faq-answer">
-          <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
-            the situation.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">Can I provide medical information for the patient in advance?</button>
+      <div class="faq-answer">
+        <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+          the situation.</p>
+        <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+          the situation.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
-        <div class="faq-answer">
-          <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
-            on the provider.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
+      <div class="faq-answer">
+        <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
+          on the provider.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">How can I request special medical equipment or personnel on the
-          ambulance?</button>
-        <div class="faq-answer">
-          <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
-            as a ventilator or a specialized doctor.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">How can I request special medical equipment or personnel on the
+        ambulance?</button>
+      <div class="faq-answer">
+        <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
+          as a ventilator or a specialized doctor.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
-        <div class="faq-answer">
-          <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
-            technical issue through the system or contact support.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
+      <div class="faq-answer">
+        <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+          technical issue through the system or contact support.</p>
+        <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+          technical issue through the system or contact support.</p>
       </div>
-      <div class="faq">
-        <button class="faq-question">Can I schedule an ambulance in advance?</button>
-        <div class="faq-answer">
-          <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
-        </div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">Can I schedule an ambulance in advance?</button>
+      <div class="faq-answer">
+        <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+        <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
       </div>
-
-
     </div>
   </div>
 
   <!-- FAQ section ends here -->
-
-
-
   <footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
     <div
       style="background-color: #C4D7FF;display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
@@ -801,52 +938,7 @@
   <script src="preloader.js"></script>
 
   <script>
-    // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      var backToTopBtn = document.getElementById("backToTopBtn");
 
-      // Show/hide button based on scroll position
-      window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) { // Show button after scrolling down 300px
-          backToTopBtn.style.display = "block";
-        } else {
-          backToTopBtn.style.display = "none";
-        }
-      });
-
-      // Smooth scroll to top when button is clicked
-      backToTopBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-
-        })
-      })
-
-      // Back to Top Button functionality
-      document.addEventListener('DOMContentLoaded', function () {
-        var backToTopBtn = document.getElementById("backToTopBtn");
-
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) { // Show button after scrolling down 300px
-            backToTopBtn.style.display = "block";
-          } else {
-            backToTopBtn.style.display = "none";
-          }
-        });
-
-        // Smooth scroll to top when button is clicked
-        backToTopBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-      });
-    });
 
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
@@ -877,8 +969,6 @@
       document.getElementById("emailInput").value = '';
     });
 
-  </script>
-  <script>
     // Back to Top Button functionality
 
     form.addEventListener("submit", function (event) {
@@ -912,23 +1002,14 @@
     })
   </script>
   <script>
-    // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      var backToTopBtn = document.getElementById("backToTopBtn");
 
-      backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       thankYouMessage.style.display = 'block';
       document.getElementById("emailInput").value = '';
     });
+  </script>
   </script>
 
 
@@ -953,9 +1034,7 @@
         });
       });
     });
-  </script>
 
-  <script>
     //enabling the Dark mode toggle button added
     document.addEventListener("DOMContentLoaded", () => {
       const darkModeButton = document.getElementById("dark-mode-button");
@@ -988,9 +1067,6 @@
     });
 
     // end
-
-
-
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
       const circles = document.querySelectorAll(".circle");
@@ -1008,28 +1084,31 @@
       function animateCircles() {
         let x = coords.x;
         let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
-
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
-
-        requestAnimationFrame(animateCircles);
       }
+      circles.forEach(function (circle, index) {
+        circle.style.left = `${x - 12}px`;
+        circle.style.top = `${y - 12}px`;
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+
+        const nextCircle = circles[index + 1] || circles[0];
+        circle.x = x;
+        circle.y = y;
+
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+
+      });
+
+      requestAnimationFrame(animateCircles);
+
 
       animateCircles();
     });
   </script>
   <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
 </body>
 
 </html>
