@@ -218,6 +218,9 @@
         </div>
       </div>
     </div>
+    <div id="toast"
+      style="display: none; position: fixed; bottom: 20px; right: 10px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+    </div>
     <script src="preloader.js"></script>
     <script>
       const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -241,7 +244,7 @@
 
           // Remove the below block of code when the server is ready (Written just for testing)
           if (username === "username" && password === "123456") {
-              console.log("Login successful!");
+              showToast("Login successful!",'success');
               localStorage.setItem("userID", "7887892rdwed3")
               localStorage.setItem("JWTtoken", "dummyToken123"); // Example token
               localStorage.setItem("login", "success");
@@ -292,7 +295,7 @@
 
           // Validate inputs
           if (username === "" || email === "" || password === "") {
-            alert("Please fill in all fields");
+            showToast("Please fill in all fields",'error');
             return;
           }
 
@@ -390,6 +393,18 @@
       document
         .querySelector(".sign-up-form input[type='password']")
         .addEventListener("input", checkPasswordStrength);
+
+      function showToast(message, type) {
+          const toast = document.getElementById('toast');
+          toast.textContent = message;
+          toast.style.display = "block";
+          toast.style.backgroundColor = type === "success" ? "#28a745" : "#dc3545"; // Green for success, red for error
+
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 3000);
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
     <script>

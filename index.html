@@ -18,626 +18,6 @@
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
   <!-- Updated to latest version -->
 
-  <style>
-
-      .chatbot-container {
-        position: fixed;
-        transition: right 0.3s ease;
-        bottom: 20px; /* Adjust as needed */
-        left: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
-      }
-
-    .chatbot-button {
-      background-color: #6207ca;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-      right: -60px;
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 50px;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-
-    nav ul li a {
-      display: flex;
-      align-items: center;
-      padding: px 10px;
-      text-decoration: none;
-      border: 2px solid #000;
-      border-radius: 12px;
-      color: black;
-      font-weight: bold;
-      background-color: white;
-      text-transform: uppercase;
-      margin-right: 10px;
-
-    }
-
-    nav ul li a:hover {
-      background-color: #faecec;
-    }
-
-    nav ul li a:active {
-      background-color: #000;
-      color: white;
-    }
-
-    nav ul li a i {
-      margin-right: 8px;
-    }
-
-
-
-    .content {
-      margin: 20px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      flex-grow: 1;
-    }
-
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin: 20px 0;
-      font-weight: 400;
-    }
-
-    .grid {
-
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows: auto auto;
-      gap: 22px;
-      animation: fadeIn 1s ease-in-out;
-      align-content: center;
-      justify-items: stretch;
-      justify-content: center;
-      align-items: stretch;
-
-    }
-
-    .feature {
-      background-color: #e7f3fe;
-      align-items: center;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(42, 40, 40, 0.3);
-    }
-
-    .feature img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border-radius: 50%;
-      border: 3px solid #2980b9;
-    }
-
-    .feature h2 {
-      color: #2980b9;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #555;
-    }
-
-    .team-feature,
-    .contact-feature {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
-
-    .team-feature {
-      background-color: #e7ffe7;
-    }
-
-    .contact-feature {
-      background-color: #f2e4aa;
-    }
-
-    .team-feature img,
-    .contact-feature img {
-      width: 150px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-    }
-
-    .sticky {
-      display: flex;
-      position: fixed;
-      background-color: #C4D7FF;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-
-    footer {
-      background-color: #C4D7FF;
-      color: #f3f4f6;
-      text-align: center;
-      padding: 15px 0;
-      width: 100%;
-    }
-
-    .checkbtn {
-      font-size: 30px;
-      color: #333;
-      float: right;
-      line-height: 80px;
-      margin-right: 40px;
-      cursor: pointer;
-      display: none;
-
-    }
-
-    #check {
-      display: none;
-    }
-
-    /* Added the hover animation on the footer social icons */
-    .social-icon {
-      transition: transform 0.3s ease;
-      /* Smooth transition effect */
-    }
-
-    .social-icon:hover {
-      transform: scale(1.3);
-      /* Scale the element to 1.3 times its size */
-    }
-
-    .fa-facebook:hover {
-      color: blue;
-      /* Icon color change to blue on hover */
-    }
-
-    .fa-x-twitter:hover {
-      color: black;
-      /* Icon color change to black on hover */
-    }
-
-    .fa-instagram:hover {
-      color: orangered;
-      /* Icon color change to orangered on hover */
-    }
-
-    .fa-linkedin-in:hover {
-      color: rgb(16, 13, 195);
-      /* Icon color change to rgb(16, 13, 195) on hover */
-    }
-
-    @media (max-width:966px) {
-      label.logo {
-        font-size: 30px;
-        padding-left: 50px;
-      }
-
-    }
-
-    @media (max-width:858px) {
-
-      .checkbtn {
-        display: block;
-      }
-
-      ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #77a1cc;
-        top: 85px;
-        left: -200%;
-        text-align: center;
-        transition: all .5s;
-        height: 80px;
-      }
-
-      nav ul li {
-        display: block;
-      }
-
-      nav ul li a {
-        display: block;
-        font-size: 10px;
-      }
-
-      a:hover,
-      a.active {
-        background: none;
-        color: #000000;
-      }
-
-      #check:checked~ul {
-        left: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Logo Animation */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        /* Start from the left */
-      }
-
-      50% {
-        transform: translateX(10px);
-        /* Move slightly to the right */
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* End at original position */
-      }
-    }
-
-    /* Letter Drop Animation */
-    @keyframes letterDrop {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-
-      50% {
-        transform: translateY(10px);
-        /* Slight bounce */
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      animation: logoAnimation 1s ease forwards;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 10px;
-      /* Space between the text and the logo image */
-    }
-
-    .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-    }
-
-    .red {
-      color: red;
-      /* Change the color of letters in this class to red */
-    }
-
-    .logo a {
-      text-decoration: none;
-    }
-
-    .logo img:hover {
-      background-color: white;
-    }
-
-    .container {
-      width: 98vw;
-
-    }
-
-    #contact-hvr:hover {
-      background: none;
-    }
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* faq section styles */
-    .faq-section {
-      background-color: #e7f3fe;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-    .faq-h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #000;
-    }
-
-    .faqs {
-      width: 100%;
-    }
-
-    .faq {
-      margin-bottom: 15px;
-      width: 100%;
-      /* Full width by default */
-      background-color: #000000;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: background-color 0.3s ease;
-    }
-    .faq:hover {
-      background-color: #e31616; /* Slight hover effect for FAQs */
-    }
-    .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
-      padding: 10px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
-    .faq-question:hover {
-      background-color: #d5f0d5; /* Lighter green on hover */
-    }
-    .faq-question::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #333;
-      /* Downward pointing wide "V" */
-      transition: transform 0.3s ease;
-
-      margin-right: 10px;
-    }
-
-    .faq.active .faq-question::after {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      opacity: 0;
-      max-height: 0; /* Initially hidden */
-      overflow: hidden; /* Hide content when not visible */
-      padding: 0 10px;
-      background-color: #fff;
-      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
-      border-top: 1px solid #ccc;
-    }
-
-    .faq-answer p {
-      margin-bottom: 10px;
-    }
-
-    .faq.active .faq-answer {
-      opacity: 1;
-      max-height: 200px;
-      /* Set to a sufficient height to display content */
-      padding: 10px;
-      /* Adds padding when expanded */
-    }
-    .faq.active .faq-answer p {
-      transition: opacity 0.3s ease-in-out;
-    }
-    /* Back to Top Button Styles */
-    #backToTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      background-color: #e81a1a;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
-      display: none;
-      /* Hidden by default */
-      transition: opacity 0.3s, visibility 0.3s;
-    }
-
-    #backToTopBtn:hover {
-      background-color: #c91515;
-    }
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(71, 252, 255, 0.3), rgba(0, 157, 255, 0.3));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    .light-dark-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 12px;
-      border-radius: 50%;
-      margin-left: 5px;
-      box-shadow: 0 0 5px rgb(0, 0, 0);
-      font-size: 15px;
-    }
-
-    #logo img:hover {
-      background-color: #c4d7ff;
-    }
-
-    .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      /* Adjust as needed */
-      left: 90px;
-      /* Adjust as needed */
-      z-index: 1000;
-      /* Ensure it appears above other elements */
-    }
-
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
-  </style>
-
 </head>
 
 <body>
@@ -927,13 +307,18 @@
         <!-- Newsletter Subscription -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email"
+          <form id="newsletter-form" novalidate>
+            <input type="email" id="email-input" placeholder="Your Email"
               style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
         </div>
+
+        <div id="toast"
+          style="display: none; position: fixed; bottom: 20px; right: 10px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+        </div>
+
         <style>
           .hover-link {
             color: #000000;
@@ -962,47 +347,118 @@
       </strong>
 
       <!-- Back to Top Button -->
-      <button id="backToTopBtn" style="
-        background-color: #e81a1a;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        font-size: 16px;
-        cursor: pointer;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 99;
-
-      ">↑</button>
+      <button class="backToTopBtn" style="
+              background-color: #e81a1a;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              padding: 10px 15px;
+              font-size: 16px;
+              cursor: pointer;
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 99;
+      
+            ">↑</button>
     </div>
+    <style>
+      /* Back to Top Button Styles */
+.backToTopBtn {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+  background-image: none;
+  background-color: transparent;
+  padding: 0;
+  transform: translateZ(0);
+  /* Forces hardware acceleration */
+}
+
+.backToTopBtn.show-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.backToTopBtn:hover {
+  transform: scale(1.1);
+}
+
+.backToTopBtn>img {
+  width: 50px;
+  height: 50px;
+}
+    </style>
   </footer>
   <script src="preloader.js"></script>
-
   <script>
-    // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      var backToTopBtn = document.getElementById("backToTopBtn");
+        document.getElementById('email-input').addEventListener('click', function (event) {
+          event.preventDefault();
+        })
+      document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
 
-      // Show/hide button based on scroll position
-      window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) { // Show button after scrolling down 300px
-          backToTopBtn.style.display = "block";
+        const emailInput = document.getElementById('email-input');
+        const email = emailInput.value;
+        const toast = document.getElementById('toast');
+
+        // Simple email validation using regex
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(email)) {
+          // Display success message
+          showToast("Thank you for subscribing!", "success");
+          emailInput.value = ""; // Clear the input field
         } else {
-          backToTopBtn.style.display = "none";
+          // Display error message
+          showToast("Please enter a valid email address.", "error");
         }
       });
+      function showToast(message, type) {
+          const toast = document.getElementById('toast');
+          toast.textContent = message;
+          toast.style.display = "block";
+          toast.style.backgroundColor = type === "success" ? "#28a745" : "#dc3545"; // Green for success, red for error
 
-      // Smooth scroll to top when button is clicked
-      backToTopBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 3000);
+        }
+  </script>
+  <script>
+  const scrollButton = document.querySelector(".backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    window.pageYOffset > 100
+      ? scrollButton.classList.add("show-btn")
+      : scrollButton.classList.remove("show-btn");
+  });
+
+  function smoothScrollToTop() {
+    const scrollY = window.pageYOffset;
+    const scrollStep = Math.max(10, Math.floor(scrollY / 20));
+    if (scrollY > 0) {
+      window.scrollBy(0, -scrollStep);
+      requestAnimationFrame(smoothScrollToTop);
+    }
+  }
+
+  // When the button is clicked, scroll to the top smoothly
+  scrollButton?.addEventListener("click", () => {
+    requestAnimationFrame(smoothScrollToTop);
+  });
   </script>
   <script>
     function changeContent(page) {
