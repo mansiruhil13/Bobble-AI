@@ -161,6 +161,73 @@
         .red {
             color: red; 
         }
+        .goog-te-combo {
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      outline: none;
+      color: black;
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .goog-te-combo:hover {
+      background-color: #e0f2ff;
+      border-color: #20bc9c;
+      color: #20bc9c;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+
+    .goog-te-gadget > span > a {
+      display: none !important;
+    }
+
+    .goog-te-gadget .goog-te-combo {
+      color: black !important;
+    }
+
+    .goog-te-gadget .goog-te-combo:hover {
+      color: #20bc9c !important;
+    }
+
+    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+      display: none;
+    }
+
+    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value:before {
+      content: 'Translate';
+      color: #20bc9c;
+    }
+
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+
+    .goog-te-menu-frame {
+      max-height: 400px !important;
+      overflow-y: auto !important;
+      background-color: white;
+      border: 1px solid #20bc9c;
+      border-radius: 0.5rem;
+    }
+
+    .skiptranslate > iframe {
+      height: 0 !important;
+      border-style: none;
+      box-shadow: none;
+    }
+
     </style>
 </head>
 <body>
@@ -187,6 +254,8 @@
                 <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
                 <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
             </ul>
+            <div id="google_translate_element" ></div>
+
         </nav>
         <div class="buttons">
             <a href="login.html" class="login">Log in</a>
@@ -274,7 +343,7 @@
     
 </footer>
 
-<script>
+<script src="translate.js">
     function changeContent(page) {
         var links = document.querySelectorAll('.menu ul li a');
         links.forEach(link => link.classList.remove('active'));
