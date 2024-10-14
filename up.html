@@ -201,10 +201,6 @@
         </div>
       </div>
     </div>
-    <div id="toast"
-      style="display: none; position: fixed; bottom: 20px; right: 10px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
-    </div>
-    
     <script src="preloader.js"></script>
     <script>
       const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -281,7 +277,7 @@
 
           // Validate inputs
           if (username === "" || email === "" || password === "") {
-            showToast("Please fill in all fields","error");
+            alert("Please fill in all fields");
             return;
           }
 
@@ -379,18 +375,6 @@
       document
         .querySelector(".sign-up-form input[type='password']")
         .addEventListener("input", checkPasswordStrength);
-
-      function showToast(message, type) {
-        const toast = document.getElementById('toast');
-        toast.textContent = message;
-        toast.style.display = "block";
-        toast.style.backgroundColor = type === "success" ? "#28a745" : "#dc3545"; // Green for success, red for error
-
-        // Hide toast after 3 seconds
-        setTimeout(() => {
-          toast.style.display = "none";
-        }, 3000);
-      }
     </script>
     <script>
       const coords = { x: 0, y: 0 };
