@@ -288,12 +288,6 @@ body {
     background-color: #000;
 }
 
-.menu_links.active:before {
-    color: white;
-    background-color: #000;
-}
-
-
 .main_content {
     display: flex;
     justify-content: space-between;
@@ -446,7 +440,12 @@ footer {
     padding: 15px 0;
     width: 100%;
 }
-
+footer div{
+    margin-right: 1rem;
+}
+hr{
+    
+}
 .subtext {
     font-size: 1.2rem;
     color: #1d4ed8;
