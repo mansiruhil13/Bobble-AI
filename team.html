@@ -22,6 +22,156 @@
             min-height: 100vh;
         }
 
+
+        /* font size of button */
+        .buttons .login,
+        .buttons .get-started,
+        .dark-mode-toggle {
+            font-size: 18px;
+            /* Increase font size */
+            padding: 10px 15px;
+            /* Adjust padding for better appearance */
+        }
+
+        /* dark mode toggle button styling */
+        body {
+            background-color: white;
+            /* Light mode background */
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            background-color: lightblue;
+            /* Light mode navbar */
+            color: black;
+            padding: 10px;
+        }
+
+        .navbar.dark-mode {
+            background-color: black;
+            /* Dark mode navbar */
+            color: white;
+        }
+
+        /* more addition for dark mode theme */
+
+        .dark-mode .logo img {
+            filter: brightness(0) invert(1);
+            /* Inverts the color to make it white */
+        }
+
+        /* dark mode hove effect on logo */
+        body.dark-mode #logo img:hover {
+            filter: brightness(0) invert(1);
+            /* Change black logo to white */
+            filter: brightness(0.8);
+            /* Change the brightness to light grey on hover */
+        }
+
+        .navbar.dark-mode .logo-img {
+            filter: brightness(0) invert(1);
+            /* Change logo color in dark mode */
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: black;
+            /* Light mode link color */
+            border: 1px solid black;
+            /* Black border */
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: blue;
+            /* Blue background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        .dark-mode .menu a {
+            color: white;
+            /* Dark mode link color */
+            border: 1px solid lightgrey;
+            /* Light grey border in dark mode */
+        }
+
+        .dark-mode {
+            background-color: rgba(50, 50, 50, 0.95);
+            /* Slightly gray background with high opacity */
+        }
+
+        .dark-mode .menu a:hover {
+            background-color: white;
+            /* White background on hover in dark mode */
+            color: black;
+            /* Black text on hover in dark mode */
+        }
+
+        .light-dark-btn {
+            background-color: transparent;
+            border: 1px solid black;
+            /* Black border */
+            cursor: pointer;
+            color: black;
+            /* Default button color */
+        }
+
+        .light-dark-btn:hover {
+            color: blue;
+            /* Change color on hover */
+        }
+
+        .dark-mode .light-dark-btn {
+            color: white;
+            /* Button color in dark mode */
+            border: 1px solid lightgrey;
+            /* Light grey border */
+        }
+
+        .dark-mode .light-dark-btn:hover {
+            background-color: white;
+            /* Background on hover in dark mode */
+            color: black;
+            /* Text color on hover in dark mode */
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* end */
+        /* adding dark mode for contact info */
+        .content {
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transitions */
+        }
+
+        .dark-mode .content {
+            background-color: rgba(50, 50, 50, 0.95);
+            /* Match body background opacity */
+            padding: 20px;
+            /* Optional: add padding for better spacing */
+        }
+
+        /* end */
+
+
+
         .menu ul li a {
             padding: 10px 15px;
             color: black;
@@ -42,18 +192,18 @@
         }
 
         h1 {
-            color: #2c3e50;
+            color: blue;
             text-align: center;
             margin-bottom: 20px;
         }
 
         .team-section {
 
-            display:  flex;
-            flex-wrap:  wrap;
-            justify-content:  center;
-            gap:  22px;
-            animation:  fadeIn 1s ease-in-out;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            animation: fadeIn 1s ease-in-out;
 
         }
 
@@ -136,9 +286,10 @@
             /* Icon color change to blue on hover */
         }
 
-        a .social-icon .twitter:hover{
+        a .social-icon .twitter:hover {
             color: white;
         }
+
         .fa-x-twitter:hover {
             color: black;
             /* Icon color change to black on hover */
@@ -226,25 +377,59 @@
         .red {
             color: red;
         }
+
+        .translate-btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .translate-btn:hover {
+            background-color: #3498db;
+        }
+
+        .g-translate-popup {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .g-translate
     </style>
 </head>
 
 <body>
     <!-- preloader -->
-  <div id="preloader">
-    <div class="wrapper">
-        <div class="box-wrap">
-            <div class="box one"></div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five"></div>
-            <div class="box six"></div>
+    <div id="preloader">
+        <div class="wrapper">
+            <div class="box-wrap">
+                <div class="box one"></div>
+                <div class="box two"></div>
+                <div class="box three"></div>
+                <div class="box four"></div>
+                <div class="box five"></div>
+                <div class="box six"></div>
+            </div>
         </div>
     </div>
-</div>
 
-    <header>
+    <header class="navbar">
         <div class="container">
 
             <div class="logo">
@@ -262,6 +447,7 @@
                     style="width: 50px; height: auto" />
             </div>
 
+
         <nav class="menu">
             <ul>
                 <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -272,11 +458,17 @@
             </ul>
         </nav>
         <div class="buttons">
+            <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
             <a href="login.html" class="login">Log in</a>
             <a href="up.html" class="get-started">Get started</a>
         </div>
     </div>
 </header>
+
+<!-- Add this div for the translator popup -->
+<div id="gTranslate" class="g-translate-popup" style="display:none;">
+    <div class="gtranslate_wrapper"></div>
+</div>
 
 <div class="content" id="main-content">
     <h1>Meet Our Team</h1>
@@ -295,114 +487,150 @@
             <img src="images/call-web.jpg" alt="Call Operator">
             <h2>Call Operator</h2>
             <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
+                                class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
+                                class="fa-solid fa-file"></i> Features</a></li>
+                    <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i
+                                class="fa-solid fa-user-group"></i> Team</a></li>
+                    <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
+                                class="fa-solid fa-phone"></i> Contact</a></li>
+                    <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
+                                class="fa-solid fa-clipboard"></i> Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="buttons">
+                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="login.html" class="login">Log in</a>
+                <a href="up.html" class="get-started">Get started</a>
+            </div>
+
         </div>
-        <div class="team-member">
-            <img src="images/gps-web.webp" alt="GPS Technician">
-            <h2>GPS Technician</h2>
-            <p>Manages real-time tracking systems for effective ambulance navigation.</p>
+    </header>
+
+    <div class="content" id="main-content">
+        <h1>Meet Our Team</h1>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="images/service-web.jpg" alt="Service Manager">
+                <h2>Service Manager</h2>
+                <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/rescue-web.webp" alt="Rescue Specialist">
+                <h2>Rescue Specialist</h2>
+                <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/call-web.jpg" alt="Call Operator">
+                <h2>Call Operator</h2>
+                <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/gps-web.webp" alt="GPS Technician">
+                <h2>GPS Technician</h2>
+                <p>Manages real-time tracking systems for effective ambulance navigation.</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Contact Section in Full Row -->
-<div class="features-container">
-<
-    <div class="contact-features">
-        <!-- Wrap the entire .inner div in an anchor tag to make it clickable -->
-        <a href="contact.html" class="contact-feature-link">
-            <div class="inner">
-                <div class="front">
-                    <img src="images/contact-w.avif" alt="Contact Us" />
-                    <h2>Contact Us</h2>
+    <!-- Contact Section in Full Row -->
+    <div class="features-container">
+        < <div class="contact-features">
+            <!-- Wrap the entire .inner div in an anchor tag to make it clickable -->
+            <a href="contact.html" class="contact-feature-link">
+                <div class="inner">
+                    <div class="front">
+                        <img src="images/contact-w.avif" alt="Contact Us" />
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="back">
+                        <p>
+                            Reach out to us for any inquiries or assistance. We're here to
+                            help you 24/7 with our emergency services.
+                        </p>
+                        <span class="button">Go to Contact</span>
+                    </div>
                 </div>
-                <div class="back">
-                    <p>
-                        Reach out to us for any inquiries or assistance. We're here to
-                        help you 24/7 with our emergency services.
-                    </p>
-                    <span class="button">Go to Contact</span>
+            </a>
+    </div>
+
+
+    </div>
+
+
+
+    <footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
+        <div
+            style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
+
+            <!-- Quick Links Section -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+                <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+                <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+                <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
+                <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a>
+                </p>
+            </div>
+
+            <!-- Modified the looks of the social icons -->
+            <!-- Social Media Links -->
+            <div style="text-align: center; min-width: 200px; color: black;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+                    <a href="https://www.facebook.com" class="social-icon facebook"
+                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" class="social-icon twitter"
+                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com" class="social-icon instagram"
+                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" class="social-icon linkedin"
+                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-        </a>
-    </div>
 
-  <div class="contact-features">
-      <div class="inner">
-          <div class="front">
-              <a href="Contactus.html">
-                  <img src="images/contact-w.avif" alt="Contact Us" />
-                  <h2>Contact Us</h2>
-              </a>
-          </div>
-          <div class="back">
-              <p>
-                  Reach out to us for any inquiries or assistance. We're here to
-                  help you 24/7 with our emergency services.
-              </p>
-              <a href="contact.html" class="button">Go to Contact</a>
-          </div>
-      </div>
-  </div>
-
-</div>
-
-
-
-<footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
-    
-    <!-- Quick Links Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-      <ul style="list-style-type: none; padding: 0;">
-        <li><a href="about.html" class="footer-link">About Us</a></li>
-        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-        <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
-        <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Information Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-      <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-      <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
-      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
-    </div>
-
-    <!-- Modified the looks of the social icons -->
-        <!-- Social Media Links -->
-        <div style="text-align: center; min-width: 200px; color: black;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-              <a href="https://www.facebook.com" class="social-icon facebook"
-                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.twitter.com" class="social-icon twitter"
-                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.instagram.com" class="social-icon instagram"
-                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com" class="social-icon linkedin"
-                style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Newsletter Subscription -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Your Email"
+                        style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+                    <button type="submit"
+                        style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+                </form>
             </div>
-          </div>
+        </div>
 
-    <!-- Newsletter Subscription -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-      <form action="#">
-        <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-        <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-      </form>
-    </div>
-  </div>
+        <!-- Copyright Section -->
+        <div
+            style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
+            <strong>
+                <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+            </strong>
 
-  <!-- Copyright Section -->
-  <div style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
-    <strong><p>&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-    
-    <!-- Back to Top Button -->
-    <button id="backToTopBtn" style="
+            <!-- Back to Top Button -->
+            <button id="backToTopBtn" style="
       background-color: #e81a1a;
       color: white;
       border: none;
@@ -411,40 +639,104 @@
       font-size: 16px;
       cursor: pointer;
     ">↑</button>
-  </div>
-</footer>
-<script src="preloader.js"></script>
+        </div>
+    </footer>
+    <script src="preloader.js"></script>
 
-<!-- Add this style block in the <head> section or in your CSS file -->
-<style>
-  .hover-link {
-    color: #000000;
-    text-decoration: none;
-    margin-right: 10px;
-    background: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
+    <!-- Add this style block in the <head> section or in your CSS file -->
+    <style>
+        .hover-link {
+            color: #000000;
+            text-decoration: none;
+            margin-right: 10px;
+            background: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
-  .hover-link:hover {
-    color: blue;
-    background: none;
-  }
-</style>
+        .hover-link:hover {
+            color: blue;
+            background: none;
+        }
+    </style>
 
-<!-- Add this script block just before the closing </body> tag -->
+    <script>
+        // adding code for dark mode
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            const darkModeButton = document.querySelector('.dark-mode-toggle');
+            const logoImage = document.querySelector('.logo img'); // Select the logo image
+            const navbar = document.querySelector('.navbar'); // Select the navbar
+
+            // Reset to light mode for the Contact page
+            document.body.classList.remove("dark-mode");
+            document.body.classList.add("light-mode");
+            darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+            navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+            // Clear the sessionStorage for theme on this page
+            sessionStorage.removeItem("theme");
+
+            toggleButton.addEventListener('click', function () {
+                document.body.classList.toggle('dark-mode');
+                navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+                // Update sessionStorage based on current mode
+                if (document.body.classList.contains('dark-mode')) {
+                    sessionStorage.setItem("theme", "dark");
+                    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+                } else {
+                    sessionStorage.setItem("theme", "light");
+                    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+                }
+            });
+        });
+
+        // end
+    </script>
+    <!-- Add this script block just before the closing </body> tag -->
+    <script>
+        // Back to Top Button functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            var backToTopBtn = document.getElementById("backToTopBtn");
+
+            backToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 <script>
-  // Back to Top Button functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+    window.gtranslateSettings = {
+        "default_language": "en",
+        "detect_browser_language": true,
+        "wrapper_selector": ".gtranslate_wrapper",
+        "alt_flags": {"en": "usa"}
+    }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+<script>
+    const translateBtn = document.getElementById('translateBtn');
+    const gTranslate = document.getElementById('gTranslate');
+
+    translateBtn.addEventListener('click', function() {
+        if (gTranslate.style.display === 'none') {
+            gTranslate.style.display = 'block';
+        } else {
+            gTranslate.style.display = 'none';
+        }
     });
-  });
+
+    // Close the translator popup when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+            gTranslate.style.display = 'none';
+        }
+    });
 </script>
 
 </body>

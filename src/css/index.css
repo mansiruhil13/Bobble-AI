@@ -311,28 +311,30 @@ header {
   }
 }
 
+.team-feature .team-feature-details p,
+.contact-feature .contact-feature-details p
+{
+margin-bottom: 30px;
+}
+
 .button {
-  display: inline-block;
-  padding: 8px 16px;
-  /* Reduce padding for a smaller button */
-  background-color: #28a745;
-  /* Keep background color green */
-  color: #fff;
-  text-align: center;
-  border: 2px solid #218838;
-  /* Add a border with a darker green color */
-  border-radius: 4px;
-  /* Reduce border radius for a less rounded button */
+  position: relative;
   text-decoration: none;
-  font-weight: bold;
-  /* Keep the text bold */
-  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #1d4ed8;
+  background-color: #1d4ed8;
+    color: #ffffff;
 }
 
 .button:hover {
-  background-color: #218838;
+  background-color: #1d4ed8;
   /* Darker green on hover */
-  border-color: #1e7e34;
+  border-color: #1d4ed8;
   /* Change border color on hover */
   transform: scale(1.05);
   /* Slightly enlarge on hover */
@@ -544,5 +546,55 @@ header {
 
   .quick-ft {
     align-items: center;    /* Center quick-ft section */
+  }
+  .footer-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width :600px) {
+  .team-feature,.contact-feature{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  }
+  .team-feature img,.contact-feature img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid #2980b9;
+  }
+
+  .team-feature .team-feature-details,
+  .contact-feature .contact-feature-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .team-feature .team-feature-details h2,
+  .contact-feature .contact-feature-details h2
+  {
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  .team-feature .team-feature-details p,
+  .contact-feature .contact-feature-details p{
+    text-align: center;
+   color: #555;
+   margin-bottom: 20px;
+  }
+
+  .footer-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
