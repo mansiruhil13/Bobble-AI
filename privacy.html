@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
     <title>Privacy Policy - AmbuFlow</title>
     <link rel="stylesheet" href="src/css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <!--Updated to latest version-->
-
-    <link rel="stylesheet" href="src/css/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
       body {
@@ -46,6 +32,61 @@
         text-transform: uppercase;
         letter-spacing: 3px;
       }
+
+      /* Navigation Menu */
+      nav.menu ul {
+        display: flex;
+        justify-content: space-around; /* Distribute items evenly */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav.menu ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      nav.menu ul li a {
+        text-decoration: none;
+        color: #d1d1d1;
+      }
+
+      nav.menu ul li a:hover {
+        color: #42a5f5; /* Hover color effect */
+        transition: color 0.3s ease;
+      }
+
+      nav.menu ul li i {
+        font-size: 24px; /* Size of the icons */
+        margin-bottom: 5px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        nav.menu ul {
+          flex-direction: column; /* Stack items vertically on small screens */
+        }
+        header h1 {
+          font-size: 3rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+
       main {
         padding: 50px 20px;
         max-width: 1200px;
@@ -82,6 +123,7 @@
         font-size: 1.1rem;
       }
       ul li::before {
+        content: "•";
         color: #1e88e5;
         position: absolute;
         left: 0;
@@ -132,130 +174,114 @@
       main {
         border: 2px solid rgba(66, 165, 245, 0.2);
       }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 3rem;
-        }
-        h2 {
-          font-size: 2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        header h1 {
-          font-size: 2.5rem;
-        }
-        h2 {
-          font-size: 1.8rem;
-        }
-      }
-      footer {
-        background-color: #0d47a1;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
     </style>
   </head>
+
   <body>
     <header>
-        <div class="container">
-          
-          <div class="logo">
-    
-            <div class="brand-name">
-              <span class="ambu">Ambu</span>Flow
-            </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-    
+      <div class="container">
+        <div class="logo">
+          <div class="brand-name">
+            <span class="ambu">Ambu</span>Flow
           </div>
-          <nav class="menu">
-            <ul>
-              <li>
-                <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
-              </li>
-              <li>
-                <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
-              </li>
-              <li>
-                <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
-              </li>
-              <li>
-                <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
-              </li>
-              <li>
-                <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
-          </div>
+          <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
         </div>
-        <h1>Privacy Policy AmbuFlow</h1>
-      </header>
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="/" id="home-link"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="features.html" id="features-link"><i class="fa-solid fa-file"></i> Features</a>
+            </li>
+            <li>
+              <a href="team.html" id="team-link"><i class="fa-solid fa-user-group"></i> Team</a>
+            </li>
+            <li>
+              <a href="contact.html" id="contact-link"><i class="fa-solid fa-phone"></i> Contact</a>
+            </li>
+            <li>
+              <a href="feedback.html" id="feedback-link"><i class="fa-solid fa-clipboard"></i> Feedback</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
+        </div>
+      </div>
+      <h1>Privacy Policy AmbuFlow</h1>
+    </header>
 
     <main>
       <h2>Intro</h2>
       <p>
         At
-        <span class="highlight">AmbuFlow</span> ,we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you use our services. By using our ambulance services, you consent to the practices described in this policy.
+        <span class="highlight">AmbuFlow</span> ,we are committed to protecting your
+        privacy. This Privacy Policy outlines how we collect, use, disclose, and
+        safeguard your information when you use our services. By using our ambulance
+        services, you consent to the practices described in this policy.
       </p>
 
       <p>
-        We value your privacy. This policy explains what information we collect, how we use it, and how we protect it to ensure your safety and privacy.
+        We value your privacy. This policy explains what information we collect, how
+        we use it, and how we protect it to ensure your safety and privacy.
       </p>
 
-      <h2> Information We Collect</h2>
-      <p>
-        We may collect various types of information, including:
-
-        <ul style="list-style-type:disc">
-            <li>Personal Information This includes your name, address, phone number, date of birth, and insurance information, which may be collected during registration or when you request services.</li> 
-            <li>Health Information: Medical history, symptoms, and other health-related information that may be necessary for providing emergency care.</li> 
-             <li>Payment Information: Credit card details or insurance information for billing purposes.</li>
-             <li>Usage Data: Information on how you interact with our services, including device information, IP addresses, and location data.</li>
-            </ul> 
-      </p>
+      <h2>Information We Collect</h2>
+      <ul style="list-style-type:disc">
+        <li>
+          Personal Information: This includes your name, address, phone number, date of birth, and insurance
+          information, which may be collected during registration or when you request services.
+        </li>
+        <li>
+          Health Information: Medical history, symptoms, and other health-related
+          information that may be necessary for providing emergency care.
+        </li>
+        <li>
+          Payment Information: Credit card details or insurance information for
+          billing purposes.
+        </li>
+        <li>
+          Usage Data: Information on how you interact with our services, including device
+          information, IP addresses, and location data.
+        </li>
+      </ul>
 
       <h2>How We Use Your Information</h2>
       <ul style="list-style-type:disc">
-        <li>To provide and manage emergency medical services.</li> 
-        <li>To communicate with you regarding services, billing, and updates.</li> 
-         <li>To improve our services and customer experience.</li>
-         <li>To track the ambulance's location and guide it efficiently.</li>
-         <li>To improve the system's features for a better experience.</li>
-         <li>To comply with legal and regulatory requirements.</li>
-        </ul> 
+        <li>To provide and manage emergency medical services.</li>
+        <li>To communicate with you regarding services, billing, and updates.</li>
+        <li>To improve our services and customer experience.</li>
+        <li>To track the ambulance's location and guide it efficiently.</li>
+        <li>To improve the system's features for a better experience.</li>
+        <li>To comply with legal and regulatory requirements.</li>
+      </ul>
 
       <h2>Sharing Your Information</h2>
       <ul style="list-style-type:disc">
-        <li><strong> Healthcare Providers:</strong> To coordinate your care with hospitals, physicians, and other medical professionals involved in your treatment.</li> 
-        <li><strong> For Legal Reasons:</strong> When required by law or in response to a subpoena or court order.</li> 
-        <li><strong> In Case of Emergencies: </strong>To protect the rights, property, or safety of our organization, our clients, or others.
-        </ul> 
-
-      <h2>How We Protect Your Information:</h2>
-      <p>
-        We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on our website with an updated effective date. Your continued use of our services after changes constitutes your acceptance of the updated policy.
-      </p>
-      <h2>Changes to this Policy</h2>
-      <p>
-        We implement a variety of security measures to protect your personal information. However, no method of transmission over the internet or electronic storage is <strong>100% secure</strong>. We strive to use commercially acceptable means to protect your information but cannot guarantee its absolute security.
-      </p>
-      <a href="https://github.com/mansiruhil13/Bobble-AI" class="btn"
-        >Contribute on GitHub</a
-      >
+        <li>
+          <strong>Healthcare Providers:</strong> Your information may be shared with
+          hospitals, doctors, or other healthcare providers to ensure continuity of care.
+        </li>
+        <li>
+          <strong>Payment Processors:</strong> Information may be shared with payment
+          gateways and insurance companies for billing and claims processing.
+        </li>
+        <li>
+          <strong>Law Enforcement:</strong> If required by law or if necessary to
+          protect our rights or the rights of others.
+        </li>
+        <li>
+          <strong>Third-Party Services:</strong> We may use third-party service
+          providers to perform tasks on our behalf, such as data analysis or
+          customer support.
+        </li>
+      </ul>
     </main>
 
     <footer>
-        <p>© 2024 AmbuFlow - All Rights Reserved</p>
-      </footer>
+      <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+    </footer>
   </body>
 </html>
