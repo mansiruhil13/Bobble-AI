@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
         body {
@@ -21,6 +24,156 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
+
+        /* font size of button */
+        .buttons .login,
+        .buttons .get-started,
+        .dark-mode-toggle {
+            font-size: 18px;
+            /* Increase font size */
+            padding: 10px 15px;
+            /* Adjust padding for better appearance */
+        }
+
+        /* dark mode toggle button styling */
+        body {
+            background-color: white;
+            /* Light mode background */
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            background-color: lightblue;
+            /* Light mode navbar */
+            color: black;
+            padding: 10px;
+        }
+
+        .navbar.dark-mode {
+            background-color: black;
+            /* Dark mode navbar */
+            color: white;
+        }
+
+        /* more addition for dark mode theme */
+
+        .dark-mode .logo img {
+            filter: brightness(0) invert(1);
+            /* Inverts the color to make it white */
+        }
+
+        /* dark mode hove effect on logo */
+        body.dark-mode #logo img:hover {
+            filter: brightness(0) invert(1);
+            /* Change black logo to white */
+            filter: brightness(0.8);
+            /* Change the brightness to light grey on hover */
+        }
+
+        .navbar.dark-mode .logo-img {
+            filter: brightness(0) invert(1);
+            /* Change logo color in dark mode */
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: black;
+            /* Light mode link color */
+            border: 1px solid black;
+            /* Black border */
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: blue;
+            /* Blue background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        .dark-mode .menu a {
+            color: white;
+            /* Dark mode link color */
+            border: 1px solid lightgrey;
+            /* Light grey border in dark mode */
+        }
+
+        .dark-mode {
+            background-color: rgba(50, 50, 50, 0.95);
+            /* Slightly gray background with high opacity */
+        }
+
+        .dark-mode .menu a:hover {
+            background-color: white;
+            /* White background on hover in dark mode */
+            color: black;
+            /* Black text on hover in dark mode */
+        }
+
+        .light-dark-btn {
+            background-color: transparent;
+            border: 1px solid black;
+            /* Black border */
+            cursor: pointer;
+            color: black;
+            /* Default button color */
+        }
+
+        .light-dark-btn:hover {
+            color: blue;
+            /* Change color on hover */
+        }
+
+        .dark-mode .light-dark-btn {
+            color: white;
+            /* Button color in dark mode */
+            border: 1px solid lightgrey;
+            /* Light grey border */
+        }
+
+        .dark-mode .light-dark-btn:hover {
+            background-color: white;
+            /* Background on hover in dark mode */
+            color: black;
+            /* Text color on hover in dark mode */
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* end */
+        /* adding dark mode for contact info */
+        .content {
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transitions */
+        }
+
+        .dark-mode .content {
+            background-color: rgba(50, 50, 50, 0.95);
+            /* Match body background opacity */
+            padding: 20px;
+            /* Optional: add padding for better spacing */
+        }
+
+        /* end */
+
+
 
         .menu ul li a {
             padding: 10px 15px;
@@ -42,13 +195,18 @@
         }
 
         h1 {
-            color: #2c3e50;
+            color: blue;
             text-align: center;
             margin-bottom: 20px;
         }
 
         .team-section {
 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            animation: fadeIn 1s ease-in-out;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -227,6 +385,38 @@
         .red {
             color: red;
         }
+
+        .translate-btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .translate-btn:hover {
+            background-color: #3498db;
+        }
+
+        .g-translate-popup {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 
@@ -245,7 +435,7 @@
         </div>
     </div>
 
-    <header>
+    <header class="navbar">
         <div class="container">
 
             <div class="logo">
@@ -259,8 +449,10 @@
                     <span class="letter" style="--letter-index: 7;">o</span>
                     <span class="letter" style="--letter-index: 8;">w</span>
                 </div>
-                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
-                    style="width: 50px; height: auto" />
+                <a href="./index.html">
+                    <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                        style="width: 50px; height: auto" />
+                </a>
             </div>
 
             <nav class="menu">
@@ -448,6 +640,40 @@
         }
     </style>
 
+    <script>
+        // adding code for dark mode
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            const darkModeButton = document.querySelector('.dark-mode-toggle');
+            const logoImage = document.querySelector('.logo img'); // Select the logo image
+            const navbar = document.querySelector('.navbar'); // Select the navbar
+
+            // Reset to light mode for the Contact page
+            document.body.classList.remove("dark-mode");
+            document.body.classList.add("light-mode");
+            darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+            navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+            // Clear the sessionStorage for theme on this page
+            sessionStorage.removeItem("theme");
+
+            toggleButton.addEventListener('click', function () {
+                document.body.classList.toggle('dark-mode');
+                navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+                // Update sessionStorage based on current mode
+                if (document.body.classList.contains('dark-mode')) {
+                    sessionStorage.setItem("theme", "dark");
+                    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+                } else {
+                    sessionStorage.setItem("theme", "light");
+                    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+                }
+            });
+        });
+
+        // end
+    </script>
     <!-- Add this script block just before the closing </body> tag -->
     <script>
         // Back to Top Button functionality
@@ -460,6 +686,36 @@
                     behavior: 'smooth'
                 });
             });
+        });
+    </script>
+
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": { "en": "usa" }
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script>
+        const translateBtn = document.getElementById('translateBtn');
+        const gTranslate = document.getElementById('gTranslate');
+
+        translateBtn.addEventListener('click', function () {
+            if (gTranslate.style.display === 'none') {
+                gTranslate.style.display = 'block';
+            } else {
+                gTranslate.style.display = 'none';
+            }
+        });
+
+        // Close the translator popup when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+                gTranslate.style.display = 'none';
+            }
         });
     </script>
 
