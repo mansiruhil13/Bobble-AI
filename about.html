@@ -168,7 +168,7 @@
           <nav class="menu">
             <ul>
               <li>
-                <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="./index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
               </li>
               <li>
                 <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
@@ -189,10 +189,10 @@
             <a href="up.html" class="get-started">Get started</a>
           </div>
         </div>
-        <h1>About AmbuFlow</h1>
+        <h1 >About AmbuFlow</h1>
       </header>
 
-    <main>
+    <main style="margin-top:30px;">
       <h2>Who We Are</h2>
       <p>
         <span class="highlight">AmbuFlow</span> is a dynamic project developed
@@ -278,9 +278,89 @@
         >Contribute on GitHub</a
       >
     </main>
-
-    <footer>
-      <p>© 2024 AmbuFlow - All Rights Reserved</p>
+    <footer style="background-color:black; color:#f3f4f6; text-align: center; width: 100%; margin-top: 20px;">
+      <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+  
+          <!-- Quick Links Section -->
+          <div 
+          style="flex: 1; 
+          display: flex;
+          flex-direction: column; 
+          align-items: start; 
+          min-width: 200px; 
+          margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+              <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+              <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+              <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+              <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+              <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+              <!-- Add FAQ link here -->
+              <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
+            </ul>
+          </div>
+  
+          <!-- Contact Information Section -->
+          <div 
+          style="flex: 1; 
+          min-width: 200px; 
+          margin-bottom: 10px;">
+            <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+            <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+            <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+            <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+          </div>
+  
+          <!-- Modified the looks of the social icons -->
+          <!-- Social Media Links -->
+          <div style="text-align: center; min-width: 200px; color: black;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+              <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
+                style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+  
+          <!-- Newsletter Subscription -->
+          <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+            <form action="#">
+              <input type="email" placeholder="Your Email"
+                style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+              <button type="submit"
+                style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+            </form>
+          </div>        
+          <style>
+            .hover-link {
+              color: #000000;
+              text-decoration: none;
+              margin-right: 10px;
+              background:none;
+              cursor: pointer;
+              transition: color 0.3s ease;
+            }
+          
+            .hover-link:hover {
+              color: blue;
+              background:none;
+            }
+          </style>
+  
+        </div>
+  
+      </div>
     </footer>
+    <div style="background-color: black;">
+      <p>© 2024 AmbuFlow - All Rights Reserved</p>
+    </div>
   </body>
 </html>

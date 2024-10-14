@@ -4,18 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
     <link rel="stylesheet" href="src/css/hospital.css">
     <link rel="stylesheet" href="src/css/manage.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+    /* Add this to your CSS file */
+
+    .toaster {
+        position: fixed;
+        top: 20px; /* Position it from the top */
+        right: 20px; /* Position it from the right */
+        background-color: #4caf50; /* Green background for success */
+        color: white; /* Text color */
+        padding: 16px;
+        border-radius: 5px;
+        z-index: 1000;
+        opacity: 0; /* Start with opacity 0 */
+        transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    }
+
+    .show {
+        animation: bounceIn 0.5s forwards; /* Bounce in animation */
+        opacity: 1; /* Make it visible */
+    }
+
+    .hidden {
+        animation: bounceOut 0.5s forwards; /* Bounce out animation */
+        opacity: 0; /* Fade out */
+    }
+
+    @keyframes bounceIn {
+        0% {
+            transform: translate(0, -100%); /* Start from above */
+            opacity: 0; /* Fully transparent */
+        }
+        60% {
+            transform: translate(0, 10%); /* Bounce down */
+        }
+        100% {
+            transform: translate(0, 0); /* Final position */
+            opacity: 1; /* Fully visible */
+        }
+    }
+
+    @keyframes bounceOut {
+        0% {
+            transform: translate(0, 0); /* Current position */
+            opacity: 1; /* Fully visible */
+        }
+        60% {
+            transform: translate(0, -10%); /* Bounce up slightly */
+        }
+        100% {
+            transform: translate(0, -100%); /* Move up out of view */
+            opacity: 0; /* Fully transparent */
+        }
+    }
+
+  </style>
 <body>
+    <!-- preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+</div>
+    <div id="toaster" class="toaster hidden"></div>
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <img src="./images/manageLogo.png"></img>
-                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+                <a href="./hospital.html"><img src="./images/manageLogo.png"></img></a>
+                <a href="./hospital.html"><h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2></a>
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
@@ -24,12 +94,27 @@
                 <li><a href="ambtracker.html">Manage Ambulance</a></li>
                 <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
+            <div class="resp">
+                <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+            </div>
         </nav>
     </header>
+
+    <!-- Dropdown -->
+     <div class="dropdown-menu">
+        <ul class="navbar-links2">
+            <li><a href="hospital.html">Dashboard</a></li>
+            <li><a href="manage.html">Manage Status</a></li>
+            <li><a href="driver.html">Manage Driver</a></li>
+            <li><a href="ambtracker.html">Manage Ambulance</a></li>
+        </ul>
+     </div>
+
     <div class="dashboard-container">
         <img src="images/Ambulance Tracker.png" alt="Bobble-AI Logo" style="width: 250px; height: auto; margin-bottom: 10px; margin-left: 30px;";>
     
-        <h1 style="color: #1a2938;">Hospital Dashboard</h1>        
+        <h1 style="color: #162738;">Hospital Dashboard</h1>        
         <h2 style="font-family: 'Arial', sans-serif; font-size: 17px; color: #666; margin: 10px 0; text-align: center;">
             Your personalized AI experience
         </h2>              
@@ -39,6 +124,40 @@
                 alert('Manage Drivers button clicked!');
                 // Example: window.location.href = 'manage-drivers.html';
             }
+
+            // Function to show toaster notification
+            function showToaster(message) {
+                    const toaster = document.getElementById("toaster");
+                    toaster.textContent = message;
+                    toaster.classList.remove("hidden");
+                    toaster.classList.add("show");
+
+                    if(!localStorage.getItem('login')) {
+                        toaster.classList.add("hidden");
+                    }
+                    // Hide the toaster after 3 seconds
+                    setTimeout(() => {
+                    toaster.classList.remove("show");
+                    toaster.classList.add("hidden");
+                }, 3000);
+            }
+
+            if (localStorage.getItem('login') == 'success'){
+                showToaster('Login Successfull');
+                localStorage.removeItem('login');
+            }
+
+            let flag = false
+            document.getElementById('dropdown').addEventListener('click', () => {
+                const dropdown = document.querySelector('.dropdown-menu');
+                if (flag) {
+                    dropdown.style.display = 'none';
+                    flag = false;
+                } else {
+                    dropdown.style.display = 'block';
+                    flag = true;
+                }
+            });
         
             function manageAmbulances() {
                 // Action to manage ambulances, such as opening a page or modal
@@ -120,6 +239,7 @@
             </div>
         </div>
     </main>
+    <script src="preloader.js"></script>
 
     <script>
         // Elements
@@ -207,6 +327,8 @@
         function logout() {
             const confirmLogout = confirm('Are you sure you want to logout?');
             if (confirmLogout) {
+                localStorage.removeItem('userID');
+                localStorage.removeItem('JWTtoken');
                 window.location.href = 'index.html';
                 alert("Logged out successfully!");
             }

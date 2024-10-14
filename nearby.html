@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Hospital</title>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .hospital-card {
+            background-color: #e7f3fe;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: large;
+        }
+        .hospital-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            color: rgb(178, 233, 233);
+        }
+        .hospital-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .hospital-card a {
+            display: block;
+            margin: 10px 0 5px 0;
+            text-decoration: none;
+            color: #050505;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .hospital-card p {
+            color: #676262;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Nearby Hospital</h1>
+    <h2>Track or call an ambulance and check nearby hospitals for emergency services</h2>
+
+    <div class="container">
+        <!-- Hospital 1 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipP9JGi6pake5Zae72zMqWgYhakGZTnP1KMkEoMI=w408-h306-k-no" alt="AIIMS Delhi">
+            <a href="https://www.google.com/maps/place/All+India+Institute+Of+Medical+Sciences+Delhi/@28.5671821,77.2074702,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce26f903969d7:0x8367180c6de2ecc2!8m2!3d28.5671774!4d77.2100451!16s%2Fm%2F0lq5p3v?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">AIIMS Delhi</a>
+            <p>Location: Ansari Nagar, New Delhi</p>
+        </div>
+
+        <!-- Hospital 2 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipO_LJoTauSAwR0RaSEco9DpYYfVjcBL6oMwZlGM=w480-h240-k-no" alt="Fortis Escorts Heart Institute">
+            <a href="https://www.google.com/maps/place/Fortis+Escorts+Heart+Institute/@28.5605979,77.2714045,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce392b869bbaf:0x865db71ba6f271b2!8m2!3d28.5605932!4d77.2739794!16s%2Fg%2F1tyzxc62?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Fortis Escorts Heart Institute</a>
+            <p>Location: Okhla Road, New Delhi</p>
+        </div>
+
+        <!-- Hospital 3 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipMHbDvRM2SnP15JEFiHHU3BkbeMyILB4Fe_9vb_=w408-h272-k-no" alt="Max Super Speciality Hospital">
+            <a href="https://www.google.com/maps/place/Max+Super+Speciality+Hospital,+Saket+(Max+Saket)/@28.5275537,77.2094197,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce1f427d4c5fb:0x582d47bbf4970bc1!8m2!3d28.527549!4d77.2119946!16s%2Fm%2F0nhgv9_?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Max Super Speciality Hospital</a>
+            <p>Location: Saket, New Delhi</p>
+        </div>
+
+        <!-- Hospital 4 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipOOE3FO4yP5Th80bikVNoZbSmhNUgZz8baujSsJ=w427-h240-k-no" alt="BLK Super Speciality Hospital">
+            <a href="https://www.google.com/maps/place/BLK-Max+Super+Speciality+Hospital+Delhi/@28.6433081,77.1771302,17z/data=!3m1!4b1!4m6!3m5!1s0x390d029633b6af21:0x9a67323b63bcc188!8m2!3d28.6433034!4d77.1797051!16s%2Fg%2F1tfzvwkd?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">BLK Super Speciality Hospital</a>
+            <p>Location: Pusa Road, New Delhi</p>
+        </div>
+
+        <!-- Hospital 5 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPge4AJnRsJww6qZfswWAL9LBfd1iDCBM-hpCzW=w408-h544-k-no" alt="Sir Ganga Ram Hospital">
+            <a href="https://www.google.com/maps/place/SIR+GANGA+RAM+HOSPITAL,+Sir+Ganga+Ram+Hospital+Marg,+Old+Rajinder+Nagar,+New+Rajinder+Nagar,+Delhi,+110060/@28.6385473,77.1894559,17z/data=!3m1!4b1!4m6!3m5!1s0x390d02a17c4ab835:0xdee61a9d767b964b!8m2!3d28.6384582!4d77.1895559!16s%2Fg%2F11bytpc110?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Sir Ganga Ram Hospital</a>
+            <p>Location: Rajinder Nagar, New Delhi</p>
+        </div>
+
+        <!-- Hospital 6 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNUO3hhiOSgCnWYou3qHm0SQTlKaM0wIfiG_OaU=w408-h270-k-no" alt="Apollo Hospitals Delhi">
+            <a href="" target="_blank">Apollo Hospitals Delhi</a>
+            <p>Location: Karol Bagh, New Delhi</p>
+        </div>
+
+        <!-- Hospital 7 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipMpQ-20kn_yH0AtOS1fl7o9fhVcdPZIs4ncO5fU=w408-h306-k-no" alt="Holy Family Hospital">
+            <a href="https://www.google.com/maps/place/Holy+Family+Hospital/@28.5618161,77.2751113,17z/data=!4m15!1m8!3m7!1s0x390ce3929e6d3319:0xcd2355b56b80d9cf!2sHoly+Family+Hospital!8m2!3d28.5618161!4d77.2751113!10e5!16s%2Fm%2F0n46sgy!3m5!1s0x390ce3929e6d3319:0xcd2355b56b80d9cf!8m2!3d28.5618161!4d77.2751113!16s%2Fm%2F0n46sgy?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Holy Family Hospital</a>
+            <p>Location: Okhla, New Delhi</p>
+        </div>
+
+        <!-- Hospital 8 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNrfGkAU1lF3dJVwnJZpLFNrRbzmksWyRDJmvwy=w408-h489-k-no" alt="Safdarjung Hospital">
+            <a href="https://www.google.com/maps/place/Safdarjung+Hospital+New+Emergency+Block/@28.5686945,77.2069167,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce3c788fcae8f:0x2db4a8bddc6eae25!8m2!3d28.5686945!4d77.2069167!16s%2Fg%2F11f66b854r?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Safdarjung Hospital</a>
+            <p>Location: Safdarjung Enclave, New Delhi</p>
+        </div>
+
+        <!-- Hospital 9 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipO3wxKBu2OTky8xeC5ML8UrgN-ddnaxTqyKuHzr=w408-h368-k-no" alt="Moolchand Medcity">
+            <a href="https://www.google.com/maps/place/Moolchand+Hospital/@28.566167,77.2331993,17z/data=!4m10!1m2!2m1!1smoolchand+medcity!3m6!1s0x390ce3c849a0fecd:0x309c4e9de4e2aff3!8m2!3d28.566167!4d77.235388!15sChFtb29sY2hhbmQgbWVkY2l0eZIBEHByaXZhdGVfaG9zcGl0YWzgAQA!16s%2Fg%2F11j0045tc5?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Moolchand Medcity</a>
+            <p>Location: Lajpat Nagar, New Delhi</p>
+        </div>
+
+        <!-- Hospital 10 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipOwiTt3QQ-u0vkOmn0njbkwESBmspr82g_wF4Er=w427-h240-k-no" alt="Deen Dayal Upadhyay Hospital">
+            <a href="https://www.google.com/maps/place/Deen+Dayal+Upadhyay+Hospital/@28.628017,77.1122963,17z/data=!3m1!4b1!4m6!3m5!1s0x390cfd309eebed77:0xc8559980f0b50535!8m2!3d28.628017!4d77.1122963!16s%2Fg%2F1tf1m64n?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Deen Dayal Upadhyay Hospital</a>
+            <p>Location: Hari Nagar, New Delhi</p>
+        </div>
+
+        <!-- Hospital 11 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipO4FfTa6lmb3Hncw3WgwGt-4n-4qcv6NDMVeUfh=w408-h306-k-no" alt="Artemis Hospitals">
+            <a href="https://www.google.com/maps/place/Artemis+Hospitals+Dwarka/@28.5709273,77.0593246,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b03c0000001:0x3eb1330d284a7209!8m2!3d28.5709273!4d77.0593246!16s%2Fg%2F11g_yrth5?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Artemis Hospitals</a>
+            <p>Location: Dwarka, New Delhi</p>
+        </div>
+
+        <!-- Hospital 12 -->
+        <div class="hospital-card">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPfqqxb8Yu1rfBbEWDzom0Gb1mfY7R8zohuCym1=w408-h544-k-no" alt="Venkateshwar Hospital">
+            <a href="https://www.google.com/maps/place/Venkateshwar+Hospital/@28.5885973,77.0380428,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1ac3e8a4b27b:0x218f945a11993663!8m2!3d28.5885973!4d77.0380428!16s%2Fg%2F11b7y83nv6?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Venkateshwar Hospital</a>
+            <p>Location: Sector 18A, Dwarka, New Delhi</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
