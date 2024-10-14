@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>AmbuFlow</title>
   <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -19,16 +19,14 @@
   <!-- Updated to latest version -->
 
   <style>
-    .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      /* Adjust as needed */
-      left: 90px;
-      /* Adjust as needed */
-      z-index: 1000;
-      /* Ensure it appears above other elements */
-    }
+
+      .chatbot-container {
+        position: fixed;
+        transition: right 0.3s ease;
+        bottom: 20px; /* Adjust as needed */
+        left: 90px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
 
     .chatbot-button {
       background-color: #007bff;
@@ -85,116 +83,6 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
-    /* adding css for dark mode toggle button */
-    /* Existing styles remain the same */
-
-    .menu ul li a {
-      color: black;
-      /* Default text color for light mode */
-      transition: color 0.3s;
-      /* Smooth transition for color change */
-    }
-
-    body.dark-mode .menu ul li a {
-      color: blue;
-      /* Text color for dark mode */
-    }
-
-    /* Dark mode hover effect */
-    body.dark-mode .menu ul li a:hover {
-      background-color: #444;
-      /* Lighter color in dark mode on hover */
-      color: #fff;
-      /* Keep text color white on hover */
-    }
-
-    /* more addition for dark mode theme */
-
-    /* Logo styles */
-    #logo img {
-      width: 50px;
-      height: auto;
-      transition: filter 0.3s;
-      /* Smooth transition for color change */
-    }
-
-    /* Dark mode logo */
-    body.dark-mode #logo img {
-      filter: brightness(0) invert(1);
-      /* Change black logo to white */
-    }
-
-    /* dark mode hove effect on logo */
-    body.dark-mode #logo img:hover {
-      filter: brightness(0) invert(1);
-      /* Change black logo to white */
-      filter: brightness(0.8);
-      /* Change the brightness to light grey on hover */
-    }
-
-    /* Button styles */
-    .light-dark-btn,
-    .login,
-    .get-started {
-      font-size: 20px;
-      /* Adjust the size as needed */
-      padding: 10px 15px;
-      /* Adjust padding for button size */
-      border: 2px solid transparent;
-      /* Transparent border initially */
-      border-radius: 5px;
-      /* Rounded corners */
-      background-color: transparent;
-      /* Initial background */
-      color: black;
-      /* Default text color for light mode */
-      cursor: pointer;
-      /* Pointer cursor on hover */
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-      /* Smooth transition */
-    }
-
-    /* Light mode button styles */
-    .light-dark-btn {
-      border-color: lightblue;
-      /* Light mode border color */
-    }
-
-    /* Dark mode button styles */
-    body.dark-mode .light-dark-btn,
-    body.dark-mode .login,
-    body.dark-mode .get-started {
-      font-size: 20px;
-      /* Adjust the size as needed */
-      color: white;
-      /* Text color for dark mode */
-      border-color: #444;
-      /* Dark mode border color */
-    }
-
-    /* Light mode hover effect for buttons */
-    .light-dark-btn:hover,
-    .login:hover,
-    .get-started:hover {
-      border-color: #444;
-      color: white;
-      background-color: blue;
-      /* Background color on hover in light mode */
-    }
-
-    /* Dark mode hover effect for buttons */
-    body.dark-mode .light-dark-btn:hover,
-    body.dark-mode .login:hover,
-    body.dark-mode .get-started:hover {
-      background-color: #555;
-      /* Darker background color on hover in dark mode */
-    }
-
-
-    /* more edition ended */
-
-    /* end */
 
     nav ul {
       list-style-type: none;
@@ -565,12 +453,15 @@
       margin-bottom: 15px;
       width: 100%;
       /* Full width by default */
-      background-color: #fff;
+      background-color: #000000;
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
+      transition: background-color 0.3s ease;
     }
-
+    .faq:hover {
+      background-color: #f0f8ff; /* Slight hover effect for FAQs */
+    }
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -582,12 +473,14 @@
       cursor: pointer;
       font-size: 16px;
       font-weight: 600;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background-color 0.3s ease;
     }
-
+    .faq-question:hover {
+      background-color: #d5f0d5; /* Lighter green on hover */
+    }
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -603,20 +496,16 @@
     }
 
     .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
+      transform: rotate(180deg);
     }
 
     .faq-answer {
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
+      opacity: 0;
+      max-height: 0; /* Initially hidden */
+      overflow: hidden; /* Hide content when not visible */
       padding: 0 10px;
       background-color: #fff;
-      transition: max-height 0.3s ease;
-      /* Smooth transition */
+      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
       border-top: 1px solid #ccc;
     }
 
@@ -625,12 +514,15 @@
     }
 
     .faq.active .faq-answer {
+      opacity: 1;
       max-height: 200px;
       /* Set to a sufficient height to display content */
       padding: 10px;
       /* Adds padding when expanded */
     }
-
+    .faq.active .faq-answer p {
+      transition: opacity 0.3s ease-in-out;
+    }
     /* Back to Top Button Styles */
     #backToTopBtn {
       position: fixed;
@@ -773,7 +665,7 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="/index.html" id="home-link" onclick="changeContent('home')"> Home</a>
+            <a href="index.html" id="home-link" onclick="changeContent('home')"> Home</a>
           </li>
           <li>
             <a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a>
@@ -790,6 +682,17 @@
           <li>
             <a href="Feedback.html" id="contact-link" onclick="changeContent('contact')"><i
                 class="fa-solid fa-clipboard"></i> Feedback</a>
+          </li>
+          <li>
+            <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                "default_language":"en",
+                "detect_browser_language":true,
+                "wrapper_selector":".gtranslate_wrapper"
+              }
+            </script>
+            <script src="https://cdn.gtranslate.net/widgets/latest/popup.js" defer></script>
           </li>
         </ul>
       </nav>
@@ -855,7 +758,7 @@
       <!-- Team Section in Full Row -->
       <div class="team-feature">
         <img src="images/team-w.png" alt="Meet the Team" />
-        <div>
+        <div class="team-feature-details">
           <h2>Meet the Team</h2>
           <p>
             Learn more about our dedicated team working tirelessly to ensure
@@ -868,7 +771,7 @@
       <!-- Contact Section in Full Row -->
       <div class="contact-feature">
         <img src="images/contact-w.avif" alt="Contact Us" />
-        <div>
+        <div class="contact-feature-details">
           <h2>Contact Us</h2>
           <p>
             Reach out to us for any inquiries or assistance. We're here to
@@ -879,6 +782,11 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contents" style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+
 
 
   <!-- FAQ Section in Full Row -->
@@ -957,6 +865,7 @@
   <footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+
 
         <!-- Quick Links Section -->
         <div style="flex: 1; 
@@ -1145,30 +1054,28 @@
   </script>
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqButtons = document.querySelectorAll('.faq-question');
 
-      faqButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          const faq = button.parentElement;
-          const answer = faq.querySelector('.faq-answer');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const faq = button.parentElement;
+            const answer = faq.querySelector('.faq-answer');
 
-          // Toggle active class
-          faq.classList.toggle('active');
+            // Toggle active class
+            faq.classList.toggle('active');
 
-          // Control the max-height for slide effect
-          if (faq.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
-          } else {
-            answer.style.maxHeight = null; // Remove max-height to hide
-          }
+            // Control the max-height for slide effect
+            if (faq.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px'; // Set height based on content
+            } else {
+                answer.style.maxHeight = '0'; // Set height to zero to collapse
+            }
         });
-      });
     });
-
-
-  </script>
+});
+</script>
 
   <script>
     //enabling the Dark mode toggle button added
@@ -1262,3 +1169,5 @@
 </body>
 
 </html>
+
+

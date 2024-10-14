@@ -380,6 +380,40 @@
         .red {
             color: red;
         }
+
+        .translate-btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .translate-btn:hover {
+            background-color: #3498db;
+        }
+
+        .g-translate-popup {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .g-translate
     </style>
 </head>
 
@@ -416,6 +450,47 @@
                     style="width: 50px; height: auto" />
             </div>
 
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
+                <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
+                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
+                <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+            <a href="login.html" class="login">Log in</a>
+            <a href="up.html" class="get-started">Get started</a>
+        </div>
+    </div>
+</header>
+
+<!-- Add this div for the translator popup -->
+<div id="gTranslate" class="g-translate-popup" style="display:none;">
+    <div class="gtranslate_wrapper"></div>
+</div>
+
+<div class="content" id="main-content">
+    <h1>Meet Our Team</h1>
+    <div class="team-section">
+        <div class="team-member">
+            <img src="images/service-web.jpg" alt="Service Manager">
+            <h2>Service Manager</h2>
+            <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
+        </div>
+        <div class="team-member">
+            <img src="images/rescue-web.webp" alt="Rescue Specialist">
+            <h2>Rescue Specialist</h2>
+            <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
+        </div>
+        <div class="team-member">
+            <img src="images/call-web.jpg" alt="Call Operator">
+            <h2>Call Operator</h2>
+            <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
+
             <nav class="menu">
                 <ul>
                     <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
@@ -437,6 +512,7 @@
                 <a href="login.html" class="login">Log in</a>
                 <a href="up.html" class="get-started">Get started</a>
             </div>
+
         </div>
     </header>
 
@@ -635,6 +711,36 @@
             });
         });
     </script>
+
+<script>
+    window.gtranslateSettings = {
+        "default_language": "en",
+        "detect_browser_language": true,
+        "wrapper_selector": ".gtranslate_wrapper",
+        "alt_flags": {"en": "usa"}
+    }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<script>
+    const translateBtn = document.getElementById('translateBtn');
+    const gTranslate = document.getElementById('gTranslate');
+
+    translateBtn.addEventListener('click', function() {
+        if (gTranslate.style.display === 'none') {
+            gTranslate.style.display = 'block';
+        } else {
+            gTranslate.style.display = 'none';
+        }
+    });
+
+    // Close the translator popup when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+            gTranslate.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 

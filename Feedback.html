@@ -49,6 +49,12 @@
       color: black;
       padding: 10px;
     }
+    ul li a:hover {
+    color: blue !important;
+    }
+    a:hover {
+    color: blue !important;
+  }
 
     .navbar.dark-mode {
       background-color: black;
@@ -500,6 +506,39 @@
     #backToTopBtn:hover {
       background-color: #555;
     }
+
+    .translate-btn {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .translate-btn:hover {
+      background-color: #3498db;
+    }
+
+    .g-translate-popup {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    /* Adjust the header buttons to accommodate the new translate button */
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   </style>
 </head>
 
@@ -548,9 +587,13 @@
       </ul>
     </nav>
     <div class="buttons">
+
+      <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+
       <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
+
       <a href="login.html" class="login">Log in</a>
       <a href="up.html" class="get-started">Get started</a>
     </div>
@@ -701,6 +744,24 @@
     <button id="closeFaqPopup"
       style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
   </div>
+  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
+</div>
+
+<!-- Add this div for the translator popup -->
+<div id="gTranslate" class="g-translate-popup" style="display:none;">
+  <div class="gtranslate_wrapper"></div>
+</div>
+
+<script src="preloader.js"></script>
+<script>
+  // Add event listeners to each star label for toggling the selection
+  const stars = document.querySelectorAll('.star-rating input');
+  stars.forEach(star => {
+    star.addEventListener('change', function () {
+      // Remove the checked state from all stars
+      stars.forEach(s => {
+        const label = document.querySelector(`label[for="${s.id}"]`);
+        label.style.color = '#ddd'; // Reset color for unselected stars
 
   <script src="preloader.js"></script>
 
@@ -733,6 +794,7 @@
           sessionStorage.setItem("theme", "light");
           darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
         }
+
       });
     });
 
@@ -875,6 +937,40 @@
 
     closeFaqPopup.addEventListener('click', () => {
       faqPopup.style.display = 'none';
+
+    }
+  });
+
+  const translateBtn = document.getElementById('translateBtn');
+  const gTranslate = document.getElementById('gTranslate');
+
+  translateBtn.addEventListener('click', function() {
+    if (gTranslate.style.display === 'none') {
+      gTranslate.style.display = 'block';
+    } else {
+      gTranslate.style.display = 'none';
+    }
+  });
+
+  // Close the translator popup when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+      gTranslate.style.display = 'none';
+    }
+  });
+</script>
+
+<!-- Add this script at the end of the body -->
+<script>
+  window.gtranslateSettings = {
+    "default_language": "en",
+    "detect_browser_language": true,
+    "wrapper_selector": ".gtranslate_wrapper",
+    "alt_flags": {"en": "usa"}
+  }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
     });
 
     // Close popup when clicking outside
@@ -884,6 +980,7 @@
       }
     });
   </script>
+
 
   <!-- Add this if it's not already present -->
   <div class="circle"></div>
