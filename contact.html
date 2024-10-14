@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif,'Times New Roman', Times, serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -20,6 +24,153 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
+        /* font size of button */
+        .buttons .login,
+        .buttons .get-started,
+        .dark-mode-toggle {
+            font-size: 18px;
+            /* Increase font size */
+            padding: 10px 15px;
+            /* Adjust padding for better appearance */
+        }
+
+        /* dark mode toggle button styling */
+        body {
+            background-color: white;
+            /* Light mode background */
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            background-color: lightblue;
+            /* Light mode navbar */
+            color: black;
+            padding: 10px;
+        }
+
+        .navbar.dark-mode {
+            background-color: black;
+            /* Dark mode navbar */
+            color: rgba(255, 255, 255, 0.943);
+        }
+
+        /* more addition for dark mode theme */
+
+        .dark-mode .logo img {
+            filter: brightness(10) invert(1);
+            /* Inverts the color to make it white */
+        }
+
+        /* dark mode hove effect on logo */
+        body.dark-mode #logo img:hover {
+            filter: brightness(10) invert(1);
+            /* Change black logo to white */
+            filter: brightness(0.8);
+            /* Change the brightness to light grey on hover */
+        }
+
+        .navbar.dark-mode .logo-img {
+            filter: brightness(0) invert(1);
+            /* Change logo color in dark mode */
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: black;
+            /* Light mode link color */
+            border: 1px solid black;
+            /* Black border */
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: rgb(10, 61, 212);
+            /* Blue background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        .dark-mode .menu a {
+            color: white;
+            /* Dark mode link color */
+            border: 1px solid lightgrey;
+            /* Light grey border in dark mode */
+        }
+
+        .dark-mode {
+            background-color: rgba(30, 29, 29, 0.95);
+            /* Slightly gray background with high opacity */
+        }
+
+        .dark-mode .menu a:hover {
+            background-color: white;
+            /* White background on hover in dark mode */
+            color: black;
+            /* Black text on hover in dark mode */
+        }
+
+        .light-dark-btn {
+            background-color: transparent;
+            border: 1px solid black;
+            /* Black border */
+            cursor: pointer;
+            color: black;
+            /* Default button color */
+        }
+
+        .light-dark-btn:hover {
+            color: rgb(5, 5, 217);
+            /* Change color on hover */
+        }
+
+        .dark-mode .light-dark-btn {
+            color: white;
+            /* Button color in dark mode */
+            border: 1px solid lightgrey;
+            /* Light grey border */
+        }
+
+        .dark-mode .light-dark-btn:hover {
+            background-color: white;
+            /* Background on hover in dark mode */
+            color: black;
+            /* Text color on hover in dark mode */
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* end */
+        /* adding dark mode for contact info */
+        .content {
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transitions */
+        }
+
+        .dark-mode .content {
+            background-color: rgba(50, 50, 50, 0.95);
+            /* Match body background opacity */
+            padding: 20px;
+            /* Optional: add padding for better spacing */
+        }
+
+        /* end */
 
         .menu ul li a {
             padding: 10px 15px;
@@ -41,7 +192,7 @@
         }
 
         h1 {
-            color: #2c3e50;
+            color: blue;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -128,6 +279,7 @@
             -webkit-text-fill-color: transparent;
             transform: scale(1.5);
         }
+
         #linkedin:hover {
             color: #0077B5;
             transform: scale(1.5);
@@ -197,6 +349,12 @@
             align-items: center;
             animation: logoAnimation 1s ease forwards;
         }
+        ul li a:hover {
+            color: blue !important;
+        }
+        a:hover {
+            color: blue !important;
+        }
 
         .brand-name {
             display: flex;
@@ -229,12 +387,63 @@
             z-index: 99999999;
             /* Stays on top of all elements */
         }
+
+        .map {
+
+      width: 860px;
+      height: 400px;
+      border: 3px 3px 3px 3px solid #090202;
+      border-radius: 5px;
+      margin: 20px auto;
+      object-fit: cover;
+    }
+
+    .translate-btn {
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .translate-btn:hover {
+        background-color: #3498db;
+    }
+
+    .g-translate-popup {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+            width: 860px;
+            height: 400px;
+            border: 3px 3px 3px 3px solid #090202;
+            border-radius: 5px;
+            margin: 20px auto;
+            object-fit: cover;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <header>
+    <header class="navbar">
         <!-- pre loader -->
         <div id="preloader">
             <div class="wrapper">
@@ -262,23 +471,36 @@
                     <span class="letter" style="--letter-index: 7;">o</span>
                     <span class="letter" style="--letter-index: 8;">w</span>
                 </div>
+                <a href="./index.html" >
                 <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
                     style="width: 50px; height: auto" />
+                    </a>
             </div>
 
             <nav class="menu">
-            <ul>
-                <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
-                <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
-                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
-                <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
-            </ul>
+                <ul>
+                    <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
+                                class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
+                                class="fa-solid fa-file"></i> Features</a></li>
+                    <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i
+                                class="fa-solid fa-user-group"></i> Team</a></li>
+                    <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
+                                class="fa-solid fa-phone"></i> Contact</a></li>
+                    <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
+                                class="fa-solid fa-clipboard"></i> Feedback</a></li>
+                </ul>
             </nav>
             <div class="buttons">
+
+                <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+
+                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
                 <a href="login.html" class="login">Log in</a>
                 <a href="up.html" class="get-started">Get started</a>
-
             </div>
         </div>
     </header>
@@ -302,22 +524,12 @@
                 <p>In case of an emergency, please do not hesitate to reach out to us immediately.</p>
             </div>
         </div>
-
-        <!-- Added responsiveness: Link redirect to respective sites -->
-        <!-- Social Media Section -->
-        <div class="social-media">
-            <a style=font-size:24px; href="https://www.facebook.com/" class="social-icon facebook"><i
-                    class="fab fa-facebook"></i></a>
-            <a style=font-size:24px; href="https://x.com/" class="social-icon twitter"><i
-                    class="fa-brands fa-x-twitter"></i></a>
-            <!--Updated icon-->
-            <a style=font-size:24px; href="https://www.instagram.com/" class="social-icon instagram"><i
-                    class="fab fa-instagram"></i></a>
-            <a style=font-size:24px; href="https://www.linkedin.com/" class="social-icon linkedin"><i
-                    class="fab fa-linkedin"></i></a>
-        </div>
+        <!-- adding map -->
+     <div class = "map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241294.64898498365!2d72.79635424219836!3d19.09761203283721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Emergency%20Lane%2C%20Mumbai%2C%20India!5e0!3m2!1sen!2sin!4v1728732339444!5m2!1sen!2sin" width=860px height="400" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" overflow="hidden" style="border :10" object-fit="cover" ;></iframe> 
+        <!--  ;"  loading="lazy" margin-top="50%"  ></iframe> -->
     </div>
-
+    </div>
     <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
         <div style="background-color: #C4D7FF; color: #f3f4f6; ">
             <div
@@ -414,7 +626,7 @@
 
                 <script src="preloader.js"></script>
 
-                
+
                 </script>
                 <script>    const coords = { x: 0, y: 0 };
                     const circles = document.querySelectorAll(".circle");
@@ -450,14 +662,85 @@
                         circle.style.backgroundColor = colors[index % colors.length];
                     });
 
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+                    backToTopBtn.addEventListener('click', function () {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    // adding code for dark mode button
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const toggleButton = document.getElementById('dark-mode-toggle');
+                        const darkModeButton = document.querySelector('.dark-mode-toggle');
+                        const logoImage = document.querySelector('.logo img'); // Select the logo image
+                        const navbar = document.querySelector('.navbar'); // Select the navbar
+
+                        // Reset to light mode for the Contact page
+                        document.body.classList.remove("dark-mode");
+                        document.body.classList.add("light-mode");
+                        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+                        navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+                        // Clear the sessionStorage for theme on this page
+                        sessionStorage.removeItem("theme");
+
+                        toggleButton.addEventListener('click', function () {
+                            document.body.classList.toggle('dark-mode');
+                            navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+                            // Update sessionStorage based on current mode
+                            if (document.body.classList.contains('dark-mode')) {
+                                sessionStorage.setItem("theme", "dark");
+                                darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+                            } else {
+                                sessionStorage.setItem("theme", "light");
+                                darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+                            }
+                        });
+                    });
+
+
+
+                    //end 
+                </script>
+
+    <!-- Add this div for the translator popup -->
+    <div id="gTranslate" class="g-translate-popup" style="display:none;">
+        <div class="gtranslate_wrapper"></div>
+    </div>
+
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": {"en": "usa"}
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script>
+        const translateBtn = document.getElementById('translateBtn');
+        const gTranslate = document.getElementById('gTranslate');
+
+        translateBtn.addEventListener('click', function() {
+            if (gTranslate.style.display === 'none') {
+                gTranslate.style.display = 'block';
+            } else {
+                gTranslate.style.display = 'none';
+            }
+        });
+
+        // Close the translator popup when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+                gTranslate.style.display = 'none';
+            }
         });
     </script>
 
 </body>
+
 
 </html>
