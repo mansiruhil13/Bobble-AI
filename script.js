@@ -1,4 +1,5 @@
 // Newsletter form submission handler
+
 document
   .getElementById("newsletter-form")
   .addEventListener("submit", function (event) {
