@@ -206,7 +206,25 @@
       transform: scale(1.3);
       /* Scale the element to 1.3 times its size */
     }
+    .fa-facebook:hover {
+      color: blue;
+      /* Icon color change to blue on hover */
+    }
 
+    .fa-x-twitter:hover {
+      color: black;
+      /* Icon color change to black on hover */
+    }
+
+    .fa-instagram:hover {
+      color: orangered;
+      /* Icon color change to orangered on hover */
+    }
+
+    .fa-linkedin-in:hover {
+      color: rgb(16, 13, 195);
+      /* Icon color change to rgb(16, 13, 195) on hover */
+    }
     .feature p {
       color: #555;
     }
@@ -246,9 +264,6 @@
       margin-right: 20px;
       border-radius: 10px;
     }
-
-
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -364,30 +379,22 @@
     .faq-section {
       background-color: #e7f3fe;
       display: flex;
+      margin: 2rem 1rem;
       flex-direction: column;
-      margin-left: 1rem;
       align-items: center;
       justify-content: center;
-      width: 95%;
     }
 
     .faq-h2 {
-      color: #2c3e50;
       margin-bottom: 1.5rem;
       font-size: 2.5rem;
       font-weight: 600;
       color: #000;
-      color: #000;
-    }
-
-    .faqs {
-      width: 100%;
     }
 
     .faq {
       margin-bottom: 15px;
       width: 100%;
-
       /* Full width by default */
       background-color: #000000;
       border: 1px solid #ccc;
@@ -395,13 +402,9 @@
       overflow: hidden;
       transition: background-color 0.3s ease;
     }
-
-
     .faq:hover {
-      background-color: #e31616;
-      /* Slight hover effect for FAQs */
+      background-color: #e31616; /* Slight hover effect for FAQs */
     }
-
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -418,17 +421,9 @@
       align-items: center;
       transition: background-color 0.3s ease;
     }
-
     .faq-question:hover {
-      background-color: #d5f0d5;
-      /* Lighter green on hover */
+      background-color: #d5f0d5; /* Lighter green on hover */
     }
-
-    .faq-question:hover {
-      background-color: #d5f0d5;
-      /* Lighter green on hover */
-    }
-
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -439,25 +434,21 @@
       border-top: 8px solid #333;
       /* Downward pointing wide "V" */
       transition: transform 0.3s ease;
+
       margin-right: 10px;
     }
 
     .faq.active .faq-question::after {
-      border-top: none;
-      border-bottom: 8px solid #333;
-      /* Upward pointing wide "V" */
+      transform: rotate(180deg);
     }
 
     .faq-answer {
       opacity: 0;
-      max-height: 0;
-      /* Initially hidden */
-      overflow: hidden;
-      /* Hide content when not visible */
+      max-height: 0; /* Initially hidden */
+      overflow: hidden; /* Hide content when not visible */
       padding: 0 10px;
       background-color: #fff;
-      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-      /* Smooth transition */
+      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
       border-top: 1px solid #ccc;
     }
 
@@ -471,6 +462,9 @@
       /* Set to a sufficient height to display content */
       padding: 10px;
       /* Adds padding when expanded */
+    }
+    .faq.active .faq-answer p {
+      transition: opacity 0.3s ease-in-out;
     }
 
     #logo img:hover {
@@ -777,7 +771,7 @@
             possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
       </div>
-    </div>
+    
     <div class="faq">
       <button class="faq-question">How do I track an ambulance in real-time?</button>
       <div class="faq-answer">
@@ -837,11 +831,12 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!-- FAQ section ends here -->
   <footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
     <div
-      style="background-color: #C4D7FF;display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
+      style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
 
       <!-- Quick Links Section -->
       <div>
@@ -925,7 +920,6 @@
   </a>
 
   <div class="gtranslate_wrapper"></div>
-  <!-- <hr> -->
   <div
     style="background-color: #C4D7FF; color: #000000;border-top: 1px solid #333; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
     <strong>
@@ -938,8 +932,6 @@
   <script src="preloader.js"></script>
 
   <script>
-
-
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
       links.forEach((link) => link.classList.remove("active"));
@@ -978,29 +970,6 @@
     });
   </script>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqButtons = document.querySelectorAll('.faq-question');
-
-      faqButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          const faq = button.parentElement;
-          const answer = faq.querySelector('.faq-answer');
-
-          // Toggle active class
-          faq.classList.toggle('active');
-
-          // Control the max-height for slide effect
-          if (faq.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
-          } else {
-            answer.style.maxHeight = null; // Remove max-height to hide
-          }
-        });
-      });
-    })
-  </script>
   <script>
 
 
@@ -1089,20 +1058,14 @@
         circle.style.left = `${x - 12}px`;
         circle.style.top = `${y - 12}px`;
         circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-
         const nextCircle = circles[index + 1] || circles[0];
         circle.x = x;
         circle.y = y;
 
         x += (nextCircle.x - x) * 0.3;
         y += (nextCircle.y - y) * 0.3;
-
       });
-
       requestAnimationFrame(animateCircles);
-
-
       animateCircles();
     });
   </script>
