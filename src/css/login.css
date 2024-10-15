@@ -39,6 +39,26 @@ input {
   z-index: 5;
 }
 
+#signup-success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 128, 0, 0.8); /* Green with translucency */
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+.hidden {
+  display: none;
+}
+
+
 form {
   display: flex;
   align-items: center;
