@@ -8,22 +8,15 @@
   <link rel="stylesheet" href="preloaderStyle.css">
 
   <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/navbar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <style>
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      background-color: white;
     }
-
 
     /* font size of button */
     .buttons .login,
@@ -35,33 +28,6 @@
       /* Adjust padding for better appearance */
     }
 
-    /* dark mode toggle button styling */
-    body {
-      background-color: white;
-      /* Light mode background */
-      color: black;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .navbar {
-      background-color: lightblue;
-      /* Light mode navbar */
-      color: black;
-      padding: 10px;
-    }
-    ul li a:hover {
-    color: rgb(56, 56, 237) !important;
-    }
-    a:hover {
-    color: rgb(1, 4, 177) !important;
-  }
-
-    .navbar.dark-mode {
-      background-color: black;
-      /* Dark mode navbar */
-      color: white;
-    }
-
     /* more addition for dark mode theme */
 
     .dark-mode .logo img {
@@ -69,110 +35,20 @@
       /* Inverts the color to make it white */
     }
 
-    /* dark mode hove effect on logo */
-    body.dark-mode #logo img:hover {
-      filter: brightness(0) invert(1);
-      /* Change black logo to white */
-      filter: brightness(0.8);
-      /* Change the brightness to light grey on hover */
-    }
 
-    .navbar.dark-mode .logo-img {
-      filter: brightness(0) invert(1);
-      /* Change logo color in dark mode */
-    }
-
-    .menu ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-    }
-
-    .menu li {
-      margin-right: 20px;
-    }
-
-    .menu a {
-      color: black;
-      /* Light mode link color */
-      border: 1px solid black;
-      /* Black border */
-      padding: 5px 10px;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .menu a:hover {
-      background-color: rgb(22, 160, 219);
-      /* Blue background on hover */
-      color: white;
-      /* White text on hover */
-    }
-
-    .dark-mode .menu a {
-      color: white;
-      /* Dark mode link color */
-      border: 1px solid lightgrey;
-      /* Light grey border in dark mode */
-    }
-
-    .dark-mode {
-      background-color: rgba(50, 50, 50, 0.95);
-      /* Slightly gray background with high opacity */
-    }
-
-    .dark-mode .menu a:hover {
-      background-color: white;
-      /* White background on hover in dark mode */
-      color: black;
-      /* Black text on hover in dark mode */
-    }
-
-    .light-dark-btn {
-      background-color: transparent;
-      border: 1px solid black;
-      /* Black border */
-      cursor: pointer;
-      color: black;
-      /* Default button color */
-    }
-
-    .light-dark-btn:hover {
-      color: blue;
-      /* Change color on hover */
-    }
-
-    .dark-mode .light-dark-btn {
-      color: white;
-      /* Button color in dark mode */
-      border: 1px solid lightgrey;
-      /* Light grey border */
-    }
-
-    .dark-mode .light-dark-btn:hover {
-      background-color: white;
-      /* Background on hover in dark mode */
-      color: black;
-      /* Text color on hover in dark mode */
-    }
-
-    .buttons {
-      display: flex;
-      align-items: center;
-    }
-
-
-    /* end */
     /* adding dark mode for contact info */
     .content {
       transition: background-color 0.3s, color 0.3s;
       /* Smooth transitions */
     }
 
+    .dark-mode h3{
+      color: wheat;
+    }
     .dark-mode .content {
       background-color: rgba(50, 50, 50, 0.95);
       /* Match body background opacity */
-      padding: 20px;
+      /* padding: 20px; */
       /* Optional: add padding for better spacing */
     }
 
@@ -189,12 +65,11 @@
     }
 
     .content {
-      margin: 15px;
-      padding: 15px;
-      background-color: #fff;
+      margin: 2rem 3rem;
+      padding: 4rem 1rem;
+      /* width: 90vw; */
+      background-color: #f7f5f5;
       border-radius: 5px;
-      flex-grow: 1;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -207,10 +82,10 @@
       color: blue;
     }
 
-    h2 {
-
+    h3 {
       text-align: center;
       color: #2c3e50;
+      margin-bottom: 1rem;
     }
 
 
@@ -256,10 +131,6 @@
       font-size: 16px;
       transition: background-color 0.3s;
       /* Smooth transition */
-    }
-
-    button:hover {
-      background-color: #e64a19;
     }
 
     textarea {
@@ -341,31 +212,6 @@
       }
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      animation: logoAnimation 1s ease forwards;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 10px;
-      /* Space between the text and the logo image */
-    }
-
-    .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-      animation-delay: calc(var(--letter-index) * 0.1s);
-    }
-
-    .red {
-      color: red;
-    }
-
     .social-icon {
       transition: transform 0.3s ease;
       /* Smooth transition effect */
@@ -434,19 +280,6 @@
       outline: none;
     }
 
-    .circle {
-      height: 35px;
-      width: 35px;
-      border-radius: 24px;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999;
-    }
-
-
     #thank-you-message {
       text-align: center;
       display: none;
@@ -464,88 +297,13 @@
       font-weight: 500;
       color: green;
     }
-
-    /* Add this new CSS for the cursor effect */
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-    #backToTopBtn {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #e81a1a;
-      color: white;
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    #backToTopBtn:hover {
-      background-color: #555;
-    }
-
-    .translate-btn {
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    .translate-btn:hover {
-      background-color: #3498db;
-    }
-
-    .g-translate-popup {
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 10px;
-    }
-
-    /* Adjust the header buttons to accommodate the new translate button */
-    .buttons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
   </style>
 </head>
 
 
+<body>
 
-<header class="navbar">
-  <!-- preloader -->
+  <!-- pre loader -->
   <div id="preloader">
     <div class="wrapper">
       <div class="box-wrap">
@@ -558,59 +316,59 @@
       </div>
     </div>
   </div>
-  <div class="container">
+
+  <div class="container" id="container">
+
     <div class="logo">
       <div class="brand-name">
-        <span class="letter red" style="--letter-index: 1;">A</span>
-        <span class="letter red" style="--letter-index: 2;">m</span>
-        <span class="letter red" style="--letter-index: 3;">b</span>
-        <span class="letter red" style="--letter-index: 4;">u</span>
-        <span class="letter" style="--letter-index: 5;">F</span>
-        <span class="letter" style="--letter-index: 6;">l</span>
-        <span class="letter" style="--letter-index: 7;">o</span>
-        <span class="letter" style="--letter-index: 8;">w</span>
+        <span class="ambu">Ambu</span><span>Flow</span>
       </div>
-      <a href="./index.html" >
-      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-      </a>
+      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
     </div>
     <nav class="menu">
       <ul>
-        <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i>
-            Home</a></li>
-        <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
-              class="fa-solid fa-file"></i> Features</a></li>
-        <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
-            Team</a></li>
-        <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
-              class="fa-solid fa-phone"></i> Contact</a></li>
-        <li><a href="Feedback.html" id="Feedback-link" onclick="changeContent('Feedback')"><i
-              class="fa-solid fa-clipboard"></i> Feedback</a></li>
+        <li>
+          <a href="#container" style="color: #333;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
+            <span>Features</span></a>
+        </li>
+        <li>
+          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
+            <span>Team</span></a>
+        </li>
+        <li>
+          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
+            <span>Contact</span></a>
+        </li>
+        <li>
+          <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback">
+            <span>Feedback</span></a>
+        </li>
+        <li>
+          <a href="nearby.html" id="nearby-link" class="menu_links" data-link="Nearby">
+            <span>Nearby</span></a>
+        </li>
       </ul>
     </nav>
-    <div class="buttons">
 
-      <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
-
-      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-      <a href="login.html" class="login">Log in</a>
-      <a href="up.html" class="get-started">Get started</a>
-    </div>
   </div>
-</header>
 
-
-<body>
-  <header>
-
-    <h1>AmbuFlow Feedback</h1>
-
-  </header>
 
   <div class="content">
+    <h1 style="margin-bottom: 1rem;">AmbuFlow Feedback</h1>
+
     <h3>We Value Your Feedback</h3>
     <div class="feedback-box">
       <form id="feedback-box" action="#" method="post">
@@ -638,7 +396,7 @@
 
 
 
-  <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
+  <footer style=" color: #f3f4f6; text-align: center; width: 100%; padding-top: 3rem;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
 
@@ -694,179 +452,94 @@
 
     </div>
     <hr>
-    <!-- Copyright Section -->
-    <div
-      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong>
-        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-      </strong>
-
-      <!-- Back to Top Button -->
-      <button id="backToTopBtn" style="
-        background-color: #e81a1a;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        font-size: 16px;
-        cursor: pointer;
-      ">↑</button>
-    </div>
   </footer>
-<!-- FAQ Popup Button -->
-<button id="faqButton"
+  <!-- Copyright Section -->
+  <div
+    style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <strong>
+      <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+    </strong>
+    <a href="chatbot.html">
+      <div class="fixed bottom-0 right-2 chatbot-container">
+        <button class="chatbot-button group">
+          <img class="h-20" src="chatbot.gif" alt="chatbot" />
+          <span class="tooltip-text">
+            Welcome to AmbuFlow!<br />
+            How can I help You?
+          </span>
+        </button>
+      </div>
+    </a>
+    <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <div class="gtranslate_wrapper"></div>
+    
+    <!-- FAQ Popup Button -->
+    <button id="faqButton"
     style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">FAQ</button>
-
-<!-- FAQ Popup -->
-<div id="faqPopup"
-    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-content">
-      <div class="faq-item">
-        <h3>What is AmbuFlow?</h3>
-        <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and improve
-          patient care.</p>
+    
+    <!-- FAQ Popup -->
+    <div id="faqPopup"
+      style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-content">
+        <div class="faq-item">
+          <h3>What is AmbuFlow?</h3>
+          <p>AmbuFlow is an advanced ambulance monitoring system designed to optimize emergency response times and
+            improve
+            patient care.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does real-time tracking work?</h3>
+          <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route
+            optimization.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is the service available 24/7?</h3>
+          <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How can hospitals benefit from AmbuFlow?</h3>
+          <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through
+            our integrated system.</p>
+        </div>
       </div>
-      <div class="faq-item">
-        <h3>How does real-time tracking work?</h3>
-        <p>Our system uses GPS technology to track ambulances in real-time, allowing for efficient dispatch and route
-          optimization.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is the service available 24/7?</h3>
-        <p>Yes, AmbuFlow operates round the clock to ensure emergency services are always available when needed.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How can hospitals benefit from AmbuFlow?</h3>
-        <p>Hospitals can improve resource management, reduce response times, and enhance overall patient care through
-          our integrated system.</p>
-      </div>
+      <!-- Add close button for FAQ Popup -->
+      <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
     </div>
-    <!-- Add close button for FAQ Popup -->
-    <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
-</div>
+    
+    <script src="preloader.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
 
-<!-- Add this div for the translator popup -->
-<div id="gTranslate" class="g-translate-popup" style="display:none;">
-  <div class="gtranslate_wrapper"></div>
-</div>
+      // FAQ Popup functionality
+      const faqButton = document.getElementById('faqButton');
+      const faqPopup = document.getElementById('faqPopup');
+      const closeFaqPopup = document.getElementById('closeFaqPopup');
 
-<script src="preloader.js"></script>
+      faqButton.addEventListener('click', () => {
+        faqPopup.style.display = 'block';
+      });
 
+      closeFaqPopup.addEventListener('click', () => {
+        faqPopup.style.display = 'none';
+      });
 
-<!--  -->
-<script>
-  // Back to top button functionality
-  const backToTopButton = document.getElementById('backToTopBtn');
-
-  // Show the button when scrolled down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  };
-
-  // Scroll to top when the button is clicked
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+      // Close popup when clicking outside
+      window.addEventListener('click', (event) => {
+        if (event.target === faqPopup) {
+          faqPopup.style.display = 'none';
+        }
+      });
 
 
-<script>
-  // Dark mode functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const darkModeButton = document.querySelector('.dark-mode-toggle');
-    const logoImage = document.querySelector('.logo img'); // Select the logo image
-    const navbar = document.querySelector('.navbar'); // Select the navbar
+    </script>
 
-    // Reset to light mode for the Contact page
-    document.body.classList.remove("dark-mode");
-    document.body.classList.add("light-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
 
-    // Clear the sessionStorage for theme on this page
-    sessionStorage.removeItem("theme");
+    <!-- Add this if it's not already present -->
+    <div class="circle"></div>
+  </body>
 
-    toggleButton.addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-      navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
-
-      // Update sessionStorage based on current mode
-      if (document.body.classList.contains('dark-mode')) {
-        sessionStorage.setItem("theme", "dark");
-        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-      } else {
-        sessionStorage.setItem("theme", "light");
-        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-      }
-    });
-  });
-
-  // FAQ Popup functionality
-  const faqButton = document.getElementById('faqButton');
-  const faqPopup = document.getElementById('faqPopup');
-  const closeFaqPopup = document.getElementById('closeFaqPopup');
-
-  faqButton.addEventListener('click', () => {
-    faqPopup.style.display = 'block';
-  });
-
-  closeFaqPopup.addEventListener('click', () => {
-    faqPopup.style.display = 'none';
-  });
-
-  // Close popup when clicking outside
-  window.addEventListener('click', (event) => {
-    if (event.target === faqPopup) {
-      faqPopup.style.display = 'none';
-    }
-  });
-
-  // Show/hide buttons when user scrolls
-  window.onscroll = function () {
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      backToTopBtn.style.display = "block";
-      faqButton.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-      faqButton.style.display = "none";
-    }
-  };
-
-  // Add the translator popup functionality
-  const translateBtn = document.getElementById('translateBtn');
-  const gTranslate = document.getElementById('gTranslate');
-
-  translateBtn.addEventListener('click', function() {
-    gTranslate.style.display = gTranslate.style.display === 'none' ? 'block' : 'none';
-  });
-
-  // Close the translator popup when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-      gTranslate.style.display = 'none';
-    }
-  });
-</script>
-
-<script>
-  window.gtranslateSettings = {
-    "default_language": "en",
-    "detect_browser_language": true,
-    "wrapper_selector": ".gtranslate_wrapper",
-    "alt_flags": {"en": "usa"}
-  }
-</script>
-
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-<!-- Add this if it's not already present -->
-<div class="circle"></div>
-</body>
 </html>
