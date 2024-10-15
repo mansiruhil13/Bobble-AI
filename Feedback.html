@@ -713,13 +713,12 @@
       ">↑</button>
     </div>
   </footer>
-
-  <!-- FAQ Popup Button -->
-  <button id="faqButton"
+<!-- FAQ Popup Button -->
+<button id="faqButton"
     style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">FAQ</button>
 
-  <!-- FAQ Popup -->
-  <div id="faqPopup"
+<!-- FAQ Popup -->
+<div id="faqPopup"
     style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-content">
@@ -743,10 +742,8 @@
           our integrated system.</p>
       </div>
     </div>
-    <button id="closeFaqPopup"
-      style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-  </div>
-  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
+    <!-- Add close button for FAQ Popup -->
+    <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
 </div>
 
 <!-- Add this div for the translator popup -->
@@ -755,203 +752,99 @@
 </div>
 
 <script src="preloader.js"></script>
+
+
+<!--  -->
 <script>
-  // Add event listeners to each star label for toggling the selection
-  const stars = document.querySelectorAll('.star-rating input');
-  stars.forEach(star => {
-    star.addEventListener('change', function () {
-      // Remove the checked state from all stars
-      stars.forEach(s => {
-        const label = document.querySelector(`label[for="${s.id}"]`);
-        label.style.color = '#ddd'; // Reset color for unselected stars
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTopBtn');
 
-  <script src="preloader.js"></script>
-
-  <script>
-    // adding code for dark mode
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.getElementById('dark-mode-toggle');
-      const darkModeButton = document.querySelector('.dark-mode-toggle');
-      const logoImage = document.querySelector('.logo img'); // Select the logo image
-      const navbar = document.querySelector('.navbar'); // Select the navbar
-
-      // Reset to light mode for the Contact page
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
-
-      // Clear the sessionStorage for theme on this page
-      sessionStorage.removeItem("theme");
-
-      toggleButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
-
-        // Update sessionStorage based on current mode
-        if (document.body.classList.contains('dark-mode')) {
-          sessionStorage.setItem("theme", "dark");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-        } else {
-          sessionStorage.setItem("theme", "light");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-        }
-
-      });
-    });
-
-    // end
-  </script>
-
-  <script>
-    // Add event listeners to each star label for toggling the selection
-    const stars = document.querySelectorAll('.star-rating input');
-    stars.forEach(star => {
-      star.addEventListener('change', function () {
-        // Remove the checked state from all stars
-        stars.forEach(s => {
-          const label = document.querySelector(`label[for="${s.id}"]`);
-          label.style.color = '#ddd'; // Reset color for unselected stars
-        });
-        // Highlight the selected star and all previous stars
-        this.checked = true;
-        const currentStarValue = this.value;
-        for (let i = 1; i <= currentStarValue; i++) {
-          const label = document.querySelector(`label[for="star${i}"]`);
-          label.style.color = '#ffdd00'; // Highlight selected stars
-        }
-      });
-    });
-
-    // Handle form submission
-    const form = document.getElementById('feedback-box');
-    const feedbackBox = document.querySelector('.feedback-box');
-    const thankYouMessage = document.getElementById('thank-you-message');
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      // Hide the feedback-box div
-      feedbackBox.style.display = 'none';
-
-      // Show the thank-you message
-      thankYouMessage.style.display = 'flex';
-
-      // Hide the form to avoid further submissions
-      form.style.display = 'none';
-
-      // Redirect to the home page after 2 seconds
-      setTimeout(function () {
-        window.location.href = 'index.html';
-      }, 5000); // Adjust the delay as needed
-    });
-
-    // Update or add this JavaScript for the cursor effect
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    const colors = [
-      "#ffb56b",
-      "#fdaf69",
-      "#f89d63",
-      "#f59761",
-      "#ef865e",
-      "#ec805d",
-      "#e36e5c",
-      "#df685c",
-      "#d5585c",
-      "#d1525c",
-      "#c5415d",
-      "#c03b5d",
-      "#b22c5e",
-      "#ac265e",
-      "#9c155f",
-      "#950f5f",
-      "#830060",
-      "#7c0060",
-      "#680060",
-      "#60005f",
-      "#48005f",
-      "#3d005e"
-    ];
-
-    circles.forEach(function (circle, index) {
-      circle.x = 0;
-      circle.y = 0;
-      circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.clientX;
-      coords.y = e.clientY;
-    });
-
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
-
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
-
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-      });
-
-      requestAnimationFrame(animateCircles);
+  // Show the button when scrolled down 100px from the top
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
     }
+  };
 
-    animateCircles();
+  // Scroll to top when the button is clicked
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
-    // Add this new code for the Back to Top functionality
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    const faqButton = document.getElementById('faqButton');
-    const faqPopup = document.getElementById('faqPopup');
-    const closeFaqPopup = document.getElementById('closeFaqPopup');
 
-    // Show/hide buttons when user scrolls
-    window.onscroll = function () {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
-        faqButton.style.display = "block";
+<script>
+  // Dark mode functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    const logoImage = document.querySelector('.logo img'); // Select the logo image
+    const navbar = document.querySelector('.navbar'); // Select the navbar
+
+    // Reset to light mode for the Contact page
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+    // Clear the sessionStorage for theme on this page
+    sessionStorage.removeItem("theme");
+
+    toggleButton.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+      // Update sessionStorage based on current mode
+      if (document.body.classList.contains('dark-mode')) {
+        sessionStorage.setItem("theme", "dark");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
       } else {
-        backToTopBtn.style.display = "none";
-        faqButton.style.display = "none";
+        sessionStorage.setItem("theme", "light");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
       }
-    };
-
-    // Scroll to top when button is clicked
-    backToTopBtn.addEventListener('click', function () {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
+  });
 
-    // FAQ Popup functionality
-    faqButton.addEventListener('click', () => {
-      faqPopup.style.display = 'block';
-    });
+  // FAQ Popup functionality
+  const faqButton = document.getElementById('faqButton');
+  const faqPopup = document.getElementById('faqPopup');
+  const closeFaqPopup = document.getElementById('closeFaqPopup');
 
-    closeFaqPopup.addEventListener('click', () => {
+  faqButton.addEventListener('click', () => {
+    faqPopup.style.display = 'block';
+  });
+
+  closeFaqPopup.addEventListener('click', () => {
+    faqPopup.style.display = 'none';
+  });
+
+  // Close popup when clicking outside
+  window.addEventListener('click', (event) => {
+    if (event.target === faqPopup) {
       faqPopup.style.display = 'none';
-
     }
   });
 
+  // Show/hide buttons when user scrolls
+  window.onscroll = function () {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      backToTopBtn.style.display = "block";
+      faqButton.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+      faqButton.style.display = "none";
+    }
+  };
+
+  // Add the translator popup functionality
   const translateBtn = document.getElementById('translateBtn');
   const gTranslate = document.getElementById('gTranslate');
 
   translateBtn.addEventListener('click', function() {
-    if (gTranslate.style.display === 'none') {
-      gTranslate.style.display = 'block';
-    } else {
-      gTranslate.style.display = 'none';
-    }
+    gTranslate.style.display = gTranslate.style.display === 'none' ? 'block' : 'none';
   });
 
   // Close the translator popup when clicking outside
@@ -962,7 +855,6 @@
   });
 </script>
 
-<!-- Add this script at the end of the body -->
 <script>
   window.gtranslateSettings = {
     "default_language": "en",
@@ -971,21 +863,10 @@
     "alt_flags": {"en": "usa"}
   }
 </script>
+
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    });
-
-    // Close popup when clicking outside
-    window.addEventListener('click', (event) => {
-      if (event.target === faqPopup) {
-        faqPopup.style.display = 'none';
-      }
-    });
-  </script>
-
-
-  <!-- Add this if it's not already present -->
-  <div class="circle"></div>
+<!-- Add this if it's not already present -->
+<div class="circle"></div>
 </body>
-
 </html>

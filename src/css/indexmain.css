@@ -249,6 +249,7 @@ body {
     /* transform: translateY(2px); */
     color: #373A40;
 }
+
 .menu ul li:first-child:hover {
     background-color: rgb(226, 223, 223);
     border-radius: 50%;
