@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <!--Updated to latest version-->
   <style>
     body {
@@ -42,7 +45,7 @@
     }
 
     .navbar {
-      background-color: lightblue;
+      background-color: rgb(153, 207, 225);
       /* Light mode navbar */
       color: black;
       padding: 10px;
@@ -203,7 +206,7 @@
 
     .menu ul li {
       display: inline;
-      margin-right: 10px;
+      margin-right: 7px;
     }
 
     .menu ul li a {
@@ -373,7 +376,7 @@ footer {
       background-color: #2980b9;
       color: white;
       border: none;
-      padding: 10px 15px;
+      padding: 9px 10px;
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
@@ -398,66 +401,9 @@ footer {
     .buttons {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
-
-    </style>
-
-
-    /* Logo Animation */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        /* Start from the left */
-      }
-
-      50% {
-        transform: translateX(10px);
-        /* Move slightly to the right */
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* End at original position */
-      }
-    }
-
-    footer {
-      background-color: #C4D7FF;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      /* Padding for the footer */
-
-    }
-
-    /* Letter Drop Animation */
-    @keyframes letterDrop {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-
-      50% {
-        transform: translateY(10px);
-        /* Slight bounce */
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    #thankYouMessage {
-      margin-top: 20px;
-      font-size: 18px;
-      color: green;
-      display: none;
-      /* Initially hidden */
-    }
+ 
   </style>
 
 </head>
@@ -498,16 +444,13 @@ footer {
 
       <nav class="menu">
         <ul>
-          <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i>
+          <li><a href="index.html" id="home-link" onclick="changeContent('home')">
               Home</a></li>
-          <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
-                class="fa-solid fa-file"></i> Features</a></li>
-          <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
+          <li><a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a></li>
+          <li><a href="team.html" id="team-link" onclick="changeContent('team')">
               Team</a></li>
-          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
-                class="fa-solid fa-phone"></i> Contact</a></li>
-          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
-                class="fa-solid fa-clipboard"></i> Feedback</a></li>
+          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
+          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"> Feedback</a></li>
         </ul>
       </nav>
       <div class="buttons">
@@ -519,8 +462,6 @@ footer {
         <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
 
       </div>
     </div>
