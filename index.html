@@ -288,10 +288,29 @@
       /* Icon color change to rgb(16, 13, 195) on hover */
     }
 
+
+
+    @media (max-width: 640px){
+
+      .quick{
+        padding-left: 20%;
+        text-decoration: underline;
+      }
+      .followm{
+     padding-left: 40%;
+      }
+      .socialicon{
+        padding-left: 30%;
+      }
+      .contm{
+        margin-right: 5%;
+      }
+
+    }
     @media (max-width:966px) {
       label.logo {
         font-size: 30px;
-        padding-left: 50px;
+        padding-left: 70px;
       }
     }
 
@@ -905,11 +924,11 @@
         min-width: 200px; 
         margin-bottom: 20px;
         padding-left: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <h3 class="quick"   style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
           <ul style="list-style-type: none; padding: 0;">
             <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
                 onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
+            <li><a class="contactm" href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
                 onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
             <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;"
                 onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
@@ -927,9 +946,9 @@
         <div style="flex: 1; 
         min-width: 200px; 
         margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <h3   class="contm"  style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
           <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;"
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none;  font-size: 90%; cursor: pointer;"
             onmouseover="this.style.color='blue'"
             onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
           <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;"
@@ -939,8 +958,8 @@
         <!-- Modified the looks of the social icons -->
         <!-- Social Media Links -->
         <div style="text-align: center; min-width: 200px; color: black;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+          <h3  class="followm" style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+          <div   class="socialicon"  style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
             <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
               style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
             <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
@@ -1009,6 +1028,10 @@
       ">↑</button>
     </div>
   </footer>
+
+
+
+
   <script src="preloader.js"></script>
 
   <script>
