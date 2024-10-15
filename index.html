@@ -72,74 +72,87 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 50px;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 50px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
+/* Navbar styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Evenly space the items */
+    align-items: center; /* Align items vertically in the center */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
 
-    }
+/* Style the list items */
+nav ul li {
+    margin-right: 15px;
+}
 
-    nav ul li a {
-      display: flex;
-      align-items: center;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      background-color: transparent;
-      text-transform: uppercase;
+/* Link styling */
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Reduced padding for smaller boxes */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    border: 1px solid #000; /* Add a border for all links */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.9rem; /* Smaller font size for a more compact design */
+}
 
-      margin-right: 5px;
-      position: relative;
-      /* transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; */
-      border: none;
-      /* Added smooth transition for background, text color, and scaling */
-    }
+nav ul li a:hover {
+    color: #2980b9;
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
 
-    nav ul li a:hover {
-      color: #2980b9; /* Text color change on hover */
-      transform: scale(1.1); /* Slightly scale up the button on hover */
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-    }
+nav ul li a:active {
+    color: #2980b9;
+    transform: scale(1);
+}
 
-    nav ul li a:active {
-       /* background-color: #333; Change background on active state */
-      color: #2980b9; /* Active text color */
-      transform: scale(1); /* Reset scale on click */
-    }
+/* Prevent the underline effect from wrapping */
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
 
-    /* nav ul li a i {
-      margin-right: 8px;
-    } */
+nav ul li a:hover::before {
+    width: 100%;
+    background-color: rgb(76, 59, 231);
+}
 
-    nav ul li a::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 3px;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
+/* Log in and Get started buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
 
-    nav ul li a:hover::before {
-      width: 100%; /* Animated underline effect on hover */
-      background-color: rgb(76, 59, 231); /* Underline color */
-
-    }
-
+.nav-buttons .btn {
+    padding: 5px 15px; /* Reduced padding for smaller buttons */
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
     .content {
       margin: 20px;
       padding: 20px;
@@ -329,7 +342,7 @@
     }
 
 
-    @media (max-width:858px) {
+    @media (max-width:1450px) {
       .checkbtn {
         display: block;
       }
@@ -1027,10 +1040,9 @@
 
     <div
       style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
-      <strong>
+      <stronng>
         <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-      </strong>
-
+      </stronng>
 
       <!-- Back to Top Button -->
       <button id="backToTopBtn" style="
