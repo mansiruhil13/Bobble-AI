@@ -539,6 +539,38 @@
       align-items: center;
       gap: 10px;
     }
+    @media(max-width:768px) {
+      .container .buttons {
+        justify-content: center;
+        flex-direction: column;
+      }
+      .menu ul{
+                justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px 0 20px 0;
+            }
+
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .container{
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .menu{
+                width: max-content;
+                margin: auto;
+            }
+            
+        }
+
+        @media only screen and (min-width : 1024px) and (max-width:1465)
+        {
+            .container{
+                flex-direction: column;
+    gap: 2rem;
+            }
+        }
   </style>
 </head>
 
@@ -589,16 +621,16 @@
       </ul>
     </nav>
     <div class="buttons">
+      <div>
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
 
-      <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+          <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+              <i class="fa-solid fa-moon"></i>
+          </button>
+      </div>
 
-      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-      <a href="login.html" class="login">Log in</a>
-      <a href="up.html" class="get-started">Get started</a>
-    </div>
+  </div>
   </div>
 </header>
 
@@ -759,15 +791,13 @@
   // Add event listeners to each star label for toggling the selection
   const stars = document.querySelectorAll('.star-rating input');
   stars.forEach(star => {
-    star.addEventListener('change', function () {
+    star.addEventListener('change', function (){
       // Remove the checked state from all stars
       stars.forEach(s => {
         const label = document.querySelector(`label[for="${s.id}"]`);
         label.style.color = '#ddd'; // Reset color for unselected stars
-
-  <script src="preloader.js"></script>
-
-  <script>
+      })
+    });
     // adding code for dark mode
     document.addEventListener('DOMContentLoaded', function () {
       const toggleButton = document.getElementById('dark-mode-toggle');
@@ -801,9 +831,7 @@
     });
 
     // end
-  </script>
 
-  <script>
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
     stars.forEach(star => {
@@ -940,7 +968,7 @@
     closeFaqPopup.addEventListener('click', () => {
       faqPopup.style.display = 'none';
 
-    }
+    })
   });
 
   const translateBtn = document.getElementById('translateBtn');
@@ -960,7 +988,7 @@
       gTranslate.style.display = 'none';
     }
   });
-</script>
+  </script>
 
 <!-- Add this script at the end of the body -->
 <script>
@@ -972,9 +1000,7 @@
   }
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-    });
-
+<script>
     // Close popup when clicking outside
     window.addEventListener('click', (event) => {
       if (event.target === faqPopup) {

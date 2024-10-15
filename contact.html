@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+
     <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
         body {
-            font-family: Arial, sans-serif,'Times New Roman', Times, serif;
+            font-family: Arial, sans-serif, 'Times New Roman', Times, serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -349,9 +349,11 @@
             align-items: center;
             animation: logoAnimation 1s ease forwards;
         }
+
         ul li a:hover {
             color: blue !important;
         }
+
         a:hover {
             color: blue !important;
         }
@@ -389,55 +391,84 @@
         }
 
         .map {
-
-      width: 860px;
-      height: 400px;
-      border: 3px 3px 3px 3px solid #090202;
-      border-radius: 5px;
-      margin: 20px auto;
-      object-fit: cover;
-    }
-
-    .translate-btn {
-        background-color: #2980b9;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s;
-    }
-
-    .translate-btn:hover {
-        background-color: #3498db;
-    }
-
-    .g-translate-popup {
-        position: fixed;
-        top: 60px;
-        right: 20px;
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        padding: 10px;
-    }
-
-    .buttons {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-            width: 860px;
             height: 400px;
             border: 3px 3px 3px 3px solid #090202;
             border-radius: 5px;
             margin: 20px auto;
             object-fit: cover;
+            display: flex;
+            justify-content: center;
         }
 
+        .translate-btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .translate-btn:hover {
+            background-color: #3498db;
+        }
+
+        .g-translate-popup {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media(max-width:768px) {
+            .container .buttons {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .map iframe{
+                width: 100%;
+            }
+            .menu ul{
+                justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px 0 20px 0;
+            }
+
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .container{
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .menu{
+                width: max-content;
+                margin: auto;
+            }
+            .map iframe{
+                width: 90%;
+            }
+        }
+
+        @media only screen and (min-width : 1024px) and (max-width:1465)
+        {
+            .container{
+                flex-direction: column;
+    gap: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -471,10 +502,10 @@
                     <span class="letter" style="--letter-index: 7;">o</span>
                     <span class="letter" style="--letter-index: 8;">w</span>
                 </div>
-                <a href="./index.html" >
-                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
-                    style="width: 50px; height: auto" />
-                    </a>
+                <a href="./index.html">
+                    <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                        style="width: 50px; height: auto" />
+                </a>
             </div>
 
             <nav class="menu">
@@ -492,17 +523,15 @@
                 </ul>
             </nav>
             <div class="buttons">
+                <div>
+                    <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
 
-                <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
-
-                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-
-                <a href="login.html" class="login">Log in</a>
-                <a href="up.html" class="get-started">Get started</a>
+                    <a href="login.html" class="login">Log in</a>
+                    <a href="up.html" class="get-started">Get started</a>
+                </div>
             </div>
-        </div>
     </header>
 
     <div class="content" id="main-content">
@@ -525,10 +554,13 @@
             </div>
         </div>
         <!-- adding map -->
-     <div class = "map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241294.64898498365!2d72.79635424219836!3d19.09761203283721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Emergency%20Lane%2C%20Mumbai%2C%20India!5e0!3m2!1sen!2sin!4v1728732339444!5m2!1sen!2sin" width=860px height="400" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" overflow="hidden" style="border :10" object-fit="cover" ;></iframe> 
-        <!--  ;"  loading="lazy" margin-top="50%"  ></iframe> -->
-    </div>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241294.64898498365!2d72.79635424219836!3d19.09761203283721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Emergency%20Lane%2C%20Mumbai%2C%20India!5e0!3m2!1sen!2sin!4v1728732339444!5m2!1sen!2sin"
+                width="898" height="400" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
+                style="border :10" object-fit="cover" ;></iframe>
+            <!--  ;"  loading="lazy" margin-top="50%"  ></iframe> -->
+        </div>
     </div>
     <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
         <div style="background-color: #C4D7FF; color: #f3f4f6; ">
@@ -705,40 +737,40 @@
                     //end 
                 </script>
 
-    <!-- Add this div for the translator popup -->
-    <div id="gTranslate" class="g-translate-popup" style="display:none;">
-        <div class="gtranslate_wrapper"></div>
-    </div>
+                <!-- Add this div for the translator popup -->
+                <div id="gTranslate" class="g-translate-popup" style="display:none;">
+                    <div class="gtranslate_wrapper"></div>
+                </div>
 
-    <script>
-        window.gtranslateSettings = {
-            "default_language": "en",
-            "detect_browser_language": true,
-            "wrapper_selector": ".gtranslate_wrapper",
-            "alt_flags": {"en": "usa"}
-        }
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+                <script>
+                    window.gtranslateSettings = {
+                        "default_language": "en",
+                        "detect_browser_language": true,
+                        "wrapper_selector": ".gtranslate_wrapper",
+                        "alt_flags": { "en": "usa" }
+                    }
+                </script>
+                <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    <script>
-        const translateBtn = document.getElementById('translateBtn');
-        const gTranslate = document.getElementById('gTranslate');
+                <script>
+                    const translateBtn = document.getElementById('translateBtn');
+                    const gTranslate = document.getElementById('gTranslate');
 
-        translateBtn.addEventListener('click', function() {
-            if (gTranslate.style.display === 'none') {
-                gTranslate.style.display = 'block';
-            } else {
-                gTranslate.style.display = 'none';
-            }
-        });
+                    translateBtn.addEventListener('click', function () {
+                        if (gTranslate.style.display === 'none') {
+                            gTranslate.style.display = 'block';
+                        } else {
+                            gTranslate.style.display = 'none';
+                        }
+                    });
 
-        // Close the translator popup when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-                gTranslate.style.display = 'none';
-            }
-        });
-    </script>
+                    // Close the translator popup when clicking outside
+                    document.addEventListener('click', function (event) {
+                        if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+                            gTranslate.style.display = 'none';
+                        }
+                    });
+                </script>
 
 </body>
 

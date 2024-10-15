@@ -168,7 +168,7 @@ header {
     flex-direction: column;
     background-color: #f9fafb;
     position: absolute;
-    top: 60px;
+    top: 180px;
     left: 0;
     width: 100%;
     display: none;
@@ -520,6 +520,7 @@ margin-bottom: 30px;
 
   .container {
     padding: 5px;
+    flex-direction: column;
   }
 
   .logo img{
