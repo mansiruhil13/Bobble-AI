@@ -745,13 +745,12 @@
       ">↑</button>
     </div>
   </footer>
-
-  <!-- FAQ Popup Button -->
-  <button id="faqButton"
+<!-- FAQ Popup Button -->
+<button id="faqButton"
     style="position: fixed; bottom: 20px; right: 80px; z-index: 1000; background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">FAQ</button>
 
-  <!-- FAQ Popup -->
-  <div id="faqPopup"
+<!-- FAQ Popup -->
+<div id="faqPopup"
     style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; max-width: 80%; max-height: 80%; overflow-y: auto;">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-content">
@@ -775,10 +774,8 @@
           our integrated system.</p>
       </div>
     </div>
-    <button id="closeFaqPopup"
-      style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-  </div>
-  <button id="closeFaqPopup" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
+    <!-- Add close button for FAQ Popup -->
+    <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
 </div>
 
 <!-- Add this div for the translator popup -->
@@ -788,50 +785,7 @@
 
 <script src="preloader.js"></script>
 <script>
-  // Add event listeners to each star label for toggling the selection
-  const stars = document.querySelectorAll('.star-rating input');
-  stars.forEach(star => {
-    star.addEventListener('change', function (){
-      // Remove the checked state from all stars
-      stars.forEach(s => {
-        const label = document.querySelector(`label[for="${s.id}"]`);
-        label.style.color = '#ddd'; // Reset color for unselected stars
-      })
-    });
-    // adding code for dark mode
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.getElementById('dark-mode-toggle');
-      const darkModeButton = document.querySelector('.dark-mode-toggle');
-      const logoImage = document.querySelector('.logo img'); // Select the logo image
-      const navbar = document.querySelector('.navbar'); // Select the navbar
-
-      // Reset to light mode for the Contact page
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
-
-      // Clear the sessionStorage for theme on this page
-      sessionStorage.removeItem("theme");
-
-      toggleButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
-
-        // Update sessionStorage based on current mode
-        if (document.body.classList.contains('dark-mode')) {
-          sessionStorage.setItem("theme", "dark");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-        } else {
-          sessionStorage.setItem("theme", "light");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-        }
-
-      });
-    });
-
-    // end
-
+  document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
     stars.forEach(star => {
@@ -842,13 +796,40 @@
           label.style.color = '#ddd'; // Reset color for unselected stars
         });
         // Highlight the selected star and all previous stars
-        this.checked = true;
         const currentStarValue = this.value;
         for (let i = 1; i <= currentStarValue; i++) {
           const label = document.querySelector(`label[for="star${i}"]`);
           label.style.color = '#ffdd00'; // Highlight selected stars
         }
       });
+    });
+
+    // Dark mode functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    const navbar = document.querySelector('.navbar'); // Select the navbar
+
+    // Reset to light mode for the Contact page
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+    // Clear the sessionStorage for theme on this page
+    sessionStorage.removeItem("theme");
+
+    toggleButton.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+      // Update sessionStorage based on current mode
+      if (document.body.classList.contains('dark-mode')) {
+        sessionStorage.setItem("theme", "dark");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+      } else {
+        sessionStorage.setItem("theme", "light");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+      }
     });
 
     // Handle form submission
@@ -868,38 +849,55 @@
       // Hide the form to avoid further submissions
       form.style.display = 'none';
 
-      // Redirect to the home page after 2 seconds
+      // Redirect to the home page after 5 seconds
       setTimeout(function () {
         window.location.href = 'index.html';
-      }, 5000); // Adjust the delay as needed
+      }, 5000);
     });
 
-    // Update or add this JavaScript for the cursor effect
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTopBtn');
+    const faqButton = document.getElementById('faqButton');
+    const faqPopup = document.getElementById('faqPopup');
+    const closeFaqPopup = document.getElementById('closeFaqPopup');
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+        faqButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+        faqButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.addEventListener('click', function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    faqButton.addEventListener('click', function () {
+      faqPopup.style.display = 'block';
+    });
+
+    closeFaqPopup.addEventListener('click', function () {
+      faqPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+
+    // Cursor effect
     const coords = { x: 0, y: 0 };
     const circles = document.querySelectorAll(".circle");
 
     const colors = [
-      "#ffb56b",
-      "#fdaf69",
-      "#f89d63",
-      "#f59761",
-      "#ef865e",
-      "#ec805d",
-      "#e36e5c",
-      "#df685c",
-      "#d5585c",
-      "#d1525c",
-      "#c5415d",
-      "#c03b5d",
-      "#b22c5e",
-      "#ac265e",
-      "#9c155f",
-      "#950f5f",
-      "#830060",
-      "#7c0060",
-      "#680060",
-      "#60005f",
-      "#48005f",
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c",
+      "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e",
+      "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f",
       "#3d005e"
     ];
 
@@ -921,12 +919,9 @@
       circles.forEach(function (circle, index) {
         circle.style.left = x - 12 + "px";
         circle.style.top = y - 12 + "px";
-
         circle.style.scale = (circles.length - index) / circles.length;
-
         circle.x = x;
         circle.y = y;
-
         const nextCircle = circles[index + 1] || circles[0];
         x += (nextCircle.x - x) * 0.3;
         y += (nextCircle.y - y) * 0.3;
@@ -937,81 +932,32 @@
 
     animateCircles();
 
-    // Add this new code for the Back to Top functionality
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    const faqButton = document.getElementById('faqButton');
-    const faqPopup = document.getElementById('faqPopup');
-    const closeFaqPopup = document.getElementById('closeFaqPopup');
+    // Google Translate functionality
+    const translateBtn = document.getElementById('translateBtn');
+    const gTranslate = document.getElementById('gTranslate');
 
-    // Show/hide buttons when user scrolls
-    window.onscroll = function () {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
-        faqButton.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-        faqButton.style.display = "none";
+    translateBtn.addEventListener('click', function () {
+      gTranslate.style.display = gTranslate.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+        gTranslate.style.display = 'none';
       }
-    };
-
-    // Scroll to top when button is clicked
-    backToTopBtn.addEventListener('click', function () {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
-
-    // FAQ Popup functionality
-    faqButton.addEventListener('click', () => {
-      faqPopup.style.display = 'block';
-    });
-
-    closeFaqPopup.addEventListener('click', () => {
-      faqPopup.style.display = 'none';
-
-    })
   });
 
-  const translateBtn = document.getElementById('translateBtn');
-  const gTranslate = document.getElementById('gTranslate');
-
-  translateBtn.addEventListener('click', function() {
-    if (gTranslate.style.display === 'none') {
-      gTranslate.style.display = 'block';
-    } else {
-      gTranslate.style.display = 'none';
-    }
-  });
-
-  // Close the translator popup when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-      gTranslate.style.display = 'none';
-    }
-  });
-  </script>
-
-<!-- Add this script at the end of the body -->
-<script>
+  // Google Translate settings script
   window.gtranslateSettings = {
     "default_language": "en",
     "detect_browser_language": true,
     "wrapper_selector": ".gtranslate_wrapper",
-    "alt_flags": {"en": "usa"}
-  }
+    "alt_flags": { "en": "usa" }
+  };
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-<script>
-    // Close popup when clicking outside
-    window.addEventListener('click', (event) => {
-      if (event.target === faqPopup) {
-        faqPopup.style.display = 'none';
-      }
-    });
-  </script>
 
-
-  <!-- Add this if it's not already present -->
-  <div class="circle"></div>
+<!-- Add this if it's not already present -->
+<div class="circle"></div>
 </body>
-
 </html>
