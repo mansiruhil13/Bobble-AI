@@ -636,6 +636,18 @@
       display: block;
       /* Show on hover */
     }
+    .button:hover{
+      color:rgb(16, 14, 14);
+      background-color: #c91515;
+      box-shadow: 2px 2px 2px 2px rgb(255, 68, 0);
+      border-color: #c91515;
+    }
+    li a:hover{
+      box-shadow: 2px 2px 2px 2px rgb(0, 102, 255);
+      color: #6207ca;
+      background-color: #101215;
+      border-color: #c91515;
+    }
   </style>
 
 </head>
@@ -766,7 +778,8 @@
             Learn more about our dedicated team working tirelessly to ensure
             efficient ambulance monitoring and resource management.
           </p>
-          <a href="team.html" class="button">Go to Team</a>
+          <h2>
+          <a href="team.html" class="button">Go to Team</a></h2>
         </div>
       </div>
 
@@ -930,11 +943,14 @@
           <form action="#">
             <input type="email" placeholder="Your Email"
               style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-            <button type="submit"
+            <button class="subscirbe" type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
         </div>
         <style>
+          .subscirbe:hover{
+            box-shadow: 2px 2px 2px 2px rgb(246, 67, 2);
+          }
           .hover-link {
             color: #000000;
             text-decoration: none;
