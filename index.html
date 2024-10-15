@@ -522,7 +522,14 @@
     .dark-mode {
       background-color: black;
       /* Dark mode navbar */
-      color: white;
+      /* color: white; */
+    }
+    .dark-mode .main_content p{
+      color: wheat;
+    }
+    .dark-mode .content h1{
+      color: wheat;
+
     }
 
     /* more addition for dark mode theme */
@@ -533,14 +540,9 @@
     }
 
     /* dark mode hove effect on logo */
-    .dark-mode #logo img:hover {
-      filter: brightness(0) invert(1);
-      /* Change black logo to white */
-      filter: brightness(0.8);
-      /* Change the brightness to light grey on hover */
-    }
 
-    .navbar.dark-mode .logo-img {
+
+    .dark-mode .logo-img {
       filter: brightness(0) invert(1);
       /* Change logo color in dark mode */
     }
@@ -553,9 +555,19 @@
     }
 
     .dark-mode .menu a {
+      color: black;
+      /* Dark mode link color */
+      /* Light grey border in dark mode */
+    }
+    .dark-mode .menu a.active {
       color: white;
       /* Dark mode link color */
-      border: 1px solid lightgrey;
+      /* Light grey border in dark mode */
+    }
+    .dark-mode .menu a.active:before {
+      color: white;
+      background: none;
+      /* Dark mode link color */
       /* Light grey border in dark mode */
     }
 
@@ -564,16 +576,14 @@
       /* Slightly gray background with high opacity */
     }
 
-    .dark-mode .menu a:hover {
-      background-color: white;
-      /* White background on hover in dark mode */
-      color: black;
-      /* Black text on hover in dark mode */
-    }
 
     .light-dark-btn {
       background-color: transparent;
-      border: 1px solid black;
+      border: none;
+      position: fixed;
+      z-index: 1111;
+      right: 1rem;
+      bottom: 1rem;
       /* Black border */
       cursor: pointer;
       color: black;
@@ -588,12 +598,12 @@
     .dark-mode .light-dark-btn {
       color: white;
       /* Button color in dark mode */
-      border: 1px solid lightgrey;
+      /* border: 1px solid lightgrey; */
       /* Light grey border */
     }
 
     .dark-mode .light-dark-btn:hover {
-      background-color: white;
+      /* background-color: white; */
       /* Background on hover in dark mode */
       color: black;
       /* Text color on hover in dark mode */
@@ -834,7 +844,7 @@
   </div>
 
   <!-- FAQ section ends here -->
-  <footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
+  <footer style="margin-top: 1.5rem; color: #f3f4f6; text-align: center; width: 100%;">
     <div
       style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
 
@@ -918,6 +928,9 @@
       </button>
     </div>
   </a>
+  <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
   <div class="gtranslate_wrapper"></div>
   <div
