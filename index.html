@@ -637,12 +637,11 @@
     <nav class="menu">
       <ul>
         <li>
-          <a href="#container" style="color: #333;">
+          <button class="scroll-button" style="background: none; border: none; cursor: pointer;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor"></path>
             </svg>
-          </a>
+          </button>
         </li>
         <li>
           <a href="index.html" id="home-link" class="menu_links" data-link="Home">
@@ -905,17 +904,49 @@
       </div>
 
       <!-- Newsletter Subscription -->
-      <div style=" min-width: 200px; margin-bottom: 20px;">
+      <div style="min-width: 200px; margin-bottom: 20px;">
         <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">
           Subscribe to Our Newsletter</h3>
-        <form action="#">
-          <input type="email" placeholder="Your Email"
-            style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+        <form id="newsletter-form" novalidate>
+          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;"
+            required><br><br>
           <button type="submit"
             style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
         </form>
+        <!-- Toast Notification -->
+        <div id="toast"
+          style="display: none; position: fixed; bottom: 20px; right: 60px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+        </div>
       </div>
     </div>
+  <script>
+    function showToast(message,type) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = "block"; // Show the toast
+      toast.style.backgroundColor = type==='success' ? 'green':'red'
+      toast.style.color = 'white';
+      setTimeout(() => {
+        toast.style.display = "none"; // Hide after 3 seconds
+      }, 3000);
+    }
+
+    document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value;
+
+      // Basic email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailPattern.test(email)) {
+        showToast("Thank you for subscribing!",'success'); // Show success message
+        emailInput.value = ""; // Clear the input field
+      } else {
+        showToast("Please enter a valid email address.",'error'); // Show error message
+      }
+    });
+  </script>
   </footer>
   <a href="chatbot.html">
     <div class="fixed bottom-0 right-2 chatbot-container">
@@ -943,7 +974,22 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="script.js"></script>
   <script src="preloader.js"></script>
+  <script>
+      const scrollButton = document.querySelector(".scroll-button");
+      function smoothScrollToTop() {
+        const scrollY = window.pageYOffset;
+        const scrollStep = Math.max(10, Math.floor(scrollY / 20)); // Gradual scroll step
+        if (scrollY > 0) {
+          window.scrollBy(0, -scrollStep);
+          requestAnimationFrame(smoothScrollToTop);
+        }
+      }
 
+      // Always show the button and attach the scroll event
+      scrollButton?.addEventListener("click", () => {
+        requestAnimationFrame(smoothScrollToTop);
+      });
+  </script>
   <script>
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
