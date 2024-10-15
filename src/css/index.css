@@ -488,6 +488,10 @@ margin-bottom: 30px;
   transition: all 0.3s ease-out;
 }
 
+
+/* Footer Section */
+
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
