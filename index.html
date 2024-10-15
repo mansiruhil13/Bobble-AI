@@ -17,16 +17,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
   <!-- Updated to latest version -->
-
   <style>
-
-      .chatbot-container {
-        position: fixed;
-        transition: right 0.3s ease;
-        bottom: 20px; /* Adjust as needed */
-        left: 90px; /* Adjust as needed */
-        z-index: 1000; /* Ensure it appears above other elements */
-      }
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px; /* Adjust as needed */
+      left: 90px; /* Adjust as needed */
+      z-index: 1000; /* Ensure it appears above other elements */
+    }
 
     .chatbot-button {
       background-color: #6207ca;
@@ -89,37 +87,57 @@
       padding: 0;
       margin: 0;
       display: flex;
+     
     }
 
     nav ul li a {
       display: flex;
       align-items: center;
-      padding: px 10px;
+      padding: 10px 15px;
       text-decoration: none;
-      border: 2px solid #000;
-      border-radius: 12px;
       color: black;
       font-weight: bold;
-      background-color: white;
+      background-color: transparent;
       text-transform: uppercase;
-      margin-right: 10px;
-
+      margin-right: 5px;
+      position: relative;
+      /* transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; */
+      border: none;
+      /* Added smooth transition for background, text color, and scaling */
     }
 
     nav ul li a:hover {
-      background-color: #faecec;
+      color: #2980b9; /* Text color change on hover */
+      transform: scale(1.1); /* Slightly scale up the button on hover */
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow effect */
     }
 
     nav ul li a:active {
-      background-color: #000;
-      color: white;
+       /* background-color: #333; Change background on active state */
+      color: #2980b9; /* Active text color */
+      transform: scale(1); /* Reset scale on click */
     }
 
     nav ul li a i {
       margin-right: 8px;
     }
 
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
 
+    nav ul li a:hover::before {
+      width: 100%; /* Animated underline effect on hover */
+      background-color: rgb(76, 59, 231); /* Underline color */
+      
+    }
 
     .content {
       margin: 20px;
@@ -137,7 +155,6 @@
     }
 
     .grid {
-
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       grid-template-rows: auto auto;
@@ -147,7 +164,6 @@
       justify-items: stretch;
       justify-content: center;
       align-items: stretch;
-
     }
 
     .feature {
@@ -235,7 +251,6 @@
       margin-right: 40px;
       cursor: pointer;
       display: none;
-
     }
 
     #check {
@@ -278,11 +293,9 @@
         font-size: 30px;
         padding-left: 50px;
       }
-
     }
 
     @media (max-width:858px) {
-
       .checkbtn {
         display: block;
       }
@@ -402,7 +415,6 @@
 
     .container {
       width: 98vw;
-
     }
 
     #contact-hvr:hover {
@@ -432,12 +444,10 @@
     /* faq section styles */
     .faq-section {
       background-color: #e7f3fe;
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
     }
 
     .faq-h2 {
@@ -461,9 +471,11 @@
       overflow: hidden;
       transition: background-color 0.3s ease;
     }
+
     .faq:hover {
       background-color: #e31616; /* Slight hover effect for FAQs */
     }
+
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -480,9 +492,11 @@
       align-items: center;
       transition: background-color 0.3s ease;
     }
+
     .faq-question:hover {
       background-color: #d5f0d5; /* Lighter green on hover */
     }
+
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -493,7 +507,6 @@
       border-top: 8px solid #333;
       /* Downward pointing wide "V" */
       transition: transform 0.3s ease;
-
       margin-right: 10px;
     }
 
@@ -522,9 +535,11 @@
       padding: 10px;
       /* Adds padding when expanded */
     }
+
     .faq.active .faq-answer p {
       transition: opacity 0.3s ease-in-out;
     }
+
     /* Back to Top Button Styles */
     #backToTopBtn {
       position: fixed;
@@ -630,6 +645,11 @@
       border-radius: 5px;
       white-space: nowrap;
       /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover {
+      transform: scale(1.1);
+      background-color: #5a07b2;
     }
 
     .chatbot-button:hover .tooltip-text {
