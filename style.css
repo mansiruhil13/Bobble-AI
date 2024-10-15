@@ -34,9 +34,6 @@ nav {
     display: flex; /* Flexbox for horizontal alignment */
 }
 
-.menu li {
-    margin: 0 15px; /* Spacing between menu items */
-}
 
 .menu a {
     color: white; /* Menu link color */
@@ -112,3 +109,4 @@ nav {
         display: flex; /* Show menu when toggled */
     }
 }
+
