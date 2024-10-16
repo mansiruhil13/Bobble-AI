@@ -44,7 +44,7 @@
         }
 
         .navbar {
-            background-color: lightblue;
+            background-color:#C4D7FF;
             /* Light mode navbar */
             color: black;
             padding: 10px;
@@ -87,10 +87,8 @@
         }
 
         .menu a {
-            color: black;
+            color:#0344f6;
             /* Light mode link color */
-            border: 1px solid black;
-            /* Black border */
             padding: 5px 10px;
             text-decoration: none;
             transition: all 0.3s;
@@ -128,6 +126,12 @@
             /* Black border */
             cursor: pointer;
             color: black;
+            border-radius: 50%;
+            padding: 10px 12px;
+            justify-content: center;
+            box-shadow: 0 0 5px rgb(0, 0, 0) ;
+            display: flex;
+            font-size: 15px;
             /* Default button color */
         }
 
@@ -141,6 +145,10 @@
             /* Button color in dark mode */
             border: 1px solid lightgrey;
             /* Light grey border */
+        }
+        
+        .dark-mode-toggle{
+          border: none;
         }
 
         .dark-mode .light-dark-btn:hover {
@@ -182,6 +190,11 @@
             color: white;
             background-color: #000;
         }
+        
+        .menu ul li a:hover {
+           background-color: #000;
+           color: blue;
+        }
 
         .content {
             margin: 20px;
@@ -212,6 +225,8 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             width: 250px;
+            max-width: 100%;
+
             /* Adjusted width for a better fit in a row */
             transition: transform 0.3s, box-shadow 0.3s;
         }

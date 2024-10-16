@@ -45,7 +45,7 @@
     }
 
     .navbar {
-      background-color: rgb(153, 207, 225);
+      background-color:#C4D7FF;
       /* Light mode navbar */
       color: black;
       padding: 10px;
@@ -88,10 +88,8 @@
     }
 
     .menu a {
-      color: black;
+      color: #0344f6;
       /* Light mode link color */
-      border: 1px solid black;
-      /* Black border */
       padding: 5px 10px;
       text-decoration: none;
       transition: all 0.3s;
@@ -129,6 +127,12 @@
       /* Black border */
       cursor: pointer;
       color: black;
+      border-radius: 50%;
+      padding: 10px 12px;
+      justify-content: center;
+      box-shadow: 0 0 5px rgb(0, 0, 0) ;
+      display: flex;
+      font-size: 15px;
       /* Default button color */
     }
 
@@ -143,7 +147,11 @@
       border: 1px solid lightgrey;
       /* Light grey border */
     }
-
+     
+    .dark-mode-toggle{
+          border: none;
+    }
+    
     .dark-mode .light-dark-btn:hover {
       background-color: white;
       /* Background on hover in dark mode */
@@ -224,6 +232,7 @@
     .menu ul li a.active {
       color: white;
       background-color: #000;
+      transform: scale(1); /* Reset scale on click */
     }
     ul li a:hover {
     color: blue !important;
@@ -444,24 +453,25 @@ footer {
 
       <nav class="menu">
         <ul>
-          <li><a href="index.html" id="home-link" onclick="changeContent('home')">
+          <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i>
               Home</a></li>
-          <li><a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a></li>
-          <li><a href="team.html" id="team-link" onclick="changeContent('team')">
+          <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i>  Features</a></li>
+          <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i>
               Team</a></li>
-          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
-          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"> Feedback</a></li>
+          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i>Contact</a></li>
+          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"> <i class="fa-solid fa-clipboard"></i>Feedback</a></li>
         </ul>
       </nav>
       <div class="buttons">
 
           <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+          <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+            <i class="fa-solid fa-moon"></i>
+          </button>
           <a href="login.html" class="login">Log in</a>
           <a href="up.html" class="get-started">Get started</a>
 
-        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-          <i class="fa-solid fa-moon"></i>
-        </button>
+       
 
       </div>
     </div>
