@@ -46,14 +46,15 @@
     .navbar {
       background-color: lightblue;
       /* Light mode navbar */
+      border-radius: 7px;
       color: black;
-      padding: 10px;
+      padding: 7px;
     }
     ul li a:hover {
-    color: rgb(56, 56, 237) !important;
+    color: rgb(16, 16, 16) !important;
     }
     a:hover {
-    color: rgb(1, 4, 177) !important;
+    color: rgb(0, 0, 6);
   }
 
     .navbar.dark-mode {
@@ -86,20 +87,24 @@
       list-style-type: none;
       padding: 0;
       display: flex;
+      
     }
 
     .menu li {
-      margin-right: 20px;
+      margin-right: 15px;
     }
 
     .menu a {
       color: black;
       /* Light mode link color */
-      border: 1px solid black;
+      border: 1.5px solid black;
       /* Black border */
-      padding: 5px 10px;
+      border-radius: 7px;
+      padding: 3px 5px;
       text-decoration: none;
       transition: all 0.3s;
+      display:inline-block;
+      vertical-align: middle;
     }
 
     .menu a:hover {
@@ -132,6 +137,7 @@
       background-color: transparent;
       border: 1px solid black;
       /* Black border */
+      border-radius: 50px;
       cursor: pointer;
       color: black;
       /* Default button color */
@@ -589,15 +595,13 @@
       </ul>
     </nav>
     <div class="buttons">
-
-      <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
-
+      <a href="login.html" class="login">Log in</a>
+      <a href="up.html" class="get-started">Get started</a>
       <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
 
-      <a href="login.html" class="login">Log in</a>
-      <a href="up.html" class="get-started">Get started</a>
+      
     </div>
   </div>
 </header>
