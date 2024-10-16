@@ -50,6 +50,95 @@
             </div>
 
             <!-- Manage Driver Section -->
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f4f4f4;
+                }
+        
+                h2 {
+                    color: #333;
+                }
+        
+                .manage-section {
+                    background: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 20px;
+                }
+        
+                .form-group {
+                    margin-bottom: 15px;
+                }
+        
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+        
+                input[type="text"],
+                input[type="tel"],
+                select {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-size: 16px;
+                }
+        
+                input[type="text"]:focus,
+                input[type="tel"]:focus,
+                select:focus {
+                    border-color: #007bff;
+                    outline: none;
+                }
+        
+                .button-container {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+        
+                .submit-btn {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s;
+                }
+        
+                .submit-btn:hover {
+                    background-color: #0056b3;
+                }
+        
+                .cancel {
+                    background-color: #dc3545;
+                }
+        
+                .cancel:hover {
+                    background-color: #c82333;
+                }
+        
+                @media (max-width: 600px) {
+                    .button-container {
+                        flex-direction: column;
+                    }
+        
+                    .submit-btn {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
             <section id="manageDriverSection" class="manage-section">
                 <h2 id="driverFormTitle" style="margin-bottom: 20px;">Add Driver</h2>
                 <form id="driverForm">
@@ -59,7 +148,7 @@
                         <label for="driverName">Driver Name:</label>
                         <input type="text" id="driverName" name="driverName" required placeholder="Enter driver name">
                     </div>
-
+        
                     <div class="form-group">
                         <label for="driverStatus">Status:</label>
                         <select id="driverStatusSelect" name="driverStatus" required>
@@ -68,20 +157,21 @@
                             <option value="Offline">Offline</option>
                         </select>
                     </div>
-
+        
                     <div class="form-group">
                         <label for="driverContact">Contact Number:</label>
                         <input type="tel" id="driverContact" name="driverContact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
                     </div>
-
+        
                     <div class="form-group">
                         <label for="driverLocation">Location:</label>
                         <input type="text" id="driverLocation" name="driverLocation" placeholder="e.g., Location XYZ" required>
                     </div>
-                    <p class="button-container">
-                        <button type="submit" class="submit-btn save" style="padding: 20px; font-weight: 600;">Save Driver</button>
-                        <button type="button" class="submit-btn cancel" id="cancelDriverBtn" style="padding: 20px; font-weight: 600;">Cancel</button>
-                    </p>
+        
+                    <div class="button-container">
+                        <button type="submit" class="submit-btn save">Save Driver</button>
+                        <button type="button" class="submit-btn cancel" id="cancelDriverBtn">Cancel</button>
+                    </div>
                 </form>
             </section>
 
