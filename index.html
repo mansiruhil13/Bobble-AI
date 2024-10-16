@@ -206,6 +206,7 @@
       transform: scale(1.3);
       /* Scale the element to 1.3 times its size */
     }
+
     .fa-facebook:hover {
       color: blue;
       /* Icon color change to blue on hover */
@@ -225,6 +226,7 @@
       color: rgb(16, 13, 195);
       /* Icon color change to rgb(16, 13, 195) on hover */
     }
+
     .feature p {
       color: #555;
     }
@@ -264,6 +266,7 @@
       margin-right: 20px;
       border-radius: 10px;
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -402,9 +405,12 @@
       overflow: hidden;
       transition: background-color 0.3s ease;
     }
+
     .faq:hover {
-      background-color: #e31616; /* Slight hover effect for FAQs */
+      background-color: #e31616;
+      /* Slight hover effect for FAQs */
     }
+
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -421,9 +427,12 @@
       align-items: center;
       transition: background-color 0.3s ease;
     }
+
     .faq-question:hover {
-      background-color: #d5f0d5; /* Lighter green on hover */
+      background-color: #d5f0d5;
+      /* Lighter green on hover */
     }
+
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -444,11 +453,14 @@
 
     .faq-answer {
       opacity: 0;
-      max-height: 0; /* Initially hidden */
-      overflow: hidden; /* Hide content when not visible */
+      max-height: 0;
+      /* Initially hidden */
+      overflow: hidden;
+      /* Hide content when not visible */
       padding: 0 10px;
       background-color: #fff;
-      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      /* Smooth transition */
       border-top: 1px solid #ccc;
     }
 
@@ -463,6 +475,7 @@
       padding: 10px;
       /* Adds padding when expanded */
     }
+
     .faq.active .faq-answer p {
       transition: opacity 0.3s ease-in-out;
     }
@@ -524,10 +537,12 @@
       /* Dark mode navbar */
       /* color: white; */
     }
-    .dark-mode .main_content p{
+
+    .dark-mode .main_content p {
       color: wheat;
     }
-    .dark-mode .content h1{
+
+    .dark-mode .content h1 {
       color: wheat;
 
     }
@@ -559,11 +574,13 @@
       /* Dark mode link color */
       /* Light grey border in dark mode */
     }
+
     .dark-mode .menu a.active {
       color: white;
       /* Dark mode link color */
       /* Light grey border in dark mode */
     }
+
     .dark-mode .menu a.active:before {
       color: white;
       background: none;
@@ -608,6 +625,84 @@
       color: black;
       /* Text color on hover in dark mode */
     }
+
+    @media (max-width:660px) {
+      .container {
+        padding: 0px;
+      }
+
+
+      .main_content {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .main_heading {
+        width: min-content;
+        margin: 0.5rem;
+      }
+
+      .main_heading h1 {
+        font-size: 3rem;
+      }
+
+      .main_heading h2 {
+        font-size: 3rem;
+      }
+
+      .main_content img {
+        width: auto;
+      }
+
+      .content {
+        padding: 0px;
+      }
+
+      .dark-mode .content {
+        padding: 0px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        /* 1 column */
+        grid-template-rows: repeat(auto, 1fr);
+        /* Adjust rows as needed */
+      }
+
+      ul li {
+        font-size: 0.9rem;
+      }
+
+      a {
+        font-size: 0.9rem;
+      }
+      .foot_inner{
+        display: flex;
+    color: #f3f4f6;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    left: 2.5rem;
+    flex-direction: column;
+      }
+    }
+    @media (min-width: 660px) and (max-width: 990px) {
+      .main_content{
+        flex-direction: column;
+      }
+      .main_heading {
+        margin: 10px;
+        width: 35rem;
+        align-items: center;
+      }
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+      .foot_inner{
+        flex-wrap: wrap;
+      }
+  
+}
   </style>
 </head>
 
@@ -781,72 +876,71 @@
             possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
       </div>
-    
-    <div class="faq">
-      <button class="faq-question">How do I track an ambulance in real-time?</button>
-      <div class="faq-answer">
-        <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
-          live map feature.</p>
-        <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
-          live map feature.</p>
+
+      <div class="faq">
+        <button class="faq-question">How do I track an ambulance in real-time?</button>
+        <div class="faq-answer">
+          <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+            live map feature.</p>
+          <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+            live map feature.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
+        <div class="faq-answer">
+          <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+            please contact emergency services for further instructions.</p>
+          <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+            please contact emergency services for further instructions.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Can I provide medical information for the patient in advance?</button>
+        <div class="faq-answer">
+          <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+            the situation.</p>
+          <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+            the situation.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
+        <div class="faq-answer">
+          <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
+            on the provider.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">How can I request special medical equipment or personnel on the
+          ambulance?</button>
+        <div class="faq-answer">
+          <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
+            as a ventilator or a specialized doctor.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
+        <div class="faq-answer">
+          <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+            technical issue through the system or contact support.</p>
+          <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+            technical issue through the system or contact support.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Can I schedule an ambulance in advance?</button>
+        <div class="faq-answer">
+          <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+          <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+        </div>
       </div>
     </div>
-    <div class="faq">
-      <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
-      <div class="faq-answer">
-        <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
-          please contact emergency services for further instructions.</p>
-        <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
-          please contact emergency services for further instructions.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Can I provide medical information for the patient in advance?</button>
-      <div class="faq-answer">
-        <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
-          the situation.</p>
-        <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
-          the situation.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
-      <div class="faq-answer">
-        <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
-          on the provider.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">How can I request special medical equipment or personnel on the
-        ambulance?</button>
-      <div class="faq-answer">
-        <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
-          as a ventilator or a specialized doctor.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
-      <div class="faq-answer">
-        <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
-          technical issue through the system or contact support.</p>
-        <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
-          technical issue through the system or contact support.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Can I schedule an ambulance in advance?</button>
-      <div class="faq-answer">
-        <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
-        <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
-      </div>
-    </div>
-  </div>
   </div>
 
   <!-- FAQ section ends here -->
   <footer style="margin-top: 1.5rem; color: #f3f4f6; text-align: center; width: 100%;">
-    <div
-      style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
+    <div class="foot_inner" style="display: flex;color: #f3f4f6;justify-content: space-evenly;left: 2.5rem;">
 
       <!-- Quick Links Section -->
       <div>
@@ -1085,7 +1179,8 @@
   <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
 
 </body>
 
