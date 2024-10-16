@@ -609,30 +609,41 @@
   <div class="content">
     <h3>We Value Your Feedback</h3>
     <div class="feedback-box">
-      <form id="feedback-box" action="#" method="post">
+      <form id="feedback-box" action="#" method="post" aria-labelledby="feedback-title">
         <div class="star-rating" aria-label="Rating" role="radiogroup">
-          <input type="radio" id="star5" name="rating" value="5" />
-          <label for="star5" title="5 stars">★</label>
+          <input type="radio" id="star5" name="rating" value="5" required />
+          <label for="star5" title="5 stars" aria-label="5 stars">★</label>
           <input type="radio" id="star4" name="rating" value="4" />
-          <label for="star4" title="4 stars">★</label>
+          <label for="star4" title="4 stars" aria-label="4 stars">★</label>
           <input type="radio" id="star3" name="rating" value="3" />
-          <label for="star3" title="3 stars">★</label>
+          <label for="star3" title="3 stars" aria-label="3 stars">★</label>
           <input type="radio" id="star2" name="rating" value="2" />
-          <label for="star2" title="2 stars">★</label>
+          <label for="star2" title="2 stars" aria-label="2 stars">★</label>
           <input type="radio" id="star1" name="rating" value="1" />
-          <label for="star1" title="1 star">★</label>
+          <label for="star1" title="1 star" aria-label="1 star">★</label>
         </div>
-
-        <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required></textarea><br />
-        <div class="feed-btn"><button style="border-radius: 10px;" type="submit">Submit Feedback</button></div>
+  
+        <textarea class="feed-msg" rows="7" cols="45" placeholder="Your Comments . . ." required aria-label="Feedback Comments"></textarea><br />
+        
+        <div class="feed-btn">
+          <button style="border-radius: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer;" type="submit">Submit Feedback</button>
+        </div>
       </form>
     </div>
-    <div id="thank-you-message" class="thank-feed">
+    <div id="thank-you-message" class="thank-feed" style="display: none;">
       Thank you for your response!
     </div>
   </div>
-
-
+  
+  <script>
+    // Add an event listener to show the thank you message on form submission
+    document.getElementById('feedback-box').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from actually submitting
+      document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
+      this.reset(); // Reset the form fields
+    });
+  </script>
+  
 
   <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
     <div style="background-color: #C4D7FF; color: #f3f4f6; ">
