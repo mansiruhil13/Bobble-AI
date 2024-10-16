@@ -49,12 +49,8 @@
       color: black;
       padding: 10px;
     }
-    ul li a:hover {
-    color: rgb(56, 56, 237) !important;
-    }
-    a:hover {
-    color: rgb(1, 4, 177) !important;
-  }
+    
+
 
     .navbar.dark-mode {
       background-color: black;
@@ -103,7 +99,7 @@
     }
 
     .menu a:hover {
-      background-color: rgb(22, 160, 219);
+      background-color: blue;
       /* Blue background on hover */
       color: white;
       /* White text on hover */
@@ -571,6 +567,59 @@
     gap: 2rem;
             }
         }
+
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      right: 7rem;
+      z-index: 1000;
+    }
+
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+      right: -60px;
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
   </style>
 </head>
 
@@ -783,8 +832,40 @@
   <div class="gtranslate_wrapper"></div>
 </div>
 
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
+
 <script src="preloader.js"></script>
 <script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTopBtn');
+  // Show the button when scrolled down 100px from the top
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  // Scroll to top when the button is clicked
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Dark mode functionality
   document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to each star label for toggling the selection
     const stars = document.querySelectorAll('.star-rating input');
@@ -954,9 +1035,23 @@
     "wrapper_selector": ".gtranslate_wrapper",
     "alt_flags": { "en": "usa" }
   };
+
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+<script>
+});
+    
+    window.addEventListener('click', (event) => {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+  </script>
+
+
+  <!-- Add this if it's not already present -->
+  <div class="circle"></div>
 <!-- Add this if it's not already present -->
 <div class="circle"></div>
 </body>
