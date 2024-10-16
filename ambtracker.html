@@ -15,6 +15,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     html {
@@ -37,20 +38,86 @@
       background: rgb(156, 156, 156);
     }
 
+    /* Header styles */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar-links,
+    .navbar-links2 {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navbar-links li,
+    .navbar-links2 li {
+      margin: 0 10px;
+    }
+
+    .navbar-links a,
+    .navbar-links2 a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .resp {
+      display: none;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #4caf50;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-menu ul {
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .dropdown-menu ul li {
+      margin: 10px 0;
+    }
+
+    .dropdown-menu ul li a {
+      color: white;
+      text-decoration: none;
+    }
 
     /* Map container */
     #map {
-      height: 90%;
+      height: calc(100% - 60px); /* Adjust height to account for header */
       width: 100%;
-    }
-
-    /* Header styles */
-    h1 {
-      text-align: center;
-      background-color: #4caf50;
-      color: white;
-      padding: 15px;
-      margin: 0;
     }
 
     /* Add a loading spinner for the map */
@@ -63,6 +130,16 @@
       transform: translate(-50%, -50%);
       z-index: 1000;
     }
+
+    @media (max-width: 768px) {
+      .navbar-links {
+        display: none;
+      }
+
+      .resp {
+        display: block;
+      }
+    }
   </style>
   <!-- Include the Google Maps JavaScript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async
@@ -73,33 +150,33 @@
   <!-- Header -->
   <header>
     <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="./images/manageLogo.png"></img>
-            <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
-        </div>
-        <ul class="navbar-links">
-            <li><a href="hospital.html">Dashboard</a></li>
-            <li><a href="manage.html">Manage Status</a></li>
-            <li><a href="driver.html">Manage Driver</a></li>
-            <li><a href="ambtracker.html">Manage Ambulance</a></li>
-            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-        </ul>
-        <div class="resp">
-            <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
-            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
-        </div>
-    </nav>
-</header>
-
-<!-- Dropdown -->
-<div class="dropdown-menu">
-    <ul class="navbar-links2">
+      <div class="navbar-logo">
+        <img src="./images/manageLogo.png" alt="Logo">
+        <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+      </div>
+      <ul class="navbar-links">
         <li><a href="hospital.html">Dashboard</a></li>
         <li><a href="manage.html">Manage Status</a></li>
         <li><a href="driver.html">Manage Driver</a></li>
         <li><a href="ambtracker.html">Manage Ambulance</a></li>
+        <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+      </ul>
+      <div class="resp">
+        <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+        <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Dropdown -->
+  <div class="dropdown-menu">
+    <ul class="navbar-links2">
+      <li><a href="hospital.html">Dashboard</a></li>
+      <li><a href="manage.html">Manage Status</a></li>
+      <li><a href="driver.html">Manage Driver</a></li>
+      <li><a href="ambtracker.html">Manage Ambulance</a></li>
     </ul>
- </div>
+  </div>
 
   <!-- Map container -->
   <div id="map"></div>
@@ -152,20 +229,21 @@
         dropdown.style.display = 'none';
         flag = false;
       } else {
-          dropdown.style.display = 'block';
-          flag = true;
+        dropdown.style.display = 'block';
+        flag = true;
       }
     });
 
     function logout() {
       const confirmLogout = confirm('Are you sure you want to logout?');
-        if (confirmLogout) {
-          localStorage.removeItem('userID');
-          localStorage.removeItem('JWTtoken');
-          window.location.href = 'index.html';
-          alert("Logged out successfully!");
+      if (confirmLogout) {
+        localStorage.removeItem('userID');
+        localStorage.removeItem('JWTtoken');
+        window.location.href = 'index.html';
+        alert("Logged out successfully!");
       }
-    }  
+    }
   </script>
 </body>
+
 </html>
