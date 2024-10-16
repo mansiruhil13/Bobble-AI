@@ -9,21 +9,17 @@
 
   <link rel="stylesheet" href="src/css/indexmain.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <!--Updated to latest version-->
-
-  <link rel="stylesheet" href="src/css/indexmain.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+<!--Updated to latest version-->
+<link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+<link rel="stylesheet" href="src/css/indexmain.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     .chatbot-container {
       position: fixed;
       transition: right 0.3s ease;
-      bottom: 20px;
-      /* Adjust as needed */
-      left: 90px;
-      /* Adjust as needed */
-      z-index: 1000;
-      /* Ensure it appears above other elements */
+bottom: 20px; 
+left: 90px; 
+z-index: 1000; 
     }
 
     .chatbot-button {
@@ -96,6 +92,69 @@
       /* Show on hover */
     }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 50px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 5px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:active {
+  color: #2980b9;
+  transform: scale(1);
+}
+
+nav ul li a i {
+  margin-right: 8px;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: rgb(76, 59, 231);
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
     .content {
       margin: 2rem 1.2rem;
       /* margin-bottom: 2rem; */
@@ -118,6 +177,9 @@
       grid-template-rows: 2fr 2fr;
       gap: 2rem;
       animation: fadeIn 1s ease-in-out;
+      align-content: center;
+      justify-content: center;
+      align-items: stretch;
       margin-bottom: 3rem;
     }
 
@@ -189,7 +251,6 @@
       margin-right: 40px;
       cursor: pointer;
       display: none;
-
     }
 
     #check {
@@ -225,20 +286,54 @@
       color: rgb(16, 13, 195);
       /* Icon color change to rgb(16, 13, 195) on hover */
     }
-    .feature p {
-      color: #555;
-    }
+@media (max-width: 966px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+}
 
-    .team-feature {
-      background-color: #e7ffe7;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      grid-column: 1 / -1;
-    }
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #77a1cc;
+    top: 85px;
+    left: -200%;
+    text-align: center;
+    transition: all .5s;
+    height: 80px;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    display: block;
+    font-size: 10px;
+  }
+}
+
+.feature p {
+  color: #555;
+}
+
+.team-feature {
+  background-color: #e7ffe7;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  grid-column: 1 / -1;
+}
 
     .team-feature img {
       width: 150px;
@@ -402,9 +497,11 @@
       overflow: hidden;
       transition: background-color 0.3s ease;
     }
+
     .faq:hover {
       background-color: #e31616; /* Slight hover effect for FAQs */
     }
+
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -421,9 +518,11 @@
       align-items: center;
       transition: background-color 0.3s ease;
     }
+
     .faq-question:hover {
       background-color: #d5f0d5; /* Lighter green on hover */
     }
+
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -434,7 +533,6 @@
       border-top: 8px solid #333;
       /* Downward pointing wide "V" */
       transition: transform 0.3s ease;
-
       margin-right: 10px;
     }
 
@@ -463,9 +561,61 @@
       padding: 10px;
       /* Adds padding when expanded */
     }
+
     .faq.active .faq-answer p {
       transition: opacity 0.3s ease-in-out;
     }
+/* Back to Top Button Styles */
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #e81a1a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #c91515;
+}
+
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(71, 252, 255, 0.3), rgba(0, 157, 255, 0.3));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.light-dark-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  font-size: 15px;
+}
 
     #logo img:hover {
       background-color: #c4d7ff;
@@ -507,10 +657,28 @@
     }
 
 
+    .chatbot-button:hover {
+      transform: scale(1.1);
+      background-color: #5a07b2;
+    }
+
     .chatbot-button:hover .tooltip-text {
       display: block;
       /* Show on hover */
     }
+.button:hover {
+  color: rgb(16, 14, 14);
+  background-color: #c91515;
+  box-shadow: 2px 2px 2px 2px rgb(255, 68, 0);
+  border-color: #c91515;
+}
+
+li a:hover {
+  box-shadow: 2px 2px 2px 2px rgb(0, 102, 255);
+  color: #6207ca;
+  background-color: #101215;
+  border-color: #c91515;
+}
 
     .dark-mode-toggle {
       font-size: 18px;
@@ -626,64 +794,74 @@
         <div class="box six"></div>
       </div>
     </div>
-  </div>
-  <div class="container" id="container">
+<div class="container" id="container">
+  <a href="index.html" style="text-decoration: none;">
     <div class="logo">
       <div class="brand-name">
         <span class="ambu">Ambu</span><span>Flow</span>
       </div>
       <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
     </div>
-    <nav class="menu">
-      <ul>
-        <li>
-          <a href="#container" style="color: #333;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
-            <span>Features</span></a>
-        </li>
-        <li>
-          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
-            <span>Team</span></a>
-        </li>
-        <li>
-          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-            <span>Contact</span></a>
-        </li>
-        <li>
-          <a href="feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
-            <span>Feedback</span></a>
-        </li>
-        <li>
-          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
-            <span>Nearby</span></a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="main_content">
-      <div class="main_heading">
-        <h1>Start Saving lives with </h1>
-        <h2 data-link_h2="AmbuFlow...">AmbuFlow...</h2>
-        <p>AmbuFlow is ambulance tracking site which helps you to find the nearest hospitals and get access to nearest
-          ambulances and save lives</p>
-        <div class="buttons">
-          <a href="up.html" class="get-started">Get started <ion-icon name="log-in-outline"></ion-icon></a>
-        </div>
+  </a>
+  <nav class="menu">
+    <ul>
+      <li>
+        <a href="#container" style="color: #333;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" id="home-link" class="menu_links" data-link="Home">Home</a>
+      </li>
+      <li>
+        <a href="features.html" id="features-link" class="menu_links" data-link="Features">Features</a>
+      </li>
+      <li>
+        <a href="team.html" id="team-link" class="menu_links" data-link="Team">Team</a>
+      </li>
+      <li>
+        <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">Contact</a>
+      </li>
+      <li>
+        <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback"><i class="fa-solid fa-clipboard"></i> Feedback</a>
+      </li>
+      <li>
+        <a href="nearby.html" id="nearby-link" class="menu_links" data-link="Nearby">Nearby</a>
+      </li>
+      <li>
+        <div class="gtranslate_wrapper"></div>
+        <script>
+          window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+          }
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/popup.js" defer></script>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="main_content">
+    <div class="main_heading">
+      <h1>Start Saving lives with</h1>
+      <h2 data-link_h2="AmbuFlow...">AmbuFlow...</h2>
+      <p>AmbuFlow is an ambulance tracking site which helps you find the nearest hospitals and get access to the nearest ambulances to save lives.</p>
+      <div class="buttons">
+        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="login.html" class="login">Log in</a>
+        <a href="up.html" class="get-started">Get started <ion-icon name="log-in-outline"></ion-icon></a>
       </div>
-      <div class="gif">
-        <img src="images/ambulance-gif.gif"></img>
+    </div>
+    <div class="gif">
+      <img src="images/ambulance-gif.gif" alt="Ambulance GIF">
+    </div>
+  </div>
+</div>
       </div>
     </div>
 
@@ -741,7 +919,8 @@
             Learn more about our dedicated team working tirelessly to ensure
             efficient ambulance monitoring and resource management.
           </p>
-          <a href="team.html" class="button">Go to Team</a>
+          <h2>
+          <a href="team.html" class="button">Go to Team</a></h2>
         </div>
       </div>
     </div>
@@ -760,8 +939,6 @@
       </div>
     </div>
   </div>
-
-
 
   <!-- FAQ Section in Full Row -->
 
@@ -886,22 +1063,70 @@
             onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
       </div>
 
-
-      <!-- Modified the looks of the social icons -->
+<footer style="margin-top: 1.5rem; border-radius: 10px; color: #f3f4f6; text-align: center; width: 100%;">
+  <div style="background-color: #C4D7FF; color: #f3f4f6;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+      <!-- Quick Links Section -->
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: start; min-width: 200px; margin-bottom: 20px; padding-left: 20px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+        <ul style="list-style-type: none; padding: 0;">
+          <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+          <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+          <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+          <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+          <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+          <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Information Section -->
+      <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+        <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+        <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+        <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a>
+        <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+      </div>
+      
       <!-- Social Media Links -->
       <div style="text-align: center; min-width: 200px; color: black;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow
-          Us</h3>
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
         <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-          <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect" style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect" style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect" style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect" style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
         </div>
+      </div>
+
+      <!-- Newsletter Subscription -->
+      <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+        <form action="#">
+          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+          <button class="subscirbe" type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+        </form>
+      </div>
+      <style>
+        .subscirbe:hover{
+          box-shadow: 2px 2px 2px 2px rgb(246, 67, 2);
+        }
+        .hover-link {
+          color: #000000;
+          text-decoration: none;
+          margin-right: 10px;
+          background: none;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+        .hover-link:hover {
+          color: blue;
+          background: none;
+        }
+      </style>
+    </div>
+  </div>
+</footer>
+
       </div>
 
       <!-- Newsletter Subscription -->
@@ -1082,7 +1307,27 @@
       animateCircles();
     });
   </script>
-  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
+
+<!-- <div class="gtranslate_wrapper"></div> -->
+<script>
+  window.gtranslateSettings = {
+    "default_language": "en",
+    "detect_browser_language": true,
+    "wrapper_selector": ".gtranslate_wrapper"
+  }
+</script>
+
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
