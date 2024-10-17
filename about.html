@@ -360,7 +360,12 @@
       </div>
     </footer>
     <div style="background-color: black;">
-      <p>© 2024 AmbuFlow - All Rights Reserved</p>
+      <p>© <span id="year"></span> AmbuFlow - All Rights Reserved</p>
     </div>
+    <script>
+      const yearSpan = document.getElementById('year');
+      const currentYear = new Date().getFullYear();
+      yearSpan.textContent = currentYear;
+  </script>
   </body>
 </html>

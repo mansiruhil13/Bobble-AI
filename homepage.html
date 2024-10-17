@@ -613,9 +613,14 @@
     </div>
     <hr>
     <!-- Copyright Section -->
-    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
+    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; <span id="year"></span> AmbuFlow. All rights reserved.</p></strong>
   </footer>
 
 <script src="src/js/index.js"></script>
+<script>
+  const yearSpan = document.getElementById('year');
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+</script>
 </body>
 </html>
