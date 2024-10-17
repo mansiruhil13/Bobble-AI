@@ -219,24 +219,6 @@
                 /* End at original position */
             }
         }
-
-        /* Letter Drop Animation */
-        @keyframes letterDrop {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-
-            50% {
-                transform: translateY(10px);
-                /* Slight bounce */
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -259,7 +241,14 @@
 
         <div class="logo">
             <div class="brand-name">
-                <span class="ambu">Ambu</span><span>Flow</span>
+                <span class="letter red" style="--letter-index: 1;">A</span>
+                <span class="letter red" style="--letter-index: 2;">m</span>
+                <span class="letter red" style="--letter-index: 3;">b</span>
+                <span class="letter red" style="--letter-index: 4;">u</span>
+                <span class="letter" style="--letter-index: 5;">F</span>
+                <span class="letter" style="--letter-index: 6;">l</span>
+                <span class="letter" style="--letter-index: 7;">o</span>
+                <span class="letter" style="--letter-index: 8;">w</span>
             </div>
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
         </div>
