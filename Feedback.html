@@ -49,12 +49,8 @@
       color: black;
       padding: 10px;
     }
-    ul li a:hover {
-    color: rgb(56, 56, 237) !important;
-    }
-    a:hover {
-    color: rgb(1, 4, 177) !important;
-  }
+    
+
 
     .navbar.dark-mode {
       background-color: black;
@@ -103,7 +99,7 @@
     }
 
     .menu a:hover {
-      background-color: rgb(22, 160, 219);
+      background-color: blue;
       /* Blue background on hover */
       color: white;
       /* White text on hover */
@@ -539,6 +535,59 @@
       align-items: center;
       gap: 10px;
     }
+
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      right: 7rem;
+      z-index: 1000;
+    }
+
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+      right: -60px;
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
   </style>
 </head>
 
@@ -590,7 +639,7 @@
     </nav>
     <div class="buttons">
 
-      <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
+      
 
       <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
         <i class="fa-solid fa-moon"></i>
@@ -751,6 +800,18 @@
   <div class="gtranslate_wrapper"></div>
 </div>
 
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
+
 <script src="preloader.js"></script>
 
 
@@ -759,12 +820,155 @@
   // Back to top button functionality
   const backToTopButton = document.getElementById('backToTopBtn');
 
+<<<<<<< HEAD
+  <script src="preloader.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('dark-mode-toggle');
+      const darkModeButton = document.querySelector('.dark-mode-toggle');
+      const logoImage = document.querySelector('.logo img'); // Select the logo image
+      const navbar = document.querySelector('.navbar'); // Select the navbar
+
+      // Reset to light mode for the Contact page
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+      // Clear the sessionStorage for theme on this page
+      sessionStorage.removeItem("theme");
+
+      toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+        // Update sessionStorage based on current mode
+        if (document.body.classList.contains('dark-mode')) {
+          sessionStorage.setItem("theme", "dark");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+        } else {
+          sessionStorage.setItem("theme", "light");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+        }
+
+      });
+    });
+
+    // end
+  </script>
+
+  <script>
+    // Add event listeners to each star label for toggling the selection
+    const stars = document.querySelectorAll('.star-rating input');
+    stars.forEach(star => {
+      star.addEventListener('change', function () {
+        // Remove the checked state from all stars
+        stars.forEach(s => {
+          const label = document.querySelector(`label[for="${s.id}"]`);
+          label.style.color = '#ddd'; // Reset color for unselected stars
+        });
+        // Highlight the selected star and all previous stars
+        this.checked = true;
+        const currentStarValue = this.value;
+        for (let i = 1; i <= currentStarValue; i++) {
+          const label = document.querySelector(`label[for="star${i}"]`);
+          label.style.color = '#ffdd00'; // Highlight selected stars
+        }
+      });
+    });
+
+    // Handle form submission
+    const form = document.getElementById('feedback-box');
+    const feedbackBox = document.querySelector('.feedback-box');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Hide the feedback-box div
+      feedbackBox.style.display = 'none';
+
+      // Show the thank-you message
+      thankYouMessage.style.display = 'flex';
+
+      // Hide the form to avoid further submissions
+      form.style.display = 'none';
+
+      // Redirect to the home page after 2 seconds
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 5000); // Adjust the delay as needed
+    });
+
+    // Update or add this JavaScript for the cursor effect
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    const colors = [
+      "#ffb56b",
+      "#fdaf69",
+      "#f89d63",
+      "#f59761",
+      "#ef865e",
+      "#ec805d",
+      "#e36e5c",
+      "#df685c",
+      "#d5585c",
+      "#d1525c",
+      "#c5415d",
+      "#c03b5d",
+      "#b22c5e",
+      "#ac265e",
+      "#9c155f",
+      "#950f5f",
+      "#830060",
+      "#7c0060",
+      "#680060",
+      "#60005f",
+      "#48005f",
+      "#3d005e"
+    ];
+
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+=======
   // Show the button when scrolled down 100px from the top
   window.onscroll = function () {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       backToTopButton.style.display = "block";
     } else {
       backToTopButton.style.display = "none";
+>>>>>>> c3e6128543c5c7da4acc09c472a624a52adb1043
     }
   };
 
@@ -861,11 +1065,24 @@
     "detect_browser_language": true,
     "wrapper_selector": ".gtranslate_wrapper",
     "alt_flags": {"en": "usa"}
-  }
+  } 
 </script>
 
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+<script>
+});
+    
+    window.addEventListener('click', (event) => {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+  </script>
+
+
+  <!-- Add this if it's not already present -->
+  <div class="circle"></div>
 <!-- Add this if it's not already present -->
 <div class="circle"></div>
 </body>
