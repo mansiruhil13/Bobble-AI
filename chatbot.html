@@ -1,94 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bobble Ai-Chat Bot</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="Style.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
-</head>
-
-<body class="bg-gradient-to-r from-blue-400 to-indigo-300 flex items-center justify-center min-h-screen">
-  <div id="Loader"></div>
-  <div class="flex flex-col items-center justify-center w-full max-w-xl space-y-4">
-    <div class="w-full flex justify-center">
-      <img src="boy.png" alt="Chat Bot" class="h-42 w-42 object-cover rounded-lg shadow-lg" />
-    </div>
-
-    <div class="chat-container w-full bg-white p-6 rounded-lg shadow-xl">
-      <div id="output-field" class="text-center text-lg font-semibold text-gray-700 mb-3">
-        How can I help you today?
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bobble Ai-Chat Bot</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="Style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+  </head>
+  <body class="bg-gradient-to-r from-blue-400 to-indigo-300 flex items-center justify-center min-h-screen">
+    <div id="Loader"></div>
+    <div
+      class="flex flex-col items-center justify-center w-full max-w-xl space-y-4"
+    >
+      <div class="w-full flex justify-center">
+        <img
+          src="boy.png"
+          alt="Chat Bot"
+          class="h-42 w-42 object-cover rounded-lg shadow-lg"
+        />
       </div>
-      <div id="output-container" class="mb-3 overflow-auto" style="max-height: 300px"></div>
-      <div class="input-group mb-3 flex items-center space-x-2">
-        <div id="image-preview-container" class="flex items-center">
-          <span id="image-preview" class="flex items-center space-x-2 hidden" style="display: none">
-            <img src="" alt="Image preview" class="h-10 mr-2 object-cover rounded-lg" />
-            <button type="button" id="clear-image" class="text-red-600 text-2xl leading-none" aria-label="Close">
-              &times;
-            </button>
-          </span>
+
+      <div class="chat-container w-full bg-white p-6 rounded-lg shadow-xl">
+        <div id="output-field" class="text-center text-lg font-semibold text-gray-700 mb-3">
+          How can I help you today?
         </div>
-        <input type="text" id="prompt-input" class="form-control flex-1 p-2 border border-gray-300 rounded-lg"
-          placeholder="Type your prompt here..." aria-label="Message input" />
-        <button class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" id="inputGroupFileAddon"
-          onclick="document.getElementById('image-input').click();">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-image"
-            viewBox="0 0 16 16">
-            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-            <path
-              d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z" />
-          </svg>
-        </button>
-        <input type="file" id="image-input" accept="image/*" class="hidden" />
-        <button id="generate-btn" class="btn btn-primary">Send</button>
+        <div
+          id="output-container"
+          class="mb-3 overflow-auto"
+          style="max-height: 300px"
+        ></div>
+        <div class="input-group mb-3 flex items-center space-x-2">
+          <div id="image-preview-container" class="flex items-center">
+            <span
+              id="image-preview"
+              class="flex items-center space-x-2 hidden"
+              style="display: none"
+            >
+              <img src="" alt="Image preview" class="h-10 mr-2 object-cover rounded-lg" />
+              <button
+                type="button"
+                id="clear-image"
+                class="text-red-600 text-2xl leading-none"
+                aria-label="Close"
+              >
+                &times;
+              </button>
+            </span>
+          </div>
+          <input
+            type="text"
+            id="prompt-input"
+            class="form-control flex-1 p-2 border border-gray-300 rounded-lg"
+            placeholder="Type your prompt here..."
+            aria-label="Message input"
+          />
+          <button
+            class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+            id="inputGroupFileAddon"
+            onclick="document.getElementById('image-input').click();"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-image"
+              viewBox="0 0 16 16"
+            >
+              <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+              <path
+                d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"
+              />
+            </svg>
+          </button>
+          <input type="file" id="image-input" accept="image/*" class="hidden" />
+          <button id="generate-btn" class="btn btn-primary">Send</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <style>
-    .chat-container {
-      width: 100%;
-      max-width: 500px;
-      padding: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+    <style>
+      .chat-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-    body,
-    html {
-      margin: 0;
-      padding: 0;
-    }
-
-    .user-message {
-      text-align: right;
-      background-color: #f0f0f0;
-      border-radius: 15px 15px 0px 15px;
-      padding: 10px 10px 5px 10px;
-      margin: 10px;
-      max-width: 60%;
-      float: right;
-      clear: both;
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      .user-message {
+        text-align: right;
+        background-color: #f0f0f0; 
+        border-radius: 15px 15px 0px 15px;
+        padding: 10px 10px 5px 10px;
+        margin: 10px;
+        max-width: 60%;
+        float: right;
+        clear: both;
     }
 
     .ai-message {
-      text-align: left;
-      background-color: #e0f7fa;
-      border-radius: 15px 15px 15px 0px;
+      text-align: left; 
+      background-color: #e0f7fa; 
+      border-radius: 15px 15px 15px 0px; 
       padding: 10px 10px 5px 10px;
       margin: 10px;
       max-width: 60%;
-      float: left;
+      float: left; 
       clear: both;
     }
-  </style>
+    </style>
 
   <script type="importmap">
       {
