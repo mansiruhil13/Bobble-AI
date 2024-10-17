@@ -83,22 +83,19 @@
       display: flex;
     }
 
-    .menu li {
-      margin-right: 20px;
-    }
 
     .menu a {
       color: black;
       /* Light mode link color */
-      border: 1px solid black;
-      /* Black border */
-      padding: 5px 10px;
+      border: 2px solid black;
+      border-radius:7px;
+      padding: 3px 7px;
       text-decoration: none;
       transition: all 0.3s;
     }
 
-    .menu a:hover {
-      background-color: blue;
+    .menu ul li a:hover {
+      background-color: rgb(255, 255, 255);
       /* Blue background on hover */
       color: white;
       /* White text on hover */
@@ -140,10 +137,9 @@
     .light-dark-btn {
       background-color: transparent;
       border: 1px solid black;
-      /* Black border */
       cursor: pointer;
       color: black;
-      /* Default button color */
+      border-radius: 50px;
     }
 
     .light-dark-btn:hover {
@@ -239,7 +235,7 @@
       color: white;
       background-color: #000;
     }
-    
+
 
     .content {
       margin: 20px;
@@ -516,22 +512,22 @@ footer {
       <nav class="menu">
         <ul>
           <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
-            class="fa-solid fa-house"></i>
-              Home</a></li>
-          <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
+
+            class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
             class="fa-solid fa-file"></i> Features</a></li>
-          <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i
-            class="fa-solid fa-user-group"></i>
-              Team</a></li>
-          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
+<li><a href="team.html" id="team-link" onclick="changeContent('team')"><i
+            class="fa-solid fa-user-group"></i> Team</a></li>
+<li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
             class="fa-solid fa-phone"></i> Contact</a></li>
-          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
+<li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
+
             class="fa-solid fa-clipboard"></i> Feedback</a></li>
         </ul>
       </nav>
       <div class="buttons">
 
-        
+
           <a href="login.html" class="login">Log in</a>
           <a href="up.html" class="get-started">Get started</a>
 
