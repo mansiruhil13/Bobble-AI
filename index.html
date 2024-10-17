@@ -710,10 +710,10 @@
       <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
     </strong>
   </div>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="script.js"></script>
   <script src="preloader.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script>
 
@@ -721,23 +721,6 @@ function toggleDropdown() {
             var dropdownContent = document.querySelector('.dropdown-content');
             dropdownContent.classList.toggle('show');
         }
-
-
-    function changeContent(page) {
-      var links = document.querySelectorAll(".menu ul li a");
-      links.forEach((link) => link.classList.remove("active"));
-      document.getElementById(page + "-link").classList.add("active");
-    }
-
-    window.onload = function () {
-      document.getElementById("home-link").classList.add("active");
-
-      // Add delay to each letter drop
-      const letters = document.querySelectorAll('.letter');
-      letters.forEach((letter, index) => {
-        letter.style.animationDelay = `${index * 0.1}s`;
-      });
-    };
 
     const thankYouMessage = document.getElementById("thankYouMessage");
     const form = document.getElementById("subscribeForm");
