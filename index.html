@@ -11,90 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!--Updated to latest version-->
 
-  <link rel="stylesheet" href="src/css/indexmain.css" />
+  <link rel="stylesheet" href="src/css/navbar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="responsive.css">
 
-
   <style>
-    .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      right: 8rem;
-      z-index: 1000;
-    }
-
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-      right: -60px;
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
-
     .content {
       margin: 2rem 1.2rem;
       /* margin-bottom: 2rem; */
@@ -153,8 +74,6 @@
       color: #555;
     }
 
-
-
     .sticky {
       display: flex;
       position: fixed;
@@ -205,6 +124,7 @@
       transform: scale(1.3);
       /* Scale the element to 1.3 times its size */
     }
+
     .fa-facebook:hover {
       color: blue;
       /* Icon color change to blue on hover */
@@ -224,6 +144,7 @@
       color: rgb(16, 13, 195);
       /* Icon color change to rgb(16, 13, 195) on hover */
     }
+
     .feature p {
       color: #555;
     }
@@ -263,6 +184,7 @@
       margin-right: 20px;
       border-radius: 10px;
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -273,76 +195,7 @@
       }
     }
 
-    /* Logo Animation */
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        /* Start from the left */
-      }
 
-      50% {
-        transform: translateX(10px);
-        /* Move slightly to the right */
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* End at original position */
-      }
-    }
-
-    /* Letter Drop Animation */
-    @keyframes letterDrop {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-
-      50% {
-        transform: translateY(10px);
-        /* Slight bounce */
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      animation: logoAnimation 1s ease forwards;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 10px;
-      /* Space between the text and the logo image */
-    }
-
-    .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-    }
-
-    .red {
-      color: red;
-      /* Change the color of letters in this class to red */
-    }
-
-    .logo a {
-      text-decoration: none;
-    }
-
-    .logo img:hover {
-      background-color: white;
-    }
 
     .container {
       width: 98vw;
@@ -350,28 +203,6 @@
 
     #contact-hvr:hover {
       background: none;
-    }
-
-
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
     }
 
     /* faq section styles */
@@ -395,14 +226,18 @@
       margin-bottom: 15px;
       width: 100%;
       /* Full width by default */
-      /* background-color: #000000; */
+      background-color: #000000;
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
       transition: background-color 0.3s ease;
-      transition: all 0.3s ease;
     }
-    
+
+    .faq:hover {
+      background-color: #e31616;
+      /* Slight hover effect for FAQs */
+    }
+
     .faq-question {
       background-color: #e7ffe7;
       color: #333;
@@ -419,9 +254,12 @@
       align-items: center;
       transition: background-color 0.3s ease;
     }
+
     .faq-question:hover {
-      background-color: #d5f0d5; /* Lighter green on hover */
+      background-color: #d5f0d5;
+      /* Lighter green on hover */
     }
+
     .faq-question::after {
       content: '';
       display: inline-block;
@@ -442,11 +280,14 @@
 
     .faq-answer {
       opacity: 0;
-      max-height: 0; /* Initially hidden */
-      overflow: hidden; /* Hide content when not visible */
+      max-height: 0;
+      /* Initially hidden */
+      overflow: hidden;
+      /* Hide content when not visible */
       padding: 0 10px;
       background-color: #fff;
-      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+      transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      /* Smooth transition */
       border-top: 1px solid #ccc;
     }
 
@@ -461,6 +302,7 @@
       padding: 10px;
       /* Adds padding when expanded */
     }
+
     .faq.active .faq-answer p {
       transition: opacity 0.3s ease-in-out;
     }
@@ -469,129 +311,6 @@
       background-color: #c4d7ff;
     }
 
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-    }
-
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
-
-    .dark-mode-toggle {
-      font-size: 18px;
-      /* Increase font size */
-      padding: 10px 15px;
-      /* Adjust padding for better appearance */
-    }
-
-    .dark-mode {
-      background-color: black;
-      /* Dark mode navbar */
-      /* color: white; */
-    }
-    .dark-mode .main_content p{
-      color: wheat;
-    }
-    .dark-mode .content h1{
-      color: wheat;
-
-    }
-
-    /* more addition for dark mode theme */
-
-    .dark-mode .logo img {
-      filter: brightness(0) invert(1);
-      /* Inverts the color to make it white */
-    }
-
-    /* dark mode hove effect on logo */
-
-
-    .dark-mode .logo-img {
-      filter: brightness(0) invert(1);
-      /* Change logo color in dark mode */
-    }
-
-    .dark-mode .content {
-      background-color: rgba(50, 50, 50, 0.95);
-      /* Match body background opacity */
-      padding: 20px;
-      /* Optional: add padding for better spacing */
-    }
-
-    .dark-mode .menu a {
-      color: black;
-      /* Dark mode link color */
-      /* Light grey border in dark mode */
-    }
-    .dark-mode .menu a.active {
-      color: white;
-      /* Dark mode link color */
-      /* Light grey border in dark mode */
-    }
-    .dark-mode .menu a.active:before {
-      color: white;
-      background: none;
-      /* Dark mode link color */
-      /* Light grey border in dark mode */
-    }
-
-    .dark-mode {
-      background-color: rgba(50, 50, 50, 0.95);
-      /* Slightly gray background with high opacity */
-    }
-
-
-    .light-dark-btn {
-      background-color: transparent;
-      border: none;
-      position: fixed;
-      z-index: 1111;
-      right: 1rem;
-      bottom: 1rem;
-      /* Black border */
-      cursor: pointer;
-      color: black;
-      /* Default button color */
-    }
-
-    .light-dark-btn:hover {
-      color: blue;
-      /* Change color on hover */
-    }
 
     .dark-mode .light-dark-btn {
       color: white;
@@ -605,6 +324,29 @@
       /* Background on hover in dark mode */
       color: black;
       /* Text color on hover in dark mode */
+    }
+
+    .dark-mode .main_content p {
+      color: wheat;
+    }
+
+    .dark-mode .content h1 {
+      color: wheat;
+
+    }
+
+    /* more addition for dark mode theme */
+
+    .dark-mode .logo img {
+      filter: brightness(0) invert(1);
+      /* Inverts the color to make it white */
+    }
+
+    .dark-mode .content {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Match body background opacity */
+      padding: 20px;
+      /* Optional: add padding for better spacing */
     }
   </style>
 </head>
@@ -625,24 +367,17 @@
       </div>
     </div>
   </div>
-
-
-  <div class="dropdown">
-    <button class="dropbtn" onclick="toggleDropdown()">&#9776;</button>
-    <ul class="dropdown-content">
-        <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
-        <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
-        <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
-        <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
-    </ul>
-</div>
-
-
   <div class="container" id="container">
     <div class="logo">
       <div class="brand-name">
-        <span class="ambu">Ambu</span><span>Flow</span>
+        <span class="letter red" style="--letter-index: 1;">A</span>
+        <span class="letter red" style="--letter-index: 2;">m</span>
+        <span class="letter red" style="--letter-index: 3;">b</span>
+        <span class="letter red" style="--letter-index: 4;">u</span>
+        <span class="letter" style="--letter-index: 5;">F</span>
+        <span class="letter" style="--letter-index: 6;">l</span>
+        <span class="letter" style="--letter-index: 7;">o</span>
+        <span class="letter" style="--letter-index: 8;">w</span>
       </div>
       <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
     </div>
@@ -657,7 +392,7 @@
           </a>
         </li>
         <li>
-          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
+          <a href="index.html" id="index-link" class="menu_links" data-link="Home">
             <span>Home</span>
           </a>
         </li>
@@ -789,6 +524,8 @@
         <div class="faq-answer">
           <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If
             possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
+          <p>Stay calm, ensure the patient is in a safe environment, and prepare any relevant medical information. If
+            possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
       </div>
     
@@ -867,8 +604,7 @@
 
   <!-- FAQ section ends here -->
   <footer style="margin-top: 1.5rem; color: #f3f4f6; text-align: center; width: 100%;">
-    <div
-      style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
+    <div style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
 
       <!-- Quick Links Section -->
       <div>
@@ -914,7 +650,7 @@
       <div style="text-align: center; min-width: 200px; color: black;">
         <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow
           Us</h3>
-        <div class="media-link" style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
           <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
             style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
           <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
@@ -961,35 +697,12 @@
       <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
     </strong>
   </div>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="script.js"></script>
   <script src="preloader.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script>
-
-function toggleDropdown() {
-            var dropdownContent = document.querySelector('.dropdown-content');
-            dropdownContent.classList.toggle('show');
-        }
-
-
-    function changeContent(page) {
-      var links = document.querySelectorAll(".menu ul li a");
-      links.forEach((link) => link.classList.remove("active"));
-      document.getElementById(page + "-link").classList.add("active");
-    }
-
-    window.onload = function () {
-      document.getElementById("home-link").classList.add("active");
-
-      // Add delay to each letter drop
-      const letters = document.querySelectorAll('.letter');
-      letters.forEach((letter, index) => {
-        letter.style.animationDelay = `${index * 0.1}s`;
-      });
-    };
-
     const thankYouMessage = document.getElementById("thankYouMessage");
     const form = document.getElementById("subscribeForm");
 
@@ -1032,58 +745,19 @@ function toggleDropdown() {
         button.addEventListener('click', function () {
           const faq = button.parentElement;
           const answer = faq.querySelector('.faq-answer');
-        
-          // Collapse all other answers
-          document.querySelectorAll('.faq').forEach(item => {
-            if (item !== faq) {
-              item.classList.remove('active');
-              item.querySelector('.faq-answer').style.maxHeight = '0';
-            }
-          });
-        
-          // Toggle active class for clicked FAQ
+
+          // Toggle active class
           faq.classList.toggle('active');
+
+          // Control the max-height for slide effect
           if (faq.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
+            answer.style.maxHeight = answer.scrollHeight + 'px'; // Set height based on content
           } else {
-            answer.style.maxHeight = '0';
+            answer.style.maxHeight = '0'; // Set height to zero to collapse
           }
         });
       });
     });
-
-
-    //enabling the Dark mode toggle button added
-    document.addEventListener("DOMContentLoaded", () => {
-      const darkModeButton = document.getElementById("dark-mode-button");
-
-      // Check sessionStorage for dark mode preference
-      const currentTheme = sessionStorage.getItem("theme");
-      if (currentTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        document.body.classList.remove("light-mode");
-        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-      } else {
-        document.body.classList.add("light-mode");
-        document.body.classList.remove("dark-mode");
-        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-      }
-
-      darkModeButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        document.body.classList.toggle("light-mode");
-
-        // Save preference to sessionStorage
-        if (document.body.classList.contains("dark-mode")) {
-          sessionStorage.setItem("theme", "dark");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-        } else {
-          sessionStorage.setItem("theme", "light");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-        }
-      });
-    });
-
     // end
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
@@ -1118,11 +792,6 @@ function toggleDropdown() {
       animateCircles();
     });
   </script>
-  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
-
 </body>
 
 </html>
