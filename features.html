@@ -100,6 +100,9 @@
       color: white;
       /* White text on hover */
     }
+    a:hover {
+      color: blue !important;
+    }
 
     .dark-mode .menu a {
       color: white;
@@ -118,6 +121,17 @@
       /* White background on hover in dark mode */
       color: black;
       /* Black text on hover in dark mode */
+    }
+
+    .light-dark-btn {
+
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+      width: 50px;
     }
 
     .light-dark-btn {
@@ -213,7 +227,7 @@
     }
 
     .menu ul li a:hover {
-      background-color: #000;
+      background-color: blue;
       color: white;
     }
 
@@ -221,6 +235,7 @@
       color: white;
       background-color: #000;
     }
+
 
     .content {
       margin: 20px;
@@ -396,6 +411,65 @@ footer {
       align-items: center;
       gap: 8px;
     }
+
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      right: 7rem;
+      z-index: 1000;
+    }
+
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+      right: -60px;
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
+    ul li a:hover{
+      color: blue !important;
+    }
+    a:hover{
+      color: blue !important;
+    }
  
   </style>
 
@@ -438,6 +512,7 @@ footer {
       <nav class="menu">
         <ul>
           <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
+
             class="fa-solid fa-house"></i> Home</a></li>
 <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i
             class="fa-solid fa-file"></i> Features</a></li>
@@ -446,10 +521,12 @@ footer {
 <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i
             class="fa-solid fa-phone"></i> Contact</a></li>
 <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i
+
             class="fa-solid fa-clipboard"></i> Feedback</a></li>
         </ul>
       </nav>
       <div class="buttons">
+
 
           <a href="login.html" class="login">Log in</a>
           <a href="up.html" class="get-started">Get started</a>
@@ -602,6 +679,20 @@ footer {
       ">↑</button>
     </div>
   </footer>
+
+<!-- Chatbot button -->
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
+
   <script src="preloader.js"></script>
   <script>
     // adding code for dark mode
