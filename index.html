@@ -13,6 +13,8 @@
 
   <link rel="stylesheet" href="src/css/indexmain.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="responsive.css">
+
 
   <style>
     .chatbot-container {
@@ -623,6 +625,20 @@
       </div>
     </div>
   </div>
+
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown()">&#9776;</button>
+    <ul class="dropdown-content">
+        <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
+        <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
+        <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
+        <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
+    </ul>
+</div>
+
+
   <div class="container" id="container">
     <div class="logo">
       <div class="brand-name">
@@ -898,7 +914,7 @@
       <div style="text-align: center; min-width: 200px; color: black;">
         <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow
           Us</h3>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+        <div class="media-link" style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
           <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
             style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
           <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
@@ -951,6 +967,13 @@
   <script src="preloader.js"></script>
 
   <script>
+
+function toggleDropdown() {
+            var dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        }
+
+
     function changeContent(page) {
       var links = document.querySelectorAll(".menu ul li a");
       links.forEach((link) => link.classList.remove("active"));
