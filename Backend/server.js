@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "mongodb+srv://haseebzaki:hzaki123@cluster0.k7v9clo.mongodb.net/ambulance",
+    "your-connection-string",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB connected"))
