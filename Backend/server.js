@@ -15,12 +15,21 @@ app.use(bodyParser.json());
 
 // MongoDB config below (Uncomment this code when mongoDB is created)
 
-// mongoose.connect('add the connection string', { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('MongoDB connected'))
-//   .catch(err => console.log(err));
+mongoose
+  .connect(
+    "mongodb+srv://haseebzaki:hzaki123@cluster0.k7v9clo.mongodb.net/ambulance",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log(err));
 
 // Models
 const User = require("./Models/User");
+const {
+  createAmbulance,
+  getAllAmbulances,
+  bookAmbulance,
+} = require("./Controllers/AmbulanceController");
 
 app.get("/", (req, res) => {
   res.send("AmbuFlow Server");
@@ -30,23 +39,24 @@ app.get("/", (req, res) => {
 app.post("/signup", async (req, res) => {
   const { id, username, email, password } = req.body;
 
-  // Hash the password using bcrypt
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  // Uncomment this block when MongoDB is set up
-  /*
-  const user = new User({ id, username, email, password: hashedPassword });
-
   try {
-      await user.save();
-      res.status(201).send('User created successfully');
-  } catch (err) {
-      res.status(500).send('Error creating user: ' + err.message);
-  }
-  */
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-  // Remove the below line when MongoDB is ready (for testing)
-  res.send("Signup route working");
+    const user = new User({ id, username, email, password: hashedPassword });
+
+    await user.save();
+
+    res.status(201).json({
+      message: "User created successfully",
+      user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Error creating user: " + err.message });
+  }
 });
 
 // Login Route
@@ -54,42 +64,40 @@ app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   // Uncomment the lines when MongoDB is created
-  /*
+
   try {
     const user = await User.findOne({ username });
 
     if (!user) {
-      return res.status(401).send('User not found');
+      return res.status(401).send("User not found");
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      return res.status(401).send('Invalid credentials');
+      return res.status(401).send("Invalid credentials");
     }
 
     const token = jwt.sign(
       { id: user.id, username: user.username },
       process.env.JWT_SECRET,
-      { expiresIn: '1h' }
+      { expiresIn: "1h" }
     );
 
-    res.json({success: true, JWT_token: token , id: user.id});
+    res.json({ success: true, JWT_token: token, id: user.id });
   } catch (err) {
-    res.status(500).send('Internal Server Error: ' + err.message);
+    res.status(500).send("Internal Server Error: " + err.message);
   }
-  */
 
   // Hardcoded for testing purposes
   const token = jwt.sign(
-    { id: 1, username: "username" }, 
-    process.env.JWT_SECRET, 
+    { id: 1, username: "username" },
+    process.env.JWT_SECRET,
     { expiresIn: "1h" }
   );
 
-  res.json({success: true, JWT_token: token , id: "testID893973983"});
+  res.json({ success: true, JWT_token: token, id: "testID893973983" });
 });
-
 
 // Middleware to protect routes
 const authenticateToken = (req, res, next) => {
@@ -112,6 +120,10 @@ const authenticateToken = (req, res, next) => {
 app.get("/protected", authenticateToken, (req, res) => {
   res.send("This is a protected route");
 });
+
+app.post("/ambulances/create", createAmbulance);
+app.get("/ambulances", getAllAmbulances);
+app.post("/ambulances/book", bookAmbulance);
 
 app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}`);
