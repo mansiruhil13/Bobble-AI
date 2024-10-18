@@ -97,20 +97,20 @@ header {
 
 .menu ul li a {
   text-decoration: none;
-  color: #4b5563;
+  color: #0344f6;
   font-weight: 500;
   padding: 8px 12px;
   transition: background-color 0.3s;
-  border: 2px solid #1d4ed8;
-  border-radius: 15px;
+  /* border: 2px solid #1d4ed8; */
+  /* border-radius: 15px; */
 }
 
-.menu ul li a:hover {
+:hover {
   /* color: #1d4ed8;
   background-color: #f3f4f6;
   border-radius: 5px; */
-  color: white;
-  background-color: #1d4ed8;
+  color: #0344f6;
+  /* background-color: #1d4ed8; */
 }
 
 .buttons {
@@ -311,28 +311,30 @@ header {
   }
 }
 
+.team-feature .team-feature-details p,
+.contact-feature .contact-feature-details p
+{
+margin-bottom: 30px;
+}
+
 .button {
-  display: inline-block;
-  padding: 8px 16px;
-  /* Reduce padding for a smaller button */
-  background-color: #28a745;
-  /* Keep background color green */
-  color: #fff;
-  text-align: center;
-  border: 2px solid #218838;
-  /* Add a border with a darker green color */
-  border-radius: 4px;
-  /* Reduce border radius for a less rounded button */
+  position: relative;
   text-decoration: none;
-  font-weight: bold;
-  /* Keep the text bold */
-  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #1d4ed8;
+  background-color: #1d4ed8;
+    color: #ffffff;
 }
 
 .button:hover {
-  background-color: #218838;
+  background-color: #1d4ed8;
   /* Darker green on hover */
-  border-color: #1e7e34;
+  border-color: #1d4ed8;
   /* Change border color on hover */
   transform: scale(1.05);
   /* Slightly enlarge on hover */
@@ -486,6 +488,10 @@ header {
   transition: all 0.3s ease-out;
 }
 
+
+/* Footer Section */
+
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -544,5 +550,55 @@ header {
 
   .quick-ft {
     align-items: center;    /* Center quick-ft section */
+  }
+  .footer-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width :600px) {
+  .team-feature,.contact-feature{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  }
+  .team-feature img,.contact-feature img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid #2980b9;
+  }
+
+  .team-feature .team-feature-details,
+  .contact-feature .contact-feature-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .team-feature .team-feature-details h2,
+  .contact-feature .contact-feature-details h2
+  {
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  .team-feature .team-feature-details p,
+  .contact-feature .contact-feature-details p{
+    text-align: center;
+   color: #555;
+   margin-bottom: 20px;
+  }
+
+  .footer-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
