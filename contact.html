@@ -653,7 +653,7 @@
                     <div
                         style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 20px;">
                         <strong>
-                            <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+                            <p>&copy; <span id="year"></span> AmbuFlow. All rights reserved.</p>
                         </strong>
 
                         <!-- Back to Top Button -->
@@ -798,6 +798,11 @@
                 gTranslate.style.display = 'none';
             }
         });
+    </script>
+    <script>
+        const yearSpan = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
     </script>
 
 </body>

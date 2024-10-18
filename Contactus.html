@@ -258,7 +258,7 @@
       <a href="https://www.instagram.com" class="hover-link"><i class="fab fa-instagram"></i> Instagram</a><br>
     </div>
   </div>
-  <p style="font-size: 0.8rem; color: #000;">&copy; 2024 Nursing Tomorrow's Smile. All rights reserved.</p>
+  <p style="font-size: 0.8rem; color: #000;">&copy; <span id="year"></span> Nursing Tomorrow's Smile. All rights reserved.</p>
 </footer>
 
 <a href="chatbot.html">
@@ -272,6 +272,10 @@
       </button>
     </div>
   </a>
-
+  <script>
+    const yearSpan = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+</script>
 </body>
 </html>
