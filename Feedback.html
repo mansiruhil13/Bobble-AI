@@ -44,8 +44,8 @@
     }
  
     .navbar {
+      background-color: #C4D7FF;
 
-      background-color:  rgb(148 207 226);
       /* Light mode navbar */
       color:  black;
       padding:  10px;
@@ -91,10 +91,8 @@
     }
 
     .menu a {
-      color: black;
+      color:#0344f6;
       /* Light mode link color */
-      border: 1px solid black;
-      /* Black border */
       padding: 5px 10px;
       text-decoration: none;
       transition: all 0.3s;
@@ -107,6 +105,11 @@
       /* White text on hover */
     }
 
+    .menu ul li a:hover {
+      background-color: #000;
+      color: white;
+    }
+        
     .dark-mode .menu a {
       color: white;
       /* Dark mode link color */
@@ -132,9 +135,19 @@
       /* Black border */
       cursor: pointer;
       color: black;
+      border-radius: 50%;
+      padding: 10px 12px;
+      justify-content: center;
+      box-shadow: 0 0 5px rgb(0, 0, 0) ;
+      display: flex;
+      font-size: 15px;
       /* Default button color */
     }
-
+    
+    .dark-mode-toggle{
+          border: none;
+    }
+    
     .light-dark-btn:hover {
       color: blue;
       /* Change color on hover */
@@ -175,7 +188,16 @@
     }
 
     /* end */
+    .menu ul li a {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
 
+        .menu ul li a.active {
+            color: white;
+            background-color: #000;
+        }
     footer {
       background-color: #C4D7FF;
       color: white;
@@ -832,7 +854,7 @@
   // Back to top button functionality
   const backToTopButton = document.getElementById('backToTopBtn');
 
-<<<<<<< HEAD
+
   <script src="preloader.js"></script>
 
   <script>
@@ -973,14 +995,8 @@
       });
 
       requestAnimationFrame(animateCircles);
-=======
-  // Show the button when scrolled down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
->>>>>>> c3e6128543c5c7da4acc09c472a624a52adb1043
+
+
     }
   };
 
