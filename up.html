@@ -313,46 +313,49 @@
         </div>
       </div>
     </div>
+    <!-- Toast Notification -->
+    <div id="toast"
+      style="display: none; position: fixed; bottom: 20px; right: 10px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+    </div>
     <script src="preloader.js"></script>
    
     <script>
-
-        const sign_in_btn = document.querySelector("#sign-in-btn");
-        const sign_up_btn = document.querySelector("#sign-up-btn");
-        const container = document.querySelector(".container");
-
-        // Add sign-up-mode class to container by default
-        container.classList.add("sign-up-mode");
-
-        sign_up_btn.addEventListener("click", () => {
-          container.classList.add("sign-up-mode");
-        });
-
-        sign_in_btn.addEventListener("click", () => {
-          container.classList.remove("sign-up-mode");
-        });
-
-        // Sign in form submission
-        document.querySelector(".sign-in-form").addEventListener('submit', function(event) {
+      document.getElementById('email-input').addEventListener('click', function (event) {
           event.preventDefault();
+        })
+        document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent form submission
 
-          // Get the input values
-          const username = document.querySelector(".sign-in-form input[type='text']").value;
-          const password = document.querySelector(".sign-in-form input[type='password']").value;
+          const emailInput = document.getElementById('email-input');
+          const email = emailInput.value;
+          const toast = document.getElementById('toast');
 
-          // Dummy login logic for demo purposes
-          if (username === 'admin' && password === 'password') {
-            alert('Login successful!');
-            // Redirect to dashboard page
-            window.location.href = 'index.html';
+          // Simple email validation using regex
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (emailPattern.test(email)) {
+            // Display success message
+            showToast("Thank you for subscribing!", "success");
+            emailInput.value = ""; // Clear the input field
           } else {
-            alert('Invalid username or password');
+            // Display error message
+            showToast("Please enter a valid email address.", "error");
           }
         });
 
-        // Sign up form submission
-        document.querySelector(".sign-up-form").addEventListener('submit', function(event) {
+        function showToast(message, type) {
+          const toast = document.getElementById('toast');
+          toast.textContent = message;
+          toast.style.display = "block";
+          toast.style.backgroundColor = type === "success" ? "#28a745" : "#dc3545"; // Green for success, red for error
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 3000);
+        }
 
+    </script>
+    <script>
       const sign_in_btn = document.querySelector("#sign-in-btn");
       const sign_up_btn = document.querySelector("#sign-up-btn");
       const container = document.querySelector(".container");
@@ -491,7 +494,7 @@
 
           // Validate inputs
           if (username === "" || email === "" || password === "") {
-            alert("Please fill in all fields");
+            showToast("Please fill in all fields",'error');
             return;
           }
 
