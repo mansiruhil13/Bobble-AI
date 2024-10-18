@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,15 @@
       right: 8rem;
       z-index: 1000;
     }
-
+.para-content{
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+.p-con{
+  display: flex;
+  flex-direction: column;
+ 
+}
     .chatbot-button {
       background-color: #007bff;
       border: none;
@@ -198,7 +209,6 @@
       transition: transform 0.3s ease;
       /* Smooth transition effect */
     }
-
     .social-icon:hover {
       transform: scale(1.3);
       /* Scale the element to 1.3 times its size */
@@ -671,7 +681,8 @@
 
     <div class="main_content">
       <div class="main_heading">
-        <h1>Start Saving lives with </h1>
+        <h1 >Start Saving lives with </h1>
+  
         <h2 data-link_h2="AmbuFlow...">AmbuFlow...</h2>
         <p>AmbuFlow is ambulance tracking site which helps you to find the nearest hospitals and get access to nearest
           ambulances and save lives</p>
@@ -686,7 +697,9 @@
 
   </div>
   <div class="content" id="grid-content">
-    <h1>Welcome to the Ambulance Monitoring System</h1>
+   <div class="p-con">
+    <h1 style="color: #2980b9; margin-top: 20px;">Welcome to the Ambulance Monitoring System</h1>
+    <p class="para-content" >The Ambulance Monitoring System enables real-time tracking and management of ambulance fleets to ensure faster emergency response and efficient patient care.</p></div>
     <div class="grid">
       <div class="feature">
         <img src="images/emergency-w.jpg" alt="Emergency Response" />
