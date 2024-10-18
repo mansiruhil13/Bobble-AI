@@ -42,14 +42,16 @@
       color: black;
       transition: background-color 0.3s, color 0.3s;
     }
-
+ 
     .navbar {
       background-color: #C4D7FF;
+
       /* Light mode navbar */
-      color: black;
-      padding: 10px;
+      color:  black;
+      padding:  10px;
+
     }
-    
+     
 
 
     .navbar.dark-mode {
@@ -321,6 +323,12 @@
       color: rgb(16, 13, 195);
       /* Icon color change to rgb(16, 13, 195) on hover */
     }
+    ul li a:hover{
+      color: blue !important;
+    }
+    a:hover{
+      color: blue !important;
+    }
 
     @keyframes logoAnimation {
       0% {
@@ -372,14 +380,16 @@
       margin-right: 10px;
       /* Space between the text and the logo image */
     }
-
+ 
     .letter {
-      display: inline-block;
-      font-size: 2rem;
-      animation: letterDrop 0.5s ease forwards;
-      animation-delay: calc(var(--letter-index) * 0.1s);
-    }
 
+      display:  inline-block;
+      font-size:  2rem;
+      animation:  letterDrop 0.5s ease forwards;
+      animation-delay:  calc(var(--letter-index) * 0.1s);
+
+    }
+ 
     .red {
       color: red;
     }
@@ -767,7 +777,7 @@
     <hr>
     <!-- Copyright Section -->
     <div
-      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding:20px;">
       <strong>
         <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
       </strong>
@@ -781,6 +791,8 @@
         padding: 10px 15px;
         font-size: 16px;
         cursor: pointer;
+        position: absolute;
+        right: 0;
       ">↑</button>
     </div>
   </footer>
@@ -842,7 +854,7 @@
   // Back to top button functionality
   const backToTopButton = document.getElementById('backToTopBtn');
 
-<<<<<<< HEAD
+
   <script src="preloader.js"></script>
 
   <script>
@@ -983,14 +995,8 @@
       });
 
       requestAnimationFrame(animateCircles);
-=======
-  // Show the button when scrolled down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
->>>>>>> c3e6128543c5c7da4acc09c472a624a52adb1043
+
+
     }
   };
 
