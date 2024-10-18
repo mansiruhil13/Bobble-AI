@@ -130,7 +130,7 @@
     }
     </style>
 
-    <script type="importmap">
+  <script type="importmap">
       {
         "imports": {
           "@google/generative-ai": "https://esm.run/@google/generative-ai"
@@ -138,253 +138,254 @@
       }
     </script>
 
-    <script type="module">
-      import {
-        GoogleGenerativeAI,
-        HarmBlockThreshold,
-        HarmCategory,
-      } from "@google/generative-ai";
+  <script type="module">
+    import {
+      GoogleGenerativeAI,
+      HarmBlockThreshold,
+      HarmCategory,
+    } from "@google/generative-ai";
 
-      const API_KEY = "AIzaSyBF265bY6o63VuPypal-5w0-b7sr0N_O3A"; // Replace with your gemini-api actual API key
-      const genAI = new GoogleGenerativeAI(API_KEY);
-      let chat;
+    const API_KEY = "AIzaSyBF265bY6o63VuPypal-5w0-b7sr0N_O3A"; // Replace with your gemini-api actual API key
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    let chat;
 
-      const safetySettings = [
-        {
-          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        },
-      ];
+    const safetySettings = [
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      },
+    ];
 
-      async function fileToGenerativePart(file) {
-        return new Promise((resolve) => {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            const base64Data = reader.result.split(",")[1];
-            resolve({ inlineData: { data: base64Data, mimeType: file.type } });
-          };
-          reader.readAsDataURL(file);
+    async function fileToGenerativePart(file) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64Data = reader.result.split(",")[1];
+          resolve({ inlineData: { data: base64Data, mimeType: file.type } });
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function sendMessage(prompt, imageParts = []) {
+      let model;
+      let result;
+      clearGreeting(); // Clear the greeting after sending the message
+
+      if (imageParts.length > 0) {
+        model = genAI.getGenerativeModel({
+          model: "gemini-pro-vision",
+          safetySettings,
         });
+      } else {
+        if (!chat) {
+          chat = await genAI
+            .getGenerativeModel({ model: "gemini-pro", safetySettings })
+            .startChat({
+              history: [],
+              generationConfig: {
+                maxOutputTokens: 4000, // maxOutputTokens Limit around 4096
+              },
+            });
+        }
+        model = chat;
       }
 
-      async function sendMessage(prompt, imageParts = []) {
-        let model;
-        let result;
-        clearGreeting(); // Clear the greeting after sending the message
-
+      try {
         if (imageParts.length > 0) {
-          model = genAI.getGenerativeModel({
-            model: "gemini-pro-vision",
-            safetySettings,
-          });
+          result = await model.generateContent([prompt, ...imageParts]);
         } else {
-          if (!chat) {
-            chat = await genAI
-              .getGenerativeModel({ model: "gemini-pro", safetySettings })
-              .startChat({
-                history: [],
-                generationConfig: {
-                  maxOutputTokens: 4000, // maxOutputTokens Limit around 4096
-                },
-              });
-          }
-          model = chat;
+          result = await model.sendMessage(prompt);
         }
 
-        try {
-          if (imageParts.length > 0) {
-            result = await model.generateContent([prompt, ...imageParts]);
-          } else {
-            result = await model.sendMessage(prompt);
-          }
-
-          const response = await result.response;
-          if (response) {
-            const text = await response.text();
-            displayMessage(text, "ai");
-          } else {
-            // This block handles a null response, suggesting blocked content
-            displayMessage(
-              "This content is not safe for display based on current settings.",
-              "ai"
-            );
-          }
-        } catch (error) {
-          console.error("Error during message generation:", error);
+        const response = await result.response;
+        if (response) {
+          const text = await response.text();
+          displayMessage(text, "ai");
+        } else {
+          // This block handles a null response, suggesting blocked content
           displayMessage(
-            "This content is not safe for display based on current settings. or an internal error.",
+            "This content is not safe for display based on current settings.",
             "ai"
           );
         }
-        clearInputs();
-      }
-
-      function displayMessage(message, sender) {
-        const outputContainer = document.getElementById("output-container");
-        const msgDiv = document.createElement("div");
-        msgDiv.classList.add(
-          "chat-message",
-          sender === "user" ? "user-message" : "ai-message"
+      } catch (error) {
+        console.error("Error during message generation:", error);
+        displayMessage(
+          "This content is not safe for display based on current settings. or an internal error.",
+          "ai"
         );
+      }
+      clearInputs();
+    }
 
-        if (sender === "ai") {
-          // Show loading animation for AI messages
-          msgDiv.innerHTML =
-            '<div class="loading">' +
-            '<div class="loading-dot"></div>' +
-            '<div class="loading-dot"></div>' +
-            '<div class="loading-dot"></div>' +
-            "</div>";
-          outputContainer.appendChild(msgDiv);
+    function displayMessage(message, sender) {
+      const outputContainer = document.getElementById("output-container");
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add(
+        "chat-message",
+        sender === "user" ? "user-message" : "ai-message"
+      );
 
-          // Simulate processing delay
-          setTimeout(() => {
-            // Clear loading animation
-            msgDiv.innerHTML = "";
+      if (sender === "ai") {
+        // Show loading animation for AI messages
+        msgDiv.innerHTML =
+          '<div class="loading">' +
+          '<div class="loading-dot"></div>' +
+          '<div class="loading-dot"></div>' +
+          '<div class="loading-dot"></div>' +
+          "</div>";
+        outputContainer.appendChild(msgDiv);
 
-            if (message.startsWith("```") && message.endsWith("```")) {
-              // Code block handling
-              const codeContent = message.substring(3, message.length - 3);
-              const escapedCode = codeContent
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;");
-              msgDiv.innerHTML = `<pre><code class="hljs">${escapedCode}</code></pre>`;
-              window.hljs.highlightBlock(msgDiv.querySelector("code"));
+        // Simulate processing delay
+        setTimeout(() => {
+          // Clear loading animation
+          msgDiv.innerHTML = "";
 
-              // Add Copy button
-              const copyButton = document.createElement("button");
-              copyButton.innerText = "Copy code";
-              copyButton.onclick = function () {
-                navigator.clipboard.writeText(codeContent).then(
-                  () => {
-                    // Change text to show confirmation instead of using alert
-                    copyButton.innerText = "Copied!";
-                    // Optional: revert the button text back to "Copy code" after 2 seconds
-                    setTimeout(() => {
-                      copyButton.innerText = "Copy code";
-                    }, 2000);
-                  },
-                  (err) => {
-                    console.error("Failed to copy text: ", err);
-                  }
-                );
-              };
-
-              msgDiv.appendChild(copyButton);
-            } else {
-              // For regular messages
-              msgDiv.innerHTML = marked.parse(message);
-            }
-
-            // Scroll the output container to the bottom to ensure the latest message is visible
-            outputContainer.scrollTop = outputContainer.scrollHeight;
-          }, 1500); // Adjust the delay as needed
-        } else {
-          // User messages are displayed immediately without the loading animation
-          msgDiv.innerHTML =
-            message.startsWith("```") && message.endsWith("```")
-              ? `<pre><code class="hljs">${message.substring(
-                  3,
-                  message.length - 3
-                )}</code></pre>`
-              : marked.parse(message);
-
-          // If it's a code block, enable syntax highlighting and add a copy button
           if (message.startsWith("```") && message.endsWith("```")) {
-            const codeBlock = msgDiv.querySelector("pre code");
-            window.hljs.highlightBlock(codeBlock);
+            // Code block handling
+            const codeContent = message.substring(3, message.length - 3);
+            const escapedCode = codeContent
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;");
+            msgDiv.innerHTML = `<pre><code class="hljs">${escapedCode}</code></pre>`;
+            window.hljs.highlightBlock(msgDiv.querySelector("code"));
+
+            // Add Copy button
             const copyButton = document.createElement("button");
             copyButton.innerText = "Copy code";
             copyButton.onclick = function () {
-              navigator.clipboard.writeText(codeBlock.textContent).then(
+              navigator.clipboard.writeText(codeContent).then(
                 () => {
-                  alert("Code copied to clipboard!");
+                  // Change text to show confirmation instead of using alert
+                  copyButton.innerText = "Copied!";
+                  // Optional: revert the button text back to "Copy code" after 2 seconds
+                  setTimeout(() => {
+                    copyButton.innerText = "Copy code";
+                  }, 2000);
                 },
                 (err) => {
-                  alert("Failed to copy text: ", err);
+                  console.error("Failed to copy text: ", err);
                 }
               );
             };
+
             msgDiv.appendChild(copyButton);
+          } else {
+            // For regular messages
+            msgDiv.innerHTML = marked.parse(message);
           }
 
-          outputContainer.appendChild(msgDiv);
+          // Scroll the output container to the bottom to ensure the latest message is visible
+          outputContainer.scrollTop = outputContainer.scrollHeight;
+        }, 1500); // Adjust the delay as needed
+      } else {
+        // User messages are displayed immediately without the loading animation
+        msgDiv.innerHTML =
+          message.startsWith("```") && message.endsWith("```")
+            ? `<pre><code class="hljs">${message.substring(
+              3,
+              message.length - 3
+            )}</code></pre>`
+            : marked.parse(message);
+
+        // If it's a code block, enable syntax highlighting and add a copy button
+        if (message.startsWith("```") && message.endsWith("```")) {
+          const codeBlock = msgDiv.querySelector("pre code");
+          window.hljs.highlightBlock(codeBlock);
+          const copyButton = document.createElement("button");
+          copyButton.innerText = "Copy code";
+          copyButton.onclick = function () {
+            navigator.clipboard.writeText(codeBlock.textContent).then(
+              () => {
+                alert("Code copied to clipboard!");
+              },
+              (err) => {
+                alert("Failed to copy text: ", err);
+              }
+            );
+          };
+          msgDiv.appendChild(copyButton);
         }
 
-        // Ensure the latest message is visible
-        outputContainer.scrollTop = outputContainer.scrollHeight;
+        outputContainer.appendChild(msgDiv);
       }
 
-      function clearInputs() {
-        document.getElementById("prompt-input").value = "";
-        document.getElementById("image-input").value = "";
-        clearImagePreview();
-      }
+      // Ensure the latest message is visible
+      outputContainer.scrollTop = outputContainer.scrollHeight;
+    }
 
-      document
-        .getElementById("generate-btn")
-        .addEventListener("click", async () => {
-          const prompt = document.getElementById("prompt-input").value;
-          const files = document.getElementById("image-input").files;
-          const imageParts = await Promise.all(
-            [...files].map(fileToGenerativePart)
-          );
-          if (prompt.trim() !== "") {
-            displayMessage(prompt, "user");
-            await sendMessage(prompt, imageParts);
-          }
-        });
+    function clearInputs() {
+      document.getElementById("prompt-input").value = "";
+      document.getElementById("image-input").value = "";
+      clearImagePreview();
+    }
 
-      function clearGreeting() {
-        const outputField = document.getElementById("output-field");
-        if (outputField) {
-          outputField.style.display = "none"; // Hide the field completely
+    document
+      .getElementById("generate-btn")
+      .addEventListener("click", async () => {
+        const prompt = document.getElementById("prompt-input").value;
+        const files = document.getElementById("image-input").files;
+        const imageParts = await Promise.all(
+          [...files].map(fileToGenerativePart)
+        );
+        if (prompt.trim() !== "") {
+          displayMessage(prompt, "user");
+          await sendMessage(prompt, imageParts);
         }
-      }
-
-      document
-        .getElementById("image-input")
-        .addEventListener("change", function (event) {
-          const [file] = event.target.files;
-          if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              const previewContainer = document.getElementById("image-preview");
-              const previewImage =
-                previewContainer.getElementsByTagName("img")[0];
-              previewImage.src = e.target.result;
-              previewContainer.style.display = "flex";
-            };
-            reader.readAsDataURL(file);
-          }
-        });
-
-      document
-        .getElementById("clear-image")
-        .addEventListener("click", function () {
-          // Clear the preview
-          const previewContainer = document.getElementById("image-preview");
-          const previewImage = previewContainer.getElementsByTagName("img")[0];
-          previewImage.src = "";
-          previewContainer.style.display = "none";
-          // Clear the file input
-          document.getElementById("image-input").value = "";
-        });
-
-      function clearImagePreview() {
-        const previewContainer = document.getElementById("image-preview");
-        if (previewContainer) {
-          const previewImage = previewContainer.getElementsByTagName("img")[0];
-          previewImage.src = "";
-          previewContainer.style.display = "none";
-        }
-      }
-    </script>
-    <script>
-      var loader = document.getElementById("Loader");
-      window.addEventListener("load", function () {
-        loader.style.display = "none";
       });
-    </script>
-  </body>
+
+    function clearGreeting() {
+      const outputField = document.getElementById("output-field");
+      if (outputField) {
+        outputField.style.display = "none"; // Hide the field completely
+      }
+    }
+
+    document
+      .getElementById("image-input")
+      .addEventListener("change", function (event) {
+        const [file] = event.target.files;
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const previewContainer = document.getElementById("image-preview");
+            const previewImage =
+              previewContainer.getElementsByTagName("img")[0];
+            previewImage.src = e.target.result;
+            previewContainer.style.display = "flex";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+    document
+      .getElementById("clear-image")
+      .addEventListener("click", function () {
+        // Clear the preview
+        const previewContainer = document.getElementById("image-preview");
+        const previewImage = previewContainer.getElementsByTagName("img")[0];
+        previewImage.src = "";
+        previewContainer.style.display = "none";
+        // Clear the file input
+        document.getElementById("image-input").value = "";
+      });
+
+    function clearImagePreview() {
+      const previewContainer = document.getElementById("image-preview");
+      if (previewContainer) {
+        const previewImage = previewContainer.getElementsByTagName("img")[0];
+        previewImage.src = "";
+        previewContainer.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+    var loader = document.getElementById("Loader");
+    window.addEventListener("load", function () {
+      loader.style.display = "none";
+    });
+  </script>
+</body>
+
 </html>
