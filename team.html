@@ -80,50 +80,59 @@
         }
 
         .menu ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-        }
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
 
-        .menu li {
-            margin-right: 20px;
-        }
+.menu li {
+    margin-right: 20px;
+    position: relative; /* Required for the ::after pseudo-element */
+}
 
-        .menu a {
-            color: black;
-            /* Light mode link color */
-            border: 1px solid black;
-            /* Black border */
-            padding: 5px 10px;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
+.menu a {
+    color: black; /* Light mode link color */
+    padding: 5px 10px;
+    text-decoration: none;
+    position: relative; /* Needed for the animated underline */
+    transition: color 0.3s ease-in-out; /* Smooth text color change */
+}
 
-        .menu a:hover {
-            background-color: blue;
-            /* Blue background on hover */
-            color: white;
-            /* White text on hover */
-        }
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Hidden underline initially */
+    height: 2px; /* Height of the underline */
+    left: 0; /* Start the underline from the left */
+    bottom: 0; /* Position the underline at the bottom of the text */
+    background-color: #007BFF; /* Blue underline */
+    transition: width 0.4s ease-in-out; /* Animate the width for sliding effect */
+}
 
-        .dark-mode .menu a {
-            color: white;
-            /* Dark mode link color */
-            border: 1px solid lightgrey;
-            /* Light grey border in dark mode */
-        }
+.menu a:hover::after {
+    width: 100%; /* Expand the underline from left to right on hover */
+}
 
-        .dark-mode {
-            background-color: rgba(50, 50, 50, 0.95);
-            /* Slightly gray background with high opacity */
-        }
+.menu a:hover {
+    color: #007BFF; /* Blue text color on hover */
+}
 
-        .dark-mode .menu a:hover {
-            background-color: white;
-            /* White background on hover in dark mode */
-            color: black;
-            /* Black text on hover in dark mode */
-        }
+/* Dark Mode Styling */
+.dark-mode .menu a {
+    color: white; /* Dark mode link color */
+}
+
+.dark-mode .menu a::after {
+    background-color: white; /* White underline in dark mode */
+}
+
+.dark-mode .menu a:hover::after {
+    width: 100%; /* Expand the underline in dark mode */
+}
+
+.dark-mode .menu a:hover {
+    color: rgb(102, 98, 98); /* Dark grey text color on hover */
+}
 
         .light-dark-btn {
             background-color: transparent;
