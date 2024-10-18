@@ -1,9 +1,0 @@
-title: Bobble AI
-description: A mobile app built with HTML, CSS, JavaScript, and Google APIs that notifies patients of nearby hospitals, tracks ambulance ETA, and provides real-time GPS route management with traffic updates for hospitals and drivers.
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-hacker
-markdown: GFM
-include:
-  - README.md
-  - LICENSE

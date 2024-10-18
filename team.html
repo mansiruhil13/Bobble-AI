@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
         body {
@@ -43,14 +43,16 @@
             color: black;
             transition: background-color 0.3s, color 0.3s;
         }
-
+ 
         .navbar {
-            background-color: lightblue;
-            /* Light mode navbar */
-            color: black;
-            padding: 10px;
-        }
 
+            background-color:  rgb(148 207 226);
+            /* Light mode navbar */
+            color:  black;
+            padding:  10px;
+
+        }
+ 
         .navbar.dark-mode {
             background-color: black;
             /* Dark mode navbar */
@@ -202,6 +204,11 @@
 
         .team-section {
 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            animation: fadeIn 1s ease-in-out;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -369,14 +376,16 @@
             margin-right: 10px;
             /* Space between the text and the logo image */
         }
-
+ 
         .letter {
-            display: inline-block;
-            font-size: 2rem;
-            animation: letterDrop 0.5s ease forwards;
-            animation-delay: calc(var(--letter-index) * 0.1s);
-        }
 
+            display:  inline-block;
+            font-size:  2rem;
+            animation:  letterDrop 0.5s ease forwards;
+            animation-delay:  calc(var(--letter-index) * 0.1s);
+ 
+        }
+ 
         .red {
             color: red;
         }
@@ -413,7 +422,58 @@
             gap: 10px;
         }
 
-        .g-translate
+        .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      right: 7rem;
+      z-index: 1000;
+    }
+
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+      right: -60px;
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
     </style>
 </head>
 
@@ -446,52 +506,11 @@
                     <span class="letter" style="--letter-index: 7;">o</span>
                     <span class="letter" style="--letter-index: 8;">w</span>
                 </div>
-                <a href="./index.html" >
-                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
-                    style="width: 50px; height: auto" />
-                    </a>
+                <a href="./index.html">
+                    <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                        style="width: 50px; height: auto" />
+                </a>
             </div>
-
-
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
-                <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
-                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
-                <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
-            </ul>
-        </nav>
-        <div class="buttons">
-            <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button>
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
-        </div>
-    </div>
-</header>
-
-<!-- Add this div for the translator popup -->
-<div id="gTranslate" class="g-translate-popup" style="display:none;">
-    <div class="gtranslate_wrapper"></div>
-</div>
-
-<div class="content" id="main-content">
-    <h1>Meet Our Team</h1>
-    <div class="team-section">
-        <div class="team-member">
-            <img src="images/service-web.jpg" alt="Service Manager">
-            <h2>Service Manager</h2>
-            <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
-        </div>
-        <div class="team-member">
-            <img src="images/rescue-web.webp" alt="Rescue Specialist">
-            <h2>Rescue Specialist</h2>
-            <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
-        </div>
-        <div class="team-member">
-            <img src="images/call-web.jpg" alt="Call Operator">
-            <h2>Call Operator</h2>
-            <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
 
             <nav class="menu">
                 <ul>
@@ -508,13 +527,9 @@
                 </ul>
             </nav>
             <div class="buttons">
-                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
                 <a href="login.html" class="login">Log in</a>
                 <a href="up.html" class="get-started">Get started</a>
             </div>
-
         </div>
     </header>
 
@@ -546,25 +561,23 @@
 
     <!-- Contact Section in Full Row -->
     <div class="features-container">
-        < <div class="contact-features">
-            <!-- Wrap the entire .inner div in an anchor tag to make it clickable -->
-            <a href="contact.html" class="contact-feature-link">
-                <div class="inner">
-                    <div class="front">
-                        <img src="images/contact-w.avif" alt="Contact Us" />
-                        <h2>Contact Us</h2>
-                    </div>
-                    <div class="back">
-                        <p>
-                            Reach out to us for any inquiries or assistance. We're here to
-                            help you 24/7 with our emergency services.
-                        </p>
-                        <span class="button">Go to Contact</span>
-                    </div>
-                </div>
-            </a>
+    <div class="contact-features">
+        <div class="inner">
+            <div class="front">
+                <a href="Contactus.html">
+                    <img src="images/contact-w.avif" alt="Contact Us" />
+                    <h2>Contact Us</h2>
+                </a>
+            </div>
+            <div class="back">
+                <p>
+                    Reach out to us for any inquiries or assistance. We're here to
+                    help you 24/7 with our emergency services.
+                </p>
+                <a href="contact.html" class="button">Go to Contact</a>
+            </div>
+        </div>
     </div>
-
 
     </div>
 
@@ -629,7 +642,7 @@
 
         <!-- Copyright Section -->
         <div
-            style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
+            style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 20px; border-top: 1px solid #a0c0ff;">
             <strong>
                 <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
             </strong>
@@ -643,9 +656,25 @@
       padding: 10px 15px;
       font-size: 16px;
       cursor: pointer;
+      position: absolute;
+        right: 0;
     ">↑</button>
         </div>
     </footer>
+
+    <!-- Chatbot button -->
+    <a href="chatbot.html">
+        <div class="fixed bottom-0 right-2 chatbot-container">
+          <button class="chatbot-button group">
+            <img class="h-20" src="chatbot.gif" alt="chatbot" />
+            <span class="tooltip-text">
+              Welcome to AmbuFlow!<br />
+              How can I help You?
+            </span>
+          </button>
+        </div>
+      </a>
+
     <script src="preloader.js"></script>
 
     <!-- Add this style block in the <head> section or in your CSS file -->
@@ -698,9 +727,6 @@
         });
 
         // end
-    </script>
-    <!-- Add this script block just before the closing </body> tag -->
-    <script>
         // Back to Top Button functionality
         document.addEventListener('DOMContentLoaded', function () {
             var backToTopBtn = document.getElementById("backToTopBtn");
@@ -714,35 +740,35 @@
         });
     </script>
 
-<script>
-    window.gtranslateSettings = {
-        "default_language": "en",
-        "detect_browser_language": true,
-        "wrapper_selector": ".gtranslate_wrapper",
-        "alt_flags": {"en": "usa"}
-    }
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-<script>
-    const translateBtn = document.getElementById('translateBtn');
-    const gTranslate = document.getElementById('gTranslate');
-
-    translateBtn.addEventListener('click', function() {
-        if (gTranslate.style.display === 'none') {
-            gTranslate.style.display = 'block';
-        } else {
-            gTranslate.style.display = 'none';
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": { "en": "usa" }
         }
-    });
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    // Close the translator popup when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-            gTranslate.style.display = 'none';
-        }
-    });
-</script>
+    <script>
+        const translateBtn = document.getElementById('translateBtn');
+        const gTranslate = document.getElementById('gTranslate');
+
+        translateBtn.addEventListener('click', function () {
+            if (gTranslate.style.display === 'none') {
+                gTranslate.style.display = 'block';
+            } else {
+                gTranslate.style.display = 'none';
+            }
+        });
+
+        // Close the translator popup when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+                gTranslate.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 
