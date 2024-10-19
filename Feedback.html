@@ -280,6 +280,166 @@
       font-weight: 500;
       color: green;
     }
+
+    /* Add this new CSS for the cursor effect */
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(71, 240, 255, 0.3), rgba(0, 119, 255, 0.3));
+      transition: transform 0.1s, left 0.1s, top 0.1s;
+    }
+
+    #backToTopBtn {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #e81a1a;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #555;
+    }
+
+    .translate-btn {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .translate-btn:hover {
+      background-color: #3498db;
+    }
+
+    .g-translate-popup {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    /* Adjust the header buttons to accommodate the new translate button */
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    @media(max-width:768px) {
+      .container .buttons {
+        justify-content: center;
+        flex-direction: column;
+      }
+      .menu ul{
+                justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px 0 20px 0;
+            }
+
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .container{
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .menu{
+                width: max-content;
+                margin: auto;
+            }
+            
+        }
+
+        @media only screen and (min-width : 1024px) and (max-width:1465)
+        {
+            .container{
+                flex-direction: column;
+    gap: 2rem;
+            }
+        }
+
+    .chatbot-container {
+      position: fixed;
+      transition: right 0.3s ease;
+      bottom: 20px;
+      right: 7rem;
+      z-index: 1000;
+    }
+
+    .chatbot-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      /* Smaller padding */
+      cursor: pointer;
+      position: relative;
+      width: 50px;
+      /* Adjusted size */
+      height: 50px;
+      /* Adjusted size */
+      right: -60px;
+    }
+
+    .chatbot-button img {
+      width: 30px;
+      /* Adjusted image size */
+      height: 30px;
+      /* Adjusted image size */
+    }
+
+    .tooltip-text {
+      display: none;
+      /* Hide by default */
+      position: absolute;
+      bottom: 100%;
+      /* Position above the button */
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #333;
+      /* Background color for tooltip */
+      color: #fff;
+      /* Tooltip text color */
+      padding: 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+      /* Prevent text from wrapping */
+    }
+
+    .chatbot-button:hover .tooltip-text {
+      display: block;
+      /* Show on hover */
+    }
   </style>
 </head>
 
@@ -352,6 +512,18 @@
         </li>
       </ul>
     </nav>
+
+    <div class="buttons">
+      <div>
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
+
+          <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+              <i class="fa-solid fa-moon"></i>
+          </button>
+      </div>
+
+  </div>
 
   </div>
 
@@ -498,8 +670,231 @@
       <!-- Add close button for FAQ Popup -->
       <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
     </div>
+    <!-- Add close button for FAQ Popup -->
+    <button id="closeFaqPopup" style="margin-top: 20px;">Close</button>
+</div>
+
+<!-- Add this div for the translator popup -->
+<div id="gTranslate" class="g-translate-popup" style="display:none;">
+  <div class="gtranslate_wrapper"></div>
+</div>
+
+<a href="chatbot.html">
+  <div class="fixed bottom-0 right-2 chatbot-container">
+    <button class="chatbot-button group">
+      <img class="h-20" src="chatbot.gif" alt="chatbot" />
+      <span class="tooltip-text">
+        Welcome to AmbuFlow!<br />
+        How can I help You?
+      </span>
+    </button>
+  </div>
+</a>
+
+<script src="preloader.js"></script>
+<script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTopBtn');
+  // Show the button when scrolled down 100px from the top
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  // Scroll to top when the button is clicked
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Dark mode functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    // Add event listeners to each star label for toggling the selection
+    const stars = document.querySelectorAll('.star-rating input');
+    stars.forEach(star => {
+      star.addEventListener('change', function () {
+        // Remove the checked state from all stars
+        stars.forEach(s => {
+          const label = document.querySelector(`label[for="${s.id}"]`);
+          label.style.color = '#ddd'; // Reset color for unselected stars
+        });
+        // Highlight the selected star and all previous stars
+        const currentStarValue = this.value;
+        for (let i = 1; i <= currentStarValue; i++) {
+          const label = document.querySelector(`label[for="star${i}"]`);
+          label.style.color = '#ffdd00'; // Highlight selected stars
+        }
+      });
+    });
+
+    // Dark mode functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    const navbar = document.querySelector('.navbar'); // Select the navbar
+
+    // Reset to light mode for the Contact page
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+    // Clear the sessionStorage for theme on this page
+    sessionStorage.removeItem("theme");
+
+    toggleButton.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
+
+      // Update sessionStorage based on current mode
+      if (document.body.classList.contains('dark-mode')) {
+        sessionStorage.setItem("theme", "dark");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+      } else {
+        sessionStorage.setItem("theme", "light");
+        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+      }
+    });
+
+    // Handle form submission
+    const form = document.getElementById('feedback-box');
+    const feedbackBox = document.querySelector('.feedback-box');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Hide the feedback-box div
+      feedbackBox.style.display = 'none';
+
+      // Show the thank-you message
+      thankYouMessage.style.display = 'flex';
+
+      // Hide the form to avoid further submissions
+      form.style.display = 'none';
+
+      // Redirect to the home page after 5 seconds
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 5000);
+    });
+
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTopBtn');
+    const faqButton = document.getElementById('faqButton');
+    const faqPopup = document.getElementById('faqPopup');
+    const closeFaqPopup = document.getElementById('closeFaqPopup');
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+        faqButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+        faqButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.addEventListener('click', function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    faqButton.addEventListener('click', function () {
+      faqPopup.style.display = 'block';
+    });
+
+    closeFaqPopup.addEventListener('click', function () {
+      faqPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+
+    // Cursor effect
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    const colors = [
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c",
+      "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e",
+      "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f",
+      "#3d005e"
+    ];
+
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+        circle.x = x;
+        circle.y = y;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+
+    // Google Translate functionality
+    const translateBtn = document.getElementById('translateBtn');
+    const gTranslate = document.getElementById('gTranslate');
+
+    translateBtn.addEventListener('click', function () {
+      gTranslate.style.display = gTranslate.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+        gTranslate.style.display = 'none';
+      }
+    });
+  });
+
+  // Google Translate settings script
+  window.gtranslateSettings = {
+    "default_language": "en",
+    "detect_browser_language": true,
+    "wrapper_selector": ".gtranslate_wrapper",
+    "alt_flags": { "en": "usa" }
+  };
+
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<script>
+});
     
-    <script src="preloader.js"></script>
+    window.addEventListener('click', (event) => {
+      if (event.target === faqPopup) {
+        faqPopup.style.display = 'none';
+      }
+    });
+  </script>
     <script src="script.js"></script>
     
     <script>

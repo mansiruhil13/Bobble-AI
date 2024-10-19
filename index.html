@@ -325,7 +325,11 @@
       color: black;
       /* Text color on hover in dark mode */
     }
-
+    .dark-mode {
+      background-color: black;
+      /* Dark mode navbar */
+      /* color: white; */
+    }
     .dark-mode .main_content p {
       color: wheat;
     }
@@ -348,6 +352,146 @@
       padding: 20px;
       /* Optional: add padding for better spacing */
     }
+
+    .dark-mode .menu a {
+      color: black;
+      /* Dark mode link color */
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode .menu a.active {
+      color: white;
+      /* Dark mode link color */
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode .menu a.active:before {
+      color: white;
+      background: none;
+      /* Dark mode link color */
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: none;
+      position: fixed;
+      z-index: 1111;
+      right: 1rem;
+      bottom: 1rem;
+      /* Black border */
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      /* border: 1px solid lightgrey; */
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      /* background-color: white; */
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
+
+    @media (max-width:660px) {
+      .container {
+        padding: 0px;
+      }
+
+
+      .main_content {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .main_heading {
+        width: min-content;
+        margin: 0.5rem;
+      }
+
+      .main_heading h1 {
+        font-size: 3rem;
+      }
+
+      .main_heading h2 {
+        font-size: 3rem;
+      }
+
+      .main_content img {
+        width: auto;
+      }
+
+      .content {
+        padding: 0px;
+      }
+
+      .dark-mode .content {
+        padding: 0px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        /* 1 column */
+        grid-template-rows: repeat(auto, 1fr);
+        /* Adjust rows as needed */
+      }
+
+      ul li {
+        font-size: 0.9rem;
+      }
+
+      a {
+        font-size: 0.9rem;
+      }
+      .foot_inner{
+        display: flex;
+    color: #f3f4f6;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    left: 2.5rem;
+    flex-direction: column;
+      }
+    }
+    @media (min-width: 660px) and (max-width: 990px) {
+      .main_content{
+        flex-direction: column;
+      }
+      .main_heading {
+        margin: 10px;
+        width: 35rem;
+        align-items: center;
+      }
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+      .foot_inner{
+        flex-wrap: wrap;
+      }
+}
+@media (min-width: 990px) and (max-width: 1300px) {
+  .main_content{
+    width: inherit;
+  }
+      }
+
   </style>
 </head>
 
@@ -546,22 +690,24 @@
       <div class="faq-answer">
         <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
           the situation.</p>
+
       </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
-      <div class="faq-answer">
-        <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
-          on the provider.</p>
+      <div class="faq">
+        <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
+        <div class="faq-answer">
+          <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
+            on the provider.</p>
+        </div>
       </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">How can I request special medical equipment or personnel on the
-        ambulance?</button>
-      <div class="faq-answer">
-        <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
-          as a ventilator or a specialized doctor.</p>
+      <div class="faq">
+        <button class="faq-question">How can I request special medical equipment or personnel on the
+          ambulance?</button>
+        <div class="faq-answer">
+          <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
+            as a ventilator or a specialized doctor.</p>
+        </div>
       </div>
+
     </div>
     <div class="faq">
       <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
@@ -598,11 +744,11 @@
       </div>
     </div>
   </div>
-  </div>
 
   <!-- FAQ section ends here -->
   <footer style="margin-top: 1.5rem; color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
+    <div class="foot_inner" style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
+
 
       <!-- Quick Links Section -->
       <div>
@@ -809,6 +955,11 @@
       animateCircles();
     });
   </script>
+  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
 </body>
 
 </html>
