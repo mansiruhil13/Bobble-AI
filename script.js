@@ -9,7 +9,7 @@ function changeContent(page) {
   var links = document.querySelectorAll(".menu ul li a");
 
   // Remove "active" class from all links
-  links.forEach((link) => link.classList.remove("active"));
+  links.forEach((link) => link.classList.remove("active"));``
 
   // Add "active" class to the current page link
   var activeLink = document.getElementById(page + "-link");
@@ -21,6 +21,16 @@ function changeContent(page) {
 
   console.log(page + "-link");
 }
+
+const currentLanguage = window.gtranslateSettings.current_language;
+const ambuFlowText = document.querySelector(".main_heading h2[data-link_h2='AmbuFlow...']");
+
+if (currentLanguage === 'gu' || currentLanguage === 'hi') {
+  ambuFlowText.style.display = 'none'; // Hide text for Gujarati and Hindi
+} else {
+  ambuFlowText.style.display = 'block'; // Show text for other languages
+}
+
 
 // Function that runs when the window loads
 window.onload = function () {
