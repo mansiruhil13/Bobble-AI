@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.gallery {
+    text-align: center;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    animation: fadeIn 1s ease-in;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.grid-item {
+    position: relative; /* Make positioning relative for overlay */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px; /* Fixed height for uniformity */
+    opacity: 0; /* Start hidden for fade-in effect */
+    animation: fadeIn 1s forwards; /* Add fade-in animation */
+}
+
+.grid-item:nth-child(even) {
+    animation-delay: 0.1s; /* Stagger animations for even items */
+}
+
+.grid-item:nth-child(odd) {
+    animation-delay: 0.2s; /* Stagger animations for odd items */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%; /* Set height to 100% to fill the parent */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    display: block;
+    transition: transform 0.3s ease; /* Smooth image transition */
+}
+
+.grid-item:hover img {
+    transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.grid-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Overlay styles */
+.grid-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.grid-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
