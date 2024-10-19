@@ -29,6 +29,11 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Full viewport height */
+        margin: 0;
+        padding: 0;
       }
       header {
         background: linear-gradient(90deg, #b2d1ff, #93b6d3, #42a5f5);
@@ -49,6 +54,8 @@
         background: #10141b;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        flex: 1;
+        width: 100%; /* Ensure main content uses full width */
       }
       h2 {
         color: #1e88e5;
