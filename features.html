@@ -7,25 +7,11 @@
   <title>Features</title>
   <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="src/css/index.css" />
+  <link rel="stylesheet" href="src/css/navbar.css" />
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <!--Updated to latest version-->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-
     /* font size of button */
     .buttons .login,
     .buttons .get-started,
@@ -58,6 +44,7 @@
       /* Dark mode navbar */
       color: white;
     }
+
 
     /* more addition for dark mode theme */
 
@@ -189,6 +176,10 @@
       /* Smooth transitions */
     }
 
+    .dark-mode .content #para {
+      color: white;
+    }
+
     .dark-mode .content {
       background-color: rgba(50, 50, 50, 0.95);
       /* Match body background opacity */
@@ -264,6 +255,7 @@
     .content {
       margin: 20px;
       padding: 20px;
+      width: 95vw;
       background-color: #e6eef3;
       border-radius: 5px;
       flex-grow: 1;
@@ -359,75 +351,41 @@
       }
     }
 
-      /* Logo Animation */
-      @keyframes logoAnimation {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); /* Start from the left */
-  }
-  50% {
-    transform: translateX(10px); /* Move slightly to the right */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at original position */
-  }
-}
+    /* Logo Animation */
+    @keyframes logoAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+        /* Start from the left */
+      }
 
-footer {
-  background-color: #C4D7FF;
-  color: white;
-  text-align: center;
-  padding: 10px 0; /* Padding for the footer */
-  
-}
+      50% {
+        transform: translateX(10px);
+        /* Move slightly to the right */
+      }
 
-/* Letter Drop Animation */
-@keyframes letterDrop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(10px); /* Slight bounce */
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* End at original position */
+      }
+    }
 
-#thankYouMessage {
-  margin-top: 20px;
-  font-size: 18px;
-  color: green;
-  display: none; /* Initially hidden */
-}
-
-    .translate-btn {
-      background-color: #2980b9;
+    footer {
+      background-color: #C4D7FF;
       color: white;
-      border: none;
-      padding: 9px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
+      text-align: center;
+      padding: 10px 0;
+      /* Padding for the footer */
+
     }
 
-    .translate-btn:hover {
-      background-color: #3498db;
-    }
-
-    .g-translate-popup {
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 10px;
+    #thankYouMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      display: none;
+      /* Initially hidden */
     }
 
     .buttons {
@@ -435,66 +393,6 @@ footer {
       align-items: center;
       gap: 8px;
     }
-
-    .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      right: 7rem;
-      z-index: 1000;
-    }
-
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-      right: -60px;
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
-    ul li a:hover{
-      color: blue !important;
-    }
-    a:hover{
-      color: blue !important;
-    }
- 
   </style>
 
 </head>
@@ -564,72 +462,121 @@ footer {
 
        
 
-      </div>
-    </div>
-  </header>
+  <div class="container" id="container">
 
-  <!-- -------------------------------------------------------------------------- -->
-  <div class="content" id="main-content">
-    <h1>Features</h1>
-    <p>Here are the features of AmbuFlow:</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <i class="fas fa-ambulance feature-icon"></i>
-        <h2>Quick Emergency Response</h2>
-        <p>Immediate notifications to the nearest ambulance service.</p>
+    <div class="logo">
+      <div class="brand-name">
+        <span class="letter red" style="--letter-index: 1;">A</span>
+        <span class="letter red" style="--letter-index: 2;">m</span>
+        <span class="letter red" style="--letter-index: 3;">b</span>
+        <span class="letter red" style="--letter-index: 4;">u</span>
+        <span class="letter" style="--letter-index: 5;">F</span>
+        <span class="letter" style="--letter-index: 6;">l</span>
+        <span class="letter" style="--letter-index: 7;">o</span>
+        <span class="letter" style="--letter-index: 8;">w</span>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-map-marked-alt feature-icon"></i>
-        <h2>Real-Time Tracking</h2>
-        <p>Track ambulances in real-time for better coordination.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-comments feature-icon"></i>
-        <h2>Enhanced Communication</h2>
-        <p>Instant communication between dispatch and ambulances.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-cogs feature-icon"></i>
-        <h2>Resource Management</h2>
-        <p>Efficient allocation of resources for emergencies.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-user-friends feature-icon"></i>
-        <h2>User-Friendly Interface</h2>
-        <p>Easy-to-navigate system for users and providers.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-clock feature-icon"></i>
-        <h2>24/7 Availability</h2>
-        <p>Always available support and monitoring services.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-heartbeat feature-icon"></i>
-        <h2>Patient Health Monitoring</h2>
-        <p>Real-time monitoring of patient vitals during transport.</p>
-      </div>
-      <!-- <div class="feature-card">
+      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+    </div>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="#container" style="color: #333;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
+            <span>Features</span></a>
+        </li>
+        <li>
+          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
+            <span>Team</span></a>
+        </li>
+        <li>
+          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
+            <span>Contact</span></a>
+        </li>
+        <li>
+          <a href="feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+            <span>Feedback</span></a>
+        </li>
+        <li>
+          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
+            <span>Nearby</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- -------------------------------------------------------------------------- -->
+    <div class="content" id="main-content">
+      <h1>Features</h1>
+      <p id="para">Here are the features of AmbuFlow:</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-ambulance feature-icon"></i>
+          <h2>Quick Emergency Response</h2>
+          <p>Immediate notifications to the nearest ambulance service.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h2>Real-Time Tracking</h2>
+          <p>Track ambulances in real-time for better coordination.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-comments feature-icon"></i>
+          <h2>Enhanced Communication</h2>
+          <p>Instant communication between dispatch and ambulances.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cogs feature-icon"></i>
+          <h2>Resource Management</h2>
+          <p>Efficient allocation of resources for emergencies.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-user-friends feature-icon"></i>
+          <h2>User-Friendly Interface</h2>
+          <p>Easy-to-navigate system for users and providers.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-clock feature-icon"></i>
+          <h2>24/7 Availability</h2>
+          <p>Always available support and monitoring services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-heartbeat feature-icon"></i>
+          <h2>Patient Health Monitoring</h2>
+          <p>Real-time monitoring of patient vitals during transport.</p>
+        </div>
+        <!-- <div class="feature-card">
           <i class="fas fa-lock feature-icon"></i>
           <h2>Data Security</h2>
           <p>Ensuring the security of patient and operational data.</p>
         </div> -->
-      <div class="feature-card">
-        <i class="fas fa-phone-alt feature-icon"></i>
-        <h2>Emergency Contact Integration</h2>
-        <p>Seamless integration with emergency contact services.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-tachometer-alt feature-icon"></i>
-        <h2>Driver Performance Monitoring</h2>
-        <p>Real-time tracking of driver behavior and performance on the road.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-comments-dollar feature-icon"></i>
-        <h2>Feedback System</h2>
-        <p>Collecting feedback to improve service quality.</p>
+        <div class="feature-card">
+          <i class="fas fa-phone-alt feature-icon"></i>
+          <h2>Emergency Contact Integration</h2>
+          <p>Seamless integration with emergency contact services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tachometer-alt feature-icon"></i>
+          <h2>Driver Performance Monitoring</h2>
+          <p>Real-time tracking of driver behavior and performance on the road.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-comments-dollar feature-icon"></i>
+          <h2>Feedback System</h2>
+          <p>Collecting feedback to improve service quality.</p>
+        </div>
       </div>
     </div>
-  </div>
 
   </div>
 
@@ -691,103 +638,33 @@ footer {
     <hr>
     <!-- Copyright Section -->
     <div
-      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 20px 0;">
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
       <strong>
         <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
       </strong>
 
       <!-- Back to Top Button -->
-      <button id="backToTopBtn" style="
-        background-color: #e81a1a;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        font-size: 16px;
-        cursor: pointer;
-        position: absolute;
-        right: 0;
-      ">↑</button>
     </div>
   </footer>
+  <a href="chatbot.html">
+    <div class="fixed bottom-0 right-2 chatbot-container">
+      <button class="chatbot-button group">
+        <img class="h-20" src="chatbot.gif" alt="chatbot" />
+        <span class="tooltip-text">
+          Welcome to AmbuFlow!<br />
+          How can I help You?
+        </span>
+      </button>
+    </div>
+  </a>
+  <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
-<!-- Chatbot button -->
-<a href="chatbot.html">
-  <div class="fixed bottom-0 right-2 chatbot-container">
-    <button class="chatbot-button group">
-      <img class="h-20" src="chatbot.gif" alt="chatbot" />
-      <span class="tooltip-text">
-        Welcome to AmbuFlow!<br />
-        How can I help You?
-      </span>
-    </button>
-  </div>
-</a>
-
+  <div class="gtranslate_wrapper"></div>
   <script src="preloader.js"></script>
+  <script src="script.js">  </script>
   <script>
-    // adding code for dark mode
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.getElementById('dark-mode-toggle');
-      const darkModeButton = document.querySelector('.dark-mode-toggle');
-      const logoImage = document.querySelector('.logo img'); // Select the logo image
-      const navbar = document.querySelector('.navbar'); // Select the navbar
-
-      // Reset to light mode for the Contact page
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
-
-      // Clear the sessionStorage for theme on this page
-      sessionStorage.removeItem("theme");
-
-      toggleButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        navbar.classList.toggle('dark-mode'); // Toggle dark mode for navbar
-
-        // Update sessionStorage based on current mode
-        if (document.body.classList.contains('dark-mode')) {
-          sessionStorage.setItem("theme", "dark");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-        } else {
-          sessionStorage.setItem("theme", "light");
-          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-        }
-      });
-    });
-
-    // end
-  </script>
-  <script>
-    // Back to Top Button functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      var backToTopBtn = document.getElementById("backToTopBtn");
-
-      backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-
-  </footer>
-
-
-  <script>
-    // Accordion Functionality
-    const accordionHeader = document.querySelector('.accordion__header');
-    const accordionContent = document.querySelector('.accordion__content');
-
-    accordionHeader.addEventListener('click', function () {
-      if (accordionContent.style.display === 'block') {
-        accordionContent.style.display = 'none';
-      } else {
-        accordionContent.style.display = 'block';
-      }
-    });
 
     // Form Submission Functionality
     const form = document.getElementById('subscribeForm');
@@ -806,42 +683,6 @@ footer {
       document.getElementById('emailInput').value = '';
     });
   </script>
-
-<!-- Add this div for the translator popup -->
-<div id="gTranslate" class="g-translate-popup" style="display:none;">
-  <div class="gtranslate_wrapper"></div>
-</div>
-
-<script>
-  window.gtranslateSettings = {
-    "default_language": "en",
-    "detect_browser_language": true,
-    "wrapper_selector": ".gtranslate_wrapper",
-    "alt_flags": {"en": "usa"}
-  }
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-<script>
-  const translateBtn = document.getElementById('translateBtn');
-  const gTranslate = document.getElementById('gTranslate');
-
-  translateBtn.addEventListener('click', function() {
-    if (gTranslate.style.display === 'none') {
-      gTranslate.style.display = 'block';
-    } else {
-      gTranslate.style.display = 'none';
-    }
-  });
-
-  // Close the translator popup when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-      gTranslate.style.display = 'none';
-    }
-  });
-</script>
-
 </body>
 
 </html>
