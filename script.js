@@ -1,4 +1,101 @@
+let script = document.createElement('script');
+script.src = "https://cdn.gtranslate.net/widgets/latest/float.js"; // URL of the external script
+script.defer = true; // Ensures the script runs after parsing the HTML
+document.body.appendChild(script); // Add the script to the body
+
+window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }
+// Function to change the active class when a link is clicked
+function changeContent(page) {
+  var links = document.querySelectorAll(".menu ul li a");
+
+  // Remove "active" class from all links
+  links.forEach((link) => link.classList.remove("active"));
+
+  // Add "active" class to the current page link
+  var activeLink = document.getElementById(page + "-link");
+  if (activeLink) {
+    activeLink.classList.add("active");
+  } else {
+    console.error(`Link with id ${page + '-link'} not found`);
+  }
+
+  console.log(page + "-link");
+}
+
+// Function that runs when the window loads
+window.onload = function () {
+  // Assuming you are using the URL or some global variable to determine the page
+  var currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+  if (currentPage) {
+    changeContent(currentPage);
+  }
+
+  // Add delay to each letter drop
+  const letters = document.querySelectorAll('.letter');
+  letters.forEach((letter, index) => {
+    letter.style.animationDelay = `${index * 0.1}s`;
+  });
+};
+
+// JS for dark mode functionality
+// adding code for dark mode
+document.addEventListener("DOMContentLoaded", () => {
+  const darkModeButton = document.getElementById("dark-mode-button");
+
+  // Check sessionStorage for dark mode preference
+  const currentTheme = sessionStorage.getItem("theme");
+  if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+  } else {
+    document.body.classList.add("light-mode");
+    document.body.classList.remove("dark-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+  }
+
+  darkModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+
+    // Save preference to sessionStorage
+    if (document.body.classList.contains("dark-mode")) {
+      sessionStorage.setItem("theme", "dark");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+    } else {
+      sessionStorage.setItem("theme", "light");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+    }
+  });
+});
+
+//For Translator
+window.gtranslateSettings = {
+  "default_language": "en",
+  "detect_browser_language": true,
+  "wrapper_selector": ".gtranslate_wrapper",
+  "alt_flags": { "en": "usa" }
+}
+const translateBtn = document.getElementById('translateBtn');
+const gTranslate = document.getElementById('gTranslate');
+
+translateBtn.addEventListener('click', function () {
+  if (gTranslate.style.display === 'none') {
+    gTranslate.style.display = 'block';
+  } else {
+    gTranslate.style.display = 'none';
+  }
+});
+
+// Close the translator popup when clicking outside
+document.addEventListener('click', function (event) {
+  if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+    gTranslate.style.display = 'none';
+  }
+});
+
 // Newsletter form submission handler
+
 document
   .getElementById("newsletter-form")
   .addEventListener("submit", function (event) {
@@ -50,11 +147,6 @@ accordions.forEach((accordion, index) => {
   });
 });
 
-// Function to handle the active state of navbar items
-function changeContent(page) {
-  // Get all navigation links
-  var links = document.querySelectorAll(".menu ul li a");
-
   // Remove the active class from all links
   links.forEach((link) => link.classList.remove("active"));
 
@@ -98,7 +190,4 @@ window.onscroll = function () {
   }
 };
 
-// Scroll to top when the button is clicked
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+
