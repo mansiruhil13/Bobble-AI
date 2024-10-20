@@ -134,6 +134,26 @@ git push origin feature/your-feature-name
 ```
 
 5. **Open a Pull Request**: Go to your forked repo on GitHub and click "New Pull Request."
+
+## How to run the project:
+
+1. Go to Backend folder and run command:
+```bash
+npm install
+```
+
+2. Make mongodb database.
+
+3. Go to server.js file and give your mongodb connection URL.
+
+4. Run command:
+```bash
+node server.js
+```
+
+5. Split terminal and go to index.html and open it with live server.
+
+6. make sure that both Backend and index.html file run togethere.
    
 ## 🛠 Contribution Guidelines:
 
