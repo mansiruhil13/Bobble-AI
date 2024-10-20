@@ -74,6 +74,79 @@
       color: #555;
     }
 
+    .overlay {
+            display: none; /* Hidden by default */
+            position: fixed; /* Cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+            z-index: 5; /* Overlay on top of everything */
+        }
+
+        .overlay.active {
+            display: block; /* Show when active */
+        }
+
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the popup */
+            width: 500px; /* Width of the popup */
+            max-width: 90%; /* Responsive max width */
+            background-color: #e7f3fe; /* Background color */
+            padding: 30px; /* Padding for content */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+            z-index: 10; /* On top of the overlay */
+            text-align: center;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 80%; /* Prevent it from getting too tall */
+        }
+
+        .popup.active {
+            display: block; /* Show when active */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px; /* Size of close button */
+            height: 30px; /* Size of close button */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn::before,
+        .close-btn::after {
+            content: '';
+            position: absolute;
+            width: 3px; /* Thicker lines */
+            height: 25px;
+            background-color: #333;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+
+        .close-btn::before {
+            transform: rotate(45deg);
+        }
+
+        .close-btn::after {
+            transform: rotate(-45deg);
+        }
+
+        .close-btn:hover::before,
+        .close-btn:hover::after {
+            background-color: red;
+        }
+
     .sticky {
       display: flex;
       position: fixed;
@@ -478,6 +551,98 @@
           critical information and analytics.
         </p>
       </div>
+      <div class="feature" id="taglineCard">
+        <img src="images/First-aid.jpg" alt="First Aid Image">
+        <h2>Emergency Steps</h2>
+        <p>Empowers bystanders to act swiftly in emergencies, providing aid and saving lives until help arrives.</p>
+      </div>
+    
+      <div class="overlay" id="overlay"></div>
+    
+      <div class="popup" id="popupCard">
+        <div class="close-btn" id="closeBtn"></div>
+        <h2>Severe Bleeding</h2>
+          <ol>
+            <li>Apply Direct Pressure: Use a clean cloth or your hand to press firmly on the wound.</li>
+            <li>Elevate the Wounded Area: If possible, raise the injured limb above heart level to slow bleeding.</li>
+            <li>Use a Tourniquet (if trained): Apply it above the wound if bleeding is uncontrollable.</li>
+            <li>Avoid Removing Objects: If something is embedded in the wound, leave it there and apply pressure around it.</li>
+            <li>Monitor for Shock: Keep the person calm and warm while waiting for help.</li>
+          </ol>
+
+          <h2>Cardiac Arrest (CPR)</h2>
+          <ol>
+            <li>Ensure Safety Before Approaching: Make sure the environment is safe.</li>
+            <li>Perform Chest Compressions: 100-120 per minute until help arrives.</li>
+            <li>Use an AED (if available): Follow the device's instructions.</li>
+            <li>Minimize Interruptions: Continue compressions as consistently as possible.</li>
+            <li>Provide Rescue Breaths (if trained): 2 breaths after every 30 compressions.</li>
+          </ol>
+
+          <h2>Choking</h2>
+          <ol>
+            <li>Encourage Coughing: If the person can breathe slightly, let them try to cough it out.</li>
+            <li>Use Back Blows: Deliver 5 firm blows between the shoulder blades with the heel of your hand.</li>
+            <li>Perform Abdominal Thrusts: Wrap arms around the waist and perform quick, upward thrusts.</li>
+            <li>Repeat Steps Until Clear: Alternate between back blows and abdominal thrusts if needed.</li>
+            <li>Call Emergency Services: If the person loses consciousness, start CPR.</li>
+          </ol>
+
+          <h2>Burns</h2>
+          <ol>
+            <li>Cool the Burn: Rinse the area under cool running water for 10-20 minutes.</li>
+            <li>Remove Tight Items: Take off rings, bracelets, or clothing near the burn (unless stuck).</li>
+            <li>Cover the Burn: Use a clean, non-stick dressing to cover the area.</li>
+            <li>Avoid Breaking Blisters: Let blisters heal on their own.</li>
+            <li>Seek Medical Help: Call for emergency services if the burn is severe.</li>
+          </ol>
+
+          <h2>Seizures</h2>
+          <ol>
+            <li>Protect the Person: Remove sharp objects around them.</li>
+            <li>Support the Head: Place something soft under the head.</li>
+            <li>Turn to the Side: After the seizure stops, roll them onto their side to prevent choking.</li>
+            <li>Time the Seizure: Call for help if it lasts more than 5 minutes.</li>
+            <li>Do Not Hold Them Down: Allow the seizure to run its course naturally.</li>
+          </ol>
+
+          <h2>Heatstroke</h2>
+          <ol>
+            <li>Move to a Cooler Place: Get the person into the shade or an air-conditioned area.</li>
+            <li>Remove Excess Clothing: Help them cool down by removing unnecessary layers.</li>
+            <li>Cool the Body: Use cold compresses or a cool bath if available.</li>
+            <li>Rehydrate: Give water or electrolyte drinks if the person is conscious.</li>
+            <li>Call for Help: Seek medical attention immediately if symptoms worsen.</li>
+          </ol>
+
+        
+      </div> 
+    
+      <script>
+        // JavaScript for handling popup behavior
+        const taglineCard = document.getElementById('taglineCard');
+        const popupCard = document.getElementById('popupCard');
+        const closeBtn = document.getElementById('closeBtn');
+        const overlay = document.getElementById('overlay');
+
+        // Open the popup and lock scrolling
+        taglineCard.addEventListener('click', () => {
+            popupCard.classList.add('active'); // Show popup
+            overlay.classList.add('active'); // Show overlay
+            document.body.classList.add('locked'); // Prevent body scrolling
+        });
+
+        // Close the popup and unlock scrolling
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', closePopup);
+
+        function closePopup() {
+            popupCard.classList.remove('active'); // Hide popup
+            overlay.classList.remove('active'); // Hide overlay
+            document.body.classList.remove('locked'); // Enable body scrolling
+        }
+    </script>
+
 
       <!-- Team Section in Full Row -->
       <div class="team-feature">
