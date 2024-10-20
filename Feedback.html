@@ -21,42 +21,36 @@
   <style>
     body {
       background-color: white;
+      transition: background-color 0.3s ease;
     }
 
-    /* font size of button */
+    /* Font size of button */
     .buttons .login,
     .buttons .get-started,
     .dark-mode-toggle {
       font-size: 18px;
-      /* Increase font size */
       padding: 10px 15px;
-      /* Adjust padding for better appearance */
     }
 
-    /* more addition for dark mode theme */
-    .dark-mode .logo img {
-      filter: brightness(0) invert(1);
-      /* Inverts the color to make it white */
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #333;
+      color: #f1f1f1;
     }
 
-    /* adding dark mode for contact info */
-    .content {
-      transition: background-color 0.3s, color 0.3s;
-      /* Smooth transitions */
+    .dark-mode h3,
+    .dark-mode h1 {
+      color: #f1f1f1;
     }
 
-    .dark-mode h3 {
-      color: wheat;
+    .dark-mode footer {
+      background-color: #111;
     }
 
-    .dark-mode .content {
-      background-color: rgba(50, 50, 50, 0.95);
-      /* Match body background opacity */
-      /* padding: 20px; */
-      /* Optional: add padding for better spacing */
+    .dark-mode .feedback-box {
+      background-color: #444;
     }
 
-    /* end */
     footer {
       background-color: #C4D7FF;
       color: white;
@@ -70,24 +64,58 @@
     .content {
       margin: 2rem 3rem;
       padding: 4rem 1rem;
-      /* width: 90vw; */
       background-color: #f7f5f5;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       text-align: center;
       color: blue;
+      transition: color 0.3s ease;
     }
 
     h3 {
       text-align: center;
       color: #2c3e50;
       margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;  /* Increased padding for better visibility */
+      font-size: 18px;   /* Enlarged the text size */
+    }
+    
+    footer .social-icon {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 30px;   /* Increased icon size */
+      color: #fff;
+      transition: transform 0.3s ease; /* Added smooth transition for hover */
+    }
+    
+    footer .social-icon:hover {
+      transform: scale(1.3); /* Scale up the icon on hover */
+      color: #f5a623; /* Optional: Change icon color on hover */
     }
 
     .star-rating {
@@ -99,28 +127,24 @@
 
     .star-rating input {
       display: none;
-      /* Hide radio inputs */
     }
 
     .star-rating label {
       font-size: 3.5rem;
-      /* Increased size for better visibility */
       color: #ddd;
       cursor: pointer;
-      transition: color 0.2s;
+      transition: color 0.2s, transform 0.3s ease;
     }
 
-    /* Color the stars based on the selected rating */
     .star-rating input:checked~label {
       color: #ffdd00;
-      /* Color for selected stars */
+      transform: scale(1.2);
     }
 
-    /* Color on hover */
     .star-rating label:hover,
     .star-rating label:hover~label {
       color: #ffdd00;
-      /* Color on hover */
+      transform: scale(1.1);
     }
 
     button {
@@ -130,72 +154,55 @@
       border: none;
       cursor: pointer;
       font-size: 16px;
-      transition: background-color 0.3s;
-      /* Smooth transition */
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #e14a22;
+      transform: scale(1.05);
     }
 
     textarea {
       width: 100%;
-      /* Full width for better usability */
       max-width: 500px;
-      /* Limiting max width */
       padding: 10px;
       margin-top: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      transition: border-color 0.3s;
     }
 
-    /* Added the hover animation on the footer social icons */
+    textarea:focus {
+      border-color: #ff5733;
+      outline: none;
+    }
+
+    /* Social icons hover animation */
     .social-icon {
       transition: transform 0.3s ease;
-      /* Smooth transition effect */
     }
 
     .social-icon:hover {
       transform: scale(1.3);
-      /* Scale the element to 1.3 times its size */
     }
 
     .fa-facebook:hover {
       color: blue;
-      /* Icon color change to blue on hover */
     }
 
     .fa-x-twitter:hover {
       color: black;
-      /* Icon color change to black on hover */
     }
 
     .fa-instagram:hover {
       color: orangered;
-      /* Icon color change to orangered on hover */
     }
 
     .fa-linkedin-in:hover {
       color: rgb(16, 13, 195);
-      /* Icon color change to rgb(16, 13, 195) on hover */
     }
 
-    @keyframes logoAnimation {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        /* Start from the left */
-      }
-
-      50% {
-        transform: translateX(10px);
-        /* Move slightly to the right */
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* End at original position */
-      }
-    }
-
-    /* feedback form  */
+    /* Feedback form */
     .feedback-box {
       border: 1px solid #939aa1;
       width: 40%;
@@ -203,18 +210,29 @@
       min-height: 350px;
       border-radius: 15px;
       background-color: #edf6ff;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     .feed-btn {
       text-align: center;
       margin-top: 2rem;
       margin-bottom: 1rem;
-
       font-weight: 600;
     }
 
@@ -236,24 +254,40 @@
       display: none;
       justify-content: center;
       align-items: center;
-
       border: 1px solid #939aa1;
       width: 40%;
       min-width: 400px;
       min-height: 350px;
       border-radius: 15px;
       background-color: #edf6ff;
-
       font-size: 2rem;
       font-weight: 500;
       color: green;
+      animation: popIn 0.8s ease-out;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Smooth scroll for navigation */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- pre loader -->
+  <!-- Preloader -->
   <div id="preloader">
     <div class="wrapper">
       <div class="box-wrap">
@@ -286,112 +320,83 @@
         <li>
           <a href="#container" style="color: #333;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
+              <path d="M6.34314 11.5858L12 5.92894L17.6569 11.5858M12 19L12 6" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-          </a>
-        </li>
-        <li>
-          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
-            <span>Features</span>
-          </a>
-        </li>
-        <li>
-          <a href="aboutus.html" id="about-link" class="menu_links" data-link="About Us">
-            <span>About Us</span>
-          </a>
-        </li>
-        <li>
-          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-            <span>Contact</span>
-          </a>
-        </li>
-        <li>
-          <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
-            <span>Feedback</span>
+            <span class="nav-text">Home</span>
           </a>
         </li>
       </ul>
     </nav>
-    <div class="content">
-      <h1>Feedback</h1>
-      <div class="feedback-box">
-        <h3>Please rate your experience:</h3>
-        <form id="feedback-box">
-          <div class="star-rating">
-            <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars" />
-            <label for="star5" title="5 stars">★</label>
-            <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars" />
-            <label for="star4" title="4 stars">★</label>
-            <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars" />
-            <label for="star3" title="3 stars">★</label>
-            <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars" />
-            <label for="star2" title="2 stars">★</label>
-            <input type="radio" id="star1" name="rating" value="1" aria-label="1 star" />
-            <label for="star1" title="1 star">★</label>
-          </div>
+  </div>
 
-          <h3>Your Comments:</h3>
-          <textarea class="feed-msg" rows="5" placeholder="Share your feedback..." required></textarea>
-          <div class="feed-btn">
-            <button type="submit">Submit Feedback</button>
-          </div>
-        </form>
-      </div>
-      <div id="thank-you-message">
-        Thank you for your feedback!
-      </div>
+  <div class="content">
+    <h1>We Value Your Feedback!</h1>
+    <h3>Please let us know how we can improve.</h3>
+
+    <div class="feedback-box">
+      <form id="feedback-box">
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars" />
+          <label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars" />
+          <label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars" />
+          <label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars" />
+          <label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1" aria-label="1 star" />
+          <label for="star1">&#9733;</label>
+        </div>
+        <div class="feed-msg">
+          <textarea placeholder="Additional comments..." rows="4"></textarea>
+        </div>
+        <div class="feed-btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
+    <div id="thank-you-message">Thank you for your feedback!</div>
   </div>
 
   <footer>
     <div>
-      <h3>Connect with us!</h3>
-      <div>
-        <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-      </div>
+      <a href="https://www.facebook.com/ambuflow" target="_blank" class="social-icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://twitter.com/ambuflow" target="_blank" class="social-icon">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/ambuflow" target="_blank" class="social-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/ambuflow" target="_blank" class="social-icon">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
     </div>
-    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
   </footer>
 
   <script>
-    // Preloader hide on load
+    // Preloader function to hide the loader once the page is fully loaded
     window.onload = function () {
       document.getElementById('preloader').style.display = 'none';
     };
 
-    // Feedback form submission
-    document.getElementById('feedback-box').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the form from actually submitting
+    // Feedback form submission handler
+    document.getElementById('feedback-box').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-      // Hide the feedback box and show the thank you message
+      // Hide the feedback form
       document.querySelector('.feedback-box').style.display = 'none';
-      document.getElementById('thank-you-message').style.display = 'flex'; // Show the message
+
+      // Show the thank-you message
+      document.getElementById('thank-you-message').style.display = 'flex';
     });
 
-    // Toggle dark mode functionality
-    const toggleDarkMode = () => {
+    // Dark mode toggle
+    const toggleSwitch = document.querySelector('.dark-mode-toggle');
+    toggleSwitch.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-    };
-
-    // Add event listener to a dark mode toggle button (if implemented)
-    document.querySelector('.dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    });
   </script>
 </body>
 
