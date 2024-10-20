@@ -50,6 +50,49 @@
             opacity: 1; /* Fully visible */
         }
     }
+    /* Glowing text */
+h1, h2 {
+    font-size: 48px; /* Adjust as needed */
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+                 0 0 30px rgba(255, 255, 255, 0.7), 
+                 0 0 40px rgba(255, 255, 255, 0.9);
+  }
+/* Glowing button */
+button {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+  }
+/* Lighting background */
+body {
+    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+    animation: lightingEffect 10s infinite alternate;
+  }
+  
+  @keyframes lightingEffect {
+    0% {
+      background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+    }
+    50% {
+      background: radial-gradient(circle, rgba(255,255,255,0.5), rgba(0,0,0,0.8));
+    }
+    100% {
+      background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(0,0,0,0.8));
+    }
+  }
+      
 
     @keyframes bounceOut {
         0% {
