@@ -157,7 +157,36 @@ accordions.forEach((accordion, index) => {
   });
 });
 
+  // Remove the active class from all links
+  links.forEach((link) => link.classList.remove("active"));
 
+  // Add the active class to the clicked link
+  document.getElementById(page + "-link").classList.add("active");
+}
+
+// Make "Home" the default active page on load
+window.onload = function () {
+  document.getElementById("home-link").classList.add("active");
+};
+
+// JS for dark mode functionality
+// Get the dark mode button element
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+
+  const darkModeBtn = document.getElementById('dark-mode-button');
+  const icon = darkModeBtn.querySelector('i');
+
+  if (document.body.classList.contains('dark-mode')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+}
+
+document.getElementById('dark-mode-button').addEventListener('click', toggleDarkMode);
 
 // Back to top button functionality
 const backToTopButton = document.getElementById('back-to-top');
