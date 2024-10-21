@@ -52,8 +52,8 @@ nav {
 .buttons .login,
 .buttons .get-started {
     margin-left: 10px; /* Spacing between buttons */
-    padding: 8px 16px; /* Padding for buttons */
-    border-radius: 5px; /* Rounded corners */
+    padding: 10px 16px; /* Padding for buttons */
+    border-radius: 6px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
     color: white; /* Button text color */
     background-color: #007bff; /* Button background color */
