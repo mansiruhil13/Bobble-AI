@@ -35,7 +35,7 @@
 ### This project is now OFFICIALLY accepted for
 
 <div align="center">
-  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
 </div>
 
 <div align="center">
@@ -207,7 +207,7 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 
 ## 👥 Team
 
-| ![Mansi Ruhil](https://avatars.githubusercontent.com/u/157950124?v=4&s=80) |
+| <img title="Mansi Ruhil" src="https://avatars.githubusercontent.com/u/157950124?v=4&" alt="Mansi Ruhil" width="75"/> |
 |:--:|
 | **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
 | [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |
