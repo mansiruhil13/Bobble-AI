@@ -25,7 +25,28 @@
             /* Adjust padding for better appearance */
         }
 
-        /* more addition for dark mode theme */
+        /* dark mode toggle button styling */
+        body {
+            background-color: white;
+            /* Light mode background */
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+ 
+        .navbar {
+          background-color:#C4D7FF;
+
+            /* Light mode navbar */
+            color:  black;
+            padding:  10px;
+
+        }
+ 
+        .navbar.dark-mode {
+            background-color: black;
+            /* Dark mode navbar */
+            color: white;
+        }
 
         .dark-mode .logo img {
             filter: brightness(0) invert(1);
@@ -38,8 +59,38 @@
             /* Change logo color in dark mode */
         }
 
-        .dark-mode {
-            background-color: rgba(50, 50, 50, 0.95);
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color:#0344f6;
+            /* Light mode link color */
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: blue;
+            /* Blue background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        .dark-mode .menu a {
+            color: white;
+            /* Dark mode link color */
+            border: 1px solid lightgrey;
+            /* Light grey border in dark mode */
+        }
+
             /* Slightly gray background with high opacity */
         }
 
@@ -50,7 +101,48 @@
             /* Black text on hover in dark mode */
         }
 
-        /* end */
+        .light-dark-btn {
+            background-color: transparent;
+            border: 1px solid black;
+            /* Black border */
+            cursor: pointer;
+            color: black;
+            border-radius: 50%;
+            padding: 10px 12px;
+            justify-content: center;
+            box-shadow: 0 0 5px rgb(0, 0, 0) ;
+            display: flex;
+            font-size: 15px;
+            /* Default button color */
+        }
+
+        .light-dark-btn:hover {
+            color: blue;
+            /* Change color on hover */
+        }
+     
+        
+    
+        .dark-mode .light-dark-btn {
+            color: white;
+            /* Button color in dark mode */
+            border: 1px solid lightgrey;
+            /* Light grey border */
+        }
+
+        .dark-mode .light-dark-btn:hover {
+            background-color: white;
+            /* Background on hover in dark mode */
+            color: black;
+            /* Text color on hover in dark mode */
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+
         /* adding dark mode for contact info */
         .content {
             transition: background-color 0.3s, color 0.3s;
@@ -65,7 +157,27 @@
         }
 
         /* end */
-        .content {
+
+
+
+        .menu ul li a {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu ul li a.active {
+            color: white;
+            background-color: #000;
+        }
+        
+
+        .menu ul li a:hover {
+            background-color: #000;
+            color: blue;
+        }
+
+
             margin: 20px;
             padding: 20px;
             background-color: #fff;
