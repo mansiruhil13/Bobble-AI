@@ -18,6 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
   </head>
   <body class="bg-gradient-to-r from-blue-400 to-indigo-300 flex items-center justify-center min-h-screen">
@@ -67,6 +68,11 @@
             placeholder="Type your prompt here..."
             aria-label="Message input"
           />
+          <div id="microphone-animation" class="hidden">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          </div>
           <button
             class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
             id="inputGroupFileAddon"
@@ -87,6 +93,7 @@
             </svg>
           </button>
           <input type="file" id="image-input" accept="image/*" class="hidden" />
+          <button id="voiceBtn" class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition"><i class="fa fa-microphone" style="font-size:24px"></i></button>
           <button id="generate-btn" class="btn btn-primary">Send</button>
         </div>
       </div>
@@ -128,6 +135,44 @@
       float: left; 
       clear: both;
     }
+      
+    #microphone-animation {
+      display: none; /* Hide initially */
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px; /* Adjust as needed */
+    }
+
+    .dot {
+      height: 5px; /* Size of the dots */
+      width: 5px;
+      margin: 0 3px; /* Space between dots */
+      background-color: #007bff; /* Color of the dots */
+      border-radius: 50%; /* Make it circular */
+      animation: bounce 0.6s infinite alternate; /* Animation */
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px); /* Distance to bounce */
+      }
+    }
+
     </style>
 
   <script type="importmap">
@@ -386,6 +431,33 @@
       loader.style.display = "none";
     });
   </script>
+    <script>
+    const voiceBtn = document.getElementById('voiceBtn');
+    const promptInput = document.getElementById('prompt-input');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US'; // Change this to your preferred language if needed
+    recognition.interimResults = false;
+    // When speech recognition gives a result
+    recognition.addEventListener('result', (event) => {
+        const transcript = event.results[0][0].transcript; // Get the transcript of what was said
+        promptInput.value += transcript; // Append the transcript to the input field
+    });
+    // Show microphone animation when recognition starts
+    voiceBtn.addEventListener('click', () => {
+        document.getElementById('microphone-animation').style.display = 'flex'; // Show dots
+        recognition.start(); // Start voice recognition
+    });
+
+    // Hide microphone animation when recognition ends
+    recognition.addEventListener('end', () => {
+        document.getElementById('microphone-animation').style.display = 'none'; // Hide dots
+    });
+
+    recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error); // Log any errors
+    });
+</script>
 </body>
 
 </html>
