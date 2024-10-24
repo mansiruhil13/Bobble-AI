@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AmbuFlow</title>
 
-    <title>Site Map - AmbuFlow</title>
-    <link rel="stylesheet" href="src/css/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <!--Updated to latest version-->
+  <link rel="stylesheet" href="src/css/indexmain.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!--Updated to latest version-->
 
     <link rel="stylesheet" href="src/css/index.css" />
     <link
@@ -103,70 +98,70 @@
     text-decoration: none;
 }
 a:hover {
-    color:#c66600; 
-    text-decoration:none; 
-    cursor:pointer;  
+  color:#c66600; 
+  text-decoration:none; 
+  cursor:pointer;  
 }
-      /* Buttons */
-      .btn {
-        display: inline-block;
-        background-color: #1e88e5;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 25px;
-        transition: 0.3s;
-      }
-      .btn:hover {
-        background-color: #42a5f5;
-        transform: scale(1.05);
-      }
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: #1e88e5;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #42a5f5;
+      transform: scale(1.05);
+    }
 
-      /* Hover effect */
-      main:hover {
-        transition: 0.5s;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-      }
+    /* Hover effect */
+    main:hover {
+      transition: 0.5s;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
 
-      /* Futuristic glow effect for text */
-      h1,
+    /* Futuristic glow effect for text */
+    h1,
+    h2 {
+      text-shadow: 0 0 10px rgba(30, 136, 229, 0.8),
+        0 0 20px rgba(66, 165, 245, 0.5);
+    }
+
+    /* Futuristic neon glow for sections */
+    main {
+      border: 2px solid rgba(66, 102, 245, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 3rem;
+      }
       h2 {
-        text-shadow: 0 0 10px rgba(30, 136, 229, 0.8),
-          0 0 20px rgba(66, 165, 245, 0.5);
+        font-size: 2rem;
       }
+    }
 
-      /* Futuristic neon glow for sections */
-      main {
-        border: 2px solid rgba(66, 102, 245, 0.2);
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5rem;
       }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 3rem;
-        }
-        h2 {
-          font-size: 2rem;
-        }
+      h2 {
+        font-size: 1.8rem;
       }
-
-      @media (max-width: 480px) {
-        header h1 {
-          font-size: 2.5rem;
-        }
-        h2 {
-          font-size: 1.8rem;
-        }
-      }
-      footer {
-        background-color: #0d47a1;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
+    }
+    footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
 
       main ul li:hover{
         transform: scale(1.01) translateX(25px);
