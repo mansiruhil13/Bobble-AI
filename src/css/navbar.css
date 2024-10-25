@@ -314,6 +314,20 @@ body {
     color: white;
 }
 
+.button{
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    border-radius: .5em;
+    color: orange;
+}
+
+.button:hover{
+    background-color: #ea9700;
+    color: #161616;
+    transition: 100ms ease-in-out;
+}
+
 .chatbot-container {
     position: fixed;
     transition: right 0.3s ease;
