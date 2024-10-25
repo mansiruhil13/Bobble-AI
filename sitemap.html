@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <head>
     <meta charset="UTF-8">
@@ -25,6 +21,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <link rel="stylesheet" href="sitemap.css">
     <style>
       body {
         font-family: "Roboto", sans-serif;
@@ -169,10 +167,15 @@ a:hover {
         bottom: 0;
         width: 100%;
       }
+
+      main ul li:hover{
+        transform: scale(1.01) translateX(25px);
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <body>
-    <header>
+    <header style="display: flex; justify-content: center; align-items: center; height: 75px;">
         <div class="container">
           
           <div class="logo">
@@ -183,56 +186,56 @@ a:hover {
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
     
           </div>
-          <nav class="menu">
-            <ul>
-              <li>
-                <a href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
-              </li>
-              <li>
-                <a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
-              </li>
-              <li>
-                <a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
-              </li>
-              <li>
-                <a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
-              </li>
-              <li>
-                <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a>
-              </li>
-            </ul>
+          <nav style="height: 2.2rem;" class="menu">
+            <div class="outer-options"> 
+              <div class="options">
+                <a style="font-size: 1.3rem;" href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
+              </div>
+              <div class="options">
+                <a style="font-size: 1.3rem;" href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
+              </div>
+              <div class="options">
+                <a style="font-size: 1.3rem;" href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
+              </div>
+              <div class="options">
+                <a style="font-size: 1.3rem;" href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
+              </div>
+              <div class="options">
+                <a style="font-size: 1.3rem;" href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a>
+              </div>
+            </div>   
           </nav>
           <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
+            <div><a href="login.html" class="login">Log in</a></div>
+            <div><a href="up.html" class="get-started">Get started</a></div>
           </div>
         </div>
-        <h1>Site Map AmbuFlow</h1>
+        
       </header>
 
-    <main>
+    <main style="margin-top: 50px; margin-bottom: 50px; background-color: #b2b2b2;">
+      <h1 style="place-self: center; color: white; text-shadow: none; font-size: 2.4rem; margin-top: -15px; margin-bottom: 50px;">Site Map AmbuFlow</h1>
         <ul>
-            <li><a href="homepage.html" 
-                >Home</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="homepage.html" >Home</a>
             </li>
-            <li><a href="about.html">About Us</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="about.html">About Us</a>
             </li>
-            <li><a href="features.html">Features</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="features.html">Features</a>
             </li>
-            <li><a href="team.html">Team</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="team.html">Team</a>
             </li>
-            <li><a href="contact.html">Contact</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="contact.html">Contact</a>
             </li>
-            <li><a href="Feedback.html">Feedback</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="Feedback.html">Feedback</a>
             </li>
-            <li><a href="sitemap.html">Sitemap</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="sitemap.html">Sitemap</a>
             </li>
-            <li><a href="login.html">Log In</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="login.html">Log In</a>
             </li>
-            <li><a href="up.html">Get Started</a>
+            <li><a style="font-weight: 500; color: #10141b;" href="up.html">Get Started</a>
             </li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a style="font-weight: 500; color: #10141b;" href="privacy.html">Privacy Policy</a></li>
+            <li><a style="font-weight: 500; color: #10141b;" href="terms.html">Terms of Service</a></li>
         </ul>
     </main>
 

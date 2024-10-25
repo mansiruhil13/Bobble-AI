@@ -1,7 +1,7 @@
 ---
 name: Pull_request_TEMPLATE.yml
 about: use this template for creation of pull requests
-title: ''
+title: '[FIX/Feat] '
 labels: ''
 assignees: ''
 
@@ -14,7 +14,10 @@ name: Pull Request Template
 ## Description
 <!-- Please include a summary of the changes and the issue addressed by this pull request. -->
 
-Fixes # (issue)
+- Fixes # (issue)
+
+## Screenshots (if applicable)
+<!-- Please include screenshots of any visual changes if applicable. -->
 
 ## Type of Change
 <!-- Please check the options that apply: -->
@@ -32,8 +35,6 @@ Fixes # (issue)
 - [ ] New and existing unit tests pass locally with my changes.
 - [ ] Any dependent changes have been merged and published in downstream modules.
 
-## Screenshots (if applicable)
-<!-- Please include screenshots of any visual changes if applicable. -->
 
 ## Additional Information
 <!-- Add any other context or information about the pull request here. -->
