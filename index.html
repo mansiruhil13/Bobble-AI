@@ -143,9 +143,13 @@
       /* Icon color change to orangered on hover */
     }
 
-    .fa-linkedin-in:hover {
-      color: rgb(16, 13, 195);
+    .fa-linkedin:hover {
+      color: darkblue;
       /* Icon color change to rgb(16, 13, 195) on hover */
+    }
+
+    .fa-pinterest:hover{
+      color: red;
     }
 
     .feature p {
@@ -351,6 +355,78 @@
       padding: 20px;
       /* Optional: add padding for better spacing */
     }
+
+    .search-box {
+          display: flex;
+          align-items: center; /* Center vertically */
+          gap: 3px; /* Space between input and button */
+          max-width: 400px; /* Optional: Set a max-width for the container */
+          margin: 0 auto; /* Optional: Center the search box container */
+        }
+    .search-box input {
+          width: 70%;
+          padding: 10px 15px;
+          border: 2px solid #007BFF; 
+          margin-bottom: 25px;
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          outline: none;
+          transition: 0.3s; 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          font-size: 16px;
+          color: #333;
+        }
+        .search-box input:focus {
+          border-color: #0056b3; /* Darker border color on focus */
+          box-shadow: 0 4px 12px rgba(0, 91, 187, 0.3); /* Slightly darker shadow */
+        }
+        .search-box input::placeholder {
+          color: #999;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          background: linear-gradient(135deg, #007BFF, #0056b3); 
+          color: white;
+          border: none;
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          margin-bottom: 25px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: bold;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .btn:hover {
+          background: linear-gradient(135deg, #0056b3, #004080); 
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+          transform: scale(1.05); 
+        }
+
+        .btn:active {
+          background: linear-gradient(135deg, #004080, #003366);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+          transform: scale(0.98); 
+        }
+
+        .footer-column h2{
+          margin-bottom: 20px;
+        }
+
+        .footer-column .social-icons a{
+          border-radius: 50%;
+        }
+
+        .use{
+          text-align: center;
+        }
+
+       .l3{
+        margin-right: 50px;
+       }
+    
   </style>
 </head>
 
@@ -611,7 +687,6 @@
   <!-- footer start here -->
   <footer class="fot">
 
-
     <div class="l1">
       <h2>About</h2>
       <p>AmbuFlow is ambulance tracking site which helps you to find the nearest hospitals and get access to nearest
@@ -620,13 +695,13 @@
 
 
     <div class="l2">
-      <div>
-        <h2 style="margin-left: 1vw;">Usefull link</h2>
+      <div class="use">
+        <h2>Usefull link</h2>
         <p>Home</p>
-        <p style="margin-left: 1.3vw;">Features</p>
+        <p>Features</p>
         <p>Team</p>
-        <p style="margin-left: 3.5vw;">Privacy Policy</p>
-        <p style="margin-left: 4.5vw;">Terms of Service</p>
+        <p>Privacy Policy</p>
+        <p>Terms of Service</p>
       </div>
       <div class="l21">
         <h2>Help Desk</h2>
@@ -647,7 +722,6 @@
           <button class="btn" type="submit">Submit</button>
         </div>
       </form>
-
 
       <!-- Child div for 'Follow Us' -->
       <div class="footer-column">
