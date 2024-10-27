@@ -348,9 +348,9 @@
       text-align: center;
       margin-top: 2rem;
       margin-bottom: 1rem;
-
       font-weight: 600;
-    }
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
 
     .feed-btn:hover {
       transform: scale(1.03);
@@ -517,10 +517,14 @@
         <!-- Contact Information Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
           <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
-          </p>
+          <p style="color: #333; margin-bottom: 10px;font-size:0.8rem";>
+            Email: 
+            <a href="mailto:emergency@ambulanceservice.in" style="color: #3173f8;">emergency@ambulanceservice.in</a>
+        </p>
+        <p style="color: #333;">
+            Phone: 
+            <a href="tel:+91-911-1234567" style="color: #333; text-decoration: none; transition: color 0.3s;">+91-911-1234567</a>
+        </p>
         </div>
 
         <!-- Modified the looks of the social icons -->
@@ -540,8 +544,8 @@
           </div>
 
           <h3>Your Comments:</h3>
-          <textarea class="feed-msg" rows="5" placeholder="Share your feedback..." required></textarea>
-          <div class="feed-btn">
+          <textarea class="feed-msg" rows="5" style="width:500px; margin:10px;" placeholder="Share your feedback..." required></textarea>
+            <div class="feed-btn">
             <button type="submit">Submit Feedback</button>
           </div>
         </form>
