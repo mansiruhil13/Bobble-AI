@@ -187,6 +187,7 @@
                 /* End at original position */
             }
         }
+
         .map {
             width: 860px;
             height: 400px;
@@ -257,7 +258,7 @@
                         <span>Contact</span></a>
                 </li>
                 <li>
-                    <a href="feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+                    <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
                         <span>Feedback</span></a>
                 </li>
                 <li>
@@ -351,16 +352,49 @@
                 </div>
 
                 <!-- Newsletter Subscription -->
+                <!-- Newsletter Subscription -->
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our
-                        Newsletter</h3>
-                    <form action="#">
-                        <input type="email" placeholder="Your Email"
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+                    <form id="newsletter-form" action="#">
+                        <input type="email" id="newsletter-email" placeholder="Your Email"
                             style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
                         <button type="submit"
-                            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+                            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">
+                            Subscribe
+                        </button>
                     </form>
+                    <div id="subscription-notification" style="display:none; background-color: rgba(212, 237, 218, 0.8); color: #155724; padding: 10px; border-radius: 5px; position: absolute; top: 10px; left: 600px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+                        Thank you for subscribing to our newsletter!
+                    </div>
+                    
                 </div>
+                <script>
+                    document.querySelector("form").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Prevent form from submitting immediately
+                
+                        // Improved Email validation regex to ensure proper domain like "gmail.com"
+                        const emailInput = document.querySelector("input[type='email']");
+                        const emailRegex = /^[^\s@]+@gmail\.com$/;
+                
+                        if (emailRegex.test(emailInput.value)) {
+                            // Show alert notification with green translucent box
+                            const notification = document.getElementById("subscription-notification");
+                            notification.style.display = "block";
+                
+                            // Hide the message after 3 seconds
+                            setTimeout(function() {
+                                notification.style.display = "none";
+                            }, 3000);
+                
+                            // Reset the form
+                            this.reset();
+                        } else {
+                            alert("Please enter a valid Gmail address.");
+                        }
+                    });
+                </script>
+                
+                
             </div>
         </div>
         <hr>
@@ -430,6 +464,5 @@
     <!-- Add this div for the translator popup -->
 
 </body>
-
 
 </html>
