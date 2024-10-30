@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Added Favicon -->
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <title>Feedback - AmbuFlow</title>
   <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="src/css/index.css">
@@ -33,11 +35,143 @@
       /* Adjust padding for better appearance */
     }
 
+
+    /* dark mode toggle button styling */
+    body {
+      background-color: white;
+      /* Light mode background */
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+ 
+    .navbar {
+
+      background-color:  rgb(148 207 226);
+      /* Light mode navbar */
+
+      border-radius: 7px;
+      color: black;
+      padding: 7px;
+    }
+
+    ul li a:hover {
+    color: rgb(16, 16, 16) !important;
+    }
+    a:hover {
+    color: rgb(0, 0, 6);
+  }
+    .navbar.dark-mode {
+      background-color: black;
+      /* Dark mode navbar */
+      color: white;
+    }
+
+
     /* more addition for dark mode theme */
     .dark-mode .logo img {
       filter: brightness(0) invert(1);
       /* Inverts the color to make it white */
     }
+
+
+    /* dark mode hove effect on logo */
+    body.dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    .navbar.dark-mode .logo-img {
+      filter: brightness(0) invert(1);
+      /* Change logo color in dark mode */
+    }
+/* 
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      
+    }
+
+    .menu li {
+      margin-right: 15px;
+    } */
+/* 
+    .menu a {
+      color: black;
+      Light mode link color
+      border: 1.5px solid black;
+      Black border
+      border-radius: 7px;
+      padding: 3px 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      display:inline-block;
+      vertical-align: middle;
+    }
+
+    .menu a:hover {
+      background-color: blue;
+      Blue background on hover
+      color: white;
+      White text on hover
+    } */
+
+    .dark-mode .menu a {
+      color: white;
+      /* Dark mode link color */
+      border: 1px solid lightgrey;
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+    .dark-mode .menu a:hover {
+      background-color: white;
+      /* White background on hover in dark mode */
+      color: black;
+      /* Black text on hover in dark mode */
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      border-radius: 50px;
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      border: 1px solid lightgrey;
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      background-color: white;
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
+
 
     /* adding dark mode for contact info */
     .content {
@@ -224,6 +358,13 @@
       font-weight: 600;
       border-radius: 0.2rem;
     }
+    .feed-btn {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
 
     .feed-btn button:hover {
       transform: translateY(-0.15rem);
@@ -607,13 +748,40 @@
           </a>
         </li>
         <li>
-          <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
+          <a href="Feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
             <span>Feedback</span>
           </a>
         </li>
+        <li>
+          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
+            <span>Nearby</span></a>
+        </li>
       </ul>
     </nav>
-    <div class="content">
+
+    <div class="buttons">
+
+      <a href="login.html" class="login">Log in</a>
+      <a href="up.html" class="get-started">Get started</a>
+
+      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      
+    </div>
+  </div>
+</header>
+
+
+<body>
+  <header>
+
+    <h1>AmbuFlow Feedback</h1>
+
+  </header>
+
+  <div class="content">
       <h1>Feedback</h1>
       <div class="feedback-box">
         <h3 class="head">Please rate your experience:</h3>
@@ -659,6 +827,37 @@
     </div>
   </div>
 
+</a>
+
+<script src="preloader.js"></script>
+
+
+<!--  -->
+<script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTopBtn');
+
+
+  <script src="preloader.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('dark-mode-toggle');
+      const darkModeButton = document.querySelector('.dark-mode-toggle');
+      const logoImage = document.querySelector('.logo img'); // Select the logo image
+      const navbar = document.querySelector('.navbar'); // Select the navbar
+
+      // Reset to light mode for the Contact page
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+      // Clear the sessionStorage for theme on this page
+      sessionStorage.removeItem("theme");
+
+
   <footer>
     <div>
       <h3>Connect with us!</h3>
@@ -695,8 +894,66 @@
       document.getElementById('thank-you-message').style.display = 'flex'; // Show the message
     });
 
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+
+  // Show the button when scrolled down 100px from the top
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+
+    }
+  };
+
+  // Scroll to top when the button is clicked
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Dark mode functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    const logoImage = document.querySelector('.logo img'); // Select the logo image
+    const navbar = document.querySelector('.navbar'); // Select the navbar
+
+    // Reset to light mode for the Contact page
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
+    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
+
+    // Clear the sessionStorage for theme on this page
+    sessionStorage.removeItem("theme");
+
+    toggleButton.addEventListener('click', function () {
+
     // Toggle dark mode functionality
     const toggleDarkMode = () => {
+
       document.body.classList.toggle('dark-mode');
     };
 

@@ -35,11 +35,11 @@
 ### This project is now OFFICIALLY accepted for
 
 <div align="center">
-  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
 </div>
 
 <div align="center">
-  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" alt="Hacktober fest 2024" width="80%">
+  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktober fest 2024" width="80%">
 </div>
 
 <br>
@@ -207,7 +207,7 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 
 ## 👥 Team
 
-| ![Mansi Ruhil](https://avatars.githubusercontent.com/u/157950124?v=4&s=80) |
+| <img title="Mansi Ruhil" src="https://avatars.githubusercontent.com/u/157950124?v=4&" alt="Mansi Ruhil" width="75"/> |
 |:--:|
 | **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
 | [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |

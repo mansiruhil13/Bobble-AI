@@ -38,6 +38,40 @@
             /* Change logo color in dark mode */
         }
 
+
+        /* .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+
+        .menu a {
+            color: black;
+            Light mode link color
+            border: 1px solid black;
+            Black border
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+
+        }
+
+        .menu a:hover {
+            background-color: blue;
+            Blue background on hover
+            color: white;
+            White text on hover
+        }
+
+        .dark-mode .menu a {
+            color: white;
+            Dark mode link color
+            border: 1px solid lightgrey;
+            Light grey border in dark mode
+        } */
+
+
         .dark-mode {
             background-color: rgba(50, 50, 50, 0.95);
             /* Slightly gray background with high opacity */
@@ -65,6 +99,23 @@
         }
 
         /* end */
+
+
+/* 
+        .menu ul li a {
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            border-radius:7px;
+            border:1.5px solid black;
+        }
+
+        .menu ul li a.active {
+            color: white;
+            background-color: #000;
+        } */
+
+
         .content {
             margin: 20px;
             padding: 20px;
@@ -236,19 +287,30 @@
             </div>
         </div>
     </div>
-    <!-- ------------------------------Added a navbar---------------------------------- -->
-    <div class="container" id="container">
+        <div class="container">
+            <div class="logo">
+                <div class="brand-name">
+                    <span class="letter red" style="--letter-index: 1;">A</span>
+                    <span class="letter red" style="--letter-index: 2;">m</span>
+                    <span class="letter red" style="--letter-index: 3;">b</span>
+                    <span class="letter red" style="--letter-index: 4;">u</span>
+                    <span class="letter" style="--letter-index: 5;">F</span>
+                    <span class="letter" style="--letter-index: 6;">l</span>
+                    <span class="letter" style="--letter-index: 7;">o</span>
+                    <span class="letter" style="--letter-index: 8;">w</span>
+                </div>
+                <a href="./index.html">
+                    <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
+                        style="width: 50px; height: auto" />
+                </a>
+            </div>
+            <div class="buttons">
+                <a href="login.html" class="login">Log in</a>
+                <a href="up.html" class="get-started">Get started</a>
+                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                  </button>
 
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
             </div>
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
         </div>
@@ -281,7 +343,7 @@
                         <span>Contact</span></a>
                 </li>
                 <li>
-                    <a href="feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+                    <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
                         <span>Feedback</span></a>
                 </li>
                 <li>
@@ -392,7 +454,36 @@
                     <button type="submit"
                         style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
                 </form>
+                <div id="subscription-notification" style="display:none; background-color: rgba(212, 237, 218, 0.8); color: #155724; padding: 10px; border-radius: 5px; position: absolute; top: 10px; left: 600px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+                    Thank you for subscribing to our newsletter!
+                </div>
             </div>
+            <script>
+                document.querySelector("form").addEventListener("submit", function(event) {
+                    event.preventDefault(); // Prevent form from submitting immediately
+            
+                    // Improved Email validation regex to ensure proper domain like "gmail.com"
+                    const emailInput = document.querySelector("input[type='email']");
+                    const emailRegex = /^[^\s@]+@gmail\.com$/;
+            
+                    if (emailRegex.test(emailInput.value)) {
+                        // Show alert notification with green translucent box
+                        const notification = document.getElementById("subscription-notification");
+                        notification.style.display = "block";
+            
+                        // Hide the message after 3 seconds
+                        setTimeout(function() {
+                            notification.style.display = "none";
+                        }, 3000);
+            
+                        // Reset the form
+                        this.reset();
+                    } else {
+                        alert("Please enter a valid Gmail address.");
+                    }
+                });
+            </script>
+            
         </div>
     </footer>
         <script src="preloader.js"></script>
