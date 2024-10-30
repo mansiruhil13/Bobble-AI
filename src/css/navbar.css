@@ -180,7 +180,7 @@ body {
 
 .logo {
     display: flex;
-    align-items: center;
+    /* margin-right: 60rem; */
     margin-top: 0.7rem;
     animation: logoAnimation 1s ease forwards;
 }
@@ -225,6 +225,7 @@ body {
     position: fixed;
     width: 100%;
     bottom: 1rem;
+    /* bottom: 38rem; */
     z-index: 1000;
 }
 
