@@ -351,6 +351,42 @@
       padding: 20px;
       /* Optional: add padding for better spacing */
     }
+
+    .menu {
+       /* Light red background */
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu_links {
+      color: #b30000; /* Dark red text */
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+      transition: background-color 0.5s, color 0.3s;
+      border-radius: none;
+    }
+    .menu_links:hover {
+      background-color: #ff6666b1; /* Medium red background on hover */
+      color: #fff; /* White text on hover */
+      border-radius: 0px;
+    }
+    .scroll-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .scroll-button:hover {
+      transform: scale(1.2);
+    }
+    .scroll-button svg {
+      fill: #b30000; /* Dark red icon */
+      transition: fill 0.3s;
+    }
+    .scroll-button:hover svg {
+      fill: #ff6666; /* Medium red icon on hover */
+    }
+
   </style>
 </head>
 
@@ -385,7 +421,7 @@
       <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
     </div>
     <nav class="menu">
-      <ul>
+      <ul >
         <li>
           <button class="scroll-button" style="background: none; border: none; cursor: pointer;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -394,30 +430,32 @@
           </button>
         </li>
         <li>
-          <a href="index.html" id="index-link" class="menu_links" data-link="Home">
+          <a href="index.html"  id="index-link" class="menu_links" data-link="Home" >
             <span>Home</span>
           </a>
         </li>
+
         <li>
           <a href="features.html" id="features-link" class="menu_links" data-link="Features">
             <span>Features</span></a>
-        </li>
-        <li>
-          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
-            <span>Team</span></a>
-        </li>
-        <li>
-          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-            <span>Contact</span></a>
-        </li>
-        <li>
-          <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
-            <span>Feedback</span></a>
-        </li>
-        <li>
-          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
-            <span>Nearby</span></a>
-        </li>
+          </li>
+
+          <li>
+            <a href="team.html" id="team-link" class="menu_links" data-link="Team">
+              <span>Team</span></a>
+            </li>
+            <li>
+              <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
+                <span>Contact</span></a>
+              </li>
+              <li>
+                <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+                  <span>Feedback</span></a>
+                </li>
+                <li>
+                  <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
+                    <span>Nearby</span></a>
+                  </li>
       </ul>
     </nav>
 
