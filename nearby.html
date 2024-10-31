@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Added Favicon -->
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
     <title>Find Nearby Hospital</title>
     <div class="gtranslate_wrapper"></div>
     <style>
@@ -40,19 +42,19 @@
         }
 
         .button {
-    background-color:  #259ee9;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+            background-color: #259ee9;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.button:hover {
-    background-color: #00BFFF;
-}
+        .button:hover {
+            background-color: #00BFFF;
+        }
 
         #searchInput {
             width: 300px;
@@ -168,7 +170,7 @@
                         <span>Contact</span></a>
                 </li>
                 <li>
-                    <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback">
+                    <a href="Feedback.html" id="feedback-link" class="menu_links" data-link="Feedback">
                         <span>Feedback</span></a>
                 </li>
                 <li>
@@ -282,7 +284,7 @@
                 image: "https://lh5.googleusercontent.com/p/AF1QipO4FfTa6lmb3Hncw3WgwGt-4n-4qcv6NDMVeUfh=w408-h306-k-no",
                 link: "https://www.google.com/maps/place/Artemis+Hospitals+Dwarka/@28.5709273,77.0593246,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b03c0000001:0x3eb1330d284a7209!8m2!3d28.5709273!4d77.0593246!16s%2Fg%2F11g_yrth5?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D",
                 phone: "+911345678901"
-            }, 
+            },
             {
                 name: "Venkateshwar Hospital",
                 location: "Sector 18A, Dwarka, New Delhi",
@@ -293,7 +295,7 @@
         ];
 
         function createHospitalCard(hospital) {
-    return `
+            return `
         <div class="hospital-card">
             <a href="${hospital.link}" target="_blank">
                 <img src="${hospital.image}" alt="${hospital.name}">
@@ -303,7 +305,7 @@
             <button class="button" onclick="window.location.href='tel:${hospital.phone}'">Call Now</button>
         </div>
     `;
-}
+        }
 
 
         function renderHospitals(hospitalsToRender) {
