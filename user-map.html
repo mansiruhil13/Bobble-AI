@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +30,29 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        /* Basic styles for the container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the map */
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Hospitals</h1>
@@ -38,7 +60,7 @@
             <input type="text" id="searchInput" placeholder="Search for hospitals or pharmacies" />
             <button id="searchButton">Search</button>
         </div>
-        <div id="map" style="height: 500px; width: 100%;"></div>
+        <div id="map"></div>
         <button id="viewListBtn">Back to List</button>
     </div>
 
@@ -146,4 +168,5 @@
         window.onload = initMap;
     </script>
 </body>
+
 </html>

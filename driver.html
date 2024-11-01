@@ -10,6 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Basic styles for the map and driver image */
         #map {
             width: 100%;
             height: 320px;
@@ -21,9 +22,11 @@
         #driverImage {
             height: 320px;
             margin-bottom: 20px;
+            display: block; /* Ensure the driver image is block */
+            width: auto; /* Maintain aspect ratio */
         }
 
-        /* Add a loading spinner for the map */
+        /* Loading spinner styles */
         #loadingSpinner {
             display: none; /* Hidden by default */
             position: absolute;
@@ -38,7 +41,7 @@
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <img src="./images/manageLogo.png"></img>
+                <img src="./images/manageLogo.png" alt="AmbuFlow Logo">
                 <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
             </div>
             <ul class="navbar-links">
@@ -54,17 +57,16 @@
             </div>
         </nav>
     </header>
-    
-    <!-- Dropdown -->
-    <div class="dropdown-menu">
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" style="display: none;">
         <ul class="navbar-links2">
             <li><a href="hospital.html">Dashboard</a></li>
             <li><a href="manage.html">Manage Status</a></li>
             <li><a href="driver.html">Manage Driver</a></li>
             <li><a href="ambtracker.html">Manage Ambulance</a></li>
         </ul>
-     </div>
-    
+    </div>
 
     <div class="dashboard-container">
         <h1>Welcome, <span id="driverName">Driver ___</span></h1>
@@ -78,7 +80,6 @@
         
         <!-- Loading Spinner -->
         <div id="loadingSpinner">Loading...</div>
-        
         
         <div class="toggle-container">
             <label class="switch">
@@ -143,8 +144,6 @@
             const newLat = 37.7749 + (Math.random() * 0.001 - 0.0005);
             const newLng = -122.4194 + (Math.random() * 0.001 - 0.0005);
             const newPosition = { lat: newLat, lng: newLng };
-            // Update the driver's marker position on the map
-            // Assuming you have a marker for the driver
             driverMarker.setPosition(newPosition);
             map.setCenter(newPosition);
         }
@@ -162,17 +161,12 @@
             }
         }  
 
-        // Dropdown
-        let flag = false
+        // Dropdown toggle
+        let flag = false;
         document.getElementById('dropdown').addEventListener('click', () => {
             const dropdown = document.querySelector('.dropdown-menu');
-            if (flag) {
-                dropdown.style.display = 'none';
-                flag = false;
-            } else {
-                dropdown.style.display = 'block';
-                flag = true;
-            }
+            flag = !flag; // Toggle flag
+            dropdown.style.display = flag ? 'block' : 'none';
         });
     </script>
 </body>

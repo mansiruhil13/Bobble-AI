@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,48 @@
     <link rel="stylesheet" href="src/css/user.css">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+    <style>
+        /* Additional styles for better layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #hospitalList {
+            margin-bottom: 20px;
+        }
+
+        .hospital-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+
+        #viewMapBtn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #viewMapBtn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-4xl font-extrabold text-stone-900">Nearby Hospitals</h1>
@@ -17,6 +59,7 @@
         <button id="viewMapBtn">View on Map</button>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4&libraries=places"></script>
     <script>
         function fetchHospitalList() {
             if (navigator.geolocation) {
@@ -28,9 +71,11 @@
                     searchHospitals(userLocation);
                 }, () => {
                     console.error('Error getting user location.');
+                    alert('Could not retrieve your location. Please allow location access.');
                 });
             } else {
                 console.error('Geolocation is not supported by this browser.');
+                alert('Geolocation is not supported by your browser.');
             }
         }
 
@@ -75,6 +120,6 @@
             window.location.href = 'user-map.html';
         });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4&libraries=places"></script>
 </body>
+
 </html>

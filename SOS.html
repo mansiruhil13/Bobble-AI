@@ -344,294 +344,117 @@
     }
 
    .faq.active .faq-answer {
-    max-height: 200px; /* Set to a sufficient height to display content */
-    padding: 10px; /* Adds padding when expanded */
-   }
-    .logo a{
-      text-decoration: none;
-   }
-   .logo img:hover{
-    background-color: white;
-   }
-   .container{
-    width: 98vw;
-   }
-
-   #contact-hvr:hover{
-    background: none;
-   }
+    max-height: 100px; /* Set to a large value to show the content */
+    }
 
   </style>
 </head>
-
 <body>
-  <header class="sticky">
-    <div class="container">
-
-      <div class="logo">
-        <div class="brand-name">
-          <span class="letter red" style="--letter-index: 1">A</span>
-          <span class="letter red" style="--letter-index: 2">m</span>
-          <span class="letter red" style="--letter-index: 3">b</span>
-          <span class="letter red" style="--letter-index: 4">u</span>
-          <span class="letter" style="--letter-index: 5">F</span>
-          <span class="letter" style="--letter-index: 6">l</span>
-          <span class="letter" style="--letter-index: 7">o</span>
-          <span class="letter" style="--letter-index: 8">w</span>
-        </div>
-        <a href="./index.html"
-          ><img
-            src="images/logo2-w.webp"
-            alt="Ambulance Monitoring System Logo"
-            style="width: 50px; height: auto"
-        /></a>
-      </div>
-
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="index.html" id="home-link"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="features.html" id="features-link" class="active"
-              ><i class="fa-solid fa-file"></i> Features</a
-            >
-          </li>
-          <li>
-            <a href="team.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Team</a
-            >
-          </li>
-          <li>
-            <a href="contact.html" id="contact-link"
-              ><i class="fa-solid fa-clipboard"></i> Contact</a
-            >
-          </li>
-          <li>
-            <a href="Feedback.html" id="team-link"
-              ><i class="fa-solid fa-user-group"></i> Feedback</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="buttons">
-        <a href="login.html" class="login">Log in</a>
-        <a href="up.html" class="get-started">Get started</a>
-      </div>
-    </div>
+  <header>
+    <nav>
+      <input type="checkbox" id="check" />
+      <label class="checkbtn" for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><span class="brand-name"><span class="letter red">A</span><span class="letter">m</span><span class="letter">b</span><span class="letter">u</span><span class="letter">F</span><span class="letter">l</span><span class="letter">o</span><span class="letter">w</span></span></label>
+      <ul>
+        <li><a href="#home" id="home-link" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </nav>
   </header>
-  <div class="content" id="main-content" >
-    <h1>SOS/ Quick Emergency Response</h1>
-    <!-- <div class="grid">
+
+  <div class="content">
+    <h1>Welcome to AmbuFlow</h1>
+    <div class="grid">
       <div class="feature">
-        <img src="images/emergency-w.jpg" alt="Emergency Response" />
-        <h2>Quick Emergency Response</h2>
-        <p>
-          Ensures patients receive timely medical assistance by locating the
-          nearest hospitals and ambulances.
-        </p>
+        <img src="src/images/feature1.png" alt="Feature 1" />
+        <h2>Real-time Tracking</h2>
+        <p>Track ambulance locations in real-time for quicker response times.</p>
       </div>
-    </div> -->
-
-<!--Location -->
-
-    <h1>Fetch Location</h1>
-    <div style="padding-left: 550px;">
-      <button onclick="getLocation()"><h1>locate me<h1></button>
+      <div class="feature">
+        <img src="src/images/feature2.png" alt="Feature 2" />
+        <h2>Emergency Alerts</h2>
+        <p>Receive instant alerts in case of emergencies for faster response.</p>
+      </div>
+      <div class="feature">
+        <img src="src/images/feature3.png" alt="Feature 3" />
+        <h2>24/7 Support</h2>
+        <p>Get support any time, day or night, for peace of mind.</p>
+      </div>
     </div>
-    <p id="location"></p>
-    <p id="address"></p>
-    <h1>Call for help</h1>
-    <div style="display: flex; gap: 150px; padding-left: 350px;">
-      <a href="tel:100"><img src="police.svg" alt="" style="height: 100px;"><p style="color: #000;">Police<p></p></a>
-      <a href="tel:101"><img src="ambulance.svg" alt="" style="height: 100px;"><p style="color: #000;">Ambulance<p></p></a>
-      <a href="tel:101"><img src="hospital.svg" alt="" style="height: 100px;"><p style="color: #000;">Nearest Hospital<p></p></a>
+
+    <div class="team-feature">
+      <img src="src/images/team.jpg" alt="Our Team" />
+      <div>
+        <h2>Meet Our Team</h2>
+        <p>Our dedicated team is here to ensure you receive the best service possible.</p>
+      </div>
     </div>
-    <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
 
-        function showPosition(position) {
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
-            document.getElementById("location").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
-            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
-                .then(response => response.json())
-                .then(data => {
-                    var locationName = data.display_name;
-                    document.getElementById("address").innerHTML = "Location Name: " + locationName;
-                })
-                .catch(error => {
-                    document.getElementById("address").innerHTML = "Unable to retrieve location name.";
-                });
-        }
+    <div class="contact-feature">
+      <img src="src/images/contact.jpg" alt="Contact Us" />
+      <div>
+        <h2>Contact Us</h2>
+        <p>If you need assistance, reach out to us at support@ambuflow.com.</p>
+      </div>
+    </div>
 
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("location").innerHTML = "Location information is unavailable.";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("location").innerHTML = "The request to get user location timed out.";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("location").innerHTML = "An unknown error occurred.";
-                    break;
-            }
-        }
-    </script>
+    <div class="faq-section" id="faq">
+      <h2 class="faq-h2">Frequently Asked Questions</h2>
+      <div class="faqs">
+        <div class="faq">
+          <button class="faq-question">What is AmbuFlow?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>AmbuFlow is a service that provides real-time tracking and support for emergency response services.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question">How can I request an ambulance?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>You can request an ambulance through our mobile app or by calling our emergency number.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question">Is there a cost for using AmbuFlow?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, there may be a cost associated with the ambulance service, which can be clarified upon request.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
- <!--Location-->
-
-
-
-  <footer style= " color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-        
-        <!-- Quick Links Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-          <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>          
-          </ul>
-        </div>
-  
-        <!-- Contact Information Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
-        </div>
-  
-        <!-- Social Media Links -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-        
-          <a href="https://www.facebook.com" class="hover-link">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a><br>
-        
-          <a href="https://www.twitter.com" class="hover-link">
-            <i class="fa-brands fa-x-twitter"></i> Twitter
-          </a><br>
-        
-          <a href="https://www.instagram.com" class="hover-link">
-            <i class="fab fa-instagram"></i> Instagram
-          </a><br>
-        
-          <a href="https://www.linkedin.com" class="hover-link">
-            <i class="fab fa-linkedin-in"></i> LinkedIn
-          </a>
-        </div>
-        
-        <style>
-          .hover-link {
-            color: #000000;
-            text-decoration: none;
-            margin-right: 10px;
-            background:none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-          }
-        
-          .hover-link:hover {
-            color: blue;
-            background:none;
-          }
-        </style>
-        
-        
-
-        <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-            <button type="submit" style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-          </form>
-        </div>
-        
-
+  <footer>
+    <div>
+      <div>
+        <h3 style="font-size: 1.5rem; color: #2980b9;">Subscribe to Our Newsletter</h3>
+        <form action="#" method="post">
+          <input type="email" placeholder="Enter your email" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 80%;">
+          <button type="submit" style="padding: 10px 15px; border: none; border-radius: 5px; background-color: #2980b9; color: white; cursor: pointer;">Subscribe</button>
+        </form>
       </div>
-      
     </div>
-    <hr>
-    <!-- Copyright Section -->
-    <strong><p style="background-color: #C4D7FF; color: #000000;  ">&copy; 2024 AmbuFlow. All rights reserved.</p></strong>
-    
   </footer>
-  
+
   <script>
-    function changeContent(page) {
-      var links = document.querySelectorAll(".menu ul li a");
-      links.forEach((link) => link.classList.remove("active"));
-      document.getElementById(page + "-link").classList.add("active");
-    }
+    const faqQuestions = document.querySelectorAll('.faq-question');
 
-    window.onload = function () {
-      document.getElementById("home-link").classList.add("active");
-
-      // Add delay to each letter drop
-      const letters = document.querySelectorAll('.letter');
-      letters.forEach((letter, index) => {
-        letter.style.animationDelay = `${index * 0.1}s`;
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faq = question.parentElement;
+        faq.classList.toggle('active');
       });
-    };
-
-    const thankYouMessage = document.getElementById("thankYouMessage");
-  const form = document.getElementById("subscribeForm");
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-
-    // Show Thank You Message after subscribing
-    thankYouMessage.style.display = 'block';
-
-    // Optionally clear the input field after subscribing
-    document.getElementById("emailInput").value = '';
-  });
-
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const faqButtons = document.querySelectorAll('.faq-question');
-
-    faqButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const faq = button.parentElement;
-            const answer = faq.querySelector('.faq-answer');
-
-            // Toggle active class
-            faq.classList.toggle('active');
-
-            // Control the max-height for slide effect
-            if (faq.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px'; // Set the height based on content
-            } else {
-                answer.style.maxHeight = null; // Remove max-height to hide
-            }
-        });
     });
-    });
-
-
   </script>
 </body>
 </html>

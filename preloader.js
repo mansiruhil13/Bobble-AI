@@ -1,9 +1,12 @@
-// /preloader js styling
+// Preloader JS Styling
 
-let preloader = document.querySelector("#preloader");
+document.addEventListener("DOMContentLoaded", function() {
+    let preloader = document.querySelector("#preloader");
 
-window.addEventListener("load",function(e){
-
-    preloader.style.display = "none";
-
+    // Ensure the preloader exists before trying to manipulate it
+    if (preloader) {
+        window.addEventListener("load", function() {
+            preloader.style.display = "none"; // Hide the preloader
+        });
+    }
 });

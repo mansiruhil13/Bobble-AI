@@ -6,6 +6,7 @@ const passwordField = document.querySelector(".sign-up-form input[type='password
 const strengthWeak = document.getElementById("strength-weak");
 const strengthMedium = document.getElementById("strength-medium");
 const strengthStrong = document.getElementById("strength-strong");
+const feedbackMessage = document.getElementById("password-feedback");
 
 // Toggle between Sign-In and Sign-Up modes
 signUpBtn.addEventListener("click", () => {
@@ -50,18 +51,16 @@ function checkPasswordStrength() {
   strengthStrong.className = "";
 
   // Update strength indicators dynamically
-  if (strength >= 1) strengthWeak.className = "weak";
-  if (strength >= 3) strengthMedium.className = "medium";
-  if (strength >= 5) strengthStrong.className = "strong";
-  
-  // Optional: Provide feedback to user
+  if (strength >= 1) strengthWeak.classList.add("weak");
+  if (strength >= 3) strengthMedium.classList.add("medium");
+  if (strength >= 5) strengthStrong.classList.add("strong");
+
+  // Provide feedback to user
   displayStrengthMessage(strength);
 }
 
 // Display feedback message for password strength
 function displayStrengthMessage(strength) {
-  const feedbackMessage = document.getElementById("password-feedback");
-
   let message = "";
   let color = "";
 

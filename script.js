@@ -1,15 +1,23 @@
+// Load GTranslate script dynamically
 let script = document.createElement('script');
 script.src = "https://cdn.gtranslate.net/widgets/latest/float.js"; // URL of the external script
 script.defer = true; // Ensures the script runs after parsing the HTML
 document.body.appendChild(script); // Add the script to the body
 
-window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }
+// GTranslate settings
+window.gtranslateSettings = {
+  "default_language": "en",
+  "detect_browser_language": true,
+  "wrapper_selector": ".gtranslate_wrapper",
+  "alt_flags": { "en": "usa" }
+};
+
 // Function to change the active class when a link is clicked
 function changeContent(page) {
   var links = document.querySelectorAll(".menu ul li a");
 
   // Remove "active" class from all links
-  links.forEach((link) => link.classList.remove("active"));``
+  links.forEach(link => link.classList.remove("active"));
 
   // Add "active" class to the current page link
   var activeLink = document.getElementById(page + "-link");
@@ -18,37 +26,40 @@ function changeContent(page) {
   } else {
     console.error(`Link with id ${page + '-link'} not found`);
   }
-
-  console.log(page + "-link");
 }
 
-const currentLanguage = window.gtranslateSettings.current_language;
-const ambuFlowText = document.querySelector(".main_heading h2[data-link_h2='AmbuFlow...']");
-
-if (currentLanguage === 'gu' || currentLanguage === 'hi') {
-  ambuFlowText.style.display = 'none'; // Hide text for Gujarati and Hindi
-} else {
-  ambuFlowText.style.display = 'block'; // Show text for other languages
+// Language-specific content display
+function updateContentForLanguage() {
+  const currentLanguage = window.gtranslateSettings.current_language;
+  const ambuFlowText = document.querySelector(".main_heading h2[data-link_h2='AmbuFlow...']");
+  if (ambuFlowText) {
+    if (currentLanguage === 'gu' || currentLanguage === 'hi') {
+      ambuFlowText.style.display = 'none'; // Hide text for Gujarati and Hindi
+    } else {
+      ambuFlowText.style.display = 'block'; // Show text for other languages
+    }
+  }
 }
-
 
 // Function that runs when the window loads
 window.onload = function () {
-  // Assuming you are using the URL or some global variable to determine the page
+  // Determine the current page from the URL
   var currentPage = window.location.pathname.split("/").pop().replace(".html", "");
   if (currentPage) {
     changeContent(currentPage);
   }
 
-  // Add delay to each letter drop
+  // Add delay to each letter drop animation
   const letters = document.querySelectorAll('.letter');
   letters.forEach((letter, index) => {
     letter.style.animationDelay = `${index * 0.1}s`;
   });
+
+  // Update content for current language
+  updateContentForLanguage();
 };
 
-// JS for dark mode functionality
-// adding code for dark mode
+// Dark mode functionality
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeButton = document.getElementById("dark-mode-button");
 
@@ -57,13 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentTheme === "dark") {
     document.body.classList.add("dark-mode");
     document.body.classList.remove("light-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
     document.body.classList.add("light-mode");
     document.body.classList.remove("dark-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 
+  // Toggle dark mode on button click
   darkModeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
@@ -71,63 +83,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // Save preference to sessionStorage
     if (document.body.classList.contains("dark-mode")) {
       sessionStorage.setItem("theme", "dark");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+      darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
     } else {
       sessionStorage.setItem("theme", "light");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
   });
 });
 
-//For Translator
-window.gtranslateSettings = {
-  "default_language": "en",
-  "detect_browser_language": true,
-  "wrapper_selector": ".gtranslate_wrapper",
-  "alt_flags": { "en": "usa" }
-}
+// Translator toggle functionality
 const translateBtn = document.getElementById('translateBtn');
 const gTranslate = document.getElementById('gTranslate');
 
-translateBtn.addEventListener('click', function () {
-  if (gTranslate.style.display === 'none') {
-    gTranslate.style.display = 'block';
-  } else {
-    gTranslate.style.display = 'none';
-  }
-});
+if (translateBtn && gTranslate) {
+  translateBtn.addEventListener('click', function () {
+    gTranslate.style.display = gTranslate.style.display === 'none' ? 'block' : 'none';
+  });
 
-// Close the translator popup when clicking outside
-document.addEventListener('click', function (event) {
-  if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
-    gTranslate.style.display = 'none';
-  }
-});
+  // Close the translator popup when clicking outside
+  document.addEventListener('click', function (event) {
+    if (!gTranslate.contains(event.target) && event.target !== translateBtn) {
+      gTranslate.style.display = 'none';
+    }
+  });
+}
 
 // Newsletter form submission handler
+document.getElementById("newsletter-form")?.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
 
-document
-  .getElementById("newsletter-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+  const emailInput = document.getElementById("email");
+  const confirmationMessage = document.getElementById("confirmation-message");
 
-    const emailInput = document.getElementById("email");
-    const confirmationMessage = document.getElementById("confirmation-message");
+  // Optionally send the email to your backend
+  const email = emailInput.value;
 
-    // Optionally send the email to your backend
-    const email = emailInput.value;
+  // Simulate a successful submission
+  console.log(`Email submitted: ${email}`);
 
-    // Simulate a successful submission (you could replace this with an actual API call)
-    console.log(`Email submitted: ${email}`); // For debugging
-
-    // Display the confirmation message
-    confirmationMessage.textContent =
-      "Thank you for subscribing! Please check your email for further instructions.";
+  // Display the confirmation message
+  if (confirmationMessage) {
+    confirmationMessage.textContent = "Thank you for subscribing! Please check your email for further instructions.";
     confirmationMessage.classList.remove("hidden");
+  }
 
-    // Clear the form
-    emailInput.value = "";
-  });
+  // Clear the form
+  emailInput.value = "";
+});
 
 // Accordion functionality
 const accordions = document.querySelectorAll(".accordion");
@@ -137,7 +139,7 @@ accordions.forEach((accordion, index) => {
   const content = accordion.querySelector(".accordion__content");
   const icon = accordion.querySelector(".accordion__icon i");
 
-  header.addEventListener("click", () => {
+  header?.addEventListener("click", () => {
     const isOpen = content.style.height === `${content.scrollHeight}px`;
 
     accordions.forEach((a, i) => {
@@ -157,9 +159,7 @@ accordions.forEach((accordion, index) => {
   });
 });
 
-
-
-// Back to top button functionality
+// Back-to-top button functionality
 const backToTopButton = document.getElementById('back-to-top');
 
 // Show the button when scrolled down 100px from the top
@@ -170,5 +170,3 @@ window.onscroll = function () {
     backToTopButton.style.display = "none";
   }
 };
-
-

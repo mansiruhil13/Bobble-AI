@@ -6,7 +6,7 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Updated to latest version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,6 +17,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
         }
 
         .menu ul li a {
@@ -86,90 +91,81 @@
         }
 
         footer {
-            background-color: #000;
-            color: white;
+            background-color: #C4D7FF;
+            color: #000;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            width: 100%;
             position: relative;
             bottom: 0;
-            width: 100%;
         }
 
-        .hover-link {
-            color: #000000;
+        footer h3 {
+            font-size: 1.5rem;
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #000;
             text-decoration: none;
-            margin-right: 10px;
-            background: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
+            margin: 5px 0;
+            display: block;
         }
 
-        .hover-link:hover {
+        footer a:hover {
             color: rgb(7, 7, 164);
-            background: none;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      right: 7rem;
-      z-index: 1000;
-    }
+            position: fixed;
+            bottom: 20px;
+            right: 7rem;
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
 
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-      right: -60px;
-    }
+        .chatbot-button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
 
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
+        .chatbot-button img {
+            width: 30px;
+            height: 30px;
+        }
 
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
+        .tooltip-text {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            right: 50%;
+            transform: translateX(50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
 
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
+        .chatbot-button:hover .tooltip-text {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            footer {
+                flex-direction: column;
+            }
+            footer div {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,6 +173,9 @@
 <header>
     <div class="container">
         <div class="logo">
+            <a href="./index.html">
+                <img src="images/logo2-w.webp" alt="AmbuFlow Logo" style="width: 50px; height: auto" />
+            </a>
             <div class="brand-name">
                 <span class="letter red" style="--letter-index: 1;">A</span>
                 <span class="letter red" style="--letter-index: 2;">m</span>
@@ -187,10 +186,7 @@
                 <span class="letter" style="--letter-index: 7;">o</span>
                 <span class="letter" style="--letter-index: 8;">w</span>
             </div>
-            <a href="./index.html" >
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-            </a>
-          </div>
+        </div>
 
         <nav class="menu">
             <ul>
@@ -228,50 +224,36 @@
     </div>
 </div>
 
-<footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
-    <!-- Quick Links Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-      <ul style="list-style-type: none; padding: 0;">
-        <li><a href="about.html" class="footer-link">About Us</a></li>
-        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-        <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
-        <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
-      </ul>
+<footer>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <div style="flex: 1; min-width: 200px;">
+            <h3>Quick Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <h3>Follow Us</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="https://twitter.com" target="_blank" class="footer-link"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://facebook.com" target="_blank" class="footer-link"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="https://instagram.com" target="_blank" class="footer-link"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
     </div>
-
-    <!-- Contact Information Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-      <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-      <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
-      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
-    </div>
-
-    <!-- Social Media Links -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-      <a href="https://www.facebook.com" class="hover-link"><i class="fab fa-facebook-f"></i> Facebook</a><br>
-      <a href="https://twitter.com" class="hover-link"><i class="fab fa-twitter"></i> Twitter</a><br>
-      <a href="https://www.instagram.com" class="hover-link"><i class="fab fa-instagram"></i> Instagram</a><br>
-    </div>
-  </div>
-  <p style="font-size: 0.8rem; color: #000;">&copy; 2024 Nursing Tomorrow's Smile. All rights reserved.</p>
+    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
 </footer>
 
-<a href="chatbot.html">
-    <div class="fixed bottom-0 right-2 chatbot-container">
-      <button class="chatbot-button group">
-        <img class="h-20" src="chatbot.gif" alt="chatbot" />
-        <span class="tooltip-text">
-          Welcome to AmbuFlow!<br />
-          How can I help You?
-        </span>
-      </button>
-    </div>
-  </a>
+<div class="chatbot-container">
+    <button class="chatbot-button" onclick="toggleChatbot()">
+        <img src="chatbot-icon.png" alt="Chatbot Icon">
+        <span class="tooltip-text">Chat with us!</span>
+    </button>
+</div>
 
+<script src="src/js/index.js"></script>
 </body>
 </html>

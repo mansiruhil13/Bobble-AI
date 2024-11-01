@@ -11,9 +11,14 @@
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        }
+    </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <!--Updated to latest version-->
     <style>
         /* font size of button */
         .buttons .login,
@@ -26,51 +31,15 @@
         }
 
         /* more addition for dark mode theme */
-
         .dark-mode .logo img {
             filter: brightness(0) invert(1);
             /* Inverts the color to make it white */
         }
 
-
         .navbar.dark-mode .logo-img {
             filter: brightness(0) invert(1);
             /* Change logo color in dark mode */
         }
-
-
-        /* .menu ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-        }
-
-
-        .menu a {
-            color: black;
-            Light mode link color
-            border: 1px solid black;
-            Black border
-            padding: 5px 10px;
-            text-decoration: none;
-            transition: all 0.3s;
-
-        }
-
-        .menu a:hover {
-            background-color: blue;
-            Blue background on hover
-            color: white;
-            White text on hover
-        }
-
-        .dark-mode .menu a {
-            color: white;
-            Dark mode link color
-            border: 1px solid lightgrey;
-            Light grey border in dark mode
-        } */
-
 
         .dark-mode {
             background-color: rgba(50, 50, 50, 0.95);
@@ -84,11 +53,14 @@
             /* Black text on hover in dark mode */
         }
 
-        /* end */
-        /* adding dark mode for contact info */
         .content {
             transition: background-color 0.3s, color 0.3s;
             /* Smooth transitions */
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex-grow: 1;
         }
 
         .dark-mode .content {
@@ -98,32 +70,6 @@
             /* Optional: add padding for better spacing */
         }
 
-        /* end */
-
-
-/* 
-        .menu ul li a {
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-            border-radius:7px;
-            border:1.5px solid black;
-        }
-
-        .menu ul li a.active {
-            color: white;
-            background-color: #000;
-        } */
-
-
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            flex-grow: 1;
-        }
-
         h1 {
             color: blue;
             text-align: center;
@@ -131,11 +77,6 @@
         }
 
         .team-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
-            animation: fadeIn 1s ease-in-out;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -179,23 +120,6 @@
             font-size: 0.9em;
         }
 
-        /* .contact-feature {
-             display: flex;
-            justify-content: center; 
-            align-items: center;
-            margin: 70px auto 70px auto; 
-             max-width: 800px;
-             width: 100%;  
-            gap:40px;
-        }
-
-        .contact-feature img {
-            width: 150px;
-            height: auto;
-            margin-right: 20px;
-            border-radius: 10px;
-        }  */
-
         footer {
             background-color: #000;
             color: white;
@@ -222,10 +146,6 @@
             /* Icon color change to blue on hover */
         }
 
-        a .social-icon .twitter:hover {
-            color: white;
-        }
-
         .fa-x-twitter:hover {
             color: black;
             /* Icon color change to black on hover */
@@ -250,26 +170,6 @@
                 opacity: 1;
             }
         }
-
-        /* Logo Animation */
-        @keyframes logoAnimation {
-            0% {
-                opacity: 0;
-                transform: translateX(-100px);
-                /* Start from the left */
-            }
-
-            50% {
-                transform: translateX(10px);
-                /* Move slightly to the right */
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-                /* End at original position */
-            }
-        }
     </style>
 </head>
 
@@ -287,41 +187,35 @@
             </div>
         </div>
     </div>
-        <div class="container">
-            <div class="logo">
-                <div class="brand-name">
-                    <span class="letter red" style="--letter-index: 1;">A</span>
-                    <span class="letter red" style="--letter-index: 2;">m</span>
-                    <span class="letter red" style="--letter-index: 3;">b</span>
-                    <span class="letter red" style="--letter-index: 4;">u</span>
-                    <span class="letter" style="--letter-index: 5;">F</span>
-                    <span class="letter" style="--letter-index: 6;">l</span>
-                    <span class="letter" style="--letter-index: 7;">o</span>
-                    <span class="letter" style="--letter-index: 8;">w</span>
-                </div>
-                <a href="./index.html">
-                    <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
-                        style="width: 50px; height: auto" />
-                </a>
+    <div class="container">
+        <div class="logo">
+            <div class="brand-name">
+                <span class="letter red" style="--letter-index: 1;">A</span>
+                <span class="letter red" style="--letter-index: 2;">m</span>
+                <span class="letter red" style="--letter-index: 3;">b</span>
+                <span class="letter red" style="--letter-index: 4;">u</span>
+                <span class="letter" style="--letter-index: 5;">F</span>
+                <span class="letter" style="--letter-index: 6;">l</span>
+                <span class="letter" style="--letter-index: 7;">o</span>
+                <span class="letter" style="--letter-index: 8;">w</span>
             </div>
-            <div class="buttons">
-                <a href="login.html" class="login">Log in</a>
-                <a href="up.html" class="get-started">Get started</a>
-                <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-                    <i class="fa-solid fa-moon"></i>
-                  </button>
-
-            </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+            <a href="./index.html">
+                <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+            </a>
+        </div>
+        <div class="buttons">
+            <a href="login.html" class="login">Log in</a>
+            <a href="up.html" class="get-started">Get started</a>
+            <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </div>
         <nav class="menu">
             <ul>
                 <li>
                     <a href="#container" style="color: #333;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711"
-                                stroke="currentColor">
-                            </path>
+                            <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor"></path>
                         </svg>
                     </a>
                 </li>
@@ -352,7 +246,6 @@
                 </li>
             </ul>
         </nav>
-
     </div>
     <div class="content" id="main-content">
         <h1>Meet Our Team</h1>
@@ -360,161 +253,78 @@
             <div class="team-member">
                 <img src="images/service-web.jpg" alt="Service Manager">
                 <h2>Service Manager</h2>
-                <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
+                <p>Oversees all operations to ensure efficiency.</p>
             </div>
             <div class="team-member">
-                <img src="images/rescue-web.webp" alt="Rescue Specialist">
-                <h2>Rescue Specialist</h2>
-                <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
+                <img src="images/john-doe.jpg" alt="John Doe">
+                <h2>John Doe</h2>
+                <p>Lead Developer with expertise in ambulance tracking systems.</p>
             </div>
             <div class="team-member">
-                <img src="images/call-web.jpg" alt="Call Operator">
-                <h2>Call Operator</h2>
-                <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
+                <img src="images/jane-doe.jpg" alt="Jane Doe">
+                <h2>Jane Doe</h2>
+                <p>UX/UI Designer focusing on user experience.</p>
             </div>
             <div class="team-member">
-                <img src="images/gps-web.webp" alt="GPS Technician">
-                <h2>GPS Technician</h2>
-                <p>Manages real-time tracking systems for effective ambulance navigation.</p>
+                <img src="images/alex-smith.jpg" alt="Alex Smith">
+                <h2>Alex Smith</h2>
+                <p>Project Manager ensuring timelines are met.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/michael-johnson.jpg" alt="Michael Johnson">
+                <h2>Michael Johnson</h2>
+                <p>Data Analyst for effective decision-making.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/sarah-williams.jpg" alt="Sarah Williams">
+                <h2>Sarah Williams</h2>
+                <p>Marketing Specialist focusing on outreach and awareness.</p>
             </div>
         </div>
     </div>
-
-    <!-- Contact Section in Full Row -->
-    <div class="features-container">
-        <div class="contact-features">
-            <div class="inner">
-                <div class="front">
-                    <a href="Contactus.html">
-                        <img src="images/contact-w.avif" alt="Contact Us" />
-                        <h2>Contact Us</h2>
-                    </a>
-                </div>
-                <div class="back">
-                    <p>
-                        Reach out to us for any inquiries or assistance. We're here to
-                        help you 24/7 with our emergency services.
-                    </p>
-                    <a href="contact.html" class="button">Go to Contact</a>
-                </div>
-            </div>
+    <footer>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Have questions? <br> Reach out to us!</p>
         </div>
-    </div>
-    <footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
-        <div
-            style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
-
-            <!-- Quick Links Section -->
-            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" class="footer-link">About Us</a></li>
-                    <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-                    <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
-                    <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Information Section -->
-            <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-                <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-                <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-                <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
-                <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a>
-                </p>
-            </div>
-
-            <!-- Modified the looks of the social icons -->
-            <!-- Social Media Links -->
-            <div style="text-align: center; min-width: 200px; color: black;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-                    <a href="https://www.facebook.com" class="social-icon facebook"
-                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="https://www.twitter.com" class="social-icon twitter"
-                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
-                            class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com" class="social-icon instagram"
-                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com" class="social-icon linkedin"
-                        style="color: black; text-decoration: none; font-size: 1.5rem;"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <!-- Newsletter Subscription -->
-            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-                <form action="#">
-                    <input type="email" placeholder="Your Email"
-                        style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-                    <button type="submit"
-                        style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-                </form>
-                <div id="subscription-notification" style="display:none; background-color: rgba(212, 237, 218, 0.8); color: #155724; padding: 10px; border-radius: 5px; position: absolute; top: 10px; left: 600px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
-                    Thank you for subscribing to our newsletter!
-                </div>
-            </div>
-            <script>
-                document.querySelector("form").addEventListener("submit", function(event) {
-                    event.preventDefault(); // Prevent form from submitting immediately
-            
-                    // Improved Email validation regex to ensure proper domain like "gmail.com"
-                    const emailInput = document.querySelector("input[type='email']");
-                    const emailRegex = /^[^\s@]+@gmail\.com$/;
-            
-                    if (emailRegex.test(emailInput.value)) {
-                        // Show alert notification with green translucent box
-                        const notification = document.getElementById("subscription-notification");
-                        notification.style.display = "block";
-            
-                        // Hide the message after 3 seconds
-                        setTimeout(function() {
-                            notification.style.display = "none";
-                        }, 3000);
-            
-                        // Reset the form
-                        this.reset();
-                    } else {
-                        alert("Please enter a valid Gmail address.");
-                    }
-                });
-            </script>
-            
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div>
+            <h3>Newsletter</h3>
+            <form action="" method="post" id="newsletter-form">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div>
+            <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
         </div>
     </footer>
-        <script src="preloader.js"></script>
+    <script src="src/js/darkMode.js"></script>
+    <script src="src/js/preloader.js"></script>
+    <script>
+        document.getElementById("newsletter-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value;
+            if (validateEmail(email)) {
+                alert("Thank you for subscribing!");
+                emailInput.value = ""; // Clear the input field
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        });
 
-
-
-        <!-- Copyright Section -->
-        <div
-            style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px; border-top: 1px solid #a0c0ff;">
-            <strong>
-                <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-            </strong>
-            <script src="preloader.js"></script>
-            <a href="chatbot.html">
-                <div class="fixed bottom-0 right-2 chatbot-container">
-                    <button class="chatbot-button group">
-                        <img class="h-20" src="chatbot.gif" alt="chatbot" />
-                        <span class="tooltip-text">
-                            Welcome to AmbuFlow!<br />
-                            How can I help You?
-                        </span>
-                    </button>
-                </div>
-            </a>
-            <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-            <!-- Add this style block in the <head> section or in your CSS file -->
-
-            <script src="script.js">
-            </script>
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
 </body>
 
 </html>

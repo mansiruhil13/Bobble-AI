@@ -1,3 +1,4 @@
+/* Universal styles */
 * {
     box-sizing: border-box;
 }
@@ -7,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Header styling */
 header {
     background-color: #333; /* Header background color */
     padding: 10px 20px; /* Padding around header */
@@ -23,6 +25,7 @@ header {
     height: auto; /* Maintain aspect ratio */
 }
 
+/* Navigation styles */
 nav {
     flex-grow: 1; /* Allow nav to grow */
 }
@@ -32,12 +35,17 @@ nav {
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margin */
     display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
 }
 
+.menu li {
+    margin-left: 20px; /* Space between menu items */
+}
 
 .menu a {
     color: white; /* Menu link color */
     text-decoration: none; /* Remove underline */
+    padding: 8px 12px; /* Padding for clickable area */
     transition: color 0.3s; /* Transition effect */
 }
 
@@ -45,6 +53,7 @@ nav {
     color: #ddd; /* Change color on hover */
 }
 
+/* Buttons */
 .buttons {
     display: flex; /* Flexbox for buttons */
 }
@@ -65,6 +74,7 @@ nav {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Menu toggle (Hamburger icon) */
 .menu-toggle {
     display: none; /* Hidden by default */
     flex-direction: column; /* Stack bars vertically */
@@ -109,4 +119,3 @@ nav {
         display: flex; /* Show menu when toggled */
     }
 }
-

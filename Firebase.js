@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,20 +18,27 @@ const auth = getAuth(app);
 auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
 
-const google_login = document.getElementById("google_btn")
-google_login.addEventListener('click', () => {
+const googleLoginButton = document.getElementById("google_btn");
+googleLoginButton.addEventListener('click', () => {
     signInWithPopup(auth, provider)
         .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
             // The signed-in user info.
             const user = result.user;
-            console.log(user)
-            window.location.href = "index.html"
-        }).catch((error) => {
+            console.log(user);
+            // Redirect to index.html after successful login
+            window.location.href = "index.html";
+        })
+        .catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
-            // ...
+            const email = error.email; // The email of the user's account used.
+            const credential = GoogleAuthProvider.credentialFromError(error); // Auth credential if available
+            
+            console.error("Error during sign-in:", errorCode, errorMessage, email, credential);
+            // You can show an alert or a message to the user
+            alert(`Sign-in failed: ${errorMessage}`);
         });
-})
+});

@@ -2,475 +2,224 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="src/css/index.css">
-    <link rel="stylesheet" href="src/css/navbar.css">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Chatbot Interface</title>
 
-    <!--Updated to latest version-->
+    <!-- Tailwind CSS for quick styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS for modal and button styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Stylesheet -->
+    <link href="Style.css" rel="stylesheet" />
+
+    <!-- Highlight.js for code syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css" />
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+
+    <!-- Custom Inline Styles -->
     <style>
-        /* font size of button */
-        .buttons .login,
-        .buttons .get-started,
-        .dark-mode-toggle {
-            font-size: 18px;
-            /* Increase font size */
-            padding: 10px 15px;
-            /* Adjust padding for better appearance */
-        }
-
-        /* more addition for dark mode theme */
-
-        .dark-mode .logo img {
-            filter: brightness(0) invert(1);
-            /* Inverts the color to make it white */
-        }
-
-        /* end */
-        /* adding dark mode for contact info */
-        .content {
-            transition: background-color 0.3s, color 0.3s;
-            /* Smooth transitions */
-        }
-
-        .dark-mode .content {
-            background-color: rgba(50, 50, 50, 0.95);
-            /* Match body background opacity */
-            padding: 20px;
-            /* Optional: add padding for better spacing */
-        }
-
-        /* end */
-
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            flex-grow: 1;
-        }
-
-        h1 {
-            color: blue;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 20px;
-            animation: fadeIn 1s ease-in-out;
+            min-height: 100vh;
         }
 
-        .contact-item {
-            background-color: #e7f3fe;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 250px;
-            /* Adjusted width for a better fit in a row */
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-item img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            border: 3px solid #2980b9;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 20px;
-        }
-
-        /* Added the hover animation on the footer social icons */
-        .social-icon {
-            transition: transform 0.3s ease;
-            /* Smooth transition effect */
-        }
-
-        .social-icon:hover {
-            transform: scale(1.3);
-            /* Scale the element to 1.3 times its size */
-        }
-
-        .fa-facebook:hover {
-            color: blue;
-            /* Icon color change to blue on hover */
-        }
-
-        .fa-x-twitter:hover {
-            color: black;
-            /* Icon color change to black on hover */
-        }
-
-        .fa-instagram:hover {
-            color: orangered;
-            /* Icon color change to orangered on hover */
-        }
-
-        .fa-linkedin-in:hover {
-            color: rgb(16, 13, 195);
-            /* Icon color change to rgb(16, 13, 195) on hover */
-        }
-
-        #twitter:hover {
-            color: #1da1f2;
-            transform: scale(1.5);
-        }
-
-        #instagram:hover {
-            background: linear-gradient(45deg, #FF0080, #FF8C00, #FFD700);
-            color: transparent;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transform: scale(1.5);
-        }
-
-        #linkedin:hover {
-            color: #0077B5;
-            transform: scale(1.5);
-        }
-        
-        ul li a:hover{
-            color: blue !important;
-        }
-
-        a:hover{
-            color: blue !important;
-        }
-
-
-        footer {
-            background-color: #C4D7FF;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
+        /* Chat container styling */
+        .chat-container {
             width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        /* Message styling */
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
         }
 
-        /* Logo Animation */
-        @keyframes logoAnimation {
-            0% {
-                opacity: 0;
-                transform: translateX(-100px);
-                /* Start from the left */
-            }
-
-            50% {
-                transform: translateX(10px);
-                /* Move slightly to the right */
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-                /* End at original position */
-            }
+        /* User and AI message styles */
+        .user-message {
+            background-color: #d1e7dd;
+            align-self: flex-end;
         }
 
-        .map {
-            width: 860px;
-            height: 400px;
-            border: 3px 3px 3px 3px solid #090202;
-            border-radius: 5px;
-            margin: 20px auto;
-            object-fit: cover;
+        .ai-message {
+            background-color: #cfe2ff;
+            align-self: flex-start;
+        }
+
+        /* Loader styling */
+        #loader {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Input group styling */
+        .input-group {
+            margin-top: 15px;
         }
     </style>
 </head>
 
 <body>
-    <!-- pre loader -->
-    <div id="preloader">
-        <div class="wrapper">
-            <div class="box-wrap">
-                <div class="box one"></div>
-                <div class="box two"></div>
-                <div class="box three"></div>
-                <div class="box four"></div>
-                <div class="box five"></div>
-                <div class="box six"></div>
-            </div>
+    <!-- Loader for async operations -->
+    <div id="loader">Loading...</div>
+
+    <!-- Main chat container -->
+    <div class="chat-container">
+        <!-- Output container for displaying chat messages -->
+        <div id="output-container" class="overflow-auto" style="max-height: 300px;"></div>
+
+        <!-- Input and settings buttons -->
+        <div class="input-group">
+            <input type="text" id="prompt-input" class="form-control" placeholder="Type your message here..." />
+            <button id="send-btn" class="btn btn-primary">Send</button>
+            <button id="settings-btn" class="btn btn-secondary">Settings</button>
         </div>
-    </div>
 
-    <div class="container" id="container">
+        <!-- Settings modal for language and theme selection -->
+        <div id="settings-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Settings</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
-        <div class="logo">
-            <div class="brand-name">
-                <span class="letter red" style="--letter-index: 1;">A</span>
-                <span class="letter red" style="--letter-index: 2;">m</span>
-                <span class="letter red" style="--letter-index: 3;">b</span>
-                <span class="letter red" style="--letter-index: 4;">u</span>
-                <span class="letter" style="--letter-index: 5;">F</span>
-                <span class="letter" style="--letter-index: 6;">l</span>
-                <span class="letter" style="--letter-index: 7;">o</span>
-                <span class="letter" style="--letter-index: 8;">w</span>
-            </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
-        </div>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#container" style="color: #333;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711"
-                                stroke="currentColor">
-                            </path>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html" id="home-link" class="menu_links" data-link="Home">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="features.html" id="features-link" class="menu_links" data-link="Features">
-                        <span>Features</span></a>
-                </li>
-                <li>
-                    <a href="team.html" id="team-link" class="menu_links" data-link="Team">
-                        <span>Team</span></a>
-                </li>
-                <li>
-                    <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-                        <span>Contact</span></a>
-                </li>
-                <li>
-                    <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
-                        <span>Feedback</span></a>
-                </li>
-                <li>
-                    <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
-                        <span>Nearby</span></a>
-                </li>
-            </ul>
-        </nav>
+                    <div class="modal-body">
+                        <!-- Language selection -->
+                        <h6>Language</h6>
+                        <select id="language-select" class="form-select">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                        </select>
 
-    </div>
-    <div class="content" id="main-content">
-        <h1>Contact Us</h1>
-        <div class="contact-info">
-            <div class="contact-item">
-                <img src="images/call1-w.avif" style="border-radius: 50%;" alt="Call Us">
-                <h2>Call Us</h2>
-                <p>For immediate assistance, call our emergency line at <strong>123-456-7890</strong>.</p>
-            </div>
-            <div class="contact-item">
-                <img src="https://i.postimg.cc/m2bGBGFf/help-w.png" style="border-radius: 50%;" alt="Help">
-                <h2>Need Help?</h2>
-                <p>Our team is available 24/7 to help you with any inquiries.</p>
-            </div>
-            <div class="contact-item">
-                <img src="images/caremeregency-w.png" style="border-radius: 50%;" alt="Emergency Care">
-                <h2>Emergency Care</h2>
-                <p>In case of an emergency, please do not hesitate to reach out to us immediately.</p>
-            </div>
-        </div>
-        <!-- adding map -->
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241294.64898498365!2d72.79635424219836!3d19.09761203283721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Emergency%20Lane%2C%20Mumbai%2C%20India!5e0!3m2!1sen!2sin!4v1728732339444!5m2!1sen!2sin"
-                width=860px height="400" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
-                overflow="hidden" style="border :10" object-fit="cover" ;></iframe>
-            <!--  ;"  loading="lazy" margin-top="50%"  ></iframe> -->
-        </div>
-    </div>
+                        <!-- Theme selection -->
+                        <h6>Theme</h6>
+                        <select id="theme-select" class="form-select">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
 
-
-    <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
-        <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-            <div
-                style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-
-                <!-- Quick Links Section -->
-                <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-                    <ul style="list-style-type: none; padding: 0;">
-                        <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a>
-                        </li>
-                        <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact
-                                Us</a></li>
-                        <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy
-                                Policy</a></li>
-                        <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of
-                                Service</a></li>
-                        <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site
-                                Map</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Information Section -->
-                <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-                    <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-                    <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-                    <a href="mailto:emergency@ambulanceservice.in"
-                        style="color: #000000;">emergency@ambulanceservice.in</a></p>
-                    <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567"
-                            style="color: #000000;">+91-911-1234567</a></p>
-                </div>
-
-                <!-- Modified the looks of the social icons -->
-                <!-- Social Media Links -->
-                <div style="text-align: center; min-width: 200px; color: black;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-                        <a href="https://www.facebook.com" class="social-icon facebook"
-                            style="color: black; text-decoration: none; font-size: 24px;"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.twitter.com" class="social-icon twitter"
-                            style="color: black; text-decoration: none; font-size: 24px;"><i
-                                class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com" class="social-icon instagram"
-                            style="color: black; text-decoration: none; font-size: 24px;"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com" class="social-icon linkedin"
-                            style="color: black; text-decoration: none; font-size: 24px;"><i
-                                class="fab fa-linkedin-in"></i></a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="save-settings">Save changes</button>
                     </div>
                 </div>
-
-                <!-- Newsletter Subscription -->
-                <!-- Newsletter Subscription -->
-                <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-                    <form id="newsletter-form" action="#">
-                        <input type="email" id="newsletter-email" placeholder="Your Email"
-                            style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-                        <button type="submit"
-                            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">
-                            Subscribe
-                        </button>
-                    </form>
-                    <div id="subscription-notification" style="display:none; background-color: rgba(212, 237, 218, 0.8); color: #155724; padding: 10px; border-radius: 5px; position: absolute; top: 10px; left: 600px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
-                        Thank you for subscribing to our newsletter!
-                    </div>
-                    
-                </div>
-                <script>
-                    document.querySelector("form").addEventListener("submit", function(event) {
-                        event.preventDefault(); // Prevent form from submitting immediately
-                
-                        // Improved Email validation regex to ensure proper domain like "gmail.com"
-                        const emailInput = document.querySelector("input[type='email']");
-                        const emailRegex = /^[^\s@]+@gmail\.com$/;
-                
-                        if (emailRegex.test(emailInput.value)) {
-                            // Show alert notification with green translucent box
-                            const notification = document.getElementById("subscription-notification");
-                            notification.style.display = "block";
-                
-                            // Hide the message after 3 seconds
-                            setTimeout(function() {
-                                notification.style.display = "none";
-                            }, 3000);
-                
-                            // Reset the form
-                            this.reset();
-                        } else {
-                            alert("Please enter a valid Gmail address.");
-                        }
-                    });
-                </script>
-                
-                
             </div>
         </div>
-        <hr>
-    </footer>
-    <!-- Copyright Section -->
-    <div
-        style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
-        <strong>
-            <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-        </strong>
     </div>
-    <a href="chatbot.html">
-        <div class="fixed bottom-0 right-2 chatbot-container">
-            <button class="chatbot-button group">
-                <img class="h-20" src="chatbot.gif" alt="chatbot" />
-                <span class="tooltip-text">
-                    Welcome to AmbuFlow!<br />
-                    How can I help You?
-                </span>
-            </button>
-        </div>
-    </a>
-    <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
-        <i class="fa-solid fa-moon"></i>
-    </button>
-    <div class="gtranslate_wrapper"></div>
 
+    <!-- JavaScript Modules and API integration -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
-    <script src="preloader.js"></script>
-    <script src="script.js"></script>
-    <script>    const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+        const API_KEY = "YOUR_API_KEY"; // Replace with your actual API key
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        let chat;
+        let selectedLanguage = 'en'; // Default language
+        let selectedTheme = 'light'; // Default theme
 
-        const colors = [
-            "#ffb56b",
-            "#fdaf69",
-            "#f89d63",
-            "#f59761",
-            "#ef865e",
-            "#ec805d",
-            "#e36e5c",
-            "#df685c",
-            "#d5585c",
-            "#d1525c",
-            "#c5415d",
-            "#c03b5d",
-            "#b22c5e",
-            "#ac265e",
-            "#9c155f",
-            "#950f5f",
-            "#830060",
-            "#7c0060",
-            "#680060",
-            "#60005f",
-            "#48005f",
-            "#3d005e"
-        ];
-
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
+        // Send message event listener
+        document.getElementById("send-btn").addEventListener("click", async () => {
+            const prompt = document.getElementById("prompt-input").value;
+            if (prompt.trim() !== "") {
+                displayMessage(prompt, "user");
+                await sendMessage(prompt);
+                document.getElementById("prompt-input").value = ""; // Clear input after sending
+            }
         });
-        //end 
+
+        // Function to send message to the AI model
+        async function sendMessage(prompt) {
+            try {
+                const model = genAI.getGenerativeModel({ model: "gemini-pro", safetySettings: getSafetySettings() });
+                const result = await model.sendMessage(prompt);
+                const response = await result.response;
+                const text = await response.text();
+                displayMessage(text, "ai");
+            } catch (error) {
+                console.error("Error during message generation:", error);
+                displayMessage("Error generating response.", "ai");
+            }
+        }
+
+        // Function to display a message
+        function displayMessage(message, sender) {
+            const outputContainer = document.getElementById("output-container");
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("message", sender === "user" ? "user-message" : "ai-message");
+            msgDiv.innerHTML = message;
+            outputContainer.appendChild(msgDiv);
+            outputContainer.scrollTop = outputContainer.scrollHeight; // Scroll to the bottom
+        }
+
+        // Show settings modal
+        document.getElementById("settings-btn").addEventListener("click", () => {
+            const modal = new bootstrap.Modal(document.getElementById('settings-modal'));
+            modal.show();
+        });
+
+        // Save settings and apply changes
+        document.getElementById("save-settings").addEventListener("click", () => {
+            selectedLanguage = document.getElementById("language-select").value;
+            selectedTheme = document.getElementById("theme-select").value;
+            applySettings();
+            const modal = bootstrap.Modal.getInstance(document.getElementById('settings-modal'));
+            modal.hide();
+        });
+
+        // Apply selected theme to the page
+        function applySettings() {
+            document.body.className = selectedTheme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark';
+        }
+
+        // Define safety settings for AI model responses
+        function getSafetySettings() {
+            return [
+                {
+                    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                    threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+                },
+            ];
+        }
     </script>
 
-    <!-- Add this div for the translator popup -->
-
+    <!-- Bootstrap JS for modals and other components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

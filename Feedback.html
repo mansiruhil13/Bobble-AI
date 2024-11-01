@@ -35,7 +35,6 @@
       /* Adjust padding for better appearance */
     }
 
-
     /* dark mode toggle button styling */
     body {
       background-color: white;
@@ -43,29 +42,28 @@
       color: black;
       transition: background-color 0.3s, color 0.3s;
     }
- 
+
     .navbar {
-
-      background-color:  rgb(148 207 226);
+      background-color: rgb(148 207 226);
       /* Light mode navbar */
-
       border-radius: 7px;
       color: black;
       padding: 7px;
     }
 
     ul li a:hover {
-    color: rgb(16, 16, 16) !important;
+      color: rgb(16, 16, 16) !important;
     }
+
     a:hover {
-    color: rgb(0, 0, 6);
-  }
+      color: rgb(0, 0, 6);
+    }
+
     .navbar.dark-mode {
       background-color: black;
       /* Dark mode navbar */
       color: white;
     }
-
 
     /* more addition for dark mode theme */
     .dark-mode .logo img {
@@ -73,8 +71,7 @@
       /* Inverts the color to make it white */
     }
 
-
-    /* dark mode hove effect on logo */
+    /* dark mode hover effect on logo */
     body.dark-mode #logo img:hover {
       filter: brightness(0) invert(1);
       /* Change black logo to white */
@@ -86,37 +83,6 @@
       filter: brightness(0) invert(1);
       /* Change logo color in dark mode */
     }
-/* 
-    .menu ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      
-    }
-
-    .menu li {
-      margin-right: 15px;
-    } */
-/* 
-    .menu a {
-      color: black;
-      Light mode link color
-      border: 1.5px solid black;
-      Black border
-      border-radius: 7px;
-      padding: 3px 5px;
-      text-decoration: none;
-      transition: all 0.3s;
-      display:inline-block;
-      vertical-align: middle;
-    }
-
-    .menu a:hover {
-      background-color: blue;
-      Blue background on hover
-      color: white;
-      White text on hover
-    } */
 
     .dark-mode .menu a {
       color: white;
@@ -171,8 +137,6 @@
       align-items: center;
     }
 
-
-
     /* adding dark mode for contact info */
     .content {
       transition: background-color 0.3s, color 0.3s;
@@ -186,11 +150,8 @@
     .dark-mode .content {
       background-color: rgba(50, 50, 50, 0.95);
       /* Match body background opacity */
-      /* padding: 20px; */
-      /* Optional: add padding for better spacing */
     }
 
-    /* end */
     footer {
       background-color: #C4D7FF;
       color: white;
@@ -204,7 +165,6 @@
     .content {
       margin: 2rem 3rem;
       padding: 4rem 1rem;
-      /* width: 90vw; */
       background-color: #f7f5f5;
       border-radius: 5px;
       display: flex;
@@ -350,7 +310,7 @@
       margin-bottom: 1rem;
       font-weight: 600;
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  }
+    }
 
     .feed-btn:hover {
       transform: scale(1.03);
@@ -381,317 +341,106 @@
       font-size: 2rem;
       font-weight: 500;
       color: green;
+      margin-top: 2rem;
+    }
+
+    /* Style for back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .back-to-top:hover {
+      background-color: #555;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- pre loader -->
-  <div id="preloader">
-    <div class="wrapper">
-      <div class="box-wrap">
-        <div class="box one"></div>
-        <div class="box two"></div>
-        <div class="box three"></div>
-        <div class="box four"></div>
-        <div class="box five"></div>
-        <div class="box six"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" id="container">
+  <div class="navbar">
     <div class="logo">
-      <div class="brand-name">
-        <span class="letter red" style="--letter-index: 1;">A</span>
-        <span class="letter red" style="--letter-index: 2;">m</span>
-        <span class="letter red" style="--letter-index: 3;">b</span>
-        <span class="letter red" style="--letter-index: 4;">u</span>
-        <span class="letter" style="--letter-index: 5;">F</span>
-        <span class="letter" style="--letter-index: 6;">l</span>
-        <span class="letter" style="--letter-index: 7;">o</span>
-        <span class="letter" style="--letter-index: 8;">w</span>
-      </div>
-      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+      <img src="logo.png" alt="AmbuFlow Logo" class="logo-img" style="height: 50px;" />
     </div>
-    <nav class="menu">
-      <ul>
-        <li>
-          <a href="#container" style="color: #333;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
-            <span>Features</span>
-          </a>
-        </li>
-        <li>
-          <a href="aboutus.html" id="about-link" class="menu_links" data-link="About Us">
-            <span>About Us</span>
-          </a>
-        </li>
-        <li>
-          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-            <span>Contact</span>
-          </a>
-        </li>
-        <li>
-          <a href="Feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
-            <span>Feedback</span>
-          </a>
-        </li>
-        <li>
-          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
-            <span>Nearby</span></a>
-        </li>
-      </ul>
-    </nav>
-
     <div class="buttons">
-
-      <a href="login.html" class="login">Log in</a>
-      <a href="up.html" class="get-started">Get started</a>
-
-      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-      
+      <a href="login.html" class="login">Login</a>
+      <a href="register.html" class="get-started">Get Started</a>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
     </div>
   </div>
-</header>
-
-
-<body>
-  <header>
-
-    <h1>AmbuFlow Feedback</h1>
-
-  </header>
 
   <div class="content">
-      <h1>Feedback</h1>
-      <div class="feedback-box">
-        <h3>Please rate your experience:</h3>
-        <form id="feedback-box">
-          <div class="star-rating">
-            <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars" />
-            <label for="star5" title="5 stars">★</label>
-            <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars" />
-            <label for="star4" title="4 stars">★</label>
-            <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars" />
-            <label for="star3" title="3 stars">★</label>
-            <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars" />
-            <label for="star2" title="2 stars">★</label>
-            <input type="radio" id="star1" name="rating" value="1" aria-label="1 star" />
-            <label for="star1" title="1 star">★</label>
-    <div id="thank-you-message" class="thank-feed">
-      Thank you for your response!
-    </div>
-  </div>
-
-
-
-  <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-
-        <!-- Quick Links Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-          <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Information Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #333; margin-bottom: 10px;font-size:0.8rem";>
-            Email: 
-            <a href="mailto:emergency@ambulanceservice.in" style="color: #3173f8;">emergency@ambulanceservice.in</a>
-        </p>
-        <p style="color: #333;">
-            Phone: 
-            <a href="tel:+91-911-1234567" style="color: #333; text-decoration: none; transition: color 0.3s;">+91-911-1234567</a>
-        </p>
-        </div>
-
-        <!-- Modified the looks of the social icons -->
-        <!-- Social Media Links -->
-        <div style="text-align: center; min-width: 200px; color: black;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-            <a href="https://www.facebook.com" class="social-icon facebook"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com" class="social-icon twitter"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com" class="social-icon instagram"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" class="social-icon linkedin"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
-
-          </div>
-
-          <h3>Your Comments:</h3>
-          <textarea class="feed-msg" rows="5" style="width:500px; margin:10px;" placeholder="Share your feedback..." required></textarea>
-            <div class="feed-btn">
-            <button type="submit">Submit Feedback</button>
-          </div>
-        </form>
+    <h1>Feedback</h1>
+    <h3>Your feedback is valuable to us!</h3>
+    <form id="feedback-box" class="feedback-box">
+      <div class="star-rating">
+        <input type="radio" name="rating" id="star-5" value="5" />
+        <label for="star-5">★</label>
+        <input type="radio" name="rating" id="star-4" value="4" />
+        <label for="star-4">★</label>
+        <input type="radio" name="rating" id="star-3" value="3" />
+        <label for="star-3">★</label>
+        <input type="radio" name="rating" id="star-2" value="2" />
+        <label for="star-2">★</label>
+        <input type="radio" name="rating" id="star-1" value="1" />
+        <label for="star-1">★</label>
       </div>
-      <div id="thank-you-message">
-        Thank you for your feedback!
-      </div>
-    </div>
+      <textarea class="feed-msg" rows="5" placeholder="Share your feedback..."></textarea>
+      <button type="submit" class="feed-btn">Submit Feedback</button>
+    </form>
+    <div id="thank-you-message">Thank you for your feedback!</div>
   </div>
-
-</a>
-
-<script src="preloader.js"></script>
-
-
-<!--  -->
-<script>
-  // Back to top button functionality
-  const backToTopButton = document.getElementById('backToTopBtn');
-
-
-  <script src="preloader.js"></script>
-
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.getElementById('dark-mode-toggle');
-      const darkModeButton = document.querySelector('.dark-mode-toggle');
-      const logoImage = document.querySelector('.logo img'); // Select the logo image
-      const navbar = document.querySelector('.navbar'); // Select the navbar
-
-      // Reset to light mode for the Contact page
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-      navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
-
-      // Clear the sessionStorage for theme on this page
-      sessionStorage.removeItem("theme");
-
 
   <footer>
-    <div>
-      <h3>Connect with us!</h3>
-      <div>
-        <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
     <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+    <div>
+      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </footer>
 
+  <button class="back-to-top">Back to Top</button>
+
   <script>
-    // Preloader hide on load
-    window.onload = function () {
-      document.getElementById('preloader').style.display = 'none';
-    };
-
-    // Feedback form submission
-    document.getElementById('feedback-box').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the form from actually submitting
-
-      // Hide the feedback box and show the thank you message
-      document.querySelector('.feedback-box').style.display = 'none';
-      document.getElementById('thank-you-message').style.display = 'flex'; // Show the message
+    // Back to top button functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
     });
 
+    // Feedback submission functionality
+    const feedbackForm = document.getElementById('feedback-box');
+    const thankYouMessage = document.getElementById('thank-you-message');
 
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
+    feedbackForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the default form submission
 
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
+      // Here you could handle the form submission,
+      // e.g., send data to a server or display a message.
+      thankYouMessage.style.display = 'block'; // Show thank you message
+      feedbackForm.reset(); // Reset the form
+    });
 
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-      });
-
-      requestAnimationFrame(animateCircles);
-
-  // Show the button when scrolled down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-
-    }
-  };
-
-  // Scroll to top when the button is clicked
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
-
-<script>
-  // Dark mode functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const darkModeButton = document.querySelector('.dark-mode-toggle');
-    const logoImage = document.querySelector('.logo img'); // Select the logo image
-    const navbar = document.querySelector('.navbar'); // Select the navbar
-
-    // Reset to light mode for the Contact page
-    document.body.classList.remove("dark-mode");
-    document.body.classList.add("light-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon for light mode
-    navbar.classList.remove("dark-mode"); // Ensure navbar is in light mode
-
-    // Clear the sessionStorage for theme on this page
-    sessionStorage.removeItem("theme");
-
-    toggleButton.addEventListener('click', function () {
-
-    // Toggle dark mode functionality
-    const toggleDarkMode = () => {
-
+    // Dark mode toggle functionality
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    darkModeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-    };
-
-    // Add event listener to a dark mode toggle button (if implemented)
-    document.querySelector('.dark-mode-toggle').addEventListener('click', toggleDarkMode);
+      document.querySelector('.navbar').classList.toggle('dark-mode');
+    });
   </script>
 </body>
 

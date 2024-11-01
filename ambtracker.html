@@ -2,170 +2,235 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ambulance GPS Tracking System</title>
-  <link rel="stylesheet" href="src/css/manage.css" /> <!-- For Header -->
-  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    /* Full page styles */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambulance GPS Tracking System</title>
+    <link rel="stylesheet" href="src/css/manage.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Full page styles */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-    html {
-      overflow-y: scroll;
-    }
+        html {
+            overflow-y: scroll;
+        }
 
-    html::-webkit-scrollbar {
-      width: 9px;
-      transition: width 0.3s ease;
-      margin: 10px;
-    }
+        html::-webkit-scrollbar {
+            width: 9px;
+            transition: width 0.3s ease;
+            margin: 10px;
+        }
 
-    html::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background: rgba(216, 216, 216, 0.74);
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-    }
+        html::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgba(216, 216, 216, 0.74);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
 
-    html::-webkit-scrollbar-thumb:window-inactive {
-      background: rgb(156, 156, 156);
-    }
+        html::-webkit-scrollbar-thumb:window-inactive {
+            background: rgb(156, 156, 156);
+        }
 
+        /* Map container */
+        #map {
+            height: 90%;
+            width: 100%;
+        }
 
-    /* Map container */
-    #map {
-      height: 90%;
-      width: 100%;
-    }
+        /* Header styles */
+        header {
+            background-color: #4caf50;
+            color: white;
+        }
 
-    /* Header styles */
-    h1 {
-      text-align: center;
-      background-color: #4caf50;
-      color: white;
-      padding: 15px;
-      margin: 0;
-    }
+        h1 {
+            text-align: center;
+            padding: 15px;
+            margin: 0;
+        }
 
-    /* Add a loading spinner for the map */
-    #loadingSpinner {
-      display: none;
-      /* Hidden by default */
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1000;
-    }
-  </style>
-  <!-- Include the Google Maps JavaScript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async
-    defer></script>
+        /* Loading spinner styles */
+        #loadingSpinner {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: #4caf50;
+        }
+
+        .navbar-logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links li {
+            display: inline;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resp {
+            display: none; /* Hidden by default, can be toggled for responsiveness */
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            width: 100%;
+        }
+
+        .navbar-links2 {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .navbar-links2 li {
+            margin: 5px 0;
+        }
+
+        .navbar-links2 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .resp {
+                display: block;
+            }
+            .navbar-links {
+                display: none; /* Hide links in mobile view */
+            }
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="./images/manageLogo.png"></img>
-            <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
-        </div>
-        <ul class="navbar-links">
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./images/manageLogo.png" alt="Logo">
+                <h2 style="display: flex;">ambu<span style="color: #3DBDEC;">Flow</span></h2>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="hospital.html">Dashboard</a></li>
+                <li><a href="manage.html">Manage Status</a></li>
+                <li><a href="driver.html">Manage Driver</a></li>
+                <li><a href="ambtracker.html">Manage Ambulance</a></li>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            </ul>
+            <div class="resp">
+                <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
+                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dropdown -->
+    <div class="dropdown-menu">
+        <ul class="navbar-links2">
             <li><a href="hospital.html">Dashboard</a></li>
             <li><a href="manage.html">Manage Status</a></li>
             <li><a href="driver.html">Manage Driver</a></li>
             <li><a href="ambtracker.html">Manage Ambulance</a></li>
-            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
-        <div class="resp">
-            <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
-            <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
-        </div>
-    </nav>
-</header>
+    </div>
 
-<!-- Dropdown -->
-<div class="dropdown-menu">
-    <ul class="navbar-links2">
-        <li><a href="hospital.html">Dashboard</a></li>
-        <li><a href="manage.html">Manage Status</a></li>
-        <li><a href="driver.html">Manage Driver</a></li>
-        <li><a href="ambtracker.html">Manage Ambulance</a></li>
-    </ul>
- </div>
+    <!-- Map container -->
+    <div id="map"></div>
 
-  <!-- Map container -->
-  <div id="map"></div>
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner">Loading...</div>
 
-  <!-- Loading Spinner -->
-  <div id="loadingSpinner">Loading...</div>
+    <!-- Script to load the map and track ambulance -->
+    <script>
+        let map, marker;
 
-  <!-- Script to load the map and track ambulance -->
-  <script>
-    let map, marker;
+        // Initial position of the ambulance (example coordinates)
+        const ambulancePosition = { lat: 28.7, lng: 77.1 }; // Example coordinates
 
-    // Initial position of the ambulance (example coordinates)
-    const ambulancePosition = { lat: 28.7, lng: 77.1 }; // San Francisco
+        // Function to initialize the map
+        function initMap() {
+            const loadingSpinner = document.getElementById("loadingSpinner");
+            loadingSpinner.style.display = "block"; // Show spinner
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: ambulancePosition,
+                zoom: 15,
+            });
+            loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
+            marker = new google.maps.Marker({
+                position: ambulancePosition,
+                map: map,
+                title: "Ambulance Location",
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+            });
+            setInterval(updateAmbulancePosition, 5000);
+        }
 
-    // Function to initialize the map
-    function initMap() {
-      loadingSpinner.style.display = "block"; // Show spinner
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: ambulancePosition,
-        zoom: 15,
-      });
-      loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
-      marker = new google.maps.Marker({
-        position: ambulancePosition,
-        map: map,
-        title: "Ambulance Location",
-        draggable: false,
-        animation: google.maps.Animation.DROP,
-      });
-      setInterval(updateAmbulancePosition, 5000);
-    }
+        // Function to simulate the update of the ambulance's GPS position
+        function updateAmbulancePosition() {
+            const newLat = ambulancePosition.lat + (Math.random() * 0.001 - 0.0005);
+            const newLng = ambulancePosition.lng + (Math.random() * 0.001 - 0.0005);
+            const newPosition = { lat: newLat, lng: newLng };
+            marker.setPosition(newPosition);
+            map.setCenter(newPosition);
+        }
 
-    // Function to simulate the update of the ambulance's GPS position
-    function updateAmbulancePosition() {
-      const newLat = ambulancePosition.lat + (Math.random() * 0.001 - 0.0005);
-      const newLng = ambulancePosition.lng + (Math.random() * 0.001 - 0.0005);
-      const newPosition = { lat: newLat, lng: newLng };
-      marker.setPosition(newPosition);
-      map.setCenter(newPosition);
-    }
+        // Initialize the map when the window loads
+        window.onload = initMap;
 
-    // Initialize the map when the window loads
-    window.onload = initMap;
+        // Dropdown functionality
+        let flag = false;
+        document.getElementById('dropdown').addEventListener('click', () => {
+            const dropdown = document.querySelector('.dropdown-menu');
+            dropdown.style.display = flag ? 'none' : 'block';
+            flag = !flag;
+        });
 
-    // Dropdown
-    let flag = false
-    document.getElementById('dropdown').addEventListener('click', () => {
-      const dropdown = document.querySelector('.dropdown-menu');
-      if (flag) {
-        dropdown.style.display = 'none';
-        flag = false;
-      } else {
-          dropdown.style.display = 'block';
-          flag = true;
-      }
-    });
-
-    function logout() {
-      const confirmLogout = confirm('Are you sure you want to logout?');
-        if (confirmLogout) {
-          localStorage.removeItem('userID');
-          localStorage.removeItem('JWTtoken');
-          window.location.href = 'index.html';
-          alert("Logged out successfully!");
-      }
-    }  
-  </script>
+        function logout() {
+            const confirmLogout = confirm('Are you sure you want to logout?');
+            if (confirmLogout) {
+                localStorage.removeItem('userID');
+                localStorage.removeItem('JWTtoken');
+                window.location.href = 'index.html';
+                alert("Logged out successfully!");
+            }
+        }
+    </script>
 </body>
+
 </html>

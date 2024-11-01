@@ -1,22 +1,31 @@
-.container{
-    width:100%;
+.container {
+    width: 100%;
+    max-width: 1200px; /* Optional: Limit the maximum width for better layout on large screens */
+    margin: 0 auto; /* Center the container */
 }
-.logo{
-    margin-top:1rem;
+
+.logo {
+    margin-top: 1rem;
 }
-nav{
-    margin-top:0.3rem;
+
+nav {
+    margin-top: 0.3rem;
 }
-.outer-options{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.buttons{
+
+.outer-options {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
-.buttons div a{
-    font-size: 2rem;
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.buttons div a {
+    font-size: 2rem; /* Consider changing to rem for better scalability */
 }

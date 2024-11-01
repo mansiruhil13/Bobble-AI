@@ -1,229 +1,228 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register & Login</title>
-  <link rel="stylesheet" href="preloaderStyle.css">
-  <link rel="stylesheet" href="src/css/up.css" />
-  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
+    <link rel="stylesheet" href="src/css/up.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <div class="gtranslate_wrapper"></div>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="wrapper">
-      <div class="box-wrap">
-        <div class="box one"></div>
-        <div class="box two"></div>
-        <div class="box three"></div>
-        <div class="box four"></div>
-        <div class="box five"></div>
-        <div class="box six"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="forms-container">
-      <div class="signin-signup">
-        <!-- Sign In Form -->
-        <form action="#" class="sign-in-form">
-          <h2 class="title">Sign in</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" required />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock" id="toggle-password"></i>
-            <input type="password" placeholder="Password" id="password-input" required />
-          </div>
-          <input type="submit" value="Login" class="btn solid" />
-          <p class="social-text">Or Sign in with social platforms</p>
-          <div class="social-media">
-            <a href="https://www.google.com" target="_blank" class="social-icon"><i class="fab fa-google"
-                style="font-size: 24px; color: #4285f4"></i></a>
-            <a href="https://facebook.com/YourPage" target="_blank" class="social-icon"><i class="fab fa-facebook-f"
-                style="font-size: 24px; color: #4267b2"></i></a>
-            <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon"><i class="fab fa-github"
-                style="font-size: 24px; color: #333"></i></a>
-          </div>
-        </form>
-
-        <!-- Sign Up Form -->
-        <form action="#" class="sign-up-form">
-          <h2 class="title">Sign up</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" required />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" required />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock" id="toggle-password-signup"></i>
-            <input type="password" placeholder="Password" id="password-input-signup" required />
-          </div>
-          <input type="submit" class="btn" value="Sign up" />
-        </form>
-      </div>
-    </div>
-
-    <div class="panels-container">
-      <div class="panel left-panel">
-        <div class="content">
-          <h3>New here ?</h3>
-          <p>Discover new experiences with AmbuFlow! <br />Get access to exclusive content and features. <br />Create
-            your account.</p>
-          <button class="btn transparent" id="sign-up-btn">Sign up</button>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wrapper">
+            <div class="box-wrap">
+                <div class="box one"></div>
+                <div class="box two"></div>
+                <div class="box three"></div>
+                <div class="box four"></div>
+                <div class="box five"></div>
+                <div class="box six"></div>
+            </div>
         </div>
-      </div>
-      <div class="panel right-panel">
-        <div class="content">
-          <h3>One of us ?</h3>
-          <p>Welcome to our community</p>
-          <button class="btn transparent" id="sign-in-btn">Sign in</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <script src="preloader.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js">
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- Sign In Form -->
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock" id="toggle-password"></i>
+                        <input type="password" placeholder="Password" id="password-input" required />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" />
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+                        <a href="https://www.google.com" target="_blank" class="social-icon">
+                            <i class="fab fa-google" style="font-size: 24px; color: #4285f4"></i>
+                        </a>
+                        <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f" style="font-size: 24px; color: #4267b2"></i>
+                        </a>
+                        <a href="https://github.com/YourGitHubProfile" target="_blank" class="social-icon">
+                            <i class="fab fa-github" style="font-size: 24px; color: #333"></i>
+                        </a>
+                    </div>
+                </form>
 
-  </script>
-  <script>
-     sign_in_btn = document.querySelector("#sign-in-btn");
-     sign_up_btn = document.querySelector("#sign-up-btn");
-     container = document.querySelector(".container");
+                <!-- Sign Up Form -->
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock" id="toggle-password-signup"></i>
+                        <input type="password" placeholder="Password" id="password-input-signup" required />
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
+                </form>
+            </div>
+        </div>
 
-    // Toggle between sign up and sign in
-    sign_up_btn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
-    });
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here?</h3>
+                    <p>Discover new experiences with AmbuFlow! <br />Get access to exclusive content and features. <br />Create your account.</p>
+                    <button class="btn transparent" id="sign-up-btn">Sign up</button>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us?</h3>
+                    <p>Welcome to our community</p>
+                    <button class="btn transparent" id="sign-in-btn">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    sign_in_btn.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode");
-    });
+    <script src="preloader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script>
+        const sign_in_btn = document.querySelector("#sign-in-btn");
+        const sign_up_btn = document.querySelector("#sign-up-btn");
+        const container = document.querySelector(".container");
 
-    // Sign in form submission
-    document.querySelector(".sign-in-form").addEventListener('submit', function (event) {
-      event.preventDefault();
+        // Toggle between sign up and sign in
+        sign_up_btn.addEventListener("click", () => {
+            container.classList.add("sign-up-mode");
+        });
 
-       username = document.querySelector(".sign-in-form input[type='text']").value;
-       password = document.querySelector(".sign-in-form input[type='password']").value;
+        sign_in_btn.addEventListener("click", () => {
+            container.classList.remove("sign-up-mode");
+        });
 
-      // Retrieve stored credentials
-       storedUsername = localStorage.getItem('username');
-       storedPassword = localStorage.getItem('password');
+        // Sign in form submission
+        document.querySelector(".sign-in-form").addEventListener('submit', function (event) {
+            event.preventDefault();
 
-      console.log(`Stored Username: ${storedUsername}, Input Username: ${username}`);
-      console.log(`Stored Password: ${storedPassword}, Input Password: ${password}`);
+            const username = document.querySelector(".sign-in-form input[type='text']").value;
+            const password = document.querySelector(".sign-in-form input[type='password']").value;
 
-      // Validate input against stored credentials
-      if (username === storedUsername && password === storedPassword) {
-        alert('Login successful!');
-        window.location.href = 'index.html';
-      } else {
-        alert('Invalid username or password');
-      }
-    });
+            // Retrieve stored credentials
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
 
-    // Sign up form submission
-    document.querySelector(".sign-up-form").addEventListener('submit', function (event) {
-      event.preventDefault();
+            console.log(`Stored Username: ${storedUsername}, Input Username: ${username}`);
+            console.log(`Stored Password: ${storedPassword}, Input Password: ${password}`);
 
-       username = document.querySelector(".sign-up-form input[type='text']").value;
-       email = document.querySelector(".sign-up-form input[type='email']").value;
-       password = document.querySelector(".sign-up-form input[type='password']").value;
+            // Validate input against stored credentials
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login successful!');
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        });
 
-      if (username === '' || email === '' || password === '') {
-        alert('Please fill in all fields');
-        return;
-      }
+        // Sign up form submission
+        document.querySelector(".sign-up-form").addEventListener('submit', function (event) {
+            event.preventDefault();
 
-      // Store the username and password in localStorage
-      localStorage.setItem('username', username);
-      localStorage.setItem('password', password); // Ensure you're storing the password
+            const username = document.querySelector(".sign-up-form input[type='text']").value;
+            const email = document.querySelector(".sign-up-form input[type='email']").value;
+            const password = document.querySelector(".sign-up-form input[type='password']").value;
 
-      alert('Your account is created successfully. Please login to access the website.');
-      container.classList.remove("sign-up-mode"); // Optionally switch to sign in mode
-    });
+            if (username === '' || email === '' || password === '') {
+                alert('Please fill in all fields');
+                return;
+            }
 
+            // Store the username and password in localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password); // Ensure you're storing the password
 
-    // Toggle password visibility
-    function togglePassword(fieldId, icon) {
-       field = document.getElementById(fieldId);
-      field.type = field.type === 'password' ? 'text' : 'password';
-      icon.classList.toggle('fa-lock-open');
-      icon.classList.toggle('fa-lock');
-    }
+            alert('Your account is created successfully. Please login to access the website.');
+            container.classList.remove("sign-up-mode"); // Optionally switch to sign in mode
+        });
 
-    document.getElementById("toggle-password").addEventListener("click", function () {
-      togglePassword("password-input", this);
-    });
+        // Toggle password visibility
+        function togglePassword(fieldId, icon) {
+            const field = document.getElementById(fieldId);
+            field.type = field.type === 'password' ? 'text' : 'password';
+            icon.classList.toggle('fa-lock-open');
+            icon.classList.toggle('fa-lock');
+        }
 
-    document.getElementById("toggle-password-signup").addEventListener("click", function () {
-      togglePassword("password-input-signup", this);
-    });
+        document.getElementById("toggle-password").addEventListener("click", function () {
+            togglePassword("password-input", this);
+        });
 
-    // Circle animation
-     coords = { x: 0, y: 0 };
-     circles = document.querySelectorAll(".circle");
-     colors = [
-      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e",
-      "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c",
-      "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f",
-      "#950f5f", "#830060", "#7c0060", "#680060", "#60005f",
-      "#48005f", "#3d005e",
-    ];
+        document.getElementById("toggle-password-signup").addEventListener("click", function () {
+            togglePassword("password-input-signup", this);
+        });
 
-    circles.forEach(function (circle, index) {
-      circle.x = 0;
-      circle.y = 0;
-      circle.style.backgroundColor = colors[index % colors.length];
-    });
+        // Circle animation
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e",
+            "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c",
+            "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f",
+            "#950f5f", "#830060", "#7c0060", "#680060", "#60005f",
+            "#48005f", "#3d005e",
+        ];
 
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.clientX;
-      coords.y = e.clientY;
-    });
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
 
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
 
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
-        circle.style.scale = (circles.length - index) / circles.length;
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
 
-        circle.x = x;
-        circle.y = y;
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
 
-         nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-      });
+                circle.x = x;
+                circle.y = y;
 
-      requestAnimationFrame(animateCircles);
-    }
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
 
-    animateCircles();
-  </script>
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+    </script>
 </body>
 
 </html>
