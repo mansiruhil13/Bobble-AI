@@ -1,0 +1,41 @@
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger span {
+    background-color: #333;
+    border-radius: 2px;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Show Hamburger Icon on Small Screens */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        background-color: #e4eaf1;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        padding-top: 2rem;
+        z-index: 1000;
+    }
+
+    .menu ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
