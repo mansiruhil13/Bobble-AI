@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="src/css/driver.css">
     <link rel="stylesheet" href="src/css/manage.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKR3agIMLtauzDhz4fCu3heww0BV_81H4" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_SECURE_API_KEY" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #map {
@@ -23,62 +23,54 @@
             margin-bottom: 20px;
         }
 
-        /* Add a loading spinner for the map */
+        /* Loading spinner style */
         #loadingSpinner {
-            display: none; /* Hidden by default */
+            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1000;
         }
+        .navbar-links a { color: inherit; } /* Ensures link color is inherited */
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
-                <img src="./images/manageLogo.png"></img>
-                <h2 style="display: flex;">ambu<p style="color: #3DBDEC;">Flow</p></h2>
+                <img src="./images/manageLogo.png" alt="Manage Logo">
+                <h2>ambu<span style="color: #3DBDEC;">Flow</span></h2>
             </div>
             <ul class="navbar-links">
                 <li><a href="hospital.html">Dashboard</a></li>
                 <li><a href="manage.html">Manage Status</a></li>
                 <li><a href="driver.html">Manage Driver</a></li>
                 <li><a href="ambtracker.html">Manage Ambulance</a></li>
-                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
-            <div class="resp" style="margin-right: 50px;">
+            <div class="resp">
                 <button id="dropdown"><i class="fa-solid fa-bars"></i></button>
-                <li id="logout"><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a></li>
             </div>
         </nav>
     </header>
     
-    <!-- Dropdown -->
-    <div class="dropdown-menu">
-        <ul class="navbar-links2">
+    <div class="dropdown-menu" style="display: none;">
+        <ul>
             <li><a href="hospital.html">Dashboard</a></li>
             <li><a href="manage.html">Manage Status</a></li>
             <li><a href="driver.html">Manage Driver</a></li>
             <li><a href="ambtracker.html">Manage Ambulance</a></li>
         </ul>
      </div>
-    
 
     <div class="dashboard-container">
         <h1>Welcome, <span id="driverName">Driver ___</span></h1>
         <p id="status">You are currently: <strong id="availability">OFF DUTY</strong></p>
         
-        <!-- Driver Image -->
         <img src="driver-status-off.jpg" alt="Driver Image" id="driverImage">
-        
-        <!-- Google Map -->
         <div id="map"></div>
-        
-        <!-- Loading Spinner -->
         <div id="loadingSpinner">Loading...</div>
-        
         
         <div class="toggle-container">
             <label class="switch">
@@ -94,85 +86,60 @@
         const availabilityToggle = document.getElementById('availabilityToggle');
         const availabilityText = document.getElementById('availability');
         const statusText = document.getElementById('status');
-        const driverName = document.getElementById('driverName');
         const driverImage = document.getElementById('driverImage');
         const mapElement = document.getElementById('map');
         const loadingSpinner = document.getElementById('loadingSpinner');
 
-        // Initialize the map
         function initMap() {
-            loadingSpinner.style.display = "block"; // Show spinner
-            const mapOptions = {
-                zoom: 14,
-                center: { lat: 37.7749, lng: -122.4194 } // Example location: San Francisco
-            };
-            map = new google.maps.Map(mapElement, mapOptions);
-            driverMarker = new google.maps.Marker({
-                position: mapOptions.center,
-                map: map,
-                title: 'Driver Location'
-            });
-            loadingSpinner.style.display = "none"; // Hide spinner after map is loaded
+            if (!map) {
+                loadingSpinner.style.display = "block";
+                const mapOptions = {
+                    zoom: 14,
+                    center: { lat: 37.7749, lng: -122.4194 }
+                };
+                map = new google.maps.Map(mapElement, mapOptions);
+                driverMarker = new google.maps.Marker({
+                    position: mapOptions.center,
+                    map: map,
+                    title: 'Driver Location'
+                });
+                google.maps.event.addListenerOnce(map, 'idle', () => {
+                    loadingSpinner.style.display = "none";
+                });
+            }
         }
 
-        // Set initial values (can be set dynamically later)
-        driverName.textContent = "XYZ";  // Example driver name
-        let isAvailable = false;
-
-        // Toggle availability function
         availabilityToggle.addEventListener('change', () => {
-            isAvailable = availabilityToggle.checked;
-
-            if (isAvailable) {
-                availabilityText.textContent = "ON DUTY";
-                statusText.style.color = "green";
-                driverImage.style.display = "none"; // Hide the image
-                mapElement.style.display = "block"; // Show the map
-                initMap(); // Initialize the map
-            } else {
-                availabilityText.textContent = "OFF DUTY";
-                statusText.style.color = "red";
-                mapElement.style.display = "none"; // Hide the map
-                driverImage.style.display = "block"; // Show the image
-            }
+            const isAvailable = availabilityToggle.checked;
+            availabilityText.textContent = isAvailable ? "ON DUTY" : "OFF DUTY";
+            statusText.style.color = isAvailable ? "green" : "red";
+            driverImage.style.display = isAvailable ? "none" : "block";
+            mapElement.style.display = isAvailable ? "block" : "none";
+            if (isAvailable) initMap();
         });
 
-        // Function to update driver's location in real-time
         function updateDriverLocation() {
-            // Simulate real-time location update
             const newLat = 37.7749 + (Math.random() * 0.001 - 0.0005);
             const newLng = -122.4194 + (Math.random() * 0.001 - 0.0005);
             const newPosition = { lat: newLat, lng: newLng };
-            // Update the driver's marker position on the map
-            // Assuming you have a marker for the driver
             driverMarker.setPosition(newPosition);
             map.setCenter(newPosition);
         }
 
-        // Call updateDriverLocation every 5 seconds
         setInterval(updateDriverLocation, 5000);
 
         function logout() {
-            const confirmLogout = confirm('Are you sure you want to logout?');
-            if (confirmLogout) {
+            if (confirm('Are you sure you want to logout?')) {
                 localStorage.removeItem('userID');
                 localStorage.removeItem('JWTtoken');
                 window.location.href = 'index.html';
                 alert("Logged out successfully!");
             }
-        }  
+        }
 
-        // Dropdown
-        let flag = false
         document.getElementById('dropdown').addEventListener('click', () => {
             const dropdown = document.querySelector('.dropdown-menu');
-            if (flag) {
-                dropdown.style.display = 'none';
-                flag = false;
-            } else {
-                dropdown.style.display = 'block';
-                flag = true;
-            }
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         });
     </script>
 </body>
