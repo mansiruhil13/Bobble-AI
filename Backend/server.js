@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "your-connection-string",
+    "mongodb://localhost:27017/AmbuFlow",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB connected"))

@@ -48,36 +48,50 @@ window.onload = function () {
 };
 
 // JS for dark mode functionality
-// adding code for dark mode
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeButton = document.getElementById("dark-mode-button");
 
-  // Check sessionStorage for dark mode preference
+  // Check if dark mode is already set in sessionStorage
   const currentTheme = sessionStorage.getItem("theme");
+  console.log("Current Theme in sessionStorage:", currentTheme);
+
   if (currentTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    document.body.classList.remove("light-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Set icon to sun
+      // Apply styles for dark mode
+      document.body.style.backgroundColor = "rgba(50, 50, 50, 0.95)";
+      document.body.style.color = "white"; // Check if this gets applied
   } else {
-    document.body.classList.add("light-mode");
-    document.body.classList.remove("dark-mode");
-    darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon to moon
   }
 
+  // Add event listener to toggle dark mode on button click
   darkModeButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    document.body.classList.toggle("light-mode");
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
 
-    // Save preference to sessionStorage
-    if (document.body.classList.contains("dark-mode")) {
-      sessionStorage.setItem("theme", "dark");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Change icon
-    } else {
-      sessionStorage.setItem("theme", "light");
-      darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Change icon
-    }
+      // Update sessionStorage and icon based on the mode
+      if (document.body.classList.contains("dark-mode")) {
+          sessionStorage.setItem("theme", "dark");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-sun"></i>'; // Set icon to sun
+          // Apply styles for dark mode
+          document.body.style.backgroundColor = "rgba(50, 50, 50, 0.95)";
+          document.body.style.color = "white"; // Check if this gets applied
+      } else {
+          sessionStorage.setItem("theme", "light");
+          darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>'; // Set icon to moon
+          // Optionally, set styles for light mode if desired
+          document.body.style.backgroundColor = ""; // Reset background color for light mode
+          document.body.style.color = ""; // Reset text color for light mode
+      }
+
+      console.log("Theme updated in sessionStorage:", sessionStorage.getItem("theme"));
   });
 });
+
 
 //For Translator
 window.gtranslateSettings = {
