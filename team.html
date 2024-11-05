@@ -15,16 +15,54 @@
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
-        /* font size of button */
-        .buttons .login,
-        .buttons .get-started,
-        .dark-mode-toggle {
-            font-size: 18px;
-            /* Increase font size */
-            padding: 10px 15px;
-            /* Adjust padding for better appearance */
-        }
+   /* Font size and padding of buttons */
+.buttons .login,
+.buttons .get-started,
+.dark-mode-toggle {
+    font-size: 18px; 
+    padding: 10px 30px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
 
+/* Container spacing from the top */
+.buttons {
+    margin-top: 20px;
+    display: flex; 
+    gap: 15px; 
+}
+
+/* Login button styling */
+.login {
+    background-color: blue;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+}
+
+/* Get Started button styling */
+.get-started {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 50px; 
+    text-decoration: none;
+    
+}
+
+/* Login button hover effect */
+.login:hover {
+    background-color: darkblue; 
+    transform: scale(1.05); 
+}
+
+/* Get Started button hover effect */
+.get-started:hover {
+    background-color: darkblue; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    
+}
         /* more addition for dark mode theme */
 
         .dark-mode .logo img {
@@ -312,7 +350,7 @@
                   </button>
 
             </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto; padding-top: 2em;" />
         </div>
         <nav class="menu">
             <ul>
