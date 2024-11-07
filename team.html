@@ -342,9 +342,10 @@
                         style="width: 50px; height: auto" />
                 </a>
             </div>
+            <!-- changing the colour of word login and get started removing the text decoration -->
             <div class="buttons">
-                <a href="login.html" class="login">Log in</a>
-                <a href="up.html" class="get-started">Get started</a>
+                <a href="login.html" class="login" style="text-decoration:none; color:#2980b9;">Log in</a> 
+                <a href="up.html" class="get-started" style="text-decoration:none; color:#2980b9;">Get started</a>
                 <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
                     <i class="fa-solid fa-moon"></i>
                   </button>
@@ -392,8 +393,9 @@
         </nav>
 
     </div>
+    <!--changing the colour of h1 tag to match the theme of page -->
     <div class="content" id="main-content">
-        <h1>Meet Our Team</h1>
+        <h1 style="color: #2980b9;">Meet Our Team</h1>
         <div class="team-section">
             <div class="team-member">
                 <img src="images/service-web.jpg" alt="Service Manager">
@@ -423,7 +425,8 @@
         <div class="contact-features">
             <div class="inner">
                 <div class="front">
-                    <a href="Contactus.html">
+                <!-- removing an unnecessary underline the word "contact us" by setting text-decoration to none of anchor tag -->
+                    <a href="Contactus.html" style="text-decoration: none;">
                         <img src="images/contact-w.avif" alt="Contact Us" />
                         <h2>Contact Us</h2>
                     </a>
@@ -446,7 +449,7 @@
             <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
                 <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="about.html" class="footer-link" style="text-decoration: none;" color>About Us</a></li>
                     <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                     <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
                     <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
@@ -554,5 +557,14 @@
             <script src="script.js">
             </script>
 </body>
-
+<!-- change some footer styles -->
+<style>
+    .footer-link{
+        color: #2980b9;
+        text-decoration: none;
+    }
+    .footer-link:hover{
+        font-size: 18px;
+    }
+</style>
 </html>
