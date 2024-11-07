@@ -19,6 +19,47 @@
   <link rel="stylesheet" href="responsive.css">
 
   <style>
+
+    
+
+      .profile-icon {
+
+      border-radius: 50%;
+      position: relative;
+      margin-left: 20px; /* Adjust space between Login button and Profile icon */
+      margin-top: 5px;
+
+      }
+
+      .dropdown-menu {
+
+      display: none;
+      position: absolute;
+      top: 35px; /* Adjust based on the height of your navbar */
+      right: 0;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      z-index: 1;
+
+      }
+
+      .dropdown-menu a {
+
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+
+      }
+
+      .dropdown-menu a:hover {
+
+      background-color: #f1f1f1;
+
+      }
+
+
     .content {
       margin: 2rem 1.2rem;
       /* margin-bottom: 2rem; */
@@ -242,8 +283,8 @@
     }
 
     .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
+      background-color: #369ef9;
+      color: whitesmoke;
       padding: 10px;
       width: 100%;
       text-align: left;
@@ -259,8 +300,9 @@
     }
 
     .faq-question:hover {
-      background-color: #d5f0d5;
-      /* Lighter green on hover */
+      background-color: whitesmoke;
+      color:#369ef9 ;
+      /* new colour on hover */
     }
 
     .faq-question::after {
@@ -418,6 +460,25 @@
           <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
             <span>Nearby</span></a>
         </li>
+
+         <!-- Profile Icon -->
+         <li class="nav-item no-underline">
+          <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+          <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
+         </a>
+     </li>
+
+     <style>
+
+       /* Override the existing hover styles */
+       .navbar-nav .nav-item .profile-link:hover {
+           background-color: transparent !important; /* Remove background color */
+           border-radius: 0 !important; /* Reset border radius */
+           transform: none !important; /* Prevent scaling */
+       }
+
+     </style>
+     
       </ul>
     </nav>
 
@@ -639,10 +700,11 @@
 
       <!-- Newsletter Subscription -->
       <div style="min-width: 200px; margin-bottom: 20px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: darkorange;">
           Subscribe to Our Newsletter</h3>
         <form id="newsletter-form" novalidate>
-          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;"
+          <i class="fas fa-envelope" style="position: absolute; bottom: -142.6rem; right: 18.3rem; color: rgb(129, 128, 128); font-size: 13px;"></i>
+          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 7px; padding-left: 27px;"
             required><br><br>
           <button type="submit"
             style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
