@@ -31,9 +31,52 @@
     .dark-mode-toggle {
       font-size: 18px;
       /* Increase font size */
-      padding: 10px 15px;
-      /* Adjust padding for better appearance */
+      padding: 10px 30px; 
+      transition: background-color 0.3s ease, transform 0.3s ease; 
     }
+
+    /* Container spacing from the top */
+.buttons {
+    margin-top: 20px;
+    display: flex; 
+    gap: 30px; 
+}
+
+/* Login button styling */
+.login {
+    background-color: blue;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+}
+
+/* Get Started button styling */
+.get-started {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px; 
+    text-decoration: none;
+    
+}
+
+/* Login button hover effect */
+.login:hover {
+    background-color: darkblue; 
+    transform: scale(1.05); 
+    color: white;
+}
+
+/* Get Started button hover effect */
+.get-started:hover {
+    background-color: darkblue; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    color: white;
+    
+}
 
 
     /* dark mode toggle button styling */
