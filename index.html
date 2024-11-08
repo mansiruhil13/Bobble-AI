@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="responsive.css">
 
+  <link rel="manifest" href="/manifest.json">
+
+
   <style>
 
     
@@ -141,6 +144,10 @@
       text-align: center;
       padding: 15px 0;
       width: 100%;
+    }
+    footer a{
+      text-decoration: none;
+      color: #f3f4f6;
     }
 
     .checkbtn {
@@ -449,6 +456,11 @@
             <span>Team</span></a>
         </li>
         <li>
+          <a href="./contributors/contributors.html" id="contributors-link" class="menu_links" data-link="Our Contributors">
+            <span>Our Contributors</span>
+          </a>
+        </li>
+        <li>
           <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
             <span>Contact</span></a>
         </li>
@@ -461,12 +473,34 @@
             <span>Nearby</span></a>
         </li>
 
-         <!-- Profile Icon -->
-         <li class="nav-item no-underline">
+
+        <!-- Profile Icon -->
+        <li class="nav-item no-underline">
           <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
-         </a>
-     </li>
+              <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+                  alt="Profile Icon" 
+                  style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
+          </a>
+        </li>
+
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", function() {
+          // Retrieve the saved avatar from localStorage
+          const savedAvatar = localStorage.getItem("selectedAvatar");
+
+          // If an avatar is saved, update the profile image
+          if (savedAvatar) {
+              const homeProfileImage = document.getElementById("homeProfileImage");
+              if (homeProfileImage) {
+                  homeProfileImage.src = savedAvatar;
+              }
+          }
+        });
+
+
+</script>
+
 
      <style>
 
@@ -682,19 +716,19 @@
     <div class="l2">
       <div>
         <h2 style="margin-left: 1vw;">Usefull link</h2>
-        <p>Home</p>
-        <p style="margin-left: 1.3vw;">Features</p>
-        <p>Team</p>
-        <p style="margin-left: 3.5vw;">Privacy Policy</p>
-        <p style="margin-left: 4.5vw;">Terms of Service</p>
+        <p><a href="index.html">Home</a></p>
+        <p style="margin-left: 1.3vw;"><a href="features.html">Features</a></p>
+        <p><a href="team.html">Team</a></p>
+        <p style="margin-left: 3.5vw;"><a href="privacy.html">Privacy Policy</a></p>
+        <p style="margin-left: 4.5vw;"><a href="terms.html">Terms of Service</a></p>
       </div>
       <div class="l21">
         <h2>Help Desk</h2>
-        <p>Support</p>
-        <p>Contact us </p>
-        <p>FAQ</p>
-        <p>Near by</p>
-        <p>phone</p>
+        <p><a href="contact.html">Support</a></p>
+        <p><a href="Contactus.html">Contact Us</a></p>
+        <p><a href="#faq-section">FAQ</a></p>
+        <p><a href="nearby.html">Near by</a></p>
+        <p><a href="contact.html">Phone</a></p>
       </div>
     </div>
 
@@ -1001,6 +1035,10 @@
       animateCircles();
     });
   </script>
+
+<script src="script.js"></script> <!-- Link to your service worker registration script -->
+
+
 </body>
 
 </html>
