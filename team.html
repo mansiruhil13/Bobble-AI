@@ -10,11 +10,63 @@
     <link rel="stylesheet" href="src/css/navbar.css">
     <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
+
+   /* Font size and padding of buttons */
+.buttons .login,
+.buttons .get-started,
+.dark-mode-toggle {
+    font-size: 18px; 
+    padding: 10px 30px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+/* Container spacing from the top */
+.buttons {
+    margin-top: 20px;
+    display: flex; 
+    gap: 30px; 
+}
+
+/* Login button styling */
+.login {
+    background-color: blue;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+}
+
+/* Get Started button styling */
+.get-started {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+    
+}
+
+/* Login button hover effect */
+.login:hover {
+    background-color: darkblue; 
+    transform: scale(1.05); 
+}
+
+/* Get Started button hover effect */
+.get-started:hover {
+    background-color: darkblue; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    
+}
+
         /* font size of button */
         .buttons .login,
         .buttons .get-started,
@@ -25,19 +77,17 @@
             /* Adjust padding for better appearance */
         }
 
+
         /* more addition for dark mode theme */
 
         .dark-mode .logo img {
-            filter: brightness(0) invert(1);
-            /* Inverts the color to make it white */
-        }
+        filter: brightness(0) invert(1); /* Inverts the color to make it white */
+    }
 
 
         .navbar.dark-mode .logo-img {
-            filter: brightness(0) invert(1);
-            /* Change logo color in dark mode */
-        }
-
+        filter: brightness(0) invert(1); /* Change logo color in dark mode */
+    }
 
         /* .menu ul {
             list-style-type: none;
@@ -468,7 +518,7 @@
                     <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo"
                         style="width: 50px; height: auto" />
                 </a>
-            </div>
+
             <nav class="menu">
                 <ul>
                     <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i
@@ -497,7 +547,10 @@
                 </div>
 
 
+
             </div>
+
+
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
         </div>
         <nav class="menu">
@@ -542,8 +595,9 @@
     <div id="gTranslate" class="g-translate-popup" style="display:none;">
         <div class="gtranslate_wrapper"></div>
     </div>
+    <!--changing the colour of h1 tag to match the theme of page -->
     <div class="content" id="main-content">
-        <h1>Meet Our Team</h1>
+        <h1 style="color: #2980b9;">Meet Our Team</h1>
         <div class="team-section">
             <div class="team-member">
                 <img src="images/service-web.jpg" alt="Service Manager">
@@ -573,7 +627,8 @@
         <div class="contact-features">
             <div class="inner">
                 <div class="front">
-                    <a href="Contactus.html">
+                <!-- removing an unnecessary underline the word "contact us" by setting text-decoration to none of anchor tag -->
+                    <a href="Contactus.html" style="text-decoration: none;">
                         <img src="images/contact-w.avif" alt="Contact Us" />
                         <h2>Contact Us</h2>
                     </a>
@@ -596,7 +651,7 @@
             <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
                 <ul style="list-style-type: none; padding: 0;">
-                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="about.html" class="footer-link" style="text-decoration: none;" color>About Us</a></li>
                     <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                     <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
                     <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
@@ -637,8 +692,9 @@
             <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
                 <form action="#">
+                    <i class="fas fa-envelope" style="position: absolute; top: 7.7rem; right: 22.3rem; color: gray; font-size: 13px;"></i>
                     <input type="email" placeholder="Your Email"
-                        style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+                        style="padding: 10px; width: 80%; border: none; border-radius: 5px; padding-left: 27px;" required><br><br>
                     <button type="submit"
                         style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
                 </form>
@@ -674,7 +730,7 @@
             
         </div>
     </footer>
-        <script src="preloader.js"></script>
+    
 
 
 
@@ -684,7 +740,6 @@
             <strong>
                 <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
             </strong>
-            <script src="preloader.js"></script>
             <a href="chatbot.html">
                 <div class="fixed bottom-0 right-2 chatbot-container">
                     <button class="chatbot-button group">
@@ -699,10 +754,21 @@
             <button class="light-dark-btn dark-mode-toggle" id="dark-mode-button">
                 <i class="fa-solid fa-moon"></i>
             </button>
+            
+            
             <!-- Add this style block in the <head> section or in your CSS file -->
 
-            <script src="script.js">
-            </script>
+            <script src="script.js"></script>
+            <script src="preloader.js"></script>
 </body>
-
+<!-- change some footer styles -->
+<style>
+    .footer-link{
+        color: #2980b9;
+        text-decoration: none;
+    }
+    .footer-link:hover{
+        font-size: 18px;
+    }
+</style>
 </html>

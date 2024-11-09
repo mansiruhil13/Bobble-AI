@@ -18,7 +18,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="responsive.css">
 
+  <link rel="manifest" href="/manifest.json">
+
+
   <style>
+
+    
+
+      .profile-icon {
+
+      border-radius: 50%;
+      position: relative;
+      margin-left: 20px; /* Adjust space between Login button and Profile icon */
+      margin-top: 5px;
+
+      }
+
+      .dropdown-menu {
+
+      display: none;
+      position: absolute;
+      top: 35px; /* Adjust based on the height of your navbar */
+      right: 0;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      z-index: 1;
+
+      }
+
+      .dropdown-menu a {
+
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+
+      }
+
+      .dropdown-menu a:hover {
+
+      background-color: #f1f1f1;
+
+      }
+
+
     .content {
       margin: 2rem 1.2rem;
       /* margin-bottom: 2rem; */
@@ -100,6 +144,10 @@
       text-align: center;
       padding: 15px 0;
       width: 100%;
+    }
+    footer a{
+      text-decoration: none;
+      color: #f3f4f6;
     }
 
     .checkbtn {
@@ -242,8 +290,8 @@
     }
 
     .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
+      background-color: #369ef9;
+      color: whitesmoke;
       padding: 10px;
       width: 100%;
       text-align: left;
@@ -259,8 +307,9 @@
     }
 
     .faq-question:hover {
-      background-color: #d5f0d5;
-      /* Lighter green on hover */
+      background-color: whitesmoke;
+      color:#369ef9 ;
+      /* new colour on hover */
     }
 
     .faq-question::after {
@@ -551,6 +600,11 @@
             <span>Team</span></a>
         </li>
         <li>
+          <a href="./contributors/contributors.html" id="contributors-link" class="menu_links" data-link="Our Contributors">
+            <span>Our Contributors</span>
+          </a>
+        </li>
+        <li>
           <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
             <span>Contact</span></a>
         </li>
@@ -562,6 +616,47 @@
           <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
             <span>Nearby</span></a>
         </li>
+
+
+        <!-- Profile Icon -->
+        <li class="nav-item no-underline">
+          <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+              <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+                  alt="Profile Icon" 
+                  style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
+          </a>
+        </li>
+
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", function() {
+          // Retrieve the saved avatar from localStorage
+          const savedAvatar = localStorage.getItem("selectedAvatar");
+
+          // If an avatar is saved, update the profile image
+          if (savedAvatar) {
+              const homeProfileImage = document.getElementById("homeProfileImage");
+              if (homeProfileImage) {
+                  homeProfileImage.src = savedAvatar;
+              }
+          }
+        });
+
+
+</script>
+
+
+     <style>
+
+       /* Override the existing hover styles */
+       .navbar-nav .nav-item .profile-link:hover {
+           background-color: transparent !important; /* Remove background color */
+           border-radius: 0 !important; /* Reset border radius */
+           transform: none !important; /* Prevent scaling */
+       }
+
+     </style>
+     
       </ul>
     </nav>
 
@@ -584,7 +679,7 @@
   <div class="content" id="grid-content">
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/emergency-w.jpg" alt="Emergency Response" />
         <h2>Quick Emergency Response</h2>
         <p>
@@ -592,7 +687,7 @@
           nearest hospitals and ambulances.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/ambulance-w.jpg" alt="Real-Time Tracking" />
         <h2>Real-Time Tracking</h2>
         <p>
@@ -600,7 +695,7 @@
           conditions, optimizing route management.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/24-w.jpg" alt="24/7 Availability" />
         <h2>24/7 Availability</h2>
         <p>
@@ -608,7 +703,7 @@
           call away, anytime, anywhere.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/doctor-w.jpg" alt="Enhanced Communication" />
         <h2>Enhanced Communication</h2>
         <p>
@@ -616,7 +711,7 @@
           ambulance drivers.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/hospital-w.jpg" alt="Resource Management" />
         <h2>Resource Management</h2>
         <p>
@@ -772,28 +867,29 @@
     <div class="l2">
       <div>
         <h2 style="margin-left: 1vw;">Usefull link</h2>
-        <p>Home</p>
-        <p style="margin-left: 1.3vw;">Features</p>
-        <p>Team</p>
-        <p style="margin-left: 3.5vw;">Privacy Policy</p>
-        <p style="margin-left: 4.5vw;">Terms of Service</p>
+        <p><a href="index.html">Home</a></p>
+        <p style="margin-left: 1.3vw;"><a href="features.html">Features</a></p>
+        <p><a href="team.html">Team</a></p>
+        <p style="margin-left: 3.5vw;"><a href="privacy.html">Privacy Policy</a></p>
+        <p style="margin-left: 4.5vw;"><a href="terms.html">Terms of Service</a></p>
       </div>
       <div class="l21">
         <h2>Help Desk</h2>
-        <p>Support</p>
-        <p>Contact us </p>
-        <p>FAQ</p>
-        <p>Near by</p>
-        <p>phone</p>
+        <p><a href="contact.html">Support</a></p>
+        <p><a href="Contactus.html">Contact Us</a></p>
+        <p><a href="#faq-section">FAQ</a></p>
+        <p><a href="nearby.html">Near by</a></p>
+        <p><a href="contact.html">Phone</a></p>
       </div>
     </div>
 
       <!-- Newsletter Subscription -->
       <div style="min-width: 200px; margin-bottom: 20px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: darkorange;">
           Subscribe to Our Newsletter</h3>
         <form id="newsletter-form" novalidate>
-          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 5px;"
+          <i class="fas fa-envelope" style="position: absolute; bottom: -142.6rem; right: 18.3rem; color: rgb(129, 128, 128); font-size: 13px;"></i>
+          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 7px; padding-left: 27px;"
             required><br><br>
           <button type="submit"
             style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
@@ -1090,11 +1186,16 @@
       animateCircles();
     });
   </script>
+
   <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id"
     content="756798891791-69vfi6rfu9lkoo8r6iup9ce2k3dsddo6.apps.googleusercontent.com">
+
+
+<script src="script.js"></script> <!-- Link to your service worker registration script -->
+
 </body>
 
 </html>
