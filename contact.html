@@ -103,38 +103,59 @@
             transition: transform 0.3s ease;
             /* Smooth transition effect */
         }
-
+         
         .social-icon:hover {
-            transform: scale(1.3);
-            /* Scale the element to 1.3 times its size */
+            animation-name: spin;  /*animation added*/
+            animation-duration: 2500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
 
+         /*key framed added*/
+         @keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1.3);
+  }
+  to {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+
         .fa-facebook:hover {
-            color: blue;
+            color: #316ff6;
+            border: 4px solid #316ff6;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to blue on hover */
         }
 
         .fa-x-twitter:hover {
-            color: black;
+            color: #1da1f2;
+            border: 4px solid #1da1f2;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to black on hover */
         }
 
         .fa-instagram:hover {
-            color: orangered;
+            color: #e1306c;
+            border: 4px solid #e1306c;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to orangered on hover */
         }
 
         .fa-linkedin-in:hover {
-            color: rgb(16, 13, 195);
+            color: #0072b1;
+           border: 4px solid #0072b1;
+           padding: 5px;
+           border-radius: 50%;
             /* Icon color change to rgb(16, 13, 195) on hover */
         }
 
-        #twitter:hover {
-            color: #1da1f2;
-            transform: scale(1.5);
-        }
 
-        #instagram:hover {
+        /* #instagram:hover {
             background: linear-gradient(45deg, #FF0080, #FF8C00, #FFD700);
             color: transparent;
             background-clip: text;
@@ -145,7 +166,7 @@
         #linkedin:hover {
             color: #0077B5;
             transform: scale(1.5);
-        }
+        } */
         
         ul li a:hover{
             color: blue !important;
