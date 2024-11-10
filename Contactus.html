@@ -1,183 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="src/css/index.css">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Updated to latest version -->
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Updated to latest version -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #c0b3b3;
-            margin: 0;
-            padding: 0;
-            color: #333;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #a99d9d;
+        margin: 0;
+        padding: 0;
+        color: #2b2626;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .menu {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            justify-content: center;
+            margin-top: 10px;
         }
-
+        .menu ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul li {
+            margin: 0 10px;
+        }
         .menu ul li a {
-            padding: 10px 15px;
-            color: rgb(15, 14, 14);
-            text-decoration: none;
-        }
-        
-        .menu ul li a.active {
-            color: rgb(139, 74, 74);
-            background-color: #000;
-        }
-
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            flex-grow: 1;
-        }
-
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #afcbe6;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #2980b9;
-            border-radius: 5px;
-        }
-
-        .contact-form button {
-            background-color: #e81a1a;
-            color: white;
             padding: 10px 20px;
-            border: none;
-            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            background-color: #204b76;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-
-        .contact-form button:hover {
-            background-color: #e70b0b;
+        .menu ul li a:hover,
+        .menu ul li a.active {
+            background-color: #2975ab;
         }
+        .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding-top: 20px;
+      }
+      .brand-name {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        font-size: 2rem;
+      }
+      .buttons a {
+        background-color: #214f80;
+        color: rgb(209, 216, 218);
+        padding: 2.5px 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 5px;
+        transition: background-color 0.3s ease;
+      }
 
-        .location {
-            text-align: center;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #e7f3fe;
+      .menu ul li a {
+        padding: 10px 15px;
+        color: rgb(235, 228, 228);
+        text-decoration: none;
+      }
+
+      .content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        flex-grow: 1;
+      }
+
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #afcbe6;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #2980b9;
+        border-radius: 5px;
+      }
+
+      .contact-form button {
+        background-color: #2582b7;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-form button:hover {
+        background-color: #276a9c;
+      }
+
+      .location {
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #e7f3fe;
+      }
+      
+      .hover-link {
+        color: #000000;
+        text-decoration: none;
+        margin-right: 10px;
+        background: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .hover-link:hover {
+        color: rgb(7, 7, 164);
+        background: none;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-
-        footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        to {
+          opacity: 1;
         }
+      }
 
-        .hover-link {
-            color: #000000;
-            text-decoration: none;
-            margin-right: 10px;
-            background: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+      .chatbot-container {
+        position: fixed;
+        transition: right 0.3s ease;
+        bottom: 20px;
+        right: 7rem;
+        z-index: 1000;
+      }
 
-        .hover-link:hover {
-            color: rgb(7, 7, 164);
-            background: none;
-        }
+      .chatbot-button {
+        background-color: #007bff;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        /* Smaller padding */
+        cursor: pointer;
+        position: relative;
+        width: 50px;
+        /* Adjusted size */
+        height: 50px;
+        /* Adjusted size */
+        right: -60px;
+      }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+      .chatbot-button img {
+        width: 30px;
+        /* Adjusted image size */
+        height: 30px;
+        /* Adjusted image size */
+      }
 
-        .chatbot-container {
-      position: fixed;
-      transition: right 0.3s ease;
-      bottom: 20px;
-      right: 7rem;
-      z-index: 1000;
-    }
+      .tooltip-text {
+        display: none;
+        /* Hide by default */
+        position: absolute;
+        bottom: 100%;
+        /* Position above the button */
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #333;
+        /* Background color for tooltip */
+        color: #fff;
+        /* Tooltip text color */
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+        /* Prevent text from wrapping */
+      }
 
-    .chatbot-button {
-      background-color: #007bff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      /* Smaller padding */
-      cursor: pointer;
-      position: relative;
-      width: 50px;
-      /* Adjusted size */
-      height: 50px;
-      /* Adjusted size */
-      right: -60px;
-    }
-
-    .chatbot-button img {
-      width: 30px;
-      /* Adjusted image size */
-      height: 30px;
-      /* Adjusted image size */
-    }
-
-    .tooltip-text {
-      display: none;
-      /* Hide by default */
-      position: absolute;
-      bottom: 100%;
-      /* Position above the button */
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #333;
-      /* Background color for tooltip */
-      color: #fff;
-      /* Tooltip text color */
-      padding: 5px;
-      border-radius: 5px;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-    }
-
-    .chatbot-button:hover .tooltip-text {
-      display: block;
-      /* Show on hover */
-    }
+      .chatbot-button:hover .tooltip-text {
+        display: block;
+        /* Show on hover */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<header>
-    <div class="container">
+    <header>
+      <div class="container">
         <div class="logo">
-            <div class="brand-name">
+          <div class="brand-name">
                 <span class="letter red" style="--letter-index: 1;">A</span>
                 <span class="letter red" style="--letter-index: 2;">m</span>
                 <span class="letter red" style="--letter-index: 3;">b</span>
@@ -186,92 +226,103 @@
                 <span class="letter" style="--letter-index: 6;">l</span>
                 <span class="letter" style="--letter-index: 7;">o</span>
                 <span class="letter" style="--letter-index: 8;">w</span>
-            </div>
+          </div>
             <a href="./index.html" >
             <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-            </a>
-          </div>
+          </a>
+        </div>
 
         <nav class="menu">
-            <ul>
+          <ul>
                 <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
                 <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
                 <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
                 <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
                 <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
-            </ul>
+          </ul>
         </nav>
         <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="content" id="main-content">
-    <h1>Contact Us</h1>
-    <div class="contact-form">
+    <div class="content" id="main-content">
+      <h1>Contact Us</h1>
+      <div class="contact-form">
         <form action="#" method="post">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <input type="tel" placeholder="Your Phone Number">
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
-    </div>
+      </div>
 
-    <div class="location">
+      <div class="location">
         <h2>Our Location</h2>
         <p>123 Emergency Lane, Mumbai, India</p>
         <p>Email: <a href="mailto:emergency@ambulanceservice.in" class="hover-link">emergency@ambulanceservice.in</a></p>
         <p>Phone: <a href="tel:+91-911-1234567" class="hover-link">+91-911-1234567</a></p>
+      </div>
     </div>
-</div>
 
 <footer style="color: #f3f4f6; text-align: center; width: 100%; background-color: #C4D7FF; border: none;">
   <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
-    <!-- Quick Links Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+        <!-- Quick Links Section -->
+    <div
+    style="flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: start; 
+    min-width: 200px; 
+    margin-bottom: 20px;">
       <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
       <ul style="list-style-type: none; padding: 0;">
-        <li><a href="about.html" class="footer-link">About Us</a></li>
-        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-        <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
-        <li><a href="sitemap.html" class="footer-link">Site Map</a></li>
+        <li><a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">About Us</a></li>
+        <li><a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Contact Us</a></li>
+        <li><a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Privacy Policy</a></li>
+        <li><a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Terms of Service</a></li>
+        <li><a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Site Map</a></li>
+        <!-- Add FAQ link here -->
+        <li><a href="faq.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">FAQ</a></li>
       </ul>
     </div>
 
-    <!-- Contact Information Section -->
-    <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-      <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-      <a href="mailto:emergency@ambulanceservice.in" class="footer-link">emergency@ambulanceservice.in</a>
-      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" class="footer-link">+91-911-1234567</a></p>
-    </div>
+        <!-- Contact Information Section -->
+      <div 
+          style="flex: 1; 
+          min-width: 200px; 
+          margin-bottom: 10px;">
+            <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+            <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+            <a href="mailto:emergency@ambulanceservice.in" style="color: #000000; background:none; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">emergency@ambulanceservice.in</a></p>
+            <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000; background: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">+91-911-1234567</a></p>
+        </div>
 
-    <!-- Social Media Links -->
+        <!-- Social Media Links -->
     <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
       <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
       <a href="https://www.facebook.com" class="hover-link"><i class="fab fa-facebook-f"></i> Facebook</a><br>
       <a href="https://twitter.com" class="hover-link"><i class="fab fa-twitter"></i> Twitter</a><br>
       <a href="https://www.instagram.com" class="hover-link"><i class="fab fa-instagram"></i> Instagram</a><br>
-    </div>
-  </div>
+        </div>
+      </div>
   <p style="font-size: 0.8rem; color: #000;">&copy; 2024 Nursing Tomorrow's Smile. All rights reserved.</p>
-</footer>
+    </footer>
 
-<a href="chatbot.html">
-    <div class="fixed bottom-0 right-2 chatbot-container">
-      <button class="chatbot-button group">
-        <img class="h-20" src="chatbot.gif" alt="chatbot" />
-        <span class="tooltip-text">
-          Welcome to AmbuFlow!<br />
-          How can I help You?
-        </span>
-      </button>
-    </div>
-  </a>
+    <a href="chatbot.html">
+      <div class="fixed bottom-0 right-2 chatbot-container">
+        <button class="chatbot-button group">
+          <img class="h-20" src="chatbot.gif" alt="chatbot" />
+          <span class="tooltip-text">
+            Welcome to AmbuFlow!<br />
+            How can I help You?
+          </span>
+        </button>
+      </div>
+    </a>
 
-</body>
+  </body>
 </html>
