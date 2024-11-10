@@ -546,17 +546,21 @@
           <div class="feedback-box">
               <h2>Feedback Form</h2>
               
-              <form id="feedback-form">
+              <form id="feedback-form" >
                   <!-- Name Input -->
-                  <label for="name">Name:</label>
+                  <i class="fas fa-user" style="position: relative; top: 2.4rem; left: 3px; font-size: 14px"></i>
+                  <label for="name" style="padding-left: 22px;">Name:</label>
                   <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required />
       
                   <!-- Email Input -->
-                  <label for="email">Email:</label>
+                  
+                  <i class="fas fa-envelope" style="position: relative; top: 3.7rem; left:-31.3rem; font-size: 14px"></i>
+                  <label for="email" style="padding-left: 22px;">Email:</label>
                   <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required />
       
                   <!-- Comments Section -->
-                  <label for="comments">Your Comments:</label>
+                  <i class="fas fa-comment" style="position: relative; top: 3.7rem; left: -31.3rem; font-size: 14px"></i>
+                  <label for="comments" style="padding-left: 22px;">Your Comments:</label>
                   <textarea id="comments" name="comments" class="feed-msg" rows="5" placeholder="Share your feedback..." required></textarea>
                   
                   <!-- Star Rating -->
@@ -695,7 +699,7 @@
   // Back to top button functionality
   const backToTopButton = document.getElementById('backToTopBtn');
 
-
+</script>
   <script src="preloader.js"></script>
 
       <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
