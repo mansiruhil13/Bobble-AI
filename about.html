@@ -28,49 +28,57 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background-color: #0b0e11;
-        color: #d1d1d1;
+        background-color: #f3f4f6; /* Change from #0b0e11 */
+        color: #000000; /* Change from #d1d1d1 */
         margin: 0;
         padding: 0;
         overflow-x: hidden;
       }
+
       header {
-        background: linear-gradient(90deg, #b2d1ff, #93b6d3, #42a5f5);
+        background: linear-gradient(90deg, #A7CCF0, #F3F4F6, #A7CCF0); /* Change from #b2d1ff, #93b6d3, #42a5f5 */
         padding: 30px 0 0 0;
         text-align: center;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
+
       header h1 {
-        color: #fff;
+        color: #000000; /* Change from #fff */
         font-size: 2.4rem;
         text-transform: uppercase;
         letter-spacing: 3px;
       }
+
       main {
         padding: 50px 20px;
         max-width: 1200px;
         margin: 0 auto;
-        background: #10141b;
+        background: #ffffff; /* Change from #10141b */
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        border: 2px solid rgba(0, 0, 0, 0.2); /* Change from rgba(66, 165, 245, 0.2) */
       }
+
       h2 {
-        color: #1e88e5;
+        color: black; /* Change from #1e88e5 */
         font-size: 2.5rem;
-        border-bottom: 2px solid #1e88e5;
+        /* border-bottom: 2px solid #000000; Change from #1e88e5 */
         padding-bottom: 10px;
         margin-bottom: 20px;
         text-transform: uppercase;
       }
+
       p {
         line-height: 1.8;
         font-size: 1.1rem;
         margin-bottom: 30px;
       }
+
       .highlight {
-        color: #f50057;
+        color: #e53935; /* Change from #f50057 */
         font-weight: bold;
       }
+
       ul {
         margin-left: 40px;
         list-style: none;
@@ -81,21 +89,24 @@
         padding-left: 25px;
         font-size: 1.1rem;
       }
+
       ul li::before {
-        color: #1e88e5;
+        color: #000000; /* Change from #1e88e5 */
         position: absolute;
         left: 0;
         top: 0;
       }
+
       footer {
-        background-color: #0d47a1;
-        color: white;
+        background-color: #333333; /* Change from #0d47a1 */
+        color: #f3f4f6; /* Change from #ffffff */
         text-align: center;
         padding: 20px 0;
         position: relative;
         bottom: 0;
         width: 100%;
       }
+
       footer p {
         margin: 0;
       }
@@ -122,15 +133,16 @@
       }
 
       /* Futuristic glow effect for text */
-      h1,
+      /* h1,
       h2 {
         text-shadow: 0 0 10px rgba(30, 136, 229, 0.8),
           0 0 20px rgba(66, 165, 245, 0.5);
-      }
+      } */
 
       /* Futuristic neon glow for sections */
       main {
         border: 2px solid rgba(66, 165, 245, 0.2);
+        color:#0344f6;
       }
 
       /* Responsive Design */
@@ -312,8 +324,8 @@
         >Contribute on GitHub</a
       >
     </main>
-    <footer style="background-color:black; color:#f3f4f6; text-align: center; width: 100%; margin-top: 20px;">
-      <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+    <footer style="background-color:#A7CCF0; color:#000000; text-align: center; width: 100%; margin-top: 20px;">
+        <div style="background-color: #A7CCF0; color: #000000; ">      
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
   
           <!-- Quick Links Section -->
@@ -352,13 +364,13 @@
           <div style="text-align: center; min-width: 200px; color: black;">
             <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
             <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-              <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
+              <a href="https://www.facebook.com" target="_blank" class="social-icon facebook no-hover-effect"
                 style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
+              <a href="https://www.twitter.com" target="_blank" class="social-icon twitter no-hover-effect"
                 style="color: black; text-decoration: none; font-size: 24px;"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
+              <a href="https://www.instagram.com" target="_blank" class="social-icon instagram no-hover-effect"
                 style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
+              <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin no-hover-effect"
                 style="color: black; text-decoration: none; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
@@ -394,8 +406,10 @@
   
       </div>
     </footer>
-    <div style="background-color: black;">
-      <p>© 2024 AmbuFlow - All Rights Reserved</p>
+
+    <div style="background-color: #000000;">
+        <p>© 2024 AmbuFlow - All Rights Reserved</p>
     </div>
+      
   </body>
 </html>

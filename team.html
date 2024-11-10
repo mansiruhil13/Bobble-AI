@@ -16,6 +16,57 @@
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <!--Updated to latest version-->
     <style>
+
+   /* Font size and padding of buttons */
+.buttons .login,
+.buttons .get-started,
+.dark-mode-toggle {
+    font-size: 18px; 
+    padding: 10px 30px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+/* Container spacing from the top */
+.buttons {
+    margin-top: 20px;
+    display: flex; 
+    gap: 30px; 
+}
+
+/* Login button styling */
+.login {
+    background-color: blue;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+}
+
+/* Get Started button styling */
+.get-started {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+    
+}
+
+/* Login button hover effect */
+.login:hover {
+    background-color: darkblue; 
+    transform: scale(1.05); 
+}
+
+/* Get Started button hover effect */
+.get-started:hover {
+    background-color: darkblue; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    
+}
+
         /* font size of button */
         .buttons .login,
         .buttons .get-started,
@@ -25,6 +76,7 @@
             padding: 10px 15px;
             /* Adjust padding for better appearance */
         }
+
 
         /* more addition for dark mode theme */
 
@@ -128,55 +180,7 @@
             margin-bottom: 20px;
         }
 
-        .team-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
-            animation: fadeIn 1s ease-in-out;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .team-member {
-            background-color: #e7f3fe;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 250px;
-            max-width: 100%;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            border: 3px solid #2980b9;
-        }
-
-        .team-member h2 {
-            color: #2980b9;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .team-member p {
-            color: #555;
-            font-size: 0.9em;
-        }
-
+     
         /* .contact-feature {
              display: flex;
             justify-content: center; 
@@ -268,6 +272,124 @@
                 /* End at original position */
             }
         }
+
+    .carousel-container {
+      width: 100%;
+      max-width: 300px;
+      overflow: hidden;
+      position: relative;
+      padding: 30px;
+      margin-left:500px;
+    }
+
+    .carousel {
+    gap:10px;
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+     z-index: 1;
+    }
+
+    .card {
+      min-width: 100%;
+      height:350px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      background-color: #e6f2ff;
+      text-align: center;
+      padding: 20px;
+     
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 1.5em;
+      color: #337ab7;
+    }
+
+    .card p {
+      font-size: 1em;
+      color: #333;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: #337ab7;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .prev {
+      left: 0px;
+    }
+
+    .next {
+      right: 0px;
+    }
+
+    /* Dots indicator */
+    .dots-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #337ab7;
+    }
+   /* Responsive styles */
+   @media (max-width: 600px) {
+      .carousel-container {
+        padding: 5px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .card img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .card h2 {
+        font-size: 1em;
+      }
+
+      .card p {
+        font-size: 0.8em;
+      }
+
+      .prev, .next {
+        font-size: 1.5em;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+      }
+    }
     </style>
 </head>
 
@@ -309,6 +431,7 @@
                 <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
                     <i class="fa-solid fa-moon"></i>
                 </button>
+
             </div>
 
 
@@ -357,29 +480,74 @@
     <!--changing the colour of h1 tag to match the theme of page -->
     <div class="content" id="main-content">
         <h1 style="color: #2980b9;">Meet Our Team</h1>
-        <div class="team-section">
-            <div class="team-member">
+        <div class="carousel-container">
+            <div class="carousel">
+              <!-- Card 1: Service Manager -->
+              <div class="card">
                 <img src="images/service-web.jpg" alt="Service Manager">
                 <h2>Service Manager</h2>
                 <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 2: Rescue Specialist -->
+              <div class="card">
                 <img src="images/rescue-web.webp" alt="Rescue Specialist">
                 <h2>Rescue Specialist</h2>
                 <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 3: Call Operator -->
+              <div class="card">
                 <img src="images/call-web.jpg" alt="Call Operator">
                 <h2>Call Operator</h2>
                 <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 4: GPS Technician -->
+              <div class="card">
                 <img src="images/gps-web.webp" alt="GPS Technician">
                 <h2>GPS Technician</h2>
                 <p>Manages real-time tracking systems for effective ambulance navigation.</p>
+              </div>
             </div>
-        </div>
+            <!-- Navigation buttons -->
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+
+            <div class="dots-container">
+                <span class="dot" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+              </div>
+          </div>
     </div>
+
+      
+      <script>
+        let currentSlide = 0;
+      
+        function updateDots() {
+          const dots = document.querySelectorAll('.dot');
+          dots.forEach(dot => dot.classList.remove('active'));
+          dots[currentSlide].classList.add('active');
+        }
+        function moveCarousel(direction) {
+          const carousel = document.querySelector('.carousel');
+          const totalSlides = document.querySelectorAll('.carousel .card').length;
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+          updateDots();
+        }
+        function goToSlide(slideIndex) {
+    const carousel = document.querySelector('.carousel');
+    currentSlide = slideIndex;
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    updateDots();
+  }
+
+  // Initialize the first dot as active
+  document.addEventListener('DOMContentLoaded', () => {
+    updateDots();
+  });
+      </script>
 
     <!-- Contact Section in Full Row -->
     <div class="features-container">
@@ -432,16 +600,16 @@
             <div style="text-align: center; min-width: 200px; color: black;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
                 <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-                    <a href="https://www.facebook.com" class="social-icon facebook"
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon facebook"
                         style="color: black; text-decoration: none; font-size: 1.5rem;"><i
                             class="fab fa-facebook"></i></a>
-                    <a href="https://www.twitter.com" class="social-icon twitter"
+                    <a href="https://www.twitter.com" target="_blank" class="social-icon twitter"
                         style="color: black; text-decoration: none; font-size: 1.5rem;"><i
                             class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com" class="social-icon instagram"
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon instagram"
                         style="color: black; text-decoration: none; font-size: 1.5rem;"><i
                             class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com" class="social-icon linkedin"
+                    <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin"
                         style="color: black; text-decoration: none; font-size: 1.5rem;"><i
                             class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -516,9 +684,155 @@
             
             
             <!-- Add this style block in the <head> section or in your CSS file -->
-
-            <script src="script.js"></script>
-            <script src="preloader.js"></script>
+            <script src="script.js">
+            </script>
+            <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+                <div class="scroll-top-icon">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <svg class="progress-ring" width="60" height="60">
+                    <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+                        cy="30"></circle>
+                </svg>
+            </button>
+            <style>
+                .scroll-top {
+                    position: fixed;
+                    right: 1.6%;
+                    background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+                    overflow: visible;
+                    z-index: 10;
+                    bottom: 75px;
+                    /* Ensure button is on top */
+                }
+            
+                .scroll-top.show {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            
+                .scroll-top:hover {
+                    transform: scale(1.1);
+                    /* Subtle scaling instead of expanding */
+                    box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+                    /* Slightly larger shadow */
+                }
+            
+                .scroll-top:active {
+                    transform: scale(1.05);
+                    /* Minor scale reduction on click */
+                }
+            
+                .scroll-top-icon {
+                    position: relative;
+                    z-index: 2;
+                    transition: transform 0.3s ease;
+                }
+            
+                .scroll-top:hover .scroll-top-icon {
+                    transform: translateY(-3px);
+                }
+            
+                /* Progress Ring Styling */
+                .progress-ring {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: rotate(-90deg);
+                    /* To start from the top */
+                }
+            
+                .progress-ring__circle {
+                    transition: stroke-dashoffset 0.35s;
+                    transform-origin: 50% 50%;
+                }
+            
+                /* Pulse Animation */
+                @keyframes pulse {
+                    0% {
+                        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+                    }
+            
+                    50% {
+                        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+                    }
+            
+                    100% {
+                        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+                    }
+                }
+            
+                .scroll-top:hover {
+                    animation: pulse 1.5s infinite;
+                }
+            
+                .scroll-top.show {
+                    animation: none;
+                    /* No animation when showing the button */
+                }
+            
+                .scroll-top.show:hover {
+                    animation: pulse 1.5s infinite;
+                    /* Pulse on hover */
+                }
+            </style>
+            <script>
+                // Get the button
+                const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+                const progressCircle = document.querySelector(".progress-ring__circle");
+                const radius = progressCircle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+            
+                // Set the circle progress properties
+                progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+                progressCircle.style.strokeDashoffset = circumference;
+            
+                // Function to show or hide the button based on scroll position
+                function toggleScrollButton() {
+                    if (window.scrollY > 100) {
+                        scrollToTopBtn.classList.add("show");
+                    } else {
+                        scrollToTopBtn.classList.remove("show");
+                    }
+                }
+            
+                // Function to set the scroll progress on the button ring
+                function setProgress(percent) {
+                    const offset = circumference - (percent / 100) * circumference;
+                    progressCircle.style.strokeDashoffset = offset;
+                }
+            
+                // Listen for scroll events to update button visibility and progress
+                window.addEventListener("scroll", () => {
+                    toggleScrollButton();
+                    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    setProgress(scrollPercent);
+                });
+            
+                // Smooth scroll to top when the button is clicked
+                scrollToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+              </script>
 </body>
 <!-- change some footer styles -->
 <style>
