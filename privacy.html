@@ -14,56 +14,64 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background-color: #0b0e11;
-        color: #d1d1d1;
+        background-color: white; /* Change from #0b0e11 */
+        color: #000000; /* Change from #d1d1d1 */
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-      }
+        }
+
       header {
-        background: linear-gradient(90deg, #8fe5f4, #93b6d3, #42a5f5);
+        background: linear-gradient(90deg, #A7CCF0, #F3F4F6, #A7CCF0); /* Change from #b2d1ff, #93b6d3, #42a5f5 */
         padding: 30px 0 0 0;
         text-align: center;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-      header h1 {
-        color: #fff;
+        }
+
+        header h1 {
+        color: #000000; /* Change from #fff */
         font-size: 2.4rem;
         text-transform: uppercase;
         letter-spacing: 3px;
-      }
+        }
 
       /* Navigation Menu */
-      nav.menu ul {
+      nav.menu {
+        background: transparent; /* Change from linear-gradient */
+        }
+
+        nav.menu ul {
         display: flex;
-        justify-content: space-around; /* Distribute items evenly */
-        list-style: none;
-        padding: 0;
+        list-style-type: none;
+        justify-content: center; /* Center the items in the navbar */
+        padding: 10px 0; /* Adjust padding for better spacing */
         margin: 0;
-      }
+        }
 
-      nav.menu ul li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        font-size: 16px;
-      }
+        nav.menu ul li {
+        padding: 10px 20px; /* Add horizontal padding for spacing */
+        }
 
-      nav.menu ul li a {
+        nav.menu ul li a {
         text-decoration: none;
-        color: #d1d1d1;
-      }
+        color: blue; /* Change link color to match about.html */
+        font-weight: bold; /* Make links bold */
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
 
-      nav.menu ul li a:hover {
-        color: #2f9bf4; /* Hover color effect */
-        transition: color 0.3s ease;
-      }
+        nav.menu ul li a:hover {
+        color: #1e88e5; /* Change hover color to match about.html */
+        }
 
-      nav.menu ul li i {
-        font-size: 24px; /* Size of the icons */
-        margin-bottom: 5px;
-      }
+        nav.menu ul li i {
+        font-size: 20px; /* Adjust icon size if needed */
+        }
+
+        nav.menu ul li::before {
+        content: none; /* Removes the generated content */
+        }
+
+
 
       /* Responsive Design */
       @media (max-width: 768px) {
@@ -91,72 +99,92 @@
         padding: 50px 20px;
         max-width: 1200px;
         margin: 0 auto;
-        background: #10141b;
+        background: #ffffff; /* Keep this for a light background */
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+
+        color:blue;
+        }
+
+
         margin-bottom: 25px;
       }
+
       h2 {
-        color: #1e88e5;
+        color: black; /* Keep this */
         font-size: 2.5rem;
-        border-bottom: 2px solid #1e88e5;
+        border-bottom: 2px solid #1e88e5; /* Keep this */
         padding-bottom: 10px;
         margin-bottom: 20px;
         text-transform: uppercase;
-      }
+        }
+
       p {
         line-height: 1.8;
         font-size: 1.1rem;
+        color: blue; /* Change from #d1d1d1 */
         margin-bottom: 30px;
-      }
+        }
+
       .highlight {
         color: #f50057;
         font-weight: bold;
       }
+      
       ul {
         margin-left: 40px;
-        list-style: none;
-      }
-      ul li {
+        list-style-type: none;
+        }
+
+        ul li {
         margin-bottom: 15px;
         position: relative;
         padding-left: 25px;
         font-size: 1.1rem;
-      }
-      ul li::before {
+        color: blue; /* Change from original color */
+        }
+
+        ul li::before {
         content: "•";
-        color: #1e88e5;
+        color: #1e88e5; /* Keep this */
         position: absolute;
         left: 0;
         top: 0;
-      }
+        }
+
+        ul li::before {
+        content: none; /* Removes the generated content */
+        }
+
       footer {
-        background-color: #0d47a1;
-        color: white;
+        background-color: #A7CCF0; /* Change from #0d47a1 */
+        color: #000000; /* Change from white */
         text-align: center;
         padding: 20px 0;
         position: relative;
         bottom: 0;
         width: 100%;
-      }
-      footer p {
+        }
+
+        footer p {
         margin: 0;
-      }
+        }
 
       /* Buttons */
       .btn {
         display: inline-block;
-        background-color: #1e88e5;
-        color: white;
+        background-color: #1e88e5; /* Keep this */
+        color: white; /* Keep this */
         padding: 10px 20px;
         text-decoration: none;
         border-radius: 25px;
         transition: 0.3s;
-      }
-      .btn:hover {
-        background-color: #42a5f5;
+        }
+
+        .btn:hover {
+        background-color: #42a5f5; /* Keep this */
         transform: scale(1.05);
-      }
+        }
 
       /* Hover effect */
       main:hover {
@@ -165,11 +193,11 @@
       }
 
       /* Futuristic glow effect for text */
-      h1,
+      /* h1,
       h2 {
         text-shadow: 0 0 10px rgba(30, 136, 229, 0.8),
           0 0 20px rgba(66, 165, 245, 0.5);
-      }
+      } */
 
       /* Futuristic neon glow for sections */
       main {
