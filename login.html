@@ -52,20 +52,25 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form action="#" class="sign-in-form" onsubmit="return validateSignInForm()">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" id="username" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock" id="toggle-password"></i>
             <input type="password" placeholder="Password" id="password-input" />
           </div>
+          <div class="form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="remember-me" />
+            <label class="form-check-label">Remember me</label>
+          </div>
+
           <input type="submit" value="Login" class="btn solid" />
           <p class="social-text">Or Sign in with social platforms</p>
           <div class="social-media">
-            <div class="social-icon g-signin2" id="google_btn" >
+            <div class="social-icon g-signin2" id="google_btn">
               <i class="fab fa-google" style="font-size: 24px; color: #4285F4;"></i>
             </div>
             <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
@@ -76,6 +81,34 @@
             </a>
           </div>
         </form>
+       <script>
+       function validateSignInForm() {
+                const username = document.querySelector('.sign-in-form input[type="text"]').value;
+                const password = document.querySelector('.sign-in-form input[type="password"]').value;
+        
+                // Sign-in validation logic
+                if (username.trim() === "") {
+                    alert("Please enter your username.");
+                    return false;
+                }
+        
+                if (password.trim() === "") {
+                    alert("Please enter your password.");
+                    return false;
+                }
+        
+                // Simulate successful login 
+                alert("You have successfully logged in to the website!");
+        
+                // Redirect to the home screen after a short delay
+                setTimeout(function() {
+                    window.location.href = "index.html"; 
+                }, 2000); // Redirect after 2 seconds
+        
+                // If all validations pass, return true to allow form submission
+                return false; // Prevent form submission since we are handling the redirect
+            };
+          </script>
         <form action="#" class="sign-up-form"
           style="background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
           <h2 class="title">Sign up</h2>
@@ -105,11 +138,14 @@
             <div class="strength-label" id="strength-label-signup" style="font-size: 14px; margin-top: 10px;">Weak</div>
           </div>
           <!-- Password strength meter ends here -->
-
+          <div class="form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="login-remember" />
+            <label class="form-check-label">Remember me</label>
+          </div>
           <input type="submit" class="btn" value="Sign up" />
           <p class="social-text">Or Sign up with social platforms</p>
           <div class="social-media">
-            <div class="social-icon g-signin2" id="google_btn" >
+            <div class="social-icon g-signin2" id="google_btn">
               <i class="fab fa-google" style="font-size: 24px; color: #4285F4;"></i>
             </div>
             <a href="https://facebook.com/YourPage" target="_blank" class="social-icon">
@@ -248,34 +284,34 @@
       */
     });
 
-    
 
-      // Uncomment the below code when MongoDB is ready
-      /*
-      try {
-        const response = await fetch("http://localhost:3000/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: data,
-        });
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "Signup failed");
-        }
+    // Uncomment the below code when MongoDB is ready
+    /*
+    try {
+      const response = await fetch("http://localhost:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: data,
+      });
 
-        const result = await response.json();
-        console.log("Server response:", result);
-
-        alert("Signup successful!");
-        window.location.href = "login.html";
-      } catch (error) {
-        alert(error.message);
-        console.error("Error during signup:", error);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Signup failed");
       }
-      */
+
+      const result = await response.json();
+      console.log("Server response:", result);
+
+      alert("Signup successful!");
+      window.location.href = "login.html";
+    } catch (error) {
+      alert(error.message);
+      console.error("Error during signup:", error);
+    }
+    */
 
     // Toggle password visibility
     function togglePassword(fieldId, icon) {
@@ -395,6 +431,31 @@
     }
 
     animateCircles();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const rememberMeCheckbox = document.getElementById("remember-me");
+      const usernameInput = document.getElementById("username");
+
+      // Load saved username if it exists
+      if (localStorage.getItem("rememberedUsername")) {
+        usernameInput.value = localStorage.getItem("rememberedUsername");
+        rememberMeCheckbox.checked = true;
+      }
+
+      // When the form is submitted, save the username if "Remember Me" is checked
+      document.querySelector(".sign-in-form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        if (rememberMeCheckbox.checked) {
+          localStorage.setItem("rememberedUsername", usernameInput.value);
+        } else {
+          localStorage.removeItem("rememberedUsername");
+        }
+        // Add form submission logic here
+      });
+    });
+
   </script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!-- <script src="Firebase.js" type="module"></script> -->

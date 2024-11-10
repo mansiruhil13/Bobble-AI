@@ -1,246 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
     <title>Site Map - AmbuFlow</title>
     <link rel="stylesheet" href="src/css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <!--Updated to latest version-->
-
-    <link rel="stylesheet" href="src/css/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="sitemap.css">
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background-color: #0b0e11;
+        background-color: #262b30;
         color: #d1d1d1;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Full viewport height */
+        margin: 0;
+        padding: 0;
       }
       header {
-        background: linear-gradient(90deg, #b2d1ff, #93b6d3, #42a5f5);
-        padding: 30px 0 0 0;
+        background-color: #0d47a1;
+        padding: 20px;
         text-align: center;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      header h1 {
+      .logo-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+      .logo-title img {
+        width: 50px;
+        margin-right: 15px;
+      }
+      .logo-title h1 {
         color: #fff;
         font-size: 2.4rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
       }
       main {
-        padding: 50px 20px;
+        display: flex;
         max-width: 1200px;
-        margin: 0 auto;
-        background: #10141b;
+        margin: 50px auto;
+        background-color: #10141b;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+        flex: 1;
+        width: 100%; /* Ensure main content uses full width */
       }
-      h2 {
-        color: #1e88e5;
-        font-size: 2.5rem;
-        border-bottom: 2px solid #1e88e5;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
+      .content {
+        padding: 50px;
+        flex: 1;
+        background-color: transparent; /* Make it transparent or set another color */
       }
-      p {
-        line-height: 1.8;
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-      }
-      .highlight {
-        color: #f50057;
-        font-weight: bold;
-      }
-      ul {
-        margin-left: 40px;
+      .content ul {
         list-style: none;
+        padding: 0;
       }
-      ul li {
-        margin-bottom: 15px;
-        position: relative;
-        padding-left: 25px;
-        font-size: 1.1rem;
+      .content ul li {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
       }
-      ul li::before {
-        color: #1e88e5;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      footer {
-        background-color: #0d47a1;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-      footer p {
-        margin: 0;
-      }
-      a {
-      font-size: 30px;
-    color: #0060B6;
-    text-decoration: none;
-}
-a:hover {
-    color:#c66600; 
-    text-decoration:none; 
-    cursor:pointer;  
-}
-      /* Buttons */
-      .btn {
-        display: inline-block;
-        background-color: #1e88e5;
-        color: white;
-        padding: 10px 20px;
+      .content ul li a {
+        color: #d1d1d1;
+        font-weight: bold;
         text-decoration: none;
-        border-radius: 25px;
-        transition: 0.3s;
       }
-      .btn:hover {
-        background-color: #42a5f5;
-        transform: scale(1.05);
+      .content ul li a:hover {
+        color: #1e88e5;
       }
-
-      /* Hover effect */
-      main:hover {
-        transition: 0.5s;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+      .map-header iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
       }
-
-      /* Futuristic glow effect for text */
-      h1,
-      h2 {
-        text-shadow: 0 0 10px rgba(30, 136, 229, 0.8),
-          0 0 20px rgba(66, 165, 245, 0.5);
+      .map-header {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0b0e11;
       }
-
-      /* Futuristic neon glow for sections */
       main {
-        border: 2px solid rgba(66, 102, 245, 0.2);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 3rem;
-        }
-        h2 {
-          font-size: 2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        header h1 {
-          font-size: 2.5rem;
-        }
-        h2 {
-          font-size: 1.8rem;
-        }
+        height: auto;
       }
       footer {
         background-color: #0d47a1;
         color: white;
         text-align: center;
         padding: 20px 0;
-        position: relative;
-        bottom: 0;
         width: 100%;
       }
-
-      main ul li:hover{
-        transform: scale(1.01) translateX(25px);
-        transition: all 0.3s ease;
+      .map-header {
+        height: auto; /* Allow dynamic sizing */
+      }
+      .content,
+      .map-header {
+        flex: 1 1 auto; /* Ensure equal height with flexibility */
       }
     </style>
   </head>
   <body>
-    <header style="display: flex; justify-content: center; align-items: center; height: 75px;">
-        <div class="container">
-          
-          <div class="logo">
-    
-            <div class="brand-name">
-              <span class="ambu">Ambu</span>Flow
-            </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-    
-          </div>
-          <nav style="height: 2.2rem;" class="menu">
-            <div class="outer-options"> 
-              <div class="options">
-                <a style="font-size: 1.3rem;" href="/" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a>
-              </div>
-              <div class="options">
-                <a style="font-size: 1.3rem;" href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a>
-              </div>
-              <div class="options">
-                <a style="font-size: 1.3rem;" href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a>
-              </div>
-              <div class="options">
-                <a style="font-size: 1.3rem;" href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a>
-              </div>
-              <div class="options">
-                <a style="font-size: 1.3rem;" href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a>
-              </div>
-            </div>   
-          </nav>
-          <div class="buttons">
-            <div><a href="login.html" class="login">Log in</a></div>
-            <div><a href="up.html" class="get-started">Get started</a></div>
-          </div>
-        </div>
-        
-      </header>
+    <header>
+      <div class="logo-title">
+        <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" />
+        <h1>AmbuFlow</h1>
+      </div>
+    </header>
 
-    <main style="margin-top: 50px; margin-bottom: 50px; background-color: #b2b2b2;">
-      <h1 style="place-self: center; color: white; text-shadow: none; font-size: 2.4rem; margin-top: -15px; margin-bottom: 50px;">Site Map AmbuFlow</h1>
+    <main>
+      <div class="content">
         <ul>
-            <li><a style="font-weight: 500; color: #10141b;" href="homepage.html" >Home</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="about.html">About Us</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="features.html">Features</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="team.html">Team</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="contact.html">Contact</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="Feedback.html">Feedback</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="sitemap.html">Sitemap</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="login.html">Log In</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="up.html">Get Started</a>
-            </li>
-            <li><a style="font-weight: 500; color: #10141b;" href="privacy.html">Privacy Policy</a></li>
-            <li><a style="font-weight: 500; color: #10141b;" href="terms.html">Terms of Service</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="Feedback.html">Feedback</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="up.html">Get Started</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
         </ul>
+      </div>
+      <div class="map-header">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241294.64898498365!2d72.79635424219836!3d19.09761203283721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Emergency%20Lane%2C%20Mumbai%2C%20India!5e0!3m2!1sen!2sin!4v1728732339444!5m2!1sen!2sin"
+          allowfullscreen=""
+          referrerpolicy="no-referrer-when-downgrade"
+          loading="lazy"
+        ></iframe>
+      </div>
     </main>
 
     <footer>
-        <p>© 2024 AmbuFlow - All Rights Reserved</p>
-      </footer>
+      <p>© 2024 AmbuFlow - All Rights Reserved</p>
+    </footer>
   </body>
 </html>
