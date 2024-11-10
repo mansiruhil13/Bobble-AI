@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- Added Favicon -->
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="src/css/indexmain.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
+
   <!--Updated to latest version-->
 
   <link rel="stylesheet" href="src/css/navbar.css" />
@@ -22,23 +22,22 @@
 
 
   <style>
-
-    
-
-      .profile-icon {
+    .profile-icon {
 
       border-radius: 50%;
       position: relative;
-      margin-left: 20px; /* Adjust space between Login button and Profile icon */
+      margin-left: 20px;
+      /* Adjust space between Login button and Profile icon */
       margin-top: 5px;
 
-      }
+    }
 
-      .dropdown-menu {
+    .dropdown-menu {
 
       display: none;
       position: absolute;
-      top: 35px; /* Adjust based on the height of your navbar */
+      top: 35px;
+      /* Adjust based on the height of your navbar */
       right: 0;
       background-color: white;
       color: black;
@@ -46,21 +45,21 @@
       border-radius: 4px;
       z-index: 1;
 
-      }
+    }
 
-      .dropdown-menu a {
+    .dropdown-menu a {
 
       display: block;
       padding: 10px 15px;
       text-decoration: none;
 
-      }
+    }
 
-      .dropdown-menu a:hover {
+    .dropdown-menu a:hover {
 
       background-color: #f1f1f1;
 
-      }
+    }
 
 
     .content {
@@ -145,7 +144,8 @@
       padding: 15px 0;
       width: 100%;
     }
-    footer a{
+
+    footer a {
       text-decoration: none;
       color: #f3f4f6;
     }
@@ -308,7 +308,7 @@
 
     .faq-question:hover {
       background-color: whitesmoke;
-      color:#369ef9 ;
+      color: #369ef9;
       /* new colour on hover */
     }
 
@@ -438,7 +438,8 @@
         <li>
           <button class="scroll-button" style="background: none; border: none; cursor: pointer;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor"></path>
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
+              </path>
             </svg>
           </button>
         </li>
@@ -456,7 +457,8 @@
             <span>Team</span></a>
         </li>
         <li>
-          <a href="./contributors/contributors.html" id="contributors-link" class="menu_links" data-link="Our Contributors">
+          <a href="./contributors/contributors.html" id="contributors-link" class="menu_links"
+            data-link="Our Contributors">
             <span>Our Contributors</span>
           </a>
         </li>
@@ -476,43 +478,44 @@
 
         <!-- Profile Icon -->
         <li class="nav-item no-underline">
-          <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-              <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
-                  alt="Profile Icon" 
-                  style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
+          <a href="./profile.html" class="profile-link"
+            style="display: flex; align-items: center; text-decoration: none;">
+            <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon"
+              style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
           </a>
         </li>
 
         <script>
-          
-          document.addEventListener("DOMContentLoaded", function() {
-          // Retrieve the saved avatar from localStorage
-          const savedAvatar = localStorage.getItem("selectedAvatar");
 
-          // If an avatar is saved, update the profile image
-          if (savedAvatar) {
+          document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the saved avatar from localStorage
+            const savedAvatar = localStorage.getItem("selectedAvatar");
+
+            // If an avatar is saved, update the profile image
+            if (savedAvatar) {
               const homeProfileImage = document.getElementById("homeProfileImage");
               if (homeProfileImage) {
-                  homeProfileImage.src = savedAvatar;
+                homeProfileImage.src = savedAvatar;
               }
+            }
+          });
+
+
+        </script>
+
+
+        <style>
+          /* Override the existing hover styles */
+          .navbar-nav .nav-item .profile-link:hover {
+            background-color: transparent !important;
+            /* Remove background color */
+            border-radius: 0 !important;
+            /* Reset border radius */
+            transform: none !important;
+            /* Prevent scaling */
           }
-        });
+        </style>
 
-
-</script>
-
-
-     <style>
-
-       /* Override the existing hover styles */
-       .navbar-nav .nav-item .profile-link:hover {
-           background-color: transparent !important; /* Remove background color */
-           border-radius: 0 !important; /* Reset border radius */
-           transform: none !important; /* Prevent scaling */
-       }
-
-     </style>
-     
       </ul>
     </nav>
 
@@ -535,7 +538,7 @@
   <div class="content" id="grid-content">
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
-      <div class="feature"  style="cursor: pointer;">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/emergency-w.jpg" alt="Emergency Response" />
         <h2>Quick Emergency Response</h2>
         <p>
@@ -543,7 +546,7 @@
           nearest hospitals and ambulances.
         </p>
       </div>
-      <div class="feature"  style="cursor: pointer;">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/ambulance-w.jpg" alt="Real-Time Tracking" />
         <h2>Real-Time Tracking</h2>
         <p>
@@ -551,7 +554,7 @@
           conditions, optimizing route management.
         </p>
       </div>
-      <div class="feature"  style="cursor: pointer;">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/24-w.jpg" alt="24/7 Availability" />
         <h2>24/7 Availability</h2>
         <p>
@@ -732,51 +735,52 @@
       </div>
     </div>
 
-      <!-- Newsletter Subscription -->
-      <div style="min-width: 200px; margin-bottom: 20px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: darkorange;">
-          Subscribe to Our Newsletter</h3>
-        <form id="newsletter-form" novalidate>
-          <i class="fas fa-envelope" style="position: absolute; bottom: -142.6rem; right: 18.3rem; color: rgb(129, 128, 128); font-size: 13px;"></i>
-          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 7px; padding-left: 27px;"
-            required><br><br>
-          <button type="submit"
-            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-        </form>
-        <!-- Toast Notification -->
-        <div id="toast"
-          style="display: none; position: fixed; bottom: 20px; right: 60px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
-        </div>
+    <!-- Newsletter Subscription -->
+    <div style="min-width: 200px; margin-bottom: 20px;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: darkorange;">
+        Subscribe to Our Newsletter</h3>
+      <form id="newsletter-form" novalidate>
+        <i class="fas fa-envelope"
+          style="position: absolute; bottom: -142.6rem; right: 18.3rem; color: rgb(129, 128, 128); font-size: 13px;"></i>
+        <input type="email" placeholder="Your Email"
+          style="padding: 10px; width: 80%; border: none; border-radius: 7px; padding-left: 27px;" required><br><br>
+        <button type="submit"
+          style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+      </form>
+      <!-- Toast Notification -->
+      <div id="toast"
+        style="display: none; position: fixed; bottom: 20px; right: 60px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
       </div>
     </div>
-  <script>
-    function showToast(message,type) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.style.display = "block"; // Show the toast
-      toast.style.backgroundColor = type==='success' ? 'green':'red'
-      toast.style.color = 'white';
-      setTimeout(() => {
-        toast.style.display = "none"; // Hide after 3 seconds
-      }, 3000);
-    }
-
-    document.getElementById('newsletter-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent form submission
-      const emailInput = this.querySelector('input[type="email"]');
-      const email = emailInput.value;
-
-      // Basic email validation
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (emailPattern.test(email)) {
-        showToast("Thank you for subscribing!",'success'); // Show success message
-        emailInput.value = ""; // Clear the input field
-      } else {
-        showToast("Please enter a valid email address.",'error'); // Show error message
+    </div>
+    <script>
+      function showToast(message, type) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.style.display = "block"; // Show the toast
+        toast.style.backgroundColor = type === 'success' ? 'green' : 'red'
+        toast.style.color = 'white';
+        setTimeout(() => {
+          toast.style.display = "none"; // Hide after 3 seconds
+        }, 3000);
       }
-    });
-  </script>
+
+      document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+
+        // Basic email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(email)) {
+          showToast("Thank you for subscribing!", 'success'); // Show success message
+          emailInput.value = ""; // Clear the input field
+        } else {
+          showToast("Please enter a valid email address.", 'error'); // Show error message
+        }
+      });
+    </script>
   </footer>
 
 
@@ -930,20 +934,20 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script>
-      const scrollButton = document.querySelector(".scroll-button");
-      function smoothScrollToTop() {
-        const scrollY = window.pageYOffset;
-        const scrollStep = Math.max(10, Math.floor(scrollY / 20)); // Gradual scroll step
-        if (scrollY > 0) {
-          window.scrollBy(0, -scrollStep);
-          requestAnimationFrame(smoothScrollToTop);
-        }
-      }
-
-      // Always show the button and attach the scroll event
-      scrollButton?.addEventListener("click", () => {
+    const scrollButton = document.querySelector(".scroll-button");
+    function smoothScrollToTop() {
+      const scrollY = window.pageYOffset;
+      const scrollStep = Math.max(10, Math.floor(scrollY / 20)); // Gradual scroll step
+      if (scrollY > 0) {
+        window.scrollBy(0, -scrollStep);
         requestAnimationFrame(smoothScrollToTop);
-      });
+      }
+    }
+
+    // Always show the button and attach the scroll event
+    scrollButton?.addEventListener("click", () => {
+      requestAnimationFrame(smoothScrollToTop);
+    });
   </script>
   <script>
     const thankYouMessage = document.getElementById("thankYouMessage");
@@ -1036,7 +1040,7 @@
     });
   </script>
 
-<script src="script.js"></script> <!-- Link to your service worker registration script -->
+  <script src="script.js"></script> <!-- Link to your service worker registration script -->
 
 
 </body>
