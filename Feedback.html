@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Added Favicon -->
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <title>Feedback - AmbuFlow</title>
   <link rel="stylesheet" href="preloaderStyle.css">
   <link rel="stylesheet" href="src/css/index.css">
@@ -29,15 +31,190 @@
     .dark-mode-toggle {
       font-size: 18px;
       /* Increase font size */
-      padding: 10px 15px;
-      /* Adjust padding for better appearance */
+      padding: 10px 30px; 
+      transition: background-color 0.3s ease, transform 0.3s ease; 
     }
+
+    /* Container spacing from the top */
+.buttons {
+    margin-top: 20px;
+    display: flex; 
+    gap: 30px; 
+}
+
+/* Login button styling */
+.login {
+    background-color: blue;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 50px; 
+    text-decoration: none;
+}
+
+/* Get Started button styling */
+.get-started {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px; 
+    text-decoration: none;
+    
+}
+
+/* Login button hover effect */
+.login:hover {
+    background-color: darkblue; 
+    transform: scale(1.05); 
+    color: white;
+}
+
+/* Get Started button hover effect */
+.get-started:hover {
+    background-color: darkblue; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    color: white;
+    
+}
+
+
+    /* dark mode toggle button styling */
+    body {
+      background-color: white;
+      /* Light mode background */
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+ 
+    .navbar {
+
+      background-color:  rgb(148 207 226);
+      /* Light mode navbar */
+
+      border-radius: 7px;
+      color: black;
+      padding: 7px;
+    }
+
+    ul li a:hover {
+    color: rgb(16, 16, 16) !important;
+    }
+    a:hover {
+    color: rgb(0, 0, 6);
+  }
+    .navbar.dark-mode {
+      background-color: black;
+      /* Dark mode navbar */
+      color: white;
+    }
+
 
     /* more addition for dark mode theme */
     .dark-mode .logo img {
       filter: brightness(0) invert(1);
       /* Inverts the color to make it white */
     }
+
+
+    /* dark mode hove effect on logo */
+    body.dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    .navbar.dark-mode .logo-img {
+      filter: brightness(0) invert(1);
+      /* Change logo color in dark mode */
+    }
+/* 
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      
+    }
+
+    .menu li {
+      margin-right: 15px;
+    } */
+/* 
+    .menu a {
+      color: black;
+      Light mode link color
+      border: 1.5px solid black;
+      Black border
+      border-radius: 7px;
+      padding: 3px 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      display:inline-block;
+      vertical-align: middle;
+    }
+
+    .menu a:hover {
+      background-color: blue;
+      Blue background on hover
+      color: white;
+      White text on hover
+    } */
+
+    .dark-mode .menu a {
+      color: white;
+      /* Dark mode link color */
+      border: 1px solid lightgrey;
+      /* Light grey border in dark mode */
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+    .dark-mode .menu a:hover {
+      background-color: white;
+      /* White background on hover in dark mode */
+      color: black;
+      /* Black text on hover in dark mode */
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      border-radius: 50px;
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      border: 1px solid lightgrey;
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      background-color: white;
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
+
 
     /* adding dark mode for contact info */
     .content {
@@ -214,9 +391,9 @@
       text-align: center;
       margin-top: 2rem;
       margin-bottom: 1rem;
-
       font-weight: 600;
-    }
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
 
     .feed-btn:hover {
       transform: scale(1.03);
@@ -312,87 +489,269 @@
           </a>
         </li>
         <li>
-          <a href="feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
+          <a href="Feedback.html" id="feedback-link" class="menu_links" data-link="Feedback" style="color: #333;">
             <span>Feedback</span>
           </a>
         </li>
+        <li>
+          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
+            <span>Nearby</span></a>
+        </li>
       </ul>
     </nav>
-    <div class="content">
-      <h1>Feedback</h1>
-      <div class="feedback-box">
-        <h3>Please rate your experience:</h3>
-        <form id="feedback-box">
-          <div class="star-rating">
-            <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars" />
-            <label for="star5" title="5 stars">★</label>
-            <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars" />
-            <label for="star4" title="4 stars">★</label>
-            <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars" />
-            <label for="star3" title="3 stars">★</label>
-            <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars" />
-            <label for="star2" title="2 stars">★</label>
-            <input type="radio" id="star1" name="rating" value="1" aria-label="1 star" />
-            <label for="star1" title="1 star">★</label>
-          </div>
 
-          <h3>Your Comments:</h3>
-          <textarea class="feed-msg" rows="5" placeholder="Share your feedback..." required></textarea>
-          <div class="feed-btn">
-            <button type="submit">Submit Feedback</button>
-          </div>
-        </form>
-      </div>
-      <div id="thank-you-message">
-        Thank you for your feedback!
-      </div>
+    <div class="buttons">
+      <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      
     </div>
   </div>
+</header>
+<script>
+  // Select the button by its ID
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-  <footer>
-    <div>
-      <h3>Connect with us!</h3>
-      <div>
-        <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-    <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Preloader hide on load
-    window.onload = function () {
-      document.getElementById('preloader').style.display = 'none';
-    };
-
-    // Feedback form submission
-    document.getElementById('feedback-box').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the form from actually submitting
-
-      // Hide the feedback box and show the thank you message
-      document.querySelector('.feedback-box').style.display = 'none';
-      document.getElementById('thank-you-message').style.display = 'flex'; // Show the message
-    });
-
-    // Toggle dark mode functionality
-    const toggleDarkMode = () => {
+  // Add an event listener for the 'click' event
+  darkModeToggle.addEventListener('click', () => {
+      // Toggle the 'dark-mode' class on the body element
       document.body.classList.toggle('dark-mode');
-    };
 
-    // Add event listener to a dark mode toggle button (if implemented)
-    document.querySelector('.dark-mode-toggle').addEventListener('click', toggleDarkMode);
-  </script>
+      // Save the dark mode preference in localStorage
+      if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+      } else {
+          localStorage.setItem('theme', 'light');
+      }
+  });
+
+  // Check localStorage for saved theme preference on page load
+  document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+      }
+  });
+</script>
+
+
+<body>
+  <header>
+
+    <h1>Feedback</h1>
+
+  </header>
+        <!-- Thank You Message -->
+        <div class="content">
+          <div class="feedback-box">
+              <h2>Feedback Form</h2>
+              
+              <form id="feedback-form">
+                  <!-- Name Input -->
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required />
+      
+                  <!-- Email Input -->
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required />
+      
+                  <!-- Comments Section -->
+                  <label for="comments">Your Comments:</label>
+                  <textarea id="comments" name="comments" class="feed-msg" rows="5" placeholder="Share your feedback..." required></textarea>
+                  
+                  <!-- Star Rating -->
+                  <h3>Please rate your experience:</h3>
+                  <div class="star-rating">
+                      <input type="radio" id="star5" name="rating" value="5" />
+                      <label for="star5" title="5 stars">★</label>
+                      <input type="radio" id="star4" name="rating" value="4" />
+                      <label for="star4" title="4 stars">★</label>
+                      <input type="radio" id="star3" name="rating" value="3" />
+                      <label for="star3" title="3 stars">★</label>
+                      <input type="radio" id="star2" name="rating" value="2" />
+                      <label for="star2" title="2 stars">★</label>
+                      <input type="radio" id="star1" name="rating" value="1" />
+                      <label for="star1" title="1 star">★</label>
+                  </div>
+      
+                  <!-- Submit Button -->
+                  <div class="feed-btn">
+                      <button type="submit" class="submit-button">Submit Feedback</button>
+                  </div>
+              </form>
+      
+              <!-- Thank You Message Text Only -->
+              <p id="thank-youmessage" style="display: none; color: grey; font-size: medium; margin-top: 10px;">
+                  Thank you for your feedback!
+              </p>
+          </div>
+      </div>
+      <script>
+          // JavaScript to handle form submission and show thank you message
+          document.getElementById('feedback-form').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevents form from refreshing page
+              document.getElementById('thank-youmessage').style.display = 'block';
+              this.reset(); // Resets the form fields
+          });
+      </script>      
+<style>
+  /* General styling */
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.feedback-box {
+  width: 100%;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.feedback-box label {
+  font-weight: bold;
+  margin-top: 15px;
+  display: block;
+  color: #333;
+}
+
+.input-field, .feed-msg {
+  width: 500px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 24px;
+  color: #8f8d8a;
+  cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffac33;
+}
+
+.feed-btn {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.submit-button {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #555;
+}
+</style>  
+<script>
+  document.getElementById('feedback-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  document.getElementById('thank-you-message').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('thank-you-message').style.display = 'none';
+    document.getElementById('feedback-form').reset();
+  }, 3000);
+});
+</script>
+</a>
+
+<script src="preloader.js"></script>
+
+
+<!--  -->
+<script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTopBtn');
+
+
+  <script src="preloader.js"></script>
+
+      <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
+    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
+            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
+            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
+          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
+          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
+          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
+          </p>
+        </div>
+        <div style="text-align: center; min-width: 200px; color: black;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
+          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
+            <a href="https://www.facebook.com" class="social-icon facebook"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" class="social-icon twitter"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com" class="social-icon instagram"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" class="social-icon linkedin"
+              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+          <form action="#">
+            <input type="email" placeholder="Your Email"
+              style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+            <button type="submit"
+              style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+    <hr>
+    <div
+      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <strong>
+        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
+      </strong>
+    </div>
+  </footer>
 </body>
 
 </html>

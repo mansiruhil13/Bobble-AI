@@ -5,17 +5,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Added Favicon -->
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <title>AmbuFlow</title>
 
   <link rel="stylesheet" href="src/css/indexmain.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
   <!--Updated to latest version-->
 
   <link rel="stylesheet" href="src/css/navbar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="responsive.css">
 
+  <link rel="manifest" href="/manifest.json">
+
+
   <style>
+
+    
+
+      .profile-icon {
+
+      border-radius: 50%;
+      position: relative;
+      margin-left: 20px; /* Adjust space between Login button and Profile icon */
+      margin-top: 5px;
+
+      }
+
+      .dropdown-menu {
+
+      display: none;
+      position: absolute;
+      top: 35px; /* Adjust based on the height of your navbar */
+      right: 0;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      z-index: 1;
+
+      }
+
+      .dropdown-menu a {
+
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+
+      }
+
+      .dropdown-menu a:hover {
+
+      background-color: #f1f1f1;
+
+      }
+
+
     .content {
       margin: 2rem 1.2rem;
       /* margin-bottom: 2rem; */
@@ -97,6 +144,10 @@
       text-align: center;
       padding: 15px 0;
       width: 100%;
+    }
+    footer a{
+      text-decoration: none;
+      color: #f3f4f6;
     }
 
     .checkbtn {
@@ -239,8 +290,8 @@
     }
 
     .faq-question {
-      background-color: #e7ffe7;
-      color: #333;
+      background-color: #369ef9;
+      color: whitesmoke;
       padding: 10px;
       width: 100%;
       text-align: left;
@@ -256,8 +307,9 @@
     }
 
     .faq-question:hover {
-      background-color: #d5f0d5;
-      /* Lighter green on hover */
+      background-color: whitesmoke;
+      color:#369ef9 ;
+      /* new colour on hover */
     }
 
     .faq-question::after {
@@ -384,12 +436,11 @@
     <nav class="menu">
       <ul>
         <li>
-          <a href="#container" style="color: #333;">
+          <button class="scroll-button" style="background: none; border: none; cursor: pointer;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor"></path>
             </svg>
-          </a>
+          </button>
         </li>
         <li>
           <a href="index.html" id="index-link" class="menu_links" data-link="Home">
@@ -405,6 +456,11 @@
             <span>Team</span></a>
         </li>
         <li>
+          <a href="./contributors/contributors.html" id="contributors-link" class="menu_links" data-link="Our Contributors">
+            <span>Our Contributors</span>
+          </a>
+        </li>
+        <li>
           <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
             <span>Contact</span></a>
         </li>
@@ -416,17 +472,58 @@
           <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
             <span>Nearby</span></a>
         </li>
+
+
+        <!-- Profile Icon -->
+        <li class="nav-item no-underline">
+          <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+              <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+                  alt="Profile Icon" 
+                  style="width: 30px; height: 30px; border-radius: 50%; margin-right: 4px;">
+          </a>
+        </li>
+
+        <script>
+          
+          document.addEventListener("DOMContentLoaded", function() {
+          // Retrieve the saved avatar from localStorage
+          const savedAvatar = localStorage.getItem("selectedAvatar");
+
+          // If an avatar is saved, update the profile image
+          if (savedAvatar) {
+              const homeProfileImage = document.getElementById("homeProfileImage");
+              if (homeProfileImage) {
+                  homeProfileImage.src = savedAvatar;
+              }
+          }
+        });
+
+
+</script>
+
+
+     <style>
+
+       /* Override the existing hover styles */
+       .navbar-nav .nav-item .profile-link:hover {
+           background-color: transparent !important; /* Remove background color */
+           border-radius: 0 !important; /* Reset border radius */
+           transform: none !important; /* Prevent scaling */
+       }
+
+     </style>
+     
       </ul>
     </nav>
 
     <div class="main_content">
       <div class="main_heading">
         <h1>Start Saving lives with </h1>
-        <h2 data-link_h2="AmbuFlow...">AmbuFlow...</h2>
+        <h2 data-link_h2="एमबुफलो...">एमबुफलो...</h2>
         <p>AmbuFlow is ambulance tracking site which helps you to find the nearest hospitals and get access to nearest
           ambulances and save lives</p>
         <div class="buttons">
-          <a href="up.html" class="get-started">Get started <ion-icon name="log-in-outline"></ion-icon></a>
+          <a href="login.html" class="get-started">Get started <ion-icon name="log-in-outline"></ion-icon></a>
         </div>
       </div>
       <div class="gif">
@@ -438,7 +535,7 @@
   <div class="content" id="grid-content">
     <h1>Welcome to the Ambulance Monitoring System</h1>
     <div class="grid">
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/emergency-w.jpg" alt="Emergency Response" />
         <h2>Quick Emergency Response</h2>
         <p>
@@ -446,7 +543,7 @@
           nearest hospitals and ambulances.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/ambulance-w.jpg" alt="Real-Time Tracking" />
         <h2>Real-Time Tracking</h2>
         <p>
@@ -454,7 +551,7 @@
           conditions, optimizing route management.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature"  style="cursor: pointer;">
         <img src="images/24-w.jpg" alt="24/7 Availability" />
         <h2>24/7 Availability</h2>
         <p>
@@ -462,7 +559,7 @@
           call away, anytime, anywhere.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/doctor-w.jpg" alt="Enhanced Communication" />
         <h2>Enhanced Communication</h2>
         <p>
@@ -470,7 +567,7 @@
           ambulance drivers.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature" style="cursor: pointer;">
         <img src="images/hospital-w.jpg" alt="Resource Management" />
         <h2>Resource Management</h2>
         <p>
@@ -478,6 +575,15 @@
           critical information and analytics.
         </p>
       </div>
+      <div class="feature" style="cursor: pointer;">
+     <img src="images/ambulance-w.jpg" alt="Driver Performance Monitoring" />
+        <h2>Driver Performance Management</h2>
+        <p>
+          Looks after the behaviour of driver and performance 
+          on the road, live tracking is done to avoid any kind of traffic problems
+        </p>
+      </div>
+
 
       <!-- Team Section in Full Row -->
       <div class="team-feature">
@@ -526,172 +632,286 @@
             possible, clear a path for the ambulance and stay on the line with emergency services if needed.</p>
         </div>
       </div>
-    
-    <div class="faq">
-      <button class="faq-question">How do I track an ambulance in real-time?</button>
-      <div class="faq-answer">
-        <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
-          live map feature.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
-      <div class="faq-answer">
-        <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
-          please contact emergency services for further instructions.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Can I provide medical information for the patient in advance?</button>
-      <div class="faq-answer">
-        <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
-          the situation.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
-      <div class="faq-answer">
-        <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
-          on the provider.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">How can I request special medical equipment or personnel on the
-        ambulance?</button>
-      <div class="faq-answer">
-        <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
-          as a ventilator or a specialized doctor.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
-      <div class="faq-answer">
-        <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
-          technical issue through the system or contact support.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Can I schedule an ambulance in advance?</button>
-      <div class="faq-answer">
-        <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">What should I do if the ambulance cannot find my location?</button>
-      <div class="faq-answer">
-        <p>If the ambulance has trouble finding your location, ensure your address is accurate. You can also contact 
-          the driver directly through the provided contact information to give specific directions.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">Can I request an ambulance for multiple patients?</button>
-      <div class="faq-answer">
-        <p>Yes, you can request an ambulance for multiple patients. Be sure to mention the number of patients and their
-           condition during your request so that appropriate resources can be dispatched.</p>
-      </div>
-    </div>
-    <div class="faq">
-      <button class="faq-question">What happens if I need to cancel my ambulance request?</button>
-      <div class="faq-answer">
-        <p>You can cancel your ambulance request through the system before the ambulance arrives. However, cancellation
-           charges may apply depending on the provider's policy.</p>
-      </div>
-    </div>
-  </div>
-  </div>
 
-  <!-- FAQ section ends here -->
-  <footer style="margin-top: 1.5rem; color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="display: flex;color: #f3f4f6;justify-content: space-evenly;position: relative;left: 2.5rem;">
-
-      <!-- Quick Links Section -->
-      <div>
-        <ul style="list-style-type: none; padding: 0;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-            <li style="margin-bottom: 8px;">
-                <a href="home.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-home" style="margin-right: 12px; color: #000000;"></i> Home
-                </a>
-            </li>
-            <li style="margin-bottom: 8px;">
-                <a href="about.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-info-circle" style="margin-right: 12px; color: #000000;"></i> About Us
-                </a>
-            </li>
-            <li style="margin-bottom: 8px;">
-                <a href="contact.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-envelope" style="margin-right: 12px; color: #000000;"></i> Contact Us
-                </a>
-            </li>
-            <li style="margin-bottom: 8px;">
-                <a href="privacy.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-user-secret" style="margin-right: 12px; color: #000000;"></i> Privacy Policy
-                </a>
-            </li>
-            <li style="margin-bottom: 8px;">
-                <a href="terms.html" style="color: #000000; background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-file-contract" style="margin-right: 12px; color: #000000;"></i> Terms of Service
-                </a>
-            </li>
-            <li style="margin-bottom: 8px;">
-                <a href="sitemap.html" style="color: #000000;background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-sitemap" style="margin-right: 12px; color: #000000;"></i> Site Map
-                </a>
-            </li>
-            <li>
-                <a href="#faq-section" style="color: #000000;background:none; cursor: pointer; text-decoration: none; display: flex; align-items: center;"
-                    onmouseover="this.style.color='blue'; this.querySelector('i').style.color='blue';"
-                    onmouseout="this.style.color='black'; this.querySelector('i').style.color='black';">
-                    <i class="fas fa-question-circle" style="margin-right: 12px; color: #000000;"></i> FAQ
-                </a>
-            </li>
-        </ul>
-    </div>
-    
-
-
-      <!-- Modified the looks of the social icons -->
-      <!-- Social Media Links -->
-      <div style="text-align: center; min-width: 200px; color: black;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow
-          Us</h3>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-          <a href="https://www.facebook.com" class="social-icon facebook no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.twitter.com" class="social-icon twitter no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com" class="social-icon instagram no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com" class="social-icon linkedin no-hover-effect"
-            style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+      <div class="faq">
+        <button class="faq-question">How do I track an ambulance in real-time?</button>
+        <div class="faq-answer">
+          <p>After requesting an ambulance, you can track it in real-time by logging into the system and accessing the
+            live map feature.</p>
         </div>
       </div>
+      <div class="faq">
+        <button class="faq-question">What are the emergency protocols if an ambulance is delayed?</button>
+        <div class="faq-answer">
+          <p>If the ambulance is delayed, you will receive updates through the system. In case of a significant delay,
+            please contact emergency services for further instructions.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Can I provide medical information for the patient in advance?</button>
+        <div class="faq-answer">
+          <p>Yes, during your request, you can provide essential medical details to help paramedics prepare better for
+            the situation.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Are there any charges for using the ambulance tracking service?</button>
+        <div class="faq-answer">
+          <p>The ambulance tracking service is free of charge, but regular ambulance service fees may apply depending
+            on the provider.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">How can I request special medical equipment or personnel on the
+          ambulance?</button>
+        <div class="faq-answer">
+          <p>During your request, you can specify if the patient needs specific medical equipment or personnel, such
+            as a ventilator or a specialized doctor.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">What should I do if the location of the ambulance is not updating?</button>
+        <div class="faq-answer">
+          <p>If the ambulance location is not updating, try refreshing the page. If the issue persists, report a
+            technical issue through the system or contact support.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Can I schedule an ambulance in advance?</button>
+        <div class="faq-answer">
+          <p>Yes, the system allows you to schedule an ambulance for non-emergency situations in advance.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">What should I do if the ambulance cannot find my location?</button>
+        <div class="faq-answer">
+          <p>If the ambulance has trouble finding your location, ensure your address is accurate. You can also contact
+            the driver directly through the provided contact information to give specific directions.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">Can I request an ambulance for multiple patients?</button>
+        <div class="faq-answer">
+          <p>Yes, you can request an ambulance for multiple patients. Be sure to mention the number of patients and
+            their
+            condition during your request so that appropriate resources can be dispatched.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">What happens if I need to cancel my ambulance request?</button>
+        <div class="faq-answer">
+          <p>You can cancel your ambulance request through the system before the ambulance arrives. However,
+            cancellation
+            charges may apply depending on the provider's policy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ section ends here ... -->
+
+
+  <!-- footer start here -->
+  <footer class="fot">
+
+
+    <div class="l1">
+      <h2>About</h2>
+      <p>AmbuFlow is ambulance tracking site which helps you to find the nearest hospitals and get access to nearest
+        ambulances and save lives</p>
+    </div>
+
+
+    <div class="l2">
+      <div>
+        <h2 style="margin-left: 1vw;">Usefull link</h2>
+        <p><a href="index.html">Home</a></p>
+        <p style="margin-left: 1.3vw;"><a href="features.html">Features</a></p>
+        <p><a href="team.html">Team</a></p>
+        <p style="margin-left: 3.5vw;"><a href="privacy.html">Privacy Policy</a></p>
+        <p style="margin-left: 4.5vw;"><a href="terms.html">Terms of Service</a></p>
+      </div>
+      <div class="l21">
+        <h2>Help Desk</h2>
+        <p><a href="contact.html">Support</a></p>
+        <p><a href="Contactus.html">Contact Us</a></p>
+        <p><a href="#faq-section">FAQ</a></p>
+        <p><a href="nearby.html">Near by</a></p>
+        <p><a href="contact.html">Phone</a></p>
+      </div>
+    </div>
 
       <!-- Newsletter Subscription -->
-      <div style=" min-width: 200px; margin-bottom: 20px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">
+      <div style="min-width: 200px; margin-bottom: 20px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: darkorange;">
           Subscribe to Our Newsletter</h3>
-        <form action="#">
-          <input type="email" placeholder="Your Email"
-            style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+        <form id="newsletter-form" novalidate>
+          <i class="fas fa-envelope" style="position: absolute; bottom: -142.6rem; right: 18.3rem; color: rgb(129, 128, 128); font-size: 13px;"></i>
+          <input type="email" placeholder="Your Email" style="padding: 10px; width: 80%; border: none; border-radius: 7px; padding-left: 27px;"
+            required><br><br>
           <button type="submit"
             style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
         </form>
+        <!-- Toast Notification -->
+        <div id="toast"
+          style="display: none; position: fixed; bottom: 20px; right: 60px; background-color: #333; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+        </div>
       </div>
     </div>
+  <script>
+    function showToast(message,type) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = "block"; // Show the toast
+      toast.style.backgroundColor = type==='success' ? 'green':'red'
+      toast.style.color = 'white';
+      setTimeout(() => {
+        toast.style.display = "none"; // Hide after 3 seconds
+      }, 3000);
+    }
+
+    document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value;
+
+      // Basic email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailPattern.test(email)) {
+        showToast("Thank you for subscribing!",'success'); // Show success message
+        emailInput.value = ""; // Clear the input field
+      } else {
+        showToast("Please enter a valid email address.",'error'); // Show error message
+      }
+    });
+  </script>
   </footer>
+
+
+
+
+  <style>
+    .fot {
+      display: flex;
+      height: 40vh;
+      width: 100%;
+      background-color: #25242a;
+    }
+
+    .l1 {
+      width: 30vw;
+    }
+
+    .l2 {
+      display: flex;
+      width: 40vw;
+      margin-left: 8vw;
+    }
+
+    .l21 {
+      margin-left: 9vw;
+    }
+
+    h2 {
+      color: darkorange;
+    }
+
+    .l1 p {
+      font-size: 1vw;
+      padding: 1vw;
+      color: white;
+    }
+
+    .l2 p {
+      font-size: 1vw;
+      padding: .5vw;
+      color: white;
+      justify-content: first baseline;
+      margin-top: -1vw;
+    }
+
+    .con {
+      margin-left: .9vw;
+    }
+
+    .l21 p {
+      font-size: 1vw;
+      padding: .5vw;
+      color: white;
+      justify-content: first baseline;
+      margin-top: -1vw;
+    }
+
+    .social-icons a {
+
+      background: darkorange;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin-right: 4px;
+
+    }
+
+    .social-icons a i {
+      color: #e7f2f4;
+      padding: 13px 12px;
+      height: 20px;
+    }
+
+
+    @media (max-width: 768px) {
+      .fot {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin-right: 12vw;
+      }
+
+      .l1 h2 {
+        font-size: 10vw;
+        margin-left: 33vw;
+        margin-top: -1vw;
+      }
+
+      .l1 p {
+        font-size: 4vw;
+        width: 90vw;
+        padding: 5vw;
+        margin-right: 5vw;
+        margin-top: -8vw;
+      }
+
+      .l2 {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .l2 h2 {
+        font-size: 5vw;
+        width: 30vw;
+      }
+
+      .l2 p {
+        font-size: 3vw;
+      }
+
+      .l21 {
+        margin-left: 19vw;
+      }
+
+      .l3 {
+        margin-left: -17vw;
+      }
+    }
+  </style>
+
+
+
+
+
+
+
   <a href="chatbot.html">
     <div class="fixed bottom-0 right-2 chatbot-container">
       <button class="chatbot-button group">
@@ -709,7 +929,7 @@
 
   <div class="gtranslate_wrapper"></div>
   <div
-    style="background-color: #C4D7FF; color: #000000;border-top: 1px solid #333; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
+    style="background-color:  #25242a; color: darkorange;border-top: 1px solid #333; display: flex; justify-content: center; align-items: center; padding: 10px 20px;">
     <strong>
       <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
     </strong>
@@ -718,7 +938,22 @@
   <script src="preloader.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+      const scrollButton = document.querySelector(".scroll-button");
+      function smoothScrollToTop() {
+        const scrollY = window.pageYOffset;
+        const scrollStep = Math.max(10, Math.floor(scrollY / 20)); // Gradual scroll step
+        if (scrollY > 0) {
+          window.scrollBy(0, -scrollStep);
+          requestAnimationFrame(smoothScrollToTop);
+        }
+      }
 
+      // Always show the button and attach the scroll event
+      scrollButton?.addEventListener("click", () => {
+        requestAnimationFrame(smoothScrollToTop);
+      });
+  </script>
   <script>
     const thankYouMessage = document.getElementById("thankYouMessage");
     const form = document.getElementById("subscribeForm");
@@ -809,6 +1044,10 @@
       animateCircles();
     });
   </script>
+
+<script src="script.js"></script> <!-- Link to your service worker registration script -->
+
+
 </body>
 
 </html>

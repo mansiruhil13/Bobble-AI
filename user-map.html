@@ -62,9 +62,8 @@
 
                     service = new google.maps.places.PlacesService(map);
                     searchNearby(userLocation);
-
-                }, error => {
-                    console.error('Error getting user location: ' + error.message);
+                }, () => {
+                    console.error('Error getting user location.');
                 });
             } else {
                 console.error('Geolocation is not supported by this browser.');

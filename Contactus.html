@@ -170,6 +170,37 @@
       display: block;
       /* Show on hover */
     }
+
+    /* Navbar Styles */
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      padding: 10px;
+      background-color: #f0f0f0; /* Light background color */
+      border-radius: 25px; /* Rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .nav-links li {
+      margin: 0 15px; /* Space between links */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333; /* Dark text color */
+      font-weight: 500; /* Medium font weight */
+      transition: color 0.3s; /* Smooth color transition */
+    }
+
+    .nav-links a:hover {
+      color: #007bff; /* Change color on hover */
+    }
     </style>
 </head>
 <body>
@@ -193,12 +224,25 @@
           </div>
 
         <nav class="menu">
-            <ul>
-                <li><a href="index.html" id="home-link" onclick="changeContent('home')"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="features.html" id="features-link" onclick="changeContent('features')"><i class="fa-solid fa-file"></i> Features</a></li>
-                <li><a href="team.html" id="team-link" onclick="changeContent('team')"><i class="fa-solid fa-user-group"></i> Team</a></li>
-                <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')"><i class="fa-solid fa-phone"></i> Contact</a></li>
-                <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"><i class="fa-solid fa-clipboard"></i> Feedback</a></li>
+            <ul class="nav-links">
+                <li>
+                    <a href="./index.html" id="home-link" onclick="changeContent('home')">Home</a>
+                </li>
+                <li>
+                    <a href="features.html" id="features-link" onclick="changeContent('features')">Features</a>
+                </li>
+                <li>
+                    <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
+                </li>
+                <li>
+                    <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
+                </li>
+                <li>
+                    <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')">Feedback</a>
+                </li>
+                <li>
+                    <a href="nearby.html" id="nearby-link" onclick="changeContent('nearby')">Nearby</a>
+                </li>
             </ul>
         </nav>
         <div class="buttons">

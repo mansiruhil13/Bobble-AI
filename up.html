@@ -1,3 +1,4 @@
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -655,8 +656,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
 
-  </body>
-</html> -->
+
 
 
 
@@ -768,10 +768,18 @@
         const sign_up_btn = document.querySelector("#sign-up-btn");
         const container = document.querySelector(".container");
 
+
         // Toggle between sign up and sign in
         sign_up_btn.addEventListener("click", () => {
             container.classList.add("sign-up-mode");
         });
+
+  </script>
+  <script>
+     sign_in_btn = document.querySelector("#sign-in-btn");
+     sign_up_btn = document.querySelector("#sign-up-btn");
+     container = document.querySelector(".container");
+
 
         sign_in_btn.addEventListener("click", () => {
             container.classList.remove("sign-up-mode");
@@ -801,6 +809,7 @@
         document.getElementById("signUpForm").addEventListener('submit', function (event) {
             event.preventDefault();
 
+
             const username = this.querySelector("input[type='text']").value;
             const email = this.querySelector("input[type='email']").value;
             const password = this.querySelector("input[type='password']").value;
@@ -809,6 +818,14 @@
                 alert('Please fill in all fields');
                 return;
             }
+
+       username = document.querySelector(".sign-in-form input[type='text']").value;
+       password = document.querySelector(".sign-in-form input[type='password']").value;
+
+      // Retrieve stored credentials
+       storedUsername = localStorage.getItem('username');
+       storedPassword = localStorage.getItem('password');
+
 
             // Store the username and password in localStorage
             localStorage.setItem('username', username);
@@ -843,6 +860,7 @@
             }
         }
 
+
         // Toggle password visibility
         function togglePassword(fieldId, icon) {
             const field = document.getElementById(fieldId);
@@ -850,6 +868,11 @@
             icon.classList.toggle('fa-lock-open');
             icon.classList.toggle('fa-lock');
         }
+
+       username = document.querySelector(".sign-up-form input[type='text']").value;
+       email = document.querySelector(".sign-up-form input[type='email']").value;
+       password = document.querySelector(".sign-up-form input[type='password']").value;
+
 
         document.getElementById("toggle-password").addEventListener("click", function () {
             togglePassword("password-input", this);
@@ -884,8 +907,50 @@
         });
 
 
+
         // Animate circles based on mouse position
         function animateCircles() {
+
+    // Toggle password visibility
+    function togglePassword(fieldId, icon) {
+       field = document.getElementById(fieldId);
+      field.type = field.type === 'password' ? 'text' : 'password';
+      icon.classList.toggle('fa-lock-open');
+      icon.classList.toggle('fa-lock');
+    }
+
+    document.getElementById("toggle-password").addEventListener("click", function () {
+      togglePassword("password-input", this);
+    });
+
+    document.getElementById("toggle-password-signup").addEventListener("click", function () {
+      togglePassword("password-input-signup", this);
+    });
+
+    // Circle animation
+     coords = { x: 0, y: 0 };
+     circles = document.querySelectorAll(".circle");
+     colors = [
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e",
+      "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c",
+      "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f",
+      "#950f5f", "#830060", "#7c0060", "#680060", "#60005f",
+      "#48005f", "#3d005e",
+    ];
+
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+
       let x = coords.x;
       let y = coords.y;
 
@@ -897,7 +962,7 @@
         circle.x = x;
         circle.y = y;
 
-        const nextCircle = circles[index + 1] || circles[0];
+         nextCircle = circles[index + 1] || circles[0];
         x += (nextCircle.x - x) * 0.3;
         y += (nextCircle.y - y) * 0.3;
       });
