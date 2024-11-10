@@ -35,11 +35,11 @@
 ### This project is now OFFICIALLY accepted for
 
 <div align="center">
-  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
 </div>
 
 <div align="center">
-  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" alt="Hacktober fest 2024" width="80%">
+  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktober fest 2024" width="80%">
 </div>
 
 <br>
@@ -47,7 +47,21 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## DESCRIPTION 📑
+## Table of Contents
+- [DESCRIPTION](#description)
+- [Why We Need This Application](#why-we-need-this-application)
+- [Problem Statement](#problem-statement)
+- [Solution](#solution)
+- [Key Features](#key-features)
+- [Contributing](#contributing)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Tech Stack](#tech-stack)
+- [User-Friendly Experience](#user-friendly-experience)
+- [Future Enhancements](#future-enhancements)
+- [Our Valuable Contributors](#our-valuable-contributors)
+- [Team](#team)
+
+## DESCRIPTION
 A mobile app using HTML, CSS, JavaScript, and Google API that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
 
 Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the description of the project.
@@ -55,7 +69,7 @@ Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 🌟 Why We Need This Application
+## Why We Need This Application
 
 1. **Quick Emergency Response**: Ensures patients receive timely medical assistance by locating the nearest hospitals and ambulances.
 2. **Real-Time Tracking**: Provides real-time updates on ambulance locations and traffic conditions, optimizing route management.
@@ -66,7 +80,7 @@ Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 🛠 Problem Statement
+## Problem Statement
 While having the name and address of a hospital is useful, visualizing it on a map with precise directions is even more effective. This app aims to bridge that gap by delivering real-time location data and navigation assistance, ensuring users find the nearest hospital quickly and with ease. 🚑
 
 ### 🌟 Quick Access to Hospitals
@@ -77,7 +91,7 @@ Visual information is key. Beyond just showing names and addresses, the app prov
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 💡 Solution
+## Solution
 
 ### 🚑 Quick Access to Hospitals
 This app offers a comprehensive list of nearby hospitals with essential details such as addresses, contact numbers, and user ratings. Users can filter based on hospital specialties, helping them find the appropriate medical help efficiently.
@@ -88,7 +102,7 @@ The built-in map feature shows exact hospital locations, provides directions, an
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 🚀 Key Features
+## Key Features
 
 ### 🚑 Operator Interface
 - **🔐 Registration & Sign-In**: Operators can create accounts and securely log in for system access.
@@ -108,7 +122,7 @@ The built-in map feature shows exact hospital locations, provides directions, an
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## ✨ Contributing
+## Contributing
 
 We welcome all contributions from the open-source community! If you'd like to contribute, follow these steps:
 
@@ -134,8 +148,28 @@ git push origin feature/your-feature-name
 ```
 
 5. **Open a Pull Request**: Go to your forked repo on GitHub and click "New Pull Request."
+
+## How to run the project:
+
+1. Go to Backend folder and run command:
+```bash
+npm install
+```
+
+2. Make mongodb database.
+
+3. Go to server.js file and give your mongodb connection URL.
+
+4. Run command:
+```bash
+node server.js
+```
+
+5. Split terminal and go to index.html and open it with live server.
+
+6. make sure that both Backend and index.html file run togethere.
    
-## 🛠 Contribution Guidelines:
+## Contribution Guidelines:
 
 We welcome all contributions to improve **AmbuFlow**! If you would like to contribute, please follow the [Contributing.md](./Contributing.md) to know how to get started.
 
@@ -152,7 +186,7 @@ Refer to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our community g
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 🛠 Tech Stack
+## Tech Stack
 
 <a href="https://skillicons.dev">
     <img margin="8px" src="https://skillicons.dev/icons?i=html,css,js" />
@@ -164,11 +198,11 @@ Refer to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our community g
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 📱 User-Friendly Experience
+## User-Friendly Experience
 
 This app is designed to be user-friendly, ensuring a seamless experience for both patients and ambulance drivers. The intuitive interface and real-time updates make it easy to navigate and use, even in high-stress situations.
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 - **Integration with Emergency Services** for faster response times.
 - **Real-Time Communication** between patients and ambulance drivers.
@@ -185,9 +219,9 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 👥 Team
+## Team
 
-| ![Mansi Ruhil](https://avatars.githubusercontent.com/u/157950124?v=4&s=80) |
+| <img title="Mansi Ruhil" src="https://avatars.githubusercontent.com/u/157950124?v=4&" alt="Mansi Ruhil" width="75"/> |
 |:--:|
 | **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
 | [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |

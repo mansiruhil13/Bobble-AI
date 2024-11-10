@@ -34,125 +34,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header {
-  background-color: #ffffff;
-  border-bottom: px solid #e5e7eb;
-}
-
-.container {
-  /* max-width: 1280px; */
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-}
-
-.brand-name {
-  font-family: 'poppins', sans-serif;
-  font-weight: bold;
-  margin-right: 0.5rem;
-  font-size: 1.5rem;
-  color: #2980B9;
-}
-
-.ambu {
-  font-family: 'poppins', sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #e81a1a;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.logo span {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu ul li {
-  margin-left: 20px;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: #0344f6;
-  font-weight: 500;
-  padding: 8px 12px;
-  transition: background-color 0.3s;
-  /* border: 2px solid #1d4ed8; */
-  /* border-radius: 15px; */
-}
-
-:hover {
-  /* color: #1d4ed8;
-  background-color: #f3f4f6;
-  border-radius: 5px; */
-  color: #0344f6;
-  /* background-color: #1d4ed8; */
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  text-wrap: nowrap;
-}
-
-.buttons a {
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 10px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background-color 0.3s, color 0.3s;
-  border: 2px solid #1d4ed8;
-}
-
-.login {
-  color: #4b5563;
-  background-color: transparent;
-  border: 1px solid transparent;
-}
-
-.login:hover {
-  /* background-color: #f3f4f6;
-  color: #1d4ed8; */
-  background-color: #1d4ed8;
-  ;
-  color: white;
-}
-
-.get-started {
-  background-color: #1d4ed8;
-  color: #ffffff;
-}
-
-.get-started:hover {
-  background-color: #2563eb;
-}
-
 .quick-ft {
   display: flex;
   flex-direction: column;
@@ -210,7 +91,6 @@ header {
   width: 100%;
   gap: 80px;
   flex-wrap: wrap;
-
 }
 
 .team-features,
