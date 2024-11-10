@@ -180,55 +180,7 @@
             margin-bottom: 20px;
         }
 
-        .team-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
-            animation: fadeIn 1s ease-in-out;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .team-member {
-            background-color: #e7f3fe;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 250px;
-            max-width: 100%;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            border: 3px solid #2980b9;
-        }
-
-        .team-member h2 {
-            color: #2980b9;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .team-member p {
-            color: #555;
-            font-size: 0.9em;
-        }
-
+     
         /* .contact-feature {
              display: flex;
             justify-content: center; 
@@ -320,6 +272,124 @@
                 /* End at original position */
             }
         }
+
+    .carousel-container {
+      width: 100%;
+      max-width: 300px;
+      overflow: hidden;
+      position: relative;
+      padding: 30px;
+      margin-left:500px;
+    }
+
+    .carousel {
+    gap:10px;
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+     z-index: 1;
+    }
+
+    .card {
+      min-width: 100%;
+      height:350px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      background-color: #e6f2ff;
+      text-align: center;
+      padding: 20px;
+     
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 1.5em;
+      color: #337ab7;
+    }
+
+    .card p {
+      font-size: 1em;
+      color: #333;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: #337ab7;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .prev {
+      left: 0px;
+    }
+
+    .next {
+      right: 0px;
+    }
+
+    /* Dots indicator */
+    .dots-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #337ab7;
+    }
+   /* Responsive styles */
+   @media (max-width: 600px) {
+      .carousel-container {
+        padding: 5px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .card img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .card h2 {
+        font-size: 1em;
+      }
+
+      .card p {
+        font-size: 0.8em;
+      }
+
+      .prev, .next {
+        font-size: 1.5em;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+      }
+    }
     </style>
 </head>
 
@@ -410,29 +480,74 @@
     <!--changing the colour of h1 tag to match the theme of page -->
     <div class="content" id="main-content">
         <h1 style="color: #2980b9;">Meet Our Team</h1>
-        <div class="team-section">
-            <div class="team-member">
+        <div class="carousel-container">
+            <div class="carousel">
+              <!-- Card 1: Service Manager -->
+              <div class="card">
                 <img src="images/service-web.jpg" alt="Service Manager">
                 <h2>Service Manager</h2>
                 <p>Responsible for coordinating ambulance services and ensuring timely responses.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 2: Rescue Specialist -->
+              <div class="card">
                 <img src="images/rescue-web.webp" alt="Rescue Specialist">
                 <h2>Rescue Specialist</h2>
                 <p>Trained to provide immediate care and transport patients safely to hospitals.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 3: Call Operator -->
+              <div class="card">
                 <img src="images/call-web.jpg" alt="Call Operator">
                 <h2>Call Operator</h2>
                 <p>First point of contact for emergencies, dispatching ambulances efficiently.</p>
-            </div>
-            <div class="team-member">
+              </div>
+              <!-- Card 4: GPS Technician -->
+              <div class="card">
                 <img src="images/gps-web.webp" alt="GPS Technician">
                 <h2>GPS Technician</h2>
                 <p>Manages real-time tracking systems for effective ambulance navigation.</p>
+              </div>
             </div>
-        </div>
+            <!-- Navigation buttons -->
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+
+            <div class="dots-container">
+                <span class="dot" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+              </div>
+          </div>
     </div>
+
+      
+      <script>
+        let currentSlide = 0;
+      
+        function updateDots() {
+          const dots = document.querySelectorAll('.dot');
+          dots.forEach(dot => dot.classList.remove('active'));
+          dots[currentSlide].classList.add('active');
+        }
+        function moveCarousel(direction) {
+          const carousel = document.querySelector('.carousel');
+          const totalSlides = document.querySelectorAll('.carousel .card').length;
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+          updateDots();
+        }
+        function goToSlide(slideIndex) {
+    const carousel = document.querySelector('.carousel');
+    currentSlide = slideIndex;
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    updateDots();
+  }
+
+  // Initialize the first dot as active
+  document.addEventListener('DOMContentLoaded', () => {
+    updateDots();
+  });
+      </script>
 
     <!-- Contact Section in Full Row -->
     <div class="features-container">
