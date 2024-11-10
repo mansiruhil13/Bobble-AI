@@ -156,6 +156,108 @@
       align-items: center;
     }
 
+    /* dark mode hove effect on logo */
+    body.dark-mode #logo img:hover {
+      filter: brightness(0) invert(1);
+      /* Change black logo to white */
+      filter: brightness(0.8);
+      /* Change the brightness to light grey on hover */
+    }
+
+    .navbar.dark-mode .logo-img {
+      filter: brightness(0) invert(1);
+      /* Change logo color in dark mode */
+    }
+
+    /* .menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+    }
+
+
+    .menu a {
+      color: black;
+      Light mode link color
+      border: 2px solid black;
+      border-radius:7px;
+      padding: 3px 7px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .menu ul li a:hover {
+      background-color: rgb(255, 255, 255);
+      Blue background on hover
+      color: white;
+      White text on hover
+    } */
+    a:hover {
+      color: blue !important;
+    }
+
+    /* .dark-mode .menu a {
+      color: white;
+      Dark mode link color
+      border: 1px solid lightgrey;
+      Light grey border in dark mode
+    } */
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+      /* Slightly gray background with high opacity */
+    }
+
+    /* .dark-mode .menu a:hover {
+      background-color: white;
+      White background on hover in dark mode
+      color: black;
+      Black text on hover in dark mode
+    } */
+
+    .light-dark-btn {
+
+      background-color: transparent;
+      border: 1px solid black;
+      /* Black border */
+      cursor: pointer;
+      color: black;
+      /* Default button color */
+      width: 50px;
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      cursor: pointer;
+      color: black;
+      border-radius: 50px;
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+      /* Change color on hover */
+    }
+
+    .dark-mode .light-dark-btn {
+      color: white;
+      /* Button color in dark mode */
+      border: 1px solid lightgrey;
+      /* Light grey border */
+    }
+
+    .dark-mode .light-dark-btn:hover {
+      background-color: white;
+      /* Background on hover in dark mode */
+      color: black;
+      /* Text color on hover in dark mode */
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
 
     /* end */
     /* adding dark mode for contact info */
@@ -184,6 +286,7 @@
     /* end */
 
 
+
     .logo {
       display: flex;
       align-items: center;
@@ -199,9 +302,23 @@
     }
 
     .letter {
+
       display: inline-block;
       font-size: 2rem;
       animation: letterDrop 0.5s ease forwards;
+
+      
+      display: inline-block;
+      font-size: 2rem;
+      animation: letterDrop 0.5s ease forwards;
+      animation-delay: calc(var(--letter-index)* 0.1s);
+
+    }
+
+    .letter {
+      display: inline-block;
+      font-size: 2rem;
+
     }
 
     .red {
@@ -209,7 +326,11 @@
       /* Change the color of letters in this class to red */
     }
 
+
     .menu ul {
+
+    /* .menu ul {
+
       list-style-type: none;
       padding: 0;
     }
@@ -227,17 +348,27 @@
     }
 
     .menu ul li a:hover {
+
       background-color: #000;
+
+      background-color: blue;
+
       color: white;
     }
 
     .menu ul li a.active {
       color: white;
       background-color: #000;
+
     }
     ul li a:hover {
     color: blue !important;
     }
+
+    } */
+
+
+
 
     .content {
       margin: 20px;
@@ -485,6 +616,43 @@ footer {
 }
 
  
+
+    /* Navbar Styles */
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      padding: 10px; /* Adjust padding for better spacing */
+      background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+      border-radius: 30px; /* More rounded corners */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    }
+
+    .nav-links li {
+      margin: 0 15px; /* Space between links */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333; /* Dark text color */
+      font-weight: 400; /* Regular font weight */
+      font-size: 16px; /* Adjust font size */
+      padding: 10px 15px; /* Add padding for clickable area */
+      border: none; /* Remove border */
+      border-radius: 20px; /* Rounded corners for links */
+      transition: color 0.3s; /* Smooth transition */
+    }
+
+    /* Hover effect */
+    .nav-links a:hover {
+      color: #007bff; /* Change text color on hover */
+    }
+
   </style>
 
 </head>
@@ -504,6 +672,8 @@ footer {
     </div>
   </div>
   <!-- ------------------------------Added a navbar---------------------------------- -->
+
+
   <header class="navbar">
     <div class="container">
 
@@ -517,6 +687,160 @@ footer {
           <span class="letter" style="--letter-index: 6;">l</span>
           <span class="letter" style="--letter-index: 7;">o</span>
           <span class="letter" style="--letter-index: 8;">w</span>
+
+        </div>
+        <a href="./index.html">
+        <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
+        </a>
+      </div>
+
+      <nav class="menu">
+        <ul class="nav-links">
+          <li>
+            <a href="./index.html" id="home-link" onclick="changeContent('home')">Home</a>
+          </li>
+          <li>
+            <a href="features.html" id="features-link" onclick="changeContent('features')">Features</a>
+          </li>
+          <li>
+            <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
+          </li>
+          <li>
+            <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
+          </li>
+          <li>
+            <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')">Feedback</a>
+          </li>
+          <li>
+            <a href="nearby.html" id="nearby-link" onclick="changeContent('nearby')">Nearby</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="buttons">
+
+
+          <a href="login.html" class="login">Log in</a>
+          <a href="up.html" class="get-started">Get started</a>
+
+        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+
+
+  <div class="container" id="container">
+
+    <div class="logo">
+      <div class="brand-name">
+        <span class="letter red" style="--letter-index: 1;">A</span>
+        <span class="letter red" style="--letter-index: 2;">m</span>
+        <span class="letter red" style="--letter-index: 3;">b</span>
+        <span class="letter red" style="--letter-index: 4;">u</span>
+        <span class="letter" style="--letter-index: 5;">F</span>
+        <span class="letter" style="--letter-index: 6;">l</span>
+        <span class="letter" style="--letter-index: 7;">o</span>
+        <span class="letter" style="--letter-index: 8;">w</span>
+      </div>
+      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+    </div>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="#container" style="color: #333;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
+            <span>Features</span></a>
+        </li>
+        <li>
+          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
+            <span>Team</span></a>
+        </li>
+        <li>
+          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
+            <span>Contact</span></a>
+        </li>
+        <li>
+          <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+            <span>Feedback</span></a>
+        </li>
+        <li>
+          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
+            <span>Nearby</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- -------------------------------------------------------------------------- -->
+    <div class="content" id="main-content">
+      <h1>Features</h1>
+      <p id="para">Here are the features of AmbuFlow:</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-ambulance feature-icon"></i>
+          <h2>Quick Emergency Response</h2>
+          <p>Immediate notifications to the nearest ambulance service.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h2>Real-Time Tracking</h2>
+          <p>Track ambulances in real-time for better coordination.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-comments feature-icon"></i>
+          <h2>Enhanced Communication</h2>
+          <p>Instant communication between dispatch and ambulances.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cogs feature-icon"></i>
+          <h2>Resource Management</h2>
+          <p>Efficient allocation of resources for emergencies.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-user-friends feature-icon"></i>
+          <h2>User-Friendly Interface</h2>
+          <p>Easy-to-navigate system for users and providers.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-clock feature-icon"></i>
+          <h2>24/7 Availability</h2>
+          <p>Always available support and monitoring services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-heartbeat feature-icon"></i>
+          <h2>Patient Health Monitoring</h2>
+          <p>Real-time monitoring of patient vitals during transport.</p>
+        </div>
+        <!-- <div class="feature-card">
+          <i class="fas fa-lock feature-icon"></i>
+          <h2>Data Security</h2>
+          <p>Ensuring the security of patient and operational data.</p>
+        </div> -->
+        <div class="feature-card">
+          <i class="fas fa-phone-alt feature-icon"></i>
+          <h2>Emergency Contact Integration</h2>
+          <p>Seamless integration with emergency contact services.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tachometer-alt feature-icon"></i>
+          <h2>Driver Performance Monitoring</h2>
+          <p>Real-time tracking of driver behavior and performance on the road.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-comments-dollar feature-icon"></i>
+          <h2>Feedback System</h2>
+          <p>Collecting feedback to improve service quality.</p>
+
         </div>
         <a href="./index.html">
         <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
@@ -760,8 +1084,9 @@ footer {
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
           <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
           <form action="#">
+            <i class="fas fa-envelope" style="position: absolute; bottom: -25.3rem; right: 22.3rem; color: gray; font-size: 13px;"></i>
             <input type="email" placeholder="Your Email"
-              style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+              style="padding: 10px; width: 80%; border: none; border-radius: 5px; padding-left: 27px;" required><br><br>
             <button type="submit"
               style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
           </form>
@@ -873,6 +1198,7 @@ footer {
     });
   </script>
 
+
 <!-- Add this div for the translator popup -->
 <div id="gTranslate" class="g-translate-popup" style="display:none;">
   <div class="gtranslate_wrapper"></div>
@@ -907,6 +1233,155 @@ footer {
     }
   });
 </script>
+
+
+  <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <div class="scroll-top-icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <svg class="progress-ring" width="60" height="60">
+        <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+            cy="30"></circle>
+    </svg>
+</button>
+<style>
+    .scroll-top {
+        position: fixed;
+        right: 1.6%;
+        background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        overflow: visible;
+        z-index: 10;
+        bottom: 75px;
+        /* Ensure button is on top */
+    }
+
+    .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-top:hover {
+        transform: scale(1.1);
+        /* Subtle scaling instead of expanding */
+        box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+        /* Slightly larger shadow */
+    }
+
+    .scroll-top:active {
+        transform: scale(1.05);
+        /* Minor scale reduction on click */
+    }
+
+    .scroll-top-icon {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover .scroll-top-icon {
+        transform: translateY(-3px);
+    }
+
+    /* Progress Ring Styling */
+    .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        /* To start from the top */
+    }
+
+    .progress-ring__circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: 50% 50%;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+        }
+    }
+
+    .scroll-top:hover {
+        animation: pulse 1.5s infinite;
+    }
+
+    .scroll-top.show {
+        animation: none;
+        /* No animation when showing the button */
+    }
+
+    .scroll-top.show:hover {
+        animation: pulse 1.5s infinite;
+        /* Pulse on hover */
+    }
+</style>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const progressCircle = document.querySelector(".progress-ring__circle");
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Set the circle progress properties
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    // Function to show or hide the button based on scroll position
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+    }
+
+    // Function to set the scroll progress on the button ring
+    function setProgress(percent) {
+        const offset = circumference - (percent / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Listen for scroll events to update button visibility and progress
+    window.addEventListener("scroll", () => {
+        toggleScrollButton();
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setProgress(scrollPercent);
+    });
+
+    // Smooth scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+  </script>
 
 </body>
 

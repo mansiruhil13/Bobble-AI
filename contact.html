@@ -103,38 +103,59 @@
             transition: transform 0.3s ease;
             /* Smooth transition effect */
         }
-
+         
         .social-icon:hover {
-            transform: scale(1.3);
-            /* Scale the element to 1.3 times its size */
+            animation-name: spin;  /*animation added*/
+            animation-duration: 2500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
 
+         /*key framed added*/
+         @keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1.3);
+  }
+  to {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+
         .fa-facebook:hover {
-            color: blue;
+            color: #316ff6;
+            border: 4px solid #316ff6;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to blue on hover */
         }
 
         .fa-x-twitter:hover {
-            color: black;
+            color: #1da1f2;
+            border: 4px solid #1da1f2;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to black on hover */
         }
 
         .fa-instagram:hover {
-            color: orangered;
+            color: #e1306c;
+            border: 4px solid #e1306c;
+            border-radius: 50%;
+            padding: 5px;
             /* Icon color change to orangered on hover */
         }
 
         .fa-linkedin-in:hover {
-            color: rgb(16, 13, 195);
+            color: #0072b1;
+           border: 4px solid #0072b1;
+           padding: 5px;
+           border-radius: 50%;
             /* Icon color change to rgb(16, 13, 195) on hover */
         }
 
-        #twitter:hover {
-            color: #1da1f2;
-            transform: scale(1.5);
-        }
 
-        #instagram:hover {
+        /* #instagram:hover {
             background: linear-gradient(45deg, #FF0080, #FF8C00, #FFD700);
             color: transparent;
             background-clip: text;
@@ -145,6 +166,14 @@
         #linkedin:hover {
             color: #0077B5;
             transform: scale(1.5);
+        } */
+        
+        ul li a:hover{
+            color: blue !important;
+        }
+
+        a:hover{
+            color: blue !important;
         }
 
 
@@ -187,6 +216,7 @@
                 /* End at original position */
             }
         }
+
         .map {
             width: 860px;
             height: 400px;
@@ -194,6 +224,21 @@
             border-radius: 5px;
             margin: 20px auto;
             object-fit: cover;
+        }
+        .dark-mode .contact-item {
+            background-color: rgba(40, 40, 40, 0.9); 
+            color: #e0e0e0; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+            border: 1px solid #555; 
+        }
+
+        .dark-mode .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .dark-mode .contact-item img {
+            border-color: #8ab4f8;
         }
     </style>
 </head>
@@ -257,7 +302,7 @@
                         <span>Contact</span></a>
                 </li>
                 <li>
-                    <a href="feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
+                    <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
                         <span>Feedback</span></a>
                 </li>
                 <li>
@@ -335,32 +380,66 @@
                 <div style="text-align: center; min-width: 200px; color: black;">
                     <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
                     <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-                        <a href="https://www.facebook.com" class="social-icon facebook"
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon facebook"
                             style="color: black; text-decoration: none; font-size: 24px;"><i
                                 class="fab fa-facebook"></i></a>
-                        <a href="https://www.twitter.com" class="social-icon twitter"
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon twitter"
                             style="color: black; text-decoration: none; font-size: 24px;"><i
                                 class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com" class="social-icon instagram"
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon instagram"
                             style="color: black; text-decoration: none; font-size: 24px;"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com" class="social-icon linkedin"
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin"
                             style="color: black; text-decoration: none; font-size: 24px;"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
                 <!-- Newsletter Subscription -->
+                <!-- Newsletter Subscription -->
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our
-                        Newsletter</h3>
-                    <form action="#">
-                        <input type="email" placeholder="Your Email"
-                            style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
+                    <form id="newsletter-form" action="#">
+                        <i class="fas fa-envelope" style="position: absolute; top: 7.95rem; right: 25rem; color: gray; font-size: 13px;"></i>
+                        <input type="email" id="newsletter-email" placeholder="Your Email"
+                            style="padding: 10px; width: 80%; border: none; border-radius: 5px; padding-left: 30px;" required><br><br>
                         <button type="submit"
-                            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
+                            style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">
+                            Subscribe
+                        </button>
                     </form>
+                    <div id="subscription-notification" style="display:none; background-color: rgba(212, 237, 218, 0.8); color: #155724; padding: 10px; border-radius: 5px; position: absolute; top: 10px; left: 600px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+                        Thank you for subscribing to our newsletter!
+                    </div>
+                    
                 </div>
+                <script>
+                    document.querySelector("form").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Prevent form from submitting immediately
+                
+                        // Improved Email validation regex to ensure proper domain like "gmail.com"
+                        const emailInput = document.querySelector("input[type='email']");
+                        const emailRegex = /^[^\s@]+@gmail\.com$/;
+                
+                        if (emailRegex.test(emailInput.value)) {
+                            // Show alert notification with green translucent box
+                            const notification = document.getElementById("subscription-notification");
+                            notification.style.display = "block";
+                
+                            // Hide the message after 3 seconds
+                            setTimeout(function() {
+                                notification.style.display = "none";
+                            }, 3000);
+                
+                            // Reset the form
+                            this.reset();
+                        } else {
+                            alert("Please enter a valid Gmail address.");
+                        }
+                    });
+                </script>
+                
+                
             </div>
         </div>
         <hr>
@@ -428,8 +507,153 @@
     </script>
 
     <!-- Add this div for the translator popup -->
-
+    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+        <div class="scroll-top-icon">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+                cy="30"></circle>
+        </svg>
+    </button>
+    <style>
+        .scroll-top {
+            position: fixed;
+            right: 1.6%;
+            background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            overflow: visible;
+            z-index: 10;
+            bottom: 75px;
+            /* Ensure button is on top */
+        }
+    
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        .scroll-top:hover {
+            transform: scale(1.1);
+            /* Subtle scaling instead of expanding */
+            box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+            /* Slightly larger shadow */
+        }
+    
+        .scroll-top:active {
+            transform: scale(1.05);
+            /* Minor scale reduction on click */
+        }
+    
+        .scroll-top-icon {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+    
+        .scroll-top:hover .scroll-top-icon {
+            transform: translateY(-3px);
+        }
+    
+        /* Progress Ring Styling */
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            /* To start from the top */
+        }
+    
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+    
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            }
+    
+            50% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+            }
+    
+            100% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            }
+        }
+    
+        .scroll-top:hover {
+            animation: pulse 1.5s infinite;
+        }
+    
+        .scroll-top.show {
+            animation: none;
+            /* No animation when showing the button */
+        }
+    
+        .scroll-top.show:hover {
+            animation: pulse 1.5s infinite;
+            /* Pulse on hover */
+        }
+    </style>
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const progressCircle = document.querySelector(".progress-ring__circle");
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+    
+        // Set the circle progress properties
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
+    
+        // Function to show or hide the button based on scroll position
+        function toggleScrollButton() {
+            if (window.scrollY > 100) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        }
+    
+        // Function to set the scroll progress on the button ring
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100) * circumference;
+            progressCircle.style.strokeDashoffset = offset;
+        }
+    
+        // Listen for scroll events to update button visibility and progress
+        window.addEventListener("scroll", () => {
+            toggleScrollButton();
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            setProgress(scrollPercent);
+        });
+    
+        // Smooth scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+      </script>
 </body>
-
 
 </html>
