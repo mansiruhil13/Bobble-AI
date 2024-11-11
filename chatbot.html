@@ -457,6 +457,14 @@
     recognition.addEventListener('error', (event) => {
         console.error('Speech recognition error:', event.error); // Log any errors
     });
+
+    document.getElementById("prompt-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevents the default action of the Enter key
+        document.getElementById("generate-btn").click(); // Programmatically clicks the send button
+    }
+});
+
 </script>
 </body>
 
