@@ -138,21 +138,7 @@
       z-index: 1000;
     } */
 
-    footer {
-      background-color: #C4D7FF;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .social-icon {
-      transition: transform 0.3s ease;
-      /* Smooth transition effect */
-    }
-
+   
 
     .checkbtn {
       font-size: 30px;
@@ -169,18 +155,7 @@
       display: none;
     }
 
-    /* Added the hover animation on the footer social icons */
-    .social-icon {
-      transition: transform 0.3s ease;
-      /* Smooth transition effect */
-    }
-
-    .social-icon:hover {
-      transform: scale(1.3);
-      /* Scale the element to 1.3 times its size */
-    }
-
-    .fa-facebook:hover {
+       .fa-facebook:hover {
       color: blue;
       /* Icon color change to blue on hover */
     }
@@ -901,59 +876,180 @@
   </div>
 
   <!-- FAQ section ends here ... -->
-
-
-  <!-- footer start here -->
-
-  <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-          <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
-          </ul>
-        </div>
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
-          </p>
-        </div>
-        <div style="text-align: center; min-width: 200px; color: black;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-            <a href="https://www.facebook.com" class="social-icon facebook"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com" class="social-icon twitter"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com" class="social-icon instagram"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" class="social-icon linkedin"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <input type="email" placeholder="Your Email"
-              style="padding: 10px; width: 80%; border: none; border-radius: 5px;" required><br><br>
-            <button type="submit"
-              style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-          </form>
-        </div>
-    </div>
-  </footer>
-
-
-
-
+<!-- footer start here -->
+<!-- footer start here -->
+<!-- footer start here -->
+<footer style="color: #f3f4f6; text-align: center; width: 100%; height: 100%;">
   <style>
+    /* Base styles for footer container */
+    .new-footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Ensures content is centered horizontally */
+      align-items: center; /* Ensures content is centered vertically */
+      padding: 20px 0;
+      background-color: #C4D7FF;
+      color: #f3f4f6;
+      box-sizing: border-box;
+    }
+
+    /* Styling for each footer section */
+    .new-footer-section {
+      flex: 1;
+      min-width: 250px;
+      background-color: black;
+      margin-bottom: 20px;
+      text-align: center;
+      align-self: center;
+    }
+
+    .new-footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2980b9;
+    }
+
+    .new-footer-section a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .new-footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .new-social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      height: auto;
+    }
+
+    .new-newsletter-input {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .new-newsletter-button {
+      background-color: #e81a1a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Media query for large screens (Desktop) */
+    @media (max-width: 1250px) {
+      .new-footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center;    /* Center horizontally */
+        justify-content: center; /* Center vertically */
+      }
+
+      .new-footer-section {
+        margin-bottom: 20px; /* Space between sections */
+        width: 100%; /* Full width in column layout */
+      }
+
+      .new-newsletter-input {
+        width: 90%; /* Slightly reduce width of input field */
+      }
+    }
+
+    /* Media query for medium screens (Tablets) */
+    @media (max-width: 768px) {
+      .new-footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Ensures text is centered */
+      }
+
+      .new-footer-section {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .new-newsletter-input {
+        width: 90%; /* Full width for smaller screens */
+      }
+    }
+
+    /* Media query for small screens (Mobile) */
+    @media (max-width: 400px) {
+      .new-footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .new-footer-section {
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      .new-newsletter-input {
+        width: 90%; /* Full width for smaller screens */
+      }
+
+      .new-social-icons {
+        gap: 10px; /* Reduce gap between social icons */
+      }
+
+      .new-newsletter-input {
+        padding: 8px;
+        font-size: 14px; /* Slightly smaller input on mobile */
+      }
+
+      .new-newsletter-button {
+        font-size: 14px; /* Smaller button text */
+        padding: 8px 16px; /* Adjust button size */
+      }
+    }
+
+  </style>
+
+  <div class="new-footer-container">
+    <div class="new-footer-section">
+      <h3>Quick Links</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+      </ul>
+    </div>
+    <div class="new-footer-section">
+      <h3>Contact Info</h3>
+      <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+      <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a>
+      <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a></p>
+    </div>
+    <div class="new-footer-section">
+      <h3>Follow Us</h3>
+      <div class="new-social-icons">
+        <a href="https://www.facebook.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="new-footer-section">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form action="#">
+        <input class="new-newsletter-input" type="email" placeholder="Your Email" required>
+        <button class="new-newsletter-button" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</footer>
+
+<style>
     .fot {
       display: flex;
       height: 40vh;
