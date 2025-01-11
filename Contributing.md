@@ -26,7 +26,7 @@ node server.js
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. **Fork the repo:**
    Click on the "Fork" button on the repository's GitHub page to create a copy of the repository in your GitHub account.
@@ -113,9 +113,9 @@ git push origin <your-branch-name>
 9. **Wait for Review:**
     Your pull request will now be available for review by the project maintainers. They may provide feedback or ask for changes before merging your pull request into the main branch of the Stackoverflow-Analysis repository.
 
-## 🎉 Additional Notes
+##  Additional Notes
 
 - Make sure to sync your fork with the latest changes from the original repo before pushing new features.
 - Respect coding conventions and keep your code clean. Comment your changes for ease in review.
 
-Welcome to Open-Source and thank you for contributing! 🙌
+Welcome to Open-Source and thank you for contributing
