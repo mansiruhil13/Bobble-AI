@@ -1,8 +1,5 @@
 #  AmbuFlow
 
-<div align="center">
-    <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/LOGO.png">
-</div>
 <br>
 
  **An Application** built with HTML, CSS, JavaScript, and Google API, designed to notify patients of nearby hospitals and provide estimated ambulance arrival times.  It offers hospitals and ambulance drivers critical details like the patient’s location  and enhances GPS route management with real-time traffic data  for scheduled routes, ensuring efficient navigation.
