@@ -1,21 +1,21 @@
-# 🚑 AmbuFlow
+#  AmbuFlow
 
 <div align="center">
     <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="images/LOGO.png">
 </div>
 <br>
 
-🚑 **A Mobile Application** built with HTML, CSS, JavaScript, and Google API, designed to notify patients of nearby hospitals and provide estimated ambulance arrival times. 🏥 It offers hospitals and ambulance drivers critical details like the patient’s location 📍 and enhances GPS route management with real-time traffic data 🚦 for scheduled routes, ensuring efficient navigation.
+ **A Mobile Application** built with HTML, CSS, JavaScript, and Google API, designed to notify patients of nearby hospitals and provide estimated ambulance arrival times.  It offers hospitals and ambulance drivers critical details like the patient’s location  and enhances GPS route management with real-time traffic data  for scheduled routes, ensuring efficient navigation.
 
 
 <table align="center">
     <thead align="center">
         <tr border: 2px;>
-            <td><b>🌟 Stars</b></td>
-            <td><b>🍴 Forks</b></td>
-            <td><b>🐛 Issues</b></td>
-            <td><b>🔔 Open PRs</b></td>
-            <td><b>🔕 Close PRs</b></td>
+            <td><b> Stars</b></td>
+            <td><b> Forks</b></td>
+            <td><b> Issues</b></td>
+            <td><b> Open PRs</b></td>
+            <td><b> Close PRs</b></td>
         </tr>
      </thead>
     <tbody>
@@ -81,22 +81,22 @@ Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## Problem Statement
-While having the name and address of a hospital is useful, visualizing it on a map with precise directions is even more effective. This app aims to bridge that gap by delivering real-time location data and navigation assistance, ensuring users find the nearest hospital quickly and with ease. 🚑
+While having the name and address of a hospital is useful, visualizing it on a map with precise directions is even more effective. This app aims to bridge that gap by delivering real-time location data and navigation assistance, ensuring users find the nearest hospital quickly and with ease. 
 
-### 🌟 Quick Access to Hospitals
+###  Quick Access to Hospitals
 In emergencies, time is of the essence. Quickly identifying the nearest hospital can be life-saving. This app provides that immediate support.
 
-### 🗺️ Locate Hospitals on a Map
+###  Locate Hospitals on a Map
 Visual information is key. Beyond just showing names and addresses, the app provides a map view with directions, offering users an intuitive way to locate nearby hospitals with ease.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## Solution
 
-### 🚑 Quick Access to Hospitals
+### Quick Access to Hospitals
 This app offers a comprehensive list of nearby hospitals with essential details such as addresses, contact numbers, and user ratings. Users can filter based on hospital specialties, helping them find the appropriate medical help efficiently.
 
-### 🗺️ Map-Based Hospital Location
+### Map-Based Hospital Location
 The built-in map feature shows exact hospital locations, provides directions, and highlights landmarks and real-time traffic conditions. This ensures users can navigate unfamiliar areas and choose the fastest route to get the care they need, right when they need it.
 
 <!--Line-->
@@ -104,20 +104,20 @@ The built-in map feature shows exact hospital locations, provides directions, an
 
 ## Key Features
 
-### 🚑 Operator Interface
-- **🔐 Registration & Sign-In**: Operators can create accounts and securely log in for system access.
-- **📍 Location Sharing**: Operators can share their real-time location for precise tracking and coordination.
+### Operator Interface
+- **Registration & Sign-In**: Operators can create accounts and securely log in for system access.
+- **Location Sharing**: Operators can share their real-time location for precise tracking and coordination.
 
-### 👥 User Interface
-- **🚨 Service Request**: Users can request ambulance services with just a few taps.
-- **🏥 Hospital Info**: Retrieve details on nearby hospitals and available ambulances.
-- **📊 Real-Time Ambulance Tracking**: Users can track the availability of ambulances to ensure timely assistance.
+### User Interface
+- **Service Request**: Users can request ambulance services with just a few taps.
+- **Hospital Info**: Retrieve details on nearby hospitals and available ambulances.
+- **Real-Time Ambulance Tracking**: Users can track the availability of ambulances to ensure timely assistance.
 
-### 📈 Additional Features
-1. **📡 GPS-Enabled Tracking**: Monitors ambulances in real-time for optimal tracking and coordination.
-2. **🔔 Hospital Alerts**: Sends patients notifications about nearby hospitals for quicker medical assistance.
-3. **🚦 Distance & Traffic Analysis**: Calculates the fastest routes based on real-time traffic and distance.
-4. **🧑‍💼 Driver Management**: Streamlines driver schedules and activities for efficient ambulance deployment.
+### Additional Features
+1. **GPS-Enabled Tracking**: Monitors ambulances in real-time for optimal tracking and coordination.
+2. **Hospital Alerts**: Sends patients notifications about nearby hospitals for quicker medical assistance.
+3. **Distance & Traffic Analysis**: Calculates the fastest routes based on real-time traffic and distance.
+4. **Driver Management**: Streamlines driver schedules and activities for efficient ambulance deployment.
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
@@ -171,7 +171,7 @@ node server.js
    
 ## Contribution Guidelines:
 
-We welcome all contributions to improve **AmbuFlow**! If you would like to contribute, please follow the [Contributing.md](./Contributing.md) to know how to get started.
+We welcome all contributions to improve **AmbuFlow** If you would like to contribute, please follow the [Contributing.md](./Contributing.md) to know how to get started.
 
 To maintain quality and consistency, please follow these best practices:
 
@@ -193,7 +193,7 @@ Refer to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our community g
 </a>
 <br><br>
 
-- **Google API Keys** 🔑: These are also used to access various Google services programmatically, such as Google Maps, Google Drive, etc.
+- **Google API Keys** : These are also used to access various Google services programmatically, such as Google Maps, Google Drive, etc.
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
@@ -208,17 +208,5 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 - **Real-Time Communication** between patients and ambulance drivers.
 - **Advanced Analytics** for hospitals to manage resources efficiently.
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
-
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
-## ⭐️ Support the Project
+## Support the Project
 If you find this project helpful, please consider giving it a star on GitHub! Your support helps the project grow and reach more contributors.
-
-### Keep learning 📚, exploring 🌍, and contributing 🤝 to make a difference in the world!
