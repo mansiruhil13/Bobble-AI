@@ -29,9 +29,6 @@
     </tbody>
 </table>
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ## Table of Contents
 - [DESCRIPTION](#description)
 - [Why We Need This Application](#why-we-need-this-application)
@@ -51,9 +48,6 @@ A mobile app using HTML, CSS, JavaScript, and Google API that helps users find n
 
 Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the description of the project.
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ## Why We Need This Application
 
 1. **Quick Emergency Response**: Ensures patients receive timely medical assistance by locating the nearest hospitals and ambulances.
@@ -61,9 +55,6 @@ Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the 
 3. **Enhanced Communication**: Facilitates seamless communication between patients, hospitals, and ambulance drivers.
 4. **Resource Management**: Helps hospitals manage their resources efficiently by providing critical information and analytics.
 5. **User-Friendly Interface**: Designed for ease of use, ensuring that even in high-stress situations, users can navigate the app effortlessly.
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## Problem Statement
 While having the name and address of a hospital is useful, visualizing it on a map with precise directions is even more effective. This app aims to bridge that gap by delivering real-time location data and navigation assistance, ensuring users find the nearest hospital quickly and with ease. 
@@ -74,8 +65,6 @@ In emergencies, time is of the essence. Quickly identifying the nearest hospital
 ###  Locate Hospitals on a Map
 Visual information is key. Beyond just showing names and addresses, the app provides a map view with directions, offering users an intuitive way to locate nearby hospitals with ease.
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ## Solution
 
 ### Quick Access to Hospitals
@@ -83,9 +72,6 @@ This app offers a comprehensive list of nearby hospitals with essential details 
 
 ### Map-Based Hospital Location
 The built-in map feature shows exact hospital locations, provides directions, and highlights landmarks and real-time traffic conditions. This ensures users can navigate unfamiliar areas and choose the fastest route to get the care they need, right when they need it.
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## Key Features
 
@@ -103,9 +89,6 @@ The built-in map feature shows exact hospital locations, provides directions, an
 2. **Hospital Alerts**: Sends patients notifications about nearby hospitals for quicker medical assistance.
 3. **Distance & Traffic Analysis**: Calculates the fastest routes based on real-time traffic and distance.
 4. **Driver Management**: Streamlines driver schedules and activities for efficient ambulance deployment.
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## Contributing
 
@@ -168,9 +151,6 @@ To maintain quality and consistency, please follow these best practices:
 
 Refer to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our community guidelines.
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ## Tech Stack
 
 <a href="https://skillicons.dev">
@@ -179,9 +159,6 @@ Refer to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our community g
 <br><br>
 
 - **Google API Keys** : These are also used to access various Google services programmatically, such as Google Maps, Google Drive, etc.
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## User-Friendly Experience
 
