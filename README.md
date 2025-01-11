@@ -212,21 +212,10 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 
-## Our Valuable Contributors:
-
-[![Contributors](https://contrib.rocks/image?repo=mansiruhil13/Bobble-AI)](https://github.com/mansiruhil13/Bobble-AI/graphs/contributors)
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## Team
-
-| <img title="Mansi Ruhil" src="https://avatars.githubusercontent.com/u/157950124?v=4&" alt="Mansi Ruhil" width="75"/> |
-|:--:|
-| **Mansi Ruhil** <br> <sub>Project Admin</sub> | 
-| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/mansi-ruhil-7a00a0228/) |
-
-<!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## ⭐️ Support the Project
