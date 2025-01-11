@@ -1,6 +1,6 @@
-## 🚑 AmbuFlow
+##  AmbuFlow
 
-Thank you for your interest in contributing to **AmbuFlow**! We’re excited to see what creative ideas you bring. Follow these simple guidelines below to get started.
+Thank you for your interest in contributing to **AmbuFlow** We’re excited to see what creative ideas you bring. Follow these simple guidelines below to get started.
 
 ---
 
