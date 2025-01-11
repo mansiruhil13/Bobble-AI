@@ -43,8 +43,6 @@
 ## DESCRIPTION
 A mobile app using HTML, CSS, JavaScript, and Google API that helps users find nearby hospitals and track ambulances in real-time. It shows hospital locations, provides directions, and helps manage ambulance routes based on traffic and distance.
 
-Please check out the [Screenshots.md](./Screenshots.md) for more clarity on the description of the project.
-
 ## Why We Need This Application
 
 1. **Quick Emergency Response**: Ensures patients receive timely medical assistance by locating the nearest hospitals and ambulances.
