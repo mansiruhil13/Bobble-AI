@@ -2,7 +2,7 @@
 
 Please check the following screenshots for a brief overview of the website and it's functions.<br>
 You can also check out the live demo here ⬇️:<br>
-https://mansiruhil13.github.io/Bobble-AI/
+https://ambu-flow.vercel.app/
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <div style="flex: 1 1 30%; max-width: 30%;">
