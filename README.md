@@ -32,21 +32,6 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-### This project is now OFFICIALLY accepted for
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
-</div>
-
-<div align="center">
-  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktober fest 2024" width="80%">
-</div>
-
-<br>
-
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ## Table of Contents
 - [DESCRIPTION](#description)
 - [Why We Need This Application](#why-we-need-this-application)
