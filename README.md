@@ -163,4 +163,4 @@ This app is designed to be user-friendly, ensuring a seamless experience for bot
 - **Advanced Analytics** for hospitals to manage resources efficiently.
 
 ## Support the Project
-If you find this project helpful, please consider giving it a star on GitHub! Your support helps the project grow and reach more contributors.
+If you find this project helpful, please consider giving it a star on GitHub Your support helps the project grow and reach more contributors.
