@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <!--Updated to latest version-->
+     <!--Updated to latest version-->
 
     <link rel="stylesheet" href="src/css/index.css" />
     <link
@@ -28,7 +28,7 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background-color: #f3f4f6; /* Change from #0b0e11 */
+        background-color: #E4EAF1; /* Change from #0b0e11 */
         color: #000000; /* Change from #d1d1d1 */
         margin: 0;
         padding: 0;
@@ -36,42 +36,111 @@
       }
 
       header {
-        background: linear-gradient(90deg, #A7CCF0, #F3F4F6, #A7CCF0); /* Change from #b2d1ff, #93b6d3, #42a5f5 */
-        padding: 30px 0 0 0;
+        background-color: #E4EAF1;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
-      header h1 {
-        color: #000000; /* Change from #fff */
-        font-size: 2.4rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
+      .container{
+        background-color: #E4EAF1;
       }
+
+
 
       main {
         padding: 50px 20px;
         max-width: 1200px;
         margin: 0 auto;
-        background: #ffffff; /* Change from #10141b */
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-        border: 2px solid rgba(0, 0, 0, 0.2); /* Change from rgba(66, 165, 245, 0.2) */
+        background-color: #ffff;
+      }
+
+      main p{
+        color: #555555;
+      }
+      main ul li{
+        color: #555555;
+      }
+
+      .buttons{
+        padding: 10px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .login{
+        color: black;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .login:hover{
+        background-color: #91919175;
+      }
+
+    .get-started{
+      background-color: #2980B9;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .logo{
+      width: min-content;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    .logo p:nth-child(1){
+      color: #ff0000;
+    }
+    .logo p:nth-child(2){
+      color: #2980B9;
+    }
+
+    .brand-name{
+      display: flex;
+      align-items: center;
+      
+    }
+
+    .brand-name p{
+      margin: 0;
+      font-size: 2.5vw;
+      font-weight: 600;
+    }
+
+    .logo img{
+        width: 5vw;
+        padding-left: 5px;
+    }
+
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+      h1{
+        font-size: 4vw;
+        text-align: center;
+        margin: 0;
+        color: #5875B3;
       }
 
       h2 {
-        color: black; /* Change from #1e88e5 */
+        color: #2980B9;
         font-size: 2.5rem;
-        /* border-bottom: 2px solid #000000; Change from #1e88e5 */
         padding-bottom: 10px;
-        margin-bottom: 20px;
         text-transform: uppercase;
+        margin: 0;
       }
 
       p {
         line-height: 1.8;
         font-size: 1.1rem;
-        margin-bottom: 30px;
       }
 
       .highlight {
@@ -80,7 +149,6 @@
       }
 
       ul {
-        margin-left: 40px;
         list-style: none;
       }
       ul li {
@@ -126,12 +194,6 @@
         transform: scale(1.05);
       }
 
-      /* Hover effect */
-      main:hover {
-        transition: 0.5s;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-      }
-
       /* Futuristic glow effect for text */
       /* h1,
       h2 {
@@ -141,7 +203,6 @@
 
       /* Futuristic neon glow for sections */
       main {
-        border: 2px solid rgba(66, 165, 245, 0.2);
         color:#0344f6;
       }
 
@@ -168,7 +229,6 @@
       .menu {
         display: flex;
         justify-content: center;
-        margin: 20px 0;
       }
 
       .nav-links {
@@ -199,46 +259,49 @@
   <body>
     <header>
         <div class="container">
-          
           <div class="logo">
-    
             <div class="brand-name">
-              <span class="ambu">Ambu</span>Flow
+              <p>Ambu</p>
+              <p>Flow</p>
             </div>
-            <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-    
+           
+            <img src="images/logo2-w.webp" alt="">
           </div>
-          <nav class="menu">
-            <ul class="nav-links">
-              <li>
-                <a href="./index.html" id="home-link" onclick="changeContent('home')">Home</a>
-              </li>
-              <li>
-                <a href="features.html" id="features-link" onclick="changeContent('features')">Features</a>
-              </li>
-              <li>
-                <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
-              </li>
-              <li>
-                <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
-              </li>
-              <li>
-                <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')">Feedback</a>
-              </li>
-              <li>
-                <a href="nearby.html" id="nearby-link" onclick="changeContent('nearby')">Nearby</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="buttons">
-            <a href="login.html" class="login">Log in</a>
-            <a href="up.html" class="get-started">Get started</a>
-          </div>
+             <div class="buttons">
+                <a href="login.html" class="login">Log in</a>
+                <a href="up.html" class="get-started">Sign up</a>
+              </div>
         </div>
-        <h1 >About AmbuFlow</h1>
+          
+          
+        </div>
+        
       </header>
 
-    <main style="margin-top:30px;">
+      <nav class="menu">
+        <ul class="nav-links">
+          <li>
+            <a href="./index.html" id="home-link" onclick="changeContent('home')">Home</a>
+          </li>
+          <li>
+            <a href="features.html" id="features-link" onclick="changeContent('features')">Features</a>
+          </li>
+          <li>
+            <a href="team.html" id="team-link" onclick="changeContent('team')">Team</a>
+          </li>
+          <li>
+            <a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a>
+          </li>
+          <li>
+            <a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')">Feedback</a>
+          </li>
+          <li>
+            <a href="nearby.html" id="nearby-link" onclick="changeContent('nearby')">Nearby</a>
+          </li>
+        </ul>
+      </nav>
+      <h1 >About AmbuFlow</h1>
+    <main>
       <h2>Who We Are</h2>
       <p>
         <span class="highlight">AmbuFlow</span> is a dynamic project developed
