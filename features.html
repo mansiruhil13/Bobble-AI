@@ -10,9 +10,8 @@
   <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <!--Updated to latest version-->
+  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,58 +22,37 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-
-    /* font size of button */
     .buttons .login,
     .buttons .get-started,
     .dark-mode-toggle {
       font-size: 18px;
-      /* Increase font size */
       padding: 10px 15px;
-      /* Adjust padding for better appearance */
-    }
-
-    /* dark mode toggle button styling */
-    body {
-      background-color: white;
-      /* Light mode background */
-      color: black;
-      transition: background-color 0.3s, color 0.3s;
     }
 
     .navbar {
       background-color: rgb(153, 207, 225);
-      /* Light mode navbar */
       color: black;
       padding: 10px;
     }
 
     .navbar.dark-mode {
       background-color: black;
-      /* Dark mode navbar */
       color: white;
     }
 
-    /* more addition for dark mode theme */
-
     .dark-mode .logo img {
       filter: brightness(0) invert(1);
-      /* Inverts the color to make it white */
     }
 
-    /* dark mode hove effect on logo */
     body.dark-mode #logo img:hover {
-      filter: brightness(0) invert(1);
-      /* Change black logo to white */
       filter: brightness(0.8);
-      /* Change the brightness to light grey on hover */
     }
 
     .navbar.dark-mode .logo-img {
       filter: brightness(0) invert(1);
-      /* Change logo color in dark mode */
     }
 
     .menu ul {
@@ -89,20 +67,42 @@
 
     .menu a {
       color: black;
-      /* Light mode link color */
       border: 1px solid black;
-      /* Black border */
       padding: 6px 10px;
       text-decoration: none;
-      /*transition: all 0.3s;*/
     }
 
     .menu a:hover {
       background-color: blue;
-      /* Blue background on hover */
       color: white;
-      /* White text on hover */
     }
+
+    .dark-mode .menu a {
+      color: white;
+      border: 1px solid lightgrey;
+    }
+
+    .dark-mode {
+      background-color: rgba(50, 50, 50, 0.95);
+    }
+
+    .dark-mode .menu a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .light-dark-btn {
+      background-color: transparent;
+      border: 1px solid black;
+      cursor: pointer;
+      color: black;
+      border-radius: 50px;
+    }
+
+    .light-dark-btn:hover {
+      color: blue;
+    }
+    
 
     .dark-mode .menu a {
       color: white;
@@ -192,9 +192,7 @@
       color: white;
       White text on hover
     } */
-    a:hover {
-      color: blue !important;
-    }
+    
 
     /* .dark-mode .menu a {
       color: white;
@@ -269,7 +267,7 @@
       font-size:3rem;
       color:rgb(0, 0, 0);
       margin-bottom:2rem;
-}
+    }
     #feature{
            font-size:2rem;
            color:black;
@@ -327,7 +325,7 @@
     }
 
 
-    .menu ul {
+    
 
     /* .menu ul {
 
@@ -436,63 +434,63 @@
     }
 
     /* Logo Animation */
-    @keyframes logoAnimation {
+        @keyframes logoAnimation {
+          0% {
+            opacity: 0;
+            transform: translateX(-100px);
+            /* Start from the left */
+          }
+
+          50% {
+            transform: translateX(10px);
+            /* Move slightly to the right */
+          }
+        }
+
+          /* Logo Animation */
+          @keyframes logoAnimation {
       0% {
         opacity: 0;
-        transform: translateX(-100px);
-        /* Start from the left */
+        transform: translateX(-100px); /* Start from the left */
       }
-
       50% {
-        transform: translateX(10px);
-        /* Move slightly to the right */
+        transform: translateX(10px); /* Move slightly to the right */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
       }
     }
 
-      /* Logo Animation */
-      @keyframes logoAnimation {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); /* Start from the left */
-  }
-  50% {
-    transform: translateX(10px); /* Move slightly to the right */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at original position */
-  }
-}
+    footer {
+      background-color: #C4D7FF;
+      color: white;
+      text-align: center;
+      padding: 10px 0; /* Padding for the footer */
+      
+    }
 
-footer {
-  background-color: #C4D7FF;
-  color: white;
-  text-align: center;
-  padding: 10px 0; /* Padding for the footer */
-  
-}
+    /* Letter Drop Animation */
+    @keyframes letterDrop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(10px); /* Slight bounce */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 
-/* Letter Drop Animation */
-@keyframes letterDrop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(10px); /* Slight bounce */
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-#thankYouMessage {
-  margin-top: 20px;
-  font-size: 18px;
-  color: green;
-  display: none; /* Initially hidden */
-}
+    #thankYouMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      display: none; /* Initially hidden */
+    }
 
     .translate-btn {
       background-color: #2980b9;
@@ -526,96 +524,96 @@ footer {
       gap: 8px;
     }
 
-.card-container {
-  width: 296px;
-  height: 290px;
-  position: relative;
-  border-radius: 0% 10% 0% 10%;
-}
+    .card-container {
+      width: 296px;
+      height: 290px;
+      position: relative;
+      border-radius: 0% 10% 0% 10%;
+    }
 
-.card-container::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
- 
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
-}
+    .card-container::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+    
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(20px);
+    }
 
-.card {
-  width: 90%;
-  height: 70%;
-  border-radius: inherit;
-  overflow: hidden;
-  box-shadow: 0 8px 8px rgba(88, 86, 86, 0.8); /* Adds a subtle shadow */
+    .card {
+      width: 90%;
+      height: 70%;
+      border-radius: inherit;
+      overflow: hidden;
+      box-shadow: 0 8px 8px rgba(88, 86, 86, 0.8); /* Adds a subtle shadow */
 
-}
+    }
 
-.card .img-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #2980b9;
-  transition: scale 0.6s, rotate 0.6s, filter 1s;
-  color:black;
-}
+    .card .img-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2980b9;
+      transition: scale 0.6s, rotate 0.6s, filter 1s;
+      color:black;
+    }
 
-.card .img-content svg {
-  width: 50px;
-  height: 50px;
-  fill: #e8e8e8;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
+    .card .img-content svg {
+      width: 50px;
+      height: 50px;
+      fill: #e8e8e8;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
 
-.card .content {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 90%;
-  font-size: 1.3rem;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  color: #000000;
-  background-color:#aedaf7;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 0% 10% 0% 10%;
-  
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(50px);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
+    .card .content {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 90%;
+      font-size: 1.3rem;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+      color: #000000;
+      background-color:#aedaf7;
+      padding: 20px;
+      line-height: 1.5;
+      border-radius: 0% 10% 0% 10%;
+      
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(50px);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
 
-.card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
-}
+    .card .content .heading {
+      font-size: 32px;
+      font-weight: 700;
+    }
 
-.card:hover .content {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .card:hover .content {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.card:hover .img-content {
-  scale: 2.5;
-  rotate: 30deg;
-  filter: blur(7px);
-}
+    .card:hover .img-content {
+      scale: 2.5;
+      rotate: 30deg;
+      filter: blur(7px);
+    }
 
-.card:hover .img-content svg {
-  fill: transparent;
-}
+    .card:hover .img-content svg {
+      fill: transparent;
+    }
 
- 
+    
 
     /* Navbar Styles */
     .menu {
@@ -650,7 +648,8 @@ footer {
 
     /* Hover effect */
     .nav-links a:hover {
-      color: #007bff; /* Change text color on hover */
+      color: gray; 
+      background: none;
     }
 
   </style>
@@ -716,160 +715,13 @@ footer {
           </li>
         </ul>
       </nav>
-      <div class="buttons">
-
-
-          <a href="login.html" class="login">Log in</a>
-          <a href="up.html" class="get-started">Get started</a>
-
-        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-
-
-
-  <div class="container" id="container">
-
-    <div class="logo">
-      <div class="brand-name">
-        <span class="letter red" style="--letter-index: 1;">A</span>
-        <span class="letter red" style="--letter-index: 2;">m</span>
-        <span class="letter red" style="--letter-index: 3;">b</span>
-        <span class="letter red" style="--letter-index: 4;">u</span>
-        <span class="letter" style="--letter-index: 5;">F</span>
-        <span class="letter" style="--letter-index: 6;">l</span>
-        <span class="letter" style="--letter-index: 7;">o</span>
-        <span class="letter" style="--letter-index: 8;">w</span>
-      </div>
-      <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
     </div>
-    <nav class="menu">
-      <ul>
-        <li>
-          <a href="#container" style="color: #333;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.34314 11.5858L12 5.92893M12 5.92893L17.6568 11.5858M12 5.92893V18.0711" stroke="currentColor">
-              </path>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="index.html" id="home-link" class="menu_links" data-link="Home">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="features.html" id="features-link" class="menu_links" data-link="Features">
-            <span>Features</span></a>
-        </li>
-        <li>
-          <a href="team.html" id="team-link" class="menu_links" data-link="Team">
-            <span>Team</span></a>
-        </li>
-        <li>
-          <a href="contact.html" id="contact-link" class="menu_links" data-link="Contact">
-            <span>Contact</span></a>
-        </li>
-        <li>
-          <a href="Feedback.html" id="contact-link" class="menu_links" data-link="Feedback">
-            <span>Feedback</span></a>
-        </li>
-        <li>
-          <a href="nearby.html" id="contact-link" class="menu_links" data-link="Nearby">
-            <span>Nearby</span></a>
-        </li>
-      </ul>
-    </nav>
+
+
 
     <!-- -------------------------------------------------------------------------- -->
-    <div class="content" id="main-content">
-      <h1>Features</h1>
-      <p id="para">Here are the features of AmbuFlow:</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <i class="fas fa-ambulance feature-icon"></i>
-          <h2>Quick Emergency Response</h2>
-          <p>Immediate notifications to the nearest ambulance service.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-map-marked-alt feature-icon"></i>
-          <h2>Real-Time Tracking</h2>
-          <p>Track ambulances in real-time for better coordination.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-comments feature-icon"></i>
-          <h2>Enhanced Communication</h2>
-          <p>Instant communication between dispatch and ambulances.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-cogs feature-icon"></i>
-          <h2>Resource Management</h2>
-          <p>Efficient allocation of resources for emergencies.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-user-friends feature-icon"></i>
-          <h2>User-Friendly Interface</h2>
-          <p>Easy-to-navigate system for users and providers.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-clock feature-icon"></i>
-          <h2>24/7 Availability</h2>
-          <p>Always available support and monitoring services.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-heartbeat feature-icon"></i>
-          <h2>Patient Health Monitoring</h2>
-          <p>Real-time monitoring of patient vitals during transport.</p>
-        </div>
-        <!-- <div class="feature-card">
-          <i class="fas fa-lock feature-icon"></i>
-          <h2>Data Security</h2>
-          <p>Ensuring the security of patient and operational data.</p>
-        </div> -->
-        <div class="feature-card">
-          <i class="fas fa-phone-alt feature-icon"></i>
-          <h2>Emergency Contact Integration</h2>
-          <p>Seamless integration with emergency contact services.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-tachometer-alt feature-icon"></i>
-          <h2>Driver Performance Monitoring</h2>
-          <p>Real-time tracking of driver behavior and performance on the road.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-comments-dollar feature-icon"></i>
-          <h2>Feedback System</h2>
-          <p>Collecting feedback to improve service quality.</p>
-
-        </div>
-        <a href="./index.html">
-        <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 50px; height: auto" />
-        </a>
-      </div>
-
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html" id="home-link" onclick="changeContent('home')">
-              Home</a></li>
-          <li><a href="features.html" id="features-link" onclick="changeContent('features')"> Features</a></li>
-          <li><a href="team.html" id="team-link" onclick="changeContent('team')">
-              Team</a></li>
-          <li><a href="contact.html" id="contact-link" onclick="changeContent('contact')">Contact</a></li>
-          <li><a href="Feedback.html" id="feedback-link" onclick="changeContent('feedback')"> Feedback</a></li>
-        </ul>
-      </nav>
-      <div class="buttons">
-
-          <!-- <button id="translateBtn" class="translate-btn"><i class="fas fa-language"></i> Translate</button> -->
-          <a href="login.html" class="login">Log in</a>
-          <a href="up.html" class="get-started">Get started</a>
-
-        <button class="light-dark-btn dark-mode-toggle" id="dark-mode-toggle">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-
-      </div>
-    </div>
+   
+  </div>
   </header>
 
   <!-- -------------------------------------------------------------------------- -->
@@ -1039,82 +891,176 @@ footer {
 
   </div>
 
-  <footer style=" color: #f3f4f6; text-align: center; width: 100%;">
-    <div style="background-color: #C4D7FF; color: #f3f4f6; ">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-
-        <!-- Quick Links Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Quick Links</h3>
-          <ul style="list-style-type: none; padding: 0;">
-            <li><a href="about.html" style="color: #000000; text-decoration: none;">About Us</a></li>
-            <li><a href="contact.html" style="color: #000000; text-decoration: none;">Contact Us</a></li>
-            <li><a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy Policy</a></li>
-            <li><a href="terms.html" style="color: #000000; text-decoration: none;">Terms of Service</a></li>
-            <li><a href="sitemap.html" style="color: #000000; text-decoration: none;">Site Map</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Information Section -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 10px;">
-          <h3 style="font-size: 1.5rem; color: #2980b9;">Contact Info</h3>
-          <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
-          <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a></p>
-          <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a>
-          </p>
-        </div>
-
-        <!-- Modified the looks of the social icons -->
-        <!-- Social Media Links -->
-        <div style="text-align: center; min-width: 200px; color: black;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Follow Us</h3>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 15px; height: 50px;">
-            <a href="https://www.facebook.com" class="social-icon facebook"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com" class="social-icon twitter"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com" class="social-icon instagram"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" class="social-icon linkedin"
-              style="color: black; text-decoration: none; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <!-- Newsletter Subscription -->
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #2980b9;">Subscribe to Our Newsletter</h3>
-          <form action="#">
-            <i class="fas fa-envelope" style="position: absolute; bottom: -25.3rem; right: 22.3rem; color: gray; font-size: 13px;"></i>
-            <input type="email" placeholder="Your Email"
-              style="padding: 10px; width: 80%; border: none; border-radius: 5px; padding-left: 27px;" required><br><br>
-            <button type="submit"
-              style="background-color: #e81a1a; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Subscribe</button>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-    <hr>
-    <!-- Copyright Section -->
-    <div
-      style="background-color: #C4D7FF; color: #000000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-      <strong>
-        <p>&copy; 2024 AmbuFlow. All rights reserved.</p>
-      </strong>
-
-      <!-- Back to Top Button -->
-      <button id="backToTopBtn" style="
-        background-color: #e81a1a;
-        color: white;
+ 
+  <footer style="color: #f3f4f6; text-align: center; width: 100%; height: 100%;">
+    <style>
+      /* Base styles for footer container */
+      .new-footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Ensures content is centered horizontally */
+        align-items: center; /* Ensures content is centered vertically */
+        padding: 20px 0;
+        background-color: #C4D7FF;
+        color: #f3f4f6;
+        box-sizing: border-box;
+      }
+  
+      /* Styling for each footer section */
+      .new-footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+        text-align: center;
+        align-self: center;
+      }
+  
+      .new-footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #2980b9;
+      }
+  
+      .new-footer-section a {
+        color: #000000;
+        text-decoration: none;
+      }
+  
+      .new-footer-section a:hover {
+        text-decoration: underline;
+      }
+  
+      .new-social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: auto;
+      }
+  
+      .new-newsletter-input {
+        padding: 10px;
+        width: 60%;
         border: none;
         border-radius: 5px;
-        padding: 10px 15px;
-        font-size: 16px;
+        margin-bottom: 10px;
+      }
+  
+      .new-newsletter-button {
+        background-color: #e81a1a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
         cursor: pointer;
-      ">↑</button>
+        border-radius: 5px;
+      }
+  
+      /* Media query for large screens (Desktop) */
+      @media (max-width: 1250px) {
+        .new-footer-container {
+          flex-direction: column; /* Stack sections vertically */
+          align-items: center;    /* Center horizontally */
+          justify-content: center; /* Center vertically */
+        }
+  
+        .new-footer-section {
+          margin-bottom: 20px; /* Space between sections */
+          width: 100%; /* Full width in column layout */
+        }
+  
+        .new-newsletter-input {
+          width: 90%; /* Slightly reduce width of input field */
+        }
+      }
+  
+      /* Media query for medium screens (Tablets) */
+      @media (max-width: 768px) {
+        .new-footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center; /* Ensures text is centered */
+        }
+  
+        .new-footer-section {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+  
+        .new-newsletter-input {
+          width: 90%; /* Full width for smaller screens */
+        }
+      }
+  
+      /* Media query for small screens (Mobile) */
+      @media (max-width: 400px) {
+        .new-footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+  
+        .new-footer-section {
+          margin-bottom: 15px;
+          width: 100%;
+        }
+  
+        .new-newsletter-input {
+          width: 90%; /* Full width for smaller screens */
+        }
+  
+        .new-social-icons {
+          gap: 10px; /* Reduce gap between social icons */
+        }
+  
+        .new-newsletter-input {
+          padding: 8px;
+          font-size: 14px; /* Slightly smaller input on mobile */
+        }
+  
+        .new-newsletter-button {
+          font-size: 14px; /* Smaller button text */
+          padding: 8px 16px; /* Adjust button size */
+        }
+      }
+  
+    </style>
+  
+    <div class="new-footer-container">
+      <div class="new-footer-section">
+        <h3>Quick Links</h3>
+        <ul style="list-style-type: none; padding: 0;">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </div>
+      <div class="new-footer-section">
+        <h3>Contact Info</h3>
+        <p style="color: #000;">123 Emergency Lane, Mumbai, India</p>
+        <a href="mailto:emergency@ambulanceservice.in" style="color: #000000;">emergency@ambulanceservice.in</a>
+        <p style="color: #000000;">Phone: <a href="tel:+91-911-1234567" style="color: #000000;">+91-911-1234567</a></p>
+      </div>
+      <div class="new-footer-section">
+        <h3>Follow Us</h3>
+        <div class="new-social-icons">
+          <a href="https://www.facebook.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com" style="color: black; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="new-footer-section">
+        <h3>Subscribe to Our Newsletter</h3>
+        <form action="#">
+          <input class="new-newsletter-input" type="email" placeholder="Your Email" required>
+          <button class="new-newsletter-button" type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
   </footer>
+     
   <script src="preloader.js"></script>
   <script>
     // adding code for dark mode
@@ -1383,6 +1329,6 @@ footer {
     });
   </script>
 
-</body>
+  </body>
 
 </html>
